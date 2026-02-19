@@ -1,0 +1,251 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: 'ML-Powered Fraud Detection System',
+    description: 'Advanced machine learning solution using Isolation Forest, DBSCAN, and K-Means clustering to detect anomalies across 100% of transactions.',
+    category: 'Fraud Detection & Forensics',
+    impact: '78% reduction in fraud incidents, 2.3M monthly transactions analyzed',
+    href: '/projects/fraud-detection/',
+    techStack: [
+      { name: 'Python', color: 'blue' },
+      { name: 'scikit-learn', color: 'orange' },
+      { name: 'Pandas', color: 'green' },
+      { name: 'ML', color: 'purple' }
+    ]
+  },
+  {
+    title: 'Audit Tools Toolkit v2.0',
+    description: 'Complete automated internal audit framework with 14+ professional tools, YAML configuration, and full IIA Standards compliance.',
+    category: 'Audit Automation',
+    impact: '70% reduction in audit preparation time',
+    href: '/projects/audit-tools/',
+    techStack: [
+      { name: 'Python', color: 'blue' },
+      { name: 'Excel', color: 'green' },
+      { name: 'YAML', color: 'gray' },
+      { name: 'PowerPoint', color: 'orange' }
+    ]
+  },
+  {
+    title: 'Finance Dashboard v2.0',
+    description: 'Enterprise-grade financial reporting automation with multi-currency consolidation, AI-powered insights, and 12 professional Excel dashboards.',
+    category: 'Dashboards & Analytics',
+    impact: '85% reduction in monthly financial reporting time',
+    href: '/projects/finance-dashboard/',
+    techStack: [
+      { name: 'Python', color: 'blue' },
+      { name: 'xlsxwriter', color: 'green' },
+      { name: 'Pandas', color: 'green' },
+      { name: 'NumPy', color: 'purple' }
+    ]
+  },
+  {
+    title: 'Forensic Audit Toolbox',
+    description: 'Comprehensive forensic investigation toolkit with ML-powered fraud detection, evidence integrity verification (SHA-256), and multi-format reporting.',
+    category: 'Fraud Detection & Forensics',
+    impact: '82% fraud detection accuracy with legally-defensible evidence chain',
+    href: '/projects/forensic-toolbox/',
+    techStack: [
+      { name: 'Python', color: 'blue' },
+      { name: 'Pandas', color: 'green' },
+      { name: 'NumPy', color: 'purple' },
+      { name: 'Forensics', color: 'red' }
+    ]
+  },
+  {
+    title: 'Internal Audit Tracker (Enterprise)',
+    description: 'Enterprise-grade Excel tracker with 9 integrated worksheets, automated PowerPoint presentation generator, and executive-level dashboards.',
+    category: 'Audit Automation',
+    impact: '3-tier executive dashboards (CEO, Audit Committee, Director)',
+    href: '/projects/internal-tracker/',
+    techStack: [
+      { name: 'Python', color: 'blue' },
+      { name: 'Excel', color: 'green' },
+      { name: 'PowerPoint', color: 'orange' }
+    ]
+  },
+  {
+    title: 'Audit Carousel Content Library',
+    description: 'Professional PDF carousel generators for LinkedIn thought leadership with custom layouts for audit education topics.',
+    category: 'Content & Thought Leadership',
+    impact: 'Supports professional branding and thought leadership',
+    href: '/projects/carousel-content/',
+    techStack: [
+      { name: 'Python', color: 'blue' },
+      { name: 'FPDF', color: 'red' },
+      { name: 'Design', color: 'purple' }
+    ]
+  }
+];
+
+const categories = ['All Projects', 'Fraud Detection & Forensics', 'Audit Automation', 'Dashboards & Analytics', 'Content & Thought Leadership'];
+---
+
+<BaseLayout title="Projects | Majid Mumtaz CIA, ACA, FCCA">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-50 to-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Portfolio <span class="text-gradient">Projects</span>
+        </h1>
+        <p class="text-xl text-gray-600 mb-8">
+          Production-ready audit automation solutions demonstrating technical depth and measurable business impact
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">
+            6+ Production Projects
+          </span>
+          <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-semibold">
+            100% Population Testing
+          </span>
+          <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-semibold">
+            ML & Python Powered
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="py-8 bg-white border-b border-gray-200">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-wrap gap-3 justify-center">
+          {categories.map(category => (
+            <button
+              class={`px-4 py-2 rounded-lg font-semibold text-sm transition-all ${
+                category === 'All Projects'
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+              data-filter={category}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map(project => (
+            <ProjectCard {...project} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Stack Overview -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8">Technology Stack</h2>
+        <p class="text-lg text-gray-600 mb-10">
+          All projects leverage modern technologies and professional best practices
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div class="p-4 bg-gradient-to-br from-blue-50 to-white rounded-lg border border-blue-200">
+            <div class="text-3xl mb-2">🐍</div>
+            <div class="font-bold">Python</div>
+            <div class="text-sm text-gray-600">Core Language</div>
+          </div>
+
+          <div class="p-4 bg-gradient-to-br from-green-50 to-white rounded-lg border border-green-200">
+            <div class="text-3xl mb-2">📊</div>
+            <div class="font-bold">Pandas & NumPy</div>
+            <div class="text-sm text-gray-600">Data Analysis</div>
+          </div>
+
+          <div class="p-4 bg-gradient-to-br from-purple-50 to-white rounded-lg border border-purple-200">
+            <div class="text-3xl mb-2">🤖</div>
+            <div class="font-bold">scikit-learn</div>
+            <div class="text-sm text-gray-600">Machine Learning</div>
+          </div>
+
+          <div class="p-4 bg-gradient-to-br from-green-50 to-white rounded-lg border border-green-200">
+            <div class="text-3xl mb-2">📈</div>
+            <div class="font-bold">Excel Automation</div>
+            <div class="text-sm text-gray-600">xlsxwriter, openpyxl</div>
+          </div>
+
+          <div class="p-4 bg-gradient-to-br from-orange-50 to-white rounded-lg border border-orange-200">
+            <div class="text-3xl mb-2">📑</div>
+            <div class="font-bold">PowerPoint</div>
+            <div class="text-sm text-gray-600">python-pptx</div>
+          </div>
+
+          <div class="p-4 bg-gradient-to-br from-gray-50 to-white rounded-lg border border-gray-200">
+            <div class="text-3xl mb-2">⚙️</div>
+            <div class="font-bold">YAML</div>
+            <div class="text-sm text-gray-600">Configuration</div>
+          </div>
+
+          <div class="p-4 bg-gradient-to-br from-blue-50 to-white rounded-lg border border-blue-200">
+            <div class="text-3xl mb-2">📊</div>
+            <div class="font-bold">Matplotlib</div>
+            <div class="text-sm text-gray-600">Visualization</div>
+          </div>
+
+          <div class="p-4 bg-gradient-to-br from-red-50 to-white rounded-lg border border-red-200">
+            <div class="text-3xl mb-2">🔍</div>
+            <div class="font-bold">Forensics</div>
+            <div class="text-sm text-gray-600">SHA-256, Evidence</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-br from-blue-900 to-blue-800 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Interested in Similar Solutions?</h2>
+      <p class="text-lg text-blue-100 mb-10 max-w-2xl mx-auto">
+        I can build custom audit automation, fraud detection, or analytics solutions tailored to your organization's specific needs.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/consulting/" class="btn bg-white text-blue-900 hover:bg-gray-100 text-lg font-semibold px-6 py-3 rounded-lg transition-colors">
+          Explore Consulting Services
+        </a>
+        <a href="/contact/" class="btn border-2 border-white text-white hover:bg-white hover:text-blue-900 text-lg font-semibold px-6 py-3 rounded-lg transition-colors">
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Basic filter functionality (client-side)
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('[data-filter]');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Update active state
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-blue-600', 'text-white');
+          btn.classList.add('bg-gray-100', 'text-gray-700');
+        });
+
+        button.classList.remove('bg-gray-100', 'text-gray-700');
+        button.classList.add('bg-blue-600', 'text-white');
+
+        // Filter logic would go here in a more complete implementation
+        // For now, this is a placeholder
+      });
+    });
+  });
+</script>

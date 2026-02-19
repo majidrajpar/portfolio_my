@@ -1,0 +1,276 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact | Majid Mumtaz CIA, ACA, FCCA">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-50 to-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Get in <span class="text-gradient">Touch</span>
+        </h1>
+        <p class="text-xl text-gray-600">
+          Let's discuss how I can help transform your audit and risk management capabilities
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Contact Form -->
+          <div>
+            <h2 class="text-2xl font-bold mb-6">Send a Message</h2>
+
+            <form
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+              class="space-y-6"
+            >
+              <div>
+                <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                  placeholder="Your full name"
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+
+              <div>
+                <label for="company" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Company
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                  placeholder="Your company name"
+                />
+              </div>
+
+              <div>
+                <label for="service" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Service Interest
+                </label>
+                <select
+                  id="service"
+                  name="service"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                >
+                  <option value="">Select a service...</option>
+                  <option value="audit-function-buildout">Audit Function Build-Out</option>
+                  <option value="sox-404-compliance">SOX 404 & IPO Readiness</option>
+                  <option value="fraud-detection">Fraud Detection & Forensics</option>
+                  <option value="audit-automation">Audit Automation</option>
+                  <option value="data-analytics">Data Analytics & Dashboards</option>
+                  <option value="ma-due-diligence">M&A Due Diligence</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows="6"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition resize-none"
+                  placeholder="Tell me about your project or inquiry..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-primary w-full text-lg"
+              >
+                Send Message
+              </button>
+
+              <p class="text-xs text-gray-500 text-center">
+                By submitting this form, you agree to be contacted regarding your inquiry.
+              </p>
+            </form>
+          </div>
+
+          <!-- Contact Information -->
+          <div>
+            <h2 class="text-2xl font-bold mb-6">Contact Information</h2>
+
+            <div class="space-y-6">
+              <!-- Email -->
+              <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                <div class="text-3xl">📧</div>
+                <div>
+                  <h3 class="font-bold text-lg mb-1">Email</h3>
+                  <a
+                    href="mailto:majidrajpar@gmail.com"
+                    class="text-blue-600 hover:text-blue-700 transition-colors"
+                  >
+                    majidrajpar@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                <div class="text-3xl">📍</div>
+                <div>
+                  <h3 class="font-bold text-lg mb-1">Location</h3>
+                  <p class="text-gray-700">Dubai, United Arab Emirates</p>
+                  <p class="text-sm text-gray-600 mt-1">Golden Visa Holder</p>
+                </div>
+              </div>
+
+              <!-- LinkedIn -->
+              <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
+                <div class="text-3xl">💼</div>
+                <div>
+                  <h3 class="font-bold text-lg mb-1">LinkedIn</h3>
+                  <a
+                    href="https://www.linkedin.com/in/majid-m-4b097118/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-blue-600 hover:text-blue-700 transition-colors inline-flex items-center gap-1"
+                  >
+                    linkedin.com/in/majid-m-4b097118
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Veritux -->
+              <div class="flex items-start gap-4 p-4 bg-gradient-to-br from-blue-50 to-white rounded-lg border border-blue-200">
+                <div class="text-3xl">🏢</div>
+                <div>
+                  <h3 class="font-bold text-lg mb-1">Veritux Consulting Network</h3>
+                  <p class="text-sm text-gray-600 mb-2">
+                    Independent Internal Audit, Risk & Governance Advisory
+                  </p>
+                  <a
+                    href="https://veritux.com/consultants/majid-mumtaz/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-blue-600 hover:text-blue-700 transition-colors inline-flex items-center gap-1 text-sm"
+                  >
+                    View Profile
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Availability Note -->
+            <div class="mt-8 p-6 bg-blue-50 border border-blue-200 rounded-lg">
+              <h3 class="font-bold text-lg mb-2">Availability</h3>
+              <p class="text-sm text-gray-700">
+                Currently available for consulting engagements, interim leadership roles, and project-based advisory work across the GCC region.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">What I Can Help With</h2>
+        <p class="text-lg text-gray-600 mb-12">
+          Specialized consulting services in internal audit transformation and enterprise risk management
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <div class="text-3xl mb-3">🏢</div>
+            <h3 class="font-bold mb-2">Audit Function Build-Out</h3>
+            <p class="text-sm text-gray-600">Design and scale internal audit from inception to maturity</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <div class="text-3xl mb-3">✅</div>
+            <h3 class="font-bold mb-2">SOX 404 & IPO Readiness</h3>
+            <p class="text-sm text-gray-600">Clean Big 4 opinions, zero material weaknesses</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <div class="text-3xl mb-3">🔍</div>
+            <h3 class="font-bold mb-2">Fraud Detection & Forensics</h3>
+            <p class="text-sm text-gray-600">ML-powered continuous monitoring and investigation</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <div class="text-3xl mb-3">🤖</div>
+            <h3 class="font-bold mb-2">Audit Automation</h3>
+            <p class="text-sm text-gray-600">Transition to 100% population testing</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <div class="text-3xl mb-3">📊</div>
+            <h3 class="font-bold mb-2">Data Analytics</h3>
+            <p class="text-sm text-gray-600">Python/ML for audit insights and dashboards</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+            <div class="text-3xl mb-3">🎯</div>
+            <h3 class="font-bold mb-2">M&A Due Diligence</h3>
+            <p class="text-sm text-gray-600">Financial, operational, and compliance reviews</p>
+          </div>
+        </div>
+
+        <div class="mt-10">
+          <a href="/consulting/" class="btn btn-primary text-lg">
+            Learn More About Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Response Time Notice -->
+  <section class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-8">
+          <h3 class="text-xl font-bold mb-3">📬 Response Time</h3>
+          <p class="text-gray-700">
+            I typically respond to inquiries within 24-48 hours during business days (Sunday-Thursday, GCC time zone).
+            For urgent matters, please indicate this in your message.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
