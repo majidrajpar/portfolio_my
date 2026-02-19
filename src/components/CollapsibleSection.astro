@@ -1,0 +1,67 @@
+---
+interface Props {
+  title: string;
+  defaultOpen?: boolean;
+}
+
+const { title, defaultOpen = false } = Astro.props;
+const id = `section-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class="collapsible-section border border-gray-200 rounded-lg overflow-hidden mb-6">
+  <button
+    class="w-full flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 transition-colors text-left"
+    data-toggle={id}
+    aria-expanded={defaultOpen ? 'true' : 'false'}
+  >
+    <h3 class="text-lg font-bold text-gray-900">{title}</h3>
+    <svg
+      class="w-5 h-5 text-gray-600 transition-transform"
+      data-icon={id}
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      style={defaultOpen ? 'transform: rotate(180deg)' : ''}
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </button>
+
+  <div
+    id={id}
+    class="collapsible-content bg-white"
+    style={defaultOpen ? '' : 'display: none;'}
+  >
+    <div class="p-6">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButtons = document.querySelectorAll('[data-toggle]');
+
+    toggleButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-toggle');
+        const content = document.getElementById(targetId!);
+        const icon = document.querySelector(`[data-icon="${targetId}"]`);
+
+        if (content && icon) {
+          const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+          if (isExpanded) {
+            content.style.display = 'none';
+            button.setAttribute('aria-expanded', 'false');
+            icon.style.transform = 'rotate(0deg)';
+          } else {
+            content.style.display = 'block';
+            button.setAttribute('aria-expanded', 'true');
+            icon.style.transform = 'rotate(180deg)';
+          }
+        }
+      });
+    });
+  });
+</script>

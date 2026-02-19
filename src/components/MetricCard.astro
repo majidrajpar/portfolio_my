@@ -1,0 +1,33 @@
+---
+interface Props {
+  value: string;
+  label: string;
+  icon?: string;
+}
+
+const { value, label, icon } = Astro.props;
+---
+
+<div class="metric-card text-center p-6 bg-gradient-to-br from-blue-50 to-white rounded-lg border border-blue-100 hover:border-blue-300 transition-all">
+  {icon && (
+    <div class="text-4xl mb-3">
+      {icon}
+    </div>
+  )}
+  <div class="text-3xl md:text-4xl font-bold text-gradient mb-2">
+    {value}
+  </div>
+  <div class="text-sm md:text-base text-gray-600 font-medium">
+    {label}
+  </div>
+</div>
+
+<style>
+  .metric-card {
+    transition: transform 0.2s ease;
+  }
+
+  .metric-card:hover {
+    transform: translateY(-4px);
+  }
+</style>

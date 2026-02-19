@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Claude Code configuration
+.claude/
+
+# Temporary documentation
+CONTACT_INFO_UPDATE.md
