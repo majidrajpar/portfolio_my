@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import MetricCard from './components/MetricCard';
 import ProjectCard from './components/ProjectCard';
 import DownloadCard from './components/DownloadCard';
+import ProjectDetail from './components/ProjectDetail';
 
 const App = () => {
   const { scrollYProgress } = useScroll();
@@ -17,6 +18,9 @@ const App = () => {
   // State for downloadable documents
   const [documents, setDocuments] = useState([]);
 
+  // State for project detail view
+  const [selectedProject, setSelectedProject] = useState(null);
+
   // Load documents from JSON
   useEffect(() => {
     fetch('/portfolio_my/downloads/documents.json')
@@ -25,74 +29,166 @@ const App = () => {
       .catch(err => console.error('Failed to load documents:', err));
   }, []);
 
+  // Handle hash-based routing for project details
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash.startsWith('#project/')) {
+        const projectId = hash.replace('#project/', '');
+        const project = allProjects.find(p => p.id === projectId);
+        if (project) {
+          setSelectedProject(project);
+        }
+      } else {
+        setSelectedProject(null);
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   const featuredProjects = [
     {
+      id: 'fraud-detection-ml',
       title: 'Neural-Net Fraud Detection',
       description: 'Advanced machine learning architecture using Isolation Forest and K-Means clustering to analyze 2.3M+ monthly transactions.',
       category: 'Fraud Forensics',
       impact: '82% Reduction in Fraud Loss (SAR 5.1M to <900K)',
-      techStack: ['Python', 'scikit-learn', 'Neural Networks'],
-      image: '/portfolio_my/images/projects/fraud-detection/fraud-dashboard.webp'
+      techStack: ['Python', 'scikit-learn', 'Pandas', 'Excel Automation'],
+      image: '/portfolio_my/images/projects/fraud-detection/fraud-dashboard.webp',
+      features: [
+        'ML anomaly detection with 87.3% accuracy using Isolation Forest',
+        'Manager discount rate analysis with automated risk scoring',
+        'Hourly transaction pattern heat mapping',
+        'Location-based risk assessment across multiple regions',
+        'Automated recovery identification (SAR 4.2M potential recovery)',
+        'Real-time fraud probability scoring for each transaction'
+      ]
     },
     {
+      id: 'audit-findings-system',
       title: 'Audit Findings Management System',
       description: 'Enterprise-grade automation framework delivering 100% population testing across multi-entity GCC operations with automated findings tracking.',
       category: 'Audit Transformation',
       impact: '70% reduction in audit preparation cycle time',
-      techStack: ['Python', 'YAML', 'IIA Compliance'],
-      image: '/portfolio_my/images/projects/audit-tools/findings-tracker.webp'
+      techStack: ['Python', 'YAML', 'IIA Compliance', 'openpyxl'],
+      image: '/portfolio_my/images/projects/audit-tools/findings-tracker.webp',
+      features: [
+        'Color-coded severity tracking (Critical/High/Medium/Low)',
+        'Automated aging analysis with remediation deadline tracking',
+        '100% population testing across all audit areas',
+        'Finding ID generation with unique reference numbers',
+        'Real-time status dashboard for audit committees',
+        'Automated report generation for management review'
+      ]
     },
     {
+      id: 'executive-financial-dashboard',
       title: 'Executive Financial Dashboard',
       description: 'Proprietary financial reporting engine providing real-time board-level visibility into capital leaks, variance analysis, and recovery tracking.',
       category: 'Strategic Dashboards',
       impact: '85% automated reporting efficiency achieved',
-      techStack: ['xlsxwriter', 'Pandas', 'Power BI'],
-      image: '/portfolio_my/images/projects/finance-dashboard/executive-dashboard.webp'
+      techStack: ['xlsxwriter', 'Pandas', 'Power BI', 'Python'],
+      image: '/portfolio_my/images/projects/finance-dashboard/executive-dashboard.webp',
+      features: [
+        'Real-time KPI monitoring (AED 127M, AED 68.2M, 37.5%)',
+        'Monthly P&L with quarterly trend analysis',
+        'Budget vs. Actual variance tracking with color coding',
+        'Automated financial reporting for board meetings',
+        'Capital leak identification and recovery tracking',
+        'Multi-period comparative analysis (12-month view)'
+      ]
     }
   ];
 
   const allProjects = [
     ...featuredProjects,
     {
+      id: 'enterprise-audit-platform',
       title: 'Enterprise Audit Management Platform',
       description: 'Comprehensive audit management platform with executive dashboards, PowerPoint automation, and 3-tier governance reporting for multi-entity operations.',
       category: 'Audit Transformation',
       impact: '9 integrated worksheets with full automation',
       techStack: ['Python', 'openpyxl', 'python-pptx'],
-      image: '/portfolio_my/images/projects/bateel-audit-tracker/audit-dashboard.webp'
+      image: '/portfolio_my/images/projects/bateel-audit-tracker/audit-dashboard.webp',
+      features: [
+        'Director dashboard with real-time operational KPIs',
+        'Multi-entity audit planning and scheduling',
+        'Automated PowerPoint presentation generation',
+        '3-tier governance reporting (Operational/Management/Board)',
+        'Risk-based audit scheduling with priority scoring',
+        'Integrated findings tracking across all entities'
+      ]
     },
     {
+      id: 'food-safety-risk',
       title: 'Food Safety Risk Assessment Framework',
       description: 'Advanced risk management framework for F&B operations with heat mapping, control validation, and compliance tracking across 70+ locations.',
       category: 'Audit Transformation',
       impact: 'Comprehensive risk assessment across all operations',
       techStack: ['Python', 'Risk Analytics', 'Compliance Frameworks'],
-      image: '/portfolio_my/images/projects/food-safety-risk/risk-heatmap.webp'
+      image: '/portfolio_my/images/projects/food-safety-risk/risk-heatmap.webp',
+      features: [
+        'Risk heat mapping across 70+ restaurant locations',
+        'Control validation and effectiveness testing',
+        'Compliance tracking with regulatory requirements',
+        'Mitigation roadmap generation with timelines',
+        'Executive risk reporting for board visibility',
+        'Location-specific risk scoring and prioritization'
+      ]
     },
     {
+      id: 'forensic-fraud-toolkit',
       title: 'Forensic Fraud Investigation Toolkit',
       description: 'Professional forensic analysis toolkit for major fraud cases with control failure mapping, evidence tracking, and litigation support documentation.',
       category: 'Fraud Forensics',
       impact: 'Documented control failures and recovery actions',
       techStack: ['Python', 'Excel Automation', 'Forensic Accounting'],
-      image: '/portfolio_my/images/projects/fraud-cases/fraud-analysis.webp'
+      image: '/portfolio_my/images/projects/fraud-cases/fraud-analysis.webp',
+      features: [
+        'Control failure mapping with root cause analysis',
+        'Evidence tracking with chain of custody',
+        'Litigation support report generation',
+        'Major fraud case documentation and analysis',
+        'Recovery action planning with financial impact',
+        'Professional forensic accounting methodologies'
+      ]
     },
     {
+      id: 'multi-location-compliance',
       title: 'Multi-Location Audit Compliance System',
       description: 'Comprehensive audit compliance system for multi-location restaurant operations with standardized procedures, tracking, and remediation monitoring.',
       category: 'Audit Transformation',
       impact: 'Standardized audit procedures across locations',
       techStack: ['Python', 'openpyxl', 'Audit Standards'],
-      image: '/portfolio_my/images/projects/restaurant-audit/audit-checklist.webp'
+      image: '/portfolio_my/images/projects/restaurant-audit/audit-checklist.webp',
+      features: [
+        'Comprehensive audit checklists for F&B operations',
+        'Compliance tracking across multiple locations',
+        'Remediation monitoring with deadline tracking',
+        'Action plan reporting for management review',
+        'Standardized procedures across all sites',
+        'Automated compliance scoring and ratings'
+      ]
     },
     {
+      id: 'icaew-audit-system',
       title: 'ICAEW Audit Report System',
       description: 'Professional audit reporting platform compliant with ICAEW standards, featuring automated report generation and evidence documentation.',
       category: 'Audit Transformation',
       impact: 'Professional-grade audit documentation',
       techStack: ['Python', 'ICAEW Standards', 'Report Automation'],
-      image: '/portfolio_my/images/projects/icaew-audit/audit-report.webp'
+      image: '/portfolio_my/images/projects/icaew-audit/audit-report.webp',
+      features: [
+        'ICAEW-compliant audit report generation',
+        'Testing methodology documentation',
+        'Evidence management and documentation',
+        'Automated audit workpaper preparation',
+        'Professional report formatting and branding',
+        'Quality review checklist integration'
+      ]
     }
   ];
 
@@ -100,6 +196,17 @@ const App = () => {
     <div className="relative min-h-screen">
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-blue-500 origin-left z-[100]" style={{ scaleX }} />
       <Navbar />
+
+      {/* Project Detail View */}
+      {selectedProject && (
+        <ProjectDetail
+          project={selectedProject}
+          onClose={() => {
+            window.location.hash = '';
+            setSelectedProject(null);
+          }}
+        />
+      )}
       
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center pt-20 overflow-hidden relative">
