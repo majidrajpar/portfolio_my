@@ -9,20 +9,541 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h1 class="text-4xl md:text-5xl font-bold mb-6">
           Consulting <span class="text-gradient">Services</span>
         </h1>
-        <p class="text-xl text-gray-600">
-          Veritux Consulting Network - Independent Internal Audit, Risk & Governance Advisory
+        <p class="text-xl text-gray-600 mb-4">
+          Veritux Consulting Network
+        </p>
+        <p class="text-lg text-gray-500">
+          Independent Internal Audit, Risk & Governance Advisory
         </p>
       </div>
     </div>
   </section>
 
+  <!-- Service Offerings -->
   <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto text-center">
-        <p class="text-lg text-gray-600 mb-8">
-          🚧 This page is under construction. Please <a href="/contact/" class="text-blue-600 hover:text-blue-700 font-semibold">contact me</a> directly to discuss consulting opportunities.
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-bold text-center mb-4">Core Service Offerings</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+        Combining 20+ years of board-level audit leadership with advanced Python/ML capabilities
+        to deliver transformational risk and governance solutions across the GCC region.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Service 1 -->
+        <div class="card hover:shadow-2xl transition-all">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-3xl">🏢</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Audit Function Build-Out</h3>
+              <p class="text-sm text-gray-600 mb-3">
+                Design and scale internal audit functions from inception to institutional maturity.
+              </p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <span>Department establishment (charter, policies, procedures)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <span>Risk-based audit universe and annual planning</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <span>Team recruitment, training, and capability development</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">✓</span>
+              <span>IIA Standards implementation and QAIP setup</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="card hover:shadow-2xl transition-all">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-3xl">✅</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">SOX 404 & IPO Readiness</h3>
+              <p class="text-sm text-gray-600 mb-3">
+                Prepare organizations for successful IPOs and secure clean Big 4 audit opinions.
+              </p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <span>SOX 404 ICFR framework design and documentation</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <span>Control testing and deficiency remediation</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <span>Pre-IPO gap assessments and readiness roadmaps</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">✓</span>
+              <span>Track record: Zero material weaknesses in Big 4 opinions</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="card hover:shadow-2xl transition-all">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-3xl">🔍</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Fraud Detection & Forensics</h3>
+              <p class="text-sm text-gray-600 mb-3">
+                ML-powered continuous fraud monitoring and forensic investigations.
+              </p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2">✓</span>
+              <span>Machine learning fraud detection (Isolation Forest, DBSCAN)</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2">✓</span>
+              <span>Forensic investigations with legally-defensible evidence</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2">✓</span>
+              <span>Benford's Law analysis and pattern recognition</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2">✓</span>
+              <span>Proven results: 78-82% fraud reduction in client engagements</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="card hover:shadow-2xl transition-all">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-3xl">🤖</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Audit Automation & Transformation</h3>
+              <p class="text-sm text-gray-600 mb-3">
+                Transition from sample-based auditing to 100% population testing using Python/ML.
+              </p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">✓</span>
+              <span>Custom audit automation tools and frameworks</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">✓</span>
+              <span>Python-based data analytics and reporting</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">✓</span>
+              <span>Dashboard and executive reporting automation</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">✓</span>
+              <span>Typical outcome: 70-85% reduction in audit cycle time</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="card hover:shadow-2xl transition-all">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-3xl">📊</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">Advanced Data Analytics</h3>
+              <p class="text-sm text-gray-600 mb-3">
+                Python/ML-powered audit analytics for continuous monitoring and risk intelligence.
+              </p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start">
+              <span class="text-orange-600 mr-2">✓</span>
+              <span>Continuous auditing and monitoring solutions</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-600 mr-2">✓</span>
+              <span>Predictive risk modeling and anomaly detection</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-600 mr-2">✓</span>
+              <span>Power BI / Tableau dashboard development</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-600 mr-2">✓</span>
+              <span>Custom Python analytics scripts and automation</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="card hover:shadow-2xl transition-all">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <span class="text-3xl">💼</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold mb-2">M&A Due Diligence & IPO Advisory</h3>
+              <p class="text-sm text-gray-600 mb-3">
+                Financial, operational, and compliance due diligence for transactions and capital events.
+              </p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start">
+              <span class="text-indigo-600 mr-2">✓</span>
+              <span>Buy-side and sell-side due diligence</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-indigo-600 mr-2">✓</span>
+              <span>Quality of earnings analysis and working capital reviews</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-indigo-600 mr-2">✓</span>
+              <span>Control environment and compliance assessments</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-indigo-600 mr-2">✓</span>
+              <span>Track record: $127M+ in M&A capital protected</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagement Models -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-bold text-center mb-12">Engagement Models</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card text-center">
+          <div class="text-4xl mb-4">⏰</div>
+          <h3 class="font-bold text-lg mb-2">Fractional CAO/Director</h3>
+          <p class="text-sm text-gray-600">Part-time Chief Audit Officer or Director leadership (2-3 days/week)</p>
+        </div>
+
+        <div class="card text-center">
+          <div class="text-4xl mb-4">📋</div>
+          <h3 class="font-bold text-lg mb-2">Project-Based Advisory</h3>
+          <p class="text-sm text-gray-600">Defined-scope engagements (SOX 404, automation, fraud investigation)</p>
+        </div>
+
+        <div class="card text-center">
+          <div class="text-4xl mb-4">🚀</div>
+          <h3 class="font-bold text-lg mb-2">Interim Leadership</h3>
+          <p class="text-sm text-gray-600">Full-time temporary CAO during transitions or transformations</p>
+        </div>
+
+        <div class="card text-center">
+          <div class="text-4xl mb-4">🤝</div>
+          <h3 class="font-bold text-lg mb-2">Co-Sourcing</h3>
+          <p class="text-sm text-gray-600">Supplement internal audit teams with specialized capabilities</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ideal Clients -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-bold text-center mb-4">Ideal Client Profile</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+        Organizations seeking to build or transform internal audit functions with a hybrid approach
+        combining traditional governance expertise and cutting-edge technology.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Family Offices -->
+        <div class="card">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="text-2xl">👨‍👩‍👧‍👦</span>
+            GCC Family Offices
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Ultra-high net worth families requiring sophisticated governance, risk management,
+            and compliance frameworks across diversified portfolios.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">▸</span>
+              <span>Multi-entity governance structures</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">▸</span>
+              <span>Investment oversight and due diligence</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">▸</span>
+              <span>Regulatory compliance (CMA, DFSA, ADGM)</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pre-IPO Companies -->
+        <div class="card">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="text-2xl">🚀</span>
+            Pre-IPO Tech Companies
+          </h3>
+          <p class="text-gray-600 mb-4">
+            High-growth technology companies preparing for IPO or seeking Big 4 clean opinions
+            on internal controls.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">▸</span>
+              <span>SOX 404 readiness and implementation</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">▸</span>
+              <span>Rapid internal audit function build-out</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">▸</span>
+              <span>Zero material weaknesses track record</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- PE Portfolio Companies -->
+        <div class="card">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="text-2xl">💰</span>
+            Private Equity Portfolio Companies
+          </h3>
+          <p class="text-gray-600 mb-4">
+            PE-backed companies requiring value creation through operational improvements,
+            risk mitigation, and exit readiness.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">▸</span>
+              <span>Operational due diligence and carve-outs</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">▸</span>
+              <span>Value creation through process automation</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">▸</span>
+              <span>Exit preparation and strategic buyer readiness</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Fast-Growth Enterprises -->
+        <div class="card">
+          <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+            <span class="text-2xl">📈</span>
+            Fast-Growth Enterprises
+          </h3>
+          <p class="text-gray-600 mb-4">
+            Established companies (AED 100M+ revenue) experiencing rapid growth and requiring
+            scalable governance and risk frameworks.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start">
+              <span class="text-orange-600 mr-2">▸</span>
+              <span>Audit function transformation and automation</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-600 mr-2">▸</span>
+              <span>Fraud detection and continuous monitoring</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-600 mr-2">▸</span>
+              <span>Multi-location compliance and controls</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-bold text-center mb-4">Client Success Stories</h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+        Anonymized case studies demonstrating proven outcomes across diverse industries and engagement types.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Success Story 1 -->
+        <div class="card bg-gradient-to-br from-blue-50 to-white">
+          <div class="text-3xl mb-3">🏢</div>
+          <h3 class="font-bold text-lg mb-2">Pre-IPO Cloud Kitchen</h3>
+          <p class="text-sm text-gray-600 mb-4">
+            Technology unicorn preparing for public listing
+          </p>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-start">
+              <span class="text-green-600 mr-2 font-bold">✓</span>
+              <span>Clean SOX 404 Big 4 opinion achieved</span>
+            </div>
+            <div class="flex items-start">
+              <span class="text-green-600 mr-2 font-bold">✓</span>
+              <span>Zero material weaknesses identified</span>
+            </div>
+            <div class="flex items-start">
+              <span class="text-green-600 mr-2 font-bold">✓</span>
+              <span>78% reduction in fraud incidents</span>
+            </div>
+            <div class="flex items-start">
+              <span class="text-green-600 mr-2 font-bold">✓</span>
+              <span>AED 7.7M in value creation delivered</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Success Story 2 -->
+        <div class="card bg-gradient-to-br from-purple-50 to-white">
+          <div class="text-3xl mb-3">💼</div>
+          <h3 class="font-bold text-lg mb-2">Diversified JSC Holding</h3>
+          <p class="text-sm text-gray-600 mb-4">
+            Multi-billion SAR conglomerate M&A transaction
+          </p>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-start">
+              <span class="text-purple-600 mr-2 font-bold">✓</span>
+              <span>$127M in M&A capital protected</span>
+            </div>
+            <div class="flex items-start">
+              <span class="text-purple-600 mr-2 font-bold">✓</span>
+              <span>82% fraud loss reduction achieved</span>
+            </div>
+            <div class="flex items-start">
+              <span class="text-purple-600 mr-2 font-bold">✓</span>
+              <span>IIA "Generally Conforms" rating</span>
+            </div>
+            <div class="flex items-start">
+              <span class="text-purple-600 mr-2 font-bold">✓</span>
+              <span>ML fraud detection implemented</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Success Story 3 -->
+        <div class="card bg-gradient-to-br from-green-50 to-white">
+          <div class="text-3xl mb-3">🍔</div>
+          <h3 class="font-bold text-lg mb-2">Global QSR Franchise</h3>
+          <p class="text-sm text-gray-600 mb-4">
+            180+ restaurant locations across Saudi Arabia
+          </p>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-start">
+              <span class="text-green-600 mr-2 font-bold">✓</span>
+              <span>24% compliance improvement delivered</span>
+            </div>
+            <div class="flex items-start">
+              <span class="text-green-600 mr-2 font-bold">✓</span>
+              <span>100% population testing vs. sampling</span>
+            </div>
+            <div class="flex items-start">
+              <span class="text-green-600 mr-2 font-bold">✓</span>
+              <span>Python automation framework deployed</span>
+            </div>
+            <div class="flex items-start">
+              <span class="text-green-600 mr-2 font-bold">✓</span>
+              <span>85% reduction in audit cycle time</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Veritux -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl font-bold text-center mb-12">Why Work With Me</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-2xl">🎯</span>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Big 4 Foundation</h3>
+            <p class="text-gray-600 text-sm">KPMG and Ernst & Young background with international standards expertise and professional methodology</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-2xl">🤖</span>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Hybrid Tech-Audit Expertise</h3>
+            <p class="text-gray-600 text-sm">Rare combination of board-level audit leadership and advanced Python/ML capabilities</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-2xl">📚</span>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Published Thought Leader</h3>
+            <p class="text-gray-600 text-sm">6 industry publications on Amazon demonstrating deep expertise and continuous knowledge sharing</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-2xl">🌍</span>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">GCC Regional Expertise</h3>
+            <p class="text-gray-600 text-sm">20+ years in Middle East, Golden Visa holder, deep understanding of GCC regulatory environment</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-br from-blue-600 to-indigo-700 text-white">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Audit Function?</h2>
+      <p class="text-lg mb-8 opacity-90">
+        Let's discuss how ML-powered audit automation, SOX 404 readiness, or fraud detection
+        can create measurable value for your organization.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact/" class="inline-block bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:shadow-xl transition-all">
+          Schedule a Consultation
+        </a>
+        <a href="/projects/" class="inline-block bg-transparent border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-all">
+          View Portfolio Projects
+        </a>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-white border-opacity-20">
+        <p class="text-sm opacity-75">
+          Part of the <a href="https://veritux.com/consultants/majid-mumtaz/" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-100">Veritux Consulting Network</a>
         </p>
-        <a href="/contact/" class="btn btn-primary">Contact Me</a>
       </div>
     </div>
   </section>

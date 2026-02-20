@@ -16,13 +16,370 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- Technical Skills Matrix -->
   <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto text-center">
-        <p class="text-lg text-gray-600 mb-8">
-          🚧 This page is under construction. Please visit the <a href="/projects/" class="text-blue-600 hover:text-blue-700 font-semibold">Projects</a> page to see my technical capabilities in action.
-        </p>
-        <a href="/projects/" class="btn btn-primary">View Projects</a>
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-bold text-center mb-12">Technical Skills</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Programming & Data -->
+        <div class="card">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+              <span class="text-2xl">💻</span>
+            </div>
+            <h3 class="text-xl font-bold">Programming & Data Science</h3>
+          </div>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">▸</span>
+              <span><strong>Python:</strong> Pandas, NumPy, scikit-learn, Matplotlib, Seaborn</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">▸</span>
+              <span><strong>SQL:</strong> Query optimization, database design, complex joins</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">▸</span>
+              <span><strong>R:</strong> Statistical analysis, data visualization</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-blue-600 mr-2">▸</span>
+              <span><strong>Excel Automation:</strong> xlsxwriter, openpyxl, advanced formulas</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Machine Learning -->
+        <div class="card">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+              <span class="text-2xl">🤖</span>
+            </div>
+            <h3 class="text-xl font-bold">Machine Learning & AI</h3>
+          </div>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">▸</span>
+              <span><strong>Anomaly Detection:</strong> Isolation Forest, Local Outlier Factor</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">▸</span>
+              <span><strong>Clustering:</strong> DBSCAN, K-Means, hierarchical clustering</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">▸</span>
+              <span><strong>Frameworks:</strong> TensorFlow, scikit-learn, Keras</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-purple-600 mr-2">▸</span>
+              <span><strong>Model Deployment:</strong> Production ML pipelines, monitoring</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Audit & GRC Tools -->
+        <div class="card">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+              <span class="text-2xl">🔍</span>
+            </div>
+            <h3 class="text-xl font-bold">Audit & GRC Tools</h3>
+          </div>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">▸</span>
+              <span><strong>GRC Platforms:</strong> SAP GRC, Workiva, AuditBoard</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">▸</span>
+              <span><strong>Data Analytics:</strong> IDEA, ACL Analytics, Alteryx</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">▸</span>
+              <span><strong>Document Automation:</strong> python-pptx, python-docx, FPDF</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2">▸</span>
+              <span><strong>Version Control:</strong> Git, GitHub, GitLab</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Analytics & BI -->
+        <div class="card">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+              <span class="text-2xl">📊</span>
+            </div>
+            <h3 class="text-xl font-bold">Analytics & Business Intelligence</h3>
+          </div>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-orange-600 mr-2">▸</span>
+              <span><strong>Power BI:</strong> Dashboard design, DAX, data modeling</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-600 mr-2">▸</span>
+              <span><strong>Tableau:</strong> Interactive visualizations, storytelling</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-600 mr-2">▸</span>
+              <span><strong>Excel:</strong> Advanced formulas, pivot tables, VBA macros</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-orange-600 mr-2">▸</span>
+              <span><strong>Statistical Analysis:</strong> Hypothesis testing, regression, forecasting</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- DevOps & Cloud -->
+        <div class="card">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+              <span class="text-2xl">☁️</span>
+            </div>
+            <h3 class="text-xl font-bold">DevOps & Cloud</h3>
+          </div>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-indigo-600 mr-2">▸</span>
+              <span><strong>Cloud Platforms:</strong> Microsoft Azure, AWS basics</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-indigo-600 mr-2">▸</span>
+              <span><strong>Containerization:</strong> Docker, container orchestration</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-indigo-600 mr-2">▸</span>
+              <span><strong>CI/CD:</strong> GitHub Actions, automated deployment pipelines</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-indigo-600 mr-2">▸</span>
+              <span><strong>Scripting:</strong> Bash, PowerShell, automation workflows</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Forensics & Investigation -->
+        <div class="card">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+              <span class="text-2xl">🔒</span>
+            </div>
+            <h3 class="text-xl font-bold">Forensics & Investigation</h3>
+          </div>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2">▸</span>
+              <span><strong>Benford's Law:</strong> Statistical fraud detection analysis</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2">▸</span>
+              <span><strong>Pattern Recognition:</strong> Fraud scheme identification algorithms</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2">▸</span>
+              <span><strong>Evidence Integrity:</strong> SHA-256 cryptographic hashing</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-red-600 mr-2">▸</span>
+              <span><strong>Chain of Custody:</strong> Legally-defensible evidence handling</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frameworks & Methodologies -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-bold text-center mb-12">Frameworks & Methodologies</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card text-center">
+          <h3 class="text-lg font-bold mb-2">COSO Framework</h3>
+          <p class="text-sm text-gray-600">Internal Control - Integrated Framework & Enterprise Risk Management</p>
+        </div>
+
+        <div class="card text-center">
+          <h3 class="text-lg font-bold mb-2">IIA Standards</h3>
+          <p class="text-sm text-gray-600">International Standards for the Professional Practice of Internal Auditing</p>
+        </div>
+
+        <div class="card text-center">
+          <h3 class="text-lg font-bold mb-2">COBIT 5</h3>
+          <p class="text-sm text-gray-600">Control Objectives for Information and Related Technologies</p>
+        </div>
+
+        <div class="card text-center">
+          <h3 class="text-lg font-bold mb-2">Three Lines Model</h3>
+          <p class="text-sm text-gray-600">Defense model for risk management and control</p>
+        </div>
+
+        <div class="card text-center">
+          <h3 class="text-lg font-bold mb-2">SOX 404</h3>
+          <p class="text-sm text-gray-600">Internal Control over Financial Reporting (ICFR)</p>
+        </div>
+
+        <div class="card text-center">
+          <h3 class="text-lg font-bold mb-2">ISO 31000</h3>
+          <p class="text-sm text-gray-600">Risk Management - Guidelines</p>
+        </div>
+
+        <div class="card text-center">
+          <h3 class="text-lg font-bold mb-2">NIST CSF</h3>
+          <p class="text-sm text-gray-600">Cybersecurity Framework for IT risk management</p>
+        </div>
+
+        <div class="card text-center">
+          <h3 class="text-lg font-bold mb-2">Agile/Scrum</h3>
+          <p class="text-sm text-gray-600">Iterative project management for audit transformation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & Education -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-3xl font-bold text-center mb-12">Certifications & Education</h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Professional Certifications -->
+        <div class="card">
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+            <span class="text-blue-600">🎓</span>
+            Professional Certifications
+          </h3>
+
+          <div class="space-y-4">
+            <div class="border-l-4 border-blue-600 pl-4">
+              <h4 class="font-bold text-lg">CIA - Certified Internal Auditor</h4>
+              <p class="text-sm text-gray-600">Institute of Internal Auditors (IIA)</p>
+              <p class="text-sm text-gray-500">Global standard for internal audit professionals</p>
+            </div>
+
+            <div class="border-l-4 border-blue-600 pl-4">
+              <h4 class="font-bold text-lg">ACA - Chartered Accountant</h4>
+              <p class="text-sm text-gray-600">Institute of Chartered Accountants in England and Wales (ICAEW)</p>
+              <p class="text-sm text-gray-500">Premier UK professional accounting qualification</p>
+            </div>
+
+            <div class="border-l-4 border-blue-600 pl-4">
+              <h4 class="font-bold text-lg">FCCA - Fellow Chartered Certified Accountant</h4>
+              <p class="text-sm text-gray-600">Association of Chartered Certified Accountants (ACCA)</p>
+              <p class="text-sm text-gray-500">Global body for professional accountants</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Executive Education -->
+        <div class="card">
+          <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+            <span class="text-purple-600">📚</span>
+            Executive Education
+          </h3>
+
+          <div class="space-y-4">
+            <div class="border-l-4 border-purple-600 pl-4">
+              <h4 class="font-bold text-lg">Disruptive Strategy</h4>
+              <p class="text-sm text-gray-600">Harvard Business School</p>
+              <p class="text-sm text-gray-500">Innovation and strategic transformation</p>
+            </div>
+
+            <div class="border-l-4 border-purple-600 pl-4">
+              <h4 class="font-bold text-lg">Enterprise Risk Management</h4>
+              <p class="text-sm text-gray-600">COSO (Committee of Sponsoring Organizations)</p>
+              <p class="text-sm text-gray-500">Integrated framework for risk oversight</p>
+            </div>
+
+            <div class="border-l-4 border-purple-600 pl-4">
+              <h4 class="font-bold text-lg">Machine Learning Specialization</h4>
+              <p class="text-sm text-gray-600">IBM (Coursera)</p>
+              <p class="text-sm text-gray-500">Applied ML for business applications</p>
+            </div>
+
+            <div class="border-l-4 border-purple-600 pl-4">
+              <h4 class="font-bold text-lg">IT Governance & Risk Management</h4>
+              <p class="text-sm text-gray-600">HKUST Business School</p>
+              <p class="text-sm text-gray-500">COBIT 5 and IT audit frameworks</p>
+            </div>
+
+            <div class="border-l-4 border-purple-600 pl-4">
+              <h4 class="font-bold text-lg">Forensic Accounting</h4>
+              <p class="text-sm text-gray-600">West Virginia University</p>
+              <p class="text-sm text-gray-500">Fraud detection and investigation techniques</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Languages -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl font-bold text-center mb-12">Languages</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card text-center">
+          <div class="text-4xl mb-3">🇬🇧</div>
+          <h3 class="text-xl font-bold mb-2">English</h3>
+          <p class="text-gray-600">Fluent / Native</p>
+          <p class="text-sm text-gray-500 mt-2">Business communication, technical writing, presentations</p>
+        </div>
+
+        <div class="card text-center">
+          <div class="text-4xl mb-3">🇵🇰</div>
+          <h3 class="text-xl font-bold mb-2">Urdu</h3>
+          <p class="text-gray-600">Native</p>
+          <p class="text-sm text-gray-500 mt-2">First language, full professional proficiency</p>
+        </div>
+
+        <div class="card text-center">
+          <div class="text-4xl mb-3">🇦🇪</div>
+          <h3 class="text-xl font-bold mb-2">Arabic</h3>
+          <p class="text-gray-600">Professional Working</p>
+          <p class="text-sm text-gray-500 mt-2">GCC business environment, client communications</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Strengths Summary -->
+  <section class="py-16 bg-gradient-to-br from-blue-600 to-indigo-700 text-white">
+    <div class="container mx-auto px-4 max-w-4xl text-center">
+      <h2 class="text-3xl font-bold mb-6">Why This Combination Matters</h2>
+      <p class="text-lg mb-8 opacity-90">
+        Traditional audit directors understand governance and risk. Technical specialists know Python and ML.
+        Few professionals bridge both worlds — combining board-level audit leadership with advanced data science
+        capabilities to transform internal audit from sample-based to 100% population testing.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6">
+          <div class="text-3xl font-bold mb-2">20+</div>
+          <div class="text-sm opacity-90">Years of Progressive Leadership</div>
+        </div>
+
+        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6">
+          <div class="text-3xl font-bold mb-2">Big 4</div>
+          <div class="text-sm opacity-90">Foundation (KPMG, EY)</div>
+        </div>
+
+        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6">
+          <div class="text-3xl font-bold mb-2">ML + Audit</div>
+          <div class="text-sm opacity-90">Unique Hybrid Expertise</div>
+        </div>
+      </div>
+
+      <div class="mt-12">
+        <a href="/projects/" class="inline-block bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:shadow-xl transition-all">
+          See Skills in Action
+        </a>
       </div>
     </div>
   </section>
