@@ -3,319 +3,101 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout title="About | Majid Mumtaz CIA, ACA, FCCA">
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-blue-50 to-white py-16">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          About <span class="text-gradient">Majid Mumtaz</span>
-        </h1>
-        <p class="text-xl text-gray-600">
-          Transforming Internal Audit Through Technology & Innovation
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Professional Background -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold mb-8">Professional Background</h2>
-
-        <div class="prose prose-lg max-w-none text-gray-700 space-y-6">
-          <p>
-            With over 20 years of progressive leadership in internal audit, risk management, and compliance, I have built a career bridging the gap between traditional audit methodologies and cutting-edge technology. My journey from Big 4 (Ernst & Young, KPMG) to leading audit functions for pre-IPO unicorns and diversified conglomerates across the GCC has equipped me with a unique perspective on enterprise risk and governance.
-          </p>
-
-          <p>
-            As an Internal Audit Director, I specialize in transforming audit functions from traditional sampling-based approaches to 100% population testing using advanced data analytics, machine learning, and automation. This shift not only enhances audit coverage but delivers measurable business value—evidenced by AED 7.7M in financial impact, $127M in M&A capital protected, and up to 82% reduction in fraud losses.
-          </p>
-
-          <p>
-            My technical expertise spans Python-based audit automation, machine learning for fraud detection (Isolation Forest, DBSCAN, K-Means clustering), and enterprise-grade dashboard development. Combined with deep knowledge of SOX 404, COSO, IIA Standards, and COBIT frameworks, I deliver solutions that satisfy both technical rigor and executive-level reporting requirements.
-          </p>
-
-          <p>
-            Currently serving as an independent consultant through Veritux Consulting Network, I provide board advisory, SOX 404 compliance, fraud detection, and audit function build-out services to family offices, pre-IPO companies, and enterprises across the Middle East. As a Golden Visa holder in the UAE, I am committed to contributing to the region's growing financial services and technology sectors.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Core Expertise Areas -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12">Core Expertise Areas</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <div class="text-4xl mb-4">🤖</div>
-            <h3 class="text-xl font-bold mb-3">Audit Automation & Digital Transformation</h3>
-            <p class="text-gray-600 text-sm">
-              Transitioning organizations from manual, sample-based auditing to automated 100% population testing using Python, ML, and data analytics.
-            </p>
-          </div>
-
-          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <div class="text-4xl mb-4">🔍</div>
-            <h3 class="text-xl font-bold mb-3">ML-Powered Fraud Detection & Forensics</h3>
-            <p class="text-gray-600 text-sm">
-              Advanced fraud detection using machine learning (Isolation Forest, DBSCAN), statistical analysis (Benford's Law), and forensic investigation techniques.
-            </p>
-          </div>
-
-          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <div class="text-4xl mb-4">✅</div>
-            <h3 class="text-xl font-bold mb-3">SOX 404, AML/CTF, PDPL Compliance</h3>
-            <p class="text-gray-600 text-sm">
-              Delivering clean Big 4 opinions for pre-IPO companies with zero material weaknesses. Expertise in ICFR, Sarbanes-Oxley, and regulatory compliance.
-            </p>
-          </div>
-
-          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <div class="text-4xl mb-4">📊</div>
-            <h3 class="text-xl font-bold mb-3">Advanced Data Analytics & Dashboards</h3>
-            <p class="text-gray-600 text-sm">
-              Enterprise-grade financial reporting, executive dashboards, and analytics using Python (Pandas, NumPy), Excel automation, and visualization tools.
-            </p>
-          </div>
-
-          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <div class="text-4xl mb-4">🏢</div>
-            <h3 class="text-xl font-bold mb-3">Enterprise Risk Management (COSO, COBIT)</h3>
-            <p class="text-gray-600 text-sm">
-              Board-facing risk advisory, COSO ERM framework implementation, and Three Lines of Defense model deployment for complex organizations.
-            </p>
-          </div>
-
-          <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <div class="text-4xl mb-4">💼</div>
-            <h3 class="text-xl font-bold mb-3">M&A Due Diligence & IPO Readiness</h3>
-            <p class="text-gray-600 text-sm">
-              Protected $127M in M&A capital through comprehensive due diligence. Guided pre-IPO companies to successful Big 4 clean opinions.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Certifications & Education -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12">Certifications & Education</h2>
-
-        <!-- Professional Certifications -->
-        <div class="mb-12">
-          <h3 class="text-2xl font-bold mb-6">Professional Certifications</h3>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-lg border-2 border-blue-200">
-              <div class="text-5xl mb-4">🎓</div>
-              <h4 class="text-xl font-bold mb-2">CIA</h4>
-              <p class="text-sm text-gray-600 mb-1">Certified Internal Auditor</p>
-              <p class="text-xs text-gray-500">The Institute of Internal Auditors (IIA)</p>
-            </div>
-
-            <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-lg border-2 border-blue-200">
-              <div class="text-5xl mb-4">📜</div>
-              <h4 class="text-xl font-bold mb-2">ACA</h4>
-              <p class="text-sm text-gray-600 mb-1">Chartered Accountant</p>
-              <p class="text-xs text-gray-500">Institute of Chartered Accountants in England and Wales (ICAEW)</p>
-            </div>
-
-            <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-lg border-2 border-blue-200">
-              <div class="text-5xl mb-4">🏅</div>
-              <h4 class="text-xl font-bold mb-2">FCCA</h4>
-              <p class="text-sm text-gray-600 mb-1">Fellow Chartered Certified Accountant</p>
-              <p class="text-xs text-gray-500">Association of Chartered Certified Accountants (ACCA)</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Executive Education -->
-        <div class="mb-12">
-          <h3 class="text-2xl font-bold mb-6">Executive Education</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
-              <div class="font-bold text-lg mb-1">Harvard Business School</div>
-              <p class="text-sm text-gray-600">Disruptive Strategy</p>
-            </div>
-
-            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
-              <div class="font-bold text-lg mb-1">COSO</div>
-              <p class="text-sm text-gray-600">Enterprise Risk Management - Integrating with Strategy and Performance</p>
-            </div>
-
-            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
-              <div class="font-bold text-lg mb-1">IBM</div>
-              <p class="text-sm text-gray-600">Machine Learning Professional Certificate</p>
-            </div>
-
-            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
-              <div class="font-bold text-lg mb-1">HKUST Business School</div>
-              <p class="text-sm text-gray-600">IT Governance and Enterprise Architecture</p>
-            </div>
-
-            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
-              <div class="font-bold text-lg mb-1">West Virginia University</div>
-              <p class="text-sm text-gray-600">Forensic Accounting Specialization</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Publications & Thought Leadership -->
-  <section class="py-16 bg-gradient-to-br from-blue-900 to-blue-800 text-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-4">Publications & Thought Leadership</h2>
-        <p class="text-center text-blue-100 mb-12">
-          6 books published on Amazon - Contributing knowledge to the internal audit and risk management profession
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Book 1 -->
-          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-            <div class="text-5xl mb-4">📘</div>
-            <h3 class="text-xl font-bold mb-3">Handbook of Risk Red Flags in Restaurants</h3>
-            <p class="text-blue-100 text-sm mb-4">
-              A practitioner's guide to preventing failure through early detection of risk indicators in restaurant operations.
-            </p>
-            <div class="flex justify-between items-center">
-              <div class="text-sm text-blue-200">January 2026</div>
-              <a href="https://www.amazon.com/dp/B0GDTBRZPM" target="_blank" rel="noopener noreferrer" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-colors">
-                Amazon →
-              </a>
-            </div>
-          </div>
-
-          <!-- Book 2 -->
-          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-            <div class="text-5xl mb-4">📗</div>
-            <h3 class="text-xl font-bold mb-3">The Un-Financial Risk Manager</h3>
-            <p class="text-blue-100 text-sm mb-4">
-              Protecting value in the real world - exploring emerging non-financial risks including ESG, cyber, and strategic risks.
-            </p>
-            <div class="flex justify-between items-center">
-              <div class="text-sm text-blue-200">January 2026</div>
-              <a href="https://www.amazon.com/dp/B0GDMW53GG" target="_blank" rel="noopener noreferrer" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-colors">
-                Amazon →
-              </a>
-            </div>
-          </div>
-
-          <!-- Book 3 -->
-          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-            <div class="text-5xl mb-4">📙</div>
-            <h3 class="text-xl font-bold mb-3">10 Forensic Accounting Skills</h3>
-            <p class="text-blue-100 text-sm mb-4">
-              Practical handbook on fraud detection techniques, forensic investigation methodologies, and evidence management for auditors.
-            </p>
-            <div class="flex justify-between items-center">
-              <div class="text-sm text-blue-200">December 2025</div>
-              <a href="https://www.amazon.com/dp/B0G7T4X3RT" target="_blank" rel="noopener noreferrer" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-colors">
-                Amazon →
-              </a>
-            </div>
-          </div>
-
-          <!-- Book 4 -->
-          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-            <div class="text-5xl mb-4">📕</div>
-            <h3 class="text-xl font-bold mb-3">The Power Professional</h3>
-            <p class="text-blue-100 text-sm mb-4">
-              A tactical manual for dominance - strategic insights for career advancement and professional influence.
-            </p>
-            <div class="flex justify-between items-center">
-              <div class="text-sm text-blue-200">December 2025</div>
-              <a href="https://www.amazon.com/dp/B0G51LS6D6" target="_blank" rel="noopener noreferrer" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-colors">
-                Amazon →
-              </a>
-            </div>
-          </div>
-
-          <!-- Book 5 -->
-          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-            <div class="text-5xl mb-4">📔</div>
-            <h3 class="text-xl font-bold mb-3">ITGC Program Guide</h3>
-            <p class="text-blue-100 text-sm mb-4">
-              A strategic approach to IT General Controls security, compliance, and enterprise value protection.
-            </p>
-            <div class="flex justify-between items-center">
-              <div class="text-sm text-blue-200">June 2025</div>
-              <a href="https://www.amazon.com/dp/B0FCG96QS8" target="_blank" rel="noopener noreferrer" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-colors">
-                Amazon →
-              </a>
-            </div>
-          </div>
-
-          <!-- Book 6 -->
-          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-            <div class="text-5xl mb-4">📓</div>
-            <h3 class="text-xl font-bold mb-3">Internal Audit Guide for Dine-In Locations in the Middle East</h3>
-            <p class="text-blue-100 text-sm mb-4">
-              Comprehensive audit guide specifically designed for restaurant operations in the GCC region.
-            </p>
-            <div class="flex justify-between items-center">
-              <div class="text-sm text-blue-200">February 2025</div>
-              <a href="https://www.amazon.com/dp/B0DY2NRPQ9" target="_blank" rel="noopener noreferrer" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-colors">
-                Amazon →
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Amazon Author Page Link -->
-        <div class="text-center mt-12">
-          <p class="text-blue-100 mb-4">Available in Kindle eBook and Paperback formats</p>
-          <a href="https://www.amazon.com/stores/Majid-Mumtaz/author/B0DY3F5QKR" target="_blank" rel="noopener noreferrer" class="inline-block bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-            View All Books on Amazon Author Page →
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Professional Philosophy -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-8">Professional Philosophy</h2>
-
-        <div class="bg-blue-50 border-l-4 border-blue-600 p-8 rounded-r-lg">
-          <blockquote class="text-lg text-gray-700 italic mb-4">
-            "The future of internal audit lies not in replacing the auditor, but in empowering them with tools that elevate their work from sampling to certainty, from reactive to predictive, and from compliance to strategic value creation."
-          </blockquote>
-          <p class="text-gray-600">
-            I believe in transitioning organizations from traditional sample-based auditing (typically &lt;5% coverage) to 100% population testing using automation and analytics. This shift doesn't just improve coverage—it transforms audit from a cost center into a value driver by identifying systemic issues, preventing fraud, and providing real-time business intelligence to leadership.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-6">Let's Work Together</h2>
-      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-        Whether you need to build an audit function from scratch, achieve SOX 404 compliance, or implement ML-powered fraud detection, I can help transform your risk and governance capabilities.
+<BaseLayout title="About | Majid Mumtaz - Executive Profile">
+  <section class="min-h-[60vh] flex items-center pt-40 overflow-hidden">
+    <div class="mesh-bg opacity-50"></div>
+    <div class="grid-pattern opacity-30"></div>
+    
+    <div class="container text-center reveal">
+      <span class="inline-block px-4 py-2 mb-6 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
+        Leadership Profile
+      </span>
+      <h1 class="mb-4">Executive <span class="text-white">Profile.</span></h1>
+      <p class="text-xl text-slate-400 font-medium mx-auto max-w-2xl">
+        Transitioning Internal Audit from a Compliance Cost Center to a Profit Protection Engine.
       </p>
+    </div>
+  </section>
 
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href={`${base}consulting/`} class="btn btn-primary text-lg">
-          Explore Consulting Services
-        </a>
-        <a href={`${base}contact/`} class="btn btn-secondary text-lg">
-          Get in Touch
-        </a>
+  <!-- Profile Grid -->
+  <section class="py-24 bg-slate-900/30">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start w-full text-left">
+        <div class="reveal">
+          <h2 class="text-white mb-10 text-4xl">Background.</h2>
+          <div class="space-y-6 text-slate-400 text-lg leading-relaxed">
+            <p>
+              With over 20 years of progressive leadership in internal audit, risk management, and compliance, I have built a career bridging the gap between traditional audit methodologies and cutting-edge technology.
+            </p>
+            <p>
+              My journey from Big 4 (Ernst & Young, KPMG) to leading audit functions for pre-IPO unicorns and diversified conglomerates across the GCC has equipped me with a unique perspective on enterprise risk and governance.
+            </p>
+            <p>
+              As a <strong class="text-white">Chief Audit Executive</strong>, I specialize in transforming audit functions from traditional sampling-based approaches to 100% population testing using advanced data analytics, machine learning, and automation.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-card p-12 text-left reveal">
+          <h3 class="text-white mb-8 text-2xl font-black uppercase tracking-widest text-blue-400">Impact Metrics.</h3>
+          <div class="space-y-8">
+            <div class="flex items-center gap-6 group">
+              <div class="w-16 h-16 rounded-2xl bg-blue-600/10 flex items-center justify-center text-3xl group-hover:bg-blue-600/20 transition-colors">💰</div>
+              <div>
+                <div class="text-white text-xl font-black">AED 3.2M / Year</div>
+                <div class="text-slate-500 text-xs uppercase tracking-widest font-bold">Recurring Revenue Recovery</div>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-6 group">
+              <div class="w-16 h-16 rounded-2xl bg-emerald-600/10 flex items-center justify-center text-3xl group-hover:bg-emerald-600/20 transition-colors">📉</div>
+              <div>
+                <div class="text-white text-xl font-black">82% Reduction</div>
+                <div class="text-slate-500 text-xs uppercase tracking-widest font-bold">In Fraud Losses (SAR 5.1M to &lt;900K)</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-6 group">
+              <div class="w-16 h-16 rounded-2xl bg-purple-600/10 flex items-center justify-center text-3xl group-hover:bg-purple-600/20 transition-colors">🚀</div>
+              <div>
+                <div class="text-white text-xl font-black">97% Rating</div>
+                <div class="text-slate-500 text-xs uppercase tracking-widest font-bold">SOX Compliance (IPO Readiness)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise Areas -->
+  <section>
+    <div class="container">
+      <h2 class="text-white mb-20 text-center">Core <span class="text-blue-500">Expertise.</span></h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
+        <div class="glass-card p-10 text-left hover:border-blue-500/30 transition-all group">
+          <div class="text-3xl mb-6 opacity-60 group-hover:opacity-100 transition-opacity">🤖</div>
+          <h3 class="text-white mb-4 text-xl font-bold">Audit Automation</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Transitioning organizations from manual, sample-based auditing to automated 100% population testing using Python, ML, and data analytics.
+          </p>
+        </div>
+
+        <div class="glass-card p-10 text-left hover:border-blue-500/30 transition-all group">
+          <div class="text-3xl mb-6 opacity-60 group-hover:opacity-100 transition-opacity">🔍</div>
+          <h3 class="text-white mb-4 text-xl font-bold">Neural-Net Fraud</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Advanced fraud detection using machine learning (Isolation Forest, DBSCAN) and statistical analysis (Benford's Law).
+          </p>
+        </div>
+
+        <div class="glass-card p-10 text-left hover:border-blue-500/30 transition-all group">
+          <div class="text-3xl mb-6 opacity-60 group-hover:opacity-100 transition-opacity">✅</div>
+          <h3 class="text-white mb-4 text-xl font-bold">IPO Readiness</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Delivering clean Big 4 opinions for pre-IPO companies with zero material weaknesses. Expertise in ICFR and SOX.
+          </p>
+        </div>
       </div>
     </div>
   </section>
