@@ -1,0 +1,42 @@
+PORTFOLIO WEBSITE - GITHUB REPOSITORY SETUP
+==============================================
+
+STEP 1: CREATE REPOSITORY
+--------------------------
+Click this link (will open GitHub repository creation page):
+https://github.com/new
+
+Fill in EXACTLY as shown:
+• Repository name: portfolio_my
+• Description: Professional portfolio showcasing internal audit automation and ML-powered fraud detection projects
+• Visibility: Public ✓
+• Add a README: NO (unchecked)
+• Add .gitignore: NO (unchecked)
+• Choose a license: NO (unchecked)
+
+Click: "Create repository"
+
+STEP 2: GET YOUR USERNAME
+--------------------------
+After creating the repository, you'll see a URL like:
+https://github.com/YOUR_USERNAME/portfolio_my
+
+Copy YOUR_USERNAME from that URL
+
+STEP 3: RUN THESE COMMANDS
+--------------------------
+Open Git Bash in the portfolio_my folder and run:
+
+git remote add origin https://github.com/YOUR_USERNAME/portfolio_my.git
+git push -u origin main
+
+(Replace YOUR_USERNAME with the username you copied)
+
+STEP 4: ENABLE GITHUB PAGES
+----------------------------
+1. Go to: https://github.com/YOUR_USERNAME/portfolio_my/settings/pages
+2. Under "Source", select: "GitHub Actions"
+3. Done! Your site will be live at:
+   https://YOUR_USERNAME.github.io/portfolio_my/
+
+TOTAL TIME: About 2 minutes
