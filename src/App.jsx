@@ -296,6 +296,15 @@ const App = () => {
               viewport={{ once: true }}
               className="text-center mb-20"
             >
+              <div className="flex justify-center mb-10">
+                <div className="relative w-36 h-36 rounded-full overflow-hidden border-2 border-white/10 shadow-2xl ring-4 ring-blue-500/20">
+                  <img
+                    src="/portfolio_my/images/majid-profile.jpg"
+                    alt="Majid Mumtaz"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
               <span className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 mb-6 block">About</span>
               <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] text-white mb-8">Board-Facing Internal Audit Director.</h2>
               <p className="text-slate-400 text-xl leading-relaxed max-w-4xl mx-auto">
