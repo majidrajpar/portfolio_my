@@ -9,7 +9,7 @@ const icons = {
   'Data Intelligence': <Binary className="w-8 h-8 text-blue-400" />,
 };
 
-const ProjectCard = ({ title, description, category, impact, techStack, image, index }) => {
+const ProjectCard = ({ id, title, description, category, impact, techStack, image, index }) => {
   return (
     <motion.article
       initial={{ opacity: 0, y: 30 }}
@@ -64,10 +64,10 @@ const ProjectCard = ({ title, description, category, impact, techStack, image, i
       </div>
 
         <a
-          href={`mailto:majidrajpar@gmail.com?subject=Source Code Request: ${encodeURIComponent(title)}&body=Hello Majid,%0A%0AI am interested in reviewing the source code for the "${encodeURIComponent(title)}" project to assess your technical capabilities.%0A%0AOrganization: %0ARole/Title: %0APurpose: %0A%0AThank you,`}
+          href={`#project/${id}`}
           className="inline-flex items-center text-white font-black text-[10px] uppercase tracking-[0.2em] hover:text-blue-400 transition-colors"
         >
-          Request Source Code
+          View Project Details
           <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
         </a>
       </div>
