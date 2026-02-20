@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
+import { FileText } from 'lucide-react';
 import Navbar from './components/Navbar';
 import MetricCard from './components/MetricCard';
 import ProjectCard from './components/ProjectCard';
+import DownloadCard from './components/DownloadCard';
 
 const App = () => {
   const { scrollYProgress } = useScroll();
@@ -12,27 +14,41 @@ const App = () => {
     restDelta: 0.001
   });
 
+  // State for downloadable documents
+  const [documents, setDocuments] = useState([]);
+
+  // Load documents from JSON
+  useEffect(() => {
+    fetch('/portfolio_my/downloads/documents.json')
+      .then(res => res.json())
+      .then(data => setDocuments(data))
+      .catch(err => console.error('Failed to load documents:', err));
+  }, []);
+
   const featuredProjects = [
     {
       title: 'Neural-Net Fraud Detection',
       description: 'Advanced machine learning architecture using Isolation Forest and K-Means clustering to analyze 2.3M+ monthly transactions.',
       category: 'Fraud Forensics',
       impact: '82% Reduction in Fraud Loss (SAR 5.1M to <900K)',
-      techStack: ['Python', 'scikit-learn', 'Neural Networks']
+      techStack: ['Python', 'scikit-learn', 'Neural Networks'],
+      image: '/portfolio_my/images/projects/fraud-detection/fraud-dashboard.webp'
     },
     {
       title: 'Audit Automation Ecosystem',
       description: 'Enterprise-grade automation framework delivering 100% population testing across multi-entity GCC operations.',
       category: 'Audit Transformation',
       impact: '70% reduction in audit preparation cycle time',
-      techStack: ['Python', 'YAML', 'IIA Compliance']
+      techStack: ['Python', 'YAML', 'IIA Compliance'],
+      image: '/portfolio_my/images/projects/audit-tools/findings-tracker.webp'
     },
     {
       title: 'Executive Analytics Hub',
       description: 'Proprietary financial reporting engine providing real-time board-level visibility into capital leaks and recovery.',
       category: 'Strategic Dashboards',
       impact: '85% automated reporting efficiency achieved',
-      techStack: ['xlsxwriter', 'Pandas', 'Power BI']
+      techStack: ['xlsxwriter', 'Pandas', 'Power BI'],
+      image: '/portfolio_my/images/projects/finance-dashboard/executive-dashboard.webp'
     }
   ];
 
@@ -68,23 +84,110 @@ const App = () => {
 
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
               <a href="#projects" className="btn-primary">Analyze Case Studies</a>
-              <a href="#" className="btn-secondary">Download Executive CV</a>
+              <a href="/portfolio_my/cv/Majid_Mumtaz_CV.pdf" download="Majid_Mumtaz_CV.pdf" className="btn-secondary">Download Executive CV</a>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Metrics Section */}
-      <section className="py-40 bg-slate-900/50 relative overflow-hidden">
-        <div className="container px-8 mx-auto max-w-6xl">
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-center mb-32"
-          >
-            <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] text-white mb-6">Proven Capital Safeguard.</h2>
+      {/* About Section */}
+      <section id="about" className="py-40 bg-slate-900/50 relative overflow-hidden">
+        <div className="container px-8 mx-auto max-w-7xl">
+          {/* Bio Section */}
+          <div className="max-w-5xl mx-auto mb-40">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-20"
+            >
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 mb-6 block">About</span>
+              <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] text-white mb-8">Board-Facing Internal Audit Director.</h2>
+              <p className="text-slate-400 text-xl leading-relaxed max-w-4xl mx-auto">
+                <strong className="text-white">20+ years</strong> of progressive leadership experience protecting enterprise value across the GCC.
+                Recognized industry thought leader and <strong className="text-white">published author</strong> specializing in ITGC, SOX 404 compliance,
+                and AI-driven fraud detection.
+              </p>
+            </motion.div>
+
+            {/* Core Competencies */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="glass-card p-12 mb-16"
+            >
+              <h3 className="text-white text-2xl font-black mb-8 text-center">Core Competencies</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-slate-300">
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-400 mt-1">▸</span>
+                  <span>Corporate Governance & SOX 404 / ICFR</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-400 mt-1">▸</span>
+                  <span>Enterprise Risk Management (COSO ERM)</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-400 mt-1">▸</span>
+                  <span>M&A Due Diligence & Capital Protection</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-400 mt-1">▸</span>
+                  <span>Fraud Prevention & Forensic Analytics</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-400 mt-1">▸</span>
+                  <span>Data-Driven Audit Automation (Python/ML)</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-blue-400 mt-1">▸</span>
+                  <span>Big 4 Co-sourcing & IPO Readiness</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Credentials */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+            >
+              <div className="glass-card p-8 text-center">
+                <div className="text-4xl mb-4">🎓</div>
+                <h4 className="text-white font-black text-sm uppercase tracking-wider mb-3">Professional</h4>
+                <div className="text-slate-400 text-sm space-y-2">
+                  <div>CIA (Certified Internal Auditor)</div>
+                  <div>ACA, FCCA (Chartered Accountant)</div>
+                  <div>COSO ERM Certificate</div>
+                </div>
+              </div>
+              <div className="glass-card p-8 text-center">
+                <div className="text-4xl mb-4">🏛️</div>
+                <h4 className="text-white font-black text-sm uppercase tracking-wider mb-3">Executive</h4>
+                <div className="text-slate-400 text-sm space-y-2">
+                  <div>Harvard Business School Online</div>
+                  <div>Disruptive Strategy</div>
+                  <div>Risk Management (NYIF)</div>
+                </div>
+              </div>
+              <div className="glass-card p-8 text-center">
+                <div className="text-4xl mb-4">🤖</div>
+                <h4 className="text-white font-black text-sm uppercase tracking-wider mb-3">Technical</h4>
+                <div className="text-slate-400 text-sm space-y-2">
+                  <div>Machine Learning (IBM)</div>
+                  <div>Python/Pandas Analytics</div>
+                  <div>Forensic Accounting (WVU)</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Metrics Section */}
+          <div className="text-center mb-32">
+            <h3 className="text-[clamp(2rem,5vw,3.5rem)] text-white mb-6">Proven Capital Safeguard.</h3>
             <p className="text-slate-400 text-lg">Delivering 100% population testing across GCC multi-entity operations.</p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <MetricCard index={0} value="AED 3.2M" label="Annual Recovery" icon="💰" isSuccess />
@@ -117,47 +220,263 @@ const App = () => {
           </div>
           
           <div className="flex justify-center">
-             <a href="#" className="group flex items-center gap-4 text-white font-black tracking-[0.4em] uppercase text-xs hover:text-blue-400 transition-all border-b border-white/20 pb-4">
-               Browse Strategic Vault
+             <a href="#resources" className="group flex items-center gap-4 text-white font-black tracking-[0.4em] uppercase text-xs hover:text-blue-400 transition-all border-b border-white/20 pb-4">
+               Browse Resources Vault
                <motion.span animate={{ x: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 2 }}>→</motion.span>
              </a>
           </div>
         </div>
       </section>
 
-      {/* Footer CTA */}
-      <section className="py-60 relative overflow-hidden">
-        <div className="mesh-bg opacity-30" />
-        <div className="container px-8 mx-auto max-w-5xl">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            className="glass-card p-24 relative overflow-hidden text-center group"
-          >
-            <div className="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-            <div className="relative z-10">
-              <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] text-white mb-12">Ready to Transform?</h2>
-              <p className="mb-20 text-slate-300 text-xl font-medium max-w-2xl mx-auto leading-relaxed">
-                Strategic board-level leadership for organizations seeking to build high-performance audit functions.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-                <a href="#" className="btn-primary">Schedule Advisory</a>
-                <a href="#" className="btn-secondary">Inquire</a>
-              </div>
+      {/* Resources Section */}
+      <section id="resources" className="py-40 bg-slate-900/30 relative overflow-hidden">
+        <div className="container px-8 mx-auto max-w-7xl">
+          {/* Section Header */}
+          <div className="text-center mb-24">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 mb-6 block"
+            >
+              Free Resources
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-[clamp(2.5rem,6vw,4.5rem)] text-white mb-8"
+            >
+              Downloads & Publications
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed"
+            >
+              Audit frameworks, compliance guides, and thought leadership content shared on LinkedIn - available for free download.
+            </motion.p>
+          </div>
+
+          {/* Downloads Grid */}
+          {documents.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+              {documents.map((doc, index) => (
+                <DownloadCard key={doc.id} {...doc} />
+              ))}
             </div>
-          </motion.div>
+          ) : (
+            <div className="text-center text-slate-500 mb-20">
+              <p>Documents will be available soon. Check back later!</p>
+            </div>
+          )}
+
+          {/* CV Featured Download */}
+          <div className="text-center">
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              href="/portfolio_my/cv/Majid_Mumtaz_CV.pdf"
+              download="Majid_Mumtaz_CV.pdf"
+              className="btn-primary inline-flex items-center gap-3"
+            >
+              <FileText size={20} />
+              Download Full Executive CV
+            </motion.a>
+          </div>
         </div>
       </section>
 
-      <footer className="py-20 bg-slate-950/50 border-t border-white/5">
+      {/* Services Section */}
+      <section id="services" className="py-40 relative overflow-hidden bg-slate-900/30">
+        <div className="mesh-bg opacity-20" />
+        <div className="container px-8 mx-auto max-w-7xl">
+          {/* Header */}
+          <div className="text-center mb-24">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 mb-6 block"
+            >
+              Advisory Services
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-[clamp(2.5rem,6vw,4.5rem)] text-white mb-8"
+            >
+              Fractional Leadership for UAE & KSA.
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-slate-400 text-xl max-w-3xl mx-auto leading-relaxed"
+            >
+              Board-level advisory and fractional executive services for organizations seeking to elevate internal audit,
+              risk management, and corporate governance functions.
+            </motion.p>
+          </div>
+
+          {/* Service Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
+            {/* Fractional Internal Audit */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="glass-card p-10 hover:border-blue-500/30 transition-all group"
+            >
+              <div className="text-5xl mb-6">🔍</div>
+              <h3 className="text-white text-2xl font-black mb-4">Fractional Internal Audit</h3>
+              <p className="text-slate-400 mb-6 leading-relaxed">
+                Part-time Chief Audit Executive (CAE) services delivering enterprise-grade audit functions without full-time overhead.
+              </p>
+              <ul className="space-y-3 text-sm text-slate-300">
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-400 mt-1">✓</span>
+                  <span>Risk-based audit planning & execution</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-400 mt-1">✓</span>
+                  <span>100% population testing automation</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-400 mt-1">✓</span>
+                  <span>Audit committee reporting & board advisory</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-400 mt-1">✓</span>
+                  <span>Team building & capability development</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Risk Advisory */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="glass-card p-10 hover:border-emerald-500/30 transition-all group"
+            >
+              <div className="text-5xl mb-6">⚡</div>
+              <h3 className="text-white text-2xl font-black mb-4">Risk Advisory</h3>
+              <p className="text-slate-400 mb-6 leading-relaxed">
+                Enterprise risk management frameworks designed for GCC regulatory landscape and high-growth environments.
+              </p>
+              <ul className="space-y-3 text-sm text-slate-300">
+                <li className="flex items-start gap-3">
+                  <span className="text-emerald-400 mt-1">✓</span>
+                  <span>COSO ERM framework implementation</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-emerald-400 mt-1">✓</span>
+                  <span>Fraud prevention & detection programs</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-emerald-400 mt-1">✓</span>
+                  <span>M&A due diligence & capital protection</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-emerald-400 mt-1">✓</span>
+                  <span>Cybersecurity & IT risk assessments</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Corporate Governance */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="glass-card p-10 hover:border-purple-500/30 transition-all group"
+            >
+              <div className="text-5xl mb-6">🏛️</div>
+              <h3 className="text-white text-2xl font-black mb-4">Corporate Governance</h3>
+              <p className="text-slate-400 mb-6 leading-relaxed">
+                SOX 404 compliance and governance frameworks for pre-IPO organizations and family offices.
+              </p>
+              <ul className="space-y-3 text-sm text-slate-300">
+                <li className="flex items-start gap-3">
+                  <span className="text-purple-400 mt-1">✓</span>
+                  <span>SOX 404 / ICFR implementation</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-purple-400 mt-1">✓</span>
+                  <span>IPO readiness assessments</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-purple-400 mt-1">✓</span>
+                  <span>Board charter & committee design</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-purple-400 mt-1">✓</span>
+                  <span>Saudi CMA & UAE regulatory compliance</span>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* Geographic Focus */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="glass-card p-12 text-center mb-16"
+          >
+            <h3 className="text-white text-2xl font-black mb-6">Geographic Focus</h3>
+            <div className="flex flex-wrap justify-center gap-8 text-slate-300">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">🇦🇪</span>
+                <span className="font-bold">UAE (Dubai, Golden Visa)</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">🇸🇦</span>
+                <span className="font-bold">Saudi Arabia (KSA)</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">🌍</span>
+                <span className="font-bold">GCC Multi-Entity Operations</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* CTA */}
+          <div className="text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-slate-400 text-lg mb-8">Ready to elevate your audit and risk functions?</p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#contact" className="btn-primary">Schedule Advisory</a>
+                <a href="mailto:majidrajpar@gmail.com" className="btn-secondary">Email Inquiry</a>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <footer id="contact" className="py-20 bg-slate-950/50 border-t border-white/5">
         <div className="container px-8 mx-auto text-center">
           <span className="text-4xl font-black tracking-tighter text-white mb-6 block">MAJID MUMTAZ</span>
           <p className="text-slate-500 font-bold uppercase tracking-[0.4em] text-[10px] mb-16">Chief Audit Executive | Head of Audit & Risk</p>
           
           <div className="flex flex-wrap justify-center gap-16 mb-20">
             <a href="mailto:majidrajpar@gmail.com" className="text-slate-400 hover:text-white transition-colors text-sm uppercase tracking-widest font-black">Email</a>
-            <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" className="text-slate-400 hover:text-white transition-colors text-sm uppercase tracking-widest font-black">LinkedIn</a>
-            <a href="https://veritux.com/consultants/majid-mumtaz/" target="_blank" className="text-slate-400 hover:text-white transition-colors text-sm uppercase tracking-widest font-black">Veritux</a>
+            <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors text-sm uppercase tracking-widest font-black">LinkedIn</a>
+            <a href="tel:+971507471708" className="text-slate-400 hover:text-white transition-colors text-sm uppercase tracking-widest font-black">+971 507 471 708</a>
           </div>
 
           <div className="text-slate-700 text-[9px] uppercase tracking-[0.5em] font-black">

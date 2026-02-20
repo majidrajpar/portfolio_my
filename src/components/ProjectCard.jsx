@@ -9,23 +9,36 @@ const icons = {
   'Data Intelligence': <Binary className="w-8 h-8 text-blue-400" />,
 };
 
-const ProjectCard = ({ title, description, category, impact, techStack, index }) => {
+const ProjectCard = ({ title, description, category, impact, techStack, image, index }) => {
   return (
-    <motion.article 
+    <motion.article
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className="glass-card p-10 flex flex-col h-full group cursor-default relative overflow-hidden"
+      className="glass-card p-0 flex flex-col h-full group cursor-default relative overflow-hidden"
     >
-      <div className="mb-8 flex justify-between items-start">
-        <div className="p-4 bg-white/5 rounded-2xl group-hover:scale-110 group-hover:bg-white/10 transition-all duration-700">
-          {icons[category] || <Database className="w-8 h-8 text-slate-400" />}
+      {/* Project Screenshot */}
+      {image && (
+        <div className="relative h-48 overflow-hidden">
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900/90" />
         </div>
-        <span className="text-[10px] font-black uppercase tracking-[0.3em] bg-blue-500/10 text-blue-400 px-4 py-1.5 rounded-full border border-blue-500/20">
-          {category}
-        </span>
-      </div>
+      )}
+
+      <div className="p-10 flex flex-col flex-1">
+        <div className="mb-8 flex justify-between items-start">
+          <div className="p-4 bg-white/5 rounded-2xl group-hover:scale-110 group-hover:bg-white/10 transition-all duration-700">
+            {icons[category] || <Database className="w-8 h-8 text-slate-400" />}
+          </div>
+          <span className="text-[10px] font-black uppercase tracking-[0.3em] bg-blue-500/10 text-blue-400 px-4 py-1.5 rounded-full border border-blue-500/20">
+            {category}
+          </span>
+        </div>
 
       <h3 className="text-2xl font-black text-white mb-4 leading-tight group-hover:text-blue-400 transition-colors">
         {title}
@@ -50,13 +63,14 @@ const ProjectCard = ({ title, description, category, impact, techStack, index })
         ))}
       </div>
 
-      <a
-        href="#"
-        className="inline-flex items-center text-white font-black text-[10px] uppercase tracking-[0.2em] hover:text-blue-400 transition-colors"
-      >
-        Analyze Case Study
-        <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-      </a>
+        <a
+          href="#"
+          className="inline-flex items-center text-white font-black text-[10px] uppercase tracking-[0.2em] hover:text-blue-400 transition-colors"
+        >
+          Analyze Case Study
+          <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+        </a>
+      </div>
     </motion.article>
   );
 };
