@@ -28,7 +28,15 @@
       "Bash(find:*)",
       "Bash(git checkout:*)",
       "Bash(grep:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(file:*)",
+      "Bash(wc:*)",
+      "Bash(npm run dev:*)",
+      "Bash(pip install:*)",
+      "Bash(npx vite build)",
+      "Bash(npx vite preview:*)",
+      "Bash(xargs:*)",
+      "Bash(gh run view:*)"
     ]
   }
 }
