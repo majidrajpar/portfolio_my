@@ -6,6 +6,7 @@ import MetricCard from './components/MetricCard';
 import ProjectCard from './components/ProjectCard';
 import DownloadCard from './components/DownloadCard';
 import ProjectDetail from './components/ProjectDetail';
+import AllProjectsGallery from './components/AllProjectsGallery';
 
 const App = () => {
   const { scrollYProgress } = useScroll();
@@ -20,6 +21,7 @@ const App = () => {
 
   // State for project detail view
   const [selectedProject, setSelectedProject] = useState(null);
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
   // Load documents from JSON
   useEffect(() => {
@@ -173,7 +175,7 @@ const App = () => {
     }
   ], []);
 
-  // Handle hash-based routing for project details
+  // Handle hash-based routing for project details and all-projects gallery
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash;
@@ -182,11 +184,16 @@ const App = () => {
         const project = allProjects.find(p => p.id === projectId);
         if (project) {
           setSelectedProject(project);
-          // Scroll to top when opening project detail
+          setShowAllProjects(false);
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+      } else if (hash === '#all-projects') {
+        setShowAllProjects(true);
+        setSelectedProject(null);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         setSelectedProject(null);
+        setShowAllProjects(false);
       }
     };
 
@@ -200,13 +207,25 @@ const App = () => {
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-blue-500 origin-left z-[100]" style={{ scaleX }} />
       <Navbar />
 
+      {/* All Projects Gallery */}
+      {showAllProjects && !selectedProject && (
+        <AllProjectsGallery
+          projects={allProjects}
+          onClose={() => {
+            window.location.hash = '';
+            setShowAllProjects(false);
+          }}
+        />
+      )}
+
       {/* Project Detail View */}
       {selectedProject && (
         <ProjectDetail
           project={selectedProject}
           onClose={() => {
-            window.location.hash = '';
+            window.location.hash = '#all-projects';
             setSelectedProject(null);
+            setShowAllProjects(true);
           }}
         />
       )}
@@ -337,6 +356,47 @@ const App = () => {
             </motion.div>
           </div>
 
+          {/* Published Books */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-40"
+          >
+            <div className="text-center mb-16">
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 mb-6 block">Published Author</span>
+              <h3 className="text-[clamp(2rem,5vw,3.5rem)] text-white mb-4">6 Books on Amazon.</h3>
+              <p className="text-slate-400 text-lg">Sharing knowledge across internal audit, risk management, and forensic accounting.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {[
+                { emoji: '📘', title: 'Handbook of Risk Red Flags in Restaurants', desc: "A practitioner's guide to preventing failure through early detection of risk indicators in restaurant operations.", date: 'January 2026', url: 'https://www.amazon.com/dp/B0GDTBRZPM' },
+                { emoji: '📗', title: 'The Un-Financial Risk Manager', desc: 'Protecting value in the real world — exploring emerging non-financial risks including ESG, cyber, and strategic risks.', date: 'January 2026', url: 'https://www.amazon.com/dp/B0GDMW53GG' },
+                { emoji: '📙', title: '10 Forensic Accounting Skills', desc: 'Practical handbook on fraud detection techniques, forensic investigation methodologies, and evidence management for auditors.', date: 'December 2025', url: 'https://www.amazon.com/dp/B0G7T4X3RT' },
+                { emoji: '📕', title: 'The Power Professional', desc: 'A tactical manual for dominance — strategic insights for career advancement and professional influence.', date: 'December 2025', url: 'https://www.amazon.com/dp/B0G51LS6D6' },
+                { emoji: '📔', title: 'ITGC Program Guide', desc: 'A strategic approach to IT General Controls security, compliance, and enterprise value protection.', date: 'June 2025', url: 'https://www.amazon.com/dp/B0FCG96QS8' },
+                { emoji: '📓', title: 'Internal Audit Guide for Dine-In Locations in the Middle East', desc: 'Comprehensive audit guide specifically designed for restaurant operations in the GCC region.', date: 'February 2025', url: 'https://www.amazon.com/dp/B0DY2NRPQ9' },
+              ].map((book) => (
+                <div key={book.title} className="glass-card p-8 flex flex-col group hover:border-blue-500/30 transition-all">
+                  <div className="text-4xl mb-4">{book.emoji}</div>
+                  <h4 className="text-white font-black text-base mb-3 leading-snug group-hover:text-blue-400 transition-colors">{book.title}</h4>
+                  <p className="text-slate-400 text-sm leading-relaxed flex-1 mb-6">{book.desc}</p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-500 text-xs">{book.date}</span>
+                    <a href={book.url} target="_blank" rel="noopener noreferrer" className="text-[10px] font-black uppercase tracking-widest text-blue-400 hover:text-white transition-colors border border-blue-500/30 hover:border-white/30 px-3 py-1.5 rounded-full">Amazon →</a>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <a href="https://www.amazon.com/stores/Majid-Mumtaz/author/B0DY3F5QKR" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-block">
+                View All Books on Amazon Author Page →
+              </a>
+            </div>
+          </motion.div>
+
           {/* Metrics Section */}
           <div className="text-center mb-32">
             <h3 className="text-[clamp(2rem,5vw,3.5rem)] text-white mb-6">Proven Capital Safeguard.</h3>
@@ -367,75 +427,17 @@ const App = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-32">
-            {featuredProjects.map((project, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
+            {featuredProjects.slice(0, 2).map((project, i) => (
               <ProjectCard key={project.title} index={i} {...project} />
             ))}
           </div>
           
           <div className="flex justify-center">
-             <a href="#projects-gallery" className="group flex items-center gap-4 text-white font-black tracking-[0.4em] uppercase text-xs hover:text-blue-400 transition-all border-b border-white/20 pb-4">
+             <a href="#all-projects" className="group flex items-center gap-4 text-white font-black tracking-[0.4em] uppercase text-xs hover:text-blue-400 transition-all border-b border-white/20 pb-4">
                View All Projects
                <motion.span animate={{ x: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 2 }}>→</motion.span>
              </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Full Projects Gallery */}
-      <section id="projects-gallery" className="py-40 bg-slate-900/30 relative overflow-hidden">
-        <div className="container px-8 mx-auto max-w-7xl">
-          {/* Section Header */}
-          <div className="text-center mb-24">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 mb-6 block"
-            >
-              Complete Portfolio
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-[clamp(2.5rem,6vw,4.5rem)] text-white mb-8"
-            >
-              All Projects & Solutions
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-slate-400 text-xl max-w-3xl mx-auto leading-relaxed"
-            >
-              Enterprise-grade audit, risk, and compliance solutions built for GCC operations.
-              From fraud detection to governance frameworks.
-            </motion.p>
-          </div>
-
-          {/* All Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-20">
-            {allProjects.map((project, i) => (
-              <ProjectCard key={project.title} index={i} {...project} />
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div className="text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <p className="text-slate-400 text-lg mb-8">Interested in building similar solutions for your organization?</p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <a href="#services" className="btn-primary">Explore Services</a>
-                <a href="#resources" className="btn-secondary">Download Resources</a>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
@@ -688,7 +690,6 @@ const App = () => {
           <div className="flex flex-wrap justify-center gap-16 mb-20">
             <a href="mailto:majidrajpar@gmail.com" className="text-slate-400 hover:text-white transition-colors text-sm uppercase tracking-widest font-black">Email</a>
             <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors text-sm uppercase tracking-widest font-black">LinkedIn</a>
-            <a href="tel:+971507471708" className="text-slate-400 hover:text-white transition-colors text-sm uppercase tracking-widest font-black">+971 507 471 708</a>
           </div>
 
           <div className="text-slate-700 text-[9px] uppercase tracking-[0.5em] font-black">
