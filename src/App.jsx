@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { FileText } from 'lucide-react';
 import Navbar from './components/Navbar';
@@ -105,7 +105,7 @@ const App = () => {
     }
   ];
 
-  const allProjects = [
+  const allProjects = useMemo(() => [
     ...featuredProjects,
     {
       id: 'enterprise-audit-platform',
@@ -192,7 +192,7 @@ const App = () => {
         'Quality review checklist integration'
       ]
     }
-  ];
+  ], []);
 
   return (
     <div className="relative min-h-screen">
