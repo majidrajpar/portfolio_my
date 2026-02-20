@@ -35,16 +35,16 @@ const App = () => {
       image: '/portfolio_my/images/projects/fraud-detection/fraud-dashboard.webp'
     },
     {
-      title: 'Audit Automation Ecosystem',
-      description: 'Enterprise-grade automation framework delivering 100% population testing across multi-entity GCC operations.',
+      title: 'Audit Findings Management System',
+      description: 'Enterprise-grade automation framework delivering 100% population testing across multi-entity GCC operations with automated findings tracking.',
       category: 'Audit Transformation',
       impact: '70% reduction in audit preparation cycle time',
       techStack: ['Python', 'YAML', 'IIA Compliance'],
       image: '/portfolio_my/images/projects/audit-tools/findings-tracker.webp'
     },
     {
-      title: 'Executive Analytics Hub',
-      description: 'Proprietary financial reporting engine providing real-time board-level visibility into capital leaks and recovery.',
+      title: 'Executive Financial Dashboard',
+      description: 'Proprietary financial reporting engine providing real-time board-level visibility into capital leaks, variance analysis, and recovery tracking.',
       category: 'Strategic Dashboards',
       impact: '85% automated reporting efficiency achieved',
       techStack: ['xlsxwriter', 'Pandas', 'Power BI'],
@@ -55,15 +55,15 @@ const App = () => {
   const allProjects = [
     ...featuredProjects,
     {
-      title: 'Bateel Internal Audit Tracker',
-      description: 'Enterprise audit management platform with executive dashboards, PowerPoint automation, and 3-tier governance reporting for multi-entity operations.',
+      title: 'Enterprise Audit Management Platform',
+      description: 'Comprehensive audit management platform with executive dashboards, PowerPoint automation, and 3-tier governance reporting for multi-entity operations.',
       category: 'Audit Transformation',
       impact: '9 integrated worksheets with full automation',
       techStack: ['Python', 'openpyxl', 'python-pptx'],
       image: '/portfolio_my/images/projects/bateel-audit-tracker/audit-dashboard.webp'
     },
     {
-      title: 'Food Safety Risk Framework',
+      title: 'Food Safety Risk Assessment Framework',
       description: 'Advanced risk management framework for F&B operations with heat mapping, control validation, and compliance tracking across 70+ locations.',
       category: 'Audit Transformation',
       impact: 'Comprehensive risk assessment across all operations',
@@ -71,16 +71,16 @@ const App = () => {
       image: '/portfolio_my/images/projects/food-safety-risk/risk-heatmap.webp'
     },
     {
-      title: 'Employee Fraud Investigation',
-      description: 'Forensic analysis toolkit for major fraud cases with control failure mapping, evidence tracking, and litigation support documentation.',
+      title: 'Forensic Fraud Investigation Toolkit',
+      description: 'Professional forensic analysis toolkit for major fraud cases with control failure mapping, evidence tracking, and litigation support documentation.',
       category: 'Fraud Forensics',
       impact: 'Documented control failures and recovery actions',
       techStack: ['Python', 'Excel Automation', 'Forensic Accounting'],
       image: '/portfolio_my/images/projects/fraud-cases/fraud-analysis.webp'
     },
     {
-      title: 'Restaurant Audit Checklist',
-      description: 'Comprehensive audit checklist system for multi-location restaurant operations with compliance tracking and remediation monitoring.',
+      title: 'Multi-Location Audit Compliance System',
+      description: 'Comprehensive audit compliance system for multi-location restaurant operations with standardized procedures, tracking, and remediation monitoring.',
       category: 'Audit Transformation',
       impact: 'Standardized audit procedures across locations',
       techStack: ['Python', 'openpyxl', 'Audit Standards'],
