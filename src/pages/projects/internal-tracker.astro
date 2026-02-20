@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import DataDisclaimer from '../../components/DataDisclaimer.astro';
 import ImageGallery from '../../components/ImageGallery.astro';
 import TechBadge from '../../components/TechBadge.astro';
+const base = import.meta.env.BASE_URL;
 
 const title = "Internal Audit Tracker";
 const description = "Enterprise audit management system with executive dashboards and PowerPoint automation";
@@ -45,9 +46,9 @@ const techStack = [
 
     <!-- Breadcrumb -->
     <nav class="text-sm mb-6">
-      <a href="/portfolio_my/" class="text-blue-600 hover:underline">Home</a>
+      <a href={base} class="text-blue-600 hover:underline">Home</a>
       <span class="mx-2">/</span>
-      <a href="/portfolio_my/projects/" class="text-blue-600 hover:underline">Projects</a>
+      <a href={`${base}projects/`} class="text-blue-600 hover:underline">Projects</a>
       <span class="mx-2">/</span>
       <span class="text-gray-600">Internal Audit Tracker</span>
     </nav>
@@ -316,10 +317,10 @@ const techStack = [
 
     <!-- Navigation -->
     <div class="flex justify-between items-center pt-8 border-t border-gray-200">
-      <a href="/portfolio_my/projects/forensic-toolbox/" class="btn btn-secondary">
+      <a href={`${base}projects/forensic-toolbox/`} class="btn btn-secondary">
         ← Previous: Forensic Toolbox
       </a>
-      <a href="/portfolio_my/projects/" class="btn btn-primary">
+      <a href={`${base}projects/`} class="btn btn-primary">
         Back to Projects
       </a>
     </div>
