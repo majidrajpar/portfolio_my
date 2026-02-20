@@ -38,6 +38,8 @@ const App = () => {
         const project = allProjects.find(p => p.id === projectId);
         if (project) {
           setSelectedProject(project);
+          // Scroll to top when opening project detail
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       } else {
         setSelectedProject(null);
@@ -47,7 +49,7 @@ const App = () => {
     handleHashChange();
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
+  }, [allProjects]);
 
   const featuredProjects = [
     {
