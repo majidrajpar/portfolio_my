@@ -772,7 +772,7 @@ const App = () => {
             <div className="flex flex-wrap justify-center gap-8 text-slate-300">
               <div className="flex items-center gap-3">
                 <span className="text-3xl">🇦🇪</span>
-                <span className="font-bold">UAE (Dubai, Golden Visa)</span>
+                <span className="font-bold">UAE (Dubai)</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-3xl">🇸🇦</span>
