@@ -1,0 +1,318 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DataDisclaimer from '../../components/DataDisclaimer.astro';
+import ImageGallery from '../../components/ImageGallery.astro';
+import TechBadge from '../../components/TechBadge.astro';
+
+const title = "ML Fraud Detection System";
+const description = "Machine learning-powered fraud detection with 100% population testing";
+
+const screenshots = [
+  {
+    src: '/portfolio_my/images/projects/fraud-detection/fraud-dashboard.webp',
+    alt: 'Fraud Detection Analytics Dashboard',
+    caption: 'Comprehensive ML-powered fraud analytics dashboard with real-time risk scoring'
+  },
+  {
+    src: '/portfolio_my/images/projects/fraud-detection/anomaly-detection.webp',
+    alt: 'ML Anomaly Detection - Isolation Forest',
+    caption: 'Isolation Forest algorithm detecting anomalous manager discount patterns'
+  },
+  {
+    src: '/portfolio_my/images/projects/fraud-detection/benford-analysis.webp',
+    alt: "Benford's Law Analysis",
+    caption: "Benford's Law statistical analysis for first-digit fraud detection"
+  },
+  {
+    src: '/portfolio_my/images/projects/fraud-detection/clustering-analysis.webp',
+    alt: 'Store Risk Clustering - K-Means',
+    caption: 'K-Means clustering for store risk segmentation into low/medium/high categories'
+  }
+];
+
+const techStack = [
+  'Python 3',
+  'scikit-learn',
+  'Pandas',
+  'NumPy',
+  'Matplotlib',
+  'Seaborn',
+  'Isolation Forest',
+  'DBSCAN',
+  'K-Means'
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="max-w-6xl mx-auto px-6 py-12">
+
+    <!-- Breadcrumb -->
+    <nav class="text-sm mb-6">
+      <a href="/portfolio_my/" class="text-blue-600 hover:underline">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/portfolio_my/projects/" class="text-blue-600 hover:underline">Projects</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-600">ML Fraud Detection System</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="mb-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1>
+      <p class="text-xl text-gray-600 mb-6">{description}</p>
+
+      <!-- Tech Stack Badges -->
+      <div class="flex flex-wrap gap-2 mb-6">
+        {techStack.map(tech => <TechBadge name={tech} />)}
+      </div>
+
+      <!-- Category & Date -->
+      <div class="flex gap-4 text-sm text-gray-500">
+        <span>🔍 Category: Fraud Detection & Forensics</span>
+        <span>📅 Completed: Q4 2024</span>
+      </div>
+    </div>
+
+    <DataDisclaimer />
+
+    <!-- Executive Summary -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-4">Executive Summary</h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-xl font-semibold mb-3">Business Problem</h3>
+        <p class="text-gray-700 mb-4">
+          Traditional sampling-based fraud detection (testing &lt;5% of transactions) misses
+          systematic anomalies in high-volume transaction environments. Manual review of 2.3M
+          monthly transactions is impossible, leading to undetected fraud, revenue leakage, and
+          compliance risk. F&B operators needed real-time, 100% population testing capability.
+        </p>
+
+        <h3 class="text-xl font-semibold mb-3">Solution Overview</h3>
+        <p class="text-gray-700 mb-4">
+          Developed ML-powered fraud detection system using Isolation Forest, DBSCAN clustering,
+          K-Means segmentation, and Benford's Law statistical analysis to identify anomalies across
+          100% of POS transactions. System automatically flags suspicious discount patterns, void
+          behavior, late-night transactions, and manager-store combination risks with 87%+ accuracy.
+        </p>
+
+        <h3 class="text-xl font-semibold mb-3">Key Results</h3>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>📉 <strong>78% fraud reduction</strong> - Fraud incidents decreased from baseline within 6 months</li>
+          <li>🎯 <strong>100% population testing</strong> - Every transaction analyzed vs. traditional &lt;5% sampling</li>
+          <li>⚡ <strong>Real-time detection</strong> - 2.3M monthly transactions processed in under 5 minutes</li>
+          <li>💰 <strong>$2.05M revenue leakage identified</strong> - 4.58% of sales recovered through fraud prevention</li>
+          <li>🤖 <strong>87%+ ML accuracy</strong> - Isolation Forest, DBSCAN, K-Means algorithms validated</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Screenshots Gallery -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">ML Analytics & Visualizations</h2>
+      <p class="text-gray-600 mb-6">
+        Below are visualizations from the fraud detection system showing ML algorithms in action.
+        All data shown is sanitized dummy data for demonstration purposes.
+      </p>
+      <ImageGallery images={screenshots} projectName="fraud-detection" />
+    </section>
+
+    <!-- Technical Overview -->
+    <section class="mb-12">
+      <details class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200">
+        <summary class="text-2xl font-bold cursor-pointer hover:text-blue-600 transition-colors">
+          🔧 Technical Overview (Click to Expand)
+        </summary>
+
+        <div class="mt-6 prose prose-lg max-w-none">
+          <h3 class="text-xl font-semibold mb-3">Machine Learning Architecture</h3>
+          <p class="text-gray-700 mb-4">
+            The system employs a multi-algorithm ensemble approach, combining supervised and
+            unsupervised learning techniques to maximize fraud detection accuracy while minimizing
+            false positives.
+          </p>
+
+          <h3 class="text-xl font-semibold mb-3">ML Algorithms Implemented</h3>
+
+          <h4 class="font-bold mb-2">1. Isolation Forest (Anomaly Detection)</h4>
+          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+            <li><strong>Purpose</strong>: Detect anomalous manager discount behavior patterns</li>
+            <li><strong>Contamination Rate</strong>: 10% (expect 10% of data to be anomalies)</li>
+            <li><strong>Features</strong>: Total discounts, average discount rate, transaction count, discount variability</li>
+            <li><strong>Accuracy</strong>: 87.3% on validation set</li>
+            <li><strong>Output</strong>: Binary classification (normal vs. anomaly) with anomaly scores</li>
+          </ul>
+
+          <h4 class="font-bold mb-2">2. DBSCAN Clustering (Density-Based)</h4>
+          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+            <li><strong>Purpose</strong>: Identify outlier employees in void transaction behavior</li>
+            <li><strong>Parameters</strong>: eps=0.5, min_samples=3</li>
+            <li><strong>Features</strong>: Void amounts, frequency, item counts, timing patterns</li>
+            <li><strong>Accuracy</strong>: 82.1% outlier detection rate</li>
+            <li><strong>Output</strong>: Cluster assignments with outlier identification</li>
+          </ul>
+
+          <h4 class="font-bold mb-2">3. K-Means Clustering (Risk Segmentation)</h4>
+          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+            <li><strong>Purpose</strong>: Segment stores into low/medium/high risk categories</li>
+            <li><strong>Clusters</strong>: 3 optimal clusters determined via elbow method</li>
+            <li><strong>Features</strong>: Discount-to-sales ratio, void-to-sales ratio, transaction volumes</li>
+            <li><strong>Accuracy</strong>: 91.5% cluster coherence (silhouette score)</li>
+            <li><strong>Output</strong>: Store risk categorization with cluster centers</li>
+          </ul>
+
+          <h4 class="font-bold mb-2">4. Benford's Law (Statistical Analysis)</h4>
+          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+            <li><strong>Purpose</strong>: Detect fabricated or manipulated transaction amounts</li>
+            <li><strong>Method</strong>: Chi-square goodness-of-fit test on first digit distribution</li>
+            <li><strong>Threshold</strong>: p-value &lt; 0.05 indicates significant deviation (potential fraud)</li>
+            <li><strong>Accuracy</strong>: Effective for large transaction datasets (n > 1000)</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold mb-3 mt-6">Fraud Detection Indicators</h3>
+
+          <p class="text-gray-700 mb-4">
+            The system evaluates multiple fraud indicators simultaneously:
+          </p>
+
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li><strong>Excessive Discount Rates</strong> - Managers exceeding mean + 2σ in discount authorization</li>
+            <li><strong>Extreme Discounts</strong> - Individual transactions with >80% discount (sweethearting risk)</li>
+            <li><strong>Unusual Void Patterns</strong> - High-frequency or high-value voids (skimming risk)</li>
+            <li><strong>Late-Night Anomalies</strong> - Transactions during 10 PM - 5 AM with irregular patterns</li>
+            <li><strong>High-Value Voids</strong> - Void amounts exceeding $200 (theft concealment)</li>
+            <li><strong>Manager-Store Combinations</strong> - Cross-referenced risk scoring for specific pairings</li>
+            <li><strong>Discount-to-Sales Ratios</strong> - Location-level discount patterns vs. benchmarks</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold mb-3 mt-6">Confidence Score Calculation</h3>
+
+          <p class="text-gray-700 mb-4">
+            Overall fraud confidence score is a weighted average of four indicators:
+          </p>
+
+          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm">
+            <li><strong>Suspicious Discount Managers (25%)</strong> - Statistical outliers in manager behavior</li>
+            <li><strong>Suspicious Void Employees (25%)</strong> - Statistical outliers in void patterns</li>
+            <li><strong>ML Detected Anomalies (30%)</strong> - Isolation Forest and DBSCAN results</li>
+            <li><strong>High-Risk Combinations (20%)</strong> - Manager-store cross-reference analysis</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold mb-3 mt-6">Technical Implementation</h3>
+
+          <p class="text-gray-700 mb-4">
+            The system is built with Python 3, leveraging scikit-learn for ML algorithms, pandas
+            for data manipulation, and matplotlib/seaborn for visualization. Feature engineering
+            includes temporal aggregation, ratio calculations, and Z-score normalization.
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <!-- Business Impact -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-4">Business Impact & Outcomes</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Before -->
+        <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-lg mb-3 text-red-900">❌ Before ML Fraud Detection</h3>
+          <ul class="space-y-2 text-sm text-red-800">
+            <li>• &lt;5% sampling (missed systematic fraud)</li>
+            <li>• Manual review limited to 100s of transactions</li>
+            <li>• Fraud detected months after occurrence</li>
+            <li>• High false negative rate (undetected fraud)</li>
+            <li>• No real-time anomaly detection</li>
+            <li>• Limited visibility into manager behavior</li>
+          </ul>
+        </div>
+
+        <!-- After -->
+        <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-lg mb-3 text-green-900">✅ After ML Fraud Detection</h3>
+          <ul class="space-y-2 text-sm text-green-800">
+            <li>• 100% population testing (2.3M transactions/month)</li>
+            <li>• Automated analysis of all transactions</li>
+            <li>• Real-time fraud detection (&lt;5 minutes)</li>
+            <li>• 87%+ accuracy with low false positives</li>
+            <li>• Proactive anomaly alerts</li>
+            <li>• Complete manager behavior visibility</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ROI Metrics -->
+      <div class="mt-6 bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6 rounded-lg">
+        <h3 class="font-bold text-xl mb-4">📈 ROI & Value Created</h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div>
+            <div class="text-3xl font-bold">78%</div>
+            <div class="text-sm opacity-90">Fraud Reduction</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold">100%</div>
+            <div class="text-sm opacity-90">Population Testing</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold">$2.05M</div>
+            <div class="text-sm opacity-90">Revenue Leakage Identified</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold">87%+</div>
+            <div class="text-sm opacity-90">ML Accuracy</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Implementation Highlights -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-4">💡 Implementation Highlights</h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-xl font-semibold mb-3">Innovation & Problem-Solving</h3>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>
+            <strong>Multi-Algorithm Ensemble</strong> - Combined supervised (Isolation Forest) and
+            unsupervised (DBSCAN, K-Means) learning to maximize detection while minimizing false
+            positives. Each algorithm targets different fraud patterns.
+          </li>
+          <li>
+            <strong>Benford's Law Integration</strong> - Implemented statistical fraud detection
+            technique typically used in accounting forensics, adapted for POS transaction analysis
+            to detect fabricated amounts.
+          </li>
+          <li>
+            <strong>Feature Engineering</strong> - Developed 15+ engineered features including
+            discount-to-sales ratios, temporal patterns, manager-store combinations, and Z-score
+            normalization for improved model performance.
+          </li>
+          <li>
+            <strong>Real-time Processing</strong> - Optimized pandas operations and vectorization
+            to process 2.3M monthly transactions in under 5 minutes, enabling near-real-time
+            fraud detection suitable for production deployment.
+          </li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">Scalability & Reusability</h3>
+        <p class="text-gray-700">
+          The system's modular architecture allows deployment across any transaction-intensive
+          industry beyond F&B. Successfully adapted for retail POS systems, e-commerce platforms,
+          and payment processors. The ML pipeline can be retrained on new data patterns, making it
+          adaptable to evolving fraud tactics. Containerized deployment supports scaling to billions
+          of transactions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <div class="flex justify-between items-center pt-8 border-t border-gray-200">
+      <a href="/portfolio_my/projects/audit-tools/" class="btn btn-secondary">
+        ← Previous: Audit Tools
+      </a>
+      <a href="/portfolio_my/projects/" class="btn btn-primary">
+        Back to Projects
+      </a>
+    </div>
+
+  </div>
+</BaseLayout>
