@@ -3,13 +3,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import MetricCard from '../components/MetricCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 
+const base = import.meta.env.BASE_URL;
+
 const featuredProjects = [
   {
     title: 'ML-Powered Fraud Detection System',
     description: 'Advanced machine learning solution using Isolation Forest, DBSCAN, and K-Means clustering to detect anomalies across 100% of transactions.',
     category: 'Fraud Detection',
     impact: '78% reduction in fraud incidents, 2.3M monthly transactions analyzed',
-    href: '/projects/fraud-detection/',
+    href: `${base}projects/fraud-detection/`,
     techStack: [
       { name: 'Python', color: 'blue' },
       { name: 'scikit-learn', color: 'orange' },
@@ -22,7 +24,7 @@ const featuredProjects = [
     description: 'Complete automated internal audit framework with 14+ professional tools, YAML configuration, and full IIA Standards compliance.',
     category: 'Audit Automation',
     impact: '70% reduction in audit preparation time',
-    href: '/projects/audit-tools/',
+    href: `${base}projects/audit-tools/`,
     techStack: [
       { name: 'Python', color: 'blue' },
       { name: 'Excel', color: 'green' },
@@ -35,7 +37,7 @@ const featuredProjects = [
     description: 'Enterprise-grade financial reporting automation with multi-currency consolidation, AI-powered insights, and 12 professional Excel dashboards.',
     category: 'Analytics Dashboard',
     impact: '85% reduction in monthly financial reporting time',
-    href: '/projects/finance-dashboard/',
+    href: `${base}projects/finance-dashboard/`,
     techStack: [
       { name: 'Python', color: 'blue' },
       { name: 'xlsxwriter', color: 'green' },
@@ -79,10 +81,10 @@ const featuredProjects = [
 
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/projects/" class="btn btn-primary text-lg">
+          <a href={`${base}projects/`} class="btn btn-primary text-lg">
             View Projects
           </a>
-          <a href="/cv/Majid_Mumtaz_CV.pdf" download class="btn btn-secondary text-lg">
+          <a href={`${base}cv/Majid_Mumtaz_CV.pdf`} download class="btn btn-secondary text-lg">
             Download CV
           </a>
         </div>
@@ -147,7 +149,7 @@ const featuredProjects = [
       </div>
 
       <div class="text-center">
-        <a href="/projects/" class="btn btn-primary">
+        <a href={`${base}projects/`} class="btn btn-primary">
           View All Projects
         </a>
       </div>
@@ -350,10 +352,10 @@ const featuredProjects = [
       </div>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/consulting/" class="btn btn-primary text-lg">
+        <a href={`${base}consulting/`} class="btn btn-primary text-lg">
           Explore Consulting Services
         </a>
-        <a href="/contact/" class="btn btn-secondary text-lg">
+        <a href={`${base}contact/`} class="btn btn-secondary text-lg">
           Get in Touch
         </a>
       </div>

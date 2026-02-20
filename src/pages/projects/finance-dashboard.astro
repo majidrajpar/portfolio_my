@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import DataDisclaimer from '../../components/DataDisclaimer.astro';
 import ImageGallery from '../../components/ImageGallery.astro';
 import TechBadge from '../../components/TechBadge.astro';
+const base = import.meta.env.BASE_URL;
 
 const title = "Finance Dashboard v2.0";
 const description = "Enterprise-grade financial reporting automation for GCC restaurant groups";
@@ -56,9 +57,9 @@ const techStack = [
 
     <!-- Breadcrumb -->
     <nav class="text-sm mb-6">
-      <a href="/portfolio_my/" class="text-blue-600 hover:underline">Home</a>
+      <a href={base} class="text-blue-600 hover:underline">Home</a>
       <span class="mx-2">/</span>
-      <a href="/portfolio_my/projects/" class="text-blue-600 hover:underline">Projects</a>
+      <a href={`${base}projects/`} class="text-blue-600 hover:underline">Projects</a>
       <span class="mx-2">/</span>
       <span class="text-gray-600">Finance Dashboard v2.0</span>
     </nav>
@@ -262,7 +263,7 @@ const techStack = [
       <a href="/portfolio_my/projects/" class="btn btn-secondary">
         ← Back to Projects
       </a>
-      <a href="/portfolio_my/projects/audit-tools/" class="btn btn-primary">
+      <a href={`${base}projects/audit-tools/`} class="btn btn-primary">
         Next Project: Audit Tools →
       </a>
     </div>

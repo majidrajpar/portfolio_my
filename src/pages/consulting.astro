@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="Consulting Services | Majid Mumtaz CIA, ACA, FCCA">
@@ -532,10 +533,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact/" class="inline-block bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:shadow-xl transition-all">
+        <a href={`${base}contact/`} class="inline-block bg-white text-blue-600 font-bold px-8 py-3 rounded-lg hover:shadow-xl transition-all">
           Schedule a Consultation
         </a>
-        <a href="/projects/" class="inline-block bg-transparent border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-all">
+        <a href={`${base}projects/`} class="inline-block bg-transparent border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-all">
           View Portfolio Projects
         </a>
       </div>
