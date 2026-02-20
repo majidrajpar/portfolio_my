@@ -52,6 +52,50 @@ const App = () => {
     }
   ];
 
+  const allProjects = [
+    ...featuredProjects,
+    {
+      title: 'Bateel Internal Audit Tracker',
+      description: 'Enterprise audit management platform with executive dashboards, PowerPoint automation, and 3-tier governance reporting for multi-entity operations.',
+      category: 'Audit Transformation',
+      impact: '9 integrated worksheets with full automation',
+      techStack: ['Python', 'openpyxl', 'python-pptx'],
+      image: '/portfolio_my/images/projects/bateel-audit-tracker/audit-dashboard.webp'
+    },
+    {
+      title: 'Food Safety Risk Framework',
+      description: 'Advanced risk management framework for F&B operations with heat mapping, control validation, and compliance tracking across 70+ locations.',
+      category: 'Audit Transformation',
+      impact: 'Comprehensive risk assessment across all operations',
+      techStack: ['Python', 'Risk Analytics', 'Compliance Frameworks'],
+      image: '/portfolio_my/images/projects/food-safety-risk/risk-heatmap.webp'
+    },
+    {
+      title: 'Employee Fraud Investigation',
+      description: 'Forensic analysis toolkit for major fraud cases with control failure mapping, evidence tracking, and litigation support documentation.',
+      category: 'Fraud Forensics',
+      impact: 'Documented control failures and recovery actions',
+      techStack: ['Python', 'Excel Automation', 'Forensic Accounting'],
+      image: '/portfolio_my/images/projects/fraud-cases/fraud-analysis.webp'
+    },
+    {
+      title: 'Restaurant Audit Checklist',
+      description: 'Comprehensive audit checklist system for multi-location restaurant operations with compliance tracking and remediation monitoring.',
+      category: 'Audit Transformation',
+      impact: 'Standardized audit procedures across locations',
+      techStack: ['Python', 'openpyxl', 'Audit Standards'],
+      image: '/portfolio_my/images/projects/restaurant-audit/audit-checklist.webp'
+    },
+    {
+      title: 'ICAEW Audit Report System',
+      description: 'Professional audit reporting platform compliant with ICAEW standards, featuring automated report generation and evidence documentation.',
+      category: 'Audit Transformation',
+      impact: 'Professional-grade audit documentation',
+      techStack: ['Python', 'ICAEW Standards', 'Report Automation'],
+      image: '/portfolio_my/images/projects/icaew-audit/audit-report.webp'
+    }
+  ];
+
   return (
     <div className="relative min-h-screen">
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-blue-500 origin-left z-[100]" style={{ scaleX }} />
@@ -220,10 +264,68 @@ const App = () => {
           </div>
           
           <div className="flex justify-center">
-             <a href="#resources" className="group flex items-center gap-4 text-white font-black tracking-[0.4em] uppercase text-xs hover:text-blue-400 transition-all border-b border-white/20 pb-4">
-               Browse Resources Vault
+             <a href="#projects-gallery" className="group flex items-center gap-4 text-white font-black tracking-[0.4em] uppercase text-xs hover:text-blue-400 transition-all border-b border-white/20 pb-4">
+               View All Projects
                <motion.span animate={{ x: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 2 }}>→</motion.span>
              </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Full Projects Gallery */}
+      <section id="projects-gallery" className="py-40 bg-slate-900/30 relative overflow-hidden">
+        <div className="container px-8 mx-auto max-w-7xl">
+          {/* Section Header */}
+          <div className="text-center mb-24">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 mb-6 block"
+            >
+              Complete Portfolio
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-[clamp(2.5rem,6vw,4.5rem)] text-white mb-8"
+            >
+              All Projects & Solutions
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-slate-400 text-xl max-w-3xl mx-auto leading-relaxed"
+            >
+              Enterprise-grade audit, risk, and compliance solutions built for GCC operations.
+              From fraud detection to governance frameworks.
+            </motion.p>
+          </div>
+
+          {/* All Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-20">
+            {allProjects.map((project, i) => (
+              <ProjectCard key={project.title} index={i} {...project} />
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-slate-400 text-lg mb-8">Interested in building similar solutions for your organization?</p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#services" className="btn-primary">Explore Services</a>
+                <a href="#resources" className="btn-secondary">Download Resources</a>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
