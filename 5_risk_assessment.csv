@@ -1,0 +1,11 @@
+Process,Likelihood,Impact,Inherent_Risk_Score,Control_Effectiveness,Residual_Risk_Score,Mitigation_Status
+Revenue Recognition,Medium,High,12,Strong,2,In Progress
+Procurement,Low,Critical,13,Strong,8,Completed
+Inventory Management,Medium,Low,5,Weak,3,Not Started
+Cash Handling,High,Medium,10,Weak,8,Not Started
+IT Security,Very High,Critical,23,Weak,3,Not Started
+Data Privacy,Medium,Critical,15,Strong,10,Not Started
+Vendor Management,Medium,High,15,Strong,7,Completed
+Financial Reporting,Very High,High,17,Strong,2,Not Started
+Compliance Monitoring,Very High,Medium,15,Weak,4,In Progress
+Asset Management,Very High,Low,22,Very Strong,11,Not Started

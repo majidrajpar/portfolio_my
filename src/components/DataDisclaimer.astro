@@ -1,0 +1,27 @@
+---
+// Data Disclaimer Component for Project Pages
+---
+
+<div class="data-disclaimer bg-amber-50 border-l-4 border-amber-500 p-4 mb-8 rounded-r-lg">
+  <div class="flex items-start gap-3">
+    <div class="text-2xl">⚠️</div>
+    <div>
+      <h4 class="font-bold text-amber-900 mb-1">Data Disclosure</h4>
+      <p class="text-sm text-amber-800">
+        All data shown in project demonstrations uses <strong>sanitized dummy data</strong>.
+        No real client information, company names, or confidential data is displayed.
+        Screenshots demonstrate technical capabilities while protecting client confidentiality.
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .data-disclaimer {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }

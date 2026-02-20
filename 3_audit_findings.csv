@@ -1,0 +1,51 @@
+Finding_ID,Title,Risk_Level,Status,Branch,Assigned_To,Due_Date,Age_Days
+AUD0001,Control Deficiency - Area A,Medium,Resolved,Branch 31,Employee 100,2026-04-02,70
+AUD0002,Control Deficiency - Area B,Medium,Resolved,Branch 18,Employee 042,2026-03-27,8
+AUD0003,Control Deficiency - Area C,High,Resolved,Branch 03,Employee 004,2026-03-14,29
+AUD0004,Control Deficiency - Area D,Critical,Open,Branch 05,Employee 082,2026-02-03,112
+AUD0005,Control Deficiency - Area E,High,Resolved,Branch 44,Employee 035,2026-01-24,179
+AUD0006,Control Deficiency - Area F,Medium,In Progress,Branch 18,Employee 058,2026-02-01,161
+AUD0007,Control Deficiency - Area G,Low,Resolved,Branch 35,Employee 063,2026-03-07,131
+AUD0008,Control Deficiency - Area H,Critical,Resolved,Branch 37,Employee 030,2026-04-01,163
+AUD0009,Control Deficiency - Area I,Medium,In Progress,Branch 43,Employee 046,2026-02-01,108
+AUD0010,Control Deficiency - Area J,High,Open,Branch 03,Employee 071,2026-04-07,109
+AUD0011,Control Deficiency - Area K,Medium,Open,Branch 12,Employee 049,2026-04-07,20
+AUD0012,Control Deficiency - Area L,Low,Resolved,Branch 21,Employee 056,2026-05-01,73
+AUD0013,Control Deficiency - Area M,High,Overdue,Branch 02,Employee 024,2026-03-03,167
+AUD0014,Control Deficiency - Area N,Medium,Resolved,Branch 14,Employee 088,2026-05-11,4
+AUD0015,Control Deficiency - Area O,Critical,Open,Branch 38,Employee 075,2026-03-11,19
+AUD0016,Control Deficiency - Area P,Critical,In Progress,Branch 10,Employee 085,2026-01-22,102
+AUD0017,Control Deficiency - Area Q,High,Resolved,Branch 49,Employee 049,2026-02-27,173
+AUD0018,Control Deficiency - Area R,Critical,Resolved,Branch 46,Employee 011,2026-03-14,171
+AUD0019,Control Deficiency - Area S,Medium,Open,Branch 26,Employee 099,2026-03-11,141
+AUD0020,Control Deficiency - Area T,Medium,Open,Branch 05,Employee 080,2026-04-30,141
+AUD0021,Control Deficiency - Area A,Medium,Resolved,Branch 20,Employee 038,2026-01-31,86
+AUD0022,Control Deficiency - Area B,High,In Progress,Branch 11,Employee 032,2026-04-23,52
+AUD0023,Control Deficiency - Area C,High,In Progress,Branch 37,Employee 092,2026-05-16,111
+AUD0024,Control Deficiency - Area D,Medium,Open,Branch 16,Employee 010,2026-04-02,109
+AUD0025,Control Deficiency - Area E,Low,Resolved,Branch 37,Employee 011,2026-05-16,86
+AUD0026,Control Deficiency - Area F,Critical,Resolved,Branch 25,Employee 035,2026-02-21,43
+AUD0027,Control Deficiency - Area G,Low,Overdue,Branch 44,Employee 020,2026-04-04,42
+AUD0028,Control Deficiency - Area H,Medium,Resolved,Branch 35,Employee 049,2026-03-28,90
+AUD0029,Control Deficiency - Area I,Medium,Resolved,Branch 22,Employee 092,2026-02-11,115
+AUD0030,Control Deficiency - Area J,Medium,Open,Branch 25,Employee 082,2026-04-18,26
+AUD0031,Control Deficiency - Area K,Critical,Resolved,Branch 49,Employee 020,2026-03-10,151
+AUD0032,Control Deficiency - Area L,Critical,In Progress,Branch 48,Employee 095,2026-02-11,43
+AUD0033,Control Deficiency - Area M,Medium,Resolved,Branch 09,Employee 050,2026-02-07,77
+AUD0034,Control Deficiency - Area N,High,In Progress,Branch 45,Employee 041,2026-02-24,156
+AUD0035,Control Deficiency - Area O,Low,In Progress,Branch 47,Employee 047,2026-02-28,137
+AUD0036,Control Deficiency - Area P,Medium,Open,Branch 06,Employee 014,2026-02-24,20
+AUD0037,Control Deficiency - Area Q,High,In Progress,Branch 33,Employee 012,2026-03-25,39
+AUD0038,Control Deficiency - Area R,Medium,Open,Branch 48,Employee 001,2026-02-08,179
+AUD0039,Control Deficiency - Area S,High,Open,Branch 23,Employee 040,2026-01-29,12
+AUD0040,Control Deficiency - Area T,Medium,Overdue,Branch 04,Employee 057,2026-02-11,11
+AUD0041,Control Deficiency - Area A,Medium,In Progress,Branch 07,Employee 047,2026-03-17,154
+AUD0042,Control Deficiency - Area B,Low,Resolved,Branch 28,Employee 098,2026-02-25,42
+AUD0043,Control Deficiency - Area C,Medium,Resolved,Branch 15,Employee 035,2026-03-15,155
+AUD0044,Control Deficiency - Area D,Medium,Overdue,Branch 05,Employee 014,2026-02-28,11
+AUD0045,Control Deficiency - Area E,Medium,Resolved,Branch 22,Employee 017,2026-03-23,38
+AUD0046,Control Deficiency - Area F,Low,Resolved,Branch 39,Employee 012,2026-05-01,98
+AUD0047,Control Deficiency - Area G,High,In Progress,Branch 50,Employee 024,2026-01-30,171
+AUD0048,Control Deficiency - Area H,Critical,In Progress,Branch 40,Employee 056,2026-03-08,19
+AUD0049,Control Deficiency - Area I,High,In Progress,Branch 39,Employee 058,2026-02-22,134
+AUD0050,Control Deficiency - Area J,High,Resolved,Branch 26,Employee 072,2026-05-21,174
