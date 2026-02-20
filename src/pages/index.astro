@@ -7,357 +7,150 @@ const base = import.meta.env.BASE_URL;
 
 const featuredProjects = [
   {
-    title: 'ML-Powered Fraud Detection System',
-    description: 'Advanced machine learning solution using Isolation Forest, DBSCAN, and K-Means clustering to detect anomalies across 100% of transactions.',
-    category: 'Fraud Detection',
-    impact: '78% reduction in fraud incidents, 2.3M monthly transactions analyzed',
+    title: 'Neural-Net Fraud Detection',
+    description: 'Advanced machine learning architecture using Isolation Forest and K-Means clustering to analyze 2.3M+ monthly transactions.',
+    category: 'Fraud Forensics',
+    impact: '82% Reduction in Fraud Loss (SAR 5.1M to <900K)',
     href: `${base}projects/fraud-detection/`,
     techStack: [
-      { name: 'Python', color: 'blue' },
-      { name: 'scikit-learn', color: 'orange' },
-      { name: 'Pandas', color: 'green' },
-      { name: 'ML', color: 'purple' }
+      { name: 'Python' },
+      { name: 'scikit-learn' },
+      { name: 'Neural Networks' }
     ]
   },
   {
-    title: 'Audit Tools Toolkit v2.0',
-    description: 'Complete automated internal audit framework with 14+ professional tools, YAML configuration, and full IIA Standards compliance.',
-    category: 'Audit Automation',
-    impact: '70% reduction in audit preparation time',
+    title: 'Audit Automation Ecosystem',
+    description: 'Enterprise-grade automation framework delivering 100% population testing across multi-entity GCC operations.',
+    category: 'Audit Transformation',
+    impact: '70% reduction in audit preparation cycle time',
     href: `${base}projects/audit-tools/`,
     techStack: [
-      { name: 'Python', color: 'blue' },
-      { name: 'Excel', color: 'green' },
-      { name: 'YAML', color: 'gray' },
-      { name: 'PowerPoint', color: 'orange' }
+      { name: 'Python' },
+      { name: 'YAML' },
+      { name: 'IIA Compliance' }
     ]
   },
   {
-    title: 'Finance Dashboard v2.0',
-    description: 'Enterprise-grade financial reporting automation with multi-currency consolidation, AI-powered insights, and 12 professional Excel dashboards.',
-    category: 'Analytics Dashboard',
-    impact: '85% reduction in monthly financial reporting time',
+    title: 'Executive Analytics Hub',
+    description: 'Proprietary financial reporting engine providing real-time board-level visibility into capital leaks and recovery.',
+    category: 'Strategic Dashboards',
+    impact: '85% automated reporting efficiency achieved',
     href: `${base}projects/finance-dashboard/`,
     techStack: [
-      { name: 'Python', color: 'blue' },
-      { name: 'xlsxwriter', color: 'green' },
-      { name: 'Pandas', color: 'green' },
-      { name: 'NumPy', color: 'purple' }
+      { name: 'xlsxwriter' },
+      { name: 'Pandas' },
+      { name: 'Power BI' }
     ]
   }
 ];
 ---
 
-<BaseLayout title="Majid Mumtaz CIA, ACA, FCCA - Internal Audit Director | Portfolio">
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-blue-50 via-white to-gray-50 py-20 md:py-32">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto text-center">
-        <!-- Certifications Badge -->
-        <div class="mb-6">
-          <span class="inline-block px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">
-            CIA • ACA • FCCA
-          </span>
-        </div>
-
-        <!-- Name & Title -->
-        <h1 class="text-4xl md:text-6xl font-bold mb-6">
-          <span class="text-gradient">Majid Mumtaz</span>
+<BaseLayout title="Majid Mumtaz - Chief Audit Executive | Profit Protection Strategist">
+  <!-- Dramatic Hero Section -->
+  <section class="min-h-screen flex items-center pt-32 md:pt-40 overflow-hidden">
+    <div class="mesh-bg"></div>
+    <div class="grid-pattern"></div>
+    
+    <div class="container relative z-10">
+      <div class="reveal">
+        <span class="inline-block px-5 py-2 mb-8 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-full text-xs font-black uppercase tracking-[0.3em]">
+          Board Advisory | Principal Consultant
+        </span>
+        
+        <h1 class="text-balance leading-[1.05]">
+          Transitioning Audit to <br class="hidden md:block" />
+          <span class="text-white">Profit Protection.</span>
         </h1>
-
-        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-          Internal Audit Director | SOX Compliance & Enterprise Risk Management
-        </h2>
-
-        <!-- Tagline -->
-        <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-          Transforming Internal Audit with AI & Data Science
+        
+        <p class="text-xl md:text-2xl mb-12 text-slate-400 leading-relaxed font-medium mx-auto max-w-4xl text-balance">
+          Chief Audit Executive specializing in Neural-Net Fraud Detection and 100% Population Testing to safeguard enterprise capital.
         </p>
 
-        <!-- Subheadline -->
-        <p class="text-base md:text-lg text-gray-700 mb-10 max-w-2xl mx-auto">
-          Board-facing Audit Director | Published Author | 20+ Years GCC Leadership
-        </p>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href={`${base}projects/`} class="btn btn-primary text-lg">
-            View Projects
-          </a>
-          <a href={`${base}cv/Majid_Mumtaz_CV.pdf`} download class="btn btn-secondary text-lg">
-            Download CV
-          </a>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a href={`${base}projects/`} class="btn btn-primary">Analyze Case Studies</a>
+          <a href={`${base}cv/Majid_Mumtaz_CV.pdf`} download class="btn btn-secondary">Download Executive CV</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Impact Metrics Banner -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Proven Business Impact</h2>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+  <!-- High-Impact Metrics Section -->
+  <section class="bg-slate-900/50 border-y border-white/5">
+    <div class="container">
+      <h2 class="text-center font-black tracking-tight mb-20 text-white">Proven <span class="text-blue-500">Capital</span> Safeguard.</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
         <MetricCard
-          value="AED 7.7M"
-          label="Total Financial Impact Delivered"
+          value="AED 3.2M"
+          label="Recurring Annual Recovery"
           icon="💰"
+          isSuccess
         />
         <MetricCard
           value="$127M"
-          label="M&A Capital Protected"
-          icon="🛡️"
+          label="M&A Deal Lifecycle Leadership"
+          icon="🤝"
         />
         <MetricCard
           value="82%"
           label="Fraud Loss Reduction"
           icon="📉"
+          isSuccess
+        />
+        <MetricCard
+          value="97%"
+          label="SOX Compliance Rating"
+          icon="🚀"
         />
         <MetricCard
           value="100%"
-          label="Population Testing Achieved"
-          icon="✅"
-        />
-        <MetricCard
-          value="20+"
-          label="Years of Progressive Leadership"
-          icon="🏆"
+          label="Population Coverage"
+          icon="🤖"
+          isSuccess
         />
         <MetricCard
           value="6"
-          label="Published Books on Amazon"
+          label="Amazon Strategy Publications"
           icon="📚"
         />
       </div>
     </div>
   </section>
 
-  <!-- Featured Projects Grid -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Featured Projects</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Production-ready audit automation solutions demonstrating technical depth and business impact
-        </p>
+  <!-- Strategic Case Studies -->
+  <section>
+    <div class="container">
+      <div class="text-center mb-24">
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-blue-500 mb-4 block">Transformation Archive</span>
+        <h2 class="text-white">Production Solutions.</h2>
+        <p class="mx-auto text-slate-400">Production-ready audit automation and profit protection solutions with measurable business impact.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 w-full mb-16">
         {featuredProjects.map(project => (
           <ProjectCard {...project} />
         ))}
       </div>
 
-      <div class="text-center">
-        <a href={`${base}projects/`} class="btn btn-primary">
-          View All Projects
-        </a>
-      </div>
+      <a href={`${base}projects/`} class="text-white font-black tracking-[0.2em] uppercase text-xs hover:text-blue-400 transition-all border-b border-white/20 pb-2">
+        Browse Strategic Vault →
+      </a>
     </div>
   </section>
 
-  <!-- Professional Credentials Bar -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Professional Credentials</h2>
-
-      <div class="max-w-4xl mx-auto">
-        <!-- Certifications -->
-        <div class="mb-12">
-          <h3 class="text-xl font-bold mb-6 text-center">Certifications</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div class="text-center p-6 bg-blue-50 rounded-lg border border-blue-200">
-              <div class="text-4xl mb-3">🎓</div>
-              <div class="font-bold text-lg mb-1">CIA</div>
-              <div class="text-sm text-gray-600">Certified Internal Auditor</div>
-            </div>
-            <div class="text-center p-6 bg-blue-50 rounded-lg border border-blue-200">
-              <div class="text-4xl mb-3">📜</div>
-              <div class="font-bold text-lg mb-1">ACA</div>
-              <div class="text-sm text-gray-600">Chartered Accountant</div>
-            </div>
-            <div class="text-center p-6 bg-blue-50 rounded-lg border border-blue-200">
-              <div class="text-4xl mb-3">🏅</div>
-              <div class="font-bold text-lg mb-1">FCCA</div>
-              <div class="text-sm text-gray-600">Fellow Chartered Certified Accountant</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Executive Education -->
-        <div class="mb-12">
-          <h3 class="text-xl font-bold mb-6 text-center">Executive Education</h3>
-          <div class="flex flex-wrap justify-center gap-4">
-            <span class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg font-semibold text-sm">
-              Harvard Business School
-            </span>
-            <span class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg font-semibold text-sm">
-              COSO Enterprise Risk Management
-            </span>
-            <span class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg font-semibold text-sm">
-              IBM Machine Learning
-            </span>
-            <span class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg font-semibold text-sm">
-              HKUST IT Governance
-            </span>
-          </div>
-        </div>
-
-        <!-- Big 4 Foundation -->
-        <div class="text-center">
-          <h3 class="text-xl font-bold mb-6">Big 4 Foundation</h3>
+  <!-- Global Footer CTA -->
+  <section class="bg-gradient-to-t from-blue-900/20 to-transparent">
+    <div class="container py-24">
+      <div class="glass-card w-full max-w-4xl p-16 md:p-24 relative overflow-hidden group">
+        <div class="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        <div class="relative z-10">
+          <h2 class="text-white mb-8">Ready to <span class="text-blue-400">Transform?</span></h2>
+          <p class="mb-12 text-slate-300 text-lg mx-auto">Board-level leadership for organizations seeking to build high-performance audit functions.</p>
           <div class="flex flex-wrap justify-center gap-6">
-            <div class="px-6 py-3 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border border-gray-200">
-              <div class="font-bold text-lg">Ernst & Young</div>
-            </div>
-            <div class="px-6 py-3 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border border-gray-200">
-              <div class="font-bold text-lg">KPMG</div>
-            </div>
+            <a href={`${base}consulting/`} class="btn btn-primary">Strategic Advisory</a>
+            <a href={`${base}contact/`} class="btn btn-secondary">Inquire</a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Thought Leadership Section -->
-  <section class="py-16 bg-gradient-to-br from-blue-900 to-blue-800 text-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-4">Published Author & Industry Thought Leader</h2>
-      <p class="text-center text-blue-100 mb-12 max-w-2xl mx-auto">
-        6 books published on Amazon - Contributing knowledge to the internal audit and risk management profession
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        <!-- Book 1 -->
-        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-          <div class="text-4xl mb-4">📘</div>
-          <h3 class="font-bold text-lg mb-2">Handbook of Risk Red Flags in Restaurants</h3>
-          <p class="text-blue-100 text-sm mb-4">
-            A Practitioner's Guide to Preventing Failure Through Early Detection
-          </p>
-          <div class="flex justify-between items-center">
-            <div class="text-sm text-blue-200">January 2026</div>
-            <a href="https://www.amazon.com/dp/B0GDTBRZPM" target="_blank" rel="noopener noreferrer" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-colors">
-              View on Amazon →
-            </a>
-          </div>
-        </div>
-
-        <!-- Book 2 -->
-        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-          <div class="text-4xl mb-4">📗</div>
-          <h3 class="font-bold text-lg mb-2">The Un-Financial Risk Manager</h3>
-          <p class="text-blue-100 text-sm mb-4">
-            Protecting Value in the Real World
-          </p>
-          <div class="flex justify-between items-center">
-            <div class="text-sm text-blue-200">January 2026</div>
-            <a href="https://www.amazon.com/dp/B0GDMW53GG" target="_blank" rel="noopener noreferrer" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-colors">
-              View on Amazon →
-            </a>
-          </div>
-        </div>
-
-        <!-- Book 3 -->
-        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-          <div class="text-4xl mb-4">📙</div>
-          <h3 class="font-bold text-lg mb-2">10 Forensic Accounting Skills</h3>
-          <p class="text-blue-100 text-sm mb-4">
-            Practical guide to fraud detection and forensic investigation techniques
-          </p>
-          <div class="flex justify-between items-center">
-            <div class="text-sm text-blue-200">December 2025</div>
-            <a href="https://www.amazon.com/dp/B0G7T4X3RT" target="_blank" rel="noopener noreferrer" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-colors">
-              View on Amazon →
-            </a>
-          </div>
-        </div>
-
-        <!-- Book 4 -->
-        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-          <div class="text-4xl mb-4">📕</div>
-          <h3 class="font-bold text-lg mb-2">The Power Professional</h3>
-          <p class="text-blue-100 text-sm mb-4">
-            A Tactical Manual for Dominance
-          </p>
-          <div class="flex justify-between items-center">
-            <div class="text-sm text-blue-200">December 2025</div>
-            <a href="https://www.amazon.com/dp/B0G51LS6D6" target="_blank" rel="noopener noreferrer" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-colors">
-              View on Amazon →
-            </a>
-          </div>
-        </div>
-
-        <!-- Book 5 -->
-        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-          <div class="text-4xl mb-4">📔</div>
-          <h3 class="font-bold text-lg mb-2">ITGC Program Guide</h3>
-          <p class="text-blue-100 text-sm mb-4">
-            A Strategic Approach to Security, Compliance, and Enterprise Value Protection
-          </p>
-          <div class="flex justify-between items-center">
-            <div class="text-sm text-blue-200">June 2025</div>
-            <a href="https://www.amazon.com/dp/B0FCG96QS8" target="_blank" rel="noopener noreferrer" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-colors">
-              View on Amazon →
-            </a>
-          </div>
-        </div>
-
-        <!-- Book 6 -->
-        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20 hover:bg-white/20 transition-all">
-          <div class="text-4xl mb-4">📓</div>
-          <h3 class="font-bold text-lg mb-2">Internal Audit Guide for Dine-In Locations in the Middle East</h3>
-          <p class="text-blue-100 text-sm mb-4">
-            Comprehensive audit guide for restaurant operations in the GCC region
-          </p>
-          <div class="flex justify-between items-center">
-            <div class="text-sm text-blue-200">February 2025</div>
-            <a href="https://www.amazon.com/dp/B0DY2NRPQ9" target="_blank" rel="noopener noreferrer" class="text-xs bg-white/20 hover:bg-white/30 px-3 py-1 rounded-full transition-colors">
-              View on Amazon →
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Amazon Author Page Link -->
-      <div class="text-center mt-12">
-        <p class="text-blue-100 mb-4">Available in Kindle eBook and Paperback formats</p>
-        <a href="https://www.amazon.com/stores/Majid-Mumtaz/author/B0DY3F5QKR" target="_blank" rel="noopener noreferrer" class="inline-block bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-          View All Books on Amazon →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Trust Indicators & CTA -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-8">Ready to Transform Your Audit Function?</h2>
-
-      <div class="max-w-2xl mx-auto mb-10">
-        <div class="flex flex-wrap justify-center gap-6 mb-8">
-          <div class="flex items-center gap-2 text-gray-700">
-            <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="font-semibold">Golden Visa Holder - UAE</span>
-          </div>
-          <div class="flex items-center gap-2 text-gray-700">
-            <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span class="font-semibold">Veritux Consulting Network</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href={`${base}consulting/`} class="btn btn-primary text-lg">
-          Explore Consulting Services
-        </a>
-        <a href={`${base}contact/`} class="btn btn-secondary text-lg">
-          Get in Touch
-        </a>
       </div>
     </div>
   </section>
