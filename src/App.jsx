@@ -510,7 +510,7 @@ const App = () => {
               </div>
               <div className="flex justify-center mb-20">
                 <a href="#all-resources" className="group flex items-center gap-4 text-white font-black tracking-[0.4em] uppercase text-xs hover:text-blue-400 transition-all border-b border-white/20 pb-4">
-                  View All {documents.length} Resources
+                  View All Resources
                   <motion.span animate={{ x: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 2 }}>→</motion.span>
                 </a>
               </div>
