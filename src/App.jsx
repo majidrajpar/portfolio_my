@@ -7,6 +7,7 @@ import ProjectCard from './components/ProjectCard';
 import DownloadCard from './components/DownloadCard';
 import ProjectDetail from './components/ProjectDetail';
 import AllProjectsGallery from './components/AllProjectsGallery';
+import AllResourcesGallery from './components/AllResourcesGallery';
 
 const App = () => {
   const { scrollYProgress } = useScroll();
@@ -22,6 +23,9 @@ const App = () => {
   // State for project detail view
   const [selectedProject, setSelectedProject] = useState(null);
   const [showAllProjects, setShowAllProjects] = useState(false);
+  const [showAllResources, setShowAllResources] = useState(false);
+
+  const featuredDocIds = ['doc-017', 'doc-018', 'doc-006'];
 
   // Load documents from JSON
   useEffect(() => {
@@ -190,10 +194,17 @@ const App = () => {
       } else if (hash === '#all-projects') {
         setShowAllProjects(true);
         setSelectedProject(null);
+        setShowAllResources(false);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (hash === '#all-resources') {
+        setShowAllResources(true);
+        setShowAllProjects(false);
+        setSelectedProject(null);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         setSelectedProject(null);
         setShowAllProjects(false);
+        setShowAllResources(false);
       }
     };
 
@@ -206,6 +217,17 @@ const App = () => {
     <div className="relative min-h-screen">
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-blue-500 origin-left z-[100]" style={{ scaleX }} />
       <Navbar />
+
+      {/* All Resources Gallery */}
+      {showAllResources && (
+        <AllResourcesGallery
+          documents={documents}
+          onClose={() => {
+            window.location.hash = '';
+            setShowAllResources(false);
+          }}
+        />
+      )}
 
       {/* All Projects Gallery */}
       {showAllProjects && !selectedProject && (
@@ -475,13 +497,24 @@ const App = () => {
             </motion.p>
           </div>
 
-          {/* Downloads Grid */}
+          {/* Featured Downloads */}
           {documents.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-              {documents.map((doc, index) => (
-                <DownloadCard key={doc.id} {...doc} />
-              ))}
-            </div>
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                {documents
+                  .filter(doc => featuredDocIds.includes(doc.id))
+                  .sort((a, b) => featuredDocIds.indexOf(a.id) - featuredDocIds.indexOf(b.id))
+                  .map((doc) => (
+                    <DownloadCard key={doc.id} {...doc} />
+                  ))}
+              </div>
+              <div className="flex justify-center mb-20">
+                <a href="#all-resources" className="group flex items-center gap-4 text-white font-black tracking-[0.4em] uppercase text-xs hover:text-blue-400 transition-all border-b border-white/20 pb-4">
+                  View All {documents.length} Resources
+                  <motion.span animate={{ x: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 2 }}>→</motion.span>
+                </a>
+              </div>
+            </>
           ) : (
             <div className="text-center text-slate-500 mb-20">
               <p>Documents will be available soon. Check back later!</p>
