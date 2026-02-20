@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { FileText } from 'lucide-react';
 import Navbar from './components/Navbar';
@@ -8,6 +8,84 @@ import DownloadCard from './components/DownloadCard';
 import ProjectDetail from './components/ProjectDetail';
 import AllProjectsGallery from './components/AllProjectsGallery';
 import AllResourcesGallery from './components/AllResourcesGallery';
+
+const ContactForm = () => {
+  const formRef = useRef(null);
+  const [status, setStatus] = useState('idle'); // idle | submitting | success | error
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('submitting');
+    try {
+      const res = await fetch('https://formspree.io/f/xdallyjv', {
+        method: 'POST',
+        body: new FormData(formRef.current),
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        setStatus('success');
+        formRef.current.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  const inputClass = "w-full bg-slate-800/50 border border-white/10 rounded-xl px-5 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500/50 transition-colors text-sm";
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.1 }}
+    >
+      <div className="glass-card p-10">
+        {status === 'success' ? (
+          <div className="text-center py-12">
+            <div className="text-5xl mb-6">✓</div>
+            <h3 className="text-white font-black text-2xl mb-3">Message Sent</h3>
+            <p className="text-slate-400">Thank you — I'll be in touch within 24 hours.</p>
+            <button onClick={() => setStatus('idle')} className="mt-8 btn-secondary text-xs">Send Another</button>
+          </div>
+        ) : (
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-2 block">Name</label>
+                <input name="name" type="text" required placeholder="Your full name" className={inputClass} />
+              </div>
+              <div>
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-2 block">Organisation</label>
+                <input name="organisation" type="text" placeholder="Company / Entity" className={inputClass} />
+              </div>
+            </div>
+            <div>
+              <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-2 block">Email</label>
+              <input name="email" type="email" required placeholder="your@email.com" className={inputClass} />
+            </div>
+            <div>
+              <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-2 block">Message</label>
+              <textarea name="message" required rows={5} placeholder="How can I help?" className={`${inputClass} resize-none`} />
+            </div>
+            {status === 'error' && (
+              <p className="text-red-400 text-sm">Something went wrong. Please try emailing directly.</p>
+            )}
+            <button
+              type="submit"
+              disabled={status === 'submitting'}
+              className="btn-primary w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {status === 'submitting' ? 'Sending…' : 'Send Message'}
+            </button>
+          </form>
+        )}
+      </div>
+    </motion.div>
+  );
+};
 
 const App = () => {
   const { scrollYProgress } = useScroll();
@@ -724,16 +802,48 @@ const App = () => {
         </div>
       </section>
 
-      <footer id="contact" className="py-20 bg-slate-950/50 border-t border-white/5">
-        <div className="container px-8 mx-auto text-center">
-          <span className="text-4xl font-black tracking-tighter text-white mb-6 block">MAJID MUMTAZ</span>
-          <p className="text-slate-500 font-bold uppercase tracking-[0.4em] text-[10px] mb-16">Chief Audit Executive | Head of Audit & Risk</p>
-          
-          <div className="flex flex-wrap justify-center gap-16 mb-20">
-            <a href="mailto:majidrajpar@gmail.com" className="text-slate-400 hover:text-white transition-colors text-sm uppercase tracking-widest font-black">Email</a>
-            <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors text-sm uppercase tracking-widest font-black">LinkedIn</a>
-          </div>
+      {/* Contact Section */}
+      <section id="contact" className="py-40 bg-slate-950/50 relative overflow-hidden border-t border-white/5">
+        <div className="mesh-bg opacity-20" />
+        <div className="container px-8 mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
 
+            {/* Left: Info */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 mb-6 block">Get In Touch</span>
+              <h2 className="text-[clamp(2.5rem,6vw,4rem)] text-white mb-8 leading-tight">Let's Work<br />Together.</h2>
+              <p className="text-slate-400 text-lg leading-relaxed mb-12">
+                Whether you need a fractional CAE, a fraud detection framework, or board-level risk advisory —
+                get in touch and I'll respond within 24 hours.
+              </p>
+              <div className="space-y-5">
+                <a href="mailto:majidrajpar@gmail.com" className="flex items-center gap-4 text-slate-400 hover:text-white transition-colors group">
+                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-blue-500/30 transition-colors">
+                    <span className="text-sm">✉</span>
+                  </div>
+                  <span className="font-bold">majidrajpar@gmail.com</span>
+                </a>
+                <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-slate-400 hover:text-white transition-colors group">
+                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-blue-500/30 transition-colors">
+                    <span className="text-sm">in</span>
+                  </div>
+                  <span className="font-bold">LinkedIn Profile</span>
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Right: Form */}
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      <footer className="py-10 bg-slate-950 border-t border-white/5">
+        <div className="container px-8 mx-auto text-center">
           <div className="text-slate-700 text-[9px] uppercase tracking-[0.5em] font-black">
             &copy; {new Date().getFullYear()} Profit Protection Strategy. All Rights Reserved.
           </div>
