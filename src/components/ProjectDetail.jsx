@@ -43,7 +43,7 @@ const ProjectDetail = ({ project, onClose }) => {
           className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-12"
         >
           <ArrowLeft className="w-5 h-5" />
-          <span className="text-sm font-bold uppercase tracking-wider">Back to Projects</span>
+          <span className="text-sm font-bold uppercase tracking-wider">Back to All Projects</span>
         </motion.button>
 
         {/* Project Header */}
