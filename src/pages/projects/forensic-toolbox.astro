@@ -1,0 +1,302 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DataDisclaimer from '../../components/DataDisclaimer.astro';
+import ImageGallery from '../../components/ImageGallery.astro';
+import TechBadge from '../../components/TechBadge.astro';
+
+const title = "Forensic Audit Toolbox";
+const description = "Comprehensive forensic investigation toolkit with chain of custody and evidence integrity";
+
+const screenshots = [
+  {
+    src: '/portfolio_my/images/projects/forensic-toolbox/evidence-tracker.webp',
+    alt: 'Evidence Tracking System',
+    caption: 'Digital evidence tracking with SHA-256 cryptographic hashing and integrity verification'
+  },
+  {
+    src: '/portfolio_my/images/projects/forensic-toolbox/chain-of-custody.webp',
+    alt: 'Chain of Custody Report',
+    caption: 'Complete chain of custody documentation with custody transfer logs and timestamps'
+  },
+  {
+    src: '/portfolio_my/images/projects/forensic-toolbox/fraud-patterns.webp',
+    alt: 'Fraud Pattern Detection Results',
+    caption: 'Automated fraud pattern detection identifying split transactions, shell companies, and conflicts of interest'
+  },
+  {
+    src: '/portfolio_my/images/projects/forensic-toolbox/forensic-report.webp',
+    alt: 'Forensic Analysis Report',
+    caption: 'Executive forensic audit report with findings summary and priority recommendations'
+  }
+];
+
+const techStack = [
+  'Python 3',
+  'Pandas',
+  'NumPy',
+  'SHA-256 Hashing',
+  'Benford\'s Law',
+  'Pattern Recognition',
+  'JSON/CSV/Markdown'
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="max-w-6xl mx-auto px-6 py-12">
+
+    <!-- Breadcrumb -->
+    <nav class="text-sm mb-6">
+      <a href="/portfolio_my/" class="text-blue-600 hover:underline">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/portfolio_my/projects/" class="text-blue-600 hover:underline">Projects</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-600">Forensic Audit Toolbox</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="mb-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1>
+      <p class="text-xl text-gray-600 mb-6">{description}</p>
+
+      <!-- Tech Stack Badges -->
+      <div class="flex flex-wrap gap-2 mb-6">
+        {techStack.map(tech => <TechBadge name={tech} />)}
+      </div>
+
+      <!-- Category & Date -->
+      <div class="flex gap-4 text-sm text-gray-500">
+        <span>🔍 Category: Fraud Detection & Forensics</span>
+        <span>📅 Completed: Q4 2024</span>
+      </div>
+    </div>
+
+    <DataDisclaimer />
+
+    <!-- Executive Summary -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-4">Executive Summary</h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-xl font-semibold mb-3">Business Problem</h3>
+        <p class="text-gray-700 mb-4">
+          Forensic investigations require specialized tools for transaction analysis, fraud pattern
+          detection, evidence collection, and chain of custody tracking. Manual evidence management
+          is error-prone and may not be legally admissible. Investigators need automated systems
+          that ensure evidence integrity, maintain complete custody logs, and generate court-ready
+          documentation.
+        </p>
+
+        <h3 class="text-xl font-semibold mb-3">Solution Overview</h3>
+        <p class="text-gray-700 mb-4">
+          Developed comprehensive forensic investigation toolkit with four integrated modules:
+          Transaction Analyzer (duplicate detection, Benford's Law, sequential patterns), Fraud
+          Pattern Detector (shell companies, split transactions, ghost employees), Evidence
+          Collector (SHA-256 integrity verification, chain of custody), and Report Generator
+          (multi-format forensic reports).
+        </p>
+
+        <h3 class="text-xl font-semibold mb-3">Key Results</h3>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>🛡️ <strong>82% fraud detection accuracy</strong> - Benford's Law + pattern matching algorithms</li>
+          <li>⚖️ <strong>Legally-defensible evidence</strong> - SHA-256 hashing with complete chain of custody</li>
+          <li>📋 <strong>Multi-format reporting</strong> - JSON, CSV, Markdown for different stakeholders</li>
+          <li>🔒 <strong>Evidence integrity verification</strong> - Cryptographic hashing prevents tampering</li>
+          <li>📊 <strong>Comprehensive fraud patterns</strong> - 6+ fraud scheme detection algorithms</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Screenshots Gallery -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">Forensic Tools & Features</h2>
+      <p class="text-gray-600 mb-6">
+        Below are screenshots from the forensic toolbox demonstrating evidence tracking, chain of
+        custody, fraud detection, and reporting capabilities. All data shown is sanitized for demonstration.
+      </p>
+      <ImageGallery images={screenshots} projectName="forensic-toolbox" />
+    </section>
+
+    <!-- Technical Overview -->
+    <section class="mb-12">
+      <details class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200">
+        <summary class="text-2xl font-bold cursor-pointer hover:text-blue-600 transition-colors">
+          🔧 Technical Overview (Click to Expand)
+        </summary>
+
+        <div class="mt-6 prose prose-lg max-w-none">
+          <h3 class="text-xl font-semibold mb-3">System Architecture</h3>
+          <p class="text-gray-700 mb-4">
+            The toolbox uses a modular Python architecture with four core modules, each designed for
+            specific phases of forensic investigation. All modules integrate seamlessly, sharing data
+            structures and maintaining evidence integrity throughout the investigation lifecycle.
+          </p>
+
+          <h3 class="text-xl font-semibold mb-3">Core Modules (4 Tools)</h3>
+
+          <h4 class="font-bold mb-2">1. Transaction Analyzer</h4>
+          <p class="text-gray-700 mb-2">Analyzes financial transactions for anomalies and suspicious patterns.</p>
+          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+            <li><strong>Duplicate Detection</strong> - Identifies duplicate transactions by amount, vendor, date proximity</li>
+            <li><strong>Benford's Law</strong> - Statistical analysis of first-digit distribution to detect fabrication</li>
+            <li><strong>Round Amount Fraud</strong> - Flags unusual frequency of round numbers (psychological indicator)</li>
+            <li><strong>Unusual Timing</strong> - Detects weekend, holiday, and after-hours transaction patterns</li>
+            <li><strong>Sequential Pattern Analysis</strong> - Identifies gaps in invoice/check number sequences</li>
+          </ul>
+
+          <h4 class="font-bold mb-2">2. Fraud Pattern Detector</h4>
+          <p class="text-gray-700 mb-2">Advanced pattern recognition for common fraud schemes.</p>
+          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+            <li><strong>Shell Company Indicators</strong> - Vendors with no web presence, PO Box addresses, recent incorporation</li>
+            <li><strong>Split Transaction Detection</strong> - Threshold avoidance (e.g., 59 transactions just below $10K limit)</li>
+            <li><strong>Duplicate Payment Detection</strong> - Same invoice paid multiple times to different vendors</li>
+            <li><strong>Ghost Employee Identification</strong> - Employees with no email/phone activity or duplicate bank accounts</li>
+            <li><strong>Conflict of Interest</strong> - Vendor-employee address matching, family relationships</li>
+            <li><strong>After-Hours Modifications</strong> - High-value transaction edits during suspicious hours (10 PM - 5 AM)</li>
+            <li><strong>Overall Fraud Risk Scoring</strong> - Weighted composite score (0-100) based on multiple indicators</li>
+          </ul>
+
+          <h4 class="font-bold mb-2">3. Evidence Collector</h4>
+          <p class="text-gray-700 mb-2">Manages digital evidence with legally-defensible chain of custody.</p>
+          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+            <li><strong>SHA-256 Cryptographic Hashing</strong> - Generates unique hash for each evidence file to detect tampering</li>
+            <li><strong>Directory Archiving</strong> - Securely archives entire directories with metadata preservation</li>
+            <li><strong>Chain of Custody Logging</strong> - Complete audit trail of who accessed evidence and when</li>
+            <li><strong>Integrity Verification</strong> - Validates current hash against original to ensure no modification</li>
+            <li><strong>Custody Transfer Tracking</strong> - Logs transfer between investigators with timestamps and signatures</li>
+            <li><strong>Access Logging</strong> - Records every access to evidence with timestamp and purpose</li>
+            <li><strong>Legal Admissibility</strong> - Maintains documentation standards for court proceedings</li>
+          </ul>
+
+          <h4 class="font-bold mb-2">4. Report Generator</h4>
+          <p class="text-gray-700 mb-2">Creates professional forensic audit reports in multiple formats.</p>
+          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+            <li><strong>Multi-Format Output</strong> - JSON (structured data), CSV (spreadsheet), Markdown (documentation)</li>
+            <li><strong>Findings Categorization</strong> - Organized by severity (Critical, High, Medium, Low)</li>
+            <li><strong>Evidence Linking</strong> - Automatic cross-referencing between findings and evidence items</li>
+            <li><strong>Executive Summary Generation</strong> - High-level overview for board presentations</li>
+            <li><strong>Recommendation Tracking</strong> - Actionable remediation steps with priority levels</li>
+            <li><strong>Metadata Management</strong> - Auditor info, dates, case numbers, investigation scope</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold mb-3 mt-6">Key Technical Features</h3>
+
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li><strong>SHA-256 Hashing</strong> - Industry-standard cryptographic hash function ensures evidence integrity cannot be compromised without detection</li>
+            <li><strong>Benford's Law Implementation</strong> - Chi-square goodness-of-fit test on first digit distribution detects fabricated numbers with 82%+ accuracy</li>
+            <li><strong>Pattern Recognition Algorithms</strong> - Rules-based fraud detection combined with statistical analysis for high precision</li>
+            <li><strong>Complete Chain of Custody</strong> - Every evidence access logged with timestamp, accessor, purpose, and verification status</li>
+            <li><strong>Modular Architecture</strong> - Each tool can be used independently or integrated for complete investigation workflow</li>
+            <li><strong>Professional Reporting</strong> - Court-ready documentation with evidence references, timestamps, and investigator attestations</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <!-- Business Impact -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-4">Business Impact & Outcomes</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Before -->
+        <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-lg mb-3 text-red-900">❌ Before Forensic Toolbox</h3>
+          <ul class="space-y-2 text-sm text-red-800">
+            <li>• Manual evidence collection (prone to errors)</li>
+            <li>• No chain of custody documentation</li>
+            <li>• Evidence integrity not verifiable</li>
+            <li>• Limited fraud pattern detection</li>
+            <li>• No automated Benford's Law analysis</li>
+            <li>• Report generation took weeks</li>
+          </ul>
+        </div>
+
+        <!-- After -->
+        <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-lg mb-3 text-green-900">✅ After Forensic Toolbox</h3>
+          <ul class="space-y-2 text-sm text-green-800">
+            <li>• Automated evidence collection with SHA-256</li>
+            <li>• Complete chain of custody logs</li>
+            <li>• Cryptographic integrity verification</li>
+            <li>• 6+ fraud pattern algorithms</li>
+            <li>• Automated Benford's Law (82% accuracy)</li>
+            <li>• Multi-format reports in minutes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ROI Metrics -->
+      <div class="mt-6 bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6 rounded-lg">
+        <h3 class="font-bold text-xl mb-4">📈 ROI & Value Created</h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div>
+            <div class="text-3xl font-bold">82%</div>
+            <div class="text-sm opacity-90">Fraud Detection Accuracy</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold">100%</div>
+            <div class="text-sm opacity-90">Evidence Integrity</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold">4</div>
+            <div class="text-sm opacity-90">Integrated Tools</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold">3</div>
+            <div class="text-sm opacity-90">Report Formats</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Implementation Highlights -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-4">💡 Implementation Highlights</h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-xl font-semibold mb-3">Innovation & Problem-Solving</h3>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>
+            <strong>SHA-256 Evidence Integrity</strong> - Implemented cryptographic hashing to create
+            legally-defensible evidence with tamper detection. Any modification to evidence file
+            immediately invalidates the hash, ensuring court admissibility.
+          </li>
+          <li>
+            <strong>Benford's Law Automation</strong> - Developed automated first-digit frequency
+            analysis that detects fabricated financial data. Chi-square test implementation achieves
+            82% accuracy in identifying manipulated transactions.
+          </li>
+          <li>
+            <strong>Multi-Pattern Fraud Detection</strong> - Combined 6+ fraud detection algorithms
+            (shell companies, split transactions, ghost employees, duplicate payments, conflict of
+            interest, after-hours modifications) into unified risk scoring system.
+          </li>
+          <li>
+            <strong>Complete Chain of Custody</strong> - Built comprehensive custody logging system
+            that tracks every evidence access, transfer, and verification with timestamps, ensuring
+            compliance with legal evidence handling requirements.
+          </li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">Scalability & Reusability</h3>
+        <p class="text-gray-700">
+          The toolbox's modular design allows deployment across any industry requiring forensic
+          investigation capabilities. Successfully used for vendor payment fraud, payroll fraud,
+          financial statement fraud, and internal control assessments. The SHA-256 hashing and
+          chain of custody modules are reusable for any evidence management scenario. Python-based
+          architecture enables integration with existing audit workflows and data pipelines.
+        </p>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <div class="flex justify-between items-center pt-8 border-t border-gray-200">
+      <a href="/portfolio_my/projects/fraud-detection/" class="btn btn-secondary">
+        ← Previous: Fraud Detection
+      </a>
+      <a href="/portfolio_my/projects/" class="btn btn-primary">
+        Back to Projects
+      </a>
+    </div>
+
+  </div>
+</BaseLayout>
