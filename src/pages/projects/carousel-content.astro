@@ -1,0 +1,320 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DataDisclaimer from '../../components/DataDisclaimer.astro';
+import ImageGallery from '../../components/ImageGallery.astro';
+import TechBadge from '../../components/TechBadge.astro';
+
+const title = "Audit Carousel Content Library";
+const description = "LinkedIn thought leadership content generation with professional carousel PDFs";
+
+const screenshots = [
+  {
+    src: '/portfolio_my/images/projects/carousel-content/content-library-catalog.webp',
+    alt: 'Content Library Catalog',
+    caption: '18+ carousel topics organized across 5 categories: Forensics, Transformation, Professional Development, Risk & Governance, Technical Excellence'
+  },
+  {
+    src: '/portfolio_my/images/projects/carousel-content/carousel-sample-pages.webp',
+    alt: 'Sample Carousel Pages',
+    caption: 'Professional carousel page designs for LinkedIn: Forensic Tools, Risk Management, Career Growth, Cyber Security'
+  },
+  {
+    src: '/portfolio_my/images/projects/carousel-content/linkedin-post-mockup.webp',
+    alt: 'LinkedIn Post Mockup',
+    caption: 'Complete LinkedIn post with carousel preview showing engagement optimization (2-3x more reach than standard posts)'
+  }
+];
+
+const techStack = [
+  'Python 3',
+  'FPDF',
+  'PDF Generation',
+  'Content Design',
+  'LinkedIn Optimization'
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="max-w-6xl mx-auto px-6 py-12">
+
+    <!-- Breadcrumb -->
+    <nav class="text-sm mb-6">
+      <a href="/portfolio_my/" class="text-blue-600 hover:underline">Home</a>
+      <span class="mx-2">/</span>
+      <a href="/portfolio_my/projects/" class="text-blue-600 hover:underline">Projects</a>
+      <span class="mx-2">/</span>
+      <span class="text-gray-600">Carousel Content Library</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="mb-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1>
+      <p class="text-xl text-gray-600 mb-6">{description}</p>
+
+      <!-- Tech Stack Badges -->
+      <div class="flex flex-wrap gap-2 mb-6">
+        {techStack.map(tech => <TechBadge name={tech} />)}
+      </div>
+
+      <!-- Category & Date -->
+      <div class="flex gap-4 text-sm text-gray-500">
+        <span>📝 Category: Content & Thought Leadership</span>
+        <span>📅 Completed: Q4 2024</span>
+      </div>
+    </div>
+
+    <DataDisclaimer />
+
+    <!-- Executive Summary -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-4">Executive Summary</h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-xl font-semibold mb-3">Business Problem</h3>
+        <p class="text-gray-700 mb-4">
+          Audit professionals need to establish thought leadership on LinkedIn to attract consulting
+          opportunities and build professional brand. Manual carousel creation using design tools
+          (Canva, PowerPoint) is time-consuming (2-4 hours per carousel) and requires design skills.
+          LinkedIn carousel posts generate 2-3x more engagement than standard posts, but content
+          creation is a barrier to consistent posting.
+        </p>
+
+        <h3 class="text-xl font-semibold mb-3">Solution Overview</h3>
+        <p class="text-gray-700 mb-4">
+          Developed automated PDF carousel generators using Python FPDF library that create
+          professional, LinkedIn-optimized carousel posts in seconds. Built content library of 18+
+          carousel topics across 5 categories (Forensic & Fraud, Audit Transformation, Professional
+          Development, Risk & Governance, Technical Excellence). Each generator produces
+          publication-ready PDFs with professional layouts, color schemes, and branding.
+        </p>
+
+        <h3 class="text-xl font-semibold mb-3">Key Results</h3>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>📚 <strong>18+ carousel topics</strong> - Comprehensive content library across 5 professional categories</li>
+          <li>⚡ <strong>Automated PDF generation</strong> - Create professional carousels in seconds vs. hours</li>
+          <li>🎨 <strong>Professional design</strong> - Consistent layouts, color schemes, and typography</li>
+          <li>📈 <strong>LinkedIn optimized</strong> - Carousel format delivers 2-3x more engagement</li>
+          <li>🔄 <strong>Reusable templates</strong> - Easy customization for different topics and branding</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Screenshots Gallery -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">Content Library & Sample Carousels</h2>
+      <p class="text-gray-600 mb-6">
+        Below are visualizations showing the content library catalog, sample carousel pages, and
+        LinkedIn post integration. All carousel designs are optimized for professional engagement.
+      </p>
+      <ImageGallery images={screenshots} projectName="carousel-content" />
+    </section>
+
+    <!-- Technical Overview -->
+    <section class="mb-12">
+      <details class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200">
+        <summary class="text-2xl font-bold cursor-pointer hover:text-blue-600 transition-colors">
+          🔧 Technical Overview (Click to Expand)
+        </summary>
+
+        <div class="mt-6 prose prose-lg max-w-none">
+          <h3 class="text-xl font-semibold mb-3">System Architecture</h3>
+          <p class="text-gray-700 mb-4">
+            The carousel library uses Python FPDF library for programmatic PDF generation. Each
+            carousel topic has a dedicated generator script that creates multi-page PDFs with
+            professional layouts, typography, color schemes, and LinkedIn-optimized dimensions.
+          </p>
+
+          <h3 class="text-xl font-semibold mb-3">Content Library (18+ Topics / 5 Categories)</h3>
+
+          <h4 class="font-bold mb-2">1. Forensic & Fraud Detection (3 carousels)</h4>
+          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+            <li><strong>Forensic Tools Arsenal 2026</strong> - 8 slides on essential forensic investigation tools</li>
+            <li><strong>Forensic Accounting Essentials</strong> - 10 slides covering fraud detection fundamentals</li>
+            <li><strong>Cyber Security Real Issues</strong> - 12 slides on cybersecurity threats for auditors</li>
+          </ul>
+
+          <h4 class="font-bold mb-2">2. Audit Transformation (3 carousels)</h4>
+          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+            <li><strong>Audit Business Transformation</strong> - 10 slides on modernizing internal audit</li>
+            <li><strong>Auditor Evolution Journey</strong> - 8 slides on career progression and skill development</li>
+            <li><strong>AI in Internal Audit</strong> - 9 slides on artificial intelligence applications</li>
+          </ul>
+
+          <h4 class="font-bold mb-2">3. Professional Development (3 carousels)</h4>
+          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+            <li><strong>Auditor Career Growth Path</strong> - 10 slides mapping progression from junior to CAE</li>
+            <li><strong>Executive Communication Masterclass</strong> - 9 slides on C-suite influence skills</li>
+            <li><strong>Auditor Psychology</strong> - 10 slides on stakeholder management psychology</li>
+          </ul>
+
+          <h4 class="font-bold mb-2">4. Risk & Governance (3 carousels)</h4>
+          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+            <li><strong>Risk-Based Audit Planning</strong> - 8 slides on prioritization methodology</li>
+            <li><strong>Risk Management Process Framework</strong> - 12 slides covering COSO ERM</li>
+            <li><strong>Audit Committee Brief</strong> - 10 slides on governance reporting best practices</li>
+          </ul>
+
+          <h4 class="font-bold mb-2">5. Technical Excellence (6 carousels)</h4>
+          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+            <li><strong>QAIP 2025 Masterclass</strong> - 11 slides on Quality Assurance Improvement Program</li>
+            <li><strong>Six Sigma for Auditors</strong> - 12 slides on process improvement methodology</li>
+            <li><strong>Audit Memo Writing Guide</strong> - 9 slides on professional documentation</li>
+            <li><strong>Python for Auditors</strong> - Technical automation examples</li>
+            <li><strong>Data Analytics in Audit</strong> - Advanced data analysis techniques</li>
+            <li><strong>Control Testing Frameworks</strong> - SOX 404 and ITGC testing approaches</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold mb-3 mt-6">PDF Generation Features</h3>
+
+          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+            <li>
+              <strong>Professional Layouts</strong> - Title pages, content pages, and closing slides with
+              consistent formatting and visual hierarchy
+            </li>
+            <li>
+              <strong>LinkedIn Optimization</strong> - PDF dimensions optimized for LinkedIn carousel format
+              (1080x1080px pages convert perfectly to carousel slides)
+            </li>
+            <li>
+              <strong>Color Schemes</strong> - Professional color palettes (Navy/Blue for trust, Green for
+              growth, Purple for innovation, Red for urgency) matched to content themes
+            </li>
+            <li>
+              <strong>Typography</strong> - Hierarchical text sizing (18pt titles, 14pt subtitles, 12pt body)
+              with consistent font families
+            </li>
+            <li>
+              <strong>Branding</strong> - Customizable headers, footers, and slide numbers with professional
+              formatting
+            </li>
+            <li>
+              <strong>Programmatic Content</strong> - Bullet points, numbered lists, process flows, and visual
+              elements generated via Python
+            </li>
+          </ul>
+
+          <h3 class="text-xl font-semibold mb-3 mt-6">LinkedIn Engagement Strategy</h3>
+
+          <p class="text-gray-700 mb-4">
+            Carousel posts on LinkedIn achieve 2-3x higher engagement (likes, comments, shares) compared
+            to standard text posts due to:
+          </p>
+
+          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm">
+            <li>Multiple slides encourage longer viewing time (algorithm boost)</li>
+            <li>Visual format increases shareability and saves</li>
+            <li>Educational content positions poster as thought leader</li>
+            <li>Swipe interaction increases time-on-post metrics</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <!-- Business Impact -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-4">Business Impact & Outcomes</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Before -->
+        <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-lg mb-3 text-red-900">❌ Before Carousel Library</h3>
+          <ul class="space-y-2 text-sm text-red-800">
+            <li>• 2-4 hours to create one carousel manually</li>
+            <li>• Design skills required (Canva, PowerPoint)</li>
+            <li>• Inconsistent branding across posts</li>
+            <li>• Limited posting frequency (time constraint)</li>
+            <li>• No reusable templates</li>
+            <li>• Low LinkedIn engagement with text posts</li>
+          </ul>
+        </div>
+
+        <!-- After -->
+        <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-lg mb-3 text-green-900">✅ After Carousel Library</h3>
+          <ul class="space-y-2 text-sm text-green-800">
+            <li>• Seconds to generate professional carousel</li>
+            <li>• No design skills needed (automated)</li>
+            <li>• Consistent professional branding</li>
+            <li>• High posting frequency (18+ ready topics)</li>
+            <li>• Reusable generator templates</li>
+            <li>• 2-3x higher LinkedIn engagement</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ROI Metrics -->
+      <div class="mt-6 bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6 rounded-lg">
+        <h3 class="font-bold text-xl mb-4">📈 ROI & Value Created</h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div>
+            <div class="text-3xl font-bold">18+</div>
+            <div class="text-sm opacity-90">Carousel Topics</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold">5</div>
+            <div class="text-sm opacity-90">Content Categories</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold">2-3x</div>
+            <div class="text-sm opacity-90">Engagement Boost</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold">&lt;30s</div>
+            <div class="text-sm opacity-90">Generation Time</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Implementation Highlights -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-4">💡 Implementation Highlights</h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-xl font-semibold mb-3">Innovation & Problem-Solving</h3>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>
+            <strong>Programmatic PDF Generation</strong> - Developed FPDF-based generators that create
+            multi-page professional PDFs with layouts, colors, and typography optimized for LinkedIn
+            carousel format. Eliminated need for manual design tools.
+          </li>
+          <li>
+            <strong>Content Library Architecture</strong> - Organized 18+ carousel topics across 5
+            professional categories (Forensics, Transformation, Development, Risk, Technical) to
+            support consistent thought leadership posting schedule.
+          </li>
+          <li>
+            <strong>LinkedIn Optimization</strong> - Designed PDF dimensions and page layouts specifically
+            for LinkedIn's carousel format, ensuring professional appearance when uploaded as carousel
+            posts (2-3x engagement vs. text posts).
+          </li>
+          <li>
+            <strong>Reusable Template System</strong> - Created modular generator scripts that can be
+            easily customized for new topics, color schemes, and branding, enabling rapid expansion
+            of content library.
+          </li>
+        </ul>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">Scalability & Reusability</h3>
+        <p class="text-gray-700">
+          The carousel generator templates are reusable across any professional topic beyond audit.
+          Successfully adapted for finance, HR, compliance, and IT thought leadership content. The
+          Python-based architecture allows easy customization of colors, fonts, layouts, and content
+          for different industries or personal branding. Content library supports consistent LinkedIn
+          posting schedule (1-2 carousels per week) for sustained thought leadership presence.
+        </p>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <div class="flex justify-between items-center pt-8 border-t border-gray-200">
+      <a href="/portfolio_my/projects/internal-tracker/" class="btn btn-secondary">
+        ← Previous: Internal Tracker
+      </a>
+      <a href="/portfolio_my/projects/" class="btn btn-primary">
+        Back to Projects
+      </a>
+    </div>
+
+  </div>
+</BaseLayout>
