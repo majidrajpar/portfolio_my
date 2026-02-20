@@ -29,28 +29,7 @@ const App = () => {
       .catch(err => console.error('Failed to load documents:', err));
   }, []);
 
-  // Handle hash-based routing for project details
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash;
-      if (hash.startsWith('#project/')) {
-        const projectId = hash.replace('#project/', '');
-        const project = allProjects.find(p => p.id === projectId);
-        if (project) {
-          setSelectedProject(project);
-          // Scroll to top when opening project detail
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      } else {
-        setSelectedProject(null);
-      }
-    };
-
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, [allProjects]);
-
+  // Project data
   const featuredProjects = [
     {
       id: 'fraud-detection-ml',
@@ -193,6 +172,28 @@ const App = () => {
       ]
     }
   ], []);
+
+  // Handle hash-based routing for project details
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash.startsWith('#project/')) {
+        const projectId = hash.replace('#project/', '');
+        const project = allProjects.find(p => p.id === projectId);
+        if (project) {
+          setSelectedProject(project);
+          // Scroll to top when opening project detail
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      } else {
+        setSelectedProject(null);
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, [allProjects]);
 
   return (
     <div className="relative min-h-screen">
