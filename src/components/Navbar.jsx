@@ -12,7 +12,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const sectionIds = ['contact', 'services', 'resources', 'projects', 'about'];
+    const sectionIds = ['contact', 'services', 'projects', 'about'];
     const observers = [];
 
     sectionIds.forEach((id) => {
@@ -35,7 +35,6 @@ const Navbar = () => {
     { label: 'Home', href: '#', id: '' },
     { label: 'About', href: '#about', id: 'about' },
     { label: 'Case Studies', href: '#projects', id: 'projects' },
-    { label: 'Resources', href: '#resources', id: 'resources' },
     { label: 'Services', href: '#services', id: 'services' },
     { label: 'Contact', href: '#contact', id: 'contact' },
   ];
