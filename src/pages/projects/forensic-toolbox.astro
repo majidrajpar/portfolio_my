@@ -47,17 +47,17 @@ const techStack = [
 
     <!-- Breadcrumb -->
     <nav class="text-sm mb-6">
-      <a href={base} class="text-blue-600 hover:underline">Home</a>
+      <a href={base} class="text-blue-400 hover:underline">Home</a>
       <span class="mx-2">/</span>
-      <a href={`${base}projects/`} class="text-blue-600 hover:underline">Projects</a>
+      <a href={`${base}projects/`} class="text-blue-400 hover:underline">Projects</a>
       <span class="mx-2">/</span>
-      <span class="text-gray-600">Forensic Audit Toolbox</span>
+      <span class="text-slate-400">Forensic Audit Toolbox</span>
     </nav>
 
     <!-- Hero Section -->
     <div class="mb-8">
       <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1>
-      <p class="text-xl text-gray-600 mb-6">{description}</p>
+      <p class="text-xl text-slate-400 mb-6">{description}</p>
 
       <!-- Tech Stack Badges -->
       <div class="flex flex-wrap gap-2 mb-6">
@@ -65,7 +65,7 @@ const techStack = [
       </div>
 
       <!-- Category & Date -->
-      <div class="flex gap-4 text-sm text-gray-500">
+      <div class="flex gap-4 text-sm text-slate-500">
         <span>🔍 Category: Fraud Detection & Forensics</span>
         <span>📅 Completed: Q4 2024</span>
       </div>
@@ -79,7 +79,7 @@ const techStack = [
 
       <div class="prose prose-lg max-w-none">
         <h3 class="text-xl font-semibold mb-3">Business Problem</h3>
-        <p class="text-gray-700 mb-4">
+        <p class="text-slate-300 mb-4">
           Forensic investigations require specialized tools for transaction analysis, fraud pattern
           detection, evidence collection, and chain of custody tracking. Manual evidence management
           is error-prone and risks compromising evidence integrity. Investigators need automated systems
@@ -88,7 +88,7 @@ const techStack = [
         </p>
 
         <h3 class="text-xl font-semibold mb-3">Solution Overview</h3>
-        <p class="text-gray-700 mb-4">
+        <p class="text-slate-300 mb-4">
           Developed comprehensive forensic investigation toolkit with four integrated modules:
           Transaction Analyzer (duplicate detection, Benford's Law, sequential patterns), Fraud
           Pattern Detector (shell companies, split transactions, ghost employees), Evidence
@@ -97,7 +97,7 @@ const techStack = [
         </p>
 
         <h3 class="text-xl font-semibold mb-3">Key Results</h3>
-        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <ul class="list-disc pl-6 space-y-2 text-slate-300">
           <li>🛡️ <strong>High-precision fraud detection</strong> - Benford's Law (chi-square, p&lt;0.05) + pattern matching across 6+ fraud schemes</li>
           <li>⚖️ <strong>Evidence integrity assurance</strong> - SHA-256 hashing with complete chain of custody built to forensic investigation best practices</li>
           <li>📋 <strong>Multi-format reporting</strong> - JSON, CSV, Markdown for different stakeholders</li>
@@ -109,7 +109,7 @@ const techStack = [
     <!-- Screenshots Gallery -->
     <section class="mb-12">
       <h2 class="text-3xl font-bold mb-6">Forensic Tools & Features</h2>
-      <p class="text-gray-600 mb-6">
+      <p class="text-slate-400 mb-6">
         Below are screenshots from the forensic toolbox demonstrating evidence tracking, chain of
         custody, fraud detection, and reporting capabilities. All data shown is sanitized for demonstration.
       </p>
@@ -118,14 +118,14 @@ const techStack = [
 
     <!-- Technical Overview -->
     <section class="mb-12">
-      <details class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200">
-        <summary class="text-2xl font-bold cursor-pointer hover:text-blue-600 transition-colors">
+      <details class="bg-slate-800/60 p-6 rounded-lg border border-blue-500/30">
+        <summary class="text-2xl font-bold cursor-pointer hover:text-blue-400 transition-colors">
           🔧 Technical Overview (Click to Expand)
         </summary>
 
         <div class="mt-6 prose prose-lg max-w-none">
           <h3 class="text-xl font-semibold mb-3">System Architecture</h3>
-          <p class="text-gray-700 mb-4">
+          <p class="text-slate-300 mb-4">
             The toolbox uses a modular Python architecture with four core modules, each designed for
             specific phases of forensic investigation. All modules integrate seamlessly, sharing data
             structures and maintaining evidence integrity throughout the investigation lifecycle.
@@ -134,8 +134,8 @@ const techStack = [
           <h3 class="text-xl font-semibold mb-3">Core Modules (4 Tools)</h3>
 
           <h4 class="font-bold mb-2">1. Transaction Analyzer</h4>
-          <p class="text-gray-700 mb-2">Analyzes financial transactions for anomalies and suspicious patterns.</p>
-          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+          <p class="text-slate-300 mb-2">Analyzes financial transactions for anomalies and suspicious patterns.</p>
+          <ul class="list-disc pl-6 space-y-1 text-slate-300 text-sm mb-4">
             <li><strong>Duplicate Detection</strong> - Identifies duplicate transactions by amount, vendor, date proximity</li>
             <li><strong>Benford's Law</strong> - Statistical analysis of first-digit distribution to detect fabrication</li>
             <li><strong>Round Amount Fraud</strong> - Flags unusual frequency of round numbers (psychological indicator)</li>
@@ -144,8 +144,8 @@ const techStack = [
           </ul>
 
           <h4 class="font-bold mb-2">2. Fraud Pattern Detector</h4>
-          <p class="text-gray-700 mb-2">Advanced pattern recognition for common fraud schemes.</p>
-          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+          <p class="text-slate-300 mb-2">Advanced pattern recognition for common fraud schemes.</p>
+          <ul class="list-disc pl-6 space-y-1 text-slate-300 text-sm mb-4">
             <li><strong>Shell Company Indicators</strong> - Vendors with no web presence, PO Box addresses, recent incorporation</li>
             <li><strong>Split Transaction Detection</strong> - Threshold avoidance (e.g., 59 transactions structured just below approval authority limits)</li>
             <li><strong>Duplicate Payment Detection</strong> - Same invoice paid multiple times to different vendors</li>
@@ -156,8 +156,8 @@ const techStack = [
           </ul>
 
           <h4 class="font-bold mb-2">3. Evidence Collector</h4>
-          <p class="text-gray-700 mb-2">Manages digital evidence with cryptographically-verified chain of custody built to forensic investigation standards.</p>
-          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+          <p class="text-slate-300 mb-2">Manages digital evidence with cryptographically-verified chain of custody built to forensic investigation standards.</p>
+          <ul class="list-disc pl-6 space-y-1 text-slate-300 text-sm mb-4">
             <li><strong>SHA-256 Cryptographic Hashing</strong> - Generates unique hash for each evidence file to detect tampering</li>
             <li><strong>Directory Archiving</strong> - Securely archives entire directories with metadata preservation</li>
             <li><strong>Chain of Custody Logging</strong> - Complete audit trail of who accessed evidence and when</li>
@@ -168,8 +168,8 @@ const techStack = [
           </ul>
 
           <h4 class="font-bold mb-2">4. Report Generator</h4>
-          <p class="text-gray-700 mb-2">Creates professional forensic audit reports in multiple formats.</p>
-          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+          <p class="text-slate-300 mb-2">Creates professional forensic audit reports in multiple formats.</p>
+          <ul class="list-disc pl-6 space-y-1 text-slate-300 text-sm mb-4">
             <li><strong>Multi-Format Output</strong> - JSON (structured data), CSV (spreadsheet), Markdown (documentation)</li>
             <li><strong>Findings Categorization</strong> - Organized by severity (Critical, High, Medium, Low)</li>
             <li><strong>Evidence Linking</strong> - Automatic cross-referencing between findings and evidence items</li>
@@ -180,7 +180,7 @@ const techStack = [
 
           <h3 class="text-xl font-semibold mb-3 mt-6">Key Technical Features</h3>
 
-          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <ul class="list-disc pl-6 space-y-2 text-slate-300">
             <li><strong>SHA-256 Hashing</strong> - Industry-standard cryptographic hash function ensures evidence integrity cannot be compromised without detection</li>
             <li><strong>Benford's Law Implementation</strong> - Chi-square goodness-of-fit test on first-digit distribution; significant deviation (p&lt;0.05) flags potential fabrication for further investigation</li>
             <li><strong>Pattern Recognition Algorithms</strong> - Rules-based fraud detection combined with statistical analysis for high precision</li>
@@ -198,9 +198,9 @@ const techStack = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Before -->
-        <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
-          <h3 class="font-bold text-lg mb-3 text-red-900">❌ Before Forensic Toolbox</h3>
-          <ul class="space-y-2 text-sm text-red-800">
+        <div class="bg-red-950/30 border-l-4 border-red-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-lg mb-3 text-red-300">❌ Before Forensic Toolbox</h3>
+          <ul class="space-y-2 text-sm text-red-200">
             <li>• Manual evidence collection (prone to errors)</li>
             <li>• No chain of custody documentation</li>
             <li>• Evidence integrity not verifiable</li>
@@ -211,9 +211,9 @@ const techStack = [
         </div>
 
         <!-- After -->
-        <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
-          <h3 class="font-bold text-lg mb-3 text-green-900">✅ After Forensic Toolbox</h3>
-          <ul class="space-y-2 text-sm text-green-800">
+        <div class="bg-green-900/20 border-l-4 border-green-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-lg mb-3 text-green-300">✅ After Forensic Toolbox</h3>
+          <ul class="space-y-2 text-sm text-green-200">
             <li>• Automated evidence collection with SHA-256</li>
             <li>• Complete chain of custody logs</li>
             <li>• Cryptographic integrity verification</li>
@@ -254,7 +254,7 @@ const techStack = [
 
       <div class="prose prose-lg max-w-none">
         <h3 class="text-xl font-semibold mb-3">Innovation & Problem-Solving</h3>
-        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <ul class="list-disc pl-6 space-y-2 text-slate-300">
           <li>
             <strong>SHA-256 Evidence Integrity</strong> - Implemented cryptographic hashing to create
             cryptographically-verified evidence with tamper detection. Any modification to evidence file
@@ -278,7 +278,7 @@ const techStack = [
         </ul>
 
         <h3 class="text-xl font-semibold mt-6 mb-3">Scalability & Reusability</h3>
-        <p class="text-gray-700">
+        <p class="text-slate-300">
           The toolbox's modular design allows deployment across any industry requiring forensic
           investigation capabilities. Successfully used for vendor payment fraud, payroll fraud,
           financial statement fraud, and internal control assessments. The SHA-256 hashing and
@@ -289,7 +289,7 @@ const techStack = [
     </section>
 
     <!-- Navigation -->
-    <div class="flex justify-between items-center pt-8 border-t border-gray-200">
+    <div class="flex justify-between items-center pt-8 border-t border-white/10">
       <a href={`${base}projects/fraud-detection/`} class="btn btn-secondary">
         ← Previous: Fraud Detection
       </a>

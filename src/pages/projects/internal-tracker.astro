@@ -46,17 +46,17 @@ const techStack = [
 
     <!-- Breadcrumb -->
     <nav class="text-sm mb-6">
-      <a href={base} class="text-blue-600 hover:underline">Home</a>
+      <a href={base} class="text-blue-400 hover:underline">Home</a>
       <span class="mx-2">/</span>
-      <a href={`${base}projects/`} class="text-blue-600 hover:underline">Projects</a>
+      <a href={`${base}projects/`} class="text-blue-400 hover:underline">Projects</a>
       <span class="mx-2">/</span>
-      <span class="text-gray-600">Internal Audit Tracker</span>
+      <span class="text-slate-400">Internal Audit Tracker</span>
     </nav>
 
     <!-- Hero Section -->
     <div class="mb-8">
       <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1>
-      <p class="text-xl text-gray-600 mb-6">{description}</p>
+      <p class="text-xl text-slate-400 mb-6">{description}</p>
 
       <!-- Tech Stack Badges -->
       <div class="flex flex-wrap gap-2 mb-6">
@@ -64,7 +64,7 @@ const techStack = [
       </div>
 
       <!-- Category & Date -->
-      <div class="flex gap-4 text-sm text-gray-500">
+      <div class="flex gap-4 text-sm text-slate-500">
         <span>🔧 Category: Audit Automation</span>
         <span>📅 Completed: Q2 2025</span>
       </div>
@@ -78,7 +78,7 @@ const techStack = [
 
       <div class="prose prose-lg max-w-none">
         <h3 class="text-xl font-semibold mb-3">Business Problem</h3>
-        <p class="text-gray-700 mb-4">
+        <p class="text-slate-300 mb-4">
           Premium F&B chains need integrated audit management systems that connect audit planning,
           execution, findings tracking, and executive reporting. Manual Excel trackers lack automated
           formulas, cross-references, and executive dashboards. Audit committee presentations require
@@ -86,7 +86,7 @@ const techStack = [
         </p>
 
         <h3 class="text-xl font-semibold mb-3">Solution Overview</h3>
-        <p class="text-gray-700 mb-4">
+        <p class="text-slate-300 mb-4">
           Developed enterprise-grade Excel tracker (9 integrated worksheets) with automated formulas,
           cross-references, and conditional formatting, plus PowerPoint presentation generator that
           creates 20+ data-driven slides directly from tracker data. System includes 3-tier executive
@@ -94,7 +94,7 @@ const techStack = [
         </p>
 
         <h3 class="text-xl font-semibold mb-3">Key Results</h3>
-        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <ul class="list-disc pl-6 space-y-2 text-slate-300">
           <li>📊 <strong>3-tier executive dashboards</strong> - CEO, Audit Committee, Director views with automated KPIs</li>
           <li>🎯 <strong>Automated risk scoring</strong> - Likelihood × Impact calculations with color-coded thresholds</li>
           <li>📈 <strong>One-click PowerPoint generation</strong> - 20+ slides with data-driven charts in seconds</li>
@@ -107,7 +107,7 @@ const techStack = [
     <!-- Screenshots Gallery -->
     <section class="mb-12">
       <h2 class="text-3xl font-bold mb-6">Dashboards & Automation Features</h2>
-      <p class="text-gray-600 mb-6">
+      <p class="text-slate-400 mb-6">
         Below are screenshots from the audit tracker showcasing executive dashboards, risk scoring,
         and automated PowerPoint generation. All data shown is sanitized for demonstration.
       </p>
@@ -116,14 +116,14 @@ const techStack = [
 
     <!-- Technical Overview -->
     <section class="mb-12">
-      <details class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200">
-        <summary class="text-2xl font-bold cursor-pointer hover:text-blue-600 transition-colors">
+      <details class="bg-slate-800/60 p-6 rounded-lg border border-blue-500/30">
+        <summary class="text-2xl font-bold cursor-pointer hover:text-blue-400 transition-colors">
           🔧 Technical Overview (Click to Expand)
         </summary>
 
         <div class="mt-6 prose prose-lg max-w-none">
           <h3 class="text-xl font-semibold mb-3">System Architecture</h3>
-          <p class="text-gray-700 mb-4">
+          <p class="text-slate-300 mb-4">
             The tracker uses openpyxl for Excel automation and python-pptx for PowerPoint generation.
             All 9 worksheets are programmatically created with automated formulas, data validation,
             conditional formatting, and cross-references. The PowerPoint generator reads live data
@@ -133,7 +133,7 @@ const techStack = [
           <h3 class="text-xl font-semibold mb-3">9 Integrated Worksheets</h3>
 
           <h4 class="font-bold mb-2">Planning & Risk Assessment</h4>
-          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+          <ul class="list-disc pl-6 space-y-1 text-slate-300 text-sm mb-4">
             <li><strong>Reference Data</strong> - Master dropdown lists (departments, risk levels, audit types, statuses)</li>
             <li><strong>Audit Universe</strong> - Complete inventory of auditable entities with metadata</li>
             <li><strong>Risk Assessment</strong> - Automated risk scoring (Likelihood × Impact) with color coding</li>
@@ -141,13 +141,13 @@ const techStack = [
           </ul>
 
           <h4 class="font-bold mb-2">Execution & Tracking</h4>
-          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+          <ul class="list-disc pl-6 space-y-1 text-slate-300 text-sm mb-4">
             <li><strong>Findings Tracker</strong> - Detailed audit findings with categorization (Condition, Criteria, Cause, Consequence, Recommendation)</li>
             <li><strong>Action Plans</strong> - Management remediation tracking with aging analysis and overdue highlighting</li>
           </ul>
 
           <h4 class="font-bold mb-2">Reporting & Dashboards</h4>
-          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+          <ul class="list-disc pl-6 space-y-1 text-slate-300 text-sm mb-4">
             <li><strong>CEO Dashboard</strong> - Executive KPIs: total audits, completion %, critical findings, risk exposure</li>
             <li><strong>Audit Committee Dashboard</strong> - Governance metrics vs. targets, compliance status, quarterly trends</li>
             <li><strong>Director Dashboard</strong> - Operational metrics: resource utilization, budget tracking, team performance</li>
@@ -155,7 +155,7 @@ const techStack = [
 
           <h3 class="text-xl font-semibold mb-3 mt-6">Automated Features</h3>
 
-          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <ul class="list-disc pl-6 space-y-2 text-slate-300">
             <li>
               <strong>Risk Score Formulas</strong> - Inherent Risk = Likelihood × Impact, with automatic rating assignment
               (Critical ≥12, High ≥9, Medium ≥6, Low &lt;6)
@@ -184,11 +184,11 @@ const techStack = [
 
           <h3 class="text-xl font-semibold mb-3 mt-6">PowerPoint Automation (20+ Slides)</h3>
 
-          <p class="text-gray-700 mb-4">
+          <p class="text-slate-300 mb-4">
             The presentation generator creates a complete audit committee presentation with:
           </p>
 
-          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm mb-4">
+          <ul class="list-disc pl-6 space-y-1 text-slate-300 text-sm mb-4">
             <li>Title slide with corporate branding</li>
             <li>Agenda and meeting outline</li>
             <li>Executive summary with visual KPI metrics</li>
@@ -203,14 +203,14 @@ const techStack = [
             <li>Closing slide for Q&A</li>
           </ul>
 
-          <p class="text-gray-700 mb-4">
+          <p class="text-slate-300 mb-4">
             All charts and data tables are automatically populated from the Excel tracker, ensuring
             presentations are always up-to-date with zero manual data entry.
           </p>
 
           <h3 class="text-xl font-semibold mb-3 mt-6">Professional Standards Alignment</h3>
 
-          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <ul class="list-disc pl-6 space-y-2 text-slate-300">
             <li><strong>IIA Standards</strong> - Standard 2010 (Planning), 2120 (Risk Management), 2400 (Communicating Results), 2500 (Monitoring Progress)</li>
             <li><strong>COSO Framework</strong> - Risk Assessment, Control Activities, Information & Communication, Monitoring Activities</li>
             <li><strong>Three Lines of Defense</strong> - Third line (internal audit) positioning and role clarity</li>
@@ -225,9 +225,9 @@ const techStack = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Before -->
-        <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
-          <h3 class="font-bold text-lg mb-3 text-red-900">❌ Before Audit Tracker</h3>
-          <ul class="space-y-2 text-sm text-red-800">
+        <div class="bg-red-950/30 border-l-4 border-red-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-lg mb-3 text-red-300">❌ Before Audit Tracker</h3>
+          <ul class="space-y-2 text-sm text-red-200">
             <li>• Manual Excel with no formulas (error-prone)</li>
             <li>• No executive dashboards</li>
             <li>• 5+ hours to create PowerPoint presentations</li>
@@ -238,9 +238,9 @@ const techStack = [
         </div>
 
         <!-- After -->
-        <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
-          <h3 class="font-bold text-lg mb-3 text-green-900">✅ After Audit Tracker</h3>
-          <ul class="space-y-2 text-sm text-green-800">
+        <div class="bg-green-900/20 border-l-4 border-green-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-lg mb-3 text-green-300">✅ After Audit Tracker</h3>
+          <ul class="space-y-2 text-sm text-green-200">
             <li>• 100% automated formulas (zero errors)</li>
             <li>• 3-tier executive dashboards</li>
             <li>• One-click PowerPoint (&lt;30 seconds)</li>
@@ -281,7 +281,7 @@ const techStack = [
 
       <div class="prose prose-lg max-w-none">
         <h3 class="text-xl font-semibold mb-3">Innovation & Problem-Solving</h3>
-        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <ul class="list-disc pl-6 space-y-2 text-slate-300">
           <li>
             <strong>PowerPoint Automation</strong> - Developed python-pptx integration that reads Excel
             tracker data and generates 20+ slides with charts, tables, and metrics. Reduced presentation
@@ -305,7 +305,7 @@ const techStack = [
         </ul>
 
         <h3 class="text-xl font-semibold mt-6 mb-3">Scalability & Reusability</h3>
-        <p class="text-gray-700">
+        <p class="text-slate-300">
           The tracker's modular design allows deployment across any industry requiring audit management.
           Successfully customized for retail, manufacturing, healthcare, and financial services sectors.
           The PowerPoint automation module is reusable for any Excel-to-presentation workflow. Python
@@ -316,7 +316,7 @@ const techStack = [
     </section>
 
     <!-- Navigation -->
-    <div class="flex justify-between items-center pt-8 border-t border-gray-200">
+    <div class="flex justify-between items-center pt-8 border-t border-white/10">
       <a href={`${base}projects/forensic-toolbox/`} class="btn btn-secondary">
         ← Previous: Forensic Toolbox
       </a>

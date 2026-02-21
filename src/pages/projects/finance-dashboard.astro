@@ -57,17 +57,17 @@ const techStack = [
 
     <!-- Breadcrumb -->
     <nav class="text-sm mb-6">
-      <a href={base} class="text-blue-600 hover:underline">Home</a>
+      <a href={base} class="text-blue-400 hover:underline">Home</a>
       <span class="mx-2">/</span>
-      <a href={`${base}projects/`} class="text-blue-600 hover:underline">Projects</a>
+      <a href={`${base}projects/`} class="text-blue-400 hover:underline">Projects</a>
       <span class="mx-2">/</span>
-      <span class="text-gray-600">Executive Analytics Hub</span>
+      <span class="text-slate-400">Executive Analytics Hub</span>
     </nav>
 
     <!-- Hero Section -->
     <div class="mb-8">
       <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1>
-      <p class="text-xl text-gray-600 mb-6">{description}</p>
+      <p class="text-xl text-slate-400 mb-6">{description}</p>
 
       <!-- Tech Stack Badges -->
       <div class="flex flex-wrap gap-2 mb-6">
@@ -75,7 +75,7 @@ const techStack = [
       </div>
 
       <!-- Category & Date -->
-      <div class="flex gap-4 text-sm text-gray-500">
+      <div class="flex gap-4 text-sm text-slate-500">
         <span>📊 Category: Dashboard & Analytics</span>
         <span>📅 Completed: Q1 2025</span>
       </div>
@@ -89,7 +89,7 @@ const techStack = [
 
       <div class="prose prose-lg max-w-none">
         <h3 class="text-xl font-semibold mb-3">Business Problem</h3>
-        <p class="text-gray-700 mb-4">
+        <p class="text-slate-300 mb-4">
           GCC restaurant groups operating multiple brands across 50+ locations face significant
           challenges in financial consolidation. Manual processes for multi-currency conversion,
           concept-level profitability analysis, and executive variance reporting were consuming
@@ -97,7 +97,7 @@ const techStack = [
         </p>
 
         <h3 class="text-xl font-semibold mb-3">Solution Overview</h3>
-        <p class="text-gray-700 mb-4">
+        <p class="text-slate-300 mb-4">
           Developed an enterprise-grade financial reporting automation system that generates
           12 professional Excel dashboards (34 integrated sheets) with automated formulas,
           FX conversion across 5 currencies (AED, SAR, USD, EUR, GBP), conditional formatting,
@@ -106,7 +106,7 @@ const techStack = [
         </p>
 
         <h3 class="text-xl font-semibold mb-3">Key Results</h3>
-        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <ul class="list-disc pl-6 space-y-2 text-slate-300">
           <li>⚡ <strong>85% time reduction</strong> - Monthly reporting time reduced from 5 days to &lt;1 day</li>
           <li>💰 <strong>Real-time profitability</strong> - Enabled concept-level P&L analysis by brand</li>
           <li>📊 <strong>Automated variance analysis</strong> - C-suite variance reports with rule-based automated narrative explanations</li>
@@ -119,7 +119,7 @@ const techStack = [
     <!-- Screenshots Gallery -->
     <section class="mb-12">
       <h2 class="text-3xl font-bold mb-6">Screenshots & Visuals</h2>
-      <p class="text-gray-600 mb-6">
+      <p class="text-slate-400 mb-6">
         Below are screenshots from the generated Finance Dashboard showing key reporting views.
         All data shown is sanitized dummy data for demonstration purposes.
       </p>
@@ -128,21 +128,21 @@ const techStack = [
 
     <!-- Technical Overview -->
     <section class="mb-12">
-      <details class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200">
-        <summary class="text-2xl font-bold cursor-pointer hover:text-blue-600 transition-colors">
+      <details class="bg-slate-800/60 p-6 rounded-lg border border-blue-500/30">
+        <summary class="text-2xl font-bold cursor-pointer hover:text-blue-400 transition-colors">
           🔧 Technical Overview (Click to Expand)
         </summary>
 
         <div class="mt-6 prose prose-lg max-w-none">
           <h3 class="text-xl font-semibold mb-3">Architecture & Tech Stack</h3>
-          <p class="text-gray-700 mb-4">
+          <p class="text-slate-300 mb-4">
             The system uses a modular Python architecture with separate modules for data processing,
             FX conversion, variance analysis, and Excel generation. Built with <code>xlsxwriter</code>
             for professional Excel formatting and <code>pandas</code> for data transformation.
           </p>
 
           <h3 class="text-xl font-semibold mb-3">Key Technical Features</h3>
-          <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <ul class="list-disc pl-6 space-y-2 text-slate-300">
             <li><strong>Modular Design</strong> - Separate modules for data, FX, insights, and Excel generation</li>
             <li><strong>Multi-Currency Engine</strong> - Automated conversion across 5 currencies with real-time rates</li>
             <li><strong>Formula Automation</strong> - Generates Excel formulas programmatically (SUM, VLOOKUP, IF)</li>
@@ -152,11 +152,11 @@ const techStack = [
           </ul>
 
           <h3 class="text-xl font-semibold mb-3">Generated Output</h3>
-          <p class="text-gray-700 mb-4">
+          <p class="text-slate-300 mb-4">
             The system generates a single Excel workbook (GCC_Group_Finance_Master_Pack.xlsx)
             containing 34 integrated sheets:
           </p>
-          <ul class="list-disc pl-6 space-y-1 text-gray-700 text-sm">
+          <ul class="list-disc pl-6 space-y-1 text-slate-300 text-sm">
             <li>📄 ReadMe & Documentation</li>
             <li>📊 Executive Summary Dashboard</li>
             <li>🌍 Regional Performance Matrix (5 regions)</li>
@@ -177,9 +177,9 @@ const techStack = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Before -->
-        <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
-          <h3 class="font-bold text-lg mb-3 text-red-900">❌ Before Automation</h3>
-          <ul class="space-y-2 text-sm text-red-800">
+        <div class="bg-red-950/30 border-l-4 border-red-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-lg mb-3 text-red-300">❌ Before Automation</h3>
+          <ul class="space-y-2 text-sm text-red-200">
             <li>• 5+ days manual consolidation per month</li>
             <li>• Manual FX conversion errors</li>
             <li>• No concept-level profitability visibility</li>
@@ -190,9 +190,9 @@ const techStack = [
         </div>
 
         <!-- After -->
-        <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
-          <h3 class="font-bold text-lg mb-3 text-green-900">✅ After Automation</h3>
-          <ul class="space-y-2 text-sm text-green-800">
+        <div class="bg-green-900/20 border-l-4 border-green-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-lg mb-3 text-green-300">✅ After Automation</h3>
+          <ul class="space-y-2 text-sm text-green-200">
             <li>• &lt;2 minutes report generation time</li>
             <li>• 100% accurate multi-currency conversion</li>
             <li>• Real-time brand profitability insights</li>
@@ -229,7 +229,7 @@ const techStack = [
 
       <div class="prose prose-lg max-w-none">
         <h3 class="text-xl font-semibold mb-3">Innovation & Problem-Solving</h3>
-        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <ul class="list-disc pl-6 space-y-2 text-slate-300">
           <li>
             <strong>Dynamic Formula Generation</strong> - Developed algorithm to generate Excel formulas
             programmatically based on data structure, eliminating manual formula creation
@@ -249,7 +249,7 @@ const techStack = [
         </ul>
 
         <h3 class="text-xl font-semibold mt-6 mb-3">Scalability & Reusability</h3>
-        <p class="text-gray-700">
+        <p class="text-slate-300">
           The modular architecture allows easy adaptation for different industries. The system
           has been successfully deployed for hospitality, retail, and F&B sectors with minimal
           configuration changes. The FX conversion module is reusable across any multi-currency
@@ -259,7 +259,7 @@ const techStack = [
     </section>
 
     <!-- Navigation -->
-    <div class="flex justify-between items-center pt-8 border-t border-gray-200">
+    <div class="flex justify-between items-center pt-8 border-t border-white/10">
       <a href={`${base}projects/`} class="btn btn-secondary">
         ← Back to Projects
       </a>
