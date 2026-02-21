@@ -653,6 +653,86 @@ const App = () => {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="py-40 bg-slate-900/50 relative overflow-hidden">
+        <div className="container px-8 mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 mb-6 block">LinkedIn Recommendations</span>
+            <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] text-white">What Colleagues Say.</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {[
+              {
+                photo: '/portfolio_my/images/testimonials/sally.webp',
+                quote: 'Majid was a trusted partner to Finance and the wider leadership team. His ability to assess risk, articulate issues clearly, and propose thoughtful, actionable solutions made him a highly respected voice. His recommendations were always grounded in a deep understanding of both risk and business impact.',
+                name: 'Sally Swanepoel',
+                title: 'Vice President of Finance',
+                context: 'Senior to Majid · Head of Internal Audit, Kitopi',
+              },
+              {
+                photo: '/portfolio_my/images/testimonials/lanie.webp',
+                quote: 'He has the strongest skills of any internal auditor that I have had the privilege of working with. His methodology was based on fact integrity and risk alignment. He has made our organisation stronger and safer because of his diligence and powerful skill set.',
+                name: 'Lanie Cardwell',
+                title: 'President, Cardwell Hospitality Advisors',
+                context: 'Managed Majid directly · Director of Internal Audit, ALFA-co',
+              },
+              {
+                photo: '/portfolio_my/images/testimonials/alkadi.webp',
+                quote: 'He demonstrates superior technical Internal Audit & Risk ability and produces work of exceptional quality. Majid always committed to producing work that meets high standards.',
+                name: 'Abdulaziz AlKadi',
+                title: 'CHRO · NRC Member · Board Member',
+                context: 'Worked with Majid · Al Faisaliah Group',
+              },
+            ].map((t, i) => (
+              <motion.div
+                key={t.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="glass-card p-10 flex flex-col"
+              >
+                {/* Quote mark */}
+                <div className="text-blue-500/30 text-7xl font-black leading-none mb-4 select-none">"</div>
+                <p className="text-slate-300 text-base leading-relaxed flex-1 mb-10 italic">
+                  {t.quote}
+                </p>
+                {/* Attribution */}
+                <div className="flex items-center gap-4 pt-6 border-t border-white/10">
+                  <img
+                    src={t.photo}
+                    alt={t.name}
+                    className="w-12 h-12 rounded-full object-cover flex-shrink-0 ring-2 ring-blue-500/20"
+                  />
+                  <div>
+                    <div className="text-white font-black text-sm">{t.name}</div>
+                    <div className="text-slate-400 text-xs leading-snug mt-0.5">{t.title}</div>
+                    <div className="text-slate-600 text-[10px] uppercase tracking-wider mt-1">{t.context}</div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="flex justify-center mt-16">
+            <a
+              href="https://www.linkedin.com/in/majid-m-4b097118/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary inline-flex items-center gap-3"
+            >
+              View All Recommendations on LinkedIn →
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Case Studies */}
       <section id="projects" className="py-40">
         <div className="container px-8 mx-auto max-w-7xl">
