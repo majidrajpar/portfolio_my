@@ -117,10 +117,10 @@ const App = () => {
   const featuredProjects = [
     {
       id: 'fraud-detection-ml',
-      title: 'Neural-Net Fraud Detection',
+      title: 'ML-Powered Fraud Detection',
       description: 'Advanced machine learning architecture using Isolation Forest and K-Means clustering to analyze 2.3M+ monthly transactions.',
       category: 'Fraud Forensics',
-      impact: '82% Reduction in Fraud Loss (SAR 5.1M to <900K)',
+      impact: '78% Reduction in Fraud Incidents (2.3M monthly transactions)',
       techStack: ['Python', 'scikit-learn', 'Pandas', 'Excel Automation'],
       image: '/portfolio_my/images/projects/fraud-detection/fraud-dashboard.webp',
       features: [
@@ -128,7 +128,7 @@ const App = () => {
         'Manager discount rate analysis with automated risk scoring',
         'Hourly transaction pattern heat mapping',
         'Location-based risk assessment across multiple regions',
-        'Automated recovery identification (SAR 4.2M potential recovery)',
+        'Automated recovery identification (AED 3.2M recurring annual recovery)',
         'Real-time fraud probability scoring for each transaction'
       ]
     },
@@ -437,11 +437,11 @@ const App = () => {
             </h1>
             
             <p className="text-lg md:text-xl mb-16 text-slate-400 font-medium text-center max-w-3xl leading-relaxed">
-              Chief Audit Executive specializing in Neural-Net Fraud Detection and 100% Population Testing to safeguard enterprise capital.
+              Chief Audit Executive specializing in ML-Powered Fraud Detection and 100% Population Testing to safeguard enterprise capital.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-              <a href="#projects" className="btn-primary">Analyze Case Studies</a>
+              <a href="#projects" className="btn-primary">View Case Studies</a>
               <a href="/portfolio_my/cv/Majid_Mumtaz_CV.pdf" download="Majid_Mumtaz_CV.pdf" className="btn-secondary">Download Executive CV</a>
             </div>
           </motion.div>
@@ -645,7 +645,7 @@ const App = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <MetricCard index={0} value="AED 3.2M" label="Annual Recovery" icon="💰" isSuccess />
             <MetricCard index={1} value="$127M" label="M&A Deal Leadership" icon="🤝" />
-            <MetricCard index={2} value="82%" label="Fraud Reduction" icon="📉" isSuccess />
+            <MetricCard index={2} value="78%" label="Fraud Incidents Reduced" icon="📉" isSuccess />
             <MetricCard index={3} value="15K+" label="LinkedIn Followers" icon="💼" />
             <MetricCard index={4} value="100%" label="Population Testing" icon="🤖" isSuccess />
             <MetricCard index={5} value="3.5K+" label="Newsletter Subscribers" icon="📰" isSuccess />
