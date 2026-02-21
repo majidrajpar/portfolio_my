@@ -122,7 +122,7 @@ const App = () => {
       category: 'Fraud Forensics',
       impact: '82% Reduction in Fraud Loss (SAR 5.1M to <900K)',
       techStack: ['Python', 'scikit-learn', 'Pandas', 'Excel Automation'],
-      image: null,
+      image: '/portfolio_my/images/projects/fraud-detection/fraud-dashboard.webp',
       features: [
         'ML anomaly detection with 87.3% accuracy using Isolation Forest',
         'Manager discount rate analysis with automated risk scoring',
