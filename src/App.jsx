@@ -139,7 +139,7 @@ const App = () => {
       category: 'Corporate Governance',
       impact: 'End-to-end IPO readiness across governance, ICOFR, and UAE SCA compliance for a multi-jurisdiction, multi-brand platform',
       techStack: ['UAE SCA Regulations', 'DFM Listing Rules', 'COSO ICOFR', 'IFRS', 'UAE Companies Law'],
-      image: null,
+      image: '/portfolio_my/images/projects/dfm-ipo-readiness/icofr-governance.webp',
       features: [
         'ICOFR scoping and Risk Control Matrix documentation across 12+ business processes',
         'UAE SCA Corporate Governance Code compliance — board composition, committee design, disclosure framework',
