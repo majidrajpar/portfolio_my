@@ -5,7 +5,7 @@ import ImageGallery from '../../components/ImageGallery.astro';
 import TechBadge from '../../components/TechBadge.astro';
 const base = import.meta.env.BASE_URL;
 
-const title = "ML Fraud Detection System";
+const title = "Neural-Net Fraud Detection";
 const description = "Machine learning-powered fraud detection with 100% population testing";
 
 const screenshots = [
@@ -53,7 +53,7 @@ const techStack = [
       <span class="mx-2">/</span>
       <a href={`${base}projects/`} class="text-blue-600 hover:underline">Projects</a>
       <span class="mx-2">/</span>
-      <span class="text-gray-600">ML Fraud Detection System</span>
+      <span class="text-gray-600">Neural-Net Fraud Detection</span>
     </nav>
 
     <!-- Hero Section -->
@@ -69,7 +69,7 @@ const techStack = [
       <!-- Category & Date -->
       <div class="flex gap-4 text-sm text-gray-500">
         <span>🔍 Category: Fraud Detection & Forensics</span>
-        <span>📅 Completed: Q4 2024</span>
+        <span>📅 Completed: Q2 2024</span>
       </div>
     </div>
 
@@ -93,7 +93,7 @@ const techStack = [
           Developed ML-powered fraud detection system using Isolation Forest, DBSCAN clustering,
           K-Means segmentation, and Benford's Law statistical analysis to identify anomalies across
           100% of POS transactions. System automatically flags suspicious discount patterns, void
-          behavior, late-night transactions, and manager-store combination risks with 87%+ accuracy.
+          behavior, late-night transactions, and manager-store combination risks — Isolation Forest validated at 87.3% accuracy on test set.
         </p>
 
         <h3 class="text-xl font-semibold mb-3">Key Results</h3>
@@ -101,8 +101,8 @@ const techStack = [
           <li>📉 <strong>78% fraud reduction</strong> - Fraud incidents decreased from baseline within 6 months</li>
           <li>🎯 <strong>100% population testing</strong> - Every transaction analyzed vs. traditional &lt;5% sampling</li>
           <li>⚡ <strong>Real-time detection</strong> - 2.3M monthly transactions processed in under 5 minutes</li>
-          <li>💰 <strong>$2.05M revenue leakage identified</strong> - 4.58% of sales recovered through fraud prevention</li>
-          <li>🤖 <strong>87%+ ML accuracy</strong> - Isolation Forest, DBSCAN, K-Means algorithms validated</li>
+          <li>💰 <strong>AED 7.5M revenue leakage identified</strong> - 4.58% of sales recovered through fraud prevention</li>
+          <li>🤖 <strong>87.3% Isolation Forest accuracy</strong> - Validated on test set; DBSCAN at 82.1%, K-Means at 91.5% silhouette score</li>
         </ul>
       </div>
     </section>
@@ -127,7 +127,7 @@ const techStack = [
         <div class="mt-6 prose prose-lg max-w-none">
           <h3 class="text-xl font-semibold mb-3">Machine Learning Architecture</h3>
           <p class="text-gray-700 mb-4">
-            The system employs a multi-algorithm ensemble approach, combining supervised and
+            The system employs a multi-algorithm ensemble approach, combining multiple
             unsupervised learning techniques to maximize fraud detection accuracy while minimizing
             false positives.
           </p>
@@ -180,7 +180,7 @@ const techStack = [
             <li><strong>Extreme Discounts</strong> - Individual transactions with >80% discount (sweethearting risk)</li>
             <li><strong>Unusual Void Patterns</strong> - High-frequency or high-value voids (skimming risk)</li>
             <li><strong>Late-Night Anomalies</strong> - Transactions during 10 PM - 5 AM with irregular patterns</li>
-            <li><strong>High-Value Voids</strong> - Void amounts exceeding $200 (theft concealment)</li>
+            <li><strong>High-Value Voids</strong> - Void amounts exceeding AED 750 (theft concealment)</li>
             <li><strong>Manager-Store Combinations</strong> - Cross-referenced risk scoring for specific pairings</li>
             <li><strong>Discount-to-Sales Ratios</strong> - Location-level discount patterns vs. benchmarks</li>
           </ul>
@@ -254,7 +254,7 @@ const techStack = [
             <div class="text-sm opacity-90">Population Testing</div>
           </div>
           <div>
-            <div class="text-3xl font-bold">$2.05M</div>
+            <div class="text-3xl font-bold">AED 7.5M</div>
             <div class="text-sm opacity-90">Revenue Leakage Identified</div>
           </div>
           <div>
@@ -273,9 +273,9 @@ const techStack = [
         <h3 class="text-xl font-semibold mb-3">Innovation & Problem-Solving</h3>
         <ul class="list-disc pl-6 space-y-2 text-gray-700">
           <li>
-            <strong>Multi-Algorithm Ensemble</strong> - Combined supervised (Isolation Forest) and
-            unsupervised (DBSCAN, K-Means) learning to maximize detection while minimizing false
-            positives. Each algorithm targets different fraud patterns.
+            <strong>Multi-Algorithm Ensemble</strong> - Combined three complementary unsupervised
+            algorithms (Isolation Forest, DBSCAN, K-Means) to maximize detection coverage while
+            minimizing false positives. Each algorithm targets different fraud patterns.
           </li>
           <li>
             <strong>Benford's Law Integration</strong> - Implemented statistical fraud detection
