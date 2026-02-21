@@ -1,12 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, ShieldCheck, Database, BrainCircuit, BarChart3, Binary } from 'lucide-react';
+import { ArrowUpRight, ShieldCheck, Database, BrainCircuit, BarChart3, Binary, Landmark, Scale } from 'lucide-react';
 
 const icons = {
   'Fraud Forensics': <BrainCircuit className="w-8 h-8 text-blue-500" />,
   'Audit Transformation': <ShieldCheck className="w-8 h-8 text-emerald-500" />,
   'Strategic Dashboards': <BarChart3 className="w-8 h-8 text-purple-500" />,
   'Data Intelligence': <Binary className="w-8 h-8 text-blue-400" />,
+  'Corporate Governance': <Landmark className="w-8 h-8 text-amber-400" />,
+  'Enterprise Risk': <Scale className="w-8 h-8 text-rose-400" />,
 };
 
 const ProjectCard = ({ id, title, description, category, impact, techStack, image, index }) => {

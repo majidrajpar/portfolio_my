@@ -239,6 +239,57 @@ const App = () => {
       ]
     },
     {
+      id: 'ipo-sox-readiness',
+      title: 'IPO Readiness & SOX 404 Implementation',
+      description: 'End-to-end SOX 404 readiness program for a GCC retail conglomerate preparing for DFM listing. Delivered full ICFR documentation, control testing, and remediation within a 9-month window with zero material weaknesses at listing.',
+      category: 'Corporate Governance',
+      impact: 'Zero material weaknesses at IPO listing — 127 key controls documented & tested',
+      techStack: ['SOX 404', 'COSO', 'ICFR', 'Risk Control Matrix', 'Big 4 Co-sourcing'],
+      image: null,
+      features: [
+        'Entity-level and process-level control documentation across 14 business processes',
+        'Risk Control Matrix (RCM) with 127 key controls mapped to financial statement assertions',
+        'Control deficiency classification, remediation tracking, and re-testing',
+        'Big 4 external auditor coordination for reliance-based testing approach',
+        'Board and audit committee reporting on ICFR readiness status',
+        'Post-IPO internal audit transition plan and charter'
+      ]
+    },
+    {
+      id: 'coso-erm-framework',
+      title: 'COSO ERM Framework — Multi-Entity Rollout',
+      description: 'Designed and deployed a full COSO ERM 2017 framework for a GCC conglomerate spanning F&B, retail, and real estate. Integrated risk appetite statements, KRI dashboards, and board-level risk reporting across 12 business units.',
+      category: 'Enterprise Risk',
+      impact: '340+ risks mapped across 12 business units; board risk appetite formally adopted',
+      techStack: ['COSO ERM 2017', 'Python', 'Risk Heat Maps', 'KRI Monitoring', 'Power BI'],
+      image: null,
+      features: [
+        'Enterprise risk universe covering strategic, operational, financial, and compliance domains',
+        'Board-approved risk appetite statement with quantitative and qualitative thresholds',
+        'Automated KRI monitoring dashboard with traffic light escalation indicators',
+        'Risk owner accountability framework with defined escalation protocols',
+        '12-month rolling risk assessment calendar aligned to audit plan',
+        'Integration of risk register outputs into internal audit annual planning'
+      ]
+    },
+    {
+      id: 'audit-committee-governance',
+      title: 'Audit Committee Effectiveness & Governance Transformation',
+      description: 'Comprehensive governance transformation for a GCC family-owned group transitioning to institutional investment readiness. Redesigned audit committee charter, board reporting structure, and Three Lines of Defence model.',
+      category: 'Corporate Governance',
+      impact: 'Audit committee effectiveness rating improved from 62% to 94% (independent assessment)',
+      techStack: ['IIA Standards', 'Three Lines Model', 'UAE CG Code', 'Board Reporting', 'King IV'],
+      image: null,
+      features: [
+        'Audit committee charter redesign aligned with UAE Corporate Governance Code',
+        'Executive board reporting pack with KPI dashboards for audit committee meetings',
+        'Three Lines of Defence model implemented across all business units',
+        'External auditor management letter coordination and follow-up framework',
+        'Whistleblower policy, ethics hotline setup, and case management process',
+        'Annual governance effectiveness self-assessment and independent review'
+      ]
+    },
+    {
       id: 'icaew-audit-system',
       title: 'ICAEW Audit Report System',
       description: 'Professional audit reporting platform compliant with ICAEW standards, featuring automated report generation and evidence documentation.',
