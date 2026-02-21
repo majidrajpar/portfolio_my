@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { FileText } from 'lucide-react';
+import { FileText, BrainCircuit, Landmark, Scale } from 'lucide-react';
 import Navbar from './components/Navbar';
 import MetricCard from './components/MetricCard';
 import ProjectCard from './components/ProjectCard';
@@ -451,16 +451,17 @@ const App = () => {
       {/* About Section */}
       <section id="about" className="py-40 bg-slate-900/50 relative overflow-hidden">
         <div className="container px-8 mx-auto max-w-7xl">
-          {/* Bio Section */}
-          <div className="max-w-5xl mx-auto mb-40">
+          {/* Bio Section — Side-by-Side */}
+          <div className="max-w-6xl mx-auto mb-40">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-20"
+              className="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-16 items-start mb-20"
             >
-              <div className="flex justify-center mb-10">
-                <div className="relative w-36 h-36 rounded-full overflow-hidden border-2 border-white/10 shadow-2xl ring-4 ring-blue-500/20">
+              {/* Photo */}
+              <div className="flex justify-center lg:justify-start lg:pt-2">
+                <div className="relative w-48 h-48 rounded-full overflow-hidden border-2 border-white/10 shadow-2xl ring-4 ring-blue-500/20 flex-shrink-0">
                   <img
                     src="/portfolio_my/images/majid-profile.jpg"
                     alt="Majid Mumtaz"
@@ -468,82 +469,101 @@ const App = () => {
                   />
                 </div>
               </div>
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 mb-6 block">About</span>
-              <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] text-white mb-8">Board-Facing Internal Audit Director.</h2>
-              <p className="text-slate-400 text-xl leading-relaxed max-w-4xl mx-auto">
-                <strong className="text-white">20+ years</strong> of progressive leadership experience protecting enterprise value across the GCC.
-                Recognized industry thought leader and <strong className="text-white">published author</strong> specializing in ITGC, SOX 404 compliance,
-                and AI-driven fraud detection.
-              </p>
-            </motion.div>
 
-            {/* Core Competencies */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="glass-card p-12 mb-16"
-            >
-              <h3 className="text-white text-2xl font-black mb-8 text-center">Core Competencies</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-slate-300">
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-1">▸</span>
-                  <span>Corporate Governance & SOX 404 / ICFR</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-1">▸</span>
-                  <span>Enterprise Risk Management (COSO ERM)</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-1">▸</span>
-                  <span>M&A Due Diligence & Capital Protection</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-1">▸</span>
-                  <span>Fraud Prevention & Forensic Analytics</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-1">▸</span>
-                  <span>Data-Driven Audit Automation (Python/ML)</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-blue-400 mt-1">▸</span>
-                  <span>Big 4 Co-sourcing & IPO Readiness</span>
-                </div>
+              {/* Bio Text */}
+              <div>
+                <span className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 mb-4 block">About</span>
+                <h2 className="text-[clamp(2rem,5vw,3.5rem)] text-white mb-8 leading-tight">
+                  Twenty Years. One Focus:<br />
+                  <span className="text-gradient">Protecting Capital.</span>
+                </h2>
+                <p className="text-slate-400 text-lg leading-relaxed mb-6">
+                  Twenty years inside the GCC's most complex audit environments — multi-brand F&B platforms spanning
+                  7 countries, healthcare subsidiaries targeting Nomu listing, and KSA holding groups restructuring
+                  for a new governance era. Where most audit teams were sampling, I was testing{' '}
+                  <strong className="text-white">100% of the population</strong>. Where most fraud programmes were
+                  reactive, I was building ML detection before the loss compounded.
+                </p>
+                <p className="text-slate-400 text-lg leading-relaxed mb-8">
+                  The fraud programme that recovered <strong className="text-white">SAR 4.2M</strong>. The COSO ERM
+                  rollout across <strong className="text-white">7 jurisdictions</strong> with board-adopted risk appetite.
+                  The DFM IPO governance programme that took a UAE platform from zero to UAE SCA-compliant. These aren't
+                  case studies — they're the output of applying technology, rigour, and board-level thinking to audit
+                  functions built to protect capital, not just report on it.
+                </p>
+                <p className="text-blue-400 text-base font-bold italic leading-relaxed">
+                  Now available as a fractional CAE and board advisor for UAE and KSA organisations ready to make that same shift.
+                </p>
               </div>
             </motion.div>
 
-            {/* Credentials */}
+            {/* Signature Capabilities */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
             >
-              <div className="glass-card p-8 text-center">
-                <div className="text-4xl mb-4">🎓</div>
-                <h4 className="text-white font-black text-sm uppercase tracking-wider mb-3">Professional</h4>
+              <div className="glass-card p-8 group hover:border-blue-500/30 transition-all">
+                <div className="p-3 bg-blue-500/10 rounded-2xl w-fit mb-6 group-hover:bg-blue-500/20 transition-colors">
+                  <BrainCircuit className="w-7 h-7 text-blue-400" />
+                </div>
+                <h4 className="text-white font-black text-base mb-3">Forensic & Fraud Analytics</h4>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  ML anomaly detection, 100% population testing, and SAR-level fraud recovery across GCC multi-entity operations.
+                </p>
+              </div>
+              <div className="glass-card p-8 group hover:border-amber-500/30 transition-all">
+                <div className="p-3 bg-amber-500/10 rounded-2xl w-fit mb-6 group-hover:bg-amber-500/20 transition-colors">
+                  <Landmark className="w-7 h-7 text-amber-400" />
+                </div>
+                <h4 className="text-white font-black text-base mb-3">IPO & Governance Readiness</h4>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  UAE SCA/DFM and Tadawul CMA compliance, ICOFR build-out, board committee design, and investor reporting frameworks.
+                </p>
+              </div>
+              <div className="glass-card p-8 group hover:border-rose-500/30 transition-all">
+                <div className="p-3 bg-rose-500/10 rounded-2xl w-fit mb-6 group-hover:bg-rose-500/20 transition-colors">
+                  <Scale className="w-7 h-7 text-rose-400" />
+                </div>
+                <h4 className="text-white font-black text-base mb-3">Enterprise Risk Management</h4>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  COSO ERM 2017 / ISO 31000 implementation, KRI dashboards, Three Lines of Defence, and board risk appetite design.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Credentials — No Emojis */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+            >
+              <div className="glass-card p-8">
+                <div className="w-8 h-1 bg-blue-500 rounded-full mb-5" />
+                <h4 className="text-white font-black text-sm uppercase tracking-wider mb-4">Certifications</h4>
                 <div className="text-slate-400 text-sm space-y-2">
-                  <div>CIA (Certified Internal Auditor)</div>
-                  <div>ACA, FCCA (Chartered Accountant)</div>
+                  <div>CIA — Certified Internal Auditor</div>
+                  <div>ACA, FCCA — Chartered Accountant</div>
                   <div>COSO ERM Certificate</div>
                 </div>
               </div>
-              <div className="glass-card p-8 text-center">
-                <div className="text-4xl mb-4">🏛️</div>
-                <h4 className="text-white font-black text-sm uppercase tracking-wider mb-3">Executive</h4>
+              <div className="glass-card p-8">
+                <div className="w-8 h-1 bg-amber-500 rounded-full mb-5" />
+                <h4 className="text-white font-black text-sm uppercase tracking-wider mb-4">Executive Education</h4>
                 <div className="text-slate-400 text-sm space-y-2">
                   <div>Harvard Business School Online</div>
                   <div>Disruptive Strategy</div>
                   <div>Risk Management (NYIF)</div>
                 </div>
               </div>
-              <div className="glass-card p-8 text-center">
-                <div className="text-4xl mb-4">🤖</div>
-                <h4 className="text-white font-black text-sm uppercase tracking-wider mb-3">Technical</h4>
+              <div className="glass-card p-8">
+                <div className="w-8 h-1 bg-emerald-500 rounded-full mb-5" />
+                <h4 className="text-white font-black text-sm uppercase tracking-wider mb-4">Technical</h4>
                 <div className="text-slate-400 text-sm space-y-2">
                   <div>Machine Learning (IBM)</div>
-                  <div>Python/Pandas Analytics</div>
+                  <div>Python / Pandas Analytics</div>
                   <div>Forensic Accounting (WVU)</div>
                 </div>
               </div>
