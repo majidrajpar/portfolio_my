@@ -239,54 +239,71 @@ const App = () => {
       ]
     },
     {
-      id: 'ipo-sox-readiness',
-      title: 'IPO Readiness & SOX 404 Implementation',
-      description: 'End-to-end SOX 404 readiness program for a GCC retail conglomerate preparing for DFM listing. Delivered full ICFR documentation, control testing, and remediation within a 9-month window with zero material weaknesses at listing.',
+      id: 'tadawul-ipo-readiness',
+      title: 'Tadawul IPO Readiness — GCC Premium Brand',
+      description: 'Led end-to-end IPO readiness transformation for a GCC premium brand targeting Tadawul listing. Delivered a 24-month program covering ICOFR implementation, CMA regulatory compliance, governance restructuring, and investor-grade financial documentation.',
       category: 'Corporate Governance',
-      impact: 'Zero material weaknesses at IPO listing — 127 key controls documented & tested',
-      techStack: ['SOX 404', 'COSO', 'ICFR', 'Risk Control Matrix', 'Big 4 Co-sourcing'],
+      impact: 'SAR 500M+ capital raise target — full ICOFR certification across 14 business processes',
+      techStack: ['COSO ICOFR', 'CMA Regulations', 'Tadawul Listing Rules', 'IFRS', 'Big 4 Co-sourcing'],
       image: null,
       features: [
-        'Entity-level and process-level control documentation across 14 business processes',
-        'Risk Control Matrix (RCM) with 127 key controls mapped to financial statement assertions',
-        'Control deficiency classification, remediation tracking, and re-testing',
-        'Big 4 external auditor coordination for reliance-based testing approach',
-        'Board and audit committee reporting on ICFR readiness status',
-        'Post-IPO internal audit transition plan and charter'
+        'ICOFR implementation across 14 processes with full Risk Control Matrix documentation',
+        'CMA Corporate Governance Regulations compliance — board independence, committee formation',
+        '3-year IFRS-compliant audited financial statements and prospectus preparation',
+        'Readiness scorecard framework targeting 70%+ compliance across all workstreams',
+        'Big 4 external auditor coordination and reliance-based control testing programme',
+        'Board, audit committee, and investor roadshow reporting packs (30+ slide deck)'
       ]
     },
     {
-      id: 'coso-erm-framework',
-      title: 'COSO ERM Framework — Multi-Entity Rollout',
-      description: 'Designed and deployed a full COSO ERM 2017 framework for a GCC conglomerate spanning F&B, retail, and real estate. Integrated risk appetite statements, KRI dashboards, and board-level risk reporting across 12 business units.',
+      id: 'nomu-listing-readiness',
+      title: 'Nomu Parallel Market Listing — KSA Healthcare Subsidiary',
+      description: 'As Group Internal Audit Director, led listing readiness for a KSA healthcare subsidiary of a diversified GCC holding group targeting the Tadawul Nomu Parallel Market. Coordinated governance, ICOFR, and regulatory submissions across the holding and subsidiary structures.',
+      category: 'Corporate Governance',
+      impact: 'Subsidiary successfully structured for parallel market listing within group governance framework',
+      techStack: ['Tadawul Nomu Rules', 'COSO', 'ICOFR', 'CMA Regulations', 'Holding Group Governance'],
+      image: null,
+      features: [
+        'Subsidiary-level governance framework designed within holding group structure',
+        'ICOFR scoping and control documentation aligned to Nomu listing requirements',
+        'Intercompany transaction review and related-party disclosure framework',
+        'Holding group audit committee oversight model for listed subsidiary',
+        'CMA regulatory gap analysis and remediation roadmap',
+        'Coordination with investment bank, legal advisors, and CMA on listing timetable'
+      ]
+    },
+    {
+      id: 'coso-erm-9country',
+      title: 'COSO ERM Programme — Multi-Brand F&B Platform (9 Countries)',
+      description: 'Designed and chaired the implementation of a full COSO ERM 2017 / ISO 31000 framework for a UAE-based multi-brand F&B technology platform operating 100+ kitchens across 9 countries. Built enterprise risk register, KRI dashboards, BCP plans, and embedded Three Lines of Defence across all jurisdictions.',
       category: 'Enterprise Risk',
-      impact: '340+ risks mapped across 12 business units; board risk appetite formally adopted',
-      techStack: ['COSO ERM 2017', 'Python', 'Risk Heat Maps', 'KRI Monitoring', 'Power BI'],
+      impact: '50+ risks mapped across 9 jurisdictions — 20+ live KRIs with board risk appetite formally adopted',
+      techStack: ['COSO ERM 2017', 'ISO 31000', 'Three Lines of Defence', 'KRI Dashboards', 'Power BI'],
       image: null,
       features: [
-        'Enterprise risk universe covering strategic, operational, financial, and compliance domains',
-        'Board-approved risk appetite statement with quantitative and qualitative thresholds',
-        'Automated KRI monitoring dashboard with traffic light escalation indicators',
-        'Risk owner accountability framework with defined escalation protocols',
-        '12-month rolling risk assessment calendar aligned to audit plan',
-        'Integration of risk register outputs into internal audit annual planning'
+        'Enterprise risk universe across 9 risk categories: operational, financial, strategic, food safety, technology, supply chain, compliance, reputational, and people risk',
+        '20+ Key Risk Indicators with Red/Amber/Green thresholds calibrated to operational data',
+        'Board-approved risk appetite statement with zero-tolerance for food safety and compliance breaches',
+        'Business Continuity Plans for all 9 markets with defined RTOs (critical systems: 2–8 hours)',
+        'Three Lines of Defence model embedded across 9 jurisdictions with country risk coordinators',
+        '12-month phased implementation: foundation, rollout, and embed — with Risk Committee reporting from Month 5'
       ]
     },
     {
-      id: 'audit-committee-governance',
-      title: 'Audit Committee Effectiveness & Governance Transformation',
-      description: 'Comprehensive governance transformation for a GCC family-owned group transitioning to institutional investment readiness. Redesigned audit committee charter, board reporting structure, and Three Lines of Defence model.',
+      id: 'holding-group-governance',
+      title: 'Corporate Governance Framework & Manual — KSA Holding Group',
+      description: 'As Group Internal Audit Director, led a comprehensive corporate governance upgrade for a KSA multi-sector holding group. Delivered a full governance manual, board and committee structures, delegation of authority, and Three Lines of Defence model aligned to CMA and Saudi corporate governance codes.',
       category: 'Corporate Governance',
-      impact: 'Audit committee effectiveness rating improved from 62% to 94% (independent assessment)',
-      techStack: ['IIA Standards', 'Three Lines Model', 'UAE CG Code', 'Board Reporting', 'King IV'],
+      impact: 'Group-wide governance manual adopted by board — covering holding company and all operating subsidiaries',
+      techStack: ['Saudi CG Code', 'CMA Regulations', 'IIA Three Lines Model', 'King IV', 'Board Governance'],
       image: null,
       features: [
-        'Audit committee charter redesign aligned with UAE Corporate Governance Code',
-        'Executive board reporting pack with KPI dashboards for audit committee meetings',
-        'Three Lines of Defence model implemented across all business units',
-        'External auditor management letter coordination and follow-up framework',
-        'Whistleblower policy, ethics hotline setup, and case management process',
-        'Annual governance effectiveness self-assessment and independent review'
+        'Corporate governance manual covering board charter, committee terms of reference, and delegation of authority',
+        'Board composition redesign — independence requirements, committee formation (Audit, Risk, Nomination & Remuneration)',
+        'Three Lines of Defence model implemented across holding and subsidiary entities',
+        'Whistleblower policy, code of conduct, and ethics framework with hotline setup',
+        'Governance gap analysis against CMA Corporate Governance Regulations (2023)',
+        'Annual board effectiveness evaluation framework and governance reporting to shareholders'
       ]
     },
     {
