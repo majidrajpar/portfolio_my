@@ -274,36 +274,36 @@ const App = () => {
     },
     {
       id: 'coso-erm-9country',
-      title: 'COSO ERM Programme — Multi-Brand F&B Platform (9 Countries)',
-      description: 'Designed and chaired the implementation of a full COSO ERM 2017 / ISO 31000 framework for a UAE-based multi-brand F&B technology platform operating 100+ kitchens across 9 countries. Built enterprise risk register, KRI dashboards, BCP plans, and embedded Three Lines of Defence across all jurisdictions.',
+      title: 'COSO ERM Programme — Multi-Brand F&B Platform (7 Countries)',
+      description: 'Designed and chaired the implementation of a full COSO ERM 2017 / ISO 31000 framework for a UAE-based multi-brand F&B technology platform operating 100+ kitchens across 7 countries. Built enterprise risk register, KRI dashboards, BCP plans, and embedded Three Lines of Defence across all jurisdictions.',
       category: 'Enterprise Risk',
-      impact: '50+ risks mapped across 9 jurisdictions — 20+ live KRIs with board risk appetite formally adopted',
+      impact: '50+ risks mapped across 7 jurisdictions — 20+ live KRIs with board risk appetite formally adopted',
       techStack: ['COSO ERM 2017', 'ISO 31000', 'Three Lines of Defence', 'KRI Dashboards', 'Power BI'],
       image: null,
       features: [
         'Enterprise risk universe across 9 risk categories: operational, financial, strategic, food safety, technology, supply chain, compliance, reputational, and people risk',
         '20+ Key Risk Indicators with Red/Amber/Green thresholds calibrated to operational data',
         'Board-approved risk appetite statement with zero-tolerance for food safety and compliance breaches',
-        'Business Continuity Plans for all 9 markets with defined RTOs (critical systems: 2–8 hours)',
-        'Three Lines of Defence model embedded across 9 jurisdictions with country risk coordinators',
+        'Business Continuity Plans for all 7 markets with defined RTOs (critical systems: 2–8 hours)',
+        'Three Lines of Defence model embedded across 7 jurisdictions with country risk coordinators',
         '12-month phased implementation: foundation, rollout, and embed — with Risk Committee reporting from Month 5'
       ]
     },
     {
       id: 'holding-group-governance',
       title: 'Corporate Governance Framework & Manual — KSA Holding Group',
-      description: 'As Group Internal Audit Director, led a comprehensive corporate governance upgrade for a KSA multi-sector holding group. Delivered a full governance manual, board and committee structures, delegation of authority, and Three Lines of Defence model aligned to CMA and Saudi corporate governance codes.',
+      description: 'As Group Internal Audit Director, led a comprehensive corporate governance upgrade for a KSA multi-sector private holding group. Delivered a full governance manual, board and committee structures, delegation of authority matrix, and Three Lines of Defence model aligned to Saudi Companies Law and international best practice.',
       category: 'Corporate Governance',
       impact: 'Group-wide governance manual adopted by board — covering holding company and all operating subsidiaries',
-      techStack: ['Saudi CG Code', 'CMA Regulations', 'IIA Three Lines Model', 'King IV', 'Board Governance'],
+      techStack: ['Saudi Companies Law', 'IIA Three Lines Model', 'SOCPA Standards', 'King IV', 'Board Governance'],
       image: null,
       features: [
-        'Corporate governance manual covering board charter, committee terms of reference, and delegation of authority',
-        'Board composition redesign — independence requirements, committee formation (Audit, Risk, Nomination & Remuneration)',
-        'Three Lines of Defence model implemented across holding and subsidiary entities',
-        'Whistleblower policy, code of conduct, and ethics framework with hotline setup',
-        'Governance gap analysis against CMA Corporate Governance Regulations (2023)',
-        'Annual board effectiveness evaluation framework and governance reporting to shareholders'
+        'Corporate governance manual covering board charter, committee terms of reference, and delegation of authority matrix',
+        'Board and committee structure design — Audit, Risk, and Nomination & Remuneration committees',
+        'Three Lines of Defence model implemented across holding and all operating subsidiaries',
+        'Whistleblower policy, code of conduct, and ethics framework with reporting mechanisms',
+        'Governance gap analysis against Saudi Companies Law and international best practice frameworks',
+        'Annual board effectiveness evaluation framework and governance reporting to ownership'
       ]
     },
     {
