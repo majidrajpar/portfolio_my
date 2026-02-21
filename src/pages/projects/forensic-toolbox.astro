@@ -101,7 +101,6 @@ const techStack = [
           <li>🛡️ <strong>High-precision fraud detection</strong> - Benford's Law (chi-square, p&lt;0.05) + pattern matching across 6+ fraud schemes</li>
           <li>⚖️ <strong>Evidence integrity assurance</strong> - SHA-256 hashing with complete chain of custody built to forensic investigation best practices</li>
           <li>📋 <strong>Multi-format reporting</strong> - JSON, CSV, Markdown for different stakeholders</li>
-          <li>🔒 <strong>Evidence integrity verification</strong> - Cryptographic hashing prevents tampering</li>
           <li>📊 <strong>Comprehensive fraud patterns</strong> - 6+ fraud scheme detection algorithms</li>
         </ul>
       </div>
@@ -219,7 +218,7 @@ const techStack = [
             <li>• Complete chain of custody logs</li>
             <li>• Cryptographic integrity verification</li>
             <li>• 6+ fraud pattern algorithms</li>
-            <li>• Automated Benford's Law (82% accuracy)</li>
+            <li>• Automated Benford's Law (chi-square, p&lt;0.05)</li>
             <li>• Multi-format reports in minutes</li>
           </ul>
         </div>
@@ -230,8 +229,8 @@ const techStack = [
         <h3 class="font-bold text-xl mb-4">📈 ROI & Value Created</h3>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div>
-            <div class="text-3xl font-bold">82%</div>
-            <div class="text-sm opacity-90">Fraud Detection Accuracy</div>
+            <div class="text-3xl font-bold">6+</div>
+            <div class="text-sm opacity-90">Fraud Scheme Algorithms</div>
           </div>
           <div>
             <div class="text-3xl font-bold">100%</div>
@@ -258,13 +257,13 @@ const techStack = [
         <ul class="list-disc pl-6 space-y-2 text-gray-700">
           <li>
             <strong>SHA-256 Evidence Integrity</strong> - Implemented cryptographic hashing to create
-            legally-defensible evidence with tamper detection. Any modification to evidence file
-            immediately invalidates the hash, ensuring court admissibility.
+            cryptographically-verified evidence with tamper detection. Any modification to evidence file
+            immediately invalidates the hash, preserving evidence integrity throughout the investigation.
           </li>
           <li>
             <strong>Benford's Law Automation</strong> - Developed automated first-digit frequency
-            analysis that detects fabricated financial data. Chi-square test implementation achieves
-            82% accuracy in identifying manipulated transactions.
+            analysis that detects fabricated financial data. Chi-square goodness-of-fit test flags
+            significant deviations (p&lt;0.05) as potential manipulation indicators for further investigation.
           </li>
           <li>
             <strong>Multi-Pattern Fraud Detection</strong> - Combined 6+ fraud detection algorithms
@@ -294,8 +293,8 @@ const techStack = [
       <a href={`${base}projects/fraud-detection/`} class="btn btn-secondary">
         ← Previous: Fraud Detection
       </a>
-      <a href={`${base}projects/`} class="btn btn-primary">
-        Back to Projects
+      <a href={`${base}projects/internal-tracker/`} class="btn btn-primary">
+        Next: Internal Tracker →
       </a>
     </div>
 
