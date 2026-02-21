@@ -133,6 +133,27 @@ const App = () => {
       ]
     },
     {
+      id: 'tadawul-ipo-readiness',
+      title: 'Tadawul IPO Readiness — GCC Premium Brand',
+      description: 'Led end-to-end IPO readiness transformation for a GCC premium brand targeting Tadawul listing. Delivered a 24-month program covering ICOFR implementation, CMA regulatory compliance, governance restructuring, and investor-grade financial documentation.',
+      category: 'Corporate Governance',
+      impact: 'SAR 500M+ capital raise target — full ICOFR certification across 14 business processes',
+      techStack: ['COSO ICOFR', 'CMA Regulations', 'Tadawul Listing Rules', 'IFRS', 'Big 4 Co-sourcing'],
+      image: null,
+      features: [
+        'ICOFR implementation across 14 processes with full Risk Control Matrix documentation',
+        'CMA Corporate Governance Regulations compliance — board independence, committee formation',
+        '3-year IFRS-compliant audited financial statements and prospectus preparation',
+        'Readiness scorecard framework targeting 70%+ compliance across all workstreams',
+        'Big 4 external auditor coordination and reliance-based control testing programme',
+        'Board, audit committee, and investor roadshow reporting packs (30+ slide deck)'
+      ]
+    },
+  ];
+
+  const allProjects = useMemo(() => [
+    ...featuredProjects,
+    {
       id: 'audit-findings-system',
       title: 'Audit Findings Management System',
       description: 'Enterprise-grade automation framework delivering 100% population testing across multi-entity GCC operations with automated findings tracking.',
@@ -165,11 +186,7 @@ const App = () => {
         'Capital leak identification and recovery tracking',
         'Multi-period comparative analysis (12-month view)'
       ]
-    }
-  ];
-
-  const allProjects = useMemo(() => [
-    ...featuredProjects,
+    },
     {
       id: 'enterprise-audit-platform',
       title: 'Enterprise Audit Management Platform',
@@ -236,23 +253,6 @@ const App = () => {
         'Action plan reporting for management review',
         'Standardized procedures across all sites',
         'Automated compliance scoring and ratings'
-      ]
-    },
-    {
-      id: 'tadawul-ipo-readiness',
-      title: 'Tadawul IPO Readiness — GCC Premium Brand',
-      description: 'Led end-to-end IPO readiness transformation for a GCC premium brand targeting Tadawul listing. Delivered a 24-month program covering ICOFR implementation, CMA regulatory compliance, governance restructuring, and investor-grade financial documentation.',
-      category: 'Corporate Governance',
-      impact: 'SAR 500M+ capital raise target — full ICOFR certification across 14 business processes',
-      techStack: ['COSO ICOFR', 'CMA Regulations', 'Tadawul Listing Rules', 'IFRS', 'Big 4 Co-sourcing'],
-      image: null,
-      features: [
-        'ICOFR implementation across 14 processes with full Risk Control Matrix documentation',
-        'CMA Corporate Governance Regulations compliance — board independence, committee formation',
-        '3-year IFRS-compliant audited financial statements and prospectus preparation',
-        'Readiness scorecard framework targeting 70%+ compliance across all workstreams',
-        'Big 4 external auditor coordination and reliance-based control testing programme',
-        'Board, audit committee, and investor roadshow reporting packs (30+ slide deck)'
       ]
     },
     {
