@@ -491,9 +491,34 @@ const App = () => {
                   case studies — they're the output of applying technology, rigour, and board-level thinking to audit
                   functions built to protect capital, not just report on it.
                 </p>
-                <p className="text-blue-400 text-base font-bold italic leading-relaxed">
+                <p className="text-blue-400 text-base font-bold italic leading-relaxed mb-10">
                   Now available as a fractional CAE and board advisor for UAE and KSA organisations ready to make that same shift.
                 </p>
+                {/* Social Proof Strip */}
+                <div className="flex flex-wrap gap-6">
+                  <a
+                    href="https://www.linkedin.com/in/majid-m-4b097118/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full hover:border-blue-500/40 hover:bg-white/10 transition-all group"
+                  >
+                    <span className="text-blue-400 font-black text-sm">15,000+</span>
+                    <span className="text-slate-400 text-xs uppercase tracking-wider font-bold group-hover:text-white transition-colors">LinkedIn Followers</span>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/newsletters/7339153291630510080/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full hover:border-blue-500/40 hover:bg-white/10 transition-all group"
+                  >
+                    <span className="text-blue-400 font-black text-sm">3,500+</span>
+                    <span className="text-slate-400 text-xs uppercase tracking-wider font-bold group-hover:text-white transition-colors">Newsletter Subscribers</span>
+                  </a>
+                  <div className="flex items-center gap-3 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full">
+                    <span className="text-emerald-400 font-black text-sm">Weekly</span>
+                    <span className="text-slate-400 text-xs uppercase tracking-wider font-bold">Risk, Compliance & Innovation</span>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
@@ -621,9 +646,9 @@ const App = () => {
             <MetricCard index={0} value="AED 3.2M" label="Annual Recovery" icon="💰" isSuccess />
             <MetricCard index={1} value="$127M" label="M&A Deal Leadership" icon="🤝" />
             <MetricCard index={2} value="82%" label="Fraud Reduction" icon="📉" isSuccess />
-            <MetricCard index={3} value="97%" label="SOX Compliance" icon="🚀" />
-            <MetricCard index={4} value="100%" label="Population Check" icon="🤖" isSuccess />
-            <MetricCard index={5} value="6" label="Amazon Books" icon="📚" />
+            <MetricCard index={3} value="15K+" label="LinkedIn Followers" icon="💼" />
+            <MetricCard index={4} value="100%" label="Population Testing" icon="🤖" isSuccess />
+            <MetricCard index={5} value="3.5K+" label="Newsletter Subscribers" icon="📰" isSuccess />
           </div>
         </div>
       </section>
@@ -726,6 +751,109 @@ const App = () => {
               <FileText size={20} />
               Download Full Executive CV
             </motion.a>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Thinking — Newsletter Section */}
+      <section className="py-40 bg-slate-950/50 relative overflow-hidden border-t border-white/5">
+        <div className="container px-8 mx-auto max-w-7xl">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-10">
+            <div>
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 mb-6 block"
+              >
+                Weekly Newsletter
+              </motion.span>
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-[clamp(2.5rem,6vw,4.5rem)] text-white"
+              >
+                Risk, Compliance<br />&amp; Innovation.
+              </motion.h2>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-col items-end gap-3"
+            >
+              <p className="text-slate-400 text-lg max-w-sm text-right leading-relaxed">
+                Expert insights on strategic risk, compliance, and digital innovation in audit — published every week.
+              </p>
+              <div className="flex gap-4 text-right">
+                <span className="text-[10px] font-black uppercase tracking-widest text-blue-400">15,000+ followers</span>
+                <span className="text-slate-600">·</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-blue-400">3,500+ subscribers</span>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Recent Articles */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {[
+              {
+                title: 'Beyond the Bell: Why Governance is the True Currency of a Successful UAE IPO',
+                date: 'Jan 21, 2026',
+                tag: 'IPO Governance',
+                tagColor: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
+              },
+              {
+                title: 'The Audit Blind Spots & Risks Your Board Isn\'t Hearing About',
+                date: 'Jan 25, 2026',
+                tag: 'Board Advisory',
+                tagColor: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
+              },
+              {
+                title: 'Why Data Cleaning Became My Unexpected Priority',
+                date: 'Feb 10, 2026',
+                tag: 'Data & Analytics',
+                tagColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+              },
+            ].map((article, i) => (
+              <motion.a
+                key={article.title}
+                href="https://www.linkedin.com/newsletters/7339153291630510080/"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="glass-card p-8 flex flex-col group hover:border-blue-500/30 transition-all cursor-pointer"
+              >
+                <span className={`text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border w-fit mb-6 ${article.tagColor}`}>
+                  {article.tag}
+                </span>
+                <h4 className="text-white font-black text-base leading-snug mb-6 flex-1 group-hover:text-blue-400 transition-colors">
+                  {article.title}
+                </h4>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-500 text-xs">{article.date}</span>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-blue-400 group-hover:text-white transition-colors">
+                    Read →
+                  </span>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+
+          <div className="flex justify-center">
+            <a
+              href="https://www.linkedin.com/newsletters/7339153291630510080/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-3"
+            >
+              Subscribe on LinkedIn
+            </a>
           </div>
         </div>
       </section>
