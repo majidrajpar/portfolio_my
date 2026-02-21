@@ -133,20 +133,20 @@ const App = () => {
       ]
     },
     {
-      id: 'tadawul-ipo-readiness',
-      title: 'Tadawul IPO Readiness — GCC Premium Brand',
-      description: 'Led end-to-end IPO readiness transformation for a GCC premium brand targeting Tadawul listing. Delivered a 24-month program covering ICOFR implementation, CMA regulatory compliance, governance restructuring, and investor-grade financial documentation.',
+      id: 'dfm-ipo-readiness',
+      title: 'DFM IPO Readiness — UAE Multi-Brand F&B Technology Platform',
+      description: 'Led IPO readiness for a UAE-headquartered, high-growth F&B technology platform operating 100+ kitchens across 7 countries. Delivered governance restructuring, ICOFR build-out, and UAE SCA compliance targeting Dubai Financial Market listing — alongside a parallel group-wide COSO ERM programme.',
       category: 'Corporate Governance',
-      impact: 'SAR 500M+ capital raise target — full ICOFR certification across 14 business processes',
-      techStack: ['COSO ICOFR', 'CMA Regulations', 'Tadawul Listing Rules', 'IFRS', 'Big 4 Co-sourcing'],
+      impact: 'End-to-end IPO readiness across governance, ICOFR, and UAE SCA compliance for a multi-jurisdiction, multi-brand platform',
+      techStack: ['UAE SCA Regulations', 'DFM Listing Rules', 'COSO ICOFR', 'IFRS', 'UAE Companies Law'],
       image: null,
       features: [
-        'ICOFR implementation across 14 processes with full Risk Control Matrix documentation',
-        'CMA Corporate Governance Regulations compliance — board independence, committee formation',
-        '3-year IFRS-compliant audited financial statements and prospectus preparation',
-        'Readiness scorecard framework targeting 70%+ compliance across all workstreams',
-        'Big 4 external auditor coordination and reliance-based control testing programme',
-        'Board, audit committee, and investor roadshow reporting packs (30+ slide deck)'
+        'ICOFR scoping and Risk Control Matrix documentation across 12+ business processes',
+        'UAE SCA Corporate Governance Code compliance — board composition, committee design, disclosure framework',
+        'IFRS-compliant financial statement preparation and audit readiness across all entities',
+        'Three Lines of Defence model embedded ahead of listing with internal audit function build-out',
+        'Dual-workstream delivery: IPO governance alongside group-wide COSO ERM 2017 rollout across 7 jurisdictions',
+        'Board, Audit Committee, and investor reporting frameworks designed for post-listing governance obligations'
       ]
     },
   ];
@@ -185,6 +185,23 @@ const App = () => {
         'Automated financial reporting for board meetings',
         'Capital leak identification and recovery tracking',
         'Multi-period comparative analysis (12-month view)'
+      ]
+    },
+    {
+      id: 'tadawul-ipo-readiness',
+      title: 'Tadawul IPO Readiness — GCC Premium Brand',
+      description: 'Led end-to-end IPO readiness transformation for a GCC premium brand targeting Tadawul listing. Delivered a 24-month program covering ICOFR implementation, CMA regulatory compliance, governance restructuring, and investor-grade financial documentation.',
+      category: 'Corporate Governance',
+      impact: 'SAR 500M+ capital raise target — full ICOFR certification across 14 business processes',
+      techStack: ['COSO ICOFR', 'CMA Regulations', 'Tadawul Listing Rules', 'IFRS', 'Big 4 Co-sourcing'],
+      image: null,
+      features: [
+        'ICOFR implementation across 14 processes with full Risk Control Matrix documentation',
+        'CMA Corporate Governance Regulations compliance — board independence, committee formation',
+        '3-year IFRS-compliant audited financial statements and prospectus preparation',
+        'Readiness scorecard framework targeting 70%+ compliance across all workstreams',
+        'Big 4 external auditor coordination and reliance-based control testing programme',
+        'Board, audit committee, and investor roadshow reporting packs (30+ slide deck)'
       ]
     },
     {
