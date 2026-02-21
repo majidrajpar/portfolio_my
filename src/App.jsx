@@ -122,7 +122,7 @@ const App = () => {
       category: 'Fraud Forensics',
       impact: '82% Reduction in Fraud Loss (SAR 5.1M to <900K)',
       techStack: ['Python', 'scikit-learn', 'Pandas', 'Excel Automation'],
-      image: '/portfolio_my/images/projects/fraud-detection/fraud-dashboard.webp',
+      image: null,
       features: [
         'ML anomaly detection with 87.3% accuracy using Isolation Forest',
         'Manager discount rate analysis with automated risk scoring',
@@ -177,7 +177,7 @@ const App = () => {
       category: 'Audit Transformation',
       impact: '9 integrated worksheets with full automation',
       techStack: ['Python', 'openpyxl', 'python-pptx'],
-      image: '/portfolio_my/images/projects/bateel-audit-tracker/audit-dashboard.webp',
+      image: '/portfolio_my/images/projects/enterprise-audit-tracker/audit-dashboard.webp',
       features: [
         'Director dashboard with real-time operational KPIs',
         'Multi-entity audit planning and scheduling',
