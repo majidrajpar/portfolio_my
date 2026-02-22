@@ -485,7 +485,7 @@ const App = () => {
                   reactive, I was building ML detection before the loss compounded.
                 </p>
                 <p className="text-slate-400 text-lg leading-relaxed mb-8">
-                  The fraud programme that recovered <strong className="text-white">SAR 4.2M</strong>. The COSO ERM
+                  The fraud programme that recovered <strong className="text-white">AED 3.2M</strong>. The COSO ERM
                   rollout across <strong className="text-white">7 jurisdictions</strong> with board-adopted risk appetite.
                   The DFM IPO governance programme that took a UAE platform from zero to UAE SCA-compliant. These aren't
                   case studies — they're the output of applying technology, rigour, and board-level thinking to audit
@@ -535,7 +535,7 @@ const App = () => {
                 </div>
                 <h4 className="text-white font-black text-base mb-3">Forensic & Fraud Analytics</h4>
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  ML anomaly detection, 100% population testing, and SAR-level fraud recovery across GCC multi-entity operations.
+                  ML anomaly detection, 100% population testing, and AED 3.2M+ fraud recovery across GCC multi-entity operations.
                 </p>
               </div>
               <div className="glass-card p-8 group hover:border-amber-500/30 transition-all">
@@ -1158,7 +1158,7 @@ const App = () => {
       <footer className="py-10 bg-slate-950 border-t border-white/5">
         <div className="container px-8 mx-auto text-center">
           <div className="text-slate-700 text-[9px] uppercase tracking-[0.5em] font-black">
-            &copy; {new Date().getFullYear()} Profit Protection Strategy. All Rights Reserved.
+            &copy; {new Date().getFullYear()} Majid Mumtaz CIA, ACA, FCCA. All Rights Reserved.
           </div>
         </div>
       </footer>
