@@ -1,0 +1,105 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <!-- Header -->
+  <rect width="1200" height="56" fill="#1e293b"/>
+  <text x="24" y="34" fill="#f8fafc" font-size="15" font-weight="700">Corporate Governance Framework — KSA Multi-Sector Holding Group</text>
+  <text x="24" y="50" fill="#475569" font-size="10">Al Rashid Holding Group · Private · Multi-Sector · ⚠ DUMMY DATA — FOR ILLUSTRATION PURPOSES ONLY</text>
+  <rect x="1090" y="14" width="90" height="26" rx="13" fill="#1d4ed8" opacity="0.3" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1135" y="31" fill="#93c5fd" font-size="10" font-weight="700" text-anchor="middle">CONFIDENTIAL</text>
+
+  <!-- Ownership -->
+  <rect x="450" y="66" width="300" height="44" rx="8" fill="#312e81" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="600" y="86" fill="#c7d2fe" font-size="12" font-weight="800" text-anchor="middle">OWNERSHIP / FAMILY COUNCIL</text>
+  <text x="600" y="102" fill="#6366f1" font-size="10" text-anchor="middle">Strategic direction · Succession planning</text>
+
+  <line x1="600" y1="110" x2="600" y2="130" stroke="#6366f1" stroke-width="1.5"/>
+
+  <!-- Board of Directors -->
+  <rect x="350" y="130" width="500" height="50" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="2"/>
+  <text x="600" y="153" fill="#93c5fd" font-size="13" font-weight="800" text-anchor="middle">BOARD OF DIRECTORS</text>
+  <text x="600" y="170" fill="#64748b" font-size="10" text-anchor="middle">9 Members · 4 Independent · Chairman (Non-Executive) · Saudi Companies Law Compliant</text>
+
+  <!-- Board committee connectors -->
+  <line x1="450" y1="180" x2="200" y2="220" stroke="#334155" stroke-width="1"/>
+  <line x1="600" y1="180" x2="600" y2="220" stroke="#334155" stroke-width="1"/>
+  <line x1="750" y1="180" x2="1000" y2="220" stroke="#334155" stroke-width="1"/>
+
+  <!-- Board Committees -->
+  <rect x="60" y="220" width="280" height="80" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <rect x="60" y="220" width="280" height="24" rx="8" fill="#422006"/>
+  <rect x="60" y="236" width="280" height="8" rx="0" fill="#422006"/>
+  <text x="200" y="237" fill="#fcd34d" font-size="11" font-weight="800" text-anchor="middle">AUDIT COMMITTEE</text>
+  <text x="80" y="258" fill="#94a3b8" font-size="9">· 3 Independent Directors</text>
+  <text x="80" y="272" fill="#94a3b8" font-size="9">· Quarterly IA reporting</text>
+  <text x="80" y="286" fill="#94a3b8" font-size="9">· External auditor oversight</text>
+
+  <rect x="460" y="220" width="280" height="80" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="460" y="220" width="280" height="24" rx="8" fill="#450a0a"/>
+  <rect x="460" y="236" width="280" height="8" rx="0" fill="#450a0a"/>
+  <text x="600" y="237" fill="#fca5a5" font-size="11" font-weight="800" text-anchor="middle">RISK COMMITTEE</text>
+  <text x="480" y="258" fill="#94a3b8" font-size="9">· 2 Independent + 2 Executive</text>
+  <text x="480" y="272" fill="#94a3b8" font-size="9">· Risk appetite setting &amp; monitoring</text>
+  <text x="480" y="286" fill="#94a3b8" font-size="9">· ERM programme oversight</text>
+
+  <rect x="860" y="220" width="280" height="80" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <rect x="860" y="220" width="280" height="24" rx="8" fill="#2e1065"/>
+  <rect x="860" y="236" width="280" height="8" rx="0" fill="#2e1065"/>
+  <text x="1000" y="237" fill="#c4b5fd" font-size="11" font-weight="800" text-anchor="middle">NRC COMMITTEE</text>
+  <text x="880" y="258" fill="#94a3b8" font-size="9">· Nomination &amp; Remuneration</text>
+  <text x="880" y="272" fill="#94a3b8" font-size="9">· Executive compensation policy</text>
+  <text x="880" y="286" fill="#94a3b8" font-size="9">· Board succession planning</text>
+
+  <!-- Governance manual section -->
+  <line x1="600" y1="300" x2="600" y2="330" stroke="#334155" stroke-width="1"/>
+
+  <!-- DoA and Governance Manual row -->
+  <rect x="60" y="330" width="500" height="100" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="80" y="352" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="1">GOVERNANCE MANUAL COMPONENTS</text>
+  <rect x="80" y="360" width="140" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="150" y="378" fill="#e2e8f0" font-size="10" font-weight="600" text-anchor="middle">Board Charter</text>
+  <rect x="230" y="360" width="140" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="300" y="378" fill="#e2e8f0" font-size="10" font-weight="600" text-anchor="middle">Committee ToRs</text>
+  <rect x="380" y="360" width="160" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="460" y="378" fill="#e2e8f0" font-size="10" font-weight="600" text-anchor="middle">Delegation of Authority</text>
+  <rect x="80" y="396" width="140" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="150" y="414" fill="#e2e8f0" font-size="10" font-weight="600" text-anchor="middle">Code of Conduct</text>
+  <rect x="230" y="396" width="140" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="300" y="414" fill="#e2e8f0" font-size="10" font-weight="600" text-anchor="middle">Whistleblower Policy</text>
+  <rect x="380" y="396" width="160" height="28" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="460" y="414" fill="#e2e8f0" font-size="10" font-weight="600" text-anchor="middle">Ethics Framework</text>
+
+  <!-- Subsidiaries -->
+  <rect x="580" y="330" width="580" height="100" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="600" y="352" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="1">OPERATING SUBSIDIARIES (GOVERNANCE FRAMEWORK APPLIED)</text>
+  <rect x="600" y="360" width="130" height="28" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1"/>
+  <text x="665" y="378" fill="#6ee7b7" font-size="10" font-weight="600" text-anchor="middle">Real Estate Co.</text>
+  <rect x="740" y="360" width="130" height="28" rx="6" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+  <text x="805" y="378" fill="#93c5fd" font-size="10" font-weight="600" text-anchor="middle">Manufacturing Co.</text>
+  <rect x="880" y="360" width="130" height="28" rx="6" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="945" y="378" fill="#fcd34d" font-size="10" font-weight="600" text-anchor="middle">Trading Co.</text>
+  <rect x="1020" y="360" width="120" height="28" rx="6" fill="#0f172a" stroke="#a78bfa" stroke-width="1"/>
+  <text x="1080" y="378" fill="#c4b5fd" font-size="10" font-weight="600" text-anchor="middle">Healthcare Co.</text>
+  <text x="600" y="416" fill="#475569" font-size="10">Board charter, committee ToRs, DoA matrix, and Three Lines model applied across all entities</text>
+
+  <!-- Gap analysis -->
+  <rect x="60" y="448" width="1080" height="60" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="80" y="468" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="1">GOVERNANCE GAP ANALYSIS — KEY FRAMEWORKS</text>
+  <rect x="80" y="476" width="140" height="22" rx="6" fill="#052e16"/>
+  <text x="150" y="491" fill="#6ee7b7" font-size="10" font-weight="700" text-anchor="middle">✓ Saudi Companies Law</text>
+  <rect x="230" y="476" width="130" height="22" rx="6" fill="#052e16"/>
+  <text x="295" y="491" fill="#6ee7b7" font-size="10" font-weight="700" text-anchor="middle">✓ IIA Three Lines</text>
+  <rect x="370" y="476" width="100" height="22" rx="6" fill="#052e16"/>
+  <text x="420" y="491" fill="#6ee7b7" font-size="10" font-weight="700" text-anchor="middle">✓ King IV</text>
+  <rect x="480" y="476" width="120" height="22" rx="6" fill="#052e16"/>
+  <text x="540" y="491" fill="#6ee7b7" font-size="10" font-weight="700" text-anchor="middle">✓ SOCPA Standards</text>
+  <rect x="610" y="476" width="140" height="22" rx="6" fill="#422006"/>
+  <text x="680" y="491" fill="#fcd34d" font-size="10" font-weight="700" text-anchor="middle">⚡ CMA (Partial)</text>
+  <rect x="760" y="476" width="160" height="22" rx="6" fill="#422006"/>
+  <text x="840" y="491" fill="#fcd34d" font-size="10" font-weight="700" text-anchor="middle">⚡ IFRS Adoption (Q4)</text>
+  <rect x="930" y="476" width="170" height="22" rx="6" fill="#450a0a"/>
+  <text x="1015" y="491" fill="#fca5a5" font-size="10" font-weight="700" text-anchor="middle">✗ ESG Reporting (Planned)</text>
+
+  <!-- Footer -->
+  <rect x="0" y="598" width="1200" height="32" fill="#1e293b"/>
+  <text x="24" y="619" fill="#475569" font-size="10">All company names, structures, and governance data shown are fictitious and used for portfolio demonstration only · Not based on any real client engagement</text>
+</svg>

@@ -194,7 +194,7 @@ const App = () => {
       category: 'Corporate Governance',
       impact: 'SAR 500M+ capital raise target — full ICOFR certification across 14 business processes',
       techStack: ['COSO ICOFR', 'CMA Regulations', 'Tadawul Listing Rules', 'IFRS', 'Big 4 Co-sourcing'],
-      image: null,
+      image: '/portfolio_my/images/projects/tadawul-ipo-readiness/icofr-dashboard.svg',
       features: [
         'ICOFR implementation across 14 processes with full Risk Control Matrix documentation',
         'CMA Corporate Governance Regulations compliance — board independence, committee formation',
@@ -279,7 +279,7 @@ const App = () => {
       category: 'Corporate Governance',
       impact: 'Subsidiary successfully structured for parallel market listing within group governance framework',
       techStack: ['Tadawul Nomu Rules', 'COSO', 'ICOFR', 'CMA Regulations', 'Holding Group Governance'],
-      image: null,
+      image: '/portfolio_my/images/projects/nomu-listing-readiness/governance-structure.svg',
       features: [
         'Subsidiary-level governance framework designed within holding group structure',
         'ICOFR scoping and control documentation aligned to Nomu listing requirements',
@@ -296,7 +296,7 @@ const App = () => {
       category: 'Enterprise Risk',
       impact: '50+ risks mapped across 7 jurisdictions — 20+ live KRIs with board risk appetite formally adopted',
       techStack: ['COSO ERM 2017', 'ISO 31000', 'Three Lines of Defence', 'KRI Dashboards', 'Power BI'],
-      image: null,
+      image: '/portfolio_my/images/projects/coso-erm/risk-heatmap.svg',
       features: [
         'Enterprise risk universe across 9 risk categories: operational, financial, strategic, food safety, technology, supply chain, compliance, reputational, and people risk',
         '20+ Key Risk Indicators with Red/Amber/Green thresholds calibrated to operational data',
@@ -313,7 +313,7 @@ const App = () => {
       category: 'Corporate Governance',
       impact: 'Group-wide governance manual adopted by board — covering holding company and all operating subsidiaries',
       techStack: ['Saudi Companies Law', 'IIA Three Lines Model', 'SOCPA Standards', 'King IV', 'Board Governance'],
-      image: null,
+      image: '/portfolio_my/images/projects/holding-group-governance/governance-framework.svg',
       features: [
         'Corporate governance manual covering board charter, committee terms of reference, and delegation of authority matrix',
         'Board and committee structure design — Audit, Risk, and Nomination & Remuneration committees',

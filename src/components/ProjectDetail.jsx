@@ -173,12 +173,10 @@ const ProjectDetail = ({ project, onClose }) => {
             Data Confidentiality Notice
           </h3>
           <p className="text-slate-400 leading-relaxed mb-4">
-            This project contains <strong className="text-white">anonymized and dummy data</strong> for demonstration purposes only.
-            All client names, financial figures, and personal information have been replaced with fictitious data.
+            All screenshots and diagrams in this project use <strong className="text-white">fictitious dummy data</strong> created solely for portfolio demonstration. No real client data, company names, financial figures, or personal information is displayed anywhere on this site.
           </p>
           <p className="text-slate-400 leading-relaxed">
-            The technical implementation, algorithms, and methodologies are genuine and representative of production-grade work.
-            This demonstrates capabilities in audit automation, data analysis, and enterprise reporting.
+            The methodologies, frameworks, and technical implementations shown are genuine and representative of production-grade work delivered across real engagements.
           </p>
         </motion.div>
 
