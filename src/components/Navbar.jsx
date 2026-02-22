@@ -50,47 +50,66 @@ const Navbar = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-8 left-0 right-0 z-50 flex justify-center pointer-events-none"
+      className="fixed top-0 left-0 right-0 z-50"
     >
       <nav className={`
-        pointer-events-auto px-8 py-3 rounded-full flex gap-8 items-center transition-all duration-500 border
-        ${scrolled ? 'bg-slate-900/80 backdrop-blur-xl border-white/10 shadow-2xl scale-95' : 'bg-transparent border-transparent'}
+        px-12 py-4 flex justify-between items-center transition-all duration-300
+        ${scrolled ? 'bg-white border-b border-slate-200 shadow-sm' : 'bg-transparent'}
       `}>
-        <a
-          href={newsletterUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 bg-blue-500/20 border border-blue-500/40 text-blue-400 rounded-full hover:bg-blue-500/30 hover:text-white transition-all"
-        >
-          Newsletter ↗
-        </a>
-        <a
-          href="#books"
-          className="text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 bg-amber-500/20 border border-amber-500/40 text-amber-400 rounded-full hover:bg-amber-500/30 hover:text-white transition-all"
-        >
-          Books
-        </a>
+        {/* Left: Brand */}
+        <span className={`text-xs font-black uppercase tracking-[0.3em] transition-colors duration-300 ${scrolled ? 'text-slate-900' : 'text-white'}`}>
+          Majid Mumtaz
+        </span>
 
-        {navItems.map((item) => {
-          const isActive = item.id === activeSection;
-          return (
-            <a
-              key={item.label}
-              href={item.href}
-              className={`text-[10px] font-black uppercase tracking-[0.2em] transition-colors relative ${
-                isActive ? 'text-white' : 'text-slate-400 hover:text-white'
-              }`}
-            >
-              {item.label}
-              {isActive && (
-                <motion.span
-                  layoutId="nav-indicator"
-                  className="absolute -bottom-1 left-0 right-0 h-px bg-blue-500"
-                />
-              )}
-            </a>
-          );
-        })}
+        {/* Center: Nav items */}
+        <div className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => {
+            const isActive = item.id === activeSection;
+            return (
+              <a
+                key={item.label}
+                href={item.href}
+                className={`text-[10px] font-black uppercase tracking-[0.2em] transition-colors relative
+                  ${scrolled
+                    ? (isActive ? 'text-[#001F5B]' : 'text-slate-500 hover:text-slate-900')
+                    : (isActive ? 'text-white' : 'text-white/70 hover:text-white')
+                  }`}
+              >
+                {item.label}
+                {isActive && (
+                  <motion.span
+                    layoutId="nav-indicator"
+                    className={`absolute -bottom-1 left-0 right-0 h-px ${scrolled ? 'bg-[#001F5B]' : 'bg-white'}`}
+                  />
+                )}
+              </a>
+            );
+          })}
+        </div>
+
+        {/* Right: CTAs */}
+        <div className="flex items-center gap-3">
+          <a
+            href={newsletterUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 border transition-all
+              ${scrolled
+                ? 'border-[#001F5B] text-[#001F5B] hover:bg-[#001F5B] hover:text-white'
+                : 'border-white/60 text-white hover:border-white'}`}
+          >
+            Newsletter ↗
+          </a>
+          <a
+            href="#books"
+            className={`text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 border transition-all
+              ${scrolled
+                ? 'border-amber-600 text-amber-700 hover:bg-amber-600 hover:text-white'
+                : 'border-amber-400/60 text-amber-300 hover:border-amber-300 hover:text-white'}`}
+          >
+            Books
+          </a>
+        </div>
       </nav>
     </motion.header>
   );
