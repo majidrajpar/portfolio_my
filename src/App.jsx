@@ -68,7 +68,7 @@ const ContactForm = () => {
             </div>
             <div>
               <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-2 block">Message</label>
-              <textarea name="message" required rows={5} placeholder="How can I help?" className={`${inputClass} resize-none`} />
+              <textarea name="message" required rows={5} placeholder="Describe the challenge you're facing" className={`${inputClass} resize-none`} />
             </div>
             {status === 'error' && (
               <p className="text-red-400 text-sm">Something went wrong. Please try emailing directly.</p>
@@ -881,19 +881,16 @@ const App = () => {
             {[
               {
                 title: 'Beyond the Bell: Why Governance is the True Currency of a Successful UAE IPO',
-                date: 'Jan 21, 2026',
                 tag: 'IPO Governance',
                 tagColor: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
               },
               {
                 title: 'The Audit Blind Spots & Risks Your Board Isn\'t Hearing About',
-                date: 'Jan 25, 2026',
                 tag: 'Board Advisory',
                 tagColor: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
               },
               {
                 title: 'Why Data Cleaning Became My Unexpected Priority',
-                date: 'Feb 10, 2026',
                 tag: 'Data & Analytics',
                 tagColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
               },
@@ -915,8 +912,7 @@ const App = () => {
                 <h4 className="text-white font-black text-base leading-snug mb-6 flex-1 group-hover:text-blue-400 transition-colors">
                   {article.title}
                 </h4>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-500 text-xs">{article.date}</span>
+                <div className="flex justify-end items-center">
                   <span className="text-[10px] font-black uppercase tracking-widest text-blue-400 group-hover:text-white transition-colors">
                     Read →
                   </span>
@@ -1145,6 +1141,12 @@ const App = () => {
                     <span className="text-sm">in</span>
                   </div>
                   <span className="font-bold">LinkedIn Profile</span>
+                </a>
+                <a href="https://wa.me/971507471708" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-slate-400 hover:text-white transition-colors group">
+                  <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-emerald-500/30 transition-colors">
+                    <span className="text-sm">WA</span>
+                  </div>
+                  <span className="font-bold">WhatsApp</span>
                 </a>
               </div>
             </motion.div>
