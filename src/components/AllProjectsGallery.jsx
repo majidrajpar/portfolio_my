@@ -17,15 +17,15 @@ const AllProjectsGallery = ({ projects, onClose }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-slate-950/95 z-50 overflow-y-auto"
+      className="fixed inset-0 bg-white z-50 overflow-y-auto"
     >
       {/* Close Button */}
       <div className="fixed top-8 right-8 z-60">
         <button
           onClick={onClose}
-          className="p-4 bg-slate-800/50 hover:bg-slate-800 rounded-full transition-all border border-white/10"
+          className="p-4 bg-slate-100 hover:bg-slate-200 rounded-full transition-all border border-slate-200"
         >
-          <X className="w-6 h-6 text-white" />
+          <X className="w-6 h-6 text-slate-700" />
         </button>
       </div>
 
@@ -35,7 +35,7 @@ const AllProjectsGallery = ({ projects, onClose }) => {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           onClick={onClose}
-          className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors mb-16"
+          className="inline-flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors mb-16"
         >
           <ArrowLeft className="w-5 h-5" />
           <span className="text-sm font-bold uppercase tracking-wider">Back to Portfolio</span>
@@ -48,13 +48,13 @@ const AllProjectsGallery = ({ projects, onClose }) => {
           transition={{ delay: 0.1 }}
           className="mb-20"
         >
-          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-500 mb-6 block">
+          <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-6 block">
             Complete Portfolio
           </span>
-          <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] text-white mb-6">
+          <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] text-slate-900 mb-6">
             All Projects & Solutions
           </h1>
-          <p className="text-slate-400 text-xl max-w-3xl leading-relaxed">
+          <p className="text-slate-600 text-xl max-w-3xl leading-relaxed">
             Enterprise-grade audit, risk, and compliance solutions built for GCC operations.
             From fraud detection to governance frameworks.
           </p>
@@ -72,9 +72,9 @@ const AllProjectsGallery = ({ projects, onClose }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="text-center pt-8 border-t border-white/10"
+          className="text-center pt-8 border-t border-slate-200"
         >
-          <p className="text-slate-400 text-lg mb-8">
+          <p className="text-slate-600 text-lg mb-8">
             Interested in building similar solutions for your organisation?
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">

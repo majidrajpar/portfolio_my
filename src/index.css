@@ -2,16 +2,16 @@
 
 @layer base {
   :root {
-    --bg-deep: #020617;
-    --bg-surface: #0f172a;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --accent: #3b82f6;
+    --bg-deep: #001F5B;
+    --bg-surface: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent: #001F5B;
     --success: #10b981;
   }
 
   body {
-    @apply bg-[#020617] text-[#f8fafc] font-sans antialiased selection:bg-blue-500/30;
+    @apply bg-white text-slate-900 font-sans antialiased selection:bg-blue-100;
     overflow-x: clip;
   }
 
@@ -22,32 +22,30 @@
 
 @layer components {
   .glass-card {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl transition-all duration-500 hover:border-blue-500/30 hover:bg-white/10;
+    @apply bg-white border border-slate-200 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md hover:border-slate-300;
   }
 
   .text-gradient {
-    @apply bg-gradient-to-b from-white to-slate-400 bg-clip-text text-transparent;
+    @apply text-[#001F5B];
   }
 
   .mesh-bg {
-    @apply absolute inset-0 -z-10 pointer-events-none opacity-50;
-    background-image:
-      radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.1) 0px, transparent 50%);
+    @apply hidden;
   }
 
   .grid-pattern {
-    @apply absolute inset-0 -z-10 pointer-events-none opacity-30;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-    mask-image: linear-gradient(to bottom, black, transparent);
+    @apply hidden;
   }
 
   .btn-primary {
-    @apply px-8 py-3 bg-white text-slate-950 rounded-full font-black uppercase tracking-widest text-xs transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)];
+    @apply inline-flex items-center px-8 py-3 bg-[#001F5B] text-white rounded font-black uppercase tracking-widest text-xs transition-all hover:bg-[#002d87];
   }
 
   .btn-secondary {
-    @apply px-8 py-3 bg-white/5 border border-white/20 text-white rounded-full font-black uppercase tracking-widest text-xs transition-all hover:bg-white/10 hover:border-white;
+    @apply inline-flex items-center px-8 py-3 bg-transparent border-2 border-[#001F5B] text-[#001F5B] rounded font-black uppercase tracking-widest text-xs transition-all hover:bg-[#001F5B] hover:text-white;
+  }
+
+  .btn-secondary-light {
+    @apply inline-flex items-center px-8 py-3 bg-transparent border-2 border-white text-white rounded font-black uppercase tracking-widest text-xs transition-all hover:bg-white hover:text-[#001F5B];
   }
 }
