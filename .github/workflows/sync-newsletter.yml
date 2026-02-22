@@ -1,0 +1,58 @@
+name: Sync Newsletter & Deploy
+
+on:
+  schedule:
+    - cron: '0 3 * * 0'   # Sunday 03:00 UTC = Sunday 07:00 UAE (UTC+4)
+  workflow_dispatch:       # Allow manual trigger from GitHub Actions tab
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  sync-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch latest newsletter articles
+        run: node scripts/sync-newsletter.js
+
+      - name: Commit updated articles back to repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/newsletter.json
+          git diff --staged --quiet || git commit -m "chore: sync LinkedIn newsletter articles [skip ci]"
+          git push || true
+
+      - name: Build React site
+        run: npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
+  deploy:
+    needs: sync-and-build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

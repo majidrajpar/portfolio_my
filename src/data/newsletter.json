@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Lessons from the 2026 Dubai Marina Signal Heists",
+    "tag": "Fraud Forensics",
+    "tagColor": "text-red-400 bg-red-500/10 border-red-500/20"
+  },
+  {
+    "title": "The Inventory Maze (Supply Chain)",
+    "tag": "Operations Risk",
+    "tagColor": "text-orange-400 bg-orange-500/10 border-orange-500/20"
+  },
+  {
+    "title": "Why Data Cleaning Became My Unexpected Priority",
+    "tag": "Data & Analytics",
+    "tagColor": "text-emerald-400 bg-emerald-500/10 border-emerald-500/20"
+  }
+]
