@@ -43,7 +43,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={`https://majidrajpar.github.io${ogImage}`} />
 
-  <link rel="icon" type="image/svg+xml" href="/portfolio_my/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
   <title>{title}</title>
 
   <!-- Google Fonts -->
@@ -78,7 +78,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <div class="md:col-span-2">
           <div class="text-white font-black text-xs uppercase tracking-[0.3em] mb-3">Majid Mumtaz</div>
           <p class="text-white/50 text-xs leading-relaxed max-w-xs">
-            Chief Audit Executive & Board Advisor. 20+ years building world-class internal audit functions across the GCC.
+            Fractional CAE & Board Advisor. Building internal audit functions from zero for GCC boards — UAE and KSA.
           </p>
           <div class="flex gap-4 mt-5">
             <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer"
@@ -95,8 +95,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               { label: 'About', href: `${base}/about/` },
               { label: 'Projects', href: `${base}/projects/` },
               { label: 'Advisory', href: `${base}/consulting/` },
-              { label: 'Contact', href: `${base}/contact/` },
+              { label: 'Newsletter', href: 'https://www.linkedin.com/newsletters/7339153291630510080/' },
               { label: 'Resources', href: `${base}/resources/` },
+              { label: 'Contact', href: `${base}/contact/` },
             ].map(link => (
               <li><a href={link.href} class="text-white/50 hover:text-white text-xs font-bold transition-colors">{link.label}</a></li>
             ))}
@@ -108,7 +109,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <ul class="space-y-2">
             <li><a href="mailto:majidrajpar@gmail.com" class="text-white/50 hover:text-white text-xs font-bold transition-colors">majidrajpar@gmail.com</a></li>
             <li><span class="text-white/50 text-xs font-bold">Dubai, UAE</span></li>
-            <li><a href={`${base}/cv/Majid_Mumtaz_CV.pdf`} download class="text-white/50 hover:text-white text-xs font-bold transition-colors">Download CV</a></li>
+            <li><a href={`${base}/cv/Majid-Mumtaz-Internal-Audit-Director-UAE-KSA-CV.pdf`} download class="text-white/50 hover:text-white text-xs font-bold transition-colors">Download CV</a></li>
           </ul>
         </div>
       </div>
