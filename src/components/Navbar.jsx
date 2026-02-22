@@ -33,6 +33,7 @@ const Navbar = () => {
     { label: 'Projects', href: `${base}/projects/` },
     { label: 'Advisory', href: `${base}/consulting/` },
     { label: 'Resources', href: `${base}/resources/` },
+    { label: 'Books', href: `${base}/about/#books` },
     { label: 'Contact', href: `${base}/contact/` },
   ];
 
@@ -83,7 +84,7 @@ const Navbar = () => {
 
         {/* Right: CTAs (desktop) + Hamburger (mobile) */}
         <div className="flex items-center gap-3">
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             <a
               href={newsletterUrl}
               target="_blank"
@@ -96,13 +97,14 @@ const Navbar = () => {
               Newsletter ↗
             </a>
             <a
-              href={`${base}/about/#books`}
+              href={`${base}/cv/Majid-Mumtaz-Internal-Audit-Director-UAE-KSA-CV.pdf`}
+              download
               className={`text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 border transition-all
                 ${showTransparent
-                  ? 'border-amber-400/60 text-amber-300 hover:border-amber-300'
-                  : 'border-amber-600 text-amber-700 hover:bg-amber-600 hover:text-white'}`}
+                  ? 'bg-white text-[#001F5B] border-white hover:bg-blue-50'
+                  : 'bg-[#001F5B] text-white border-[#001F5B] hover:bg-[#002d87]'}`}
             >
-              Books
+              Executive CV ↓
             </a>
           </div>
 
@@ -146,18 +148,19 @@ const Navbar = () => {
               })}
               <div className="pt-4 flex flex-col gap-3">
                 <a
+                  href={`${base}/cv/Majid-Mumtaz-Internal-Audit-Director-UAE-KSA-CV.pdf`}
+                  download
+                  className="text-center text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2.5 bg-[#001F5B] text-white"
+                >
+                  Download Executive CV ↓
+                </a>
+                <a
                   href={newsletterUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-center text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2.5 border border-[#001F5B] text-[#001F5B]"
                 >
                   Newsletter ↗
-                </a>
-                <a
-                  href={`${base}/about/#books`}
-                  className="text-center text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2.5 border border-amber-600 text-amber-700"
-                >
-                  Books
                 </a>
               </div>
             </div>
