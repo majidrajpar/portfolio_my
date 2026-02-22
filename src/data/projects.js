@@ -36,18 +36,18 @@ export const projects = [
   {
     id: 'audit-findings-system',
     title: 'Audit Findings Management System',
-    description: 'Enterprise-grade automation framework delivering 100% population testing across multi-entity GCC operations with automated findings tracking.',
+    description: 'A GCC multi-entity operation was running audit findings on manual spreadsheets — no aging visibility, no escalation triggers, no audit committee reporting. Built a Python-based tracking system that replaced the spreadsheets entirely, cut preparation time by 70%, and gave the board real-time remediation status for the first time.',
     category: 'Audit Transformation',
-    impact: '70% reduction in audit preparation cycle time',
+    impact: '70% reduction in audit preparation cycle time — board-ready status reporting automated',
     techStack: ['Python', 'YAML', 'IIA Compliance', 'openpyxl'],
     image: '/portfolio_my/images/projects/audit-tools/findings-tracker.webp',
     features: [
-      'Colour-coded severity tracking (Critical/High/Medium/Low)',
-      'Automated aging analysis with remediation deadline tracking',
-      '100% population testing across all audit areas',
-      'Finding ID generation with unique reference numbers',
-      'Real-time status dashboard for audit committees',
-      'Automated report generation for management review'
+      'Replaced manual spreadsheets — eliminated 3 days of monthly consolidation work',
+      'Automated aging analysis: overdue findings escalated automatically by severity tier',
+      '100% population testing coverage replacing sample-based approach across all audit areas',
+      'Real-time audit committee dashboard — status, overdue count, and trend visible at a glance',
+      'IIA-aligned finding severity framework (Critical/High/Medium/Low) with unique reference IDs',
+      'Automated management report generation — zero manual formatting required'
     ]
   },
   {
@@ -87,18 +87,18 @@ export const projects = [
   {
     id: 'enterprise-audit-platform',
     title: 'Enterprise Audit Management Platform',
-    description: 'Comprehensive audit management platform with executive dashboards, PowerPoint automation, and 3-tier governance reporting for multi-entity operations.',
+    description: 'A diversified GCC group ran its audit function across multiple entities with no unified view — audit plans lived in email threads, board reports were built manually each quarter, and no one could answer "what is the current audit status across the group?" Built an integrated platform that gave the audit director, management, and board a single, real-time picture.',
     category: 'Audit Transformation',
-    impact: 'End-to-end audit lifecycle automated — from planning through board reporting across multi-entity operations',
+    impact: 'Full audit lifecycle automated across multi-entity operations — from annual plan to board pack, zero manual assembly',
     techStack: ['Python', 'openpyxl', 'python-pptx'],
     image: '/portfolio_my/images/projects/enterprise-audit-tracker/audit-dashboard.webp',
     features: [
-      'Director dashboard with real-time operational KPIs',
-      'Multi-entity audit planning and scheduling',
-      'Automated PowerPoint presentation generation',
-      '3-tier governance reporting (Operational/Management/Board)',
-      'Risk-based audit scheduling with priority scoring',
-      'Integrated findings tracking across all entities'
+      'Director dashboard: live audit universe status, findings count, and overdue actions across all entities',
+      'Annual audit plan builder with risk-based priority scoring — high-risk areas scheduled first automatically',
+      'Board-ready PowerPoint pack generated in one click — no manual slide building',
+      '3-tier governance reporting: Operational (weekly), Management (monthly), Board (quarterly)',
+      'Multi-entity audit scheduling with resource allocation and workload visibility',
+      'Integrated findings tracker linked directly to the audit plan — end-to-end traceability'
     ]
   },
   {
@@ -138,18 +138,18 @@ export const projects = [
   {
     id: 'multi-location-compliance',
     title: 'Multi-Location Audit Compliance System',
-    description: 'Comprehensive audit compliance system for multi-location restaurant operations with standardised procedures, tracking, and remediation monitoring.',
+    description: 'With 70+ restaurant locations each running their own interpretation of compliance, the group had no way to compare, rank, or hold locations accountable. Built a standardised audit system that replaced inconsistent spot-checks with scored, automated assessments — giving operations management a real compliance league table for the first time.',
     category: 'Audit Transformation',
-    impact: 'Standardised audit procedures deployed across 70+ restaurant locations',
+    impact: 'Compliance scores comparable across 70+ locations — underperforming sites identified and actioned within audit cycle',
     techStack: ['Python', 'openpyxl', 'Audit Standards'],
     image: '/portfolio_my/images/projects/restaurant-audit/audit-checklist.webp',
     features: [
-      'Comprehensive audit checklists for F&B operations',
-      'Compliance tracking across multiple locations',
-      'Remediation monitoring with deadline tracking',
-      'Action plan reporting for management review',
-      'Standardised procedures across all sites',
-      'Automated compliance scoring and ratings'
+      'Standardised F&B audit checklists — eliminated inconsistency across 70+ locations',
+      'Automated compliance scoring: each location receives a comparable, weighted score',
+      'Location performance league table — management identifies outliers at a glance',
+      'Remediation tracking with escalating deadlines — overdue actions flagged to area managers',
+      'Action plan module: each finding auto-generates an owner-assigned corrective action',
+      'Management summary report built automatically after each audit cycle'
     ]
   },
   {
@@ -226,18 +226,18 @@ export const projects = [
   {
     id: 'icaew-audit-system',
     title: 'ICAEW Audit Report System',
-    description: 'Professional audit reporting platform compliant with ICAEW standards, featuring automated report generation and evidence documentation.',
+    description: 'An ICAEW-regulated audit team was spending 60–70% of engagement time on workpaper preparation and report formatting rather than actual audit work. Built an automated reporting system aligned to ICAEW standards that cut document preparation time by two-thirds — freeing the team to focus on judgement, not formatting.',
     category: 'Audit Transformation',
-    impact: 'ICAEW-compliant audit reporting with full evidence management and automated workpaper generation',
+    impact: 'Audit documentation time cut by ~65% — ICAEW standards embedded automatically, zero manual formatting',
     techStack: ['Python', 'ICAEW Standards', 'Report Automation'],
     image: '/portfolio_my/images/projects/icaew-audit/audit-report.webp',
     features: [
-      'ICAEW-compliant audit report generation',
-      'Testing methodology documentation',
-      'Evidence management and documentation',
-      'Automated audit workpaper preparation',
-      'Professional report formatting and branding',
-      'Quality review checklist integration'
+      'ICAEW-compliant audit report generated from structured inputs — no blank-page formatting',
+      'Testing methodology auto-populated based on audit area and risk level selected',
+      'Evidence index built automatically as workpapers are completed — audit trail maintained throughout',
+      'Quality review checklist embedded in workflow — sign-off gates enforced before report finalisation',
+      'Consistent professional output across all engagements — no variation between team members',
+      'Reusable templates for recurring audit programmes — prior-period workpapers accessible in one click'
     ]
   }
 ];
