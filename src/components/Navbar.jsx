@@ -64,6 +64,14 @@ const Navbar = () => {
         >
           Newsletter ↗
         </a>
+        <a
+          href="https://www.amazon.com/stores/Majid-Mumtaz/author/B0DY3F5QKR"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 bg-amber-500/20 border border-amber-500/40 text-amber-400 rounded-full hover:bg-amber-500/30 hover:text-white transition-all"
+        >
+          Books ↗
+        </a>
 
         {navItems.map((item) => {
           const isActive = item.id === activeSection;
