@@ -29,6 +29,7 @@ const Navbar = () => {
     { label: 'Projects', href: `${base}/projects/` },
     { label: 'Advisory', href: `${base}/consulting/` },
     { label: 'Contact', href: `${base}/contact/` },
+    { label: 'Resources', href: `${base}/resources/` },
   ];
 
   const newsletterUrl = 'https://www.linkedin.com/newsletters/7339153291630510080/';
