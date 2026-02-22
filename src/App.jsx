@@ -649,11 +649,7 @@ const App = () => {
               })}
             </div>
 
-            <div className="text-center">
-              <a href="https://www.amazon.com/stores/Majid-Mumtaz/author/B0DY3F5QKR" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-block">
-                View All Books on Amazon Author Page →
-              </a>
-            </div>
+
           </motion.div>
 
           {/* Metrics Section */}
