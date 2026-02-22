@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://majidrajpar.github.io/portfolio_my/sitemap.xml
