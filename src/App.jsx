@@ -3,6 +3,7 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 import { FileText, BrainCircuit, Landmark, Scale } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
+import newsletterArticles from './data/newsletter.json';
 import MetricCard from './components/MetricCard';
 import ProjectCard from './components/ProjectCard';
 import DownloadCard from './components/DownloadCard';
@@ -881,23 +882,7 @@ const App = () => {
 
           {/* Recent Articles */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {[
-              {
-                title: 'Beyond the Bell: Why Governance is the True Currency of a Successful UAE IPO',
-                tag: 'IPO Governance',
-                tagColor: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
-              },
-              {
-                title: 'The Audit Blind Spots & Risks Your Board Isn\'t Hearing About',
-                tag: 'Board Advisory',
-                tagColor: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
-              },
-              {
-                title: 'Why Data Cleaning Became My Unexpected Priority',
-                tag: 'Data & Analytics',
-                tagColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
-              },
-            ].map((article, i) => (
+            {newsletterArticles.map((article, i) => (
               <motion.a
                 key={article.title}
                 href="https://www.linkedin.com/newsletters/7339153291630510080/"
