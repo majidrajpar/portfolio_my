@@ -48,7 +48,7 @@ const Navbar = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-8 left-0 right-0 lg:right-64 z-50 flex justify-center pointer-events-none"
+      className="fixed top-8 left-0 right-0 z-50 flex justify-center pointer-events-none"
     >
       <nav className={`
         pointer-events-auto px-8 py-3 rounded-full flex gap-8 items-center transition-all duration-500 border

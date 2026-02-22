@@ -381,8 +381,8 @@ const App = () => {
   return (
     <div className="relative min-h-screen flex">
       <Sidebar />
-      <div className="flex-1 min-w-0 lg:mr-64">
-      <motion.div className="fixed top-0 left-0 right-0 lg:right-64 h-1 bg-blue-500 origin-left z-[100]" style={{ scaleX }} />
+      <div className="flex-1 min-w-0">
+      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-blue-500 origin-left z-[100]" style={{ scaleX }} />
       <Navbar />
 
       {/* All Resources Gallery */}
