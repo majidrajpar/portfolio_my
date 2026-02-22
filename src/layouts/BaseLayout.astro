@@ -15,6 +15,7 @@ const {
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <!DOCTYPE html>
@@ -91,11 +92,11 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
           <div class="text-white/30 text-[10px] font-black uppercase tracking-widest mb-4">Pages</div>
           <ul class="space-y-2">
             {[
-              { label: 'About', href: '/portfolio_my/about/' },
-              { label: 'Projects', href: '/portfolio_my/projects/' },
-              { label: 'Advisory', href: '/portfolio_my/consulting/' },
-              { label: 'Contact', href: '/portfolio_my/contact/' },
-              { label: 'Resources', href: '/portfolio_my/resources/' },
+              { label: 'About', href: `${base}/about/` },
+              { label: 'Projects', href: `${base}/projects/` },
+              { label: 'Advisory', href: `${base}/consulting/` },
+              { label: 'Contact', href: `${base}/contact/` },
+              { label: 'Resources', href: `${base}/resources/` },
             ].map(link => (
               <li><a href={link.href} class="text-white/50 hover:text-white text-xs font-bold transition-colors">{link.label}</a></li>
             ))}
@@ -107,7 +108,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
           <ul class="space-y-2">
             <li><a href="mailto:majidrajpar@gmail.com" class="text-white/50 hover:text-white text-xs font-bold transition-colors">majidrajpar@gmail.com</a></li>
             <li><span class="text-white/50 text-xs font-bold">Dubai, UAE</span></li>
-            <li><a href="/portfolio_my/cv/Majid_Mumtaz_CV.pdf" download class="text-white/50 hover:text-white text-xs font-bold transition-colors">Download CV</a></li>
+            <li><a href={`${base}/cv/Majid_Mumtaz_CV.pdf`} download class="text-white/50 hover:text-white text-xs font-bold transition-colors">Download CV</a></li>
           </ul>
         </div>
       </div>
