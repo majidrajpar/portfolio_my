@@ -8,7 +8,7 @@ const metrics = [
 ];
 
 const Sidebar = () => (
-  <aside className="hidden lg:flex fixed top-0 left-0 h-screen w-64 z-40 flex-col bg-slate-900/95 border-r border-white/5 backdrop-blur-xl overflow-y-auto">
+  <aside className="hidden lg:flex fixed top-0 right-0 h-screen w-64 z-40 flex-col bg-slate-900/95 border-l border-white/5 backdrop-blur-xl overflow-y-auto">
     <div className="flex flex-col flex-1 px-6 py-10">
 
       {/* Profile */}
