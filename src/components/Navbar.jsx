@@ -44,6 +44,8 @@ const Navbar = () => {
     { label: 'Contact', href: '#contact', id: 'contact' },
   ];
 
+  const newsletterUrl = 'https://www.linkedin.com/newsletters/7339153291630510080/';
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -54,6 +56,15 @@ const Navbar = () => {
         pointer-events-auto px-8 py-3 rounded-full flex gap-8 items-center transition-all duration-500 border
         ${scrolled ? 'bg-slate-900/80 backdrop-blur-xl border-white/10 shadow-2xl scale-95' : 'bg-transparent border-transparent'}
       `}>
+        <a
+          href={newsletterUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 bg-blue-500/20 border border-blue-500/40 text-blue-400 rounded-full hover:bg-blue-500/30 hover:text-white transition-all"
+        >
+          Newsletter ↗
+        </a>
+
         {navItems.map((item) => {
           const isActive = item.id === activeSection;
           return (
