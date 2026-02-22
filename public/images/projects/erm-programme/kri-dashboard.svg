@@ -1,0 +1,226 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <!-- Header -->
+  <rect width="1200" height="56" fill="#1e293b"/>
+  <text x="24" y="34" fill="#f8fafc" font-size="15" font-weight="700">Key Risk Indicator Dashboard — Monthly Management Risk Report</text>
+  <text x="24" y="50" fill="#475569" font-size="10">Al Nakheel F&amp;B Technology Platform · 8 Jurisdictions · ⚠ DUMMY DATA — FOR ILLUSTRATION PURPOSES ONLY</text>
+  <rect x="1090" y="14" width="90" height="26" rx="13" fill="#1d4ed8" opacity="0.3" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1135" y="31" fill="#93c5fd" font-size="10" font-weight="700" text-anchor="middle">CONFIDENTIAL</text>
+
+  <!-- KPI Strip -->
+  <rect x="24" y="66" width="130" height="60" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="89" y="90" fill="#22c55e" font-size="22" font-weight="800" text-anchor="middle">18</text>
+  <text x="89" y="106" fill="#64748b" font-size="9" text-anchor="middle" letter-spacing="1">GREEN KRIs</text>
+  <text x="89" y="118" fill="#475569" font-size="9" text-anchor="middle">Within tolerance</text>
+
+  <rect x="164" y="66" width="130" height="60" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="229" y="90" fill="#f59e0b" font-size="22" font-weight="800" text-anchor="middle">7</text>
+  <text x="229" y="106" fill="#64748b" font-size="9" text-anchor="middle" letter-spacing="1">AMBER KRIs</text>
+  <text x="229" y="118" fill="#475569" font-size="9" text-anchor="middle">Mgmt review required</text>
+
+  <rect x="304" y="66" width="130" height="60" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="369" y="90" fill="#ef4444" font-size="22" font-weight="800" text-anchor="middle">3</text>
+  <text x="369" y="106" fill="#64748b" font-size="9" text-anchor="middle" letter-spacing="1">RED KRIs</text>
+  <text x="369" y="118" fill="#475569" font-size="9" text-anchor="middle">Escalation triggered</text>
+
+  <rect x="444" y="66" width="130" height="60" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="509" y="90" fill="#a78bfa" font-size="22" font-weight="800" text-anchor="middle">28</text>
+  <text x="509" y="106" fill="#64748b" font-size="9" text-anchor="middle" letter-spacing="1">TOTAL KRIs</text>
+  <text x="509" y="118" fill="#475569" font-size="9" text-anchor="middle">Monitored monthly</text>
+
+  <rect x="900" y="66" width="276" height="60" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="1038" y="85" fill="#64748b" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1">REPORTING PERIOD</text>
+  <text x="1038" y="105" fill="#e2e8f0" font-size="14" font-weight="700" text-anchor="middle">January 2026</text>
+  <text x="1038" y="120" fill="#475569" font-size="9" text-anchor="middle">Next review: 1 Feb 2026</text>
+
+  <!-- LEFT COLUMN: Operational KRIs -->
+  <text x="24" y="152" fill="#475569" font-size="10" font-weight="700" letter-spacing="2">OPERATIONAL KRIs</text>
+  <rect x="24" y="158" width="560" height="22" fill="#0f172a"/>
+  <text x="34" y="173" fill="#475569" font-size="9" font-weight="700">KRI METRIC</text>
+  <text x="330" y="173" fill="#475569" font-size="9" font-weight="700">ACTUAL</text>
+  <text x="400" y="173" fill="#475569" font-size="9" font-weight="700">TARGET</text>
+  <text x="455" y="173" fill="#475569" font-size="9" font-weight="700">STATUS</text>
+  <text x="525" y="173" fill="#475569" font-size="9" font-weight="700">TREND</text>
+
+  <rect x="24" y="180" width="560" height="24" fill="#1e293b"/>
+  <text x="34" y="196" fill="#e2e8f0" font-size="10">Order Fulfillment Accuracy Rate</text>
+  <text x="330" y="196" fill="#22c55e" font-size="10" font-weight="700">98.7%</text>
+  <text x="400" y="196" fill="#64748b" font-size="10">&gt;98%</text>
+  <rect x="451" y="185" width="46" height="14" rx="7" fill="#22c55e" opacity="0.25"/>
+  <text x="474" y="196" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">GREEN</text>
+  <text x="535" y="196" fill="#22c55e" font-size="11" text-anchor="middle">↑</text>
+
+  <rect x="24" y="204" width="560" height="24" fill="#161f2e"/>
+  <text x="34" y="220" fill="#e2e8f0" font-size="10">Kitchen Equipment Downtime (hrs/month)</text>
+  <text x="330" y="220" fill="#f59e0b" font-size="10" font-weight="700">6.2 hrs</text>
+  <text x="400" y="220" fill="#64748b" font-size="10">&lt;4 hrs</text>
+  <rect x="451" y="209" width="46" height="14" rx="7" fill="#f59e0b" opacity="0.25"/>
+  <text x="474" y="220" fill="#f59e0b" font-size="9" font-weight="700" text-anchor="middle">AMBER</text>
+  <text x="535" y="220" fill="#f59e0b" font-size="11" text-anchor="middle">→</text>
+
+  <rect x="24" y="228" width="560" height="24" fill="#1e293b"/>
+  <text x="34" y="244" fill="#e2e8f0" font-size="10">Delivery Partner On-Time Rate</text>
+  <text x="330" y="244" fill="#22c55e" font-size="10" font-weight="700">96.1%</text>
+  <text x="400" y="244" fill="#64748b" font-size="10">&gt;95%</text>
+  <rect x="451" y="233" width="46" height="14" rx="7" fill="#22c55e" opacity="0.25"/>
+  <text x="474" y="244" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">GREEN</text>
+  <text x="535" y="244" fill="#22c55e" font-size="11" text-anchor="middle">↑</text>
+
+  <!-- LEFT COLUMN: Food Safety KRIs -->
+  <text x="24" y="274" fill="#475569" font-size="10" font-weight="700" letter-spacing="2">FOOD SAFETY &amp; QUALITY KRIs</text>
+  <rect x="24" y="280" width="560" height="22" fill="#0f172a"/>
+  <text x="34" y="295" fill="#475569" font-size="9" font-weight="700">KRI METRIC</text>
+  <text x="330" y="295" fill="#475569" font-size="9" font-weight="700">ACTUAL</text>
+  <text x="400" y="295" fill="#475569" font-size="9" font-weight="700">TARGET</text>
+  <text x="455" y="295" fill="#475569" font-size="9" font-weight="700">STATUS</text>
+  <text x="525" y="295" fill="#475569" font-size="9" font-weight="700">TREND</text>
+
+  <rect x="24" y="302" width="560" height="24" fill="#1e293b"/>
+  <text x="34" y="318" fill="#e2e8f0" font-size="10">Food Authority Inspection Pass Rate</text>
+  <text x="330" y="318" fill="#22c55e" font-size="10" font-weight="700">100%</text>
+  <text x="400" y="318" fill="#64748b" font-size="10">100%</text>
+  <rect x="451" y="307" width="46" height="14" rx="7" fill="#22c55e" opacity="0.25"/>
+  <text x="474" y="318" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">GREEN</text>
+  <text x="535" y="318" fill="#22c55e" font-size="11" text-anchor="middle">→</text>
+
+  <rect x="24" y="326" width="560" height="24" fill="#161f2e"/>
+  <text x="34" y="342" fill="#e2e8f0" font-size="10">Consumer Food Safety Complaints (monthly)</text>
+  <text x="330" y="342" fill="#ef4444" font-size="10" font-weight="700">5 events</text>
+  <text x="400" y="342" fill="#64748b" font-size="10">&lt;3</text>
+  <rect x="451" y="331" width="40" height="14" rx="7" fill="#ef4444" opacity="0.25"/>
+  <text x="471" y="342" fill="#ef4444" font-size="9" font-weight="700" text-anchor="middle">RED</text>
+  <text x="535" y="342" fill="#ef4444" font-size="11" text-anchor="middle">↑</text>
+
+  <rect x="24" y="350" width="560" height="24" fill="#1e293b"/>
+  <text x="34" y="366" fill="#e2e8f0" font-size="10">HACCP Critical Control Point Deviations (qtr)</text>
+  <text x="330" y="366" fill="#f59e0b" font-size="10" font-weight="700">2 deviations</text>
+  <text x="400" y="366" fill="#64748b" font-size="10">0</text>
+  <rect x="451" y="355" width="46" height="14" rx="7" fill="#f59e0b" opacity="0.25"/>
+  <text x="474" y="366" fill="#f59e0b" font-size="9" font-weight="700" text-anchor="middle">AMBER</text>
+  <text x="535" y="366" fill="#22c55e" font-size="11" text-anchor="middle">↓</text>
+
+  <!-- LEFT COLUMN: People KRIs -->
+  <text x="24" y="396" fill="#475569" font-size="10" font-weight="700" letter-spacing="2">PEOPLE &amp; HR KRIs</text>
+  <rect x="24" y="402" width="560" height="22" fill="#0f172a"/>
+  <text x="34" y="417" fill="#475569" font-size="9" font-weight="700">KRI METRIC</text>
+  <text x="330" y="417" fill="#475569" font-size="9" font-weight="700">ACTUAL</text>
+  <text x="400" y="417" fill="#475569" font-size="9" font-weight="700">TARGET</text>
+  <text x="455" y="417" fill="#475569" font-size="9" font-weight="700">STATUS</text>
+
+  <rect x="24" y="424" width="560" height="24" fill="#1e293b"/>
+  <text x="34" y="440" fill="#e2e8f0" font-size="10">Kitchen Staff Annualized Turnover Rate</text>
+  <text x="330" y="440" fill="#ef4444" font-size="10" font-weight="700">67%</text>
+  <text x="400" y="440" fill="#64748b" font-size="10">&lt;40%</text>
+  <rect x="451" y="429" width="40" height="14" rx="7" fill="#ef4444" opacity="0.25"/>
+  <text x="471" y="440" fill="#ef4444" font-size="9" font-weight="700" text-anchor="middle">RED</text>
+
+  <rect x="24" y="448" width="560" height="24" fill="#161f2e"/>
+  <text x="34" y="464" fill="#e2e8f0" font-size="10">Mandatory Food Safety Training Completion</text>
+  <text x="330" y="464" fill="#22c55e" font-size="10" font-weight="700">100%</text>
+  <text x="400" y="464" fill="#64748b" font-size="10">100%</text>
+  <rect x="451" y="453" width="46" height="14" rx="7" fill="#22c55e" opacity="0.25"/>
+  <text x="474" y="464" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">GREEN</text>
+
+  <!-- RIGHT COLUMN: Financial KRIs -->
+  <text x="624" y="152" fill="#475569" font-size="10" font-weight="700" letter-spacing="2">FINANCIAL KRIs</text>
+  <rect x="624" y="158" width="552" height="22" fill="#0f172a"/>
+  <text x="634" y="173" fill="#475569" font-size="9" font-weight="700">KRI METRIC</text>
+  <text x="920" y="173" fill="#475569" font-size="9" font-weight="700">ACTUAL</text>
+  <text x="990" y="173" fill="#475569" font-size="9" font-weight="700">TARGET</text>
+  <text x="1060" y="173" fill="#475569" font-size="9" font-weight="700">STATUS</text>
+
+  <rect x="624" y="180" width="552" height="24" fill="#1e293b"/>
+  <text x="634" y="196" fill="#e2e8f0" font-size="10">Revenue vs Budget Variance</text>
+  <text x="920" y="196" fill="#22c55e" font-size="10" font-weight="700">+2.3%</text>
+  <text x="990" y="196" fill="#64748b" font-size="10">±5%</text>
+  <rect x="1056" y="185" width="46" height="14" rx="7" fill="#22c55e" opacity="0.25"/>
+  <text x="1079" y="196" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">GREEN</text>
+
+  <rect x="624" y="204" width="552" height="24" fill="#161f2e"/>
+  <text x="634" y="220" fill="#e2e8f0" font-size="10">Cash Runway (months at current burn)</text>
+  <text x="920" y="220" fill="#f59e0b" font-size="10" font-weight="700">10.2 mths</text>
+  <text x="990" y="220" fill="#64748b" font-size="10">&gt;12 mths</text>
+  <rect x="1056" y="209" width="46" height="14" rx="7" fill="#f59e0b" opacity="0.25"/>
+  <text x="1079" y="220" fill="#f59e0b" font-size="9" font-weight="700" text-anchor="middle">AMBER</text>
+
+  <rect x="624" y="228" width="552" height="24" fill="#1e293b"/>
+  <text x="634" y="244" fill="#e2e8f0" font-size="10">Food Cost as % of Revenue</text>
+  <text x="920" y="244" fill="#22c55e" font-size="10" font-weight="700">28.4%</text>
+  <text x="990" y="244" fill="#64748b" font-size="10">Within budget</text>
+  <rect x="1056" y="233" width="46" height="14" rx="7" fill="#22c55e" opacity="0.25"/>
+  <text x="1079" y="244" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">GREEN</text>
+
+  <!-- RIGHT COLUMN: Technology KRIs -->
+  <text x="624" y="274" fill="#475569" font-size="10" font-weight="700" letter-spacing="2">TECHNOLOGY &amp; CYBERSECURITY KRIs</text>
+  <rect x="624" y="280" width="552" height="22" fill="#0f172a"/>
+  <text x="634" y="295" fill="#475569" font-size="9" font-weight="700">KRI METRIC</text>
+  <text x="920" y="295" fill="#475569" font-size="9" font-weight="700">ACTUAL</text>
+  <text x="990" y="295" fill="#475569" font-size="9" font-weight="700">TARGET</text>
+  <text x="1060" y="295" fill="#475569" font-size="9" font-weight="700">STATUS</text>
+
+  <rect x="624" y="302" width="552" height="24" fill="#1e293b"/>
+  <text x="634" y="318" fill="#e2e8f0" font-size="10">Kitchen OS Platform Uptime</text>
+  <text x="920" y="318" fill="#22c55e" font-size="10" font-weight="700">99.8%</text>
+  <text x="990" y="318" fill="#64748b" font-size="10">&gt;99.5%</text>
+  <rect x="1056" y="307" width="46" height="14" rx="7" fill="#22c55e" opacity="0.25"/>
+  <text x="1079" y="318" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">GREEN</text>
+
+  <rect x="624" y="326" width="552" height="24" fill="#161f2e"/>
+  <text x="634" y="342" fill="#e2e8f0" font-size="10">Security Incidents (quarterly)</text>
+  <text x="920" y="342" fill="#ef4444" font-size="10" font-weight="700">4 incidents</text>
+  <text x="990" y="342" fill="#64748b" font-size="10">&lt;2</text>
+  <rect x="1056" y="331" width="40" height="14" rx="7" fill="#ef4444" opacity="0.25"/>
+  <text x="1076" y="342" fill="#ef4444" font-size="9" font-weight="700" text-anchor="middle">RED</text>
+
+  <rect x="624" y="350" width="552" height="24" fill="#1e293b"/>
+  <text x="634" y="366" fill="#e2e8f0" font-size="10">Critical Patch Compliance Rate</text>
+  <text x="920" y="366" fill="#22c55e" font-size="10" font-weight="700">99.2%</text>
+  <text x="990" y="366" fill="#64748b" font-size="10">&gt;99%</text>
+  <rect x="1056" y="355" width="46" height="14" rx="7" fill="#22c55e" opacity="0.25"/>
+  <text x="1079" y="366" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">GREEN</text>
+
+  <!-- RIGHT COLUMN: Compliance KRIs -->
+  <text x="624" y="396" fill="#475569" font-size="10" font-weight="700" letter-spacing="2">COMPLIANCE KRIs</text>
+  <rect x="624" y="402" width="552" height="22" fill="#0f172a"/>
+  <text x="634" y="417" fill="#475569" font-size="9" font-weight="700">KRI METRIC</text>
+  <text x="920" y="417" fill="#475569" font-size="9" font-weight="700">ACTUAL</text>
+  <text x="990" y="417" fill="#475569" font-size="9" font-weight="700">TARGET</text>
+  <text x="1060" y="417" fill="#475569" font-size="9" font-weight="700">STATUS</text>
+
+  <rect x="624" y="424" width="552" height="24" fill="#1e293b"/>
+  <text x="634" y="440" fill="#e2e8f0" font-size="10">Regulatory Violations / Notices Received</text>
+  <text x="920" y="440" fill="#22c55e" font-size="10" font-weight="700">0</text>
+  <text x="990" y="440" fill="#64748b" font-size="10">0</text>
+  <rect x="1056" y="429" width="46" height="14" rx="7" fill="#22c55e" opacity="0.25"/>
+  <text x="1079" y="440" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">GREEN</text>
+
+  <rect x="624" y="448" width="552" height="24" fill="#161f2e"/>
+  <text x="634" y="464" fill="#e2e8f0" font-size="10">License &amp; Permit Renewal Compliance Rate</text>
+  <text x="920" y="464" fill="#22c55e" font-size="10" font-weight="700">100%</text>
+  <text x="990" y="464" fill="#64748b" font-size="10">100%</text>
+  <rect x="1056" y="453" width="46" height="14" rx="7" fill="#22c55e" opacity="0.25"/>
+  <text x="1079" y="464" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">GREEN</text>
+
+  <!-- Escalation Actions Panel -->
+  <rect x="24" y="490" width="1152" height="106" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="44" y="510" fill="#64748b" font-size="10" font-weight="700" letter-spacing="1">ESCALATION ACTIONS REQUIRED THIS PERIOD</text>
+
+  <rect x="44" y="518" width="358" height="62" rx="6" fill="#ef4444" opacity="0.08" stroke="#ef4444" stroke-width="1"/>
+  <text x="223" y="534" fill="#ef4444" font-size="9" font-weight="700" text-anchor="middle">RED — Food Safety Complaints (5/month)</text>
+  <text x="223" y="549" fill="#94a3b8" font-size="8.5" text-anchor="middle">Root cause investigation initiated · COO action plan</text>
+  <text x="223" y="563" fill="#94a3b8" font-size="8.5" text-anchor="middle">due 15 Feb · Escalated to CEO within 48 hrs per protocol</text>
+
+  <rect x="422" y="518" width="358" height="62" rx="6" fill="#ef4444" opacity="0.08" stroke="#ef4444" stroke-width="1"/>
+  <text x="601" y="534" fill="#ef4444" font-size="9" font-weight="700" text-anchor="middle">RED — Security Incidents (4/quarter)</text>
+  <text x="601" y="549" fill="#94a3b8" font-size="8.5" text-anchor="middle">Penetration test commissioned · CTO security review</text>
+  <text x="601" y="563" fill="#94a3b8" font-size="8.5" text-anchor="middle">underway · Incident response plan activated</text>
+
+  <rect x="800" y="518" width="358" height="62" rx="6" fill="#f59e0b" opacity="0.08" stroke="#f59e0b" stroke-width="1"/>
+  <text x="979" y="534" fill="#f59e0b" font-size="9" font-weight="700" text-anchor="middle">AMBER — Cash Runway (10.2 months)</text>
+  <text x="979" y="549" fill="#94a3b8" font-size="8.5" text-anchor="middle">CFO funding strategy review for Q1 Board · Capex</text>
+  <text x="979" y="563" fill="#94a3b8" font-size="8.5" text-anchor="middle">freeze options under assessment</text>
+
+  <!-- Footer -->
+  <rect x="0" y="598" width="1200" height="32" fill="#1e293b"/>
+  <text x="24" y="619" fill="#475569" font-size="10">All company names, risk data, and financial figures shown are fictitious and used for portfolio demonstration only · Not based on any real client engagement</text>
+</svg>

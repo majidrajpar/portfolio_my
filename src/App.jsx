@@ -293,19 +293,39 @@ const App = () => {
     },
     {
       id: 'coso-erm-9country',
-      title: 'COSO ERM Programme — Multi-Brand F&B Platform (7 Countries)',
-      description: 'Designed and chaired the implementation of a full COSO ERM 2017 / ISO 31000 framework for a UAE-based multi-brand F&B technology platform operating 100+ kitchens across 7 countries. Built enterprise risk register, KRI dashboards, BCP plans, and embedded Three Lines of Defence across all jurisdictions.',
+      title: 'Enterprise Risk Management Programme — Multi-Brand F&B Platform (8 Countries)',
+      description: 'Designed and implemented a complete COSO ERM 2017 / ISO 31000 framework for a UAE-based, technology-enabled cloud kitchen platform operating 100+ kitchens across 8 countries. Delivered 12 production-ready tools — risk register, KRI dashboard, BCP tracker, and board reporting suite — alongside a board-adopted risk appetite statement and embedded Three Lines of Defence model.',
       category: 'Enterprise Risk',
-      impact: '50+ risks mapped across 7 jurisdictions — 20+ live KRIs with board risk appetite formally adopted',
-      techStack: ['COSO ERM 2017', 'ISO 31000', 'Three Lines of Defence', 'KRI Dashboards', 'Power BI'],
+      impact: '12 tools delivered — 50+ risks mapped, 28 KRIs live, board risk appetite formally adopted across 8 jurisdictions',
+      techStack: ['COSO ERM 2017', 'ISO 31000:2018', 'ISO 22301', 'Excel', 'Word', 'Three Lines of Defence'],
       image: '/portfolio_my/images/projects/coso-erm/risk-heatmap.svg',
+      additionalScreenshots: [
+        {
+          image: '/portfolio_my/images/projects/erm-programme/kri-dashboard.svg',
+          caption: 'Monthly KRI Dashboard — 28 KRIs tracked across 6 domains with RAG thresholds and automated escalation logic'
+        },
+        {
+          image: '/portfolio_my/images/projects/erm-programme/risk-treatment-tracker.svg',
+          caption: 'Risk Treatment Plan Tracker — quarterly progress tracking with owner accountability and Risk Committee escalation summary'
+        },
+        {
+          image: '/portfolio_my/images/projects/erm-programme/bcp-tracker.svg',
+          caption: 'BCP / DRP Readiness Dashboard — RTO/RPO targets, test results and annual testing schedule for 12 critical business functions'
+        }
+      ],
       features: [
-        'Enterprise risk universe across 9 risk categories: operational, financial, strategic, food safety, technology, supply chain, compliance, reputational, and people risk',
-        '20+ Key Risk Indicators with Red/Amber/Green thresholds calibrated to operational data',
-        'Board-approved risk appetite statement with zero-tolerance for food safety and compliance breaches',
-        'Business Continuity Plans for all 7 markets with defined RTOs (critical systems: 2–8 hours)',
-        'Three Lines of Defence model embedded across 7 jurisdictions with country risk coordinators',
-        '12-month phased implementation: foundation, rollout, and embed — with Risk Committee reporting from Month 5'
+        'Enterprise Risk Register — 50+ risks scored across 9 categories with inherent/residual ratings, treatment status and KRI linkage',
+        'KRI Dashboard — 28 Key Risk Indicators with Green/Amber/Red thresholds; Amber triggers 10-day management review, Red triggers CRO escalation within 48 hours',
+        'Controls Inventory & Self-Assessment — CSA workbook for first-line control owners aligned to COSO control categories',
+        'Risk Treatment Plan Tracker — progress bars, authority tiers, due dates and quarterly Risk Committee escalation summary',
+        'Incident & Near-Miss Log — root cause classification, risk register linkage and lessons-learned capture',
+        'Implementation Programme Tracker — ERM rollout Gantt across all 8 jurisdictions covering policy, training and reporting cadence',
+        'BCP Recovery Tracker — RTO/RPO targets for 12 critical functions; 75% programme readiness achieved at go-live',
+        'Monthly Management Risk Report template (C-Suite), Quarterly Risk Committee Pack, and Semi-Annual Board Risk Report — all Word-native with zero specialist software dependency',
+        'Risk Culture Survey — baseline and annual measurement of risk awareness and tone from the top',
+        'Board-approved risk appetite statement — zero tolerance for food safety and regulatory compliance; moderate appetite for strategic and financial risk',
+        'Three Lines of Defence model embedded across 8 jurisdictions with defined accountability from kitchen operations through to internal audit',
+        '4-tier reporting cadence: Operational (weekly dashboard) → Management (monthly report) → Committee (quarterly pack) → Board (semi-annual)'
       ]
     },
     {
