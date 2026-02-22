@@ -118,7 +118,7 @@ const App = () => {
     {
       id: 'fraud-detection-ml',
       title: 'ML-Powered Fraud Detection',
-      description: 'Advanced machine learning architecture using Isolation Forest and K-Means clustering to analyze 2.3M+ monthly transactions.',
+      description: 'Advanced machine learning architecture using Isolation Forest and K-Means clustering to analyse 2.3M+ monthly transactions.',
       category: 'Fraud Forensics',
       impact: '78% Reduction in Fraud Incidents (2.3M monthly transactions)',
       techStack: ['Python', 'scikit-learn', 'Pandas', 'Excel Automation'],
@@ -162,7 +162,7 @@ const App = () => {
       techStack: ['Python', 'YAML', 'IIA Compliance', 'openpyxl'],
       image: '/portfolio_my/images/projects/audit-tools/findings-tracker.webp',
       features: [
-        'Color-coded severity tracking (Critical/High/Medium/Low)',
+        'Colour-coded severity tracking (Critical/High/Medium/Low)',
         'Automated aging analysis with remediation deadline tracking',
         '100% population testing across all audit areas',
         'Finding ID generation with unique reference numbers',
@@ -181,7 +181,7 @@ const App = () => {
       features: [
         'Real-time KPI monitoring (AED 127M, AED 68.2M, 37.5%)',
         'Monthly P&L with quarterly trend analysis',
-        'Budget vs. Actual variance tracking with color coding',
+        'Budget vs. Actual variance tracking with colour coding',
         'Automated financial reporting for board meetings',
         'Capital leak identification and recovery tracking',
         'Multi-period comparative analysis (12-month view)'
@@ -226,7 +226,7 @@ const App = () => {
       title: 'Food Safety Risk Assessment Framework',
       description: 'Advanced risk management framework for F&B operations with heat mapping, control validation, and compliance tracking across 70+ locations.',
       category: 'Audit Transformation',
-      impact: 'Comprehensive risk assessment across all operations',
+      impact: 'End-to-end food safety risk framework deployed across 70+ locations with executive risk reporting',
       techStack: ['Python', 'Risk Analytics', 'Compliance Frameworks'],
       image: '/portfolio_my/images/projects/food-safety-risk/risk-heatmap.webp',
       features: [
@@ -268,7 +268,7 @@ const App = () => {
         'Compliance tracking across multiple locations',
         'Remediation monitoring with deadline tracking',
         'Action plan reporting for management review',
-        'Standardized procedures across all sites',
+        'Standardised procedures across all sites',
         'Automated compliance scoring and ratings'
       ]
     },

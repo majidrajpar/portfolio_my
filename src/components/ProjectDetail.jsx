@@ -190,7 +190,7 @@ const ProjectDetail = ({ project, onClose }) => {
           className="text-center"
         >
           <a
-            href="/#contact"
+            href="/portfolio_my/#contact"
             className="btn-primary inline-flex items-center gap-2"
           >
             Contact Me
