@@ -6,29 +6,33 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
+    const sectionIds = ['about', 'projects', 'resources', 'services', 'contact'];
+
+    const handleScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 50);
+
+      // At the very top — highlight Home
+      if (y < 80) {
+        setActiveSection('');
+        return;
+      }
+
+      // Find which section the midpoint of the viewport is inside
+      const mid = y + window.innerHeight / 2;
+      let current = '';
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= mid) {
+          current = id;
+        }
+      }
+      setActiveSection(current);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const sectionIds = ['contact', 'services', 'resources', 'projects', 'about'];
-    const observers = [];
-
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveSection(id);
-        },
-        { threshold: 0.3 }
-      );
-      observer.observe(el);
-      observers.push(observer);
-    });
-
-    return () => observers.forEach((o) => o.disconnect());
   }, []);
 
   const navItems = [
