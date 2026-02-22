@@ -7,7 +7,6 @@ export const projects = [
     impact: '78% Reduction in Fraud Incidents (2.3M monthly transactions)',
     techStack: ['Python', 'scikit-learn', 'Pandas', 'Excel Automation'],
     image: '/portfolio_my/images/projects/fraud-detection/fraud-dashboard.webp',
-    logo: '/portfolio_my/images/logos/python.png',
     features: [
       'ML anomaly detection with 87.3% accuracy using Isolation Forest',
       'Manager discount rate analysis with automated risk scoring',
@@ -25,7 +24,6 @@ export const projects = [
     impact: 'End-to-end IPO readiness across governance, ICOFR, and UAE SCA compliance for a multi-jurisdiction, multi-brand platform',
     techStack: ['UAE SCA Regulations', 'DFM Listing Rules', 'COSO ICOFR', 'IFRS', 'UAE Companies Law'],
     image: '/portfolio_my/images/projects/dfm-ipo-readiness/icofr-governance.webp',
-    logo: '/portfolio_my/images/logos/dfm.png',
     features: [
       'ICOFR scoping and Risk Control Matrix documentation across 12+ business processes',
       'UAE SCA Corporate Governance Code compliance — board composition, committee design, disclosure framework',
@@ -43,7 +41,6 @@ export const projects = [
     impact: '70% reduction in audit preparation cycle time — board-ready status reporting automated',
     techStack: ['Python', 'YAML', 'IIA Compliance', 'openpyxl'],
     image: '/portfolio_my/images/projects/audit-tools/findings-tracker.webp',
-    logo: '/portfolio_my/images/logos/python.png',
     features: [
       'Replaced manual spreadsheets — eliminated 3 days of monthly consolidation work',
       'Automated aging analysis: overdue findings escalated automatically by severity tier',
@@ -61,7 +58,6 @@ export const projects = [
     impact: '85% automated reporting efficiency achieved',
     techStack: ['xlsxwriter', 'Pandas', 'Power BI', 'Python'],
     image: '/portfolio_my/images/projects/finance-dashboard/executive-dashboard.webp',
-    logo: '/portfolio_my/images/logos/powerbi.png',
     features: [
       'Real-time KPI monitoring (AED 127M, AED 68.2M, 37.5%)',
       'Monthly P&L with quarterly trend analysis',
@@ -79,7 +75,6 @@ export const projects = [
     impact: 'SAR 500M+ capital raise target — full ICOFR certification across 14 business processes',
     techStack: ['COSO ICOFR', 'CMA Regulations', 'Tadawul Listing Rules', 'IFRS', 'Big 4 Co-sourcing'],
     image: '/portfolio_my/images/projects/tadawul-ipo-readiness/icofr-dashboard.svg',
-    logo: '/portfolio_my/images/logos/tadawul.png',
     features: [
       'ICOFR implementation across 14 processes with full Risk Control Matrix documentation',
       'CMA Corporate Governance Regulations compliance — board independence, committee formation',
@@ -97,7 +92,6 @@ export const projects = [
     impact: 'Full audit lifecycle automated across multi-entity operations — from annual plan to board pack, zero manual assembly',
     techStack: ['Python', 'openpyxl', 'python-pptx'],
     image: '/portfolio_my/images/projects/enterprise-audit-tracker/audit-dashboard.webp',
-    logo: '/portfolio_my/images/logos/python.png',
     features: [
       'Director dashboard: live audit universe status, findings count, and overdue actions across all entities',
       'Annual audit plan builder with risk-based priority scoring — high-risk areas scheduled first automatically',
@@ -115,7 +109,6 @@ export const projects = [
     impact: 'End-to-end food safety risk framework deployed across 70+ locations with executive risk reporting',
     techStack: ['Python', 'Risk Analytics', 'Compliance Frameworks'],
     image: '/portfolio_my/images/projects/food-safety-risk/risk-heatmap.webp',
-    logo: '/portfolio_my/images/logos/python.png',
     features: [
       'Risk heat mapping across 70+ restaurant locations',
       'Control validation and effectiveness testing',
@@ -133,7 +126,6 @@ export const projects = [
     impact: 'Multi-case fraud investigation support — control failure mapping and litigation-ready documentation',
     techStack: ['Python', 'Excel Automation', 'Forensic Accounting'],
     image: '/portfolio_my/images/projects/fraud-cases/fraud-analysis.webp',
-    logo: '/portfolio_my/images/logos/python.png',
     features: [
       'Control failure mapping with root cause analysis',
       'Evidence tracking with chain of custody',
@@ -151,7 +143,6 @@ export const projects = [
     impact: 'Compliance scores comparable across 70+ locations — underperforming sites identified and actioned within audit cycle',
     techStack: ['Python', 'openpyxl', 'Audit Standards'],
     image: '/portfolio_my/images/projects/restaurant-audit/audit-checklist.webp',
-    logo: '/portfolio_my/images/logos/python.png',
     features: [
       'Standardised F&B audit checklists — eliminated inconsistency across 70+ locations',
       'Automated compliance scoring: each location receives a comparable, weighted score',
@@ -169,7 +160,6 @@ export const projects = [
     impact: 'Subsidiary successfully structured for parallel market listing within group governance framework',
     techStack: ['Tadawul Nomu Rules', 'COSO', 'ICOFR', 'CMA Regulations', 'Holding Group Governance'],
     image: '/portfolio_my/images/projects/nomu-listing-readiness/governance-structure.svg',
-    logo: '/portfolio_my/images/logos/tadawul.png',
     features: [
       'Subsidiary-level governance framework designed within holding group structure',
       'ICOFR scoping and control documentation aligned to Nomu listing requirements',
@@ -187,7 +177,6 @@ export const projects = [
     impact: '12 tools delivered — 50+ risks mapped, 28 KRIs live, board risk appetite formally adopted across 8 jurisdictions',
     techStack: ['COSO ERM 2017', 'ISO 31000:2018', 'ISO 22301', 'Excel', 'Word', 'Three Lines of Defence'],
     image: '/portfolio_my/images/projects/coso-erm/risk-heatmap.svg',
-    logo: '/portfolio_my/images/logos/coso.png',
     additionalScreenshots: [
       {
         image: '/portfolio_my/images/projects/erm-programme/kri-dashboard.svg',
@@ -225,7 +214,6 @@ export const projects = [
     impact: 'Group-wide governance manual adopted by board — covering holding company and all operating subsidiaries',
     techStack: ['Saudi Companies Law', 'IIA Three Lines Model', 'SOCPA Standards', 'King IV', 'Board Governance'],
     image: '/portfolio_my/images/projects/holding-group-governance/governance-framework.svg',
-    logo: '/portfolio_my/images/logos/governance.png',
     features: [
       'Corporate governance manual covering board charter, committee terms of reference, and delegation of authority matrix',
       'Board and committee structure design — Audit, Risk, and Nomination & Remuneration committees',
@@ -243,7 +231,6 @@ export const projects = [
     impact: 'Audit documentation time cut by ~65% — ICAEW standards embedded automatically, zero manual formatting',
     techStack: ['Python', 'ICAEW Standards', 'Report Automation'],
     image: '/portfolio_my/images/projects/icaew-audit/audit-report.webp',
-    logo: '/portfolio_my/images/logos/icaew.png',
     features: [
       'ICAEW-compliant audit report generated from structured inputs — no blank-page formatting',
       'Testing methodology auto-populated based on audit area and risk level selected',
