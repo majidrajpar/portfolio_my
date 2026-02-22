@@ -33,13 +33,25 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <!-- Client Logo Strip -->
-  <section class="bg-[#001F5B] py-8 border-t border-white/10">
+  <section class="bg-[#001F5B] py-12 border-t border-white/10">
     <div class="max-w-7xl mx-auto px-8" data-reveal>
-      <p class="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 text-center mb-6">Organisations I've Served</p>
-      <div class="flex flex-wrap justify-center items-center gap-3 md:gap-4">
-        {['EY', 'KPMG', 'Kitopi', "McDonald's", 'Al Faisaliah Group'].map((org) => (
-          <div class="px-6 py-3 bg-white/10 border border-white/20">
-            <span class="text-white font-black text-sm uppercase tracking-widest">{org}</span>
+      <p class="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 text-center mb-10">Organisations I've Served</p>
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-14 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+        {[
+          { name: 'EY', logo: '/portfolio_my/images/clients/ey.png' },
+          { name: 'KPMG', logo: '/portfolio_my/images/clients/kpmg.png' },
+          { name: 'Kitopi', logo: '/portfolio_my/images/clients/kitopi.png' },
+          { name: "McDonald's", logo: '/portfolio_my/images/clients/mcdonalds.png' },
+          { name: 'Al Faisaliah Group', logo: '/portfolio_my/images/clients/al-faisaliah.png' },
+          { name: 'Veritux', logo: '/portfolio_my/images/clients/veritux.png' },
+          { name: 'Umbrex', logo: '/portfolio_my/images/clients/umbrex.png' },
+        ].map((org) => (
+          <div class="h-7 md:h-9 flex items-center justify-center">
+            {org.logo ? (
+              <img src={org.logo} alt={org.name} class="h-full w-auto object-contain brightness-0 invert" />
+            ) : (
+              <span class="text-white font-black text-[10px] md:text-xs uppercase tracking-[0.2em]">{org.name}</span>
+            )}
           </div>
         ))}
       </div>
@@ -149,7 +161,16 @@ const base = import.meta.env.BASE_URL;
               </div>
             )}
             <div class="p-10 flex flex-col flex-1">
-              <div class="mb-6 flex justify-end">
+              <div class="mb-8 flex justify-between items-start">
+                <div class="flex items-center gap-4">
+                  <div class="p-3 bg-slate-100 rounded-xl group-hover:bg-slate-200 transition-all duration-700 flex items-center justify-center min-w-[3.5rem] h-14">
+                    {project.logo ? (
+                      <img src={project.logo} alt={`${project.title} logo`} class="w-10 h-10 object-contain" />
+                    ) : (
+                      <div class="w-8 h-8 bg-[#001F5B]/10 rounded flex items-center justify-center text-[#001F5B] font-black text-xs">IA</div>
+                    )}
+                  </div>
+                </div>
                 <span class="text-[10px] font-black uppercase tracking-[0.3em] bg-[#001F5B]/10 text-[#001F5B] px-4 py-1.5 rounded-full border border-[#001F5B]/20">
                   {project.category}
                 </span>
@@ -360,6 +381,12 @@ const base = import.meta.env.BASE_URL;
                 <span class="text-sm font-bold">in</span>
               </div>
               <span class="font-bold">LinkedIn Profile</span>
+            </a>
+            <a href="https://veritux.com/consultants/majid-mumtaz/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 text-slate-600 hover:text-slate-900 transition-colors group">
+              <div class="w-10 h-10 rounded bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:border-[#001F5B]/30 transition-colors">
+                <span class="text-[10px] font-black tracking-tighter">VX</span>
+              </div>
+              <span class="font-bold">Veritux Consultant Page</span>
             </a>
             <a href="https://wa.me/971507471708" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 text-slate-600 hover:text-slate-900 transition-colors group">
               <div class="w-10 h-10 rounded bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:border-[#001F5B]/30 transition-colors">

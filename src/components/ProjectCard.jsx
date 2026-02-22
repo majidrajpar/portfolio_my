@@ -11,7 +11,7 @@ const icons = {
   'Enterprise Risk': <Scale className="w-8 h-8 text-[#001F5B]" />,
 };
 
-const ProjectCard = ({ id, title, description, category, impact, techStack, image, index }) => {
+const ProjectCard = ({ id, title, description, category, impact, techStack, image, logo, index }) => {
   return (
     <motion.article
       initial={{ opacity: 0, y: 30 }}
@@ -34,8 +34,14 @@ const ProjectCard = ({ id, title, description, category, impact, techStack, imag
 
       <div className="p-10 flex flex-col flex-1">
         <div className="mb-8 flex justify-between items-start">
-          <div className="p-4 bg-slate-100 rounded-2xl group-hover:bg-slate-200 transition-all duration-700">
-            {icons[category] || <Database className="w-8 h-8 text-slate-500" />}
+          <div className="flex items-center gap-4">
+            <div className="p-3 bg-slate-100 rounded-xl group-hover:bg-slate-200 transition-all duration-700 flex items-center justify-center min-w-[3.5rem] h-14">
+              {logo ? (
+                <img src={logo} alt={`${title} logo`} className="w-10 h-10 object-contain" />
+              ) : (
+                icons[category] || <Database className="w-8 h-8 text-slate-500" />
+              )}
+            </div>
           </div>
           <span className="text-[10px] font-black uppercase tracking-[0.3em] bg-[#001F5B]/10 text-[#001F5B] px-4 py-1.5 rounded-full border border-[#001F5B]/20">
             {category}
