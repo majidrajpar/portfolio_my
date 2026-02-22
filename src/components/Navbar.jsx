@@ -3,31 +3,15 @@ import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  const [currentPath, setCurrentPath] = useState('');
+  const base = '/portfolio_my';
 
   useEffect(() => {
-    const sectionIds = ['about', 'projects', 'resources', 'services', 'contact'];
+    // Set current path for active link detection
+    setCurrentPath(window.location.pathname);
 
     const handleScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 50);
-
-      // At the very top — highlight Home
-      if (y < 80) {
-        setActiveSection('');
-        return;
-      }
-
-      // Find which section the midpoint of the viewport is inside
-      const mid = y + window.innerHeight / 2;
-      let current = '';
-      for (const id of sectionIds) {
-        const el = document.getElementById(id);
-        if (el && el.offsetTop <= mid) {
-          current = id;
-        }
-      }
-      setActiveSection(current);
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -35,13 +19,16 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // On non-home pages, always show white background
+  const isHome = currentPath === `${base}/` || currentPath === `${base}`;
+  const showTransparent = isHome && !scrolled;
+
   const navItems = [
-    { label: 'Home', href: '#', id: '' },
-    { label: 'About', href: '#about', id: 'about' },
-    { label: 'Case Studies', href: '#projects', id: 'projects' },
-    { label: 'Resources', href: '#resources', id: 'resources' },
-    { label: 'Services', href: '#services', id: 'services' },
-    { label: 'Contact', href: '#contact', id: 'contact' },
+    { label: 'Home', href: `${base}/` },
+    { label: 'About', href: `${base}/about/` },
+    { label: 'Projects', href: `${base}/projects/` },
+    { label: 'Advisory', href: `${base}/consulting/` },
+    { label: 'Contact', href: `${base}/contact/` },
   ];
 
   const newsletterUrl = 'https://www.linkedin.com/newsletters/7339153291630510080/';
@@ -54,32 +41,34 @@ const Navbar = () => {
     >
       <nav className={`
         px-12 py-4 flex justify-between items-center transition-all duration-300
-        ${scrolled ? 'bg-white border-b border-slate-200 shadow-sm' : 'bg-transparent'}
+        ${showTransparent ? 'bg-transparent' : 'bg-white border-b border-slate-200 shadow-sm'}
       `}>
         {/* Left: Brand */}
-        <span className={`text-xs font-black uppercase tracking-[0.3em] transition-colors duration-300 ${scrolled ? 'text-slate-900' : 'text-white'}`}>
+        <a
+          href={`${base}/`}
+          className={`text-xs font-black uppercase tracking-[0.3em] transition-colors duration-300 ${showTransparent ? 'text-white' : 'text-slate-900'}`}
+        >
           Majid Mumtaz
-        </span>
+        </a>
 
         {/* Center: Nav items */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => {
-            const isActive = item.id === activeSection;
+            const isActive = currentPath === item.href || currentPath === item.href.replace(/\/$/, '');
             return (
               <a
                 key={item.label}
                 href={item.href}
                 className={`text-[10px] font-black uppercase tracking-[0.2em] transition-colors relative
-                  ${scrolled
-                    ? (isActive ? 'text-[#001F5B]' : 'text-slate-500 hover:text-slate-900')
-                    : (isActive ? 'text-white' : 'text-white/70 hover:text-white')
+                  ${showTransparent
+                    ? (isActive ? 'text-white' : 'text-white/70 hover:text-white')
+                    : (isActive ? 'text-[#001F5B]' : 'text-slate-500 hover:text-slate-900')
                   }`}
               >
                 {item.label}
                 {isActive && (
-                  <motion.span
-                    layoutId="nav-indicator"
-                    className={`absolute -bottom-1 left-0 right-0 h-px ${scrolled ? 'bg-[#001F5B]' : 'bg-white'}`}
+                  <span
+                    className={`absolute -bottom-1 left-0 right-0 h-px ${showTransparent ? 'bg-white' : 'bg-[#001F5B]'}`}
                   />
                 )}
               </a>
@@ -94,18 +83,18 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={`text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 border transition-all
-              ${scrolled
-                ? 'border-[#001F5B] text-[#001F5B] hover:bg-[#001F5B] hover:text-white'
-                : 'border-white/60 text-white hover:border-white'}`}
+              ${showTransparent
+                ? 'border-white/60 text-white hover:border-white'
+                : 'border-[#001F5B] text-[#001F5B] hover:bg-[#001F5B] hover:text-white'}`}
           >
             Newsletter ↗
           </a>
           <a
-            href="#books"
+            href={`${base}/about/#books`}
             className={`text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 border transition-all
-              ${scrolled
-                ? 'border-amber-600 text-amber-700 hover:bg-amber-600 hover:text-white'
-                : 'border-amber-400/60 text-amber-300 hover:border-amber-300 hover:text-white'}`}
+              ${showTransparent
+                ? 'border-amber-400/60 text-amber-300 hover:border-amber-300'
+                : 'border-amber-600 text-amber-700 hover:bg-amber-600 hover:text-white'}`}
           >
             Books
           </a>

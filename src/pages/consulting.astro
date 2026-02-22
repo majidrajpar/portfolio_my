@@ -1,111 +1,163 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm';
 const base = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout title="Advisory | Strategic Profit Protection Solutions">
-  <section class="min-h-[60vh] flex items-center pt-40 overflow-hidden">
-    <div class="mesh-bg opacity-50"></div>
-    <div class="grid-pattern opacity-30"></div>
-    
-    <div class="container text-center reveal">
-      <span class="inline-block px-4 py-2 mb-6 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
-        Veritux Consulting Network
-      </span>
-      <h1 class="mb-4">Strategic <span class="text-white">Advisory.</span></h1>
-      <p class="text-xl text-slate-400 font-medium mx-auto max-w-2xl text-balance">
-        Independent Board Advisory and Profit Protection Solutions for Family Offices and Pre-IPO Enterprises.
+<BaseLayout
+  title="Advisory Services | Majid Mumtaz — Internal Audit & Board Advisory"
+  description="Consulting services: IA function build-out, IPO readiness (ICOFR/SOX), fraud detection, enterprise risk management, and board assurance. GCC region specialist."
+>
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-[#001F5B]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Advisory Services</span>
+        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+          How I Can Help.
+        </h1>
+        <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
+          Independent advisory for boards, audit committees, and executive teams who need credible, board-grade internal audit capability.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Cards -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="mb-14" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-3 block">Practice Areas</span>
+        <h2 class="text-4xl font-black text-slate-900">Services.</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Service 1: IA Function Build-Out -->
+        <div class="bg-white border border-slate-200 p-8 hover:shadow-md transition-shadow" data-reveal data-reveal-delay="1">
+          <div class="w-10 h-10 flex items-center justify-center mb-6 bg-[#001F5B]">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-black text-slate-900 mb-4">IA Function Build-Out</h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            Designing and standing up internal audit departments from zero — including audit charter, methodology, risk-based audit universe, team structure, and IIA Standards alignment. Suitable for pre-IPO companies and organisations building first-time IA capability.
+          </p>
+          <ul class="space-y-2">
+            {['Audit Charter & Methodology', 'Risk-Based Audit Plan', 'Team Recruitment & Structure', 'Board & AC Reporting Framework', 'IIA Standards Compliance'].map(item => (
+              <li class="flex items-center gap-3 text-xs text-slate-700">
+                <span class="w-1.5 h-1.5 bg-[#001F5B] flex-shrink-0"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Service 2: IPO & ICOFR Readiness -->
+        <div class="bg-white border border-slate-200 p-8 hover:shadow-md transition-shadow" data-reveal data-reveal-delay="2">
+          <div class="w-10 h-10 flex items-center justify-center mb-6 bg-[#001F5B]">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-black text-slate-900 mb-4">IPO & ICOFR Readiness</h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            End-to-end preparation for DFM, Tadawul, and Nomu listings. ICOFR implementation, Risk Control Matrix documentation, governance restructuring, and Big 4 coordination — delivered as an integrated programme.
+          </p>
+          <ul class="space-y-2">
+            {['ICOFR Scoping & RCM Documentation', 'CMA / UAE SCA Compliance', 'Governance Restructuring', 'Big 4 Auditor Coordination', 'Board & Investor Reporting Packs'].map(item => (
+              <li class="flex items-center gap-3 text-xs text-slate-700">
+                <span class="w-1.5 h-1.5 bg-[#001F5B] flex-shrink-0"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Service 3: Fraud Detection & Forensics -->
+        <div class="bg-white border border-slate-200 p-8 hover:shadow-md transition-shadow" data-reveal data-reveal-delay="3">
+          <div class="w-10 h-10 flex items-center justify-center mb-6 bg-[#001F5B]">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-black text-slate-900 mb-4">Fraud Detection & Forensics</h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            ML-powered continuous monitoring and forensic investigation. 100% population testing replaces sampling. Benford's Law, anomaly detection, and pattern analysis deployed across multi-location operations.
+          </p>
+          <ul class="space-y-2">
+            {['ML Anomaly Detection (Isolation Forest)', 'Continuous Monitoring Setup', 'Forensic Investigation Support', 'Litigation-Ready Documentation', 'Recovery Action Planning'].map(item => (
+              <li class="flex items-center gap-3 text-xs text-slate-700">
+                <span class="w-1.5 h-1.5 bg-[#001F5B] flex-shrink-0"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagement Models -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="mb-12" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-3 block">How We Engage</span>
+        <h2 class="text-4xl font-black text-slate-900">Engagement Models.</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { label: 'Principal Consultant', desc: 'Project-based advisory with defined scope and deliverables' },
+          { label: 'Interim Director', desc: 'Step-in CAE or Head of IA during transitions or build-out phases' },
+          { label: 'Fractional CAE', desc: 'Ongoing part-time Chief Audit Executive support for growing organisations' },
+          { label: 'Board Advisory', desc: 'Audit Committee advisor — reports, risk oversight, governance' },
+        ].map((model, i) => (
+          <div class="bg-white border border-slate-200 p-6 hover:border-[#001F5B]/40 transition-colors" data-reveal data-reveal-delay={String(i + 1)}>
+            <div class="text-[10px] font-black text-[#001F5B] uppercase tracking-widest mb-3">{model.label}</div>
+            <p class="text-xs text-slate-500 leading-relaxed">{model.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Geographic Focus -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div data-reveal>
+          <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-3 block">Geographic Focus</span>
+          <h2 class="text-4xl font-black text-slate-900 mb-6">GCC Region Specialist.</h2>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            20+ years of experience across UAE, Saudi Arabia, Kuwait, Qatar, Bahrain, and Oman. Deep familiarity with local regulatory frameworks — UAE SCA, CMA KSA, ADGM, DIFC — combined with international standards (IIA, COSO, IFRS).
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            UAE Golden Visa holder. Based in Dubai. Available across the GCC and for remote engagements internationally.
+          </p>
+        </div>
+        <div class="grid grid-cols-3 gap-3" data-reveal data-reveal-delay="1">
+          {['UAE', 'Saudi Arabia', 'Kuwait', 'Qatar', 'Bahrain', 'Oman'].map(country => (
+            <div class="bg-[#001F5B] px-4 py-5 text-center">
+              <span class="text-white font-black text-xs uppercase tracking-widest">{country}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-[#001F5B]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center" data-reveal>
+      <h2 class="text-4xl font-black text-white mb-6">Start the Conversation.</h2>
+      <p class="text-white/70 text-lg mb-10 max-w-xl mx-auto">
+        Every engagement begins with understanding your specific governance challenge and context.
       </p>
-    </div>
-  </section>
-
-  <!-- Service Pillars -->
-  <section class="py-24">
-    <div class="container">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
-        <!-- Revenue Recovery -->
-        <div class="glass-card p-12 text-left group hover:border-emerald-500/30">
-          <div class="flex items-center gap-6 mb-10">
-            <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-3xl group-hover:bg-emerald-500/20 transition-all">💰</div>
-            <h3 class="text-white text-2xl font-black">Profit Protection.</h3>
-          </div>
-          <p class="text-slate-400 mb-8 leading-relaxed">
-            Stop financial leaks and recover lost revenue through automated continuous monitoring and 100% population testing.
-          </p>
-          <ul class="space-y-4 text-sm font-bold tracking-tight text-white/80">
-            <li class="flex items-center gap-4">
-              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-              AED 3.2M Recurring Annual Recovery
-            </li>
-            <li class="flex items-center gap-4">
-              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-              Real-time Leakage Identification
-            </li>
-          </ul>
-        </div>
-
-        <!-- IPO Readiness -->
-        <div class="glass-card p-12 text-left group hover:border-blue-500/30">
-          <div class="flex items-center gap-6 mb-10">
-            <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center text-3xl group-hover:bg-blue-500/20 transition-all">🚀</div>
-            <h3 class="text-white text-2xl font-black">IPO Readiness.</h3>
-          </div>
-          <p class="text-slate-400 mb-8 leading-relaxed">
-            Accelerated readiness for public listings with zero material weaknesses and clean Big 4 opinions.
-          </p>
-          <ul class="space-y-4 text-sm font-bold tracking-tight text-white/80">
-            <li class="flex items-center gap-4">
-              <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-              97% SOX Compliance Achievement
-            </li>
-            <li class="flex items-center gap-4">
-              <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-              ICFR Framework Architecture
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Engagement Section -->
-  <section class="bg-slate-900/40 border-t border-white/5">
-    <div class="container py-24">
-      <h2 class="text-white text-center mb-20 text-4xl">Engagement <span class="text-blue-500">Models.</span></h2>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 w-full">
-        <div class="p-8 border border-white/5 rounded-2xl hover:bg-white/5 transition-colors text-center">
-          <div class="text-2xl mb-4">💼</div>
-          <div class="text-white font-black uppercase text-[10px] tracking-widest">Principal Consultant</div>
-        </div>
-        <div class="p-8 border border-white/5 rounded-2xl hover:bg-white/5 transition-colors text-center">
-          <div class="text-2xl mb-4">🛡️</div>
-          <div class="text-white font-black uppercase text-[10px] tracking-widest">Interim Director</div>
-        </div>
-        <div class="p-8 border border-white/5 rounded-2xl hover:bg-white/5 transition-colors text-center">
-          <div class="text-2xl mb-4">📊</div>
-          <div class="text-white font-black uppercase text-[10px] tracking-widest">Fractional CAE</div>
-        </div>
-        <div class="p-8 border border-white/5 rounded-2xl hover:bg-white/5 transition-colors text-center">
-          <div class="text-2xl mb-4">⚙️</div>
-          <div class="text-white font-black uppercase text-[10px] tracking-widest">Project Advisory</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="bg-gradient-to-t from-blue-900/20 to-transparent">
-    <div class="container py-24">
-      <div class="glass-card w-full max-w-4xl p-16 md:p-24 relative overflow-hidden group">
-        <div class="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-        <div class="relative z-10">
-          <h2 class="text-white mb-8">Ready to <span class="text-blue-400">Engage?</span></h2>
-          <p class="mb-12 text-slate-300 text-lg mx-auto">Let's discuss how to transform your audit function into a profit protection engine.</p>
-          <div class="flex flex-wrap justify-center gap-6">
-            <a href={`${base}contact/`} class="btn btn-primary">Start the Conversation</a>
-            <a href={`${base}projects/`} class="btn btn-secondary">View Case Studies</a>
-          </div>
-        </div>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href={`${base}contact/`} class="btn-primary">Get in Touch</a>
+        <a href={`${base}projects/`} class="btn-secondary-light">View Client Outcomes</a>
       </div>
     </div>
   </section>

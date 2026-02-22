@@ -1,161 +1,236 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import MetricCard from '../components/MetricCard.astro';
 const base = import.meta.env.BASE_URL;
+
+const books = [
+  { title: 'Handbook of Risk Red Flags in Restaurants', desc: "A practitioner's guide to preventing failure through early detection of risk indicators.", url: 'https://www.amazon.com/dp/B0GDTBRZPM', asin: 'B0GDTBRZPM' },
+  { title: 'The Un-Financial Risk Manager', desc: 'Protecting value in the real world — ESG, cyber, and emerging strategic risks.', url: 'https://www.amazon.com/dp/B0GDMW53GG', asin: 'B0GDMW53GG' },
+  { title: '10 Forensic Accounting Skills', desc: 'Practical handbook on fraud detection, forensic investigation, and evidence management.', url: 'https://www.amazon.com/dp/B0G7T4X3RT', asin: 'B0G7T4X3RT' },
+  { title: 'ITGC Program Guide', desc: 'A strategic approach to IT General Controls — security, compliance, and enterprise value protection.', url: 'https://www.amazon.com/dp/B0FCG96QS8', asin: 'B0FCG96QS8' },
+  { title: 'Internal Audit Guide for Dine-In Locations in the Middle East', desc: 'Comprehensive audit guide for restaurant operations in the GCC region.', url: 'https://www.amazon.com/dp/B0DY2NRPQ9', asin: 'B0DY2NRPQ9' },
+];
+
+const metrics = [
+  { value: 'AED 3.2M', label: 'Recurring Annual Recovery — Fraud Detection' },
+  { value: '$127M', label: 'M&A Due Diligence — Workstream Lead' },
+  { value: '78%', label: 'Reduction in Fraud Incidents' },
+  { value: '20+', label: 'Years GCC Leadership' },
+  { value: '100%', label: 'Population Testing — Across 70+ Locations' },
+  { value: '3', label: 'Listing Readiness Programmes Delivered' },
+];
 ---
 
-<BaseLayout title="About | Majid Mumtaz - Executive Profile">
-  <section class="min-h-[60vh] flex items-center pt-40 overflow-hidden">
-    <div class="mesh-bg opacity-50"></div>
-    <div class="grid-pattern opacity-30"></div>
-    
-    <div class="container text-center reveal">
-      <span class="inline-block px-4 py-2 mb-6 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
-        Leadership Profile
-      </span>
-      <h1 class="mb-4">Executive <span class="text-white">Profile.</span></h1>
-      <p class="text-xl text-slate-400 font-medium mx-auto max-w-2xl">
-        Transitioning Internal Audit from a Compliance Cost Center to a Profit Protection Engine.
+<BaseLayout
+  title="About | Majid Mumtaz — Chief Audit Executive & Board Advisor"
+  description="20+ years building world-class internal audit functions across the GCC. CIA, ACA, FCCA. Big 4 trained. IPO readiness, fraud detection, board assurance."
+>
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-[#001F5B]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl" data-reveal>
+        <span class="inline-block text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6">Leadership Profile</span>
+        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+          About.
+        </h1>
+        <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
+          Chief Audit Executive and Board Advisor with 20+ years building world-class internal audit functions across the GCC.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bio -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <!-- Photo -->
+        <div data-reveal>
+          <div class="aspect-[4/5] bg-slate-100 overflow-hidden max-w-sm">
+            <img
+              src={`${base}images/majid-profile.jpg`}
+              alt="Majid Mumtaz — Chief Audit Executive"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <!-- Social Proof Strip -->
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 px-4 py-2 border border-slate-200 text-[10px] font-black uppercase tracking-widest text-slate-700 hover:border-[#001F5B] hover:text-[#001F5B] transition-colors">
+              LinkedIn Profile ↗
+            </a>
+            <a href="https://www.linkedin.com/newsletters/7339153291630510080/" target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2 px-4 py-2 border border-slate-200 text-[10px] font-black uppercase tracking-widest text-slate-700 hover:border-[#001F5B] hover:text-[#001F5B] transition-colors">
+              Newsletter ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Bio Text -->
+        <div data-reveal data-reveal-delay="1">
+          <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Biography</span>
+          <h2 class="text-4xl font-black text-slate-900 mb-8 leading-tight">Majid Mumtaz<br/><span class="text-slate-400 font-normal text-2xl">CIA, ACA, FCCA</span></h2>
+          <div class="space-y-5 text-slate-600 leading-relaxed">
+            <p>
+              I build world-class internal audit functions. Over 20 years across the GCC, I have designed and led internal audit departments from inception — embedding the governance structures, control frameworks, and technology platforms that give boards credible, board-grade assurance.
+            </p>
+            <p>
+              My work spans three interconnected domains: <strong class="text-slate-900">IA function building</strong> (designing departments, hiring teams, embedding IIA standards), <strong class="text-slate-900">forensic analytics and fraud detection</strong> (ML-powered continuous monitoring, population testing, fraud investigation), and <strong class="text-slate-900">board assurance and IPO readiness</strong> (ICOFR, COSO ERM, regulatory compliance for DFM, Tadawul, and Nomu listings).
+            </p>
+            <p>
+              Big 4 trained (Ernst & Young, KPMG), I combine technical rigour with executive communication — translating complex risk and control findings into board-level insight that drives decisions, not just compliance.
+            </p>
+            <p>
+              Based in Dubai, UAE. Available for consulting engagements, interim CAE mandates, and board advisory across the GCC region.
+            </p>
+          </div>
+
+          <!-- Credentials Row -->
+          <div class="mt-10 pt-10 border-t border-slate-100 grid grid-cols-3 gap-6">
+            <div>
+              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Certifications</div>
+              <div class="space-y-1">
+                <div class="text-xs font-bold text-slate-900">CIA</div>
+                <div class="text-xs font-bold text-slate-900">ACA</div>
+                <div class="text-xs font-bold text-slate-900">FCCA</div>
+                <div class="text-xs font-bold text-slate-900">COSO ERM</div>
+              </div>
+            </div>
+            <div>
+              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Background</div>
+              <div class="space-y-1">
+                <div class="text-xs font-bold text-slate-900">Ernst & Young</div>
+                <div class="text-xs font-bold text-slate-900">KPMG</div>
+                <div class="text-xs font-bold text-slate-900">20+ Years GCC</div>
+              </div>
+            </div>
+            <div>
+              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Technical</div>
+              <div class="space-y-1">
+                <div class="text-xs font-bold text-slate-900">Python / ML</div>
+                <div class="text-xs font-bold text-slate-900">COSO / IIA</div>
+                <div class="text-xs font-bold text-slate-900">IFRS / SOX</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Capabilities -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="mb-14" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-3 block">Core Practice Areas</span>
+        <h2 class="text-4xl font-black text-slate-900">Signature Capabilities.</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-card p-8" data-reveal data-reveal-delay="1">
+          <div class="w-10 h-10 flex items-center justify-center mb-6 bg-[#001F5B]">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-black text-slate-900 mb-3">IA Function Building</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Designing and building internal audit departments from the ground up — charter, methodology, risk-based audit plans, team structure, and IIA Standards alignment. From zero to board-grade assurance.
+          </p>
+        </div>
+
+        <div class="glass-card p-8" data-reveal data-reveal-delay="2">
+          <div class="w-10 h-10 flex items-center justify-center mb-6 bg-[#001F5B]">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-black text-slate-900 mb-3">Forensic Analytics & Fraud Detection</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            ML-powered continuous monitoring across 100% of transactions. Isolation Forest anomaly detection, Benford's Law analysis, and pattern recognition deployed across 2.3M+ monthly transactions.
+          </p>
+        </div>
+
+        <div class="glass-card p-8" data-reveal data-reveal-delay="3">
+          <div class="w-10 h-10 flex items-center justify-center mb-6 bg-[#001F5B]">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-black text-slate-900 mb-3">Board Assurance & IPO Readiness</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            End-to-end ICOFR implementation, COSO ERM frameworks, and regulatory compliance for DFM, Tadawul, and Nomu listings. Structured, board-grade reporting that satisfies both regulators and investors.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Metrics -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="mb-14" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-3 block">Quantified Impact</span>
+        <h2 class="text-4xl font-black text-slate-900">Results.</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {metrics.map((m, i) => (
+          <div data-reveal data-reveal-delay={String((i % 3) + 1)}>
+            <MetricCard value={m.value} label={m.label} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Books -->
+  <section class="py-24 bg-slate-50" id="books">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="mb-14" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-3 block">Published Works</span>
+        <h2 class="text-4xl font-black text-slate-900">5 Books on Amazon.</h2>
+        <p class="text-slate-600 mt-3">Sharing knowledge across internal audit, risk management, and forensic accounting.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {books.map((book, i) => (
+          <a
+            href={book.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="glass-card overflow-hidden flex flex-col group hover:border-[#001F5B]/40 transition-all"
+            data-reveal
+            data-reveal-delay={String((i % 3) + 1)}
+          >
+            <div class="aspect-[2/3] bg-slate-100 overflow-hidden">
+              <img
+                src={`https://images-na.ssl-images-amazon.com/images/P/${book.asin}.01.LZZZZZZZ.jpg`}
+                alt={book.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-4 flex flex-col flex-1">
+              <h4 class="text-slate-900 font-black text-xs mb-2 leading-snug group-hover:text-[#001F5B] transition-colors line-clamp-3">{book.title}</h4>
+              <div class="flex justify-end items-center mt-auto pt-2">
+                <span class="text-[9px] font-black text-[#001F5B] uppercase tracking-widest">Amazon ↗</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-[#001F5B]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center" data-reveal>
+      <h2 class="text-4xl font-black text-white mb-6">Let's Work Together.</h2>
+      <p class="text-white/70 text-lg mb-10 max-w-xl mx-auto">
+        Available for consulting engagements, interim CAE mandates, and board advisory across the GCC.
       </p>
-    </div>
-  </section>
-
-  <!-- Profile Grid -->
-  <section class="py-24 bg-slate-900/30">
-    <div class="container">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start w-full text-left">
-        <div class="reveal">
-          <h2 class="text-white mb-10 text-4xl">Background.</h2>
-          <div class="space-y-6 text-slate-400 text-lg leading-relaxed">
-            <p>
-              With over 20 years of progressive leadership in internal audit, risk management, and compliance, I have built a career bridging the gap between traditional audit methodologies and cutting-edge technology.
-            </p>
-            <p>
-              My journey from Big 4 (Ernst & Young, KPMG) to leading audit functions for pre-IPO unicorns and diversified conglomerates across the GCC has equipped me with a unique perspective on enterprise risk and governance.
-            </p>
-            <p>
-              As a <strong class="text-white">Chief Audit Executive</strong>, I specialize in transforming audit functions from traditional sampling-based approaches to 100% population testing using advanced data analytics, machine learning, and automation.
-            </p>
-          </div>
-        </div>
-
-        <div class="glass-card p-12 text-left reveal">
-          <h3 class="mb-8 text-2xl font-black uppercase tracking-widest text-blue-400">Impact Metrics.</h3>
-          <div class="space-y-8">
-            <div class="flex items-center gap-6 group">
-              <div class="w-16 h-16 rounded-2xl bg-blue-600/10 flex items-center justify-center text-3xl group-hover:bg-blue-600/20 transition-colors">💰</div>
-              <div>
-                <div class="text-white text-xl font-black">AED 3.2M / Year</div>
-                <div class="text-slate-500 text-xs uppercase tracking-widest font-bold">Recurring Annual Recovery</div>
-              </div>
-            </div>
-            
-            <div class="flex items-center gap-6 group">
-              <div class="w-16 h-16 rounded-2xl bg-emerald-600/10 flex items-center justify-center text-3xl group-hover:bg-emerald-600/20 transition-colors">📉</div>
-              <div>
-                <div class="text-white text-xl font-black">78% Reduction</div>
-                <div class="text-slate-500 text-xs uppercase tracking-widest font-bold">In Fraud Incidents (Kitopi, 2022–2025)</div>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-6 group">
-              <div class="w-16 h-16 rounded-2xl bg-purple-600/10 flex items-center justify-center text-3xl group-hover:bg-purple-600/20 transition-colors">🚀</div>
-              <div>
-                <div class="text-white text-xl font-black">97% Rating</div>
-                <div class="text-slate-500 text-xs uppercase tracking-widest font-bold">SOX Compliance (IPO Readiness)</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Expertise Areas -->
-  <section>
-    <div class="container">
-      <h2 class="text-white mb-20 text-center">Core <span class="text-blue-500">Expertise.</span></h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
-        <div class="glass-card p-10 text-left hover:border-blue-500/30 transition-all group">
-          <div class="text-3xl mb-6 opacity-60 group-hover:opacity-100 transition-opacity">🤖</div>
-          <h3 class="text-white mb-4 text-xl font-bold">Audit Automation</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            Transitioning organizations from manual, sample-based auditing to automated 100% population testing using Python, ML, and data analytics.
-          </p>
-        </div>
-
-        <div class="glass-card p-10 text-left hover:border-blue-500/30 transition-all group">
-          <div class="text-3xl mb-6 opacity-60 group-hover:opacity-100 transition-opacity">🔍</div>
-          <h3 class="text-white mb-4 text-xl font-bold">ML-Powered Fraud Detection</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            Advanced fraud detection using machine learning (Isolation Forest, DBSCAN) and statistical analysis (Benford's Law).
-          </p>
-        </div>
-
-        <div class="glass-card p-10 text-left hover:border-blue-500/30 transition-all group">
-          <div class="text-3xl mb-6 opacity-60 group-hover:opacity-100 transition-opacity">✅</div>
-          <h3 class="text-white mb-4 text-xl font-bold">IPO Readiness</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            Delivering clean Big 4 opinions for pre-IPO companies with zero material weaknesses. Expertise in ICFR and SOX.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Career Timeline -->
-  <section class="bg-slate-900/30 border-t border-white/5">
-    <div class="container">
-      <h2 class="text-white mb-20 text-center">Career <span class="text-blue-500">Timeline.</span></h2>
-      <div class="w-full max-w-3xl space-y-0 text-left">
-
-        <!-- Current / Kitopi -->
-        <div class="relative pl-10 pb-12 border-l border-white/10">
-          <div class="absolute left-0 top-1 w-3 h-3 rounded-full bg-blue-500 -translate-x-1/2 ring-4 ring-slate-950"></div>
-          <div class="flex flex-wrap items-center gap-4 mb-3">
-            <span class="text-[10px] font-black uppercase tracking-widest text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full">2022 – 2025</span>
-            <span class="text-slate-500 text-xs uppercase tracking-widest">F&B | GCC</span>
-          </div>
-          <h3 class="text-white text-xl font-black mb-2">Chief Audit Executive</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">
-            Kitopi — Led the transformation of the internal audit function for one of the GCC's fastest-growing cloud kitchen operators. Deployed ML-powered fraud detection (78% incident reduction), built 100% population testing capability across 50+ locations, and achieved 97% SOX compliance for IPO readiness.
-          </p>
-          <div class="flex flex-wrap gap-3">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">78% Fraud Reduction</span>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-blue-400 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full">97% SOX Compliance</span>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 bg-purple-500/10 border border-purple-500/20 px-3 py-1 rounded-full">AED 3.2M Recovered</span>
-          </div>
-        </div>
-
-        <!-- GCC Conglomerates -->
-        <div class="relative pl-10 pb-12 border-l border-white/10">
-          <div class="absolute left-0 top-1 w-3 h-3 rounded-full bg-slate-600 -translate-x-1/2 ring-4 ring-slate-950"></div>
-          <div class="flex flex-wrap items-center gap-4 mb-3">
-            <span class="text-[10px] font-black uppercase tracking-widest text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">Prior 2022</span>
-            <span class="text-slate-500 text-xs uppercase tracking-widest">Multi-Sector | GCC</span>
-          </div>
-          <h3 class="text-white text-xl font-black mb-2">Head of Audit & Risk</h3>
-          <p class="text-slate-400 text-sm leading-relaxed mb-4">
-            Diversified conglomerates and pre-IPO unicorns across the GCC — Built and led high-performance audit functions across F&B, retail, hospitality, and financial services sectors. Drove enterprise risk management frameworks, M&A due diligence (USD $127M deal lifecycle), and multi-currency financial governance across 5+ GCC jurisdictions.
-          </p>
-          <div class="flex flex-wrap gap-3">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">USD $127M M&A Leadership</span>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 bg-white/5 border border-white/10 px-3 py-1 rounded-full">Multi-Sector GCC</span>
-          </div>
-        </div>
-
-        <!-- Big 4 -->
-        <div class="relative pl-10 border-l border-white/5">
-          <div class="absolute left-0 top-1 w-3 h-3 rounded-full bg-slate-700 -translate-x-1/2 ring-4 ring-slate-950"></div>
-          <div class="flex flex-wrap items-center gap-4 mb-3">
-            <span class="text-[10px] font-black uppercase tracking-widest text-slate-500 bg-white/5 border border-white/5 px-3 py-1 rounded-full">Foundation</span>
-            <span class="text-slate-500 text-xs uppercase tracking-widest">Big 4 | Assurance & Advisory</span>
-          </div>
-          <h3 class="text-white text-xl font-black mb-2">Audit & Advisory</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Ernst & Young | KPMG — Developed technical audit foundations in external assurance, risk advisory, internal controls, and compliance across multiple sectors and geographies. Big 4 training provides the rigorous methodology underpinning all subsequent leadership roles.
-          </p>
-        </div>
-
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href={`${base}contact/`} class="btn-primary">Start the Conversation</a>
+        <a href={`${base}projects/`} class="btn-secondary-light">View Client Outcomes</a>
       </div>
     </div>
   </section>

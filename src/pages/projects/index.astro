@@ -1,122 +1,90 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import ProjectCard from '../../components/ProjectCard.astro';
+import { projects } from '../../data/projects.js';
+const base = import.meta.env.BASE_URL;
 
-const projects = [
-  {
-    title: 'ML-Powered Fraud Detection',
-    description: 'Advanced machine learning architecture using Isolation Forest and K-Means clustering to analyze 2.3M+ monthly transactions.',
-    category: 'Fraud Forensics',
-    impact: '78% Reduction in Fraud Incidents (2.3M monthly transactions)',
-    href: '/projects/fraud-detection/',
-    techStack: [
-      { name: 'Python' },
-      { name: 'scikit-learn' },
-      { name: 'Isolation Forest' }
-    ]
-  },
-  {
-    title: 'Audit Automation Ecosystem',
-    description: 'Enterprise-grade automation framework delivering 100% population testing across multi-entity GCC operations.',
-    category: 'Audit Transformation',
-    impact: '70% reduction in audit preparation cycle time',
-    href: '/projects/audit-tools/',
-    techStack: [
-      { name: 'Python' },
-      { name: 'YAML' },
-      { name: 'openpyxl' }
-    ]
-  },
-  {
-    title: 'Executive Analytics Hub',
-    description: 'Proprietary financial reporting engine providing real-time board-level visibility into capital leaks and recovery.',
-    category: 'Strategic Dashboards',
-    impact: '85% automated reporting efficiency achieved',
-    href: '/projects/finance-dashboard/',
-    techStack: [
-      { name: 'xlsxwriter' },
-      { name: 'Pandas' },
-      { name: 'Power BI' }
-    ]
-  },
-  {
-    title: 'Forensic Audit Toolbox',
-    description: 'Comprehensive forensic investigation toolkit with ML-powered fraud detection and evidence integrity verification.',
-    category: 'Fraud Forensics',
-    impact: 'High-precision fraud detection across 6+ fraud schemes',
-    href: '/projects/forensic-toolbox/',
-    techStack: [
-      { name: 'Python' },
-      { name: 'SHA-256' },
-      { name: 'Forensics' }
-    ]
-  },
-  {
-    title: 'Internal Audit Tracker',
-    description: 'Enterprise-grade Excel tracker with integrated worksheets and automated executive PowerPoint generator.',
-    category: 'Audit Transformation',
-    impact: '3-tier executive dashboards (CEO, AC, Director)',
-    href: '/projects/internal-tracker/',
-    techStack: [
-      { name: 'Python' },
-      { name: 'openpyxl' },
-      { name: 'python-pptx' }
-    ]
-  },
-  {
-    title: 'Enterprise Risk Management Programme',
-    description: 'Board-level ERM framework with 9-category risk taxonomy, 28-KRI monitoring dashboard, BCP tracker and full reporting suite across 8 jurisdictions.',
-    category: 'Risk Governance',
-    impact: '12 tools delivered — Risk Register, KRI Dashboard, BCP Tracker, Board Reports',
-    href: '/projects/erm-programme/',
-    techStack: [
-      { name: 'COSO ERM' },
-      { name: 'ISO 31000' },
-      { name: 'Excel' }
-    ]
-  }
-];
+const categories = ['All', ...new Set(projects.map(p => p.category))];
 ---
 
-<BaseLayout title="Projects | Strategic Vault of Profit Protection Case Studies">
-  <section class="min-h-[50vh] flex items-center pt-40 overflow-hidden">
-    <div class="mesh-bg opacity-40"></div>
-    <div class="grid-pattern opacity-30"></div>
-    
-    <div class="container text-center reveal">
-      <span class="inline-block px-4 py-2 mb-6 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
-        Production Portfolio
-      </span>
-      <h1 class="mb-4 text-white">Strategic <span class="text-blue-500">Vault.</span></h1>
-      <p class="text-xl text-slate-400 font-medium mx-auto max-w-2xl text-balance">
-        Quantified evidence of high-performance audit transformation and capital safeguard solutions.
-      </p>
+<BaseLayout
+  title="Projects | Client Outcomes — Majid Mumtaz"
+  description="13 production solutions across fraud detection, IPO readiness, audit transformation, and enterprise risk management. Quantified outcomes across GCC operations."
+>
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-[#001F5B]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Production Portfolio</span>
+        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+          Client Outcomes.
+        </h1>
+        <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
+          13 production solutions across fraud detection, IPO readiness, audit transformation, and enterprise risk management.
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- Projects Grid -->
-  <section class="py-24">
-    <div class="container">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
-        {projects.map(project => (
-          <ProjectCard {...project} />
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((project, i) => (
+          <article
+            class="bg-white border border-slate-200 flex flex-col p-8 hover:shadow-md transition-shadow h-full text-left"
+            data-reveal
+            data-reveal-delay={String((i % 3) + 1)}
+          >
+            <div class="mb-5">
+              <span class="inline-block px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] bg-[#001F5B] text-white">
+                {project.category}
+              </span>
+            </div>
+
+            <h3 class="text-xl font-black text-slate-900 mb-4 leading-tight">
+              {project.title}
+            </h3>
+
+            <p class="text-slate-600 text-sm mb-6 flex-1 leading-relaxed line-clamp-3">
+              {project.description}
+            </p>
+
+            {project.impact && (
+              <div class="mb-6 pl-4 border-l-4 border-[#001F5B]">
+                <div class="text-[10px] font-black text-[#001F5B] uppercase tracking-widest mb-1">Impact</div>
+                <div class="text-slate-900 font-bold text-sm leading-snug">{project.impact}</div>
+              </div>
+            )}
+
+            <div class="flex flex-wrap gap-2 mb-6">
+              {project.techStack.slice(0, 3).map((tech: string) => (
+                <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <a
+              href={`${base}projects/${project.id}/`}
+              class="inline-flex items-center text-[#001F5B] font-black text-xs uppercase tracking-widest hover:text-blue-700 transition-colors"
+            >
+              View Case Study
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </article>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Tech Stack Section -->
-  <section class="bg-slate-900/50 border-t border-white/5 py-32">
-    <div class="container text-center">
-      <h2 class="text-white mb-20">Technology <span class="text-blue-500">Stack.</span></h2>
-      <div class="flex flex-wrap justify-center gap-6 max-w-4xl">
-        <div class="px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold uppercase tracking-widest text-xs">Python</div>
-        <div class="px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold uppercase tracking-widest text-xs">Isolation Forest</div>
-        <div class="px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold uppercase tracking-widest text-xs">Pandas</div>
-        <div class="px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold uppercase tracking-widest text-xs">scikit-learn</div>
-        <div class="px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold uppercase tracking-widest text-xs">Excel Automation</div>
-        <div class="px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white font-bold uppercase tracking-widest text-xs">Power BI</div>
-      </div>
+  <!-- CTA -->
+  <section class="py-20 bg-[#001F5B]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center" data-reveal>
+      <h2 class="text-3xl font-black text-white mb-4">Ready to Discuss Your Challenge?</h2>
+      <p class="text-white/70 mb-8">Every engagement starts with understanding your specific context.</p>
+      <a href={`${base}contact/`} class="btn-primary">Start the Conversation</a>
     </div>
   </section>
 </BaseLayout>
