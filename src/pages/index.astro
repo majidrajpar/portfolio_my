@@ -38,37 +38,16 @@ const base = import.meta.env.BASE_URL;
       <p class="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 text-center mb-10">Organisations I've Served</p>
       <div class="flex flex-wrap justify-center items-center gap-8 md:gap-14 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
         {[
-          { 
-            name: 'EY', 
-            svg: `<svg viewBox="0 0 40 40" class="h-full w-auto"><path fill="currentColor" d="M25 10h-2l-5 10-5-10h-2l6 12v8h2v-8z"/></svg>` 
-          },
-          { 
-            name: 'KPMG', 
-            svg: `<svg viewBox="0 0 100 40" class="h-full w-auto"><text x="0" y="30" fill="currentColor" font-family="Arial" font-weight="black" font-size="28">KPMG</text></svg>` 
-          },
-          { 
-            name: 'Kitopi', 
-            svg: `<svg viewBox="0 0 100 40" class="h-full w-auto"><text x="0" y="30" fill="currentColor" font-family="Arial" font-weight="black" font-size="24">KITOPI</text></svg>` 
-          },
-          { 
-            name: "McDonald's", 
-            svg: `<svg viewBox="0 0 40 40" class="h-full w-auto"><path fill="currentColor" d="M10 30V15c0-3 2-5 5-5s5 2 5 5v15h2V15c0-3 2-5 5-5s5 2 5 5v15h2V15c0-5-4-10-10-10s-10 5-10 10c0-5-4-10-10-10S0 10 0 15v15h2z"/></svg>` 
-          },
-          { 
-            name: 'Al Faisaliah Group', 
-            svg: `<svg viewBox="0 0 120 40" class="h-full w-auto"><text x="0" y="30" fill="currentColor" font-family="Arial" font-weight="black" font-size="14">AL FAISALIAH</text></svg>` 
-          },
-          { 
-            name: 'Veritux', 
-            svg: `<svg viewBox="0 0 100 40" class="h-full w-auto"><text x="0" y="30" fill="currentColor" font-family="Arial" font-weight="black" font-size="20">VERITUX</text></svg>` 
-          },
-          { 
-            name: 'Umbrex', 
-            svg: `<svg viewBox="0 0 100 40" class="h-full w-auto"><text x="0" y="30" fill="currentColor" font-family="Arial" font-weight="black" font-size="20">UMBREX</text></svg>` 
-          },
+          'EY',
+          'KPMG',
+          'Kitopi',
+          "McDonald's",
+          'Al Faisaliah Group',
+          'Veritux',
+          'Umbrex',
         ].map((org) => (
-          <div class="h-6 md:h-8 flex items-center justify-center text-white">
-            <Fragment set:html={org.svg} />
+          <div class="h-7 md:h-9 flex items-center justify-center">
+            <span class="text-white font-black text-[10px] md:text-xs uppercase tracking-[0.3em]">{org}</span>
           </div>
         ))}
       </div>
