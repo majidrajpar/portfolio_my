@@ -620,17 +620,35 @@ const App = () => {
                 { emoji: '📕', title: 'The Power Professional', desc: 'A tactical manual for dominance — strategic insights for career advancement and professional influence.', date: 'December 2025', url: 'https://www.amazon.com/dp/B0G51LS6D6' },
                 { emoji: '📔', title: 'ITGC Program Guide', desc: 'A strategic approach to IT General Controls security, compliance, and enterprise value protection.', date: 'June 2025', url: 'https://www.amazon.com/dp/B0FCG96QS8' },
                 { emoji: '📓', title: 'Internal Audit Guide for Dine-In Locations in the Middle East', desc: 'Comprehensive audit guide specifically designed for restaurant operations in the GCC region.', date: 'February 2025', url: 'https://www.amazon.com/dp/B0DY2NRPQ9' },
-              ].map((book) => (
-                <div key={book.title} className="glass-card p-8 flex flex-col group hover:border-blue-500/30 transition-all">
-                  <div className="text-4xl mb-4">{book.emoji}</div>
-                  <h4 className="text-white font-black text-base mb-3 leading-snug group-hover:text-blue-400 transition-colors">{book.title}</h4>
-                  <p className="text-slate-400 text-sm leading-relaxed flex-1 mb-6">{book.desc}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-500 text-xs">{book.date}</span>
-                    <a href={book.url} target="_blank" rel="noopener noreferrer" className="text-[10px] font-black uppercase tracking-widest text-blue-400 hover:text-white transition-colors border border-blue-500/30 hover:border-white/30 px-3 py-1.5 rounded-full">Amazon →</a>
-                  </div>
-                </div>
-              ))}
+              ].map((book) => {
+                const asin = book.url.split('/dp/')[1];
+                return (
+                  <a
+                    key={book.title}
+                    href={book.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="glass-card overflow-hidden flex flex-col group hover:border-blue-500/30 transition-all"
+                  >
+                    <div className="aspect-[2/3] overflow-hidden bg-slate-800/50">
+                      <img
+                        src={`https://images-na.ssl-images-amazon.com/images/P/${asin}.01.LZZZZZZZ.jpg`}
+                        alt={book.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="p-6 flex flex-col flex-1">
+                      <h4 className="text-white font-black text-sm mb-3 leading-snug group-hover:text-blue-400 transition-colors">{book.title}</h4>
+                      <p className="text-slate-400 text-xs leading-relaxed flex-1 mb-4">{book.desc}</p>
+                      <div className="flex justify-between items-center">
+                        <span className="text-slate-500 text-[10px]">{book.date}</span>
+                        <span className="text-[10px] font-black uppercase tracking-widest text-blue-400 group-hover:text-white transition-colors">Amazon →</span>
+                      </div>
+                    </div>
+                  </a>
+                );
+              })}
             </div>
 
             <div className="text-center">
@@ -882,31 +900,48 @@ const App = () => {
 
           {/* Recent Articles */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {newsletterArticles.map((article, i) => (
-              <motion.a
-                key={article.title}
-                href="https://www.linkedin.com/newsletters/7339153291630510080/"
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="glass-card p-8 flex flex-col group hover:border-blue-500/30 transition-all cursor-pointer"
-              >
-                <span className={`text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border w-fit mb-6 ${article.tagColor}`}>
-                  {article.tag}
-                </span>
-                <h4 className="text-white font-black text-base leading-snug mb-6 flex-1 group-hover:text-blue-400 transition-colors">
-                  {article.title}
-                </h4>
-                <div className="flex justify-end items-center">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-blue-400 group-hover:text-white transition-colors">
-                    Read →
-                  </span>
-                </div>
-              </motion.a>
-            ))}
+            {newsletterArticles.map((article, i) => {
+              const color = article.tagColor.match(/text-(\w+)-400/)?.[1] || 'slate';
+              const gradients = {
+                red:     'from-red-900/60 to-slate-950',
+                amber:   'from-amber-900/60 to-slate-950',
+                emerald: 'from-emerald-900/60 to-slate-950',
+                blue:    'from-blue-900/60 to-slate-950',
+                orange:  'from-orange-900/60 to-slate-950',
+                slate:   'from-slate-700/60 to-slate-950',
+              };
+              const gradient = gradients[color] || gradients.slate;
+              return (
+                <motion.a
+                  key={article.title}
+                  href="https://www.linkedin.com/newsletters/7339153291630510080/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="glass-card overflow-hidden flex flex-col group hover:border-blue-500/30 transition-all cursor-pointer"
+                >
+                  <div className={`h-36 bg-gradient-to-br ${gradient} relative overflow-hidden flex items-end p-4`}>
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.06),transparent_70%)]" />
+                    <span className={`text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border w-fit ${article.tagColor}`}>
+                      {article.tag}
+                    </span>
+                  </div>
+                  <div className="p-8 flex flex-col flex-1">
+                    <h4 className="text-white font-black text-base leading-snug mb-6 flex-1 group-hover:text-blue-400 transition-colors">
+                      {article.title}
+                    </h4>
+                    <div className="flex justify-end items-center">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-blue-400 group-hover:text-white transition-colors">
+                        Read →
+                      </span>
+                    </div>
+                  </div>
+                </motion.a>
+              );
+            })}
           </div>
 
           <div className="flex justify-center">
