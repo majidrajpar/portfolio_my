@@ -611,7 +611,7 @@ const App = () => {
               <p className="text-slate-400 text-lg">Sharing knowledge across internal audit, risk management, and forensic accounting.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
               {[
                 { emoji: '📘', title: 'Handbook of Risk Red Flags in Restaurants', desc: "A practitioner's guide to preventing failure through early detection of risk indicators in restaurant operations.", date: 'January 2026', url: 'https://www.amazon.com/dp/B0GDTBRZPM' },
                 { emoji: '📗', title: 'The Un-Financial Risk Manager', desc: 'Protecting value in the real world — exploring emerging non-financial risks including ESG, cyber, and strategic risks.', date: 'January 2026', url: 'https://www.amazon.com/dp/B0GDMW53GG' },
@@ -629,7 +629,7 @@ const App = () => {
                     rel="noopener noreferrer"
                     className="glass-card overflow-hidden flex flex-col group hover:border-blue-500/30 transition-all"
                   >
-                    <div className="aspect-[2/3] overflow-hidden bg-slate-800/50">
+                    <div className="aspect-[3/4] overflow-hidden bg-slate-800/50">
                       <img
                         src={`https://images-na.ssl-images-amazon.com/images/P/${asin}.01.LZZZZZZZ.jpg`}
                         alt={book.title}
@@ -637,12 +637,11 @@ const App = () => {
                         loading="lazy"
                       />
                     </div>
-                    <div className="p-6 flex flex-col flex-1">
-                      <h4 className="text-white font-black text-sm mb-3 leading-snug group-hover:text-blue-400 transition-colors">{book.title}</h4>
-                      <p className="text-slate-400 text-xs leading-relaxed flex-1 mb-4">{book.desc}</p>
-                      <div className="flex justify-between items-center">
-                        <span className="text-slate-500 text-[10px]">{book.date}</span>
-                        <span className="text-[10px] font-black uppercase tracking-widest text-blue-400 group-hover:text-white transition-colors">Amazon →</span>
+                    <div className="p-3 flex flex-col flex-1">
+                      <h4 className="text-white font-black text-xs mb-3 leading-snug group-hover:text-blue-400 transition-colors line-clamp-3">{book.title}</h4>
+                      <div className="flex justify-between items-center mt-auto">
+                        <span className="text-slate-500 text-[9px]">{book.date}</span>
+                        <span className="text-[9px] font-black text-blue-400 group-hover:text-white transition-colors">→</span>
                       </div>
                     </div>
                   </a>
@@ -998,7 +997,7 @@ const App = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="glass-card p-10 hover:border-blue-500/30 transition-all group"
+              className="glass-card p-8 hover:border-blue-500/30 transition-all group"
             >
               <div className="text-5xl mb-6">🔍</div>
               <h3 className="text-white text-2xl font-black mb-4">Fractional Internal Audit</h3>
@@ -1031,7 +1030,7 @@ const App = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="glass-card p-10 hover:border-emerald-500/30 transition-all group"
+              className="glass-card p-8 hover:border-emerald-500/30 transition-all group"
             >
               <div className="text-5xl mb-6">⚡</div>
               <h3 className="text-white text-2xl font-black mb-4">Risk Advisory</h3>
@@ -1064,7 +1063,7 @@ const App = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="glass-card p-10 hover:border-purple-500/30 transition-all group"
+              className="glass-card p-8 hover:border-purple-500/30 transition-all group"
             >
               <div className="text-5xl mb-6">🏛️</div>
               <h3 className="text-white text-2xl font-black mb-4">Corporate Governance</h3>
