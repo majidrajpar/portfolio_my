@@ -75,7 +75,7 @@ const AllProjectsGallery = ({ projects, onClose }) => {
           className="text-center pt-8 border-t border-white/10"
         >
           <p className="text-slate-400 text-lg mb-8">
-            Interested in building similar solutions for your organization?
+            Interested in building similar solutions for your organisation?
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a href="#services" onClick={onClose} className="btn-primary">Explore Services</a>
