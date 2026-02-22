@@ -25,10 +25,6 @@
     @apply bg-white border border-slate-200 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md hover:border-slate-300;
   }
 
-  .text-gradient {
-    @apply text-[#001F5B];
-  }
-
   .mesh-bg {
     @apply hidden;
   }
