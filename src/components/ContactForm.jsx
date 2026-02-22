@@ -52,6 +52,18 @@ const ContactForm = () => {
             <input name="email" type="email" required placeholder="your@email.com" className={inputClass} />
           </div>
           <div>
+            <label className="text-[10px] font-black uppercase tracking-widest text-slate-600 mb-2 block">Engagement Type</label>
+            <select name="engagement_type" className={inputClass}>
+              <option value="">Select engagement type...</option>
+              <option value="Fractional CAE Engagement">Fractional CAE Engagement</option>
+              <option value="IPO Readiness / ICOFR">IPO Readiness / ICOFR</option>
+              <option value="Fraud Investigation">Fraud Investigation</option>
+              <option value="ERM Programme">ERM Programme</option>
+              <option value="Speaking / Advisory">Speaking / Advisory</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div>
             <label className="text-[10px] font-black uppercase tracking-widest text-slate-600 mb-2 block">Message</label>
             <textarea name="message" required rows={5} placeholder="Describe the challenge you're facing" className={`${inputClass} resize-none`} />
           </div>
