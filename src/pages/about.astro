@@ -4,11 +4,11 @@ import MetricCard from '../components/MetricCard.astro';
 const base = import.meta.env.BASE_URL;
 
 const books = [
-  { title: 'Handbook of Risk Red Flags in Restaurants', desc: "A practitioner's guide to preventing failure through early detection of risk indicators.", url: 'https://www.amazon.com/dp/B0GDTBRZPM', asin: 'B0GDTBRZPM' },
-  { title: 'The Un-Financial Risk Manager', desc: 'Protecting value in the real world — ESG, cyber, and emerging strategic risks.', url: 'https://www.amazon.com/dp/B0GDMW53GG', asin: 'B0GDMW53GG' },
-  { title: '10 Forensic Accounting Skills', desc: 'Practical handbook on fraud detection, forensic investigation, and evidence management.', url: 'https://www.amazon.com/dp/B0G7T4X3RT', asin: 'B0G7T4X3RT' },
-  { title: 'ITGC Program Guide', desc: 'A strategic approach to IT General Controls — security, compliance, and enterprise value protection.', url: 'https://www.amazon.com/dp/B0FCG96QS8', asin: 'B0FCG96QS8' },
-  { title: 'Internal Audit Guide for Dine-In Locations in the Middle East', desc: 'Comprehensive audit guide for restaurant operations in the GCC region.', url: 'https://www.amazon.com/dp/B0DY2NRPQ9', asin: 'B0DY2NRPQ9' },
+  { title: 'Handbook of Risk Red Flags in Restaurants', desc: "A practitioner's guide to preventing failure through early detection of risk indicators.", url: 'https://www.amazon.com/dp/B0GDTBRZPM', cover: `${base}images/books/risk-red-flags.jpg` },
+  { title: 'The Un-Financial Risk Manager', desc: 'Protecting value in the real world — ESG, cyber, and emerging strategic risks.', url: 'https://www.amazon.com/dp/B0GDMW53GG', cover: `${base}images/books/unfinancial-risk-manager.jpg` },
+  { title: '10 Forensic Accounting Skills', desc: 'Practical handbook on fraud detection, forensic investigation, and evidence management.', url: 'https://www.amazon.com/dp/B0G7T4X3RT', cover: `${base}images/books/forensic-accounting-skills.jpg` },
+  { title: 'ITGC Program Guide', desc: 'A strategic approach to IT General Controls — security, compliance, and enterprise value protection.', url: 'https://www.amazon.com/dp/B0FCG96QS8', cover: `${base}images/books/itgc-program-guide.jpg` },
+  { title: 'Internal Audit Guide for Dine-In Locations in the Middle East', desc: 'Comprehensive audit guide for restaurant operations in the GCC region.', url: 'https://www.amazon.com/dp/B0DY2NRPQ9', cover: `${base}images/books/internal-audit-dinein.jpg` },
 ];
 
 const metrics = [
@@ -123,7 +123,7 @@ const metrics = [
   <section class="py-24 bg-slate-50">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="mb-14" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-3 block">Core Practice Areas</span>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Core Practice Areas</span>
         <h2 class="text-4xl font-black text-slate-900">Signature Capabilities.</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -170,7 +170,7 @@ const metrics = [
   <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="mb-14" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-3 block">Quantified Impact</span>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Quantified Impact</span>
         <h2 class="text-4xl font-black text-slate-900">Results.</h2>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -187,7 +187,7 @@ const metrics = [
   <section class="py-24 bg-slate-50" id="books">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="mb-14" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-3 block">Published Works</span>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Published Works</span>
         <h2 class="text-4xl font-black text-slate-900">5 Books on Amazon.</h2>
         <p class="text-slate-600 mt-3">Sharing knowledge across internal audit, risk management, and forensic accounting.</p>
       </div>
@@ -203,7 +203,7 @@ const metrics = [
           >
             <div class="aspect-[2/3] bg-slate-100 overflow-hidden">
               <img
-                src={`https://images-na.ssl-images-amazon.com/images/P/${book.asin}.01.LZZZZZZZ.jpg`}
+                src={book.cover}
                 alt={book.title}
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
