@@ -1,266 +1,69 @@
 @import "tailwindcss";
 
-/* 
-  MAJID MUMTAZ - EXECUTIVE HIGH-TECH DESIGN SYSTEM
-  Inspired by McKinsey, Stripe, and modern fintech interfaces.
-*/
-
-:root {
-  /* Premium Deep Palette */
-  --color-bg-deep: #020617; /* Slate 950 */
-  --color-bg-surface: #0f172a; /* Slate 900 */
-  --color-text-primary: #f8fafc; /* Slate 50 */
-  --color-text-secondary: #94a3b8; /* Slate 400 */
-  
-  /* Brand Accents */
-  --color-accent: #3b82f6; /* Electric Blue */
-  --color-accent-glow: rgba(59, 130, 246, 0.5);
-  --color-success: #10b981; /* Emerald Green - for Profit/Recovery */
-  --color-success-glow: rgba(16, 185, 129, 0.3);
-
-  /* Sophisticated Gradients */
-  --gradient-hero: radial-gradient(circle at 50% -20%, #1e3a8a 0%, #020617 100%);
-  --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-
-  /* Layout Constants */
-  --max-width: 1200px;
-  --section-padding: 8rem 2rem;
-  --border-radius-lg: 1.5rem;
-  --border-radius-md: 0.75rem;
-
-  /* Shadows */
-  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.2);
-  --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-/* Base Resets */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-}
-
-body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background-color: var(--color-bg-deep);
-  color: var(--color-text-primary);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* Typography Overhaul */
-h1, h2, h3 {
-  letter-spacing: -0.04em;
-  line-height: 1.1;
-  font-weight: 800;
-}
-
-h1 {
-  font-size: clamp(3rem, 8vw, 5rem);
-  background: linear-gradient(to bottom, #ffffff 0%, #94a3b8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 1.5rem;
-}
-
-h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin-bottom: 2rem;
-}
-
-p {
-  color: var(--color-text-secondary);
-  font-size: 1.125rem;
-  max-width: 65ch;
-}
-
-/* Centered Layout System */
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-section {
-  padding: var(--section-padding);
-  position: relative;
-}
-
-/* Glassmorphism Components */
-.glass-card {
-  background: var(--gradient-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--border-radius-lg);
-  padding: 3rem;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: var(--shadow-premium);
-}
-
-.glass-card:hover {
-  border-color: rgba(59, 130, 246, 0.4);
-  transform: translateY(-8px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), var(--shadow-glow);
-}
-
-/* Executive Navigation */
-header {
-  position: fixed;
-  top: 1.5rem;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  pointer-events: none;
-}
-
-nav {
-  pointer-events: auto;
-  background: rgba(15, 23, 42, 0.8);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 9999px;
-  padding: 0.75rem 2rem;
-  max-width: fit-content;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  box-shadow: var(--shadow-premium);
-}
-
-.nav-link {
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.nav-link:hover, .nav-link.active {
-  color: var(--color-text-primary);
-}
-
-/* Buttons: High-Contrast Command */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 2.5rem;
-  border-radius: 9999px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 0.875rem;
-}
-
-.btn-primary {
-  background: white;
-  color: var(--color-bg-deep);
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-}
-
-.btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
-}
-
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.05);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: white;
-}
-
-/* Metric Special Styling */
-.metric-value {
-  font-size: 4rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, #fff 0%, #3b82f6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.metric-success {
-  background: linear-gradient(135deg, #fff 0%, #10b981 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Background Effects */
-.mesh-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.1) 0px, transparent 50%);
-  z-index: -1;
-  pointer-events: none;
-}
-
-.grid-pattern {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: linear-gradient(to bottom, black, transparent);
-  -webkit-mask-image: linear-gradient(to bottom, black, transparent);
-  z-index: -1;
-}
-
-/* Animations */
-@keyframes reveal {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.reveal {
-  animation: reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Utility: Text Balance */
-.text-balance {
-  text-wrap: balance;
-}
-
-/* Responsive Fixes */
-@media (max-width: 768px) {
-  nav {
-    border-radius: var(--border-radius-md);
-    padding: 0.5rem 1rem;
-    gap: 1rem;
-    width: 90%;
+@layer base {
+  :root {
+    --bg-deep: #001F5B;
+    --bg-surface: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent: #001F5B;
+    --success: #10b981;
   }
-  .nav-link {
-    font-size: 0.75rem;
+
+  body {
+    @apply bg-white text-slate-900 font-sans antialiased selection:bg-blue-100;
+    overflow-x: clip;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-black tracking-tighter;
   }
 }
+
+@layer components {
+  .glass-card {
+    @apply bg-white border border-slate-200 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md hover:border-slate-300;
+  }
+
+  .text-gradient {
+    @apply text-[#001F5B];
+  }
+
+  .mesh-bg {
+    @apply hidden;
+  }
+
+  .grid-pattern {
+    @apply hidden;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center px-8 py-3 bg-[#001F5B] text-white rounded font-black uppercase tracking-widest text-xs transition-all hover:bg-[#002d87];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center px-8 py-3 bg-transparent border-2 border-[#001F5B] text-[#001F5B] rounded font-black uppercase tracking-widest text-xs transition-all hover:bg-[#001F5B] hover:text-white;
+  }
+
+  .btn-secondary-light {
+    @apply inline-flex items-center px-8 py-3 bg-transparent border-2 border-white text-white rounded font-black uppercase tracking-widest text-xs transition-all hover:bg-white hover:text-[#001F5B];
+  }
+}
+
+/* IntersectionObserver reveal animations */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-reveal].in-view {
+  opacity: 1;
+  transform: none;
+}
+
+[data-reveal-delay="1"] { transition-delay: 0.1s; }
+[data-reveal-delay="2"] { transition-delay: 0.2s; }
+[data-reveal-delay="3"] { transition-delay: 0.3s; }
+[data-reveal-delay="4"] { transition-delay: 0.4s; }
+[data-reveal-delay="5"] { transition-delay: 0.5s; }

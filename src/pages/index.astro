@@ -1,157 +1,260 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import MetricCard from '../components/MetricCard.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import ContactForm from '../components/ContactForm';
+import { featuredProjects } from '../data/projects.js';
 
 const base = import.meta.env.BASE_URL;
-
-const featuredProjects = [
-  {
-    title: 'ML-Powered Fraud Detection',
-    description: 'Advanced machine learning architecture using Isolation Forest and K-Means clustering to analyze 2.3M+ monthly transactions.',
-    category: 'Fraud Forensics',
-    impact: '78% Reduction in Fraud Incidents (2.3M monthly transactions)',
-    href: `${base}projects/fraud-detection/`,
-    techStack: [
-      { name: 'Python' },
-      { name: 'scikit-learn' },
-      { name: 'Isolation Forest' }
-    ]
-  },
-  {
-    title: 'Audit Automation Ecosystem',
-    description: 'Enterprise-grade automation framework delivering 100% population testing across multi-entity GCC operations.',
-    category: 'Audit Transformation',
-    impact: '70% reduction in audit preparation cycle time',
-    href: `${base}projects/audit-tools/`,
-    techStack: [
-      { name: 'Python' },
-      { name: 'YAML' },
-      { name: 'openpyxl' }
-    ]
-  },
-  {
-    title: 'Executive Analytics Hub',
-    description: 'Proprietary financial reporting engine providing real-time board-level visibility into capital leaks and recovery.',
-    category: 'Strategic Dashboards',
-    impact: '85% automated reporting efficiency achieved',
-    href: `${base}projects/finance-dashboard/`,
-    techStack: [
-      { name: 'xlsxwriter' },
-      { name: 'Pandas' },
-      { name: 'Power BI' }
-    ]
-  }
-];
 ---
 
-<BaseLayout title="Majid Mumtaz - Chief Audit Executive | Profit Protection Strategist">
-  <!-- Dramatic Hero Section -->
-  <section class="min-h-screen flex items-center pt-32 md:pt-40 overflow-hidden">
-    <div class="mesh-bg"></div>
-    <div class="grid-pattern"></div>
-    
-    <div class="container relative z-10">
-      <div class="reveal">
-        <span class="inline-block px-5 py-2 mb-8 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-full text-xs font-black uppercase tracking-[0.3em]">
-          Board Advisory | Principal Consultant
-        </span>
-        
-        <h1 class="text-balance leading-[1.05]">
-          Transitioning Audit to <br class="hidden md:block" />
-          <span class="text-white">Profit Protection.</span>
-        </h1>
-        
-        <p class="text-xl md:text-2xl mb-12 text-slate-400 leading-relaxed font-medium mx-auto max-w-4xl text-balance">
-          Chief Audit Executive specializing in ML-Powered Fraud Detection and 100% Population Testing to safeguard enterprise capital.
-        </p>
+<BaseLayout
+  title="Majid Mumtaz | Chief Audit Executive & Board Advisor — UAE & KSA"
+  description="Building world-class internal audit functions for GCC boards. Department design, tool implementation, forensic fraud analytics, and credible board assurance — 20+ years across UAE and KSA."
+>
 
-        <div class="flex flex-col sm:flex-row gap-6 justify-center">
-          <a href={`${base}projects/`} class="btn btn-primary">View Case Studies</a>
-          <a href={`${base}cv/Majid_Mumtaz_CV.pdf`} download class="btn btn-secondary">Download Executive CV</a>
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center justify-center pt-20 overflow-hidden relative bg-[#001F5B]">
+    <div class="max-w-6xl mx-auto px-8 z-10 flex flex-col items-center text-center" data-reveal>
+      <span class="inline-block px-6 py-2 mb-10 bg-white/10 border border-white/30 text-white rounded text-[10px] font-black uppercase tracking-[0.4em]">
+        Chief Audit Executive | Board Advisor
+      </span>
+      <h1 class="text-[clamp(3.5rem,10vw,7rem)] text-center leading-[0.95] mb-12 tracking-tight text-white font-black">
+        Building<br />World-Class IA.
+      </h1>
+      <p class="text-lg md:text-xl mb-16 text-blue-100 font-medium max-w-3xl leading-relaxed">
+        Advising boards. Building internal audit departments. Implementing tools that deliver world-class audit functionality and credible board assurance — across GCC and KSA regulated entities.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
+        <a href={`${base}projects/`} class="btn-primary">View Case Studies</a>
+        <a href={`${base}cv/Majid_Mumtaz_CV.pdf`} download="Majid_Mumtaz_CV.pdf" class="btn-secondary-light">Download Executive CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Teaser -->
+  <section class="py-32 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-16 items-start max-w-6xl mx-auto" data-reveal>
+        <div class="flex justify-center lg:justify-start lg:pt-2">
+          <div class="relative w-48 h-48 rounded-full overflow-hidden border-2 border-slate-200 shadow-xl flex-shrink-0">
+            <img src={`${base}images/majid-profile.jpg`} alt="Majid Mumtaz" class="w-full h-full object-cover object-top" />
+          </div>
+        </div>
+        <div>
+          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-4 block">About</span>
+          <h2 class="text-[clamp(2rem,5vw,3.5rem)] text-slate-900 mb-8 leading-tight font-black tracking-tighter">
+            Twenty Years. One Focus:<br /><span class="text-[#001F5B]">Protecting Capital.</span>
+          </h2>
+          <p class="text-slate-600 text-lg leading-relaxed mb-6">
+            Twenty years inside the GCC's most complex audit environments — multi-brand F&B platforms spanning 7 countries, healthcare subsidiaries targeting Nomu listing, and KSA holding groups restructuring for a new governance era. Where most audit teams were sampling, I was testing <strong class="text-slate-900 font-black">100% of the population</strong>. Where most fraud programmes were reactive, I was building ML detection before the loss compounded.
+          </p>
+          <p class="text-[#001F5B] text-base font-bold italic leading-relaxed mb-10">
+            Now available as a fractional CAE and board advisor for UAE and KSA organisations ready to make that same shift.
+          </p>
+          <a href={`${base}about/`} class="btn-secondary">Full Profile & Credentials</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- High-Impact Metrics Section -->
-  <section class="bg-slate-900/50 border-y border-white/5">
-    <div class="container">
-      <h2 class="text-center font-black tracking-tight mb-20 text-white">Proven <span class="text-blue-500">Capital</span> Safeguard.</h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-        <MetricCard
-          value="AED 3.2M"
-          label="Recurring Annual Recovery"
-          icon="💰"
-          isSuccess
-        />
-        <MetricCard
-          value="$127M"
-          label="M&A Deal Lifecycle Leadership"
-          icon="🤝"
-        />
-        <MetricCard
-          value="78%"
-          label="Fraud Incidents Reduced"
-          icon="📉"
-          isSuccess
-        />
-        <MetricCard
-          value="97%"
-          label="SOX Compliance Rating"
-          icon="🚀"
-        />
-        <MetricCard
-          value="100%"
-          label="Population Coverage"
-          icon="🤖"
-          isSuccess
-        />
-        <MetricCard
-          value="20+"
-          label="Years GCC Audit Leadership"
-          icon="🏆"
-        />
+  <!-- Signature Capabilities -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="glass-card p-8" data-reveal data-reveal-delay="1">
+          <div class="p-3 bg-[#001F5B]/10 rounded-xl w-fit mb-6">
+            <svg class="w-7 h-7 text-[#001F5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+          </div>
+          <h4 class="text-slate-900 font-black text-base mb-3">World-Class IA Function Building</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Department design, charter development, team capability building, and tool implementation to deliver board-grade internal audit functions from the ground up.
+          </p>
+        </div>
+        <div class="glass-card p-8" data-reveal data-reveal-delay="2">
+          <div class="p-3 bg-[#001F5B]/10 rounded-xl w-fit mb-6">
+            <svg class="w-7 h-7 text-[#001F5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2" /></svg>
+          </div>
+          <h4 class="text-slate-900 font-black text-base mb-3">Forensic & Fraud Analytics</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            ML anomaly detection, 100% population testing, and AED 3.2M+ fraud recovery — turning audit from a sampling exercise into a capital protection engine.
+          </p>
+        </div>
+        <div class="glass-card p-8" data-reveal data-reveal-delay="3">
+          <div class="p-3 bg-[#001F5B]/10 rounded-xl w-fit mb-6">
+            <svg class="w-7 h-7 text-[#001F5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" /></svg>
+          </div>
+          <h4 class="text-slate-900 font-black text-base mb-3">Board Assurance & Governance</h4>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Credible audit committee reporting, COSO ERM implementation, IPO governance readiness, and Three Lines of Defence frameworks for GCC boards.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Strategic Case Studies -->
-  <section>
-    <div class="container">
-      <div class="text-center mb-24">
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-blue-500 mb-4 block">Transformation Archive</span>
-        <h2 class="text-white">Flagship Solutions.</h2>
-        <p class="mx-auto text-slate-400">Production-ready audit automation and profit protection solutions with measurable business impact.</p>
+  <!-- Featured Case Studies -->
+  <section class="py-32 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-10">
+        <div class="max-w-2xl" data-reveal>
+          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-6 block">Transformation Archive</span>
+          <h2 class="text-[clamp(2.5rem,6vw,4.5rem)] text-slate-900 mb-0 font-black tracking-tighter">Client Outcomes.</h2>
+        </div>
+        <p class="text-slate-600 text-lg max-w-md leading-relaxed text-right" data-reveal>
+          Every engagement starts with the business problem. The technology follows.
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 w-full mb-16">
-        {featuredProjects.map(project => (
-          <ProjectCard {...project} />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+        {featuredProjects.map((project) => (
+          <article class="glass-card p-0 flex flex-col h-full group overflow-hidden" data-reveal>
+            {project.image && (
+              <div class="relative h-48 overflow-hidden">
+                <img src={project.image} alt={project.title} class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/80"></div>
+              </div>
+            )}
+            <div class="p-10 flex flex-col flex-1">
+              <div class="mb-6 flex justify-end">
+                <span class="text-[10px] font-black uppercase tracking-[0.3em] bg-[#001F5B]/10 text-[#001F5B] px-4 py-1.5 rounded-full border border-[#001F5B]/20">
+                  {project.category}
+                </span>
+              </div>
+              <h3 class="text-xl font-black text-slate-900 mb-4 leading-tight group-hover:text-[#001F5B] transition-colors">
+                {project.title}
+              </h3>
+              <p class="text-slate-600 text-sm mb-8 flex-1 leading-relaxed line-clamp-3">
+                {project.description}
+              </p>
+              {project.impact && (
+                <div class="mb-8 pl-4 border-l-4 border-[#001F5B]">
+                  <div class="text-[10px] font-black text-[#001F5B] uppercase tracking-[0.2em] mb-1">Impact Delivered</div>
+                  <div class="text-slate-900 font-bold text-sm leading-snug">{project.impact}</div>
+                </div>
+              )}
+              <a href={`${base}projects/${project.id}/`} class="inline-flex items-center text-[#001F5B] font-black text-[10px] uppercase tracking-[0.2em] hover:text-blue-700 transition-colors">
+                View Project Details →
+              </a>
+            </div>
+          </article>
         ))}
       </div>
 
-      <a href={`${base}projects/`} class="text-white font-black tracking-[0.2em] uppercase text-xs hover:text-blue-400 transition-all border-b border-white/20 pb-2">
-        View All Projects →
-      </a>
+      <div class="flex justify-center">
+        <a href={`${base}projects/`} class="group flex items-center gap-4 text-slate-900 font-black tracking-[0.4em] uppercase text-xs hover:text-[#001F5B] transition-all border-b border-slate-300 pb-4">
+          View All 13 Projects
+          <span>→</span>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Global Footer CTA -->
-  <section class="bg-gradient-to-t from-blue-900/20 to-transparent">
-    <div class="container py-24">
-      <div class="glass-card w-full max-w-4xl p-16 md:p-24 relative overflow-hidden group">
-        <div class="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-        <div class="relative z-10">
-          <h2 class="text-white mb-8">Ready to <span class="text-blue-400">Transform?</span></h2>
-          <p class="mb-12 text-slate-300 text-lg mx-auto">Board-level leadership for organizations seeking to build high-performance audit functions.</p>
-          <div class="flex flex-wrap justify-center gap-6">
-            <a href={`${base}consulting/`} class="btn btn-primary">Strategic Advisory</a>
-            <a href={`${base}contact/`} class="btn btn-secondary">Inquire</a>
+  <!-- Testimonials -->
+  <section class="py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center mb-20" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-6 block">LinkedIn Recommendations</span>
+        <h2 class="text-[clamp(2.5rem,6vw,4.5rem)] text-slate-900 font-black tracking-tighter">What Colleagues Say.</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {[
+          {
+            photo: `${base}images/testimonials/sally.webp`,
+            quote: 'Majid was a trusted partner to Finance and the wider leadership team. His ability to assess risk, articulate issues clearly, and propose thoughtful, actionable solutions made him a highly respected voice. His recommendations were always grounded in a deep understanding of both risk and business impact.',
+            name: 'Sally Swanepoel',
+            title: 'Vice President of Finance',
+            context: 'Senior to Majid · Head of Internal Audit, Kitopi',
+          },
+          {
+            photo: `${base}images/testimonials/lanie.webp`,
+            quote: 'He has the strongest skills of any internal auditor that I have had the privilege of working with. His methodology was based on fact integrity and risk alignment. He has made our organisation stronger and safer because of his diligence and powerful skill set.',
+            name: 'Lanie Cardwell',
+            title: 'President, Cardwell Hospitality Advisors',
+            context: 'Managed Majid directly · ALFA-co',
+          },
+          {
+            photo: `${base}images/testimonials/alkadi.webp`,
+            quote: 'He demonstrates superior technical Internal Audit & Risk ability and produces work of exceptional quality. Majid always committed to producing work that meets high standards.',
+            name: 'Abdulaziz AlKadi',
+            title: 'CHRO · NRC Member · Board Member',
+            context: 'Worked with Majid · Al Faisaliah Group',
+          },
+        ].map((t, i) => (
+          <div class="glass-card p-10 flex flex-col" data-reveal data-reveal-delay={String(i + 1)}>
+            <div class="text-[#001F5B]/20 text-7xl font-black leading-none mb-4 select-none">"</div>
+            <p class="text-slate-700 text-base leading-relaxed flex-1 mb-10 italic">{t.quote}</p>
+            <div class="flex items-center gap-4 pt-6 border-t border-slate-200">
+              <img src={t.photo} alt={t.name} class="w-12 h-12 rounded-full object-cover flex-shrink-0 ring-2 ring-[#001F5B]/20" />
+              <div>
+                <div class="text-slate-900 font-black text-sm">{t.name}</div>
+                <div class="text-slate-500 text-xs leading-snug mt-0.5">{t.title}</div>
+                <div class="text-slate-400 text-[10px] uppercase tracking-wider mt-1">{t.context}</div>
+              </div>
+            </div>
           </div>
+        ))}
+      </div>
+
+      <div class="flex justify-center mt-16">
+        <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer" class="btn-secondary inline-flex items-center gap-3">
+          View All Recommendations on LinkedIn →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Teaser -->
+  <section class="py-32 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center mb-16" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-6 block">Advisory Services</span>
+        <h2 class="text-[clamp(2.5rem,6vw,4.5rem)] text-slate-900 mb-6 font-black tracking-tighter">Fractional Leadership for UAE & KSA.</h2>
+        <p class="text-slate-600 text-xl max-w-3xl mx-auto leading-relaxed">
+          Board-level advisory and fractional executive services for organisations seeking to elevate internal audit, risk management, and corporate governance.
+        </p>
+      </div>
+      <div class="flex justify-center mt-10">
+        <a href={`${base}consulting/`} class="btn-primary">Explore Advisory Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="py-32 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div data-reveal>
+          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-6 block">Get In Touch</span>
+          <h2 class="text-[clamp(2.5rem,6vw,4rem)] text-slate-900 mb-8 leading-tight font-black tracking-tighter">Let's Work<br />Together.</h2>
+          <p class="text-slate-600 text-lg leading-relaxed mb-12">
+            Whether you need a fractional CAE, a fraud detection framework, or board-level risk advisory — get in touch and I'll respond within 24 hours.
+          </p>
+          <div class="space-y-5">
+            <a href="mailto:majidrajpar@gmail.com" class="flex items-center gap-4 text-slate-600 hover:text-slate-900 transition-colors group">
+              <div class="w-10 h-10 rounded bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:border-[#001F5B]/30 transition-colors">
+                <span class="text-sm">✉</span>
+              </div>
+              <span class="font-bold">majidrajpar@gmail.com</span>
+            </a>
+            <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 text-slate-600 hover:text-slate-900 transition-colors group">
+              <div class="w-10 h-10 rounded bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:border-[#001F5B]/30 transition-colors">
+                <span class="text-sm font-bold">in</span>
+              </div>
+              <span class="font-bold">LinkedIn Profile</span>
+            </a>
+            <a href="https://wa.me/971507471708" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 text-slate-600 hover:text-slate-900 transition-colors group">
+              <div class="w-10 h-10 rounded bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:border-[#001F5B]/30 transition-colors">
+                <span class="text-sm font-bold">WA</span>
+              </div>
+              <span class="font-bold">WhatsApp</span>
+            </a>
+          </div>
+        </div>
+        <div data-reveal data-reveal-delay="2">
+          <ContactForm client:load />
         </div>
       </div>
     </div>
   </section>
+
 </BaseLayout>

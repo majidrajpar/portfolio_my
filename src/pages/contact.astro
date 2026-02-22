@@ -1,280 +1,119 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/ContactForm';
 const base = import.meta.env.BASE_URL;
 ---
 
-<BaseLayout title="Contact | Majid Mumtaz CIA, ACA, FCCA">
-  <!-- Hero Section -->
-  <section class="min-h-[40vh] flex items-center pt-40 overflow-hidden">
-    <div class="mesh-bg opacity-50"></div>
-    <div class="grid-pattern opacity-30"></div>
-    <div class="container text-center reveal">
-      <span class="inline-block px-4 py-2 mb-6 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-full text-[10px] font-black uppercase tracking-[0.3em]">
-        Get In Touch
-      </span>
-      <h1 class="mb-4 text-white">Let's <span class="text-blue-500">Connect.</span></h1>
-      <p class="text-xl text-slate-400 font-medium mx-auto max-w-2xl">
-        Discuss how I can help transform your audit and risk management capabilities.
-      </p>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="py-24">
-    <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <!-- Contact Form -->
-          <div class="glass-card p-10">
-            <h2 class="text-2xl font-bold mb-6 text-white">Send a Message</h2>
-
-            <form
-              action="https://formsubmit.co/majidrajpar@gmail.com"
-              method="POST"
-              class="space-y-6"
-            >
-              <input type="hidden" name="_subject" value="Portfolio Inquiry — Majid Mumtaz" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://majidrajpar.github.io/portfolio_my/contact/" />
-              <div>
-                <label for="name" class="block text-sm font-semibold text-slate-300 mb-2">
-                  Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  class="w-full px-4 py-3 bg-slate-800 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
-                  placeholder="Your full name"
-                />
-              </div>
-
-              <div>
-                <label for="email" class="block text-sm font-semibold text-slate-300 mb-2">
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  class="w-full px-4 py-3 bg-slate-800 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-
-              <div>
-                <label for="company" class="block text-sm font-semibold text-slate-300 mb-2">
-                  Company
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  class="w-full px-4 py-3 bg-slate-800 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
-                  placeholder="Your company name"
-                />
-              </div>
-
-              <div>
-                <label for="service" class="block text-sm font-semibold text-slate-300 mb-2">
-                  Service Interest
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  class="w-full px-4 py-3 bg-slate-800 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
-                >
-                  <option value="">Select a service...</option>
-                  <option value="audit-function-buildout">Audit Function Build-Out</option>
-                  <option value="sox-404-compliance">SOX 404 & IPO Readiness</option>
-                  <option value="fraud-detection">Fraud Detection & Forensics</option>
-                  <option value="audit-automation">Audit Automation</option>
-                  <option value="data-analytics">Data Analytics & Dashboards</option>
-                  <option value="ma-due-diligence">M&A Due Diligence</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="message" class="block text-sm font-semibold text-slate-300 mb-2">
-                  Message *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows="6"
-                  class="w-full px-4 py-3 bg-slate-800 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition resize-none"
-                  placeholder="Tell me about your project or inquiry..."
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                class="btn btn-primary w-full text-lg"
-              >
-                Send Message
-              </button>
-
-              <p class="text-xs text-slate-400 text-center">
-                By submitting this form, you agree to be contacted regarding your inquiry.
-              </p>
-            </form>
-          </div>
-
-          <!-- Contact Information -->
-          <div>
-            <h2 class="text-2xl font-bold mb-6 text-white">Contact Information</h2>
-
-            <div class="space-y-6">
-              <!-- Email -->
-              <div class="flex items-start gap-4 p-4 bg-slate-800/50 border border-white/10 rounded-lg">
-                <div class="text-3xl">📧</div>
-                <div>
-                  <h3 class="font-bold text-lg mb-1 text-white">Email</h3>
-                  <a
-                    href="mailto:majidrajpar@gmail.com"
-                    class="text-blue-400 hover:text-blue-300 transition-colors"
-                  >
-                    majidrajpar@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              <!-- Location -->
-              <div class="flex items-start gap-4 p-4 bg-slate-800/50 border border-white/10 rounded-lg">
-                <div class="text-3xl">📍</div>
-                <div>
-                  <h3 class="font-bold text-lg mb-1 text-white">Location</h3>
-                  <p class="text-slate-300">Dubai, United Arab Emirates</p>
-                  <p class="text-sm text-slate-400 mt-1">Golden Visa Holder</p>
-                </div>
-              </div>
-
-              <!-- LinkedIn -->
-              <div class="flex items-start gap-4 p-4 bg-slate-800/50 border border-white/10 rounded-lg">
-                <div class="text-3xl">💼</div>
-                <div>
-                  <h3 class="font-bold text-lg mb-1 text-white">LinkedIn</h3>
-                  <a
-                    href="https://www.linkedin.com/in/majid-m-4b097118/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1"
-                  >
-                    linkedin.com/in/majid-m-4b097118
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Veritux -->
-              <div class="flex items-start gap-4 p-4 bg-blue-500/10 border border-blue-500/30 rounded-lg">
-                <div class="text-3xl">🏢</div>
-                <div>
-                  <h3 class="font-bold text-lg mb-1 text-white">Veritux Consulting Network</h3>
-                  <p class="text-sm text-slate-400 mb-2">
-                    Independent Internal Audit, Risk & Governance Advisory
-                  </p>
-                  <a
-                    href="https://veritux.com/consultants/majid-mumtaz/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-blue-400 hover:text-blue-300 transition-colors inline-flex items-center gap-1 text-sm"
-                  >
-                    View Profile
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Availability Note -->
-            <div class="mt-8 p-6 bg-blue-500/10 border border-blue-500/30 rounded-lg">
-              <h3 class="font-bold text-lg mb-2 text-white">Availability</h3>
-              <p class="text-sm text-slate-300">
-                Currently available for consulting engagements, interim leadership roles, and project-based advisory work across the GCC region.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Preview -->
-  <section class="py-16 bg-slate-900/30">
-    <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-6 text-white">What I Can Help With</h2>
-        <p class="text-lg text-slate-400 mb-12">
-          Specialized consulting services in internal audit transformation and enterprise risk management
+<BaseLayout
+  title="Contact | Majid Mumtaz — CIA, ACA, FCCA"
+  description="Discuss consulting engagements, interim CAE mandates, board advisory, or IPO readiness. Available across the GCC. Typically responds within 24 hours."
+>
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-[#001F5B]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Get in Touch</span>
+        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+          Let's Work Together.
+        </h1>
+        <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
+          Consulting engagements, interim CAE mandates, and board advisory across the GCC. Typically responds within 24 hours.
         </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="glass-card p-6 rounded-lg text-left">
-            <div class="text-3xl mb-3">🏢</div>
-            <h3 class="font-bold mb-2 text-white">Audit Function Build-Out</h3>
-            <p class="text-sm text-slate-400">Design and scale internal audit from inception to maturity</p>
-          </div>
-
-          <div class="glass-card p-6 rounded-lg text-left">
-            <div class="text-3xl mb-3">✅</div>
-            <h3 class="font-bold mb-2 text-white">SOX 404 & IPO Readiness</h3>
-            <p class="text-sm text-slate-400">Clean Big 4 opinions, zero material weaknesses</p>
-          </div>
-
-          <div class="glass-card p-6 rounded-lg text-left">
-            <div class="text-3xl mb-3">🔍</div>
-            <h3 class="font-bold mb-2 text-white">Fraud Detection & Forensics</h3>
-            <p class="text-sm text-slate-400">ML-powered continuous monitoring and investigation</p>
-          </div>
-
-          <div class="glass-card p-6 rounded-lg text-left">
-            <div class="text-3xl mb-3">🤖</div>
-            <h3 class="font-bold mb-2 text-white">Audit Automation</h3>
-            <p class="text-sm text-slate-400">Transition to 100% population testing</p>
-          </div>
-
-          <div class="glass-card p-6 rounded-lg text-left">
-            <div class="text-3xl mb-3">📊</div>
-            <h3 class="font-bold mb-2 text-white">Data Analytics</h3>
-            <p class="text-sm text-slate-400">Python/ML for audit insights and dashboards</p>
-          </div>
-
-          <div class="glass-card p-6 rounded-lg text-left">
-            <div class="text-3xl mb-3">🎯</div>
-            <h3 class="font-bold mb-2 text-white">M&A Due Diligence</h3>
-            <p class="text-sm text-slate-400">Financial, operational, and compliance reviews</p>
-          </div>
-        </div>
-
-        <div class="mt-10">
-          <a href={`${base}consulting/`} class="btn btn-primary text-lg">
-            Learn More About Services
-          </a>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- Response Time Notice -->
-  <section class="py-12">
-    <div class="container mx-auto px-4">
-      <div class="max-w-3xl mx-auto text-center">
-        <div class="glass-card p-8">
-          <h3 class="text-xl font-bold mb-3 text-white">📬 Response Time</h3>
-          <p class="text-slate-300">
-            I typically respond to inquiries within 24-48 hours during business days (Sunday-Thursday, GCC time zone).
-            For urgent matters, please indicate this in your message.
-          </p>
+  <!-- Contact Grid -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+
+        <!-- Left: Contact Info -->
+        <div class="lg:col-span-2 space-y-8" data-reveal>
+          <div>
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Direct Contact</span>
+            <h2 class="text-3xl font-black text-slate-900 mb-8">Contact Details.</h2>
+          </div>
+
+          <!-- Email -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-[#001F5B] flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Email</div>
+              <a href="mailto:majidrajpar@gmail.com" class="text-[#001F5B] font-bold text-sm hover:text-blue-700 transition-colors">
+                majidrajpar@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-[#001F5B] flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Location</div>
+              <div class="text-slate-900 font-bold text-sm">Dubai, United Arab Emirates</div>
+              <div class="text-slate-500 text-xs mt-0.5">Golden Visa Holder</div>
+            </div>
+          </div>
+
+          <!-- LinkedIn -->
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-[#001F5B] flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">LinkedIn</div>
+              <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer"
+                 class="text-[#001F5B] font-bold text-sm hover:text-blue-700 transition-colors">
+                linkedin.com/in/majid-m ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Availability -->
+          <div class="bg-[#001F5B] p-6 mt-4">
+            <div class="text-[10px] font-black uppercase tracking-widest text-white/60 mb-3">Availability</div>
+            <p class="text-white text-sm leading-relaxed">
+              Currently available for consulting engagements, interim leadership roles, and project-based advisory across the GCC.
+            </p>
+            <p class="text-white/60 text-xs mt-3">
+              Response within 24 hours (Sun–Thu, GCC time zone).
+            </p>
+          </div>
+
+          <!-- CV Download -->
+          <div>
+            <a
+              href={`${base}downloads/Majid_Mumtaz_CV.pdf`}
+              class="inline-flex items-center gap-2 px-5 py-3 border-2 border-[#001F5B] text-[#001F5B] font-black text-xs uppercase tracking-widest hover:bg-[#001F5B] hover:text-white transition-all"
+              download
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+              </svg>
+              Download CV
+            </a>
+          </div>
         </div>
+
+        <!-- Right: Contact Form -->
+        <div class="lg:col-span-3" data-reveal data-reveal-delay="1">
+          <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Send a Message</span>
+          <h2 class="text-3xl font-black text-slate-900 mb-8">Start the Conversation.</h2>
+          <ContactForm client:load />
+        </div>
+
       </div>
     </div>
   </section>
