@@ -209,7 +209,7 @@ const App = () => {
       title: 'Enterprise Audit Management Platform',
       description: 'Comprehensive audit management platform with executive dashboards, PowerPoint automation, and 3-tier governance reporting for multi-entity operations.',
       category: 'Audit Transformation',
-      impact: '9 integrated worksheets with full automation',
+      impact: 'End-to-end audit lifecycle automated — from planning through board reporting across multi-entity operations',
       techStack: ['Python', 'openpyxl', 'python-pptx'],
       image: '/portfolio_my/images/projects/enterprise-audit-tracker/audit-dashboard.webp',
       features: [
@@ -243,7 +243,7 @@ const App = () => {
       title: 'Forensic Fraud Investigation Toolkit',
       description: 'Professional forensic analysis toolkit for major fraud cases with control failure mapping, evidence tracking, and litigation support documentation.',
       category: 'Fraud Forensics',
-      impact: 'Documented control failures and recovery actions',
+      impact: 'Multi-case fraud investigation support — control failure mapping and litigation-ready documentation',
       techStack: ['Python', 'Excel Automation', 'Forensic Accounting'],
       image: '/portfolio_my/images/projects/fraud-cases/fraud-analysis.webp',
       features: [
@@ -260,7 +260,7 @@ const App = () => {
       title: 'Multi-Location Audit Compliance System',
       description: 'Comprehensive audit compliance system for multi-location restaurant operations with standardized procedures, tracking, and remediation monitoring.',
       category: 'Audit Transformation',
-      impact: 'Standardized audit procedures across locations',
+      impact: 'Standardised audit procedures deployed across 70+ restaurant locations',
       techStack: ['Python', 'openpyxl', 'Audit Standards'],
       image: '/portfolio_my/images/projects/restaurant-audit/audit-checklist.webp',
       features: [
@@ -328,7 +328,7 @@ const App = () => {
       title: 'ICAEW Audit Report System',
       description: 'Professional audit reporting platform compliant with ICAEW standards, featuring automated report generation and evidence documentation.',
       category: 'Audit Transformation',
-      impact: 'Professional-grade audit documentation',
+      impact: 'ICAEW-compliant audit reporting with full evidence management and automated workpaper generation',
       techStack: ['Python', 'ICAEW Standards', 'Report Automation'],
       image: '/portfolio_my/images/projects/icaew-audit/audit-report.webp',
       features: [
@@ -437,7 +437,7 @@ const App = () => {
             </h1>
             
             <p className="text-lg md:text-xl mb-16 text-slate-400 font-medium text-center max-w-3xl leading-relaxed">
-              Chief Audit Executive specializing in ML-Powered Fraud Detection and 100% Population Testing to safeguard enterprise capital.
+              Fractional CAE and board advisor specialising in ML-Powered Fraud Detection and 100% Population Testing to safeguard enterprise capital.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
@@ -680,7 +680,7 @@ const App = () => {
                 quote: 'He has the strongest skills of any internal auditor that I have had the privilege of working with. His methodology was based on fact integrity and risk alignment. He has made our organisation stronger and safer because of his diligence and powerful skill set.',
                 name: 'Lanie Cardwell',
                 title: 'President, Cardwell Hospitality Advisors',
-                context: 'Managed Majid directly · Director of Internal Audit, ALFA-co',
+                context: 'Managed Majid directly · ALFA-co',
               },
               {
                 photo: '/portfolio_my/images/testimonials/alkadi.webp',
@@ -1051,12 +1051,12 @@ const App = () => {
               <div className="text-5xl mb-6">🏛️</div>
               <h3 className="text-white text-2xl font-black mb-4">Corporate Governance</h3>
               <p className="text-slate-400 mb-6 leading-relaxed">
-                SOX 404 compliance and governance frameworks for pre-IPO organizations and family offices.
+                ICOFR and governance frameworks for pre-IPO and pre-listing organisations targeting DFM, Tadawul, or Nomu.
               </p>
               <ul className="space-y-3 text-sm text-slate-300">
                 <li className="flex items-start gap-3">
                   <span className="text-purple-400 mt-1">✓</span>
-                  <span>SOX 404 / ICFR implementation</span>
+                  <span>ICOFR / SOX 404 implementation</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-purple-400 mt-1">✓</span>
