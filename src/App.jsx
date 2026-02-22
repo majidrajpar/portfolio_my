@@ -4,6 +4,7 @@ import { FileText, BrainCircuit, Landmark, Scale } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import newsletterArticles from './data/newsletter.json';
+import stats from './data/stats.json';
 import MetricCard from './components/MetricCard';
 import ProjectCard from './components/ProjectCard';
 import DownloadCard from './components/DownloadCard';
@@ -506,7 +507,7 @@ const App = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full hover:border-blue-500/40 hover:bg-white/10 transition-all group"
                   >
-                    <span className="text-blue-400 font-black text-sm">15,000+</span>
+                    <span className="text-blue-400 font-black text-sm">{stats.linkedinFollowers}</span>
                     <span className="text-slate-400 text-xs uppercase tracking-wider font-bold group-hover:text-white transition-colors">LinkedIn Followers</span>
                   </a>
                   <a
@@ -515,7 +516,7 @@ const App = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full hover:border-blue-500/40 hover:bg-white/10 transition-all group"
                   >
-                    <span className="text-blue-400 font-black text-sm">3,500+</span>
+                    <span className="text-blue-400 font-black text-sm">{stats.newsletterSubscribers}</span>
                     <span className="text-slate-400 text-xs uppercase tracking-wider font-bold group-hover:text-white transition-colors">Newsletter Subscribers</span>
                   </a>
                   <div className="flex items-center gap-3 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full">
@@ -668,9 +669,9 @@ const App = () => {
             <MetricCard index={0} value="AED 3.2M" label="Annual Recovery" icon="💰" isSuccess />
             <MetricCard index={1} value="$127M" label="M&A Deal Leadership" icon="🤝" />
             <MetricCard index={2} value="78%" label="Fraud Incidents Reduced" icon="📉" isSuccess />
-            <MetricCard index={3} value="15K+" label="LinkedIn Followers" icon="💼" />
+            <MetricCard index={3} value={stats.linkedinFollowersShort} label="LinkedIn Followers" icon="💼" />
             <MetricCard index={4} value="100%" label="Population Testing" icon="🤖" isSuccess />
-            <MetricCard index={5} value="3.5K+" label="Newsletter Subscribers" icon="📰" isSuccess />
+            <MetricCard index={5} value={stats.newsletterSubscribersShort} label="Newsletter Subscribers" icon="📰" isSuccess />
           </div>
         </div>
       </section>
@@ -891,9 +892,9 @@ const App = () => {
                 Expert insights on strategic risk, compliance, and digital innovation in audit — published every week.
               </p>
               <div className="flex gap-4 text-right">
-                <span className="text-[10px] font-black uppercase tracking-widest text-blue-400">15,000+ followers</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-blue-400">{stats.linkedinFollowers} followers</span>
                 <span className="text-slate-600">·</span>
-                <span className="text-[10px] font-black uppercase tracking-widest text-blue-400">3,500+ subscribers</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-blue-400">{stats.newsletterSubscribers} subscribers</span>
               </div>
             </motion.div>
           </div>
