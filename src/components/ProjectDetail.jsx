@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { X, ArrowLeft, Download, FileCode } from 'lucide-react';
+import { X, ArrowLeft, FileCode } from 'lucide-react';
 
 const ProjectDetail = ({ project, onClose }) => {
   // Handle ESC key to close
@@ -190,11 +190,10 @@ const ProjectDetail = ({ project, onClose }) => {
           className="text-center"
         >
           <a
-            href={`mailto:majidrajpar@gmail.com?subject=Source Code Request: ${encodeURIComponent(project.title)}&body=Hello Majid,%0A%0AI am interested in reviewing the source code for the "${encodeURIComponent(project.title)}" project.%0A%0AOrganization: %0ARole/Title: %0APurpose: %0A%0AThank you,`}
+            href="/#contact"
             className="btn-primary inline-flex items-center gap-2"
           >
-            <Download size={20} />
-            Request Source Code Access
+            Contact Me
           </a>
         </motion.div>
       </div>
