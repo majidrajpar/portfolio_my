@@ -1,0 +1,341 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DataDisclaimer from '../../components/DataDisclaimer.astro';
+import ImageGallery from '../../components/ImageGallery.astro';
+import TechBadge from '../../components/TechBadge.astro';
+const base = import.meta.env.BASE_URL;
+
+const title = "Enterprise Risk Management Programme";
+const description = "Board-level ERM framework design and implementation for a multi-jurisdiction GCC cloud kitchen platform — COSO ERM 2017 and ISO 31000:2018 aligned";
+
+const screenshots = [
+  {
+    src: `${base}images/projects/coso-erm/risk-heatmap.svg`,
+    alt: 'Enterprise Risk Heat Map & Register',
+    caption: 'COSO-aligned 5×5 risk heatmap with top enterprise risk register extract — 8 critical, 15 high, 27 medium/low risks tracked across 7 jurisdictions'
+  },
+  {
+    src: `${base}images/projects/erm-programme/kri-dashboard.svg`,
+    alt: 'Key Risk Indicator Dashboard',
+    caption: 'Monthly KRI dashboard with RAG thresholds across 6 risk domains — 28 KRIs monitored with automated escalation trigger logic'
+  },
+  {
+    src: `${base}images/projects/erm-programme/risk-treatment-tracker.svg`,
+    alt: 'Risk Treatment Plan Tracker',
+    caption: 'Quarterly treatment plan tracker with progress bars, ownership, due dates and Risk Committee escalation summary'
+  },
+  {
+    src: `${base}images/projects/erm-programme/bcp-tracker.svg`,
+    alt: 'Business Continuity Programme Tracker',
+    caption: 'BCP/DRP readiness dashboard with RTO/RPO targets, test results and annual testing schedule for 12 critical business functions'
+  }
+];
+
+const techStack = [
+  'COSO ERM 2017',
+  'ISO 31000:2018',
+  'Excel (xlsx)',
+  'Word (docx)',
+  'Three Lines of Defense',
+  'ISO 22301'
+];
+
+const deliverables = [
+  { id: '01', name: 'Enterprise Risk Register', type: 'Excel', desc: 'Full-population risk register with inherent/residual scoring, treatment status, KRI linkage and owner accountability across 9 risk categories' },
+  { id: '02', name: 'KRI Dashboard', type: 'Excel', desc: 'Live RAG dashboard tracking 28 KRIs across operational, food safety, financial, technology, compliance and people domains with automated threshold logic' },
+  { id: '03', name: 'Controls Inventory & Self-Assessment', type: 'Excel', desc: 'CSA workbook enabling first-line control owners to self-assess effectiveness using a structured questionnaire aligned to COSO control categories' },
+  { id: '04', name: 'Risk Treatment Plan Tracker', type: 'Excel', desc: 'Quarterly tracker with progress indicators, ownership fields, due dates, authority approval tiers and escalation status per treatment action' },
+  { id: '05', name: 'Incident & Near-Miss Log', type: 'Excel', desc: 'Structured log for all risk events, near-misses and control failures with root cause classification, risk register linkage and lessons-learned capture' },
+  { id: '06', name: 'Implementation Programme Tracker', type: 'Excel', desc: 'ERM rollout Gantt tracker covering policy approval, risk assessments, tool deployment, training and reporting cadence across all 8 jurisdictions' },
+  { id: '07', name: 'BCP Recovery Tracker', type: 'Excel', desc: 'BCP/DRP readiness dashboard with RTO/RPO targets, test history, gap tracking and annual testing schedule for 12 critical business functions' },
+  { id: '08', name: 'Monthly Management Risk Report', type: 'Word', desc: 'Executive summary template for the C-Suite covering top 15 risks, KRI performance, incident summary, treatment plan progress and emerging risk horizon' },
+  { id: '09', name: 'Risk Committee Pack Template', type: 'Word', desc: 'Formal quarterly pack for the Risk & Audit Committee including full risk register, critical risk deep-dives, internal audit update and risk appetite alignment review' },
+  { id: '10', name: 'Board Risk Report Template', type: 'Word', desc: 'Semi-annual board-level report covering enterprise risk profile summary, strategic risk outlook, risk appetite review and material risk events' },
+  { id: '11', name: 'Risk Culture Survey', type: 'Word', desc: 'Structured staff survey assessing risk awareness, reporting culture, tone from the top and control environment effectiveness — baseline and annual measurement' },
+  { id: '12', name: 'Escalation & Incident Notification Form', type: 'Word', desc: 'Standardised incident notification form with classification matrix, escalation routing, initial assessment fields and regulatory notification checklist' }
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="max-w-6xl mx-auto px-6 py-12">
+
+    <!-- Breadcrumb -->
+    <nav class="text-sm mb-6">
+      <a href={base} class="text-blue-400 hover:underline">Home</a>
+      <span class="mx-2">/</span>
+      <a href={`${base}projects/`} class="text-blue-400 hover:underline">Projects</a>
+      <span class="mx-2">/</span>
+      <span class="text-slate-400">Enterprise Risk Management Programme</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="mb-8">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">{title}</h1>
+      <p class="text-xl text-slate-400 mb-6">{description}</p>
+
+      <div class="flex flex-wrap gap-2 mb-6">
+        {techStack.map(tech => <TechBadge name={tech} />)}
+      </div>
+
+      <div class="flex flex-wrap gap-6 text-sm text-slate-500">
+        <span>🛡️ Category: Risk Governance</span>
+        <span>🌍 Scope: 8 Jurisdictions — UAE, KSA, Kuwait, Bahrain, Jordan, Egypt, Turkey, USA</span>
+        <span>📅 Completed: Q1 2026</span>
+      </div>
+    </div>
+
+    <DataDisclaimer />
+
+    <!-- Executive Summary -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-4">Executive Summary</h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-xl font-semibold mb-3">Business Problem</h3>
+        <p class="text-slate-300 mb-4">
+          A high-growth, technology-enabled cloud kitchen platform operating across 8 countries and 100+ kitchen
+          facilities lacked a structured, enterprise-wide risk management framework. Risks were being managed
+          informally at the operational level with no centralised register, no board-approved risk appetite
+          statement, and no early-warning KRI system. Rapid multi-jurisdiction expansion was outpacing the
+          organisation's risk governance infrastructure, creating material exposure across food safety, regulatory,
+          cybersecurity and supply chain domains.
+        </p>
+
+        <h3 class="text-xl font-semibold mb-3">Solution Overview</h3>
+        <p class="text-slate-300 mb-4">
+          Designed and implemented a complete Enterprise Risk Management programme grounded in the
+          COSO ERM 2017 Integrated Framework and ISO 31000:2018, with business continuity aligned to
+          ISO 22301. The programme encompasses a board-approved risk policy, a 9-category risk taxonomy,
+          a full enterprise risk register, a 28-KRI monitoring dashboard, treatment tracking, BCP/DRP readiness
+          assessment, and a tiered reporting suite from operations to board level — all delivered as production-ready
+          tools requiring no specialist software.
+        </p>
+
+        <h3 class="text-xl font-semibold mb-3">Key Results</h3>
+        <ul class="list-disc pl-6 space-y-2 text-slate-300">
+          <li>🛡️ <strong>Board-level governance established</strong> — Risk appetite formally adopted by Board of Directors</li>
+          <li>📊 <strong>50+ risks identified and scored</strong> — Inherent and residual ratings across 9 categories and 8 jurisdictions</li>
+          <li>📈 <strong>28 KRIs live with RAG thresholds</strong> — Automated early-warning system replacing manual monitoring</li>
+          <li>📋 <strong>12 production-ready tools delivered</strong> — Full programme from Excel workbooks to board report templates</li>
+          <li>🔁 <strong>Four-tier reporting cadence embedded</strong> — Operational (weekly) → Management (monthly) → Committee (quarterly) → Board (semi-annual)</li>
+          <li>🏗️ <strong>Three Lines of Defense model implemented</strong> — Clear accountability from kitchen operations to internal audit</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Screenshots Gallery -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">Programme Dashboards & Tools</h2>
+      <p class="text-slate-400 mb-6">
+        All visuals below use anonymised dummy data. No real company names, financial figures
+        or client information is displayed. Screenshots demonstrate the programme's analytical
+        and reporting capabilities.
+      </p>
+      <ImageGallery images={screenshots} projectName="erm-programme" />
+    </section>
+
+    <!-- Deliverables Table -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">12 Programme Deliverables</h2>
+      <p class="text-slate-400 mb-6">
+        Complete suite of tools covering the full ERM lifecycle — from risk identification and scoring
+        through treatment, monitoring, business continuity and board-level reporting.
+      </p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-slate-800 text-left">
+              <th class="px-4 py-3 text-slate-400 font-bold w-10">#</th>
+              <th class="px-4 py-3 text-slate-400 font-bold">Deliverable</th>
+              <th class="px-4 py-3 text-slate-400 font-bold w-20">Format</th>
+              <th class="px-4 py-3 text-slate-400 font-bold">Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            {deliverables.map((d, i) => (
+              <tr class={i % 2 === 0 ? 'bg-slate-900/40' : 'bg-slate-800/30'}>
+                <td class="px-4 py-3 text-slate-500 font-mono text-xs">{d.id}</td>
+                <td class="px-4 py-3 text-white font-semibold">{d.name}</td>
+                <td class="px-4 py-3">
+                  <span class={`px-2 py-1 rounded text-xs font-bold ${d.type === 'Excel' ? 'bg-green-900/40 text-green-400' : 'bg-blue-900/40 text-blue-400'}`}>
+                    {d.type}
+                  </span>
+                </td>
+                <td class="px-4 py-3 text-slate-400 text-xs leading-relaxed">{d.desc}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Technical Overview -->
+    <section class="mb-12">
+      <details class="bg-slate-800/60 p-6 rounded-lg border border-blue-500/30">
+        <summary class="text-2xl font-bold cursor-pointer hover:text-blue-400 transition-colors">
+          🔧 Framework Architecture (Click to Expand)
+        </summary>
+
+        <div class="mt-6 prose prose-lg max-w-none">
+          <h3 class="text-xl font-semibold mb-3">Governance Foundations</h3>
+          <p class="text-slate-300 mb-4">
+            The programme is built on a documented Enterprise Risk Policy approved by the Board of Directors,
+            establishing the risk appetite statement, risk taxonomy, assessment methodology, reporting obligations
+            and escalation thresholds. The policy integrates COSO ERM 2017's five components and 20 principles
+            with ISO 31000:2018's risk management process cycle.
+          </p>
+
+          <h3 class="text-xl font-semibold mb-3">Risk Taxonomy — 9 Categories</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            {[
+              { cat: 'Operational', icon: '⚙️', level: 'High', desc: 'Kitchen ops, delivery, equipment failure' },
+              { cat: 'Financial', icon: '💰', level: 'Med-High', desc: 'Revenue, liquidity, FX, financial controls' },
+              { cat: 'Strategic', icon: '🎯', level: 'High', desc: 'Competitive position, M&A, market entry' },
+              { cat: 'Compliance & Regulatory', icon: '⚖️', level: 'High', desc: '8-jurisdiction licensing, VAT, labor law' },
+              { cat: 'Reputational', icon: '📢', level: 'Med-High', desc: 'Brand trust, social media, crisis response' },
+              { cat: 'Technology & Cybersecurity', icon: '🔐', level: 'High', desc: 'Platform uptime, data breach, SKOS resilience' },
+              { cat: 'Food Safety & Quality', icon: '🍽️', level: 'Very High', desc: 'HACCP, allergens, multi-brand contamination' },
+              { cat: 'Supply Chain', icon: '🚚', level: 'Med-High', desc: 'Supplier concentration, cold chain, commodity costs' },
+              { cat: 'People & HR', icon: '👥', level: 'Med-High', desc: 'Attrition, labor compliance, safety, visa' }
+            ].map(item => (
+              <div class="bg-slate-900/60 p-4 rounded-lg border border-white/5">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="text-lg">{item.icon}</span>
+                  <span class="font-bold text-white text-sm">{item.cat}</span>
+                </div>
+                <div class="text-xs text-slate-500 mb-1">{item.desc}</div>
+                <span class={`text-xs font-bold px-2 py-0.5 rounded ${item.level === 'Very High' ? 'bg-red-900/40 text-red-400' : item.level === 'High' ? 'bg-orange-900/40 text-orange-400' : 'bg-yellow-900/40 text-yellow-400'}`}>
+                  Inherent: {item.level}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <h3 class="text-xl font-semibold mb-3">Risk Scoring Methodology</h3>
+          <p class="text-slate-300 mb-4">
+            Standardised 5×5 scoring matrix: Likelihood (1–5: Rare to Almost Certain) × Impact
+            (1–5: Negligible to Catastrophic) = Risk Score (1–25). Scores map to four rating bands —
+            Critical (20–25), High (12–19), Medium (6–11), Low (1–5) — each with defined escalation
+            timeframes, authority levels and treatment plan deadlines.
+          </p>
+
+          <h3 class="text-xl font-semibold mb-3">KRI Monitoring System</h3>
+          <p class="text-slate-300 mb-4">
+            28 KRIs across 6 domains with Green/Amber/Red thresholds. Amber breach triggers mandatory
+            management review within 10 business days. Red breach triggers CRO/CFO escalation within
+            48 hours and is treated as a high-priority risk event. KRI performance feeds directly into
+            the monthly management report and quarterly Risk Committee pack.
+          </p>
+
+          <h3 class="text-xl font-semibold mb-3">Three Lines of Defense Implementation</h3>
+          <ul class="list-disc pl-6 space-y-2 text-slate-300 text-sm">
+            <li><strong>First Line:</strong> Business operations and functional heads — day-to-day risk ownership, CSA completion, incident reporting</li>
+            <li><strong>Second Line:</strong> Risk Management, Compliance, Legal, Food Safety, Information Security — framework ownership, oversight, challenge and KRI monitoring</li>
+            <li><strong>Third Line:</strong> Internal Audit — independent assurance over ERM effectiveness, control testing and findings reporting to the Risk & Audit Committee</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <!-- Business Impact -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-4">Business Impact & Outcomes</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-red-950/30 border-l-4 border-red-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-lg mb-3 text-red-300">❌ Before the Programme</h3>
+          <ul class="space-y-2 text-sm text-red-200">
+            <li>• No board-approved risk appetite statement</li>
+            <li>• Risks managed informally at operational level</li>
+            <li>• No centralised risk register across 8 jurisdictions</li>
+            <li>• No KRI system or early-warning mechanism</li>
+            <li>• Inconsistent escalation — no defined thresholds</li>
+            <li>• BCP gaps in critical functions including cybersecurity</li>
+            <li>• No standardised board risk reporting format</li>
+          </ul>
+        </div>
+
+        <div class="bg-green-900/20 border-l-4 border-green-500 p-6 rounded-r-lg">
+          <h3 class="font-bold text-lg mb-3 text-green-300">✅ After the Programme</h3>
+          <ul class="space-y-2 text-sm text-green-200">
+            <li>• Board-adopted risk appetite across 9 categories</li>
+            <li>• 50+ risks scored with inherent and residual ratings</li>
+            <li>• Centralised risk register with ownership and KRI linkage</li>
+            <li>• 28 live KRIs with automated RAG escalation</li>
+            <li>• Defined escalation matrix with CRO/CEO/Board thresholds</li>
+            <li>• BCP readiness tracked for all 12 critical functions</li>
+            <li>• 4-tier reporting cadence from kitchen ops to Board</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Impact Metrics -->
+      <div class="mt-6 bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6 rounded-lg">
+        <h3 class="font-bold text-xl mb-4">📈 Programme Scope</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div>
+            <div class="text-3xl font-bold">12</div>
+            <div class="text-sm opacity-90">Tools Delivered</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold">9</div>
+            <div class="text-sm opacity-90">Risk Categories</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold">28</div>
+            <div class="text-sm opacity-90">Live KRIs</div>
+          </div>
+          <div>
+            <div class="text-3xl font-bold">8</div>
+            <div class="text-sm opacity-90">Jurisdictions Covered</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Implementation Highlights -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-4">💡 Implementation Highlights</h2>
+
+      <div class="prose prose-lg max-w-none">
+        <h3 class="text-xl font-semibold mb-3">Risk Appetite by Domain</h3>
+        <p class="text-slate-300 mb-4">
+          One of the most critical outputs was translating the board's risk philosophy into concrete,
+          category-specific appetite statements. The organisation adopted zero tolerance for food safety
+          and regulatory compliance — non-negotiable given consumer health exposure and multi-jurisdiction
+          licensing dependencies — while accepting moderate-to-high strategic risk consistent with its
+          high-growth, venture-backed positioning.
+        </p>
+
+        <h3 class="text-xl font-semibold mb-3">Multi-Jurisdiction Complexity</h3>
+        <p class="text-slate-300 mb-4">
+          The programme had to account for materially different regulatory environments across 8 countries —
+          from UAE Corporate Tax and PDPL to KSA SFDA, Turkish GDPR-adjacent data law, and US FDA/USDA
+          requirements. The compliance risk taxonomy and KRI structure were deliberately designed to be
+          jurisdiction-configurable, enabling the same tools to surface country-specific risks without
+          rebuilding the framework.
+        </p>
+
+        <h3 class="text-xl font-semibold mb-3">Board-Ready Without Specialist Software</h3>
+        <p class="text-slate-300">
+          All 12 deliverables are native Excel and Word files — no GRC platform, no specialist licence,
+          no consultant dependency for ongoing maintenance. The risk register, KRI dashboard and treatment
+          tracker are fully formula-driven with conditional formatting, dropdown validation and automatic
+          RAG scoring. Any finance or audit professional can maintain and extend the tools from day one.
+        </p>
+      </div>
+    </section>
+
+    <!-- Navigation -->
+    <div class="flex justify-between items-center pt-8 border-t border-white/10">
+      <a href={`${base}projects/internal-tracker/`} class="btn btn-secondary">
+        ← Previous: Internal Audit Tracker
+      </a>
+      <a href={`${base}projects/fraud-detection/`} class="btn btn-primary">
+        Next: Fraud Detection →
+      </a>
+    </div>
+
+  </div>
+</BaseLayout>
