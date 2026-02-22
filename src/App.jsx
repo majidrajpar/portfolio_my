@@ -191,7 +191,7 @@ const App = () => {
     {
       id: 'tadawul-ipo-readiness',
       title: 'Tadawul IPO Readiness — GCC Premium Brand',
-      description: 'Led end-to-end IPO readiness transformation for a GCC premium brand targeting Tadawul listing. Delivered a 24-month program covering ICOFR implementation, CMA regulatory compliance, governance restructuring, and investor-grade financial documentation.',
+      description: 'Led end-to-end IPO readiness transformation for a GCC premium brand targeting Tadawul listing. Delivered a 24-month programme covering ICOFR implementation, CMA regulatory compliance, governance restructuring, and investor-grade financial documentation.',
       category: 'Corporate Governance',
       impact: 'SAR 500M+ capital raise target — full ICOFR certification across 14 business processes',
       techStack: ['COSO ICOFR', 'CMA Regulations', 'Tadawul Listing Rules', 'IFRS', 'Big 4 Co-sourcing'],
@@ -236,7 +236,7 @@ const App = () => {
         'Compliance tracking with regulatory requirements',
         'Mitigation roadmap generation with timelines',
         'Executive risk reporting for board visibility',
-        'Location-specific risk scoring and prioritization'
+        'Location-specific risk scoring and prioritisation'
       ]
     },
     {
@@ -259,7 +259,7 @@ const App = () => {
     {
       id: 'multi-location-compliance',
       title: 'Multi-Location Audit Compliance System',
-      description: 'Comprehensive audit compliance system for multi-location restaurant operations with standardized procedures, tracking, and remediation monitoring.',
+      description: 'Comprehensive audit compliance system for multi-location restaurant operations with standardised procedures, tracking, and remediation monitoring.',
       category: 'Audit Transformation',
       impact: 'Standardised audit procedures deployed across 70+ restaurant locations',
       techStack: ['Python', 'openpyxl', 'Audit Standards'],
@@ -380,8 +380,8 @@ const App = () => {
   return (
     <div className="relative min-h-screen flex">
       <Sidebar />
-      <div className="flex-1 min-w-0 lg:ml-64">
-      <motion.div className="fixed top-0 left-0 lg:left-64 right-0 h-1 bg-blue-500 origin-left z-[100]" style={{ scaleX }} />
+      <div className="flex-1 min-w-0 lg:mr-64">
+      <motion.div className="fixed top-0 left-0 right-0 lg:right-64 h-1 bg-blue-500 origin-left z-[100]" style={{ scaleX }} />
       <Navbar />
 
       {/* All Resources Gallery */}
@@ -967,7 +967,7 @@ const App = () => {
               transition={{ delay: 0.2 }}
               className="text-slate-400 text-xl max-w-3xl mx-auto leading-relaxed"
             >
-              Board-level advisory and fractional executive services for organizations seeking to elevate internal audit,
+              Board-level advisory and fractional executive services for organisations seeking to elevate internal audit,
               risk management, and corporate governance functions.
             </motion.p>
           </div>
@@ -1026,7 +1026,7 @@ const App = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-emerald-400 mt-1">✓</span>
-                  <span>Fraud prevention & detection programs</span>
+                  <span>Fraud prevention & detection programmes</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-emerald-400 mt-1">✓</span>
