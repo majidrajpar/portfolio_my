@@ -1,0 +1,221 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <!-- Header -->
+  <rect width="1200" height="56" fill="#1e293b"/>
+  <text x="24" y="34" fill="#f8fafc" font-size="15" font-weight="700">Enterprise Risk Heat Map — COSO ERM 2017 Programme · 7 Jurisdictions</text>
+  <text x="24" y="50" fill="#475569" font-size="10">Al Nakheel F&amp;B Technology Platform · 100+ Kitchens · ⚠ DUMMY DATA — FOR ILLUSTRATION PURPOSES ONLY</text>
+  <rect x="1090" y="14" width="90" height="26" rx="13" fill="#1d4ed8" opacity="0.3" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1135" y="31" fill="#93c5fd" font-size="10" font-weight="700" text-anchor="middle">CONFIDENTIAL</text>
+
+  <!-- KPI strip -->
+  <rect x="24" y="66" width="140" height="66" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="94" y="94" fill="#ef4444" font-size="26" font-weight="800" text-anchor="middle">8</text>
+  <text x="94" y="110" fill="#64748b" font-size="9" text-anchor="middle" letter-spacing="1">CRITICAL RISKS</text>
+  <text x="94" y="124" fill="#475569" font-size="9" text-anchor="middle">Immediate action</text>
+
+  <rect x="174" y="66" width="140" height="66" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="244" y="94" fill="#f59e0b" font-size="26" font-weight="800" text-anchor="middle">15</text>
+  <text x="244" y="110" fill="#64748b" font-size="9" text-anchor="middle" letter-spacing="1">HIGH RISKS</text>
+  <text x="244" y="124" fill="#475569" font-size="9" text-anchor="middle">Mitigation plans active</text>
+
+  <rect x="324" y="66" width="140" height="66" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="394" y="94" fill="#22c55e" font-size="26" font-weight="800" text-anchor="middle">27</text>
+  <text x="394" y="110" fill="#64748b" font-size="9" text-anchor="middle" letter-spacing="1">MEDIUM/LOW</text>
+  <text x="394" y="124" fill="#475569" font-size="9" text-anchor="middle">Monitored quarterly</text>
+
+  <rect x="474" y="66" width="140" height="66" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="544" y="94" fill="#a78bfa" font-size="26" font-weight="800" text-anchor="middle">20+</text>
+  <text x="544" y="110" fill="#64748b" font-size="9" text-anchor="middle" letter-spacing="1">ACTIVE KRIs</text>
+  <text x="544" y="124" fill="#475569" font-size="9" text-anchor="middle">RAG thresholds live</text>
+
+  <rect x="624" y="66" width="140" height="66" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="694" y="94" fill="#34d399" font-size="26" font-weight="800" text-anchor="middle">7</text>
+  <text x="694" y="110" fill="#64748b" font-size="9" text-anchor="middle" letter-spacing="1">JURISDICTIONS</text>
+  <text x="694" y="124" fill="#475569" font-size="9" text-anchor="middle">UAE, KSA, EG, KW, BH, QA, JO</text>
+
+  <!-- Heat Map Grid -->
+  <text x="24" y="156" fill="#475569" font-size="10" font-weight="700" letter-spacing="2">RISK HEAT MAP — LIKELIHOOD vs. IMPACT</text>
+
+  <!-- Y axis label -->
+  <text x="38" y="390" fill="#64748b" font-size="10" font-weight="600" text-anchor="middle" transform="rotate(-90, 38, 390)">LIKELIHOOD →</text>
+
+  <!-- X axis label -->
+  <text x="370" y="590" fill="#64748b" font-size="10" font-weight="600" text-anchor="middle">IMPACT →</text>
+
+  <!-- Heat map cells (5x5) starting at x=60, y=165, each cell 62x70 -->
+  <!-- Row 5 (Very High Likelihood) -->
+  <rect x="68" y="165" width="62" height="70" fill="#dc2626" opacity="0.7" stroke="#0f172a" stroke-width="1"/>
+  <rect x="130" y="165" width="62" height="70" fill="#dc2626" opacity="0.85" stroke="#0f172a" stroke-width="1"/>
+  <rect x="192" y="165" width="62" height="70" fill="#dc2626" stroke="#0f172a" stroke-width="1"/>
+  <rect x="254" y="165" width="62" height="70" fill="#dc2626" stroke="#0f172a" stroke-width="1"/>
+  <rect x="316" y="165" width="62" height="70" fill="#7f1d1d" stroke="#0f172a" stroke-width="1"/>
+  <text x="38" y="206" fill="#94a3b8" font-size="9" text-anchor="middle">Very High</text>
+
+  <!-- Row 4 -->
+  <rect x="68" y="235" width="62" height="70" fill="#f59e0b" opacity="0.6" stroke="#0f172a" stroke-width="1"/>
+  <rect x="130" y="235" width="62" height="70" fill="#dc2626" opacity="0.7" stroke="#0f172a" stroke-width="1"/>
+  <rect x="192" y="235" width="62" height="70" fill="#dc2626" opacity="0.85" stroke="#0f172a" stroke-width="1"/>
+  <rect x="254" y="235" width="62" height="70" fill="#dc2626" stroke="#0f172a" stroke-width="1"/>
+  <rect x="316" y="235" width="62" height="70" fill="#dc2626" stroke="#0f172a" stroke-width="1"/>
+  <text x="38" y="276" fill="#94a3b8" font-size="9" text-anchor="middle">High</text>
+
+  <!-- Row 3 -->
+  <rect x="68" y="305" width="62" height="70" fill="#16a34a" opacity="0.6" stroke="#0f172a" stroke-width="1"/>
+  <rect x="130" y="305" width="62" height="70" fill="#f59e0b" opacity="0.7" stroke="#0f172a" stroke-width="1"/>
+  <rect x="192" y="305" width="62" height="70" fill="#f59e0b" opacity="0.85" stroke="#0f172a" stroke-width="1"/>
+  <rect x="254" y="305" width="62" height="70" fill="#dc2626" opacity="0.7" stroke="#0f172a" stroke-width="1"/>
+  <rect x="316" y="305" width="62" height="70" fill="#dc2626" opacity="0.85" stroke="#0f172a" stroke-width="1"/>
+  <text x="38" y="346" fill="#94a3b8" font-size="9" text-anchor="middle">Medium</text>
+
+  <!-- Row 2 -->
+  <rect x="68" y="375" width="62" height="70" fill="#16a34a" opacity="0.5" stroke="#0f172a" stroke-width="1"/>
+  <rect x="130" y="375" width="62" height="70" fill="#16a34a" opacity="0.6" stroke="#0f172a" stroke-width="1"/>
+  <rect x="192" y="375" width="62" height="70" fill="#f59e0b" opacity="0.6" stroke="#0f172a" stroke-width="1"/>
+  <rect x="254" y="375" width="62" height="70" fill="#f59e0b" opacity="0.8" stroke="#0f172a" stroke-width="1"/>
+  <rect x="316" y="375" width="62" height="70" fill="#dc2626" opacity="0.6" stroke="#0f172a" stroke-width="1"/>
+  <text x="38" y="416" fill="#94a3b8" font-size="9" text-anchor="middle">Low</text>
+
+  <!-- Row 1 -->
+  <rect x="68" y="445" width="62" height="70" fill="#166534" opacity="0.5" stroke="#0f172a" stroke-width="1"/>
+  <rect x="130" y="445" width="62" height="70" fill="#16a34a" opacity="0.4" stroke="#0f172a" stroke-width="1"/>
+  <rect x="192" y="445" width="62" height="70" fill="#16a34a" opacity="0.5" stroke="#0f172a" stroke-width="1"/>
+  <rect x="254" y="445" width="62" height="70" fill="#16a34a" opacity="0.6" stroke="#0f172a" stroke-width="1"/>
+  <rect x="316" y="445" width="62" height="70" fill="#f59e0b" opacity="0.5" stroke="#0f172a" stroke-width="1"/>
+  <text x="38" y="486" fill="#94a3b8" font-size="9" text-anchor="middle">Very Low</text>
+
+  <!-- X axis labels -->
+  <text x="99" y="528" fill="#94a3b8" font-size="9" text-anchor="middle">Negligible</text>
+  <text x="161" y="528" fill="#94a3b8" font-size="9" text-anchor="middle">Minor</text>
+  <text x="223" y="528" fill="#94a3b8" font-size="9" text-anchor="middle">Moderate</text>
+  <text x="285" y="528" fill="#94a3b8" font-size="9" text-anchor="middle">Significant</text>
+  <text x="347" y="528" fill="#94a3b8" font-size="9" text-anchor="middle">Severe</text>
+
+  <!-- Risk dots on heat map -->
+  <circle cx="223" cy="185" r="8" fill="#fff" opacity="0.9"/>
+  <text x="223" y="189" fill="#0f172a" font-size="8" font-weight="800" text-anchor="middle">FS</text>
+
+  <circle cx="285" cy="185" r="8" fill="#fff" opacity="0.9"/>
+  <text x="285" y="189" fill="#0f172a" font-size="8" font-weight="800" text-anchor="middle">CY</text>
+
+  <circle cx="347" cy="255" r="8" fill="#fff" opacity="0.9"/>
+  <text x="347" y="259" fill="#0f172a" font-size="8" font-weight="800" text-anchor="middle">RE</text>
+
+  <circle cx="161" cy="255" r="8" fill="#fff" opacity="0.9"/>
+  <text x="161" y="259" fill="#0f172a" font-size="8" font-weight="800" text-anchor="middle">SC</text>
+
+  <circle cx="223" cy="325" r="8" fill="#fff" opacity="0.9"/>
+  <text x="223" y="329" fill="#0f172a" font-size="8" font-weight="800" text-anchor="middle">HR</text>
+
+  <circle cx="285" cy="255" r="8" fill="#fff" opacity="0.9"/>
+  <text x="285" y="259" fill="#0f172a" font-size="8" font-weight="800" text-anchor="middle">CO</text>
+
+  <circle cx="99" cy="395" r="8" fill="#fff" opacity="0.9"/>
+  <text x="99" y="399" fill="#0f172a" font-size="8" font-weight="800" text-anchor="middle">FX</text>
+
+  <!-- Right panel: Risk Register -->
+  <rect x="400" y="155" width="780" height="380" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="420" y="178" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="2">TOP ENTERPRISE RISKS — REGISTER EXTRACT</text>
+
+  <!-- Table header -->
+  <rect x="400" y="185" width="780" height="28" rx="0" fill="#0f172a"/>
+  <text x="420" y="203" fill="#475569" font-size="10" font-weight="700">RISK</text>
+  <text x="590" y="203" fill="#475569" font-size="10" font-weight="700">CATEGORY</text>
+  <text x="730" y="203" fill="#475569" font-size="10" font-weight="700">LIKELIHOOD</text>
+  <text x="840" y="203" fill="#475569" font-size="10" font-weight="700">IMPACT</text>
+  <text x="930" y="203" fill="#475569" font-size="10" font-weight="700">RATING</text>
+  <text x="1010" y="203" fill="#475569" font-size="10" font-weight="700">OWNER</text>
+
+  <!-- Risk rows -->
+  <rect x="400" y="213" width="780" height="26" fill="#1e293b"/>
+  <text x="420" y="230" fill="#e2e8f0" font-size="10">Food Safety Contamination Event</text>
+  <text x="590" y="230" fill="#94a3b8" font-size="10">FS</text>
+  <rect x="726" y="219" width="60" height="14" rx="7" fill="#ef4444" opacity="0.2"/>
+  <text x="756" y="230" fill="#ef4444" font-size="10" font-weight="700" text-anchor="middle">Very High</text>
+  <rect x="836" y="219" width="50" height="14" rx="7" fill="#ef4444" opacity="0.2"/>
+  <text x="861" y="230" fill="#ef4444" font-size="10" font-weight="700" text-anchor="middle">Severe</text>
+  <rect x="926" y="219" width="50" height="14" rx="7" fill="#ef4444" opacity="0.3"/>
+  <text x="951" y="230" fill="#ef4444" font-size="10" font-weight="800" text-anchor="middle">CRITICAL</text>
+  <text x="1010" y="230" fill="#64748b" font-size="10">COO</text>
+
+  <rect x="400" y="239" width="780" height="26" fill="#161f2e"/>
+  <text x="420" y="256" fill="#e2e8f0" font-size="10">Cybersecurity Breach / Data Loss</text>
+  <text x="590" y="256" fill="#94a3b8" font-size="10">CY</text>
+  <rect x="726" y="245" width="60" height="14" rx="7" fill="#ef4444" opacity="0.2"/>
+  <text x="756" y="256" fill="#ef4444" font-size="10" font-weight="700" text-anchor="middle">Very High</text>
+  <rect x="836" y="245" width="50" height="14" rx="7" fill="#f59e0b" opacity="0.2"/>
+  <text x="861" y="256" fill="#f59e0b" font-size="10" font-weight="700" text-anchor="middle">Significant</text>
+  <rect x="926" y="245" width="50" height="14" rx="7" fill="#ef4444" opacity="0.3"/>
+  <text x="951" y="256" fill="#ef4444" font-size="10" font-weight="800" text-anchor="middle">CRITICAL</text>
+  <text x="1010" y="256" fill="#64748b" font-size="10">CTO</text>
+
+  <rect x="400" y="265" width="780" height="26" fill="#1e293b"/>
+  <text x="420" y="282" fill="#e2e8f0" font-size="10">Regulatory Non-Compliance (Multi-Jurisdiction)</text>
+  <text x="590" y="282" fill="#94a3b8" font-size="10">CO</text>
+  <rect x="726" y="271" width="50" height="14" rx="7" fill="#f59e0b" opacity="0.2"/>
+  <text x="751" y="282" fill="#f59e0b" font-size="10" font-weight="700" text-anchor="middle">High</text>
+  <rect x="836" y="271" width="50" height="14" rx="7" fill="#ef4444" opacity="0.2"/>
+  <text x="861" y="282" fill="#ef4444" font-size="10" font-weight="700" text-anchor="middle">Severe</text>
+  <rect x="926" y="271" width="50" height="14" rx="7" fill="#ef4444" opacity="0.3"/>
+  <text x="951" y="282" fill="#ef4444" font-size="10" font-weight="800" text-anchor="middle">CRITICAL</text>
+  <text x="1010" y="282" fill="#64748b" font-size="10">CCO</text>
+
+  <rect x="400" y="291" width="780" height="26" fill="#161f2e"/>
+  <text x="420" y="308" fill="#e2e8f0" font-size="10">Supply Chain Disruption (7-country network)</text>
+  <text x="590" y="308" fill="#94a3b8" font-size="10">SC</text>
+  <rect x="726" y="297" width="50" height="14" rx="7" fill="#ef4444" opacity="0.2"/>
+  <text x="751" y="308" fill="#ef4444" font-size="10" font-weight="700" text-anchor="middle">High</text>
+  <rect x="836" y="297" width="50" height="14" rx="7" fill="#f59e0b" opacity="0.2"/>
+  <text x="861" y="308" fill="#f59e0b" font-size="10" font-weight="700" text-anchor="middle">Significant</text>
+  <rect x="926" y="297" width="50" height="14" rx="7" fill="#f59e0b" opacity="0.3"/>
+  <text x="951" y="308" fill="#f59e0b" font-size="10" font-weight="800" text-anchor="middle">HIGH</text>
+  <text x="1010" y="308" fill="#64748b" font-size="10">SCM</text>
+
+  <rect x="400" y="317" width="780" height="26" fill="#1e293b"/>
+  <text x="420" y="334" fill="#e2e8f0" font-size="10">Key Person Dependency — Executive Team</text>
+  <text x="590" y="334" fill="#94a3b8" font-size="10">HR</text>
+  <rect x="726" y="323" width="50" height="14" rx="7" fill="#f59e0b" opacity="0.2"/>
+  <text x="751" y="334" fill="#f59e0b" font-size="10" font-weight="700" text-anchor="middle">Medium</text>
+  <rect x="836" y="323" width="50" height="14" rx="7" fill="#f59e0b" opacity="0.2"/>
+  <text x="861" y="334" fill="#f59e0b" font-size="10" font-weight="700" text-anchor="middle">Moderate</text>
+  <rect x="926" y="323" width="50" height="14" rx="7" fill="#f59e0b" opacity="0.3"/>
+  <text x="951" y="334" fill="#f59e0b" font-size="10" font-weight="800" text-anchor="middle">HIGH</text>
+  <text x="1010" y="334" fill="#64748b" font-size="10">CHRO</text>
+
+  <rect x="400" y="343" width="780" height="26" fill="#161f2e"/>
+  <text x="420" y="360" fill="#e2e8f0" font-size="10">Reputational Damage — Social Media Event</text>
+  <text x="590" y="360" fill="#94a3b8" font-size="10">RE</text>
+  <rect x="726" y="349" width="50" height="14" rx="7" fill="#f59e0b" opacity="0.2"/>
+  <text x="751" y="360" fill="#f59e0b" font-size="10" font-weight="700" text-anchor="middle">High</text>
+  <rect x="836" y="349" width="50" height="14" rx="7" fill="#ef4444" opacity="0.2"/>
+  <text x="861" y="360" fill="#ef4444" font-size="10" font-weight="700" text-anchor="middle">Severe</text>
+  <rect x="926" y="349" width="50" height="14" rx="7" fill="#ef4444" opacity="0.3"/>
+  <text x="951" y="360" fill="#ef4444" font-size="10" font-weight="800" text-anchor="middle">CRITICAL</text>
+  <text x="1010" y="360" fill="#64748b" font-size="10">CMO</text>
+
+  <rect x="400" y="369" width="780" height="26" fill="#1e293b"/>
+  <text x="420" y="386" fill="#e2e8f0" font-size="10">FX Exposure — Multi-Currency Operations</text>
+  <text x="590" y="386" fill="#94a3b8" font-size="10">FX</text>
+  <rect x="726" y="375" width="50" height="14" rx="7" fill="#22c55e" opacity="0.2"/>
+  <text x="751" y="386" fill="#22c55e" font-size="10" font-weight="700" text-anchor="middle">Low</text>
+  <rect x="836" y="375" width="50" height="14" rx="7" fill="#f59e0b" opacity="0.2"/>
+  <text x="861" y="386" fill="#f59e0b" font-size="10" font-weight="700" text-anchor="middle">Moderate</text>
+  <rect x="926" y="375" width="50" height="14" rx="7" fill="#22c55e" opacity="0.3"/>
+  <text x="951" y="386" fill="#22c55e" font-size="10" font-weight="800" text-anchor="middle">MEDIUM</text>
+  <text x="1010" y="386" fill="#64748b" font-size="10">CFO</text>
+
+  <!-- Board appetite -->
+  <rect x="400" y="403" width="780" height="50" rx="0" fill="#0f172a"/>
+  <text x="420" y="423" fill="#64748b" font-size="10" font-weight="700" letter-spacing="1">BOARD RISK APPETITE (FORMALLY ADOPTED)</text>
+  <rect x="420" y="430" width="130" height="14" rx="7" fill="#ef4444" opacity="0.2" stroke="#ef4444" stroke-width="1"/>
+  <text x="485" y="441" fill="#ef4444" font-size="9" font-weight="700" text-anchor="middle">ZERO TOLERANCE: Food Safety</text>
+  <rect x="560" y="430" width="120" height="14" rx="7" fill="#ef4444" opacity="0.2" stroke="#ef4444" stroke-width="1"/>
+  <text x="620" y="441" fill="#ef4444" font-size="9" font-weight="700" text-anchor="middle">ZERO TOLERANCE: Compliance</text>
+  <rect x="690" y="430" width="110" height="14" rx="7" fill="#f59e0b" opacity="0.2" stroke="#f59e0b" stroke-width="1"/>
+  <text x="745" y="441" fill="#f59e0b" font-size="9" font-weight="700" text-anchor="middle">LOW: Reputational</text>
+  <rect x="810" y="430" width="100" height="14" rx="7" fill="#3b82f6" opacity="0.2" stroke="#3b82f6" stroke-width="1"/>
+  <text x="860" y="441" fill="#3b82f6" font-size="9" font-weight="700" text-anchor="middle">MODERATE: Strategic</text>
+
+  <!-- Footer -->
+  <rect x="0" y="598" width="1200" height="32" fill="#1e293b"/>
+  <text x="24" y="619" fill="#475569" font-size="10">All company names, risk data, and financial figures shown are fictitious and used for portfolio demonstration only · Not based on any real client engagement</text>
+</svg>
