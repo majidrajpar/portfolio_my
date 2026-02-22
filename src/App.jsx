@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { FileText, BrainCircuit, Landmark, Scale } from 'lucide-react';
 import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
 import MetricCard from './components/MetricCard';
 import ProjectCard from './components/ProjectCard';
 import DownloadCard from './components/DownloadCard';
@@ -377,8 +378,10 @@ const App = () => {
   }, [allProjects]);
 
   return (
-    <div className="relative min-h-screen">
-      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-blue-500 origin-left z-[100]" style={{ scaleX }} />
+    <div className="relative min-h-screen flex">
+      <Sidebar />
+      <div className="flex-1 min-w-0 lg:ml-64">
+      <motion.div className="fixed top-0 left-0 lg:left-64 right-0 h-1 bg-blue-500 origin-left z-[100]" style={{ scaleX }} />
       <Navbar />
 
       {/* All Resources Gallery */}
@@ -1164,6 +1167,7 @@ const App = () => {
           </div>
         </div>
       </footer>
+      </div>
     </div>
   );
 };
