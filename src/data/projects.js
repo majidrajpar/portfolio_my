@@ -1,32 +1,32 @@
 export const projects = [
   {
-    id: 'uae-real-estate-fraud',
-    title: 'UAE Real Estate Fraud Detection (Audit 4.0)',
-    description: 'Monitoring AED 500M+ Capex and OpEx across large-scale UAE developments (Dubai Hills, Saadiyat). Traditional audits were missing multivariate fraud patterns, ghost tenancies, and VAT leakage in the 5% VAT regime. Deployed an automated Forensic Risk Engine in R to surface the top 1% high-risk transactions and recover AED 3.2M annually.',
+    id: 'ksa-real-estate-fraud',
+    title: 'KSA Real Estate Fraud Detection (Audit 4.0)',
+    description: 'Monitoring SAR 500M+ Capex and OpEx across a mid-sized KSA real estate firm\'s residential and commercial portfolio (client identity withheld under engagement confidentiality). Traditional audits were missing multivariate fraud patterns, ghost tenancies, and VAT leakage in the 15% VAT regime. Deployed an automated Forensic Risk Engine in R to surface the top 1% high-risk transactions and recover SAR 3.2M annually.',
     category: 'Fraud Forensics',
-    impact: 'AED 3.2M direct revenue recovery — 85% reduction in manual audit review time — 82% decrease in Variation Order threshold evasion',
+    impact: 'SAR 3.2M direct revenue recovery — 85% reduction in manual audit review time — 82% decrease in Variation Order threshold evasion',
     techStack: ['R', 'ggplot2', 'StringDist', 'Z-Score Modelling', 'Fuzzy Matching', 'VAT Analytics'],
-    image: '/portfolio_my/images/projects/uae-real-estate-fraud/methodology.png',
+    image: '/portfolio_my/images/projects/ksa-real-estate-fraud/methodology.png',
     additionalScreenshots: [
       {
-        image: '/portfolio_my/images/projects/uae-real-estate-fraud/investigation.png',
-        caption: 'Temporal Risk Heatmap — fraud intensity clusters identified during the UAE Weekend (Sat/Sun) and after-hours (11 PM – 4 AM)'
+        image: '/portfolio_my/images/projects/ksa-real-estate-fraud/investigation.png',
+        caption: 'Temporal Risk Heatmap — fraud intensity clusters identified during the KSA Weekend (Fri/Sat) and after-hours (11 PM – 4 AM)'
       },
       {
-        image: '/portfolio_my/images/projects/uae-real-estate-fraud/ghost_tenancy.png',
-        caption: 'Ghost Tenancy Detection — units with active lease revenue but zero DEWA/ADDC utility usage, proving fictitious occupancy to inflate building valuation'
+        image: '/portfolio_my/images/projects/ksa-real-estate-fraud/ghost_tenancy.png',
+        caption: 'Ghost Tenancy Detection — units with active lease revenue but zero SEC/NWC utility usage, proving fictitious occupancy to inflate building valuation'
       },
       {
-        image: '/portfolio_my/images/projects/uae-real-estate-fraud/benchmarking.png',
-        caption: 'FM Benchmarking — 2.2x cost overrun identified in specific FM contracts using AED per SqFt benchmarking'
+        image: '/portfolio_my/images/projects/ksa-real-estate-fraud/benchmarking.png',
+        caption: 'FM Benchmarking — 2.2x cost overrun identified in specific FM contracts using SAR per SqFt benchmarking'
       }
     ],
     features: [
-      'Composite Risk Scoring (CRS) — filtered 3,500+ transactions to the top 1% high-risk leads (AED 3.4M in potential recovery)',
-      'Ghost Vendor Detection — Fuzzy-Matching (StringDist) on 5% VAT-registered procurement to surface duplicate and fictitious suppliers',
+      'Composite Risk Scoring (CRS) — filtered 3,500+ transactions to the top 1% high-risk leads (SAR 3.4M in potential recovery)',
+      'Ghost Vendor Detection — Fuzzy-Matching (StringDist) on 15% VAT-registered procurement to surface duplicate and fictitious suppliers',
       'Variation Order (VO) Abuse — Z-Score statistical modelling to detect contractor collusion and threshold evasion on Capex projects',
-      'Ghost Tenancy Engine — correlated lease revenue with DEWA/ADDC utility consumption; zero-usage units flagged as fictitious occupancy',
-      'FM Contract Benchmarking — AED per SqFt analysis across buildings identified 2.2x cost overrun in specific FM agreements',
+      'Ghost Tenancy Engine — correlated lease revenue with SEC/NWC utility consumption; zero-usage units flagged as fictitious occupancy',
+      'FM Contract Benchmarking — SAR per SqFt analysis across buildings identified 2.2x cost overrun in specific FM agreements',
       'Temporal Fraud Mapping — heat map of transaction timing surfaced fraud clusters on weekends and after-hours windows'
     ]
   },
