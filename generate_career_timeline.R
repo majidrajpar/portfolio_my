@@ -6,10 +6,12 @@ WHITE <- "#FFFFFF"
 GRAY  <- "#8895AA"
 DIM   <- "#5A6A80"   # dimmer grey for date ranges
 
-# ── Career milestones ─────────────────────────────────────────────────────────
+# ── Career milestones — dots at actual START year ─────────────────────────────
+# EY Dec 2004 | BMA Mar 2010 | KPMG Apr 2011 | McDonald's Mar 2014
+# Al-Faisaliah Nov 2016 | Kitopi Jun 2022 | Veritux Jul 2025
 career <- data.frame(
-  x = c(2005, 2009.5, 2012, 2015, 2019, 2023.5, 2026),
-  y = c(0.14,  0.27,  0.38, 0.50, 0.61,  0.75,  0.87),
+  x = c(2005, 2010, 2011, 2014, 2017, 2022, 2025),
+  y = c(0.14, 0.27, 0.38, 0.50, 0.61, 0.75, 0.87),
   company = c(
     "EY", "BMA ASSET\nMANAGEMENT", "KPMG\n(QATAR)",
     "McDONALD'S\nKSA", "AL-FAISALIAH\nGROUP",
@@ -25,6 +27,8 @@ career <- data.frame(
     "2004–2009", "2010–2011", "2011–2013",
     "2014–2016", "2016–2022", "2022–2025", "2025–Present"
   ),
+  # Nudge BMA/KPMG labels outward so they don't overlap (1 yr apart on x-axis)
+  label_x = c(2005, 2009.4, 2011.6, 2014, 2017, 2022, 2025),
   stringsAsFactors = FALSE
 )
 
@@ -32,8 +36,9 @@ career <- data.frame(
 axis_years <- c(2005, 2008, 2011, 2014, 2017, 2020, 2023, 2026)
 
 # ── Audit Committee point — interpolated on line between AFG and Kitopi ───────
+# Al-Faisaliah start: 2017 | Kitopi start: 2022 | AC: Feb 2021
 ac_x <- 2021
-ac_y <- 0.61 + (ac_x - 2019) / (2023.5 - 2019) * (0.75 - 0.61)  # ≈ 0.672
+ac_y <- 0.61 + (ac_x - 2017) / (2022 - 2017) * (0.75 - 0.61)  # ≈ 0.722
 
 p <- ggplot() +
 
@@ -54,18 +59,18 @@ p <- ggplot() +
              shape = 21, fill = GOLD, color = WHITE,
              size = 3.8, stroke = 1.3) +
 
-  # Role labels above dots
-  geom_text(data = career, aes(x = x, y = y + 0.058, label = role),
+  # Role labels above dots (use label_x to nudge BMA/KPMG apart)
+  geom_text(data = career, aes(x = label_x, y = y + 0.058, label = role),
             color = WHITE, size = 2.45, hjust = 0.5, vjust = 0,
             lineheight = 0.9) +
 
   # Company names below axis
-  geom_text(data = career, aes(x = x, y = -0.055, label = company),
+  geom_text(data = career, aes(x = label_x, y = -0.055, label = company),
             color = GRAY, size = 2.0, hjust = 0.5,
             fontface = "bold", lineheight = 0.85) +
 
   # Date ranges below company names
-  geom_text(data = career, aes(x = x, y = -0.095, label = dates),
+  geom_text(data = career, aes(x = label_x, y = -0.095, label = dates),
             color = DIM, size = 1.8, hjust = 0.5) +
 
   # Year axis labels
@@ -90,11 +95,9 @@ p <- ggplot() +
            label = "Audit Committee Member\nAFG Restaurants Sector",
            color = GOLD, size = 2.0, hjust = 0.5, lineheight = 0.9) +
 
-  # ── "Audit 4.0" badge — shifted left to avoid Veritux role label ──────────
-  # Veritux role label sits at y ≈ 0.87 + 0.058 = 0.928; badge at y=0.965
-  # with x=2024.5 gives clear horizontal separation from Veritux dot at x=2026
+  # ── "Audit 4.0" badge — between Kitopi (2022) and Veritux (2025) ──────────
   annotate("text",
-           x = 2024.5, y = 0.965,
+           x = 2023.5, y = 0.965,
            label = "AUDIT 4.0 & STRATEGIC ADVISORY",
            color = GOLD, size = 1.95, hjust = 0.5, fontface = "bold") +
 
