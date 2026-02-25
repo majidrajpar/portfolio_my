@@ -40,7 +40,7 @@ export const projects = [
     image: '/portfolio_my/images/projects/fraud-detection/fraud-dashboard.webp',
     features: [
       'ML anomaly detection with 87.3% accuracy using Isolation Forest',
-      'Manager discount rate analysis with automated risk scoring',
+      'Managerial Concession Analysis with automated risk scoring',
       'Hourly transaction pattern heat mapping',
       'Location-based risk assessment across multiple regions',
       'Automated recovery identification (AED 3.2M recurring annual recovery)',
