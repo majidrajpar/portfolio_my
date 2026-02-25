@@ -51,6 +51,16 @@ const base = import.meta.env.BASE_URL;
               </li>
             ))}
           </ul>
+          <div class="mt-6 pt-6 border-t border-slate-100 grid grid-cols-2 gap-3">
+            <div>
+              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Typical Duration</div>
+              <div class="text-xs font-bold text-slate-700">6–18 months</div>
+            </div>
+            <div>
+              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Key Deliverable</div>
+              <div class="text-xs font-bold text-slate-700">Audit Charter, Risk-Based Plan, IIA methodology</div>
+            </div>
+          </div>
         </div>
 
         <!-- Service 2: IPO & ICOFR Readiness -->
@@ -72,6 +82,16 @@ const base = import.meta.env.BASE_URL;
               </li>
             ))}
           </ul>
+          <div class="mt-6 pt-6 border-t border-slate-100 grid grid-cols-2 gap-3">
+            <div>
+              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Typical Duration</div>
+              <div class="text-xs font-bold text-slate-700">3–12 months</div>
+            </div>
+            <div>
+              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Key Deliverable</div>
+              <div class="text-xs font-bold text-slate-700">RCM documentation, ICOFR programme, Big 4 coordination pack</div>
+            </div>
+          </div>
         </div>
 
         <!-- Service 3: Fraud Detection & Forensics -->
@@ -93,8 +113,44 @@ const base = import.meta.env.BASE_URL;
               </li>
             ))}
           </ul>
+          <div class="mt-6 pt-6 border-t border-slate-100 grid grid-cols-2 gap-3">
+            <div>
+              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Typical Duration</div>
+              <div class="text-xs font-bold text-slate-700">8–16 weeks</div>
+            </div>
+            <div>
+              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Key Deliverable</div>
+              <div class="text-xs font-bold text-slate-700">Continuous monitoring system, investigation framework</div>
+            </div>
+          </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Who I Work With -->
+  <section class="py-20 bg-[#001F5B]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="mb-12" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/50 mb-4 block">Ideal Clients</span>
+        <h2 class="text-4xl font-black text-white">Who I Work With.</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          { title: 'Scaling businesses', desc: 'Series A–C companies growing their governance infrastructure for the first time and needing structured IA capability.' },
+          { title: 'Family offices', desc: 'Private investment offices requiring independent IA oversight, risk frameworks, and board-grade reporting.' },
+          { title: 'Pre-IPO companies', desc: 'GCC organisations preparing for DFM, Tadawul, or Nomu listing and requiring ICOFR readiness and governance restructuring.' },
+          { title: 'Boards under pressure', desc: 'Companies responding to a fraud incident, control failure, regulator inquiry, or audit committee escalation.' },
+          { title: 'Multisite operators', desc: 'F&B, retail, and hospitality groups with 50+ locations across the MENA region needing continuous monitoring at scale.' },
+          { title: 'First-time IA builders', desc: 'Organisations standing up their internal audit function from zero and needing an experienced CAE to lead from day one.' },
+        ].map((item, i) => (
+          <div class="border border-white/10 p-6 hover:border-[#C9A84C]/30 transition-colors" data-reveal data-reveal-delay={String((i % 3) + 1)}>
+            <div class="w-1.5 h-1.5 bg-[#C9A84C] mb-4"></div>
+            <h4 class="text-white font-black text-sm mb-2">{item.title}</h4>
+            <p class="text-white/60 text-xs leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
