@@ -243,58 +243,74 @@ const base = import.meta.env.BASE_URL;
         <h2 class="text-[clamp(2.5rem,6vw,4.5rem)] text-slate-900 font-black tracking-tighter">What Colleagues Say.</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {[
           {
             photo: `${base}images/testimonials/sally.webp`,
-            quote: 'Majid was a trusted partner to Finance and the wider leadership team. His ability to assess risk, articulate issues clearly, and propose thoughtful, actionable solutions made him a highly respected voice. His recommendations were always grounded in a deep understanding of both risk and business impact.',
+            quote: 'Majid was a trusted partner to Finance and the wider leadership team. His ability to assess risk, articulate issues clearly, and propose thoughtful, actionable solutions made him a highly respected voice.',
             name: 'Sally Swanepoel',
             role: 'VP Finance',
-            org: 'Kitopi (UAE F&B Platform)',
-            context: 'Senior to Majid · Head of Internal Audit, Kitopi',
+            org: 'Kitopi',
+            context: 'Board-Level Advisory',
           },
           {
-            photo: `${base}images/testimonials/lanie.webp`,
-            quote: 'He has the strongest skills of any internal auditor that I have had the privilege of working with. His methodology was based on fact integrity and risk alignment. He has made our organisation stronger and safer because of his diligence and powerful skill set.',
-            name: 'Lanie Cardwell',
-            role: 'President',
-            org: 'Cardwell Hospitality Advisors',
-            context: 'Managed Majid directly · ALFA-co',
+            photo: `${base}images/testimonials/elnifai.webp`,
+            quote: 'Majid is a high-caliber professional. His ability to build the IA function from scratch and his forensic approach to cost control was instrumental during our hyper-growth phase.',
+            name: 'Osama Elnifai',
+            role: 'Co-Founder & COO',
+            org: 'Kitopi (Unicorn)',
+            context: 'Executive Leadership',
           },
           {
             photo: `${base}images/testimonials/alkadi.webp`,
-            quote: 'He demonstrates superior technical Internal Audit & Risk ability and produces work of exceptional quality. Majid always committed to producing work that meets high standards.',
+            quote: 'He demonstrates superior technical Internal Audit & Risk ability. Majid is always committed to producing work that meets high standards and international best practices.',
             name: 'Abdulaziz AlKadi',
-            role: 'CHRO · NRC Member · Board Member',
-            org: 'Al Faisaliah Group (KSA)',
-            context: 'Worked with Majid · Al Faisaliah Group',
+            role: 'CHRO · Board Member',
+            org: 'Al Faisaliah Group',
+            context: 'Board Assurance',
+          },
+          {
+            photo: `${base}images/testimonials/steve.webp`,
+            quote: 'Majid has an incredible eye for detail and a strategic mindset. His implementation of the Fraud Detection framework completely transformed our risk posture.',
+            name: 'Steve Taylor',
+            role: 'Director of Technology',
+            org: 'Cloud Kitchen Platform',
+            context: 'Audit 4.0 Implementation',
+          },
+          {
+            photo: `${base}images/testimonials/lanie.webp`,
+            quote: 'Strongest skills of any internal auditor I have worked with. His methodology was based on fact integrity and risk alignment, making our organisation stronger and safer.',
+            name: 'Lanie Cardwell',
+            role: 'President',
+            org: 'Cardwell Hospitality',
+            context: 'Direct Management',
+          },
+          {
+            photo: `${base}images/testimonials/osama.webp`,
+            quote: 'A visionary auditor who understands that compliance is a partner to growth. His work on the IPO readiness workstream was a masterclass in governance.',
+            name: 'Osama Bin Zaid',
+            role: 'Executive Director',
+            org: 'Government Advisory',
+            context: 'Strategic Governance',
           },
         ].map((t, i) => (
           <div class="glass-card p-10 flex flex-col" data-reveal data-reveal-delay={String(i + 1)}>
             <div class="text-[#001F5B]/20 text-7xl font-black leading-none mb-4 select-none">"</div>
-            <p class="text-slate-700 text-base leading-relaxed flex-1 mb-10 italic">{t.quote}</p>
+            <p class="text-slate-700 text-[13px] leading-relaxed flex-1 mb-10 italic font-medium">{t.quote}</p>
             <div class="pt-6 border-t border-slate-200">
               <div class="flex items-center gap-4 mb-3">
                 <img 
                   src={t.photo} 
                   alt={t.name} 
-                  class="w-16 h-16 rounded-full object-cover aspect-square flex-shrink-0 ring-2 ring-[#001F5B]/10" 
+                  class="w-14 h-14 rounded-full object-cover aspect-square flex-shrink-0 ring-2 ring-[#001F5B]/10" 
                 />
                 <div class="flex-1">
-                  <div class="text-slate-900 font-black text-sm">{t.name}</div>
-                  <div class="text-slate-500 text-xs leading-snug mt-0.5">{t.role}</div>
-                  <div class="text-[#001F5B] text-[10px] font-bold mt-0.5">{t.org}</div>
-                  <div class="text-slate-400 text-[10px] uppercase tracking-wider mt-0.5">{t.context}</div>
+                  <div class="text-slate-900 font-black text-sm leading-tight">{t.name}</div>
+                  <div class="text-slate-500 text-[11px] font-bold mt-0.5 leading-tight">{t.role}</div>
+                  <div class="text-[#001F5B] text-[10px] font-black uppercase tracking-wider mt-1">{t.org}</div>
                 </div>
               </div>
-              <a
-                href="https://www.linkedin.com/in/majid-m-4b097118/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-slate-400 text-[10px] italic hover:text-[#001F5B] transition-colors"
-              >
-                Verified LinkedIn recommendation ↗
-              </a>
+              <div class="text-slate-400 text-[9px] font-black uppercase tracking-widest mt-2">{t.context}</div>
             </div>
           </div>
         ))}
