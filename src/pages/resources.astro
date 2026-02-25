@@ -66,7 +66,7 @@ const categories = ['All', ...new Set((documents as any[]).map((d: any) => d.cat
             <!-- Meta Row -->
             <div class="flex items-center gap-4 mb-5 text-[10px] text-slate-400 font-bold uppercase tracking-wider">
               <span>{doc.pages} {doc.pages === 1 ? 'page' : 'pages'}</span>
-              <span>PDF</span>
+              <span>{doc.filename.toUpperCase().endsWith('.DOCX') ? 'WORD' : 'PDF'}</span>
             </div>
 
             <!-- Download Button -->
