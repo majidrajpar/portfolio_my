@@ -329,8 +329,8 @@ export const projects = [
   },
   {
     id: 'qs-whistleblowing-programme',
-    title: 'Whistleblowing Programme — GCC Multi-Location Food Service Group',
-    description: 'A GCC-based multi-location food service group had no formal mechanism for staff to raise concerns — no policy, no channel, no investigation process. Designed and implemented a pragmatic whistleblowing programme from scratch: an email-based reporting channel backed by a written policy, an investigation framework, and organisation-wide training. The programme demonstrated immediate impact — a report submitted through the channel directly led to the discovery of a SAR 12 million fraud within months of launch.',
+    title: 'Whistleblowing Programme — International QSR Leader',
+    description: 'An internationally recognised quick service restaurant operator had no formal mechanism for staff to raise concerns — no policy, no channel, no investigation process. Designed and implemented a pragmatic whistleblowing programme from scratch: an email-based reporting channel backed by a written policy, an investigation framework, and organisation-wide training. The programme demonstrated immediate impact — a report submitted through the channel directly led to the discovery of a SAR 12 million fraud within months of launch.',
     categories: ['Corporate Governance', 'Fraud Forensics'],
     impact: 'SAR 12M fraud discovered directly through the whistleblowing channel — programme designed and embedded from scratch with no prior infrastructure',
     techStack: ['Whistleblowing Policy Design', 'Investigation Framework', 'Training Programme Design', 'KSA Labour Law', 'Anonymous Reporting Channel'],
