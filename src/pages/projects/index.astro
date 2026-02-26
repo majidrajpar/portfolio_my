@@ -8,22 +8,35 @@ const categories = ['All', ...new Set(projects.map(p => p.category))];
 
 <BaseLayout
   title="Projects | Client Outcomes — Majid Mumtaz"
-  description="Select production solutions across fraud detection, IPO readiness, audit transformation, and enterprise risk management. Quantified outcomes across GCC operations."
+  description="Audit, risk, governance, compliance, and fraud engagements with quantified outcomes across GCC operations."
 >
   <!-- Hero -->
   <section class="pt-32 pb-20 bg-[#001F5B]">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="max-w-3xl" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Production Portfolio</span>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Engagement Portfolio</span>
         <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
           Client Outcomes.
         </h1>
         <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
-          Select production solutions across fraud detection, IPO readiness, audit transformation, and enterprise risk management.
+          Audit, risk, governance, compliance, and fraud engagements with measurable outcomes across GCC operations.
         </p>
       </div>
     </div>
   </section>
+
+  <!-- Disclosure -->
+  <div class="bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-3 flex items-start gap-3">
+      <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+      <p class="text-[11px] text-slate-500 leading-relaxed">
+        <span class="font-bold uppercase tracking-wider text-slate-600">Confidentiality Notice —</span>
+        All client and employer names, organisational identifiers, and sensitive data presented in these case studies have been anonymised to protect the privacy and confidentiality of the parties involved. Figures and outcomes reflect real engagements but are presented at a level of abstraction that prevents identification.
+      </p>
+    </div>
+  </div>
 
   <!-- Projects Grid -->
   <section class="py-24 bg-white">
