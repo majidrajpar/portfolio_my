@@ -328,6 +328,29 @@ export const projects = [
     ]
   },
   {
+    id: 'qs-whistleblowing-programme',
+    title: 'Whistleblowing Programme — GCC Multi-Location Food Service Group',
+    description: 'A GCC-based multi-location food service group had no formal mechanism for staff to raise concerns — no policy, no channel, no investigation process. Designed and implemented a pragmatic whistleblowing programme from scratch: an email-based reporting channel backed by a written policy, an investigation framework, and organisation-wide training. The programme demonstrated immediate impact — a report submitted through the channel directly led to the discovery of a SAR 12 million fraud within months of launch.',
+    categories: ['Corporate Governance', 'Fraud Forensics'],
+    impact: 'SAR 12M fraud discovered directly through the whistleblowing channel — programme designed and embedded from scratch with no prior infrastructure',
+    techStack: ['Whistleblowing Policy Design', 'Investigation Framework', 'Training Programme Design', 'KSA Labour Law', 'Anonymous Reporting Channel'],
+    image: '/portfolio_my/images/projects/qs-whistleblowing-programme/programme-design.svg',
+    additionalScreenshots: [
+      {
+        image: '/portfolio_my/images/projects/qs-whistleblowing-programme/fraud-outcome.svg',
+        caption: 'Programme outcome — a report submitted through the new email channel led directly to the identification and investigation of a SAR 12M fraud, validating the programme\'s effectiveness within months of launch.'
+      }
+    ],
+    features: [
+      'Whistleblowing Policy — drafted from scratch covering reporting channels, scope, non-retaliation protections, confidentiality assurances, and escalation hierarchy aligned to KSA Labour Law',
+      'Email-Based Reporting Channel — accessible mechanism for anonymous and named submissions across all staff levels and locations, with dedicated governance inbox and defined intake SLAs',
+      'Investigation Framework — structured case-handling process covering intake triage, investigation steps, evidence management, authority levels, and case closure documentation',
+      'Organisation-Wide Training — sessions delivered across the group covering how to raise concerns, what protections applied, how reports would be handled, and the zero-tolerance stance on retaliation',
+      'Management Briefing — separate sessions for line managers on obligations when receiving concerns directly, escalation procedure, and non-retaliation policy',
+      'Programme Impact — a report submitted through the channel directly led to the identification and investigation of a SAR 12M fraud, demonstrating immediate real-world effectiveness of the programme design'
+    ]
+  },
+  {
     id: 'ethics-awareness-revival',
     title: 'Whistleblowing Awareness Revival — KSA Diversified Conglomerate',
     description: 'A KSA-headquartered diversified conglomerate had a whistleblowing programme on paper but it had become largely unknown to staff — low usage, no active promotion, and no embedding across its portfolio companies. Engaged to diagnose the effectiveness gap and design a comprehensive awareness programme that re-established the channel as a functional, trusted mechanism across the group portfolio.',
