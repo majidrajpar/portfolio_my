@@ -1,0 +1,169 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+
+  <!-- Header -->
+  <rect width="1200" height="56" fill="#1e293b"/>
+  <text x="24" y="34" fill="#f8fafc" font-size="15" font-weight="700">Ethics Platform Vendor Selection — Criteria-Based Evaluation</text>
+  <text x="24" y="50" fill="#475569" font-size="10">Anonymised Internal Role · ⚠ DUMMY DATA — FOR ILLUSTRATION PURPOSES ONLY</text>
+  <rect x="1058" y="15" width="120" height="24" rx="12" fill="#1d4ed8" opacity="0.3" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1118" y="31" fill="#93c5fd" font-size="10" font-weight="700" text-anchor="middle">CONFIDENTIAL</text>
+
+  <text x="24" y="76" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">VENDOR EVALUATION PROCESS — 6 STAGES</text>
+
+  <!-- Stage widths: 6 × 172px + 5 × 24px + 2 × 20px = 1032+120+40=1192 -->
+  <!-- x: 20, 216, 412, 608, 804, 1000 -->
+
+  <!-- STAGE 1: DEFINE CRITERIA -->
+  <rect x="20" y="84" width="172" height="190" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="20" y="84" width="172" height="24" rx="6" fill="#1e3a5f"/>
+  <rect x="20" y="98" width="172" height="10" fill="#1e3a5f"/>
+  <text x="106" y="100" fill="#93c5fd" font-size="9.5" font-weight="800" text-anchor="middle">① DEFINE CRITERIA</text>
+  <text x="34" y="124" fill="#94a3b8" font-size="8.5">· Anonymity architecture</text>
+  <text x="34" y="138" fill="#94a3b8" font-size="8.5">· Multi-language support</text>
+  <text x="34" y="152" fill="#94a3b8" font-size="8.5">· Multi-jurisdiction capability</text>
+  <text x="34" y="166" fill="#94a3b8" font-size="8.5">· AC reporting module</text>
+  <text x="34" y="180" fill="#94a3b8" font-size="8.5">· SLA framework available</text>
+  <text x="34" y="194" fill="#94a3b8" font-size="8.5">· Data privacy compliance</text>
+  <text x="34" y="208" fill="#94a3b8" font-size="8.5">· GDPR / local law alignment</text>
+  <rect x="34" y="224" width="144" height="20" rx="10" fill="#0c2a3e" stroke="#3b82f6" stroke-width="1"/>
+  <text x="106" y="238" fill="#93c5fd" font-size="8.5" font-weight="700" text-anchor="middle">Criteria Weighted</text>
+
+  <!-- Arrow 1 -->
+  <line x1="192" y1="179" x2="206" y2="179" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="204,174 214,179 204,184" fill="#475569"/>
+
+  <!-- STAGE 2: MARKET SCAN -->
+  <rect x="216" y="84" width="172" height="190" rx="6" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <rect x="216" y="84" width="172" height="24" rx="6" fill="#2e1065"/>
+  <rect x="216" y="98" width="172" height="10" fill="#2e1065"/>
+  <text x="302" y="100" fill="#c4b5fd" font-size="9.5" font-weight="800" text-anchor="middle">② MARKET SCAN</text>
+  <text x="230" y="124" fill="#94a3b8" font-size="8.5">· Identified established providers</text>
+  <text x="230" y="138" fill="#94a3b8" font-size="8.5">  in ethics platform market</text>
+  <text x="230" y="158" fill="#94a3b8" font-size="8.5">· Reviewed analyst rankings</text>
+  <text x="230" y="172" fill="#94a3b8" font-size="8.5">· Peer benchmarking</text>
+  <text x="230" y="186" fill="#94a3b8" font-size="8.5">· Industry reference checks</text>
+  <text x="230" y="200" fill="#94a3b8" font-size="8.5">· RFI issued to candidates</text>
+  <rect x="230" y="224" width="144" height="20" rx="10" fill="#1e1b4b" stroke="#7c3aed" stroke-width="1"/>
+  <text x="302" y="238" fill="#a5b4fc" font-size="8.5" font-weight="700" text-anchor="middle">Multiple Vendors Assessed</text>
+
+  <!-- Arrow 2 -->
+  <line x1="388" y1="179" x2="402" y2="179" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="400,174 410,179 400,184" fill="#475569"/>
+
+  <!-- STAGE 3: SHORTLISTING -->
+  <rect x="412" y="84" width="172" height="190" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <rect x="412" y="84" width="172" height="24" rx="6" fill="#422006"/>
+  <rect x="412" y="98" width="172" height="10" fill="#422006"/>
+  <text x="498" y="100" fill="#fcd34d" font-size="9.5" font-weight="800" text-anchor="middle">③ SHORTLISTING</text>
+  <text x="426" y="124" fill="#94a3b8" font-size="8.5">· Scored against weighted criteria</text>
+  <text x="426" y="138" fill="#94a3b8" font-size="8.5">· Demo sessions conducted</text>
+  <text x="426" y="152" fill="#94a3b8" font-size="8.5">· Multi-jurisdiction test cases</text>
+  <text x="426" y="166" fill="#94a3b8" font-size="8.5">· Pricing &amp; contract review</text>
+  <text x="426" y="180" fill="#94a3b8" font-size="8.5">· Stakeholder input gathered</text>
+  <text x="426" y="194" fill="#94a3b8" font-size="8.5">· EthicsPoint shortlisted</text>
+  <rect x="426" y="224" width="144" height="20" rx="10" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+  <text x="498" y="238" fill="#fcd34d" font-size="8.5" font-weight="700" text-anchor="middle">EthicsPoint Shortlisted</text>
+
+  <!-- Arrow 3 -->
+  <line x1="584" y1="179" x2="598" y2="179" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="596,174 606,179 596,184" fill="#475569"/>
+
+  <!-- STAGE 4: BACKGROUND CHECK + TPRA -->
+  <rect x="608" y="84" width="172" height="190" rx="6" fill="#1e293b" stroke="#fb923c" stroke-width="1.5"/>
+  <rect x="608" y="84" width="172" height="24" rx="6" fill="#431407"/>
+  <rect x="608" y="98" width="172" height="10" fill="#431407"/>
+  <text x="694" y="100" fill="#fdba74" font-size="9.5" font-weight="800" text-anchor="middle">④ DUE DILIGENCE</text>
+  <text x="622" y="124" fill="#94a3b8" font-size="8.5">· Background check on provider</text>
+  <text x="622" y="138" fill="#94a3b8" font-size="8.5">· Third-party risk assessment</text>
+  <text x="622" y="152" fill="#94a3b8" font-size="8.5">  (TPRA) completed</text>
+  <text x="622" y="172" fill="#94a3b8" font-size="8.5">· Financial stability review</text>
+  <text x="622" y="186" fill="#94a3b8" font-size="8.5">· Data security assessment</text>
+  <text x="622" y="200" fill="#94a3b8" font-size="8.5">· Reference calls completed</text>
+  <rect x="622" y="224" width="144" height="20" rx="10" fill="#431407" stroke="#fb923c" stroke-width="1"/>
+  <text x="694" y="238" fill="#fdba74" font-size="8.5" font-weight="700" text-anchor="middle">TPRA Passed</text>
+
+  <!-- Arrow 4 -->
+  <line x1="780" y1="179" x2="794" y2="179" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="792,174 802,179 792,184" fill="#475569"/>
+
+  <!-- STAGE 5: SLA NEGOTIATION -->
+  <rect x="804" y="84" width="172" height="190" rx="6" fill="#1e293b" stroke="#818cf8" stroke-width="1.5"/>
+  <rect x="804" y="84" width="172" height="24" rx="6" fill="#1e1b4b"/>
+  <rect x="804" y="98" width="172" height="10" fill="#1e1b4b"/>
+  <text x="890" y="100" fill="#a5b4fc" font-size="9.5" font-weight="800" text-anchor="middle">⑤ SLA NEGOTIATION</text>
+  <text x="818" y="124" fill="#94a3b8" font-size="8.5">· Report intake turnaround</text>
+  <text x="818" y="138" fill="#94a3b8" font-size="8.5">· Triage response windows</text>
+  <text x="818" y="152" fill="#94a3b8" font-size="8.5">· Escalation procedures</text>
+  <text x="818" y="166" fill="#94a3b8" font-size="8.5">· Data retention periods</text>
+  <text x="818" y="180" fill="#94a3b8" font-size="8.5">· Privacy obligations (GDPR)</text>
+  <text x="818" y="194" fill="#94a3b8" font-size="8.5">· Uptime &amp; availability terms</text>
+  <rect x="818" y="224" width="144" height="20" rx="10" fill="#1e1b4b" stroke="#818cf8" stroke-width="1"/>
+  <text x="890" y="238" fill="#a5b4fc" font-size="8.5" font-weight="700" text-anchor="middle">Contract Signed</text>
+
+  <!-- Arrow 5 -->
+  <line x1="976" y1="179" x2="990" y2="179" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="988,174 998,179 988,184" fill="#475569"/>
+
+  <!-- STAGE 6: ONBOARDING -->
+  <rect x="1000" y="84" width="180" height="190" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="1000" y="84" width="180" height="24" rx="6" fill="#052e16"/>
+  <rect x="1000" y="98" width="180" height="10" fill="#052e16"/>
+  <text x="1090" y="100" fill="#6ee7b7" font-size="9.5" font-weight="800" text-anchor="middle">⑥ ONBOARDING</text>
+  <text x="1014" y="124" fill="#94a3b8" font-size="8.5">· Platform configured per policy</text>
+  <text x="1014" y="138" fill="#94a3b8" font-size="8.5">· 3 programmes activated</text>
+  <text x="1014" y="152" fill="#94a3b8" font-size="8.5">· All 7 jurisdictions set up</text>
+  <text x="1014" y="166" fill="#94a3b8" font-size="8.5">· User acceptance testing</text>
+  <text x="1014" y="180" fill="#94a3b8" font-size="8.5">· Go-live communications sent</text>
+  <text x="1014" y="194" fill="#94a3b8" font-size="8.5">· Training launched same day</text>
+  <rect x="1014" y="224" width="152" height="20" rx="10" fill="#052e16" stroke="#10b981" stroke-width="1"/>
+  <text x="1090" y="238" fill="#6ee7b7" font-size="8.5" font-weight="700" text-anchor="middle">✓ Programme Live</text>
+
+  <!-- ═══ EVALUATION CRITERIA TABLE ═══ -->
+  <rect x="20" y="292" width="740" height="110" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="36" y="312" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">SELECTION CRITERIA — KEY DIMENSIONS</text>
+  <rect x="36" y="320" width="210" height="30" rx="4" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+  <text x="141" y="332" fill="#93c5fd" font-size="9" font-weight="700" text-anchor="middle">Anonymity Architecture</text>
+  <text x="141" y="344" fill="#64748b" font-size="8" text-anchor="middle">No IP logging · Metadata stripped</text>
+  <rect x="256" y="320" width="210" height="30" rx="4" fill="#0f172a" stroke="#a78bfa" stroke-width="1"/>
+  <text x="361" y="332" fill="#c4b5fd" font-size="9" font-weight="700" text-anchor="middle">Multi-Jurisdiction Support</text>
+  <text x="361" y="344" fill="#64748b" font-size="8" text-anchor="middle">7 countries · Local language · GDPR</text>
+  <rect x="476" y="320" width="210" height="30" rx="4" fill="#0f172a" stroke="#10b981" stroke-width="1"/>
+  <text x="581" y="332" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">Governance Reporting</text>
+  <text x="581" y="344" fill="#64748b" font-size="8" text-anchor="middle">AC dashboard · Trend analytics</text>
+  <rect x="36" y="358" width="210" height="30" rx="4" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="141" y="370" fill="#fcd34d" font-size="9" font-weight="700" text-anchor="middle">Data Security</text>
+  <text x="141" y="382" fill="#64748b" font-size="8" text-anchor="middle">Encryption · Retention controls</text>
+  <rect x="256" y="358" width="210" height="30" rx="4" fill="#0f172a" stroke="#fb923c" stroke-width="1"/>
+  <text x="361" y="370" fill="#fdba74" font-size="9" font-weight="700" text-anchor="middle">SLA Capability</text>
+  <text x="361" y="382" fill="#64748b" font-size="8" text-anchor="middle">Defined response windows</text>
+  <rect x="476" y="358" width="210" height="30" rx="4" fill="#0f172a" stroke="#818cf8" stroke-width="1"/>
+  <text x="581" y="370" fill="#a5b4fc" font-size="9" font-weight="700" text-anchor="middle">Proven Market Presence</text>
+  <text x="581" y="382" fill="#64748b" font-size="8" text-anchor="middle">Client references · Stability</text>
+
+  <!-- ═══ TPRA SUMMARY ═══ -->
+  <rect x="772" y="292" width="408" height="110" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="788" y="312" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">THIRD-PARTY RISK ASSESSMENT (TPRA)</text>
+  <text x="788" y="330" fill="#64748b" font-size="9">· Financial stability verified</text>
+  <text x="788" y="346" fill="#64748b" font-size="9">· Data security &amp; encryption controls assessed</text>
+  <text x="788" y="362" fill="#64748b" font-size="9">· Sub-processor chain reviewed (data residency)</text>
+  <text x="788" y="378" fill="#64748b" font-size="9">· Regulatory compliance confirmed across all 7 jurisdictions</text>
+  <rect x="788" y="388" width="376" height="22" rx="4" fill="#052e16" stroke="#10b981" stroke-width="1"/>
+  <text x="976" y="403" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">✓ TPRA Passed — Vendor Approved for Onboarding</text>
+
+  <!-- ═══ SLA SUMMARY ═══ -->
+  <rect x="20" y="416" width="1160" height="58" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="36" y="434" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">NEGOTIATED SLA HIGHLIGHTS</text>
+  <text x="36" y="452" fill="#64748b" font-size="9">Report acknowledgment: within 24 hours  ·  Initial triage decision: within 3 business days  ·  Escalation to case manager: within 2 business days of triage</text>
+  <text x="36" y="466" fill="#64748b" font-size="9">Platform uptime guarantee: 99.5%  ·  Data retention: minimum 7 years  ·  GDPR-compliant data processing for EU jurisdictions (Poland, Denmark)</text>
+
+  <!-- ═══ OUTCOME BOX ═══ -->
+  <rect x="20" y="486" width="1160" height="84" rx="6" fill="#052e16" stroke="#10b981" stroke-width="1.5"/>
+  <text x="36" y="506" fill="#6ee7b7" font-size="11" font-weight="800" letter-spacing="1">OUTCOME — ETHICSPOINT SELECTED &amp; ONBOARDED</text>
+  <text x="36" y="524" fill="#94a3b8" font-size="9">EthicsPoint was selected as the ethics platform following the full evaluation cycle. It met all weighted criteria, passed the TPRA, and offered the strongest combination of</text>
+  <text x="36" y="540" fill="#94a3b8" font-size="9">anonymity architecture, multi-jurisdiction language support, and Audit Committee reporting capability. SLAs were negotiated to reflect the 7-country operating model.</text>
+  <text x="36" y="558" fill="#94a3b8" font-size="9">All three ethics programmes (whistleblowing, executive disclosures, COI acknowledgements) were configured and launched at go-live across all 7 countries simultaneously.</text>
+
+  <!-- Footer -->
+  <rect x="0" y="598" width="1200" height="32" fill="#1e293b"/>
+  <text x="24" y="619" fill="#475569" font-size="10">All names, company identifiers, and figures shown are fictitious and used for portfolio illustration only · Not based on any real client engagement</text>
+</svg>

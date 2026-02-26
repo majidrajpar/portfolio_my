@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { projects, categoryMeta } from '../../../data/projects.js';
+const base = import.meta.env.BASE_URL;
+
+export function getStaticPaths() {
+  return categoryMeta.map((cat: any) => ({
+    params: { slug: cat.slug },
+    props: { cat },
+  }));
+}
+
+const { cat } = Astro.props as { cat: any };
+const filtered = (projects as any[]).filter(p => p.categories.includes(cat.name));
+---
+
+<BaseLayout
+  title={`${cat.name} | Engagements — Majid Mumtaz`}
+  description={cat.description}
+>
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-[#001F5B]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="mb-4">
+        <a href={`${base}projects/`} class="text-white/60 hover:text-white text-xs font-black uppercase tracking-widest transition-colors">
+          ← All Practice Areas
+        </a>
+      </div>
+      <div class="max-w-3xl" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Practice Area</span>
+        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+          {cat.name}
+        </h1>
+        <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
+          {cat.description}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclosure -->
+  <div class="bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-3 flex items-start gap-3">
+      <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+      <p class="text-[11px] text-slate-500 leading-relaxed">
+        <span class="font-bold uppercase tracking-wider text-slate-600">Confidentiality Notice —</span>
+        All client and employer names, organisational identifiers, and sensitive data presented in these case studies have been anonymised to protect the privacy and confidentiality of the parties involved. Figures and outcomes reflect real engagements but are presented at a level of abstraction that prevents identification.
+      </p>
+    </div>
+  </div>
+
+  <!-- Projects Grid -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filtered.map((project: any, i: number) => (
+          <article
+            class="bg-white border border-slate-200 flex flex-col p-8 hover:shadow-md transition-shadow h-full text-left"
+            data-reveal
+            data-reveal-delay={String((i % 3) + 1)}
+          >
+            <div class="mb-5">
+              <span class="inline-block px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] bg-[#001F5B] text-white">
+                {project.categories[0]}
+              </span>
+            </div>
+
+            <h3 class="text-xl font-black text-slate-900 mb-4 leading-tight">
+              {project.title}
+            </h3>
+
+            <p class="text-slate-600 text-sm mb-6 flex-1 leading-relaxed line-clamp-3">
+              {project.description}
+            </p>
+
+            {project.impact && (
+              <div class="mb-6 pl-4 border-l-4 border-[#001F5B]">
+                <div class="text-[10px] font-black text-[#001F5B] uppercase tracking-widest mb-1">Impact</div>
+                <div class="text-slate-900 font-bold text-sm leading-snug">{project.impact}</div>
+              </div>
+            )}
+
+            <div class="flex flex-wrap gap-2 mb-6">
+              {project.techStack.slice(0, 3).map((tech: string) => (
+                <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <a
+              href={`${base}projects/${project.id}/`}
+              class="inline-flex items-center text-[#001F5B] font-black text-xs uppercase tracking-widest hover:text-blue-700 transition-colors"
+            >
+              View Case Study
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-[#001F5B]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center" data-reveal>
+      <h2 class="text-3xl font-black text-white mb-4">Ready to Discuss Your Challenge?</h2>
+      <p class="text-white/70 mb-8">Every engagement starts with understanding your specific context.</p>
+      <a href={`${base}contact/`} class="btn-primary">Start the Conversation</a>
+      <div class="mt-8">
+        <a href={`${base}downloads/Fraud_Detection_Forensics_Framework.pdf`} download class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-white/60 border-b border-white/20 pb-1 hover:text-white hover:border-white/50 transition-colors">
+          <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          Free Download: Fraud Detection & Forensics Framework
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

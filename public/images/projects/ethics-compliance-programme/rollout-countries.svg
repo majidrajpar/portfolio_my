@@ -1,0 +1,137 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+
+  <!-- Header -->
+  <rect width="1200" height="56" fill="#1e293b"/>
+  <text x="24" y="34" fill="#f8fafc" font-size="15" font-weight="700">7-Country Rollout &amp; Training Programme</text>
+  <text x="24" y="50" fill="#475569" font-size="10">Anonymised Internal Role · ⚠ DUMMY DATA — FOR ILLUSTRATION PURPOSES ONLY</text>
+  <rect x="1058" y="15" width="120" height="24" rx="12" fill="#1d4ed8" opacity="0.3" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1118" y="31" fill="#93c5fd" font-size="10" font-weight="700" text-anchor="middle">CONFIDENTIAL</text>
+
+  <text x="24" y="76" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">COUNTRY DEPLOYMENT STATUS &amp; TRAINING COMPONENTS</text>
+
+  <!-- ═══ GCC COUNTRIES (top row) ═══ -->
+  <text x="24" y="100" fill="#64748b" font-size="9" font-weight="700" letter-spacing="1">GCC REGION</text>
+
+  <!-- UAE -->
+  <rect x="20" y="108" width="212" height="148" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="20" y="108" width="212" height="26" rx="6" fill="#1e3a5f"/>
+  <rect x="20" y="124" width="212" height="10" fill="#1e3a5f"/>
+  <text x="126" y="125" fill="#93c5fd" font-size="11" font-weight="800" text-anchor="middle">UNITED ARAB EMIRATES</text>
+  <text x="36" y="150" fill="#94a3b8" font-size="9">· Headquarters country</text>
+  <text x="36" y="164" fill="#94a3b8" font-size="9">· Largest headcount</text>
+  <text x="36" y="178" fill="#94a3b8" font-size="9">· Go-live: Day 1</text>
+  <text x="36" y="192" fill="#94a3b8" font-size="9">· Arabic &amp; English interface</text>
+  <rect x="36" y="204" width="180" height="20" rx="10" fill="#052e16" stroke="#10b981" stroke-width="1"/>
+  <text x="126" y="218" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">✓ Live</text>
+
+  <!-- KSA -->
+  <rect x="244" y="108" width="212" height="148" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="244" y="108" width="212" height="26" rx="6" fill="#1e3a5f"/>
+  <rect x="244" y="124" width="212" height="10" fill="#1e3a5f"/>
+  <text x="350" y="125" fill="#93c5fd" font-size="11" font-weight="800" text-anchor="middle">SAUDI ARABIA</text>
+  <text x="260" y="150" fill="#94a3b8" font-size="9">· Key growth market</text>
+  <text x="260" y="164" fill="#94a3b8" font-size="9">· Saudi Labour Law compliant</text>
+  <text x="260" y="178" fill="#94a3b8" font-size="9">· Arabic interface configured</text>
+  <text x="260" y="192" fill="#94a3b8" font-size="9">· In-person training delivered</text>
+  <rect x="260" y="204" width="180" height="20" rx="10" fill="#052e16" stroke="#10b981" stroke-width="1"/>
+  <text x="350" y="218" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">✓ Live</text>
+
+  <!-- Kuwait -->
+  <rect x="468" y="108" width="212" height="148" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="468" y="108" width="212" height="26" rx="6" fill="#1e3a5f"/>
+  <rect x="468" y="124" width="212" height="10" fill="#1e3a5f"/>
+  <text x="574" y="125" fill="#93c5fd" font-size="11" font-weight="800" text-anchor="middle">KUWAIT</text>
+  <text x="484" y="150" fill="#94a3b8" font-size="9">· Arabic &amp; English</text>
+  <text x="484" y="164" fill="#94a3b8" font-size="9">· Virtual training delivered</text>
+  <text x="484" y="178" fill="#94a3b8" font-size="9">· Posters translated</text>
+  <text x="484" y="192" fill="#94a3b8" font-size="9">· Local HR co-ordinator</text>
+  <rect x="484" y="204" width="180" height="20" rx="10" fill="#052e16" stroke="#10b981" stroke-width="1"/>
+  <text x="574" y="218" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">✓ Live</text>
+
+  <!-- Qatar -->
+  <rect x="692" y="108" width="212" height="148" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="692" y="108" width="212" height="26" rx="6" fill="#1e3a5f"/>
+  <rect x="692" y="124" width="212" height="10" fill="#1e3a5f"/>
+  <text x="798" y="125" fill="#93c5fd" font-size="11" font-weight="800" text-anchor="middle">QATAR</text>
+  <text x="708" y="150" fill="#94a3b8" font-size="9">· Arabic &amp; English</text>
+  <text x="708" y="164" fill="#94a3b8" font-size="9">· Virtual training delivered</text>
+  <text x="708" y="178" fill="#94a3b8" font-size="9">· Posters deployed at sites</text>
+  <text x="708" y="192" fill="#94a3b8" font-size="9">· Local HR co-ordinator</text>
+  <rect x="708" y="204" width="180" height="20" rx="10" fill="#052e16" stroke="#10b981" stroke-width="1"/>
+  <text x="798" y="218" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">✓ Live</text>
+
+  <!-- Bahrain -->
+  <rect x="916" y="108" width="264" height="148" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="916" y="108" width="264" height="26" rx="6" fill="#1e3a5f"/>
+  <rect x="916" y="124" width="264" height="10" fill="#1e3a5f"/>
+  <text x="1048" y="125" fill="#93c5fd" font-size="11" font-weight="800" text-anchor="middle">BAHRAIN</text>
+  <text x="932" y="150" fill="#94a3b8" font-size="9">· Arabic &amp; English</text>
+  <text x="932" y="164" fill="#94a3b8" font-size="9">· Virtual training delivered</text>
+  <text x="932" y="178" fill="#94a3b8" font-size="9">· Posters deployed at sites</text>
+  <text x="932" y="192" fill="#94a3b8" font-size="9">· Local HR co-ordinator</text>
+  <rect x="932" y="204" width="232" height="20" rx="10" fill="#052e16" stroke="#10b981" stroke-width="1"/>
+  <text x="1048" y="218" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">✓ Live</text>
+
+  <!-- ═══ EUROPE COUNTRIES (second row) ═══ -->
+  <text x="24" y="278" fill="#64748b" font-size="9" font-weight="700" letter-spacing="1">EUROPE REGION</text>
+
+  <!-- Poland -->
+  <rect x="20" y="286" width="568" height="148" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <rect x="20" y="286" width="568" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="304" y="307" fill="#94a3b8" font-size="11" font-weight="800" text-anchor="middle">POLAND</text>
+  <text x="36" y="332" fill="#94a3b8" font-size="9">· Polish &amp; English interfaces configured</text>
+  <text x="36" y="348" fill="#94a3b8" font-size="9">· GDPR-compliant data processing (EU server residency)</text>
+  <text x="36" y="364" fill="#94a3b8" font-size="9">· Local HR lead trained as programme champion</text>
+  <text x="36" y="380" fill="#94a3b8" font-size="9">· Virtual training delivered; posters at Warsaw &amp; Krakow offices</text>
+  <rect x="36" y="392" width="536" height="20" rx="10" fill="#052e16" stroke="#10b981" stroke-width="1"/>
+  <text x="304" y="406" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">✓ Live — GDPR-Compliant Configuration</text>
+
+  <!-- Denmark -->
+  <rect x="612" y="286" width="568" height="148" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <rect x="612" y="286" width="568" height="26" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="896" y="307" fill="#94a3b8" font-size="11" font-weight="800" text-anchor="middle">DENMARK</text>
+  <text x="628" y="332" fill="#94a3b8" font-size="9">· Danish &amp; English interfaces configured</text>
+  <text x="628" y="348" fill="#94a3b8" font-size="9">· GDPR-compliant data processing (EU server residency)</text>
+  <text x="628" y="364" fill="#94a3b8" font-size="9">· Local HR lead trained as programme champion</text>
+  <text x="628" y="380" fill="#94a3b8" font-size="9">· Virtual training delivered; posters at Copenhagen office</text>
+  <rect x="628" y="392" width="536" height="20" rx="10" fill="#052e16" stroke="#10b981" stroke-width="1"/>
+  <text x="896" y="406" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">✓ Live — GDPR-Compliant Configuration</text>
+
+  <!-- ═══ TRAINING COMPONENTS ═══ -->
+  <rect x="20" y="448" width="740" height="122" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="36" y="468" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">TRAINING &amp; AWARENESS COMPONENTS</text>
+  <rect x="36" y="476" width="210" height="50" rx="4" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+  <text x="141" y="494" fill="#93c5fd" font-size="9" font-weight="700" text-anchor="middle">All-Staff Training</text>
+  <text x="141" y="508" fill="#64748b" font-size="8" text-anchor="middle">Post-launch delivery</text>
+  <text x="141" y="520" fill="#64748b" font-size="8" text-anchor="middle">All 7 countries</text>
+  <rect x="256" y="476" width="210" height="50" rx="4" fill="#0f172a" stroke="#a78bfa" stroke-width="1"/>
+  <text x="361" y="494" fill="#c4b5fd" font-size="9" font-weight="700" text-anchor="middle">Induction Module</text>
+  <text x="361" y="508" fill="#64748b" font-size="8" text-anchor="middle">Standalone module for</text>
+  <text x="361" y="520" fill="#64748b" font-size="8" text-anchor="middle">all new joiners globally</text>
+  <rect x="476" y="476" width="268" height="50" rx="4" fill="#0f172a" stroke="#10b981" stroke-width="1"/>
+  <text x="610" y="494" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">Site Poster Campaign</text>
+  <text x="610" y="508" fill="#64748b" font-size="8" text-anchor="middle">Offices and kitchen operations</text>
+  <text x="610" y="520" fill="#64748b" font-size="8" text-anchor="middle">Verified during IA site visits</text>
+  <text x="36" y="558" fill="#64748b" font-size="9">All training materials localised per jurisdiction · HR champions designated in each country · Completion tracked centrally</text>
+
+  <!-- ═══ PROGRAMME STATS ═══ -->
+  <rect x="772" y="448" width="408" height="122" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="788" y="468" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">PROGRAMME SCOPE</text>
+  <rect x="788" y="476" width="176" height="40" rx="4" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+  <text x="876" y="492" fill="#93c5fd" font-size="18" font-weight="900" text-anchor="middle">7</text>
+  <text x="876" y="508" fill="#64748b" font-size="8" text-anchor="middle">Countries</text>
+  <rect x="974" y="476" width="190" height="40" rx="4" fill="#0f172a" stroke="#10b981" stroke-width="1"/>
+  <text x="1069" y="492" fill="#6ee7b7" font-size="18" font-weight="900" text-anchor="middle">3</text>
+  <text x="1069" y="508" fill="#64748b" font-size="8" text-anchor="middle">Ethics Programmes</text>
+  <rect x="788" y="524" width="176" height="34" rx="4" fill="#0f172a" stroke="#a78bfa" stroke-width="1"/>
+  <text x="876" y="538" fill="#c4b5fd" font-size="13" font-weight="900" text-anchor="middle">GCC + EU</text>
+  <text x="876" y="550" fill="#64748b" font-size="8" text-anchor="middle">Dual-region deployment</text>
+  <rect x="974" y="524" width="190" height="34" rx="4" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="1069" y="538" fill="#fcd34d" font-size="13" font-weight="900" text-anchor="middle">GDPR</text>
+  <text x="1069" y="550" fill="#64748b" font-size="8" text-anchor="middle">EU compliance embedded</text>
+
+  <!-- Footer -->
+  <rect x="0" y="598" width="1200" height="32" fill="#1e293b"/>
+  <text x="24" y="619" fill="#475569" font-size="10">All names, company identifiers, and figures shown are fictitious and used for portfolio illustration only · Not based on any real client engagement</text>
+</svg>
