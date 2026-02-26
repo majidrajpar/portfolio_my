@@ -271,6 +271,22 @@ export const projects = [
       'Reusable templates for recurring audit programmes — prior-period workpapers accessible in one click'
     ]
   }
+  {
+    id: 'whistleblowing-system-uae',
+    title: 'Whistleblowing System Design — UAE Mid-Market Company',
+    description: 'A UAE mid-sized company had a whistleblowing channel in name only — no formal policy, no investigation protocol, no controls over who could access submitted reports, and no assurance that reporters were genuinely protected. Engaged to design the system end-to-end: from policy architecture and access governance through to anonymity assurance and organisation-wide rollout.',
+    category: 'Corporate Governance',
+    impact: 'End-to-end whistleblowing system designed and rolled out — anonymity assured, access controls restructured, investigation framework embedded',
+    techStack: ['Whistleblowing Policy Design', 'Investigation Policy', 'Access Control Review', 'UAE Labour Law', 'IIA Ethics Framework', 'Three Lines of Defence'],
+    features: [
+      'Whistleblowing Policy — drafted from scratch covering scope, reporting channels, non-retaliation protections, and escalation hierarchy aligned to UAE Labour Law',
+      'Investigation Policy — defined intake triage, investigation steps, evidence handling standards, timelines, and authority levels for closing or escalating cases',
+      'Access Control Review — mapped who could read submitted reports at each stage; identified over-privileged access and redesigned the permission structure to need-to-know only',
+      'Anonymity Assurance Assessment — reviewed whether the platform technically prevented identity exposure; identified gaps in metadata stripping and submission routing that could de-anonymise reporters',
+      'Rollout Plan — phased communication and training programme covering board, management, and all staff; included FAQ document and poster campaign for operational areas',
+      'Governance Integration — whistleblowing reporting line connected to Audit Committee with quarterly summary reporting template; escalation path defined for cases implicating senior management'
+    ]
+  }
 ];
 
 export const featuredProjects = projects.slice(0, 2);
