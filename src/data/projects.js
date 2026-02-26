@@ -277,7 +277,7 @@ export const projects = [
     description: 'A UAE mid-sized company had a whistleblowing channel in name only — no formal policy, no investigation protocol, no controls over who could access submitted reports, and no assurance that reporters were genuinely protected. Engaged to design the system end-to-end: from policy architecture and access governance through to anonymity assurance and organisation-wide rollout.',
     category: 'Corporate Governance',
     impact: 'End-to-end whistleblowing system designed and rolled out — anonymity assured, access controls restructured, investigation framework embedded',
-    techStack: ['Whistleblowing Policy Design', 'Investigation Policy', 'Access Control Review', 'UAE Labour Law', 'IIA Ethics Framework', 'Three Lines of Defence'],
+    techStack: ['Whistleblowing Policy Design', 'Investigation Policy', 'Access Control Review', 'UAE Labour Law', 'ISO 37002:2021', 'Three Lines of Defence'],
     features: [
       'Whistleblowing Policy — drafted from scratch covering scope, reporting channels, non-retaliation protections, and escalation hierarchy aligned to UAE Labour Law',
       'Investigation Policy — defined intake triage, investigation steps, evidence handling standards, timelines, and authority levels for closing or escalating cases',
