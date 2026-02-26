@@ -1,0 +1,109 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+
+  <!-- Header -->
+  <rect width="1200" height="56" fill="#1e293b"/>
+  <text x="24" y="34" fill="#f8fafc" font-size="15" font-weight="700">Whistleblowing Programme Design — GCC Multi-Location Food Service Group</text>
+  <text x="24" y="50" fill="#475569" font-size="10">Anonymised Engagement · ⚠ DUMMY DATA — FOR ILLUSTRATION PURPOSES ONLY</text>
+  <rect x="1058" y="15" width="120" height="24" rx="12" fill="#1d4ed8" opacity="0.3" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1118" y="31" fill="#93c5fd" font-size="10" font-weight="700" text-anchor="middle">CONFIDENTIAL</text>
+
+  <text x="24" y="76" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">PROGRAMME ARCHITECTURE — POLICY · CHANNEL · TRAINING</text>
+
+  <!-- ═══ PILLAR 1: POLICY ═══ -->
+  <rect x="20" y="84" width="370" height="244" rx="6" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="20" y="84" width="370" height="26" rx="6" fill="#450a0a"/>
+  <rect x="20" y="100" width="370" height="10" fill="#450a0a"/>
+  <text x="205" y="101" fill="#fca5a5" font-size="11" font-weight="800" text-anchor="middle">① POLICY</text>
+  <text x="36" y="128" fill="#94a3b8" font-size="9">Written policy — drafted from scratch:</text>
+  <text x="36" y="146" fill="#94a3b8" font-size="9">· Scope and who can report</text>
+  <text x="36" y="162" fill="#94a3b8" font-size="9">· Named and anonymous reporting</text>
+  <text x="36" y="178" fill="#94a3b8" font-size="9">· Non-retaliation protections</text>
+  <text x="36" y="194" fill="#94a3b8" font-size="9">· Confidentiality assurances</text>
+  <text x="36" y="210" fill="#94a3b8" font-size="9">· Escalation hierarchy</text>
+  <text x="36" y="226" fill="#94a3b8" font-size="9">· Case closure and feedback process</text>
+  <rect x="36" y="242" width="338" height="22" rx="11" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+  <text x="205" y="257" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">KSA Labour Law Aligned</text>
+  <text x="36" y="296" fill="#475569" font-size="8" font-style="italic">No prior policy existed —</text>
+  <text x="36" y="308" fill="#475569" font-size="8" font-style="italic">built entirely from scratch</text>
+
+  <!-- ═══ PILLAR 2: CHANNEL ═══ -->
+  <rect x="415" y="84" width="370" height="244" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="415" y="84" width="370" height="26" rx="6" fill="#1e3a5f"/>
+  <rect x="415" y="100" width="370" height="10" fill="#1e3a5f"/>
+  <text x="600" y="101" fill="#93c5fd" font-size="11" font-weight="800" text-anchor="middle">② EMAIL CHANNEL</text>
+  <text x="431" y="128" fill="#94a3b8" font-size="9">Reporting mechanism — designed for:</text>
+  <text x="431" y="146" fill="#94a3b8" font-size="9">· Anonymous submissions</text>
+  <text x="431" y="162" fill="#94a3b8" font-size="9">· Named confidential submissions</text>
+  <text x="431" y="178" fill="#94a3b8" font-size="9">· All staff levels and locations</text>
+  <text x="431" y="194" fill="#94a3b8" font-size="9">· Dedicated governance inbox</text>
+  <text x="431" y="210" fill="#94a3b8" font-size="9">· Defined intake SLAs</text>
+  <text x="431" y="226" fill="#94a3b8" font-size="9">· Immediate triage on receipt</text>
+  <rect x="431" y="242" width="338" height="22" rx="11" fill="#0c2a3e" stroke="#3b82f6" stroke-width="1"/>
+  <text x="600" y="257" fill="#93c5fd" font-size="9" font-weight="700" text-anchor="middle">Pragmatic · Accessible · Immediate</text>
+  <text x="431" y="296" fill="#475569" font-size="8" font-style="italic">Simple design chosen for</text>
+  <text x="431" y="308" fill="#475569" font-size="8" font-style="italic">maximum accessibility across sites</text>
+
+  <!-- ═══ PILLAR 3: TRAINING ═══ -->
+  <rect x="810" y="84" width="370" height="244" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="810" y="84" width="370" height="26" rx="6" fill="#052e16"/>
+  <rect x="810" y="100" width="370" height="10" fill="#052e16"/>
+  <text x="995" y="101" fill="#6ee7b7" font-size="11" font-weight="800" text-anchor="middle">③ TRAINING</text>
+  <text x="826" y="128" fill="#94a3b8" font-size="9">Organisation-wide sessions covering:</text>
+  <text x="826" y="146" fill="#94a3b8" font-size="9">· How to raise a concern</text>
+  <text x="826" y="162" fill="#94a3b8" font-size="9">· Protections in place</text>
+  <text x="826" y="178" fill="#94a3b8" font-size="9">· How reports are handled</text>
+  <text x="826" y="194" fill="#94a3b8" font-size="9">· Zero-tolerance on retaliation</text>
+  <text x="826" y="210" fill="#94a3b8" font-size="9">· Manager obligations (separate briefing)</text>
+  <text x="826" y="226" fill="#94a3b8" font-size="9">· Escalation path for direct disclosures</text>
+  <rect x="826" y="242" width="338" height="22" rx="11" fill="#052e16" stroke="#10b981" stroke-width="1"/>
+  <text x="995" y="257" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">✓ All Staff + Separate Manager Briefing</text>
+  <text x="826" y="296" fill="#475569" font-size="8" font-style="italic">Delivered across all</text>
+  <text x="826" y="308" fill="#475569" font-size="8" font-style="italic">locations and levels</text>
+
+  <!-- ═══ OUTCOME BANNER ═══ -->
+  <rect x="20" y="346" width="1160" height="216" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="36" y="366" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">PROGRAMME OUTCOME</text>
+
+  <!-- Before -->
+  <rect x="36" y="374" width="330" height="168" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+  <text x="201" y="392" fill="#fca5a5" font-size="10" font-weight="800" text-anchor="middle">BEFORE</text>
+  <text x="52" y="412" fill="#94a3b8" font-size="8.5">· No reporting mechanism</text>
+  <text x="52" y="428" fill="#94a3b8" font-size="8.5">· No whistleblowing policy</text>
+  <text x="52" y="444" fill="#94a3b8" font-size="8.5">· No investigation process</text>
+  <text x="52" y="460" fill="#94a3b8" font-size="8.5">· Staff with no route to raise concerns</text>
+  <text x="52" y="476" fill="#94a3b8" font-size="8.5">· No protection framework</text>
+  <text x="52" y="516" fill="#ef4444" font-size="9" font-weight="700">No programme of any kind existed</text>
+
+  <!-- Arrow 1 -->
+  <line x1="376" y1="458" x2="400" y2="458" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="398,453 408,458 398,463" fill="#475569"/>
+
+  <!-- Intervention -->
+  <rect x="408" y="374" width="350" height="168" rx="4" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1"/>
+  <text x="583" y="392" fill="#93c5fd" font-size="10" font-weight="800" text-anchor="middle">PROGRAMME LAUNCHED</text>
+  <text x="424" y="412" fill="#94a3b8" font-size="8.5">Policy · Email channel · Training</text>
+  <text x="424" y="428" fill="#94a3b8" font-size="8.5">Manager briefings · Investigation framework</text>
+  <text x="424" y="444" fill="#94a3b8" font-size="8.5">Non-retaliation protections embedded</text>
+  <text x="424" y="460" fill="#94a3b8" font-size="8.5">Rollout across all locations</text>
+  <text x="424" y="476" fill="#94a3b8" font-size="8.5">Staff trained · Channel live</text>
+  <text x="424" y="516" fill="#3b82f6" font-size="9" font-weight="700">Built from scratch in full</text>
+
+  <!-- Arrow 2 -->
+  <line x1="768" y1="458" x2="792" y2="458" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="790,453 800,458 790,463" fill="#475569"/>
+
+  <!-- After -->
+  <rect x="800" y="374" width="364" height="168" rx="4" fill="#052e16" stroke="#10b981" stroke-width="1.5"/>
+  <text x="982" y="392" fill="#6ee7b7" font-size="10" font-weight="800" text-anchor="middle">IMPACT DELIVERED</text>
+  <text x="816" y="412" fill="#94a3b8" font-size="8.5">· Channel used within months of launch</text>
+  <text x="816" y="428" fill="#94a3b8" font-size="8.5">· Report received via whistleblowing email</text>
+  <text x="816" y="444" fill="#94a3b8" font-size="8.5">· Investigation initiated under new framework</text>
+  <text x="816" y="460" fill="#94a3b8" font-size="8.5">· Fraud substantiated and escalated</text>
+  <text x="816" y="490" fill="#6ee7b7" font-size="16" font-weight="900">SAR 12M fraud identified</text>
+  <text x="816" y="510" fill="#6ee7b7" font-size="9" font-weight="700">Direct result of programme design</text>
+
+  <!-- Footer -->
+  <rect x="0" y="598" width="1200" height="32" fill="#1e293b"/>
+  <text x="24" y="619" fill="#475569" font-size="10">All names, company identifiers, and figures shown are fictitious and used for portfolio illustration only · Not based on any real client engagement</text>
+</svg>
