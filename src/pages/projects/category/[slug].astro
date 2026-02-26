@@ -1,23 +1,38 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { categoryMeta } from '../../data/projects.js';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { projects, categoryMeta } from '../../../data/projects.js';
 const base = import.meta.env.BASE_URL;
+
+export function getStaticPaths() {
+  return categoryMeta.map((cat: any) => ({
+    params: { slug: cat.slug },
+    props: { cat },
+  }));
+}
+
+const { cat } = Astro.props as { cat: any };
+const filtered = (projects as any[]).filter(p => p.categories.includes(cat.name));
 ---
 
 <BaseLayout
-  title="Projects | Practice Areas — Majid Mumtaz"
-  description="Audit, risk, governance, compliance, and fraud engagements across GCC operations — organised by practice area."
+  title={`${cat.name} | Engagements — Majid Mumtaz`}
+  description={cat.description}
 >
   <!-- Hero -->
   <section class="pt-32 pb-20 bg-[#001F5B]">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="mb-4">
+        <a href={`${base}projects/`} class="text-white/60 hover:text-white text-xs font-black uppercase tracking-widest transition-colors">
+          ← All Practice Areas
+        </a>
+      </div>
       <div class="max-w-3xl" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Practice Areas</span>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Practice Area</span>
         <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-          Client Outcomes.
+          {cat.name}
         </h1>
         <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
-          Engagements organised by practice area — select a category to explore the work.
+          {cat.description}
         </p>
       </div>
     </div>
@@ -36,32 +51,55 @@ const base = import.meta.env.BASE_URL;
     </div>
   </div>
 
-  <!-- Category Cards -->
+  <!-- Projects Grid -->
   <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {categoryMeta.map((cat, i) => (
-          <a
-            href={`${base}projects/category/${cat.slug}/`}
-            class="bg-white border border-slate-200 flex flex-col p-8 hover:shadow-md transition-shadow h-full text-left group"
+        {filtered.map((project: any, i: number) => (
+          <article
+            class="bg-white border border-slate-200 flex flex-col p-8 hover:shadow-md transition-shadow h-full text-left"
             data-reveal
             data-reveal-delay={String((i % 3) + 1)}
           >
             <div class="mb-5">
               <span class="inline-block px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] bg-[#001F5B] text-white">
-                {cat.name}
+                {project.categories[0]}
               </span>
             </div>
-            <p class="text-slate-600 text-sm flex-1 leading-relaxed mb-6">
-              {cat.description}
+
+            <h3 class="text-xl font-black text-slate-900 mb-4 leading-tight">
+              {project.title}
+            </h3>
+
+            <p class="text-slate-600 text-sm mb-6 flex-1 leading-relaxed line-clamp-3">
+              {project.description}
             </p>
-            <span class="inline-flex items-center text-[#001F5B] font-black text-xs uppercase tracking-widest group-hover:text-blue-700 transition-colors">
-              View Engagements
+
+            {project.impact && (
+              <div class="mb-6 pl-4 border-l-4 border-[#001F5B]">
+                <div class="text-[10px] font-black text-[#001F5B] uppercase tracking-widest mb-1">Impact</div>
+                <div class="text-slate-900 font-bold text-sm leading-snug">{project.impact}</div>
+              </div>
+            )}
+
+            <div class="flex flex-wrap gap-2 mb-6">
+              {project.techStack.slice(0, 3).map((tech: string) => (
+                <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <a
+              href={`${base}projects/${project.id}/`}
+              class="inline-flex items-center text-[#001F5B] font-black text-xs uppercase tracking-widest hover:text-blue-700 transition-colors"
+            >
+              View Case Study
               <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
-            </span>
-          </a>
+            </a>
+          </article>
         ))}
       </div>
     </div>

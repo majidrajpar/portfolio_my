@@ -1,0 +1,147 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+
+  <!-- Header -->
+  <rect width="1200" height="56" fill="#1e293b"/>
+  <text x="24" y="34" fill="#f8fafc" font-size="15" font-weight="700">Whistleblowing Awareness Revival — KSA Diversified Conglomerate</text>
+  <text x="24" y="50" fill="#475569" font-size="10">Anonymised Engagement · ⚠ DUMMY DATA — FOR ILLUSTRATION PURPOSES ONLY</text>
+  <rect x="1058" y="15" width="120" height="24" rx="12" fill="#1d4ed8" opacity="0.3" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1118" y="31" fill="#93c5fd" font-size="10" font-weight="700" text-anchor="middle">CONFIDENTIAL</text>
+
+  <text x="24" y="76" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">REVIVAL FRAMEWORK — DIAGNOSE → DESIGN → DEPLOY → MEASURE</text>
+
+  <!-- ═══ PHASE 1: DIAGNOSE ═══ -->
+  <rect x="20" y="84" width="270" height="240" rx="6" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="20" y="84" width="270" height="26" rx="6" fill="#450a0a"/>
+  <rect x="20" y="100" width="270" height="10" fill="#450a0a"/>
+  <text x="155" y="101" fill="#fca5a5" font-size="11" font-weight="800" text-anchor="middle">① DIAGNOSE — EFFECTIVENESS GAP</text>
+  <text x="36" y="128" fill="#94a3b8" font-size="9">Root causes identified:</text>
+  <text x="36" y="146" fill="#94a3b8" font-size="9">· No active communication since launch</text>
+  <text x="36" y="162" fill="#94a3b8" font-size="9">· No visible leadership endorsement</text>
+  <text x="36" y="178" fill="#94a3b8" font-size="9">· Reporting channel not visible at sites</text>
+  <text x="36" y="194" fill="#94a3b8" font-size="9">· Induction training lacked the topic</text>
+  <text x="36" y="210" fill="#94a3b8" font-size="9">· No usage metrics being tracked</text>
+  <text x="36" y="226" fill="#94a3b8" font-size="9">· Portfolio companies unaware of channel</text>
+  <text x="36" y="242" fill="#94a3b8" font-size="9">· ISO 37002:2021 gaps identified</text>
+  <rect x="36" y="258" width="238" height="22" rx="11" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+  <text x="155" y="273" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">Programme Effectively Dormant</text>
+  <text x="36" y="298" fill="#475569" font-size="8" font-style="italic">Assessed against ISO 37002:2021</text>
+  <text x="36" y="311" fill="#475569" font-size="8" font-style="italic">and internal policy commitments</text>
+
+  <!-- Arrow 1 -->
+  <line x1="290" y1="204" x2="310" y2="204" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="308,199 318,204 308,209" fill="#475569"/>
+
+  <!-- ═══ PHASE 2: DESIGN ═══ -->
+  <rect x="318" y="84" width="270" height="240" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <rect x="318" y="84" width="270" height="26" rx="6" fill="#422006"/>
+  <rect x="318" y="100" width="270" height="10" fill="#422006"/>
+  <text x="453" y="101" fill="#fcd34d" font-size="11" font-weight="800" text-anchor="middle">② DESIGN — AWARENESS CAMPAIGN</text>
+  <text x="334" y="128" fill="#94a3b8" font-size="9">Multi-channel campaign designed:</text>
+  <text x="334" y="146" fill="#94a3b8" font-size="9">· Email communications (all staff)</text>
+  <text x="334" y="162" fill="#94a3b8" font-size="9">· Awareness posters (Arabic &amp; English)</text>
+  <text x="334" y="178" fill="#94a3b8" font-size="9">· Digital screensavers (office screens)</text>
+  <text x="334" y="194" fill="#94a3b8" font-size="9">· Town hall sessions per entity</text>
+  <text x="334" y="210" fill="#94a3b8" font-size="9">· Leadership message template</text>
+  <text x="334" y="226" fill="#94a3b8" font-size="9">· Refreshed induction module</text>
+  <text x="334" y="242" fill="#94a3b8" font-size="9">· Customised per portfolio company</text>
+  <rect x="334" y="258" width="238" height="22" rx="11" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+  <text x="453" y="273" fill="#fcd34d" font-size="9" font-weight="700" text-anchor="middle">Materials Tailored per Entity</text>
+  <text x="334" y="298" fill="#475569" font-size="8" font-style="italic">Sector &amp; headcount context</text>
+  <text x="334" y="311" fill="#475569" font-size="8" font-style="italic">reflected in each version</text>
+
+  <!-- Arrow 2 -->
+  <line x1="588" y1="204" x2="608" y2="204" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="606,199 616,204 606,209" fill="#475569"/>
+
+  <!-- ═══ PHASE 3: DEPLOY ═══ -->
+  <rect x="616" y="84" width="270" height="240" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="616" y="84" width="270" height="26" rx="6" fill="#1e3a5f"/>
+  <rect x="616" y="100" width="270" height="10" fill="#1e3a5f"/>
+  <text x="751" y="101" fill="#93c5fd" font-size="11" font-weight="800" text-anchor="middle">③ DEPLOY — PORTFOLIO ROLLOUT</text>
+  <text x="632" y="128" fill="#94a3b8" font-size="9">Across all portfolio companies:</text>
+  <text x="632" y="146" fill="#94a3b8" font-size="9">· Leadership tone-from-the-top message</text>
+  <text x="632" y="162" fill="#94a3b8" font-size="9">  sent from each entity CEO</text>
+  <text x="632" y="178" fill="#94a3b8" font-size="9">· Awareness posters installed at sites</text>
+  <text x="632" y="194" fill="#94a3b8" font-size="9">· Town halls delivered per entity</text>
+  <text x="632" y="210" fill="#94a3b8" font-size="9">· Manager refresher training completed</text>
+  <text x="632" y="226" fill="#94a3b8" font-size="9">· HR updated as programme champions</text>
+  <text x="632" y="242" fill="#94a3b8" font-size="9">· Induction updated &amp; tested</text>
+  <rect x="632" y="258" width="238" height="22" rx="11" fill="#0c2a3e" stroke="#3b82f6" stroke-width="1"/>
+  <text x="751" y="273" fill="#93c5fd" font-size="9" font-weight="700" text-anchor="middle">Deployed Across All Entities</text>
+  <text x="632" y="298" fill="#475569" font-size="8" font-style="italic">Physical deployment verified</text>
+  <text x="632" y="311" fill="#475569" font-size="8" font-style="italic">during site visits</text>
+
+  <!-- Arrow 3 -->
+  <line x1="886" y1="204" x2="906" y2="204" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="904,199 914,204 904,209" fill="#475569"/>
+
+  <!-- ═══ PHASE 4: MEASURE ═══ -->
+  <rect x="914" y="84" width="266" height="240" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="914" y="84" width="266" height="26" rx="6" fill="#052e16"/>
+  <rect x="914" y="100" width="266" height="10" fill="#052e16"/>
+  <text x="1047" y="101" fill="#6ee7b7" font-size="11" font-weight="800" text-anchor="middle">④ MEASURE — ONGOING HEALTH</text>
+  <text x="930" y="128" fill="#94a3b8" font-size="9">Metrics established:</text>
+  <text x="930" y="146" fill="#94a3b8" font-size="9">· Report volume (baseline set)</text>
+  <text x="930" y="162" fill="#94a3b8" font-size="9">· Submission source by entity</text>
+  <text x="930" y="178" fill="#94a3b8" font-size="9">· Case closure rate &amp; timeliness</text>
+  <text x="930" y="194" fill="#94a3b8" font-size="9">· Staff awareness survey (annual)</text>
+  <text x="930" y="210" fill="#94a3b8" font-size="9">· AC quarterly summary report</text>
+  <text x="930" y="226" fill="#94a3b8" font-size="9">· Annual programme review against</text>
+  <text x="930" y="242" fill="#94a3b8" font-size="9">  ISO 37002:2021 checklist</text>
+  <rect x="930" y="258" width="234" height="22" rx="11" fill="#052e16" stroke="#10b981" stroke-width="1"/>
+  <text x="1047" y="273" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">✓ AC Reporting Embedded</text>
+  <text x="930" y="298" fill="#475569" font-size="8" font-style="italic">Quarterly report template</text>
+  <text x="930" y="311" fill="#475569" font-size="8" font-style="italic">designed for Audit Committee</text>
+
+  <!-- ═══ TONE FROM THE TOP BOX ═══ -->
+  <rect x="20" y="344" width="560" height="80" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="36" y="364" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">TONE FROM THE TOP</text>
+  <text x="36" y="382" fill="#64748b" font-size="9">Leadership communications were a key pillar of the revival. Each portfolio company CEO issued a</text>
+  <text x="36" y="398" fill="#64748b" font-size="9">direct message to all staff reinforcing the group's zero-tolerance stance on misconduct, actively</text>
+  <text x="36" y="414" fill="#64748b" font-size="9">encouraging use of the channel, and confirming non-retaliation protections were in full effect.</text>
+
+  <!-- ═══ PORTFOLIO COMPANIES BOX ═══ -->
+  <rect x="596" y="344" width="584" height="80" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="612" y="364" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">PORTFOLIO SCOPE</text>
+  <text x="612" y="382" fill="#64748b" font-size="9">Programme revived and deployed across portfolio companies spanning retail, hospitality, real estate,</text>
+  <text x="612" y="398" fill="#64748b" font-size="9">and manufacturing. Materials customised per entity to reflect operational context, language, and</text>
+  <text x="612" y="414" fill="#64748b" font-size="9">headcount profile. Holding company Audit Committee maintained oversight across all entities.</text>
+
+  <!-- ═══ BEFORE VS AFTER ═══ -->
+  <rect x="20" y="436" width="560" height="132" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="36" y="456" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">BEFORE vs AFTER</text>
+  <rect x="36" y="464" width="240" height="88" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+  <text x="156" y="480" fill="#fca5a5" font-size="9" font-weight="800" text-anchor="middle">BEFORE</text>
+  <text x="52" y="496" fill="#94a3b8" font-size="8">· Programme existed in policy only</text>
+  <text x="52" y="510" fill="#94a3b8" font-size="8">· No active promotion or awareness</text>
+  <text x="52" y="524" fill="#94a3b8" font-size="8">· Not embedded in portfolio cos.</text>
+  <text x="52" y="538" fill="#94a3b8" font-size="8">· No metrics or AC reporting</text>
+  <rect x="296" y="464" width="268" height="88" rx="4" fill="#052e16" stroke="#10b981" stroke-width="1"/>
+  <text x="430" y="480" fill="#6ee7b7" font-size="9" font-weight="800" text-anchor="middle">AFTER</text>
+  <text x="312" y="496" fill="#94a3b8" font-size="8">· Programme actively promoted &amp; visible</text>
+  <text x="312" y="510" fill="#94a3b8" font-size="8">· Leadership endorsement embedded</text>
+  <text x="312" y="524" fill="#94a3b8" font-size="8">· All portfolio companies covered</text>
+  <text x="312" y="538" fill="#94a3b8" font-size="8">· AC quarterly reporting in place</text>
+
+  <!-- ═══ ISO ALIGNMENT BOX ═══ -->
+  <rect x="596" y="436" width="584" height="132" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="612" y="456" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">ISO 37002:2021 ALIGNMENT — KEY GAPS CLOSED</text>
+  <rect x="612" y="464" width="260" height="28" rx="4" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+  <text x="742" y="476" fill="#93c5fd" font-size="9" font-weight="600" text-anchor="middle">Clause 7.3 — Awareness</text>
+  <text x="742" y="488" fill="#64748b" font-size="8" text-anchor="middle">Communication programme re-established</text>
+  <rect x="884" y="464" width="280" height="28" rx="4" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1024" y="476" fill="#93c5fd" font-size="9" font-weight="600" text-anchor="middle">Clause 5.1 — Leadership</text>
+  <text x="1024" y="488" fill="#64748b" font-size="8" text-anchor="middle">Top management commitment visible</text>
+  <rect x="612" y="500" width="260" height="28" rx="4" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+  <text x="742" y="512" fill="#93c5fd" font-size="9" font-weight="600" text-anchor="middle">Clause 9.1 — Monitoring</text>
+  <text x="742" y="524" fill="#64748b" font-size="8" text-anchor="middle">Metrics &amp; AC reporting established</text>
+  <rect x="884" y="500" width="280" height="28" rx="4" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1024" y="512" fill="#93c5fd" font-size="9" font-weight="600" text-anchor="middle">Clause 7.2 — Competence</text>
+  <text x="1024" y="524" fill="#64748b" font-size="8" text-anchor="middle">Training refreshed for managers and HR</text>
+  <text x="612" y="558" fill="#64748b" font-size="9">All four gap areas identified in initial assessment addressed and verified through post-deployment review.</text>
+
+  <!-- Footer -->
+  <rect x="0" y="598" width="1200" height="32" fill="#1e293b"/>
+  <text x="24" y="619" fill="#475569" font-size="10">All names, company identifiers, and figures shown are fictitious and used for portfolio illustration only · Not based on any real client engagement</text>
+</svg>
