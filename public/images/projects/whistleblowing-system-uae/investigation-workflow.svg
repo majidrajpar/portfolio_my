@@ -1,0 +1,175 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+
+  <!-- Header -->
+  <rect width="1200" height="56" fill="#1e293b"/>
+  <text x="24" y="34" fill="#f8fafc" font-size="15" font-weight="700">Investigation Policy — Process Workflow</text>
+  <text x="24" y="50" fill="#475569" font-size="10">Anonymised Engagement · ⚠ DUMMY DATA — FOR ILLUSTRATION PURPOSES ONLY</text>
+  <rect x="1058" y="15" width="120" height="24" rx="12" fill="#1d4ed8" opacity="0.3" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1118" y="31" fill="#93c5fd" font-size="10" font-weight="700" text-anchor="middle">CONFIDENTIAL</text>
+
+  <!-- Row label -->
+  <text x="24" y="76" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">INVESTIGATION LIFECYCLE — 6 STAGES</text>
+
+  <!-- ═══ 6 STAGE BOXES — each 172px wide, 24px gap ═══ -->
+  <!-- Total: 6×172 + 5×24 + 2×20 = 1032 + 120 + 40 = 1192 ≈ 1200 -->
+  <!-- x positions: 20, 216, 412, 608, 804, 1000 -->
+
+  <!-- STAGE 1: REPORT RECEIVED (x=20) -->
+  <rect x="20" y="84" width="172" height="200" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="20" y="84" width="172" height="24" rx="6" fill="#1e3a5f"/>
+  <rect x="20" y="98" width="172" height="10" fill="#1e3a5f"/>
+  <text x="106" y="100" fill="#93c5fd" font-size="9.5" font-weight="800" text-anchor="middle">① REPORT RECEIVED</text>
+  <text x="34" y="124" fill="#94a3b8" font-size="8.5">· System auto-logs receipt</text>
+  <text x="34" y="138" fill="#94a3b8" font-size="8.5">· Unique reference assigned</text>
+  <text x="34" y="152" fill="#94a3b8" font-size="8.5">· Reporter notified (48h SLA)</text>
+  <text x="34" y="166" fill="#94a3b8" font-size="8.5">· No identity captured</text>
+  <text x="34" y="180" fill="#94a3b8" font-size="8.5">· Metadata stripped</text>
+  <rect x="34" y="196" width="144" height="20" rx="10" fill="#0c2a3e" stroke="#3b82f6" stroke-width="1"/>
+  <text x="106" y="210" fill="#93c5fd" font-size="8.5" font-weight="700" text-anchor="middle">Anonymity Protected</text>
+  <text x="34" y="240" fill="#475569" font-size="8" font-style="italic">All channels funnel</text>
+  <text x="34" y="252" fill="#475569" font-size="8" font-style="italic">to single intake log</text>
+  <text x="34" y="264" fill="#475569" font-size="8" font-style="italic">with AC visibility</text>
+
+  <!-- Arrow 1 -->
+  <line x1="192" y1="184" x2="206" y2="184" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="204,179 214,184 204,189" fill="#475569"/>
+
+  <!-- STAGE 2: CREDIBILITY REVIEW (x=216) -->
+  <rect x="216" y="84" width="172" height="200" rx="6" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <rect x="216" y="84" width="172" height="24" rx="6" fill="#2e1065"/>
+  <rect x="216" y="98" width="172" height="10" fill="#2e1065"/>
+  <text x="302" y="100" fill="#c4b5fd" font-size="9.5" font-weight="800" text-anchor="middle">② CREDIBILITY REVIEW</text>
+  <text x="230" y="124" fill="#94a3b8" font-size="8.5">· Is report specific enough?</text>
+  <text x="230" y="138" fill="#94a3b8" font-size="8.5">· Does it relate to scope?</text>
+  <text x="230" y="152" fill="#94a3b8" font-size="8.5">· Conflict-of-interest check</text>
+  <text x="230" y="166" fill="#94a3b8" font-size="8.5">· Senior investigator reviews</text>
+  <text x="230" y="180" fill="#94a3b8" font-size="8.5">· Decision documented</text>
+  <rect x="230" y="196" width="144" height="20" rx="10" fill="#1e1b4b" stroke="#7c3aed" stroke-width="1"/>
+  <text x="302" y="210" fill="#a5b4fc" font-size="8.5" font-weight="700" text-anchor="middle">5 Business Days</text>
+
+  <!-- NOT CREDIBLE branch — down from stage 2 -->
+  <line x1="302" y1="284" x2="302" y2="314" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="230" y="314" width="144" height="44" rx="4" fill="#1e293b" stroke="#475569" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="302" y="331" fill="#64748b" font-size="8.5" font-weight="700" text-anchor="middle">NOT CREDIBLE</text>
+  <text x="302" y="345" fill="#64748b" font-size="8" text-anchor="middle">Closed — rationale recorded</text>
+  <text x="302" y="357" fill="#64748b" font-size="8" text-anchor="middle">Reporter notified (anon.)</text>
+
+  <!-- Arrow 2 -->
+  <line x1="388" y1="184" x2="402" y2="184" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="400,179 410,184 400,189" fill="#475569"/>
+
+  <!-- STAGE 3: INVESTIGATOR ASSIGNED (x=412) -->
+  <rect x="412" y="84" width="172" height="200" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <rect x="412" y="84" width="172" height="24" rx="6" fill="#422006"/>
+  <rect x="412" y="98" width="172" height="10" fill="#422006"/>
+  <text x="498" y="100" fill="#fcd34d" font-size="9.5" font-weight="800" text-anchor="middle">③ INVESTIGATOR ASSIGNED</text>
+  <text x="426" y="124" fill="#94a3b8" font-size="8.5">· Competence match to case</text>
+  <text x="426" y="138" fill="#94a3b8" font-size="8.5">· Conflict check performed</text>
+  <text x="426" y="152" fill="#94a3b8" font-size="8.5">· Investigation plan drafted</text>
+  <text x="426" y="166" fill="#94a3b8" font-size="8.5">· Scope &amp; timeline set</text>
+  <text x="426" y="180" fill="#94a3b8" font-size="8.5">· AC Chair briefed</text>
+  <rect x="426" y="196" width="144" height="20" rx="10" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+  <text x="498" y="210" fill="#fcd34d" font-size="8.5" font-weight="700" text-anchor="middle">2-Day Assignment SLA</text>
+  <text x="426" y="240" fill="#475569" font-size="8" font-style="italic">External investigator</text>
+  <text x="426" y="252" fill="#475569" font-size="8" font-style="italic">engaged if subject is</text>
+  <text x="426" y="264" fill="#475569" font-size="8" font-style="italic">senior management</text>
+
+  <!-- Arrow 3 -->
+  <line x1="584" y1="184" x2="598" y2="184" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="596,179 606,184 596,189" fill="#475569"/>
+
+  <!-- STAGE 4: EVIDENCE & INTERVIEWS (x=608) -->
+  <rect x="608" y="84" width="172" height="200" rx="6" fill="#1e293b" stroke="#fb923c" stroke-width="1.5"/>
+  <rect x="608" y="84" width="172" height="24" rx="6" fill="#431407"/>
+  <rect x="608" y="98" width="172" height="10" fill="#431407"/>
+  <text x="694" y="100" fill="#fdba74" font-size="9.5" font-weight="800" text-anchor="middle">④ EVIDENCE &amp; INTERVIEWS</text>
+  <text x="622" y="124" fill="#94a3b8" font-size="8.5">· Document collection</text>
+  <text x="622" y="138" fill="#94a3b8" font-size="8.5">· System / data analysis</text>
+  <text x="622" y="152" fill="#94a3b8" font-size="8.5">· Witness interviews (structured)</text>
+  <text x="622" y="166" fill="#94a3b8" font-size="8.5">· Chain of custody log</text>
+  <text x="622" y="180" fill="#94a3b8" font-size="8.5">· Subject right of response</text>
+  <rect x="622" y="196" width="144" height="20" rx="10" fill="#431407" stroke="#fb923c" stroke-width="1"/>
+  <text x="694" y="210" fill="#fdba74" font-size="8.5" font-weight="700" text-anchor="middle">30-Day Investigation Max</text>
+  <text x="622" y="240" fill="#475569" font-size="8" font-style="italic">Extension requires</text>
+  <text x="622" y="252" fill="#475569" font-size="8" font-style="italic">AC Chair approval</text>
+  <text x="622" y="264" fill="#475569" font-size="8" font-style="italic">with written rationale</text>
+
+  <!-- Arrow 4 -->
+  <line x1="780" y1="184" x2="794" y2="184" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="792,179 802,184 792,189" fill="#475569"/>
+
+  <!-- STAGE 5: FINDINGS REPORT (x=804) -->
+  <rect x="804" y="84" width="172" height="200" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="804" y="84" width="172" height="24" rx="6" fill="#052e16"/>
+  <rect x="804" y="98" width="172" height="10" fill="#052e16"/>
+  <text x="890" y="100" fill="#6ee7b7" font-size="9.5" font-weight="800" text-anchor="middle">⑤ FINDINGS REPORT</text>
+  <text x="818" y="124" fill="#94a3b8" font-size="8.5">· Investigation summary drafted</text>
+  <text x="818" y="138" fill="#94a3b8" font-size="8.5">· Evidence annexes compiled</text>
+  <text x="818" y="152" fill="#94a3b8" font-size="8.5">· Recommendations included</text>
+  <text x="818" y="166" fill="#94a3b8" font-size="8.5">· Legal review (if applicable)</text>
+  <text x="818" y="180" fill="#94a3b8" font-size="8.5">· Peer quality review</text>
+  <rect x="818" y="196" width="144" height="20" rx="10" fill="#052e16" stroke="#10b981" stroke-width="1"/>
+  <text x="890" y="210" fill="#6ee7b7" font-size="8.5" font-weight="700" text-anchor="middle">Report to AC Within 5 Days</text>
+  <text x="818" y="240" fill="#475569" font-size="8" font-style="italic">Substantiated cases</text>
+  <text x="818" y="252" fill="#475569" font-size="8" font-style="italic">trigger management</text>
+  <text x="818" y="264" fill="#475569" font-size="8" font-style="italic">action plan</text>
+
+  <!-- Arrow 5 -->
+  <line x1="976" y1="184" x2="990" y2="184" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="988,179 998,184 988,189" fill="#475569"/>
+
+  <!-- STAGE 6: CLOSURE & GOVERNANCE (x=1000) -->
+  <rect x="1000" y="84" width="180" height="200" rx="6" fill="#1e293b" stroke="#818cf8" stroke-width="1.5"/>
+  <rect x="1000" y="84" width="180" height="24" rx="6" fill="#1e1b4b"/>
+  <rect x="1000" y="98" width="180" height="10" fill="#1e1b4b"/>
+  <text x="1090" y="100" fill="#a5b4fc" font-size="9.5" font-weight="800" text-anchor="middle">⑥ CLOSURE &amp; GOVERNANCE</text>
+  <text x="1014" y="124" fill="#94a3b8" font-size="8.5">· AC formal decision</text>
+  <text x="1014" y="138" fill="#94a3b8" font-size="8.5">· Action plan approved</text>
+  <text x="1014" y="152" fill="#94a3b8" font-size="8.5">· Case file archived (7 yrs)</text>
+  <text x="1014" y="166" fill="#94a3b8" font-size="8.5">· Reporter notified (anon.)</text>
+  <text x="1014" y="180" fill="#94a3b8" font-size="8.5">· Quarterly AC summary</text>
+  <rect x="1014" y="196" width="152" height="20" rx="10" fill="#1e1b4b" stroke="#818cf8" stroke-width="1"/>
+  <text x="1090" y="210" fill="#a5b4fc" font-size="8.5" font-weight="700" text-anchor="middle">Board Oversight Recorded</text>
+  <text x="1014" y="240" fill="#475569" font-size="8" font-style="italic">Trend data feeds</text>
+  <text x="1014" y="252" fill="#475569" font-size="8" font-style="italic">annual programme</text>
+  <text x="1014" y="264" fill="#475569" font-size="8" font-style="italic">effectiveness review</text>
+
+  <!-- ═══ DECISION OUTCOME BOXES ═══ -->
+  <rect x="20" y="374" width="550" height="76" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="36" y="394" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">OUTCOME PATHWAYS</text>
+  <rect x="36" y="402" width="230" height="36" rx="4" fill="#052e16" stroke="#10b981" stroke-width="1"/>
+  <text x="36" y="418" fill="#6ee7b7" font-size="9" font-weight="700">  SUBSTANTIATED</text>
+  <text x="36" y="432" fill="#64748b" font-size="8">  → Action plan → Disciplinary / referral → Remedy</text>
+  <rect x="278" y="402" width="276" height="36" rx="4" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="278" y="418" fill="#94a3b8" font-size="9" font-weight="700">  UNSUBSTANTIATED</text>
+  <text x="278" y="432" fill="#64748b" font-size="8">  → Closed with written rationale → Filed securely → AC noted</text>
+
+  <!-- ═══ AUTHORITY MATRIX ═══ -->
+  <rect x="590" y="374" width="590" height="76" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="606" y="394" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">INVESTIGATION AUTHORITY TIERS</text>
+  <rect x="606" y="402" width="168" height="36" rx="4" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+  <text x="690" y="416" fill="#93c5fd" font-size="9" font-weight="700" text-anchor="middle">Tier 1 — Staff Level</text>
+  <text x="690" y="430" fill="#64748b" font-size="8" text-anchor="middle">Head of Internal Audit</text>
+  <rect x="786" y="402" width="168" height="36" rx="4" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="870" y="416" fill="#fcd34d" font-size="9" font-weight="700" text-anchor="middle">Tier 2 — Management</text>
+  <text x="870" y="430" fill="#64748b" font-size="8" text-anchor="middle">AC Chair + Legal Counsel</text>
+  <rect x="966" y="402" width="198" height="36" rx="4" fill="#0f172a" stroke="#818cf8" stroke-width="1"/>
+  <text x="1065" y="416" fill="#a5b4fc" font-size="9" font-weight="700" text-anchor="middle">Tier 3 — Board / External</text>
+  <text x="1065" y="430" fill="#64748b" font-size="8" text-anchor="middle">Full Audit Committee + Regulator</text>
+
+  <!-- ═══ KEY PROTECTIONS BANNER ═══ -->
+  <rect x="20" y="462" width="1160" height="58" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="36" y="480" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">KEY POLICY PROTECTIONS EMBEDDED IN INVESTIGATION FRAMEWORK</text>
+  <text x="36" y="498" fill="#64748b" font-size="9">· No investigation may begin without documented rationale  ·  Subject receives right of response before final report  ·  All extensions require AC Chair sign-off</text>
+  <text x="36" y="512" fill="#64748b" font-size="9">· Retaliation against reporters triggers immediate Tier 3 escalation  ·  Evidence destruction is a standalone disciplinary offence</text>
+
+  <!-- ═══ SLA SUMMARY ═══ -->
+  <rect x="20" y="532" width="1160" height="48" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="36" y="550" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">SLA SUMMARY</text>
+  <text x="36" y="566" fill="#64748b" font-size="9">Acknowledgment: 48h  ·  Credibility decision: 5 days  ·  Investigator assignment: 2 days  ·  Investigation completion: 30 days  ·  Findings to AC: 5 days after completion</text>
+
+  <!-- Footer -->
+  <rect x="0" y="598" width="1200" height="32" fill="#1e293b"/>
+  <text x="24" y="619" fill="#475569" font-size="10">All names, company identifiers, and figures shown are fictitious and used for portfolio illustration only · Not based on any real client engagement</text>
+</svg>
