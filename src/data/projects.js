@@ -278,6 +278,17 @@ export const projects = [
     category: 'Corporate Governance',
     impact: 'End-to-end whistleblowing system designed and rolled out — anonymity assured, access controls restructured, investigation framework embedded',
     techStack: ['Whistleblowing Policy Design', 'Investigation Policy', 'Access Control Review', 'UAE Labour Law', 'ISO 37002:2021', 'Three Lines of Defence'],
+    image: '/portfolio_my/images/projects/whistleblowing-system-uae/system-architecture.svg',
+    additionalScreenshots: [
+      {
+        image: '/portfolio_my/images/projects/whistleblowing-system-uae/access-control-review.svg',
+        caption: 'Access Control Review — Before & After: who could read submitted reports. Five of eight roles were over-privileged prior to remediation; IT admin access was segregated to prevent technical de-anonymisation of reporters.'
+      },
+      {
+        image: '/portfolio_my/images/projects/whistleblowing-system-uae/investigation-workflow.svg',
+        caption: 'Investigation Policy Workflow — six-stage lifecycle from report receipt to Audit Committee closure, with defined SLAs, authority tiers, and embedded non-retaliation protections.'
+      }
+    ],
     features: [
       'Whistleblowing Policy — drafted from scratch covering scope, reporting channels, non-retaliation protections, and escalation hierarchy aligned to UAE Labour Law',
       'Investigation Policy — defined intake triage, investigation steps, evidence handling standards, timelines, and authority levels for closing or escalating cases',
