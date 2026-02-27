@@ -181,15 +181,16 @@ def chart_programme_architecture():
                 ws['sub'], ha='center', va='center',
                 color='#CBD5E1', fontsize=7.2)
 
-        # Bullet items (0.80 header offset + 5 × 0.30 spacing = 2.30, leaving 0.25 bottom clearance)
-        item_y = ws['y'] + ws['h'] - 0.80
+        # Bullet items: start 0.95 below top of card (just below header strip at 0.65),
+        # step 0.27 → 5 items end at h - 2.30, leaving 0.25 margin from bottom
+        item_y = ws['y'] + ws['h'] - 0.68
         for item in ws['items']:
-            item_y -= 0.30
+            item_y -= 0.27
             ax.plot(ws['x'] + 0.22, item_y + 0.06, 's',
-                    color=ws['color'], markersize=3.5)
+                    color=ws['color'], markersize=3.2)
             ax.text(ws['x'] + 0.38, item_y,
                     item, va='center', color='#1E293B',
-                    fontsize=7.0, family='DejaVu Sans')
+                    fontsize=6.8, family='DejaVu Sans')
 
     # Footer
     footer = FancyBboxPatch((0, 0), 16, 0.13, boxstyle="square,pad=0",
