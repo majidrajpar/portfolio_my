@@ -100,7 +100,7 @@ def chart_programme_architecture():
                 "Group-wide risk register (7 jurisdictions)",
                 "KRI framework & escalation thresholds",
                 "Risk appetite statement (board-adopted)",
-                "Three Lines of Defence embedded",
+                "Three Lines Model embedded",
                 "Quarterly risk reporting cadence",
             ]
         },
@@ -317,7 +317,7 @@ def chart_three_lines():
     title_bar = FancyBboxPatch((0, 7.6), 15, 0.9, boxstyle="square,pad=0",
                                 facecolor=NAVY, edgecolor='none')
     ax.add_patch(title_bar)
-    ax.text(7.5, 8.05, "Three Lines of Defence — IPO Governance Accountability Model",
+    ax.text(7.5, 8.05, "Three Lines Model — IPO Governance Accountability Model",
             ha='center', va='center', color=WHITE,
             fontsize=15, fontweight='bold')
 
@@ -455,9 +455,9 @@ def chart_three_lines():
                     fontsize=7.0)
             cy -= 0.3
 
-    # Horizontal arrows between lines
-    for x_pos in [4.72, 9.92]:
-        ax.annotate("", xy=(x_pos + 0.46, 3.6), xytext=(x_pos, 3.6),
+    # Horizontal arrows between lines (fit within the gaps: 4.7→5.2 and 9.8→10.3)
+    for x_start, x_end in [(4.74, 5.16), (9.84, 10.26)]:
+        ax.annotate("", xy=(x_end, 3.6), xytext=(x_start, 3.6),
                     arrowprops=dict(arrowstyle="<->", color=SLATE, lw=1.4,
                                    mutation_scale=14))
 
@@ -466,7 +466,7 @@ def chart_three_lines():
                              facecolor='#F8FAFC', edgecolor=BORDER, linewidth=0.5)
     ax.add_patch(footer)
     ax.text(7.5, 0.165,
-            "Model embedded across UAE holding company and 7 operating subsidiaries ahead of DFM listing  |  KPMG External Advisory",
+            "Three Lines Model embedded across UAE holding company and 7 operating subsidiaries ahead of DFM listing  |  KPMG External Advisory",
             ha='center', va='center', color=SLATE, fontsize=8, style='italic')
 
     plt.savefig(os.path.join(OUT, 'three-lines-defence.png'),

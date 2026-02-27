@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InternalControlEvaluator from '../../components/InternalControlEvaluator.jsx';
+---
+
+<BaseLayout
+  title="Internal Control Evaluator | Majid Mumtaz"
+  description="Evaluate your organisation's control environment across all five COSO 2013 components. ML-powered tool that identifies deficiency types — from control gaps to material weaknesses — and generates a prioritised action plan."
+>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-[#001F5B]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Internal Controls</span>
+        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+          Internal Control Evaluator.
+        </h1>
+        <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
+          Rate your organisation across all five COSO 2013 components and 17 principles. The ML model classifies your control environment — from sound to material weakness — and generates a prioritised remediation plan. All in your browser.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tool -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="mb-12" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Step-by-Step</span>
+        <h2 class="text-3xl font-black text-slate-900 mb-3">Rate each COSO principle.</h2>
+        <p class="text-slate-500 text-sm max-w-xl">
+          Expand each component, score its principles on a 1–5 scale, and the ML model will classify your control environment and generate an action plan.
+        </p>
+      </div>
+
+      <InternalControlEvaluator client:load />
+    </div>
+  </section>
+
+  <!-- Methodology -->
+  <section class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Methodology</span>
+        <h2 class="text-3xl font-black text-slate-900 mb-4">How assessments are determined.</h2>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+          The evaluator uses a supervised ML model trained on expert-labelled control environment profiles, aligned with the COSO 2013 Internal Control — Integrated Framework. The model analyses all five component scores and their interactions — not merely a simple average — to produce a deficiency classification consistent with IIA, PCAOB, and SOX auditing standards.
+        </p>
+        <p class="text-slate-500 text-xs leading-relaxed mb-10">
+          Ratings reflect the assessor's professional judgement at a point in time. The model output is a decision-support indicator. Final classification should consider compensating controls, management's response, and entity-specific materiality thresholds.
+        </p>
+
+        <!-- COSO 2013 Overview -->
+        <h3 class="text-lg font-black text-slate-900 mb-4">The COSO 2013 Framework</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+          The Committee of Sponsoring Organisations of the Treadway Commission (COSO) 2013 framework is the globally accepted standard for designing, implementing, and evaluating systems of internal control. It comprises five interrelated components and 17 principles:
+        </p>
+
+        <!-- Five components grid -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-3 mb-10">
+          {[
+            { num: '01', label: 'Control Environment', count: '4 principles', desc: 'The foundation of tone, ethics, and oversight.' },
+            { num: '02', label: 'Risk Assessment', count: '3 principles', desc: 'Identifying and analysing risks to objectives.' },
+            { num: '03', label: 'Control Activities', count: '4 principles', desc: 'Policies and procedures that mitigate risk.' },
+            { num: '04', label: 'Information & Communication', count: '3 principles', desc: 'Relevant information flows for decision-making.' },
+            { num: '05', label: 'Monitoring', count: '3 principles', desc: 'Ongoing evaluation of control effectiveness.' },
+          ].map(({ num, label, count, desc }) => (
+            <div class="bg-white border border-slate-200 border-t-2 border-t-[#001F5B] p-5">
+              <div class="text-[10px] font-black text-[#001F5B]/40 mb-2 tracking-widest">{num}</div>
+              <div class="text-xs font-black text-slate-900 mb-1">{label}</div>
+              <div class="text-[10px] font-bold text-[#001F5B] uppercase tracking-widest mb-2">{count}</div>
+              <div class="text-[10px] text-slate-500 leading-snug">{desc}</div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Rating scale -->
+        <h3 class="text-lg font-black text-slate-900 mb-4">Rating Scale</h3>
+        <div class="border border-slate-200 overflow-hidden mb-10">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="bg-[#001F5B] text-white">
+                <th class="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px]">Score</th>
+                <th class="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px]">Label</th>
+                <th class="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px]">Interpretation</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              {[
+                { score: '1', label: 'Not Present', color: 'text-red-600', interp: 'The principle is absent. No documented policies, processes, or evidence of implementation exist.' },
+                { score: '2', label: 'Partially Present', color: 'text-orange-500', interp: 'The principle exists in limited form. Significant gaps in design or operation remain unaddressed.' },
+                { score: '3', label: 'Generally Present', color: 'text-amber-600', interp: 'The principle is broadly in place but with notable exceptions or inconsistencies in application.' },
+                { score: '4', label: 'Substantially Present', color: 'text-lime-700', interp: 'The principle is well-established and operating effectively, with only minor improvement areas.' },
+                { score: '5', label: 'Fully Effective', color: 'text-green-700', interp: 'The principle is fully implemented, consistently applied, and supported by strong evidence of effectiveness.' },
+              ].map(({ score, label, color, interp }) => (
+                <tr class="bg-white hover:bg-slate-50 transition-colors">
+                  <td class={`px-5 py-3.5 font-black text-lg ${color}`}>{score}</td>
+                  <td class={`px-5 py-3.5 font-black text-xs ${color}`}>{label}</td>
+                  <td class="px-5 py-3.5 text-slate-500 text-[11px] leading-relaxed">{interp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Deficiency classification -->
+        <h3 class="text-lg font-black text-slate-900 mb-4">Deficiency Classification</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+          The ML model classifies the overall control environment into one of four deficiency levels, consistent with auditing standards under SOX Section 302/404, PCAOB AS 2201, and IIA guidance:
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+          {[
+            { label: 'No Deficiency', color: 'text-green-600', top: 'border-t-green-500', desc: 'Controls are sound. Continue ongoing monitoring and periodic reassessment.' },
+            { label: 'Control Deficiency', color: 'text-amber-600', top: 'border-t-amber-500', desc: 'Minor gaps exist. A management remediation plan is recommended.' },
+            { label: 'Significant Deficiency', color: 'text-orange-600', top: 'border-t-orange-500', desc: 'Material gaps present. Prompt escalation to senior management is required.' },
+            { label: 'Material Weakness', color: 'text-red-700', top: 'border-t-red-700', desc: 'Serious deficiency with potential for material misstatement. Board-level escalation required immediately.' },
+          ].map(({ label, color, top, desc }) => (
+            <div class={`bg-white border border-slate-200 border-t-2 ${top} p-5`}>
+              <div class={`font-black text-xs uppercase tracking-widest mb-2 ${color}`}>{label}</div>
+              <div class="text-slate-600 text-xs leading-snug">{desc}</div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Component score bands -->
+        <h3 class="text-lg font-black text-slate-900 mb-4">Component Score Bands</h3>
+        <p class="text-slate-500 text-sm leading-relaxed mb-4">
+          Individual component scores are also assessed against the following thresholds for the Deficiency Analysis table. These are independent of the overall ML classification and serve as a component-level diagnostic:
+        </p>
+        <div class="border border-slate-200 overflow-hidden mb-10">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="bg-[#001F5B] text-white">
+                <th class="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px]">Component Average</th>
+                <th class="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px]">Assessment Band</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              {[
+                { range: '> 3.8', band: 'No Deficiency', color: 'text-green-600' },
+                { range: '> 3.0 and ≤ 3.8', band: 'Control Deficiency', color: 'text-amber-600' },
+                { range: '> 2.0 and ≤ 3.0', band: 'Significant Deficiency', color: 'text-orange-600' },
+                { range: '≤ 2.0', band: 'Material Weakness', color: 'text-red-700' },
+              ].map(({ range, band, color }) => (
+                <tr class="bg-white hover:bg-slate-50 transition-colors">
+                  <td class="px-5 py-3.5 font-bold text-slate-700">{range}</td>
+                  <td class={`px-5 py-3.5 font-black ${color}`}>{band}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Privacy -->
+        <div class="bg-slate-100 border border-slate-200 p-5 flex items-start gap-3">
+          <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+          <div>
+            <div class="text-[10px] font-black uppercase tracking-wider text-slate-600 mb-1">Privacy</div>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              This tool processes all data entirely within your browser. No ratings, scores, or assessment outputs are transmitted to any server, stored in any database, or shared with any third party. The ML model runs locally using pre-computed coefficients loaded from a static JSON file.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
