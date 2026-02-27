@@ -83,7 +83,7 @@ const FIELDS = [
   {
     id: 'scope',
     label: 'Affected Scope',
-    hint: 'How widely does this control failure apply across the organisation?',
+    hint: 'How widely does this issue affect the organisation?',
     options: [
       {
         label: 'Single transaction',
@@ -204,7 +204,7 @@ function buildFindingText(selections, severityConfig) {
     `occurs ${get('likelihood')}, ` +
     `is ${get('detection')} to detect, ` +
     `and affects ${get('scope')}. ` +
-    `Immediate management attention and remediation is ${severityConfig.action}.`
+    `Immediate management attention and remediation are ${severityConfig.action}.`
   );
 }
 
@@ -340,14 +340,14 @@ const SeverityClassifier = () => {
                 px-4 py-1.5 border text-[10px] font-black uppercase tracking-[0.25em]
                 ${severityConfig.border} ${severityConfig.text} ${severityConfig.bg}
               `}>
-                {prediction.confidence}% model agreement
+                {prediction.confidence}% confidence
               </div>
             </div>
 
             {/* Confidence bar across all classes */}
             <div className="mb-6">
               <div className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-400 mb-3">
-                Class Probabilities
+                How certain is this rating?
               </div>
               <div className="space-y-2">
                 {modelData.classes.map((cls) => {
@@ -381,7 +381,7 @@ const SeverityClassifier = () => {
               {severityConfig.description}
             </p>
             <p className="text-[10px] text-slate-400 mb-6 pb-6 border-b border-slate-200">
-              Model agreement reflects how consistently the trained model classifies this combination across labelled scenarios — not the certainty of real-world outcome.
+              Confidence reflects how consistently the model classifies this combination of factors — not a guarantee of real-world outcome. Always apply professional judgement.
             </p>
 
             {/* Report text */}
