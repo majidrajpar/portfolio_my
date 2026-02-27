@@ -181,11 +181,11 @@ def chart_programme_architecture():
                 ws['sub'], ha='center', va='center',
                 color='#CBD5E1', fontsize=7.2)
 
-        # Bullet items
-        item_y = ws['y'] + ws['h'] - 0.85
+        # Bullet items (0.80 header offset + 5 × 0.30 spacing = 2.30, leaving 0.25 bottom clearance)
+        item_y = ws['y'] + ws['h'] - 0.80
         for item in ws['items']:
-            item_y -= 0.34
-            ax.plot(ws['x'] + 0.22, item_y + 0.07, 's',
+            item_y -= 0.30
+            ax.plot(ws['x'] + 0.22, item_y + 0.06, 's',
                     color=ws['color'], markersize=3.5)
             ax.text(ws['x'] + 0.38, item_y,
                     item, va='center', color='#1E293B',
