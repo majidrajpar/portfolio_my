@@ -29,11 +29,11 @@ const ContactForm = () => {
   return (
     <div className="glass-card p-10">
       {status === 'success' ? (
-        <div className="text-center py-12">
-          <div className="text-5xl mb-6">✓</div>
+        <div role="status" aria-live="polite" className="text-center py-12">
+          <div className="text-5xl mb-6" aria-hidden="true">✓</div>
           <h3 className="text-slate-900 font-black text-2xl mb-3">Message Sent</h3>
           <p className="text-slate-600">Thank you — I'll be in touch within 24 hours.</p>
-          <button onClick={() => setStatus('idle')} className="mt-8 btn-secondary text-xs">Send Another</button>
+          <button onClick={() => setStatus('idle')} className="mt-8 btn-secondary text-xs">Send Another Message</button>
         </div>
       ) : (
         <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
@@ -65,10 +65,10 @@ const ContactForm = () => {
           </div>
           <div>
             <label className="text-[10px] font-black uppercase tracking-widest text-slate-600 mb-2 block">Message</label>
-            <textarea name="message" required rows={5} placeholder="Describe the challenge you're facing" className={`${inputClass} resize-none`} />
+            <textarea name="message" required rows={3} placeholder="Describe the challenge you're facing" className={`${inputClass} resize-none`} />
           </div>
           {status === 'error' && (
-            <p className="text-red-500 text-sm">Something went wrong. Please try emailing directly.</p>
+            <p role="alert" className="text-red-500 text-sm">Something went wrong. Please try emailing directly.</p>
           )}
           <button
             type="submit"

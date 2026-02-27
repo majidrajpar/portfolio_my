@@ -66,6 +66,7 @@ const Navbar = () => {
               <a
                 key={item.label}
                 href={item.href}
+                aria-current={isActive ? 'page' : undefined}
                 className={`text-[10px] font-black uppercase tracking-[0.2em] transition-colors relative
                   ${showTransparent
                     ? (isActive ? 'text-white' : 'text-white/70 hover:text-white')
@@ -113,6 +114,8 @@ const Navbar = () => {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
             className={`md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 transition-colors
               ${showTransparent ? 'text-white' : 'text-slate-900'}`}
           >
@@ -127,6 +130,7 @@ const Navbar = () => {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -140,6 +144,7 @@ const Navbar = () => {
                   <a
                     key={item.label}
                     href={item.href}
+                    aria-current={isActive ? 'page' : undefined}
                     className={`block py-3 border-b border-slate-100 text-[10px] font-black uppercase tracking-[0.2em] transition-colors
                       ${isActive ? 'text-[#001F5B]' : 'text-slate-500 hover:text-slate-900'}`}
                   >

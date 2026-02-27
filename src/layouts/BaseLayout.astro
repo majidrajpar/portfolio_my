@@ -62,11 +62,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 </head>
 <body class="min-h-screen">
 
+  <!-- Skip to main content (keyboard/screen-reader users) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-white focus:text-[#001F5B] focus:font-black focus:text-xs focus:uppercase focus:tracking-widest focus:border focus:border-[#001F5B] focus:outline-none">
+    Skip to main content
+  </a>
+
   <!-- Navbar: React island for scroll-aware behaviour -->
   <Navbar client:load />
 
   <!-- Main Content -->
-  <main>
+  <main id="main-content">
     <slot />
   </main>
 
@@ -77,19 +82,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <!-- Brand -->
         <div class="md:col-span-2">
           <div class="text-white font-black text-xs uppercase tracking-[0.3em] mb-3">Majid Mumtaz</div>
-          <p class="text-white/50 text-xs leading-relaxed max-w-xs">
+          <p class="text-white/70 text-xs leading-relaxed max-w-xs">
             Fractional CAE & Board Advisor. Building internal audit functions from zero for GCC boards — UAE and KSA.
           </p>
           <div class="flex gap-4 mt-5">
             <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer"
-               class="text-white/40 hover:text-white text-[10px] font-black uppercase tracking-widest transition-colors">LinkedIn ↗</a>
+               class="text-white/60 hover:text-white text-[10px] font-black uppercase tracking-widest transition-colors">LinkedIn ↗</a>
             <a href="https://www.linkedin.com/newsletters/7339153291630510080/" target="_blank" rel="noopener noreferrer"
-               class="text-white/40 hover:text-white text-[10px] font-black uppercase tracking-widest transition-colors">Newsletter ↗</a>
+               class="text-white/60 hover:text-white text-[10px] font-black uppercase tracking-widest transition-colors">Newsletter ↗</a>
           </div>
         </div>
         <!-- Pages -->
         <div>
-          <div class="text-white/30 text-[10px] font-black uppercase tracking-widest mb-4">Pages</div>
+          <div class="text-white/50 text-[10px] font-black uppercase tracking-widest mb-4">Pages</div>
           <ul class="space-y-2">
             {[
               { label: 'About', href: `${base}/about/` },
@@ -100,22 +105,22 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               { label: 'Tools', href: `${base}/tools/` },
               { label: 'Contact', href: `${base}/contact/` },
             ].map(link => (
-              <li><a href={link.href} class="text-white/50 hover:text-white text-xs font-bold transition-colors">{link.label}</a></li>
+              <li><a href={link.href} class="text-white/70 hover:text-white text-xs font-bold transition-colors">{link.label}</a></li>
             ))}
           </ul>
         </div>
         <!-- Contact -->
         <div>
-          <div class="text-white/30 text-[10px] font-black uppercase tracking-widest mb-4">Contact</div>
+          <div class="text-white/50 text-[10px] font-black uppercase tracking-widest mb-4">Contact</div>
           <ul class="space-y-2">
-            <li><a href="mailto:majidrajpar@gmail.com" class="text-white/50 hover:text-white text-xs font-bold transition-colors">majidrajpar@gmail.com</a></li>
-            <li><span class="text-white/50 text-xs font-bold">Dubai, UAE</span></li>
-            <li><a href={`${base}/cv/Majid-Mumtaz-Internal-Audit-Director-UAE-KSA-CV.pdf`} download class="text-white/50 hover:text-white text-xs font-bold transition-colors">Download CV</a></li>
+            <li><a href="mailto:majidrajpar@gmail.com" class="text-white/70 hover:text-white text-xs font-bold transition-colors">majidrajpar@gmail.com</a></li>
+            <li><span class="text-white/70 text-xs font-bold">Dubai, UAE</span></li>
+            <li><a href={`${base}/cv/Majid-Mumtaz-Internal-Audit-Director-UAE-KSA-CV.pdf`} download class="text-white/70 hover:text-white text-xs font-bold transition-colors">Download CV</a></li>
           </ul>
         </div>
       </div>
       <div class="border-t border-white/10 pt-6 text-center">
-        <div class="text-white/30 text-[9px] uppercase tracking-[0.5em] font-black">
+        <div class="text-white/50 text-[9px] uppercase tracking-[0.5em] font-black">
           &copy; {new Date().getFullYear()} Majid Mumtaz CIA, ACA, FCCA. All Rights Reserved.
         </div>
       </div>
