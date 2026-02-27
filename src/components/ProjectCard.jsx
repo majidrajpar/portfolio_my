@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, ShieldCheck, Database, BrainCircuit, BarChart3, Binary, Landmark, Scale } from 'lucide-react';
+import { ArrowUpRight, ShieldCheck, Database, BrainCircuit, BarChart3, Binary, Landmark, Scale, Clock } from 'lucide-react';
 
 const icons = {
   'Fraud Forensics': <BrainCircuit className="w-8 h-8 text-[#001F5B]" />,
@@ -11,7 +11,7 @@ const icons = {
   'Enterprise Risk': <Scale className="w-8 h-8 text-[#001F5B]" />,
 };
 
-const ProjectCard = ({ id, title, description, category, impact, techStack, image, logo, index }) => {
+const ProjectCard = ({ id, title, description, category, duration, impact, techStack, image, logo, index }) => {
   return (
     <motion.article
       initial={{ opacity: 0, y: 30 }}
@@ -43,9 +43,17 @@ const ProjectCard = ({ id, title, description, category, impact, techStack, imag
               )}
             </div>
           </div>
-          <span className="text-[10px] font-black uppercase tracking-[0.3em] bg-[#001F5B]/10 text-[#001F5B] px-4 py-1.5 rounded-full border border-[#001F5B]/20">
-            {category}
-          </span>
+          <div className="flex flex-col items-end gap-1.5">
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] bg-[#001F5B]/10 text-[#001F5B] px-4 py-1.5 rounded-full border border-[#001F5B]/20">
+              {category}
+            </span>
+            {duration && (
+              <span className="flex items-center gap-1 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                <Clock className="w-3 h-3" />
+                {duration}
+              </span>
+            )}
+          </div>
         </div>
 
       <h3 className="text-2xl font-black text-slate-900 mb-4 leading-tight group-hover:text-[#001F5B] transition-colors">

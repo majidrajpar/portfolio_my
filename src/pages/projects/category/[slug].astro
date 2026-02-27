@@ -61,10 +61,18 @@ const filtered = (projects as any[]).filter(p => p.categories.includes(cat.name)
             data-reveal
             data-reveal-delay={String((i % 3) + 1)}
           >
-            <div class="mb-5">
+            <div class="mb-5 flex items-center justify-between gap-3">
               <span class="inline-block px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] bg-[#001F5B] text-white">
                 {project.categories[0]}
               </span>
+              {project.duration && (
+                <span class="flex items-center gap-1 text-[10px] font-bold text-slate-400 uppercase tracking-widest flex-shrink-0">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  {project.duration}
+                </span>
+              )}
             </div>
 
             <h3 class="text-xl font-black text-slate-900 mb-4 leading-tight">

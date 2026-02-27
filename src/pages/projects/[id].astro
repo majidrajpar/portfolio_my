@@ -132,6 +132,19 @@ const catSlug = categorySlug(project.categories[0]);
             </span>
           </div>
 
+          <!-- Duration -->
+          {project.duration && (
+            <div class="bg-white border border-slate-200 p-6">
+              <h3 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">Engagement Duration</h3>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-[#001F5B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-slate-900 font-black text-sm capitalize">{project.duration}</span>
+              </div>
+            </div>
+          )}
+
           <!-- CTA -->
           <div class="bg-[#001F5B] p-6">
             <h3 class="text-white font-black text-sm mb-3">Discuss a Similar Engagement</h3>
