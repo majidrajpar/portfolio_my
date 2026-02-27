@@ -447,7 +447,7 @@ export const categoryMeta = [
   {
     name: 'Strategic Dashboards',
     slug: 'strategic-dashboards',
-    description: 'Executive financial reporting, automated board-level dashboards, and management information tools.',
+    description: 'Integrated platforms, compliance systems, and board-level reporting tools that give leadership a real-time picture — from audit lifecycle management and multi-location compliance tracking to enterprise risk dashboards and financial reporting.',
   },
 ];
 
