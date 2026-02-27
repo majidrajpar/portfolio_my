@@ -30,7 +30,7 @@ import SeverityClassifier from '../../components/SeverityClassifier.jsx';
         <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Step-by-Step</span>
         <h2 class="text-3xl font-black text-slate-900 mb-3">Select the four risk factors.</h2>
         <p class="text-slate-500 text-sm max-w-xl">
-          Choose the option that best reflects your finding. The classifier scores each factor and maps the total to a severity tier.
+          Choose the option that best reflects your finding across each of the four factors. The classifier analyses the combination and determines the severity rating.
         </p>
       </div>
 
@@ -43,35 +43,31 @@ import SeverityClassifier from '../../components/SeverityClassifier.jsx';
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="max-w-3xl" data-reveal>
         <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Methodology</span>
-        <h2 class="text-3xl font-black text-slate-900 mb-4">How the scoring works.</h2>
+        <h2 class="text-3xl font-black text-slate-900 mb-4">How ratings are determined.</h2>
         <p class="text-slate-600 text-sm leading-relaxed mb-4">
-          Each factor scores 1–3 points. The four scores are summed (range 4–12) and mapped to a severity tier consistent with IIA Standards and common GCC audit committee expectations.
+          The classifier uses a model trained on expert-labelled combinations of the four risk factors, consistent with IIA Standards and GCC audit committee expectations. It weighs factors and their interactions — not just a simple sum — to produce the severity rating.
         </p>
         <p class="text-slate-500 text-xs leading-relaxed mb-10">
-          Financial exposure is assessed relative to the entity's own materiality threshold — not against absolute figures. A AED 500K exposure is immaterial for a billion-dirham group and critical for an SME. Auditors must apply their own materiality judgement when selecting this factor.
+          Financial exposure is assessed relative to the entity's own materiality threshold — not against absolute figures. An AED 500K exposure is immaterial for a billion-dirham group and critical for an SME. Apply your own materiality judgement when selecting this factor.
         </p>
 
         <!-- Severity legend -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
           <div class="bg-white border border-slate-200 border-t-2 border-t-green-500 p-5">
-            <div class="text-green-600 font-black text-xs uppercase tracking-widest mb-1">Low</div>
-            <div class="text-slate-400 text-xs">Score 4–5</div>
-            <div class="text-slate-600 text-xs mt-2 leading-snug">Monitor and track</div>
+            <div class="text-green-600 font-black text-xs uppercase tracking-widest mb-2">Low</div>
+            <div class="text-slate-600 text-xs leading-snug">Monitor and track. Follow up in next audit cycle.</div>
           </div>
           <div class="bg-white border border-slate-200 border-t-2 border-t-amber-500 p-5">
-            <div class="text-amber-600 font-black text-xs uppercase tracking-widest mb-1">Medium</div>
-            <div class="text-slate-400 text-xs">Score 6–7</div>
-            <div class="text-slate-600 text-xs mt-2 leading-snug">Remediation plan required</div>
+            <div class="text-amber-600 font-black text-xs uppercase tracking-widest mb-2">Medium</div>
+            <div class="text-slate-600 text-xs leading-snug">Remediation plan with agreed timelines required.</div>
           </div>
           <div class="bg-white border border-slate-200 border-t-2 border-t-orange-500 p-5">
-            <div class="text-orange-600 font-black text-xs uppercase tracking-widest mb-1">High</div>
-            <div class="text-slate-400 text-xs">Score 8–10</div>
-            <div class="text-slate-600 text-xs mt-2 leading-snug">Escalate to senior management</div>
+            <div class="text-orange-600 font-black text-xs uppercase tracking-widest mb-2">High</div>
+            <div class="text-slate-600 text-xs leading-snug">Prompt escalation to senior management. Root cause analysis mandatory.</div>
           </div>
           <div class="bg-white border border-slate-200 border-t-2 border-t-red-700 p-5">
-            <div class="text-red-700 font-black text-xs uppercase tracking-widest mb-1">Critical</div>
-            <div class="text-slate-400 text-xs">Score 11–12</div>
-            <div class="text-slate-600 text-xs mt-2 leading-snug">Board / AC notification</div>
+            <div class="text-red-700 font-black text-xs uppercase tracking-widest mb-2">Critical</div>
+            <div class="text-slate-600 text-xs leading-snug">Immediate Board / Audit Committee notification required.</div>
           </div>
         </div>
 
