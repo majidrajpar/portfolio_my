@@ -164,7 +164,7 @@ const base = import.meta.env.BASE_URL;
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
         {featuredProjects.map((project) => (
           <article class="glass-card p-0 flex flex-col h-full group overflow-hidden" data-reveal>
             {project.image && (
@@ -173,7 +173,7 @@ const base = import.meta.env.BASE_URL;
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/80"></div>
               </div>
             )}
-            <div class="p-10 flex flex-col flex-1">
+            <div class="p-8 flex flex-col flex-1">
               <div class="mb-6 flex justify-between items-start gap-3">
                 <span class="text-[10px] font-black uppercase tracking-[0.3em] bg-[#001F5B]/10 text-[#001F5B] px-4 py-1.5 rounded-full border border-[#001F5B]/20">
                   {project.categories?.[0] ?? project.category}
