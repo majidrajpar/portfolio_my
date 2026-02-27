@@ -50,18 +50,38 @@ export const projects = [
   {
     id: 'dfm-ipo-readiness',
     title: 'DFM IPO Readiness — UAE Multi-Brand F&B Technology Platform',
-    description: 'A UAE multi-brand F&B technology platform targeting DFM listing had no governance infrastructure, no ICOFR framework, and no audit function. Led end-to-end IPO readiness across governance restructuring, ICOFR build-out, and UAE SCA compliance — from zero to listing-ready across 7 jurisdictions.',
+    description: 'A UAE multi-brand F&B technology platform targeting a Dubai Financial Market listing had no governance infrastructure, no ICOFR framework, no documented policies, and no internal audit function. Engaged as KPMG external advisor to oversee and drive the company\'s end-to-end IPO readiness programme — covering ICOFR build-out, UAE SCA corporate governance alignment, GRC and ERM implementation, policies and procedures development, whistleblowing programme design, and the establishment of an internal audit function from scratch. Programme spanned 7 jurisdictions and ran in parallel with day-to-day commercial operations.',
     categories: ['Corporate Governance', 'Audit Transformation'],
-    impact: 'End-to-end IPO readiness across governance, ICOFR, and UAE SCA compliance for a multi-jurisdiction, multi-brand platform',
-    techStack: ['UAE SCA Regulations', 'DFM Listing Rules', 'COSO ICOFR', 'IFRS', 'UAE Companies Law'],
-    image: '/portfolio_my/images/projects/dfm-ipo-readiness/icofr-governance.webp',
+    impact: 'Seven integrated workstreams delivered — ICOFR, governance, GRC, policies, whistleblowing, internal audit function, and IFRS readiness — across a 7-jurisdiction, multi-brand platform targeting DFM listing',
+    techStack: ['UAE SCA Regulations', 'DFM Listing Rules', 'COSO ICOFR', 'IFRS', 'UAE Companies Law', 'COSO ERM 2017', 'IIA Standards', 'ISO 37002:2021', 'Three Lines of Defence'],
+    image: '/portfolio_my/images/projects/dfm-ipo-readiness/programme-architecture.png',
+    additionalScreenshots: [
+      {
+        image: '/portfolio_my/images/projects/dfm-ipo-readiness/icofr-process-coverage.png',
+        caption: 'ICOFR Process Coverage — 13 business processes scoped and documented with 175+ controls mapped to COSO control categories; inherent risk rated per process across financial close, commercial, operations, technology, and governance domains.'
+      },
+      {
+        image: '/portfolio_my/images/projects/dfm-ipo-readiness/three-lines-defence.png',
+        caption: 'Three Lines of Defence Model — governance accountability embedded across UAE holding company and 7 subsidiaries: Line 1 (business ownership), Line 2 (GRC/compliance oversight), Line 3 (internal audit and KPMG advisory) — all reporting to the Board and Audit Committee.'
+      },
+      {
+        image: '/portfolio_my/images/projects/dfm-ipo-readiness/readiness-scorecard.png',
+        caption: 'IPO Readiness Scorecard — pre-engagement baseline versus listing-ready state across 7 dimensions: ICOFR, corporate governance, GRC/ERM, policies and procedures, internal audit function, IFRS financial reporting, and whistleblowing & ethics.'
+      },
+      {
+        image: '/portfolio_my/images/projects/dfm-ipo-readiness/icofr-governance.webp',
+        caption: 'ICOFR Governance Architecture — COSO-aligned internal control framework mapping financial statement assertions to process-level controls, with design and operating effectiveness testing documentation.'
+      }
+    ],
     features: [
-      'ICOFR scoping and Risk Control Matrix documentation across 12+ business processes',
-      'UAE SCA Corporate Governance Code compliance — board composition, committee design, disclosure framework',
-      'IFRS-compliant financial statement preparation and audit readiness across all entities',
-      'Three Lines of Defence model embedded ahead of listing with internal audit function build-out',
-      'Dual-workstream delivery: IPO governance alongside group-wide COSO ERM 2017 rollout across 7 jurisdictions',
-      'Board, Audit Committee, and investor reporting frameworks designed for post-listing governance obligations'
+      'ICOFR Programme — 13 business processes scoped; 175+ controls designed, documented in Risk Control Matrices, and tested for design and operating effectiveness ahead of external auditor reliance',
+      'UAE SCA Corporate Governance Code — board composition, independence requirements, Audit and Risk committee formation, disclosure framework, and board charter documentation aligned to DFM Listing Rules',
+      'GRC & COSO ERM 2017 Rollout — enterprise risk register, KRI dashboard, risk appetite statement (board-adopted), and Three Lines of Defence model embedded across all 7 jurisdictions',
+      'Policies & Procedures Development — group policy framework and hierarchy established; 15+ financial and operational control policies drafted covering procurement, payroll, treasury, delegation of authority, and expense management',
+      'Whistleblowing Programme — policy, anonymous reporting channel, investigation protocol, non-retaliation framework, and Audit Committee reporting template designed and deployed across the group',
+      'Internal Audit Function Build-Out — IA charter, risk-based audit plan, IIA-aligned methodology, findings management framework, and Board/Audit Committee reporting cadence established from zero',
+      'IFRS Financial Readiness — IFRS gap analysis across all entities, multi-entity consolidation framework, and 3-year audited financial statement preparation for DFM prospectus requirements',
+      'Board & Investor Reporting — post-listing governance reporting packs designed for Board, Audit Committee, and investor-facing disclosure obligations'
     ]
   },
   {
