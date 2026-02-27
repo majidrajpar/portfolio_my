@@ -413,7 +413,15 @@ export const projects = [
   },
 ];
 
-export const featuredProjects = projects.slice(0, 2);
+const FEATURED_IDS = [
+  'dfm-ipo-readiness',
+  'ksa-real-estate-fraud',
+  'enterprise-audit-platform',
+  'food-safety-risk',
+  'multi-location-compliance',
+  'coso-erm-9country',
+];
+export const featuredProjects = FEATURED_IDS.map(id => projects.find(p => p.id === id)).filter(Boolean);
 
 export const categoryMeta = [
   {
