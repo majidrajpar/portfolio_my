@@ -63,7 +63,7 @@ const filtered = (projects as any[]).filter(p => p.categories.includes(cat.name)
           >
             <div class="mb-5 flex items-center justify-between gap-3">
               <span class="inline-block px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] bg-[#001F5B] text-white">
-                {project.categories[0]}
+                {cat.name}
               </span>
               {project.duration && (
                 <span class="flex items-center gap-1 text-[10px] font-bold text-slate-400 uppercase tracking-widest flex-shrink-0">
@@ -119,12 +119,6 @@ const filtered = (projects as any[]).filter(p => p.categories.includes(cat.name)
       <h2 class="text-3xl font-black text-white mb-4">Ready to Discuss Your Challenge?</h2>
       <p class="text-white/70 mb-8">Every engagement starts with understanding your specific context.</p>
       <a href={`${base}contact/`} class="btn-primary">Start the Conversation</a>
-      <div class="mt-8">
-        <a href={`${base}downloads/Fraud_Detection_Forensics_Framework.pdf`} download class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-white/60 border-b border-white/20 pb-1 hover:text-white hover:border-white/50 transition-colors">
-          <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-          Free Download: Fraud Detection & Forensics Framework
-        </a>
-      </div>
     </div>
   </section>
 </BaseLayout>
