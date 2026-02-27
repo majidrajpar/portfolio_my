@@ -238,17 +238,17 @@ const metrics = [
         <h2 class="text-4xl font-black text-slate-900">5 Books on Amazon.</h2>
         <p class="text-slate-600 mt-3">Sharing knowledge across internal audit, risk management, and forensic accounting.</p>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {books.map((book, i) => (
           <a
             href={book.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="glass-card overflow-hidden flex flex-col group hover:border-[#001F5B]/40 transition-all"
+            class="glass-card overflow-hidden flex flex-row gap-5 p-5 group hover:border-[#001F5B]/40 transition-all items-start"
             data-reveal
             data-reveal-delay={String((i % 3) + 1)}
           >
-            <div class="aspect-[2/3] bg-slate-100 overflow-hidden">
+            <div class="w-20 flex-shrink-0 aspect-[2/3] bg-slate-100 overflow-hidden">
               <img
                 src={book.cover}
                 alt={book.title}
@@ -256,11 +256,10 @@ const metrics = [
                 loading="lazy"
               />
             </div>
-            <div class="p-4 flex flex-col flex-1">
-              <h4 class="text-slate-900 font-black text-xs mb-2 leading-snug group-hover:text-[#001F5B] transition-colors line-clamp-3">{book.title}</h4>
-              <div class="flex justify-end items-center mt-auto pt-2">
-                <span class="text-[9px] font-black text-[#001F5B] uppercase tracking-widest">Amazon ↗</span>
-              </div>
+            <div class="flex flex-col flex-1 min-w-0">
+              <h4 class="text-slate-900 font-black text-sm mb-2 leading-snug group-hover:text-[#001F5B] transition-colors">{book.title}</h4>
+              <p class="text-slate-500 text-xs leading-relaxed flex-1 mb-3">{book.desc}</p>
+              <span class="text-[9px] font-black text-[#001F5B] uppercase tracking-widest">Amazon ↗</span>
             </div>
           </a>
         ))}

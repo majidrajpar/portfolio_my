@@ -73,16 +73,16 @@ const categories = ['All', ...new Set((documents as any[]).map((d: any) => d.cat
               <span>{doc.filename.toUpperCase().endsWith('.DOCX') ? 'WORD' : 'PDF'}</span>
             </div>
 
-            <!-- Download Button -->
+            <!-- Download Link -->
             <a
               href={`${base}downloads/${doc.filename}`}
               download
-              class="inline-flex items-center justify-center gap-2 px-4 py-3 bg-[#001F5B] text-white font-black text-xs uppercase tracking-widest hover:bg-[#002d87] transition-colors"
+              class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#001F5B] border-b border-[#001F5B]/30 pb-1 hover:border-[#001F5B] transition-colors"
             >
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
               </svg>
-              Direct Download
+              Download
             </a>
           </div>
         ))}
