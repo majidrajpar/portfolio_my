@@ -165,46 +165,36 @@ const base = import.meta.env.BASE_URL;
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        {featuredProjects.map((project) => (
-          <article class="glass-card p-0 flex flex-col h-full group overflow-hidden" data-reveal>
-            {project.image && (
-              <div class="relative h-48 overflow-hidden">
-                <img src={project.image} alt={project.title} class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
-                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/80"></div>
-              </div>
-            )}
-            <div class="p-8 flex flex-col flex-1">
-              <div class="mb-6 flex justify-between items-start gap-3">
-                <span class="text-[10px] font-black uppercase tracking-[0.3em] bg-[#001F5B]/10 text-[#001F5B] px-4 py-1.5 rounded-full border border-[#001F5B]/20">
-                  {project.categories?.[0] ?? project.category}
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+        {featuredProjects.map((project, i) => (
+          <a
+            href={`${base}projects/${project.id}/`}
+            class="group border border-slate-200 bg-white p-6 flex flex-col gap-4 hover:border-[#001F5B]/40 hover:shadow-sm transition-all duration-200"
+            data-reveal
+            data-reveal-delay={String((i % 3) + 1)}
+          >
+            <div class="flex items-center justify-between gap-3">
+              <span class="text-[9px] font-black uppercase tracking-[0.25em] bg-[#001F5B]/8 text-[#001F5B] px-3 py-1 border border-[#001F5B]/15">
+                {project.categories?.[0] ?? project.category}
+              </span>
+              {project.duration && (
+                <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest flex-shrink-0">
+                  {project.duration}
                 </span>
-                {project.duration && (
-                  <span class="flex items-center gap-1 text-[10px] font-bold text-slate-400 uppercase tracking-widest flex-shrink-0 pt-1">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
-                    {project.duration}
-                  </span>
-                )}
-              </div>
-              <h3 class="text-xl font-black text-slate-900 mb-4 leading-tight group-hover:text-[#001F5B] transition-colors">
-                {project.title}
-              </h3>
-              <p class="text-slate-600 text-sm mb-8 flex-1 leading-relaxed line-clamp-3">
-                {project.description}
-              </p>
-              {project.impact && (
-                <div class="mb-8 pl-4 border-l-4 border-[#001F5B]">
-                  <div class="text-[10px] font-black text-[#001F5B] uppercase tracking-[0.2em] mb-1">Impact Delivered</div>
-                  <div class="text-slate-900 font-bold text-sm leading-snug">{project.impact}</div>
-                </div>
               )}
-              <a href={`${base}projects/${project.id}/`} class="inline-flex items-center text-[#001F5B] font-black text-[10px] uppercase tracking-[0.2em] hover:text-blue-700 transition-colors">
-                View Project Details →
-              </a>
             </div>
-          </article>
+            <h3 class="text-sm font-black text-slate-900 leading-snug group-hover:text-[#001F5B] transition-colors">
+              {project.title}
+            </h3>
+            {project.impact && (
+              <p class="text-[11px] text-slate-500 leading-relaxed border-l-2 border-[#001F5B]/30 pl-3">
+                {project.impact}
+              </p>
+            )}
+            <span class="text-[9px] font-black uppercase tracking-[0.25em] text-[#001F5B] mt-auto group-hover:text-blue-700 transition-colors">
+              View Details →
+            </span>
+          </a>
         ))}
       </div>
 
