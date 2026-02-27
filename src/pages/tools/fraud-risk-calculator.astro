@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FraudRiskCalculator from '../../components/FraudRiskCalculator.jsx';
+---
+
+<BaseLayout
+  title="Fraud Risk Calculator | Majid Mumtaz"
+  description="A free, browser-based fraud risk assessment tool built on the Fraud Triangle and COSO framework. Score your organisation across Opportunity, Pressure, Rationalization, and Control Environment to receive an instant, ML-powered risk rating."
+>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-[#001F5B]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Fraud &amp; Forensics</span>
+        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+          Fraud Risk Calculator.
+        </h1>
+        <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
+          Answer 20 diagnostic questions across the four pillars of the Fraud Triangle and receive an instant, ML-powered fraud risk rating — with domain scores, radar analysis, and prioritised recommendations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tool -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="mb-12" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Step-by-Step Assessment</span>
+        <h2 class="text-3xl font-black text-slate-900 mb-3">Rate your organisation across all four domains.</h2>
+        <p class="text-slate-500 text-sm max-w-2xl">
+          For each question, select how frequently the described condition applies in your organisation — from Never to Always. Work through all four tabs to generate your full fraud risk profile.
+        </p>
+      </div>
+
+      <FraudRiskCalculator client:load />
+    </div>
+  </section>
+
+  <!-- Methodology -->
+  <section class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Methodology</span>
+        <h2 class="text-3xl font-black text-slate-900 mb-4">How this assessment works.</h2>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+          This tool is grounded in two widely recognised frameworks: the <strong>Fraud Triangle</strong> (Cressey, 1953) — which identifies Opportunity, Pressure, and Rationalization as the three conditions that enable fraud — and the <strong>COSO Internal Control Framework</strong>, which adds Control Environment as a fourth dimension reflecting governance and oversight quality.
+        </p>
+        <p class="text-slate-500 text-xs leading-relaxed mb-10">
+          Your responses across all 20 questions are averaged into four domain scores (1–5 scale) and fed into a trained machine learning model that classifies overall fraud risk as Low, Medium, High, or Critical. The model was trained on expert-labelled combinations of domain scores, using polynomial feature expansion and softmax classification — the same approach used in the Audit Finding Severity Classifier.
+        </p>
+
+        <!-- Framework pillars -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+          <div class="bg-white border border-slate-200 border-t-2 border-t-[#001F5B] p-5">
+            <div class="text-[#001F5B] font-black text-xs uppercase tracking-widest mb-2">Opportunity</div>
+            <div class="text-slate-600 text-xs leading-snug">Conditions that allow fraud to occur — weak access controls, poor segregation of duties, or limited oversight.</div>
+          </div>
+          <div class="bg-white border border-slate-200 border-t-2 border-t-[#001F5B] p-5">
+            <div class="text-[#001F5B] font-black text-xs uppercase tracking-widest mb-2">Pressure / Incentive</div>
+            <div class="text-slate-600 text-xs leading-snug">Financial or organisational pressures that motivate individuals — aggressive targets, personal hardship, or fear of job loss.</div>
+          </div>
+          <div class="bg-white border border-slate-200 border-t-2 border-t-[#001F5B] p-5">
+            <div class="text-[#001F5B] font-black text-xs uppercase tracking-widest mb-2">Rationalization</div>
+            <div class="text-slate-600 text-xs leading-snug">Cultural attitudes that allow individuals to justify dishonest behaviour — perceived unfairness, leniency on violations, or a "bending rules" culture.</div>
+          </div>
+          <div class="bg-white border border-slate-200 border-t-2 border-t-[#001F5B] p-5">
+            <div class="text-[#001F5B] font-black text-xs uppercase tracking-widest mb-2">Control Environment</div>
+            <div class="text-slate-600 text-xs leading-snug">Anti-fraud governance strength — tone from the top, whistleblowing channels, fraud training, and detection programmes.</div>
+          </div>
+        </div>
+
+        <!-- Risk level legend -->
+        <h3 class="text-sm font-black text-slate-900 uppercase tracking-widest mb-4">Risk Level Definitions</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+          <div class="bg-white border border-slate-200 border-t-2 border-t-green-500 p-5">
+            <div class="text-green-600 font-black text-xs uppercase tracking-widest mb-2">Low</div>
+            <div class="text-slate-600 text-xs leading-snug">Fraud risk is well-controlled. Maintain current controls and monitor on a regular cycle.</div>
+          </div>
+          <div class="bg-white border border-slate-200 border-t-2 border-t-amber-500 p-5">
+            <div class="text-amber-600 font-black text-xs uppercase tracking-widest mb-2">Medium</div>
+            <div class="text-slate-600 text-xs leading-snug">Elevated risk in one or more areas. A targeted remediation plan with agreed timelines is warranted.</div>
+          </div>
+          <div class="bg-white border border-slate-200 border-t-2 border-t-orange-500 p-5">
+            <div class="text-orange-600 font-black text-xs uppercase tracking-widest mb-2">High</div>
+            <div class="text-slate-600 text-xs leading-snug">Significant fraud risk exposure. Escalate to senior management and initiate root cause remediation.</div>
+          </div>
+          <div class="bg-white border border-slate-200 border-t-2 border-t-red-700 p-5">
+            <div class="text-red-700 font-black text-xs uppercase tracking-widest mb-2">Critical</div>
+            <div class="text-slate-600 text-xs leading-snug">Severe, systemic fraud risk. Immediate Board or Audit Committee notification and intervention required.</div>
+          </div>
+        </div>
+
+        <!-- Scoring guide -->
+        <div class="border border-slate-200 overflow-hidden mb-10">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="bg-[#001F5B] text-white">
+                <th class="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px]">Rating</th>
+                <th class="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px]">Meaning</th>
+                <th class="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px]">Domain Score Implication</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              {[
+                ['Never (1)', 'The condition does not exist in your organisation.', 'Contributes to a Low domain score'],
+                ['Rarely (2)', 'Occurs only in exceptional circumstances.', 'Contributes to a Low–Medium score'],
+                ['Sometimes (3)', 'Occurs periodically and is not consistently managed.', 'Contributes to a Medium score'],
+                ['Often (4)', 'A recurring condition without reliable mitigation.', 'Contributes to a High score'],
+                ['Always (5)', 'A persistent, unmitigated condition.', 'Contributes to a Critical score'],
+              ].map(([rating, meaning, implication]) => (
+                <tr class="bg-white hover:bg-slate-50 transition-colors">
+                  <td class="px-5 py-3.5 font-black text-slate-900">{rating}</td>
+                  <td class="px-5 py-3.5 text-slate-600">{meaning}</td>
+                  <td class="px-5 py-3.5 text-slate-500">{implication}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Privacy note -->
+        <div class="bg-white border border-slate-200 px-6 py-5 flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#001F5B] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <div>
+            <div class="text-[10px] font-black uppercase tracking-widest text-[#001F5B] mb-1">Privacy &amp; Confidentiality</div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              This tool operates entirely within your browser. No responses, scores, or results are transmitted to any server or stored in any database. The ML model runs locally using JavaScript. You may use this tool with confidence that sensitive organisational information remains private.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

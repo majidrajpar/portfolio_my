@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { tools } from '../../data/tools.js';
+const base = import.meta.env.BASE_URL;
+
+const categoryColors: Record<string, string> = {
+  'Audit Intelligence': 'bg-[#001F5B] text-white',
+  'Fraud & Forensics':  'bg-rose-700 text-white',
+  'Governance':         'bg-indigo-700 text-white',
+  'Internal Controls':  'bg-teal-700 text-white',
+  'Enterprise Risk':    'bg-orange-600 text-white',
+  'Compliance':         'bg-purple-700 text-white',
+  'Reporting':          'bg-slate-700 text-white',
+};
+---
+
+<BaseLayout
+  title="Audit Intelligence Tools | Majid Mumtaz"
+  description="Browser-based tools for audit professionals — ML-powered severity classifiers, fraud risk calculators, governance maturity assessments, and more. No data stored or transmitted."
+>
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-[#001F5B]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Audit Intelligence Tools</span>
+        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+          Tools Built for<br/>Audit Professionals.
+        </h1>
+        <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
+          ML-powered, browser-based tools for risk assessment, governance evaluation, fraud detection, and compliance monitoring. Free to use — no account, no data stored.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy notice -->
+  <div class="bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-3 flex items-start gap-3">
+      <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+      </svg>
+      <p class="text-[11px] text-slate-500 leading-relaxed">
+        <span class="font-bold uppercase tracking-wider text-slate-600">Privacy — </span>
+        All tools run entirely in your browser. No inputs, scores, or outputs are transmitted to any server or stored in any database.
+      </p>
+    </div>
+  </div>
+
+  <!-- Tool grid -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+      <!-- Live tools -->
+      <div class="mb-6" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B]">Available Now</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        {tools.filter(t => t.isLive).map((tool, i) => (
+          <a
+            href={tool.href}
+            class="group bg-white border border-slate-200 flex flex-col p-8 hover:shadow-lg hover:border-[#001F5B]/30 transition-all duration-300 h-full"
+            data-reveal
+            data-reveal-delay={String((i % 3) + 1)}
+          >
+            <div class="mb-5 flex items-center justify-between">
+              <span class={`inline-block px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
+                {tool.category}
+              </span>
+              {tool.ml && (
+                <span class="flex items-center gap-1 text-[10px] font-bold text-[#001F5B] uppercase tracking-widest">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                  </svg>
+                  ML
+                </span>
+              )}
+            </div>
+
+            <h3 class="text-xl font-black text-slate-900 mb-3 leading-tight group-hover:text-[#001F5B] transition-colors">
+              {tool.title}
+            </h3>
+            <p class="text-slate-500 text-sm flex-1 leading-relaxed mb-6">
+              {tool.description}
+            </p>
+            <span class="inline-flex items-center text-[#001F5B] font-black text-xs uppercase tracking-widest group-hover:text-blue-700 transition-colors">
+              Launch Tool
+              <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+
+      <!-- Coming soon -->
+      <div class="mb-6" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Coming Soon — Batch 2</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {tools.filter(t => !t.isLive).map((tool, i) => (
+          <div
+            class="bg-slate-50 border border-slate-200 border-dashed flex flex-col p-8 opacity-70 h-full"
+            data-reveal
+            data-reveal-delay={String((i % 3) + 1)}
+          >
+            <div class="mb-5 flex items-center justify-between">
+              <span class={`inline-block px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] opacity-60 ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
+                {tool.category}
+              </span>
+              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest border border-slate-300 px-2 py-0.5">
+                Soon
+              </span>
+            </div>
+            <h3 class="text-xl font-black text-slate-400 mb-3 leading-tight">
+              {tool.title}
+            </h3>
+            <p class="text-slate-400 text-sm flex-1 leading-relaxed">
+              {tool.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-[#001F5B]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center" data-reveal>
+      <h2 class="text-3xl font-black text-white mb-4">Need a Custom Tool for Your Team?</h2>
+      <p class="text-white/70 mb-8 max-w-xl mx-auto">These tools are built on real engagement experience. If your organisation needs bespoke audit or governance tooling, let's talk.</p>
+      <a href={`${base}contact/`} class="btn-primary">Start the Conversation</a>
+    </div>
+  </section>
+</BaseLayout>
