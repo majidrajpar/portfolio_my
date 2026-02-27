@@ -29,19 +29,23 @@ const categories = ['All', ...new Set((documents as any[]).map((d: any) => d.cat
   <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
 
-      <!-- Category Filters (static display) -->
-      <div class="flex flex-wrap gap-2 mb-12">
-        {categories.map(cat => (
-          <span class="px-4 py-2 text-[10px] font-black uppercase tracking-widest border border-slate-200 text-slate-600 bg-white">
+      <!-- Category Filters -->
+      <div class="flex flex-wrap gap-2 mb-12" id="filter-bar">
+        {categories.map((cat, idx) => (
+          <button
+            data-filter={cat}
+            class={`filter-btn px-4 py-2 text-[10px] font-black uppercase tracking-widest border transition-all duration-150 ${idx === 0 ? 'bg-[#001F5B] border-[#001F5B] text-white' : 'border-slate-200 text-slate-600 bg-white hover:border-[#001F5B]/40 hover:text-slate-900'}`}
+          >
             {cat}
-          </span>
+          </button>
         ))}
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="docs-grid">
         {(documents as any[]).map((doc: any, i: number) => (
           <div
             class="bg-white border border-slate-200 p-6 hover:shadow-md transition-shadow flex flex-col"
+            data-category={doc.category}
             data-reveal
             data-reveal-delay={String((i % 3) + 1)}
           >
@@ -85,6 +89,44 @@ const categories = ['All', ...new Set((documents as any[]).map((d: any) => d.cat
       </div>
     </div>
   </section>
+
+  <!-- Filter script -->
+  <script is:inline>
+    (function () {
+      const bar   = document.getElementById('filter-bar');
+      const grid  = document.getElementById('docs-grid');
+      if (!bar || !grid) return;
+
+      const cards = Array.from(grid.querySelectorAll('[data-category]'));
+
+      bar.addEventListener('click', function (e) {
+        const btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+
+        const selected = btn.dataset.filter;
+
+        // Update button styles
+        bar.querySelectorAll('.filter-btn').forEach(function (b) {
+          if (b === btn) {
+            b.classList.add('bg-[#001F5B]', 'border-[#001F5B]', 'text-white');
+            b.classList.remove('border-slate-200', 'text-slate-600', 'bg-white');
+          } else {
+            b.classList.remove('bg-[#001F5B]', 'border-[#001F5B]', 'text-white');
+            b.classList.add('border-slate-200', 'text-slate-600', 'bg-white');
+          }
+        });
+
+        // Show / hide cards
+        cards.forEach(function (card) {
+          if (selected === 'All' || card.dataset.category === selected) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    })();
+  </script>
 
   <!-- CV Download CTA -->
   <section class="py-20 bg-slate-50">
