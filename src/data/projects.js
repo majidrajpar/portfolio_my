@@ -539,21 +539,21 @@ export const projects = [
   {
     id: 'qsr-risk-based-audit-transformation',
     title: 'Risk-Based Audit Transformation — Global QSR Franchise, KSA',
-    description: 'The internal audit function of a leading global quick-service restaurant franchise operating across Saudi Arabia was limited to restaurant-level operational and hygiene audits — a compliance-tick approach with no enterprise risk perspective, no formal risk assessment, and a two-person team with limited scope and strategic impact. Brought in as Internal Audit Manager to transform the function: conducted the organisation\'s first enterprise risk assessment, built a risk-based annual audit plan, secured Board and Audit Committee approval for the expanded mandate, and grew the team from two to five professionals. The transformation repositioned internal audit from a restaurant operations checker to a strategic risk assurance function — lifting team utilisation and productivity by 70%.',
+    description: 'The internal audit function of a leading global quick-service restaurant franchise operating across Saudi Arabia was limited to restaurant-level operational and hygiene audits — a compliance-tick approach with no enterprise risk perspective, no formal risk assessment, and a two-person team with limited scope and strategic impact. Brought in as Internal Audit Manager to transform the function: conducted the organisation\'s first enterprise risk assessment, built a risk-based annual audit plan, secured approval from the KSA Country President and McDonald\'s Corporate Internal Audit Director for the expanded mandate, and grew the team from two to five professionals. The transformation repositioned internal audit from a restaurant operations checker to a strategic risk assurance function — lifting team utilisation and productivity by 70%.',
     categories: ['Audit Transformation'],
     duration: '2.5 years',
-    impact: '70% increase in audit team productivity — team scaled from 2 to 5 — risk-based audit plan board-approved — first enterprise risk assessment completed',
-    techStack: ['IIA Standards', 'Risk-Based Audit Planning', 'COSO ERM', 'Audit Committee Reporting', 'Enterprise Risk Assessment'],
+    impact: '70% increase in audit team productivity — team scaled from 2 to 5 — risk-based audit plan approved by KSA President & McDonald\'s Corp IA Director — first enterprise risk assessment completed',
+    techStack: ['IIA Standards', 'Risk-Based Audit Planning', 'COSO ERM', 'Corporate IA Alignment', 'Enterprise Risk Assessment'],
     image: '/portfolio_my/images/projects/qsr-transformation/methodology-shift.png',
     additionalScreenshots: [
       {
         image: '/portfolio_my/images/projects/qsr-transformation/productivity-gains.png',
-        caption: 'Audit Function Growth — team scaled from 2 to 5 professionals and productivity utilisation increased 70% following the shift to risk-based audit planning and a board-approved expanded mandate.'
+        caption: 'Audit Function Growth — team scaled from 2 to 5 professionals and productivity utilisation increased 70% following the shift to risk-based audit planning, approved by the KSA Country President and McDonald\'s Corp Internal Audit Director.'
       }
     ],
     features: [
       'Enterprise Risk Assessment — first-ever risk assessment for the KSA franchise operations; identified and prioritised risks across financial, operational, compliance, and franchise integrity domains',
-      'Risk-Based Audit Plan — annual audit plan built on risk assessment outcomes, moving beyond restaurant checklists to strategic audit coverage; plan presented to and approved by Board and Audit Committee',
+      'Risk-Based Audit Plan — annual audit plan built on risk assessment outcomes, moving beyond restaurant checklists to strategic audit coverage; plan presented to and approved by the KSA Country President and McDonald\'s Corporate Internal Audit Director',
       'Audit Charter & Mandate Expansion — formal charter drafted defining independence, authority, scope, and reporting lines; mandate elevated from restaurant operations to enterprise-wide risk assurance',
       'Team Growth — recruited and onboarded three additional audit professionals, growing the team from two to five and enabling coverage of strategic audit domains for the first time',
       'Audit Methodology Design — IIA-aligned audit methodology implemented: risk-based planning, fieldwork standards, finding classification, management reporting, and follow-up cadence',
