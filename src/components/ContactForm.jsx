@@ -32,7 +32,7 @@ const ContactForm = () => {
         <div role="status" aria-live="polite" className="text-center py-12">
           <div className="text-5xl mb-6" aria-hidden="true">✓</div>
           <h3 className="text-slate-900 font-black text-2xl mb-3">Message Sent</h3>
-          <p className="text-slate-600">Thank you — I'll be in touch within 24 hours.</p>
+          <p className="text-slate-600">Thank you — I'll be in touch.</p>
           <button onClick={() => setStatus('idle')} className="mt-8 btn-secondary text-xs">Send Another Message</button>
         </div>
       ) : (
