@@ -50,16 +50,6 @@ export const tools = [
     ml: false,
   },
   {
-    id: 'audit-checklist',
-    title: 'Audit Checklist Generator',
-    description: 'Generate tailored checklists for financial, compliance, operational, IT, or fraud audits. Track completion in real time, add custom items, and export a finished checklist for workpaper documentation.',
-    category: 'Audit Intelligence',
-    href: '/portfolio_my/tools/audit-checklist/',
-    isLive: true,
-    batch: 2,
-    ml: false,
-  },
-  {
     id: 'compliance-dashboard',
     title: 'Compliance Dashboard',
     description: 'Monitor adherence across regulatory frameworks including SOX, GDPR, ISO 27001, and UAE SCA. Visual status indicators and weighted scoring give instant oversight of your compliance posture.',
