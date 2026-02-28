@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BarChart2, TrendingUp, PieChart, Activity, Plus, X, Copy, Check } from 'lucide-react';
+import { BarChart2, TrendingUp, PieChart, Activity, Plus, X, Copy, Check, Lock } from 'lucide-react';
 import {
   BarChart, Bar,
   LineChart, Line,
@@ -187,7 +187,7 @@ export default function ChartCreator() {
   }
 
   return (
-    <div className="font-sans text-slate-800">
+    <div className="w-full">
       {/* Grid layout */}
       <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-6">
 
@@ -196,7 +196,7 @@ export default function ChartCreator() {
 
           {/* Chart type selector */}
           <div>
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-3">
+            <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] mb-3">
               Chart Type
             </p>
             <div className="grid grid-cols-2 gap-2">
@@ -206,7 +206,7 @@ export default function ChartCreator() {
                   <button
                     key={key}
                     onClick={() => setChartType(key)}
-                    className={`flex flex-col items-center gap-1.5 py-3 px-2 border text-xs font-medium transition-colors ${
+                    className={`flex flex-col items-center gap-1.5 py-3 px-2 border text-[10px] font-black uppercase tracking-wide transition-colors ${
                       active
                         ? 'bg-[#001F5B] border-[#001F5B] text-white'
                         : 'bg-white border-slate-200 text-slate-600 hover:border-slate-400'
@@ -222,7 +222,7 @@ export default function ChartCreator() {
 
           {/* Title input */}
           <div>
-            <label className="block text-xs font-semibold text-slate-500 uppercase tracking-widest mb-2">
+            <label className="block text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] mb-2">
               Chart Title
             </label>
             <input
@@ -236,7 +236,7 @@ export default function ChartCreator() {
 
           {/* Colour theme */}
           <div>
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-3">
+            <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] mb-3">
               Colour Theme
             </p>
             <div className="flex flex-col gap-2">
@@ -247,7 +247,7 @@ export default function ChartCreator() {
                   <button
                     key={key}
                     onClick={() => setTheme(key)}
-                    className={`flex items-center gap-3 px-3 py-2 border text-sm font-medium transition-colors text-left ${
+                    className={`flex items-center gap-3 px-3 py-2 border text-xs font-black transition-colors text-left ${
                       active
                         ? 'border-[#001F5B] bg-white text-[#001F5B]'
                         : 'border-slate-200 bg-white text-slate-600 hover:border-slate-400'
@@ -264,7 +264,7 @@ export default function ChartCreator() {
                     </span>
                     <span>{label}</span>
                     {active && (
-                      <span className="ml-auto w-2 h-2 rounded-full bg-[#001F5B]" />
+                      <span className="ml-auto w-2 h-2 bg-[#001F5B]" />
                     )}
                   </button>
                 );
@@ -274,7 +274,7 @@ export default function ChartCreator() {
 
           {/* Data rows table */}
           <div>
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-3">
+            <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] mb-3">
               Data Rows
             </p>
             <div className="w-full">
@@ -341,10 +341,10 @@ export default function ChartCreator() {
             <button
               onClick={handleCopy}
               disabled={chartData.length === 0}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-[#001F5B] text-white text-sm font-semibold hover:bg-[#1e3a8a] transition-colors disabled:opacity-40 disabled:pointer-events-none"
+              className="w-full flex items-center justify-center gap-2.5 px-4 py-2.5 bg-[#001F5B] text-white text-[10px] font-black uppercase tracking-[0.2em] hover:bg-[#002d87] transition-colors disabled:opacity-40 disabled:pointer-events-none"
             >
               {copied ? <Check size={15} /> : <Copy size={15} />}
-              {copied ? 'Copied!' : 'Copy Data as Table'}
+              {copied ? 'Copied' : 'Copy Data Table'}
             </button>
           </div>
         </div>
@@ -379,9 +379,12 @@ export default function ChartCreator() {
       </div>
 
       {/* Privacy notice */}
-      <p className="mt-4 text-xs text-slate-400 text-center">
-        All data is processed locally in your browser. Nothing is transmitted or stored externally.
-      </p>
+      <div className="flex items-center gap-2 mt-4 text-slate-400">
+        <Lock className="w-3 h-3 flex-shrink-0" />
+        <span className="text-[10px] font-bold uppercase tracking-widest">
+          This tool runs entirely in your browser. No data is transmitted or stored.
+        </span>
+      </div>
     </div>
   );
 }
