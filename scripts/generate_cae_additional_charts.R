@@ -140,11 +140,13 @@ message("1d done")
 # ══════════════════════════════════════════════════════════════════════════════
 d2 <- file.path(ROOT, "qsr-transformation")
 
-# Chart 2c: Enterprise Risk Assessment Heat Map (no ggnewscale — zones via annotate)
+# Chart 2c: Enterprise Risk Assessment Heat Map — ggnewscale two-fill approach
+library(ggnewscale)
+
 # Slight jitter on (4,4) collision: Brand Standards & Food Safety
 risks <- data.frame(
-  likelihood = c(4,   5,   3,   3.8, 5,   3,   2,   4,   3,   4.2, 2,   3),
-  impact     = c(5,   5,   5,   4.2, 4,   4,   5,   3,   4,   3.8, 3,   3),
+  likelihood = c(4,   5,   3,   3.8, 5,   2.7, 2,   4,   3.3, 4.2, 2,   3),
+  impact     = c(5,   5,   5,   4.2, 4,   3.8, 5,   3,   4.2, 3.8, 3,   3),
   label      = c("Revenue\nLeakage", "Financial\nMisstatement", "Regulatory\nBreach",
                  "Brand\nStandards", "Vendor\nFraud", "VAT\nCompliance",
                  "Supply\nChain", "Franchise\nNon-Comply", "Labour\nLaw",
@@ -155,33 +157,51 @@ risks$priority   <- cut(risks$risk_score,
   breaks = c(0, 8, 12, 20, 25),
   labels = c("Low", "Medium", "High", "Critical"))
 
-priority_cols <- c("Low" = "#94A3B8", "Medium" = GOLD, "High" = "#EA580C", "Critical" = RED)
+# Background grid — fill scale 1
+grid_bg <- expand.grid(likelihood = 1:5, impact = 1:5)
+grid_bg$score <- grid_bg$likelihood * grid_bg$impact
+grid_bg$zone  <- cut(grid_bg$score,
+  breaks = c(0, 8, 12, 20, 25),
+  labels = c("Low", "Medium", "High", "Critical"))
 
-p2c <- ggplot(risks, aes(x = likelihood, y = impact)) +
-  # Background zone rectangles via annotate (no fill aesthetic conflict)
-  annotate("rect", xmin=0.5, xmax=2.5, ymin=0.5, ymax=2.5, fill="#EFF6FF", alpha=0.9) +
-  annotate("rect", xmin=2.5, xmax=3.5, ymin=0.5, ymax=2.5, fill="#F0FDF4", alpha=0.9) +
-  annotate("rect", xmin=0.5, xmax=2.5, ymin=2.5, ymax=3.5, fill="#F0FDF4", alpha=0.9) +
-  annotate("rect", xmin=2.5, xmax=3.5, ymin=2.5, ymax=3.5, fill="#FEFCE8", alpha=0.9) +
-  annotate("rect", xmin=3.5, xmax=5.5, ymin=0.5, ymax=2.5, fill="#FEFCE8", alpha=0.9) +
-  annotate("rect", xmin=0.5, xmax=2.5, ymin=3.5, ymax=5.5, fill="#FEFCE8", alpha=0.9) +
-  annotate("rect", xmin=2.5, xmax=3.5, ymin=3.5, ymax=5.5, fill="#FFF7ED", alpha=0.9) +
-  annotate("rect", xmin=3.5, xmax=5.5, ymin=2.5, ymax=3.5, fill="#FFF7ED", alpha=0.9) +
-  annotate("rect", xmin=3.5, xmax=5.5, ymin=3.5, ymax=5.5, fill="#FEF2F2", alpha=0.9) +
-  # Zone labels
-  annotate("text", x=1.5, y=1.2, label="LOW",      size=2.8, colour="#94A3B8", fontface="bold", alpha=0.7) +
-  annotate("text", x=4.5, y=2.0, label="MEDIUM",   size=2.8, colour=GOLD,     fontface="bold", alpha=0.7) +
-  annotate("text", x=3.0, y=4.5, label="HIGH",     size=2.8, colour="#EA580C",fontface="bold", alpha=0.7) +
-  annotate("text", x=4.5, y=4.5, label="CRITICAL", size=2.8, colour=RED,      fontface="bold", alpha=0.7) +
-  # Grid lines
-  geom_hline(yintercept = 1:5 + 0.5, colour = "#E2E8F0", linewidth = 0.4) +
-  geom_vline(xintercept = 1:5 + 0.5, colour = "#E2E8F0", linewidth = 0.4) +
-  # Risk bubbles
-  geom_point(aes(fill = priority, size = risk_score),
-    shape = 21, colour = WHITE, stroke = 1.2, alpha = 0.94) +
-  geom_text(aes(label = label),
-    size = 2.0, colour = WHITE, fontface = "bold", lineheight = 0.85) +
-  scale_fill_manual(values = priority_cols, name = "Priority") +
+zone_fills    <- c("Low" = "#EFF6FF", "Medium" = "#FEFCE8",
+                   "High" = "#FFF7ED", "Critical" = "#FEF2F2")
+priority_cols <- c("Low" = "#94A3B8", "Medium" = GOLD,
+                   "High" = "#EA580C", "Critical" = RED)
+zone_text_col <- c("Low" = "#94A3B8", "Medium" = "#A16207",
+                   "High" = "#EA580C", "Critical" = RED)
+
+zone_labels <- data.frame(
+  likelihood = c(1.5, 4.5, 3.0, 4.5),
+  impact     = c(1.2, 2.0, 4.6, 4.6),
+  label      = c("LOW", "MEDIUM", "HIGH", "CRITICAL"),
+  zone       = factor(c("Low", "Medium", "High", "Critical"),
+                      levels = c("Low", "Medium", "High", "Critical"))
+)
+
+p2c <- ggplot() +
+  # Layer 1: background tiles with fill scale 1
+  geom_tile(data = grid_bg,
+    aes(x = likelihood, y = impact, fill = zone),
+    colour = "#E2E8F0", linewidth = 0.6, alpha = 0.80) +
+  scale_fill_manual(values = zone_fills, name = "Risk Zone",
+    guide = guide_legend(order = 1,
+      override.aes = list(size = 4, alpha = 0.9, colour = NA))) +
+  # Zone text (colour only, no fill)
+  geom_text(data = zone_labels,
+    aes(x = likelihood, y = impact, label = label, colour = zone),
+    size = 2.8, fontface = "bold", alpha = 0.80) +
+  scale_colour_manual(values = zone_text_col, guide = "none") +
+  # Activate fill scale 2 for the risk bubbles
+  new_scale_fill() +
+  geom_point(data = risks,
+    aes(x = likelihood, y = impact, fill = priority, size = risk_score),
+    shape = 21, colour = WHITE, stroke = 1.4, alpha = 0.94) +
+  geom_text(data = risks,
+    aes(x = likelihood, y = impact, label = label),
+    size = 2.1, colour = WHITE, fontface = "bold", lineheight = 0.85) +
+  scale_fill_manual(values = priority_cols, name = "Risk Priority",
+    guide = guide_legend(order = 2, override.aes = list(size = 5))) +
   scale_size_continuous(range = c(10, 20), guide = "none") +
   scale_x_continuous(breaks = 1:5,
     labels = c("Rare", "Unlikely", "Possible", "Likely", "Almost\nCertain"),
