@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ComplianceDashboard from '../../components/ComplianceDashboard.jsx';
+---
+
+<BaseLayout
+  title="Compliance Dashboard | Majid Mumtaz"
+  description="Monitor adherence across SOX, PDPL, ISO 27001, UAE SCA, and COSO ERM frameworks. Weighted scoring and radar chart give instant compliance posture visibility."
+>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-[#001F5B]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Compliance</span>
+        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+          Compliance Dashboard.
+        </h1>
+        <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
+          Select the regulatory frameworks relevant to your organisation, rate your compliance across each control area, and receive an instant posture assessment — with a radar chart, weighted overall score, and copyable report.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tool -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="mb-12" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Framework Assessment</span>
+        <h2 class="text-3xl font-black text-slate-900 mb-3">Select your frameworks and score each control area.</h2>
+        <p class="text-slate-500 text-sm max-w-2xl">
+          Rate your organisation's compliance against each control area on a 0–100% scale. The dashboard aggregates your inputs into an overall compliance posture and identifies your weakest areas for prioritised action.
+        </p>
+      </div>
+
+      <ComplianceDashboard client:load />
+    </div>
+  </section>
+
+  <!-- Methodology -->
+  <section class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Methodology</span>
+        <h2 class="text-3xl font-black text-slate-900 mb-4">Frameworks covered.</h2>
+        <p class="text-slate-600 text-sm leading-relaxed mb-8">
+          Each framework is reduced to its five most operationally significant control domains. Scores are averaged per framework and then across frameworks to produce the overall compliance posture rating. This tool is a self-assessment aid — it does not constitute a formal compliance certification or legal opinion.
+        </p>
+
+        <div class="space-y-4 mb-10">
+          {[
+            { name: 'SOX / ICFR', scope: 'Applicable to US-listed entities and subsidiaries. Covers Section 302 (Disclosure Controls) and Section 404 (ICFR / Management Assessment). Common for GCC entities with US parent or dual-listed aspirations.', controls: 'Financial Reporting Controls, ICFR Documentation & Testing, Disclosure Controls, Audit Committee Oversight, Management Assessment (302/404)' },
+            { name: 'UAE / KSA PDPL', scope: 'UAE Personal Data Protection Law and KSA Personal Data Protection Law. Applies to any entity processing personal data of UAE or KSA residents.', controls: 'Data Inventory & Classification, Consent Management, Data Subject Rights, Security & Technical Controls, Breach Response Procedures' },
+            { name: 'ISO 27001', scope: 'International standard for information security management systems. Relevant for all organisations processing sensitive data or seeking certification.', controls: 'Information Security Policy, Risk Assessment & Treatment, Access Control, Incident Management, Business Continuity' },
+            { name: 'UAE SCA Governance', scope: 'UAE Securities and Commodities Authority corporate governance code. Applicable to UAE-listed entities and those preparing for DFM / ADX listing.', controls: 'Board Structure & Independence, Audit Committee, Disclosure & Transparency, Related Party Transactions, Corporate Governance Report' },
+            { name: 'COSO ERM 2017', scope: 'Enterprise Risk Management — Integrating with Strategy and Performance. Applicable to any organisation seeking a structured ERM programme.', controls: 'Governance & Culture, Strategy & Objective-Setting, Risk Identification & Assessment, Risk Response & Control, Review, Revision & Reporting' },
+          ].map(({ name, scope, controls }) => (
+            <div class="bg-white border border-slate-200 border-l-4 border-l-[#001F5B] p-5">
+              <div class="text-[#001F5B] font-black text-xs uppercase tracking-widest mb-2">{name}</div>
+              <p class="text-slate-600 text-xs leading-relaxed mb-3">{scope}</p>
+              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Control Areas</div>
+              <div class="text-slate-500 text-xs leading-relaxed">{controls}</div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Score bands -->
+        <h3 class="text-sm font-black text-slate-900 uppercase tracking-widest mb-4">Compliance Rating Scale</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+          {[
+            { label: 'Non-Compliant', range: '0–49%', color: 'border-t-red-700', text: 'text-red-700', desc: 'Significant gaps. Immediate remediation programme required.' },
+            { label: 'Developing', range: '50–69%', color: 'border-t-amber-500', text: 'text-amber-700', desc: 'Foundational controls in place but material gaps remain.' },
+            { label: 'Adequate', range: '70–84%', color: 'border-t-green-500', text: 'text-green-700', desc: 'Controls largely in place. Targeted improvement needed.' },
+            { label: 'Strong', range: '85–100%', color: 'border-t-[#001F5B]', text: 'text-[#001F5B]', desc: 'Robust compliance posture. Maintain and monitor.' },
+          ].map(({ label, range, color, text, desc }) => (
+            <div class={`bg-white border border-slate-200 border-t-2 ${color} p-5`}>
+              <div class={`font-black text-xs uppercase tracking-widest mb-1 ${text}`}>{label}</div>
+              <div class="text-[10px] font-bold text-slate-400 mb-2">{range}</div>
+              <div class="text-slate-600 text-xs leading-snug">{desc}</div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Privacy -->
+        <div class="bg-white border border-slate-200 px-6 py-5 flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#001F5B] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <div>
+            <div class="text-[10px] font-black uppercase tracking-widest text-[#001F5B] mb-1">Privacy &amp; Confidentiality</div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              This tool operates entirely within your browser. No framework selections, scores, or results are transmitted to any server or stored in any database. You may use this tool with sensitive compliance data with full confidence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
