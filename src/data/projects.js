@@ -40,6 +40,16 @@ export const projects = [
     impact: '78% Reduction in Fraud Incidents (2.3M monthly transactions)',
     techStack: ['Python', 'scikit-learn', 'Pandas', 'Excel Automation'],
     image: '/portfolio_my/images/projects/fraud-detection/fraud-dashboard.webp',
+    additionalScreenshots: [
+      {
+        image: '/portfolio_my/images/projects/fraud-detection/model-performance.png',
+        caption: 'ML Model Performance — Precision, Recall and F1 Score by risk classification band across 2.3M monthly transactions. Isolation Forest model achieving 87.3% overall accuracy.'
+      },
+      {
+        image: '/portfolio_my/images/projects/fraud-detection/detection-by-category.png',
+        caption: 'Fraud Flags and Confirmed Cases by Transaction Type — Ghost vendor payments and refund manipulation account for the highest confirmed fraud volumes. AED 3.2M recurring annual recovery identified.'
+      }
+    ],
     features: [
       'ML anomaly detection with 87.3% accuracy using Isolation Forest',
       'Managerial Concession Analysis with automated risk scoring',
@@ -96,6 +106,16 @@ export const projects = [
     impact: '70% reduction in audit preparation cycle time — board-ready status reporting automated',
     techStack: ['Python', 'YAML', 'IIA Compliance', 'openpyxl'],
     image: '/portfolio_my/images/projects/audit-tools/findings-tracker.webp',
+    additionalScreenshots: [
+      {
+        image: '/portfolio_my/images/projects/audit-tools/findings-by-severity.png',
+        caption: 'Audit Findings by Severity — Quarterly Distribution. Composition shift from Critical/High toward Medium/Low confirms the improving control environment across the engagement year.'
+      },
+      {
+        image: '/portfolio_my/images/projects/audit-tools/resolution-timeline.png',
+        caption: 'Average Days to Resolution by Finding Category. IT/ITGC and Fraud Risk findings consistently exceed the 45-day target, triggering automated escalation to senior management.'
+      }
+    ],
     features: [
       'Replaced manual spreadsheets — eliminated 3 days of monthly consolidation work',
       'Automated aging analysis: overdue findings escalated automatically by severity tier',
@@ -114,6 +134,16 @@ export const projects = [
     impact: '85% automated reporting efficiency achieved',
     techStack: ['xlsxwriter', 'Pandas', 'Power BI', 'Python'],
     image: '/portfolio_my/images/projects/finance-dashboard/executive-dashboard.webp',
+    additionalScreenshots: [
+      {
+        image: '/portfolio_my/images/projects/finance-dashboard/variance-analysis.png',
+        caption: 'Revenue — Actual vs Budget by Quarter. Q3 exceeded budget by AED 1.2M (+3.6%), with full-year group revenue tracked at AED 127M against a planned AED 124M.'
+      },
+      {
+        image: '/portfolio_my/images/projects/finance-dashboard/kpi-performance.png',
+        caption: 'KPI Performance vs Target — Full Year. Revenue and Recovery Rate exceeded targets; EBITDA Margin and Budget Adherence identified as focus areas for the following year.'
+      }
+    ],
     features: [
       'Real-time KPI monitoring (AED 127M, AED 68.2M, 37.5%)',
       'Monthly P&L with quarterly trend analysis',
@@ -132,6 +162,16 @@ export const projects = [
     impact: 'SAR 500M+ capital raise target — full ICOFR certification across 14 business processes',
     techStack: ['COSO ICOFR', 'CMA Regulations', 'Tadawul Listing Rules', 'IFRS', 'Big 4 Co-sourcing'],
     image: '/portfolio_my/images/projects/tadawul-ipo-readiness/icofr-dashboard.svg',
+    additionalScreenshots: [
+      {
+        image: '/portfolio_my/images/projects/tadawul-ipo-readiness/readiness-scorecard.png',
+        caption: 'IPO Readiness Scorecard — Pre-Engagement vs Listing-Ready state across 7 workstreams. 24-month transformation targeting Tadawul listing for a GCC premium brand (SAR 500M+ capital raise).'
+      },
+      {
+        image: '/portfolio_my/images/projects/tadawul-ipo-readiness/control-population.png',
+        caption: 'ICOFR Control Population by Business Process — 190 controls documented across 14 processes, with Risk Control Matrices aligned to COSO financial statement assertions and CMA requirements.'
+      }
+    ],
     features: [
       'ICOFR implementation across 14 processes with full Risk Control Matrix documentation',
       'CMA Corporate Governance Regulations compliance — board independence, committee formation',
@@ -150,6 +190,16 @@ export const projects = [
     impact: 'Full audit lifecycle automated across multi-entity operations — from annual plan to board pack, zero manual assembly',
     techStack: ['Python', 'openpyxl', 'python-pptx'],
     image: '/portfolio_my/images/projects/enterprise-audit-tracker/audit-dashboard.webp',
+    additionalScreenshots: [
+      {
+        image: '/portfolio_my/images/projects/enterprise-audit-tracker/audit-plan-status.png',
+        caption: 'Annual Audit Plan Status by Business Entity — risk-based scheduling ensures highest-risk entities are prioritised. Completed, in-progress, and planned audits visible in a single view across the group.'
+      },
+      {
+        image: '/portfolio_my/images/projects/enterprise-audit-tracker/finding-age-profile.png',
+        caption: 'Open Audit Findings — Age Profile. Findings exceeding the 45-day remediation target are automatically escalated to senior management, with board-level visibility on overdue actions.'
+      }
+    ],
     features: [
       'Director dashboard: live audit universe status, findings count, and overdue actions across all entities',
       'Annual audit plan builder with risk-based priority scoring — high-risk areas scheduled first automatically',
@@ -168,6 +218,16 @@ export const projects = [
     impact: 'End-to-end food safety risk framework deployed across 70+ locations with executive risk reporting',
     techStack: ['Python', 'Risk Analytics', 'Compliance Frameworks'],
     image: '/portfolio_my/images/projects/food-safety-risk/risk-heatmap.webp',
+    additionalScreenshots: [
+      {
+        image: '/portfolio_my/images/projects/food-safety-risk/risk-by-cluster.png',
+        caption: 'Composite Food Safety Risk Score by Location Cluster — clusters scoring 75+ require immediate remediation. Risk banding (High/Medium/Low) drives prioritisation of on-site inspection resources.'
+      },
+      {
+        image: '/portfolio_my/images/projects/food-safety-risk/control-compliance.png',
+        caption: 'Control Compliance Rate by Food Safety Category — Supplier Verification and Allergen Management fall below the 80% minimum standard and are prioritised for corrective action and re-audit.'
+      }
+    ],
     features: [
       'Risk heat mapping across 70+ restaurant locations',
       'Control validation and effectiveness testing',
@@ -186,6 +246,16 @@ export const projects = [
     impact: 'Multi-case fraud investigation support — control failure mapping and litigation-ready documentation',
     techStack: ['Python', 'Excel Automation', 'Forensic Accounting'],
     image: '/portfolio_my/images/projects/fraud-cases/fraud-analysis.webp',
+    additionalScreenshots: [
+      {
+        image: '/portfolio_my/images/projects/fraud-cases/scheme-analysis.png',
+        caption: 'Financial Exposure and Recovery by Fraud Scheme — Ghost vendor payments represent the highest exposure. Recovery rate across all schemes exceeds 65%, supported by litigation documentation and chain of custody records.'
+      },
+      {
+        image: '/portfolio_my/images/projects/fraud-cases/investigation-stages.png',
+        caption: 'Forensic Investigation Methodology — Stage Duration. Structured 75-day engagement lifecycle from preliminary assessment through evidence collection, data analysis, findings documentation, and recovery action planning.'
+      }
+    ],
     features: [
       'Control failure mapping with root cause analysis',
       'Evidence tracking with chain of custody',
@@ -204,6 +274,16 @@ export const projects = [
     impact: 'Compliance scores comparable across 70+ locations — underperforming sites identified and actioned within audit cycle',
     techStack: ['Python', 'openpyxl', 'Audit Standards'],
     image: '/portfolio_my/images/projects/restaurant-audit/audit-checklist.webp',
+    additionalScreenshots: [
+      {
+        image: '/portfolio_my/images/projects/restaurant-audit/compliance-league.png',
+        caption: 'Compliance League Table — Top 10 and Bottom 10 Locations. Standardised scoring across 70+ locations gives operations management an objective view of outliers for the first time. 70% minimum threshold enforced.'
+      },
+      {
+        image: '/portfolio_my/images/projects/restaurant-audit/compliance-trend.png',
+        caption: 'Compliance Score Trend by Location Quartile — Four Audit Cycles. The bottom quartile improved from 42% to 61% across the programme, driven by targeted remediation tracking and escalating management accountability.'
+      }
+    ],
     features: [
       'Standardised F&B audit checklists — eliminated inconsistency across 70+ locations',
       'Automated compliance scoring: each location receives a comparable, weighted score',
@@ -278,6 +358,16 @@ export const projects = [
     impact: 'Group-wide governance manual adopted by board — covering holding company and all operating subsidiaries',
     techStack: ['Saudi Companies Law', 'IIA Three Lines Model', 'SOCPA Standards', 'King IV', 'Board Governance'],
     image: '/portfolio_my/images/projects/holding-group-governance/governance-framework.svg',
+    additionalScreenshots: [
+      {
+        image: '/portfolio_my/images/projects/holding-group-governance/governance-maturity.png',
+        caption: 'Corporate Governance Maturity — Pre-Engagement vs Framework Delivered. All eight governance domains lifted from sub-55% baseline to 82–92% post-engagement, aligned to Saudi Companies Law and King IV principles.'
+      },
+      {
+        image: '/portfolio_my/images/projects/holding-group-governance/three-lines-coverage.png',
+        caption: 'Three Lines of Defence — Control Activity Coverage. Accountability clearly distributed: Line 1 owns operations and control execution, Line 2 provides GRC oversight, Line 3 delivers independent assurance to the board.'
+      }
+    ],
     features: [
       'Corporate governance manual covering board charter, committee terms of reference, and delegation of authority matrix',
       'Board and committee structure design — Audit, Risk, and Nomination & Remuneration committees',
@@ -296,6 +386,16 @@ export const projects = [
     impact: 'Audit documentation time cut by ~65% — ICAEW standards embedded automatically, zero manual formatting',
     techStack: ['Python', 'ICAEW Standards', 'Report Automation'],
     image: '/portfolio_my/images/projects/icaew-audit/audit-report.webp',
+    additionalScreenshots: [
+      {
+        image: '/portfolio_my/images/projects/icaew-audit/time-savings.png',
+        caption: 'Audit Engagement Time — Manual vs Automated Workflow. Workpaper preparation reduced from 18 to 4 hours; report formatting from 12 to 2 hours. Overall 65% reduction in documentation time per engagement.'
+      },
+      {
+        image: '/portfolio_my/images/projects/icaew-audit/testing-coverage.png',
+        caption: 'Audit Testing Coverage by Financial Statement Assertion — ICAEW-compliant methodology auto-populated based on audit area and risk level. Coverage improved from 61–75% (manual) to 88–98% (automated system).'
+      }
+    ],
     features: [
       'ICAEW-compliant audit report generated from structured inputs — no blank-page formatting',
       'Testing methodology auto-populated based on audit area and risk level selected',
