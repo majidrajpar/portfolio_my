@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RiskMatrix from '../../components/RiskMatrix.jsx';
+---
+
+<BaseLayout
+  title="Risk Assessment Matrix Builder | Majid Mumtaz"
+  description="Build and visualise a risk matrix by plotting organisational risks on a colour-coded likelihood × impact grid. Free, browser-based — no data stored."
+>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-[#001F5B]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Enterprise Risk</span>
+        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+          Risk Assessment Matrix.
+        </h1>
+        <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
+          Add named risks, assign likelihood and impact scores, and see them plotted instantly on a colour-coded 5×5 matrix. Export a formatted risk register for audit planning or board reporting.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tool -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="mb-12" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Interactive Matrix</span>
+        <h2 class="text-3xl font-black text-slate-900 mb-3">Plot and rank your risks.</h2>
+        <p class="text-slate-500 text-sm max-w-2xl">
+          Enter each risk, rate its likelihood (1 = Rare, 5 = Almost Certain) and impact (1 = Negligible, 5 = Catastrophic). The matrix updates in real time and calculates a risk score and rating for each entry.
+        </p>
+      </div>
+
+      <RiskMatrix client:load />
+    </div>
+  </section>
+
+  <!-- Methodology -->
+  <section class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="max-w-3xl" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Methodology</span>
+        <h2 class="text-3xl font-black text-slate-900 mb-4">How the matrix works.</h2>
+        <p class="text-slate-600 text-sm leading-relaxed mb-8">
+          The 5×5 Risk Assessment Matrix is the most widely used risk visualisation tool in internal audit and enterprise risk management. Each risk is scored by multiplying its likelihood rating (1–5) by its impact rating (1–5), producing a composite score from 1 to 25.
+        </p>
+
+        <!-- Score bands -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+          {[
+            { label: 'Low', range: '1–4', color: 'border-t-green-500', text: 'text-green-700', desc: 'Monitor and manage within routine procedures.' },
+            { label: 'Medium', range: '5–9', color: 'border-t-amber-500', text: 'text-amber-700', desc: 'Targeted action plan with agreed timeline.' },
+            { label: 'High', range: '10–16', color: 'border-t-orange-500', text: 'text-orange-700', desc: 'Escalate to senior management. Immediate remediation required.' },
+            { label: 'Critical', range: '17–25', color: 'border-t-red-700', text: 'text-red-700', desc: 'Board or Audit Committee notification. Immediate intervention.' },
+          ].map(({ label, range, color, text, desc }) => (
+            <div class={`bg-white border border-slate-200 border-t-2 ${color} p-5`}>
+              <div class={`font-black text-xs uppercase tracking-widest mb-1 ${text}`}>{label}</div>
+              <div class="text-[10px] font-bold text-slate-400 mb-2">Score {range}</div>
+              <div class="text-slate-600 text-xs leading-snug">{desc}</div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Scale guide -->
+        <h3 class="text-sm font-black text-slate-900 uppercase tracking-widest mb-4">Rating Scale</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          <div class="border border-slate-200 overflow-hidden">
+            <div class="bg-[#001F5B] text-white text-[10px] font-black uppercase tracking-widest px-5 py-3">Likelihood</div>
+            {[
+              ['1 — Rare', 'May occur only in exceptional circumstances.'],
+              ['2 — Unlikely', 'Could occur but not expected.'],
+              ['3 — Possible', 'Might occur at some time.'],
+              ['4 — Likely', 'Will probably occur in most circumstances.'],
+              ['5 — Almost Certain', 'Expected to occur in most circumstances.'],
+            ].map(([rating, meaning]) => (
+              <div class="flex gap-3 px-5 py-3 border-b border-slate-100 last:border-0 bg-white">
+                <span class="text-xs font-black text-slate-900 w-36 flex-shrink-0">{rating}</span>
+                <span class="text-xs text-slate-500">{meaning}</span>
+              </div>
+            ))}
+          </div>
+          <div class="border border-slate-200 overflow-hidden">
+            <div class="bg-[#001F5B] text-white text-[10px] font-black uppercase tracking-widest px-5 py-3">Impact</div>
+            {[
+              ['1 — Negligible', 'Minimal effect on operations or finances.'],
+              ['2 — Minor', 'Limited impact, manageable internally.'],
+              ['3 — Moderate', 'Significant but manageable disruption.'],
+              ['4 — Major', 'Significant financial or reputational damage.'],
+              ['5 — Catastrophic', 'Severe, potentially existential consequences.'],
+            ].map(([rating, meaning]) => (
+              <div class="flex gap-3 px-5 py-3 border-b border-slate-100 last:border-0 bg-white">
+                <span class="text-xs font-black text-slate-900 w-36 flex-shrink-0">{rating}</span>
+                <span class="text-xs text-slate-500">{meaning}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Privacy -->
+        <div class="bg-white border border-slate-200 px-6 py-5 flex items-start gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#001F5B] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <div>
+            <div class="text-[10px] font-black uppercase tracking-widest text-[#001F5B] mb-1">Privacy &amp; Confidentiality</div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              This tool operates entirely within your browser. No risk names, scores, or outputs are transmitted to any server or stored in any database. You may use this tool with sensitive organisational risk data with full confidence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
