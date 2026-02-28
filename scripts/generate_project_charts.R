@@ -204,14 +204,20 @@ save_chart(p3a, "finance-dashboard", "variance-analysis.png")
 
 # 3b. KPI Performance vs Target
 df_kpi <- data.frame(
-  kpi     = c("Revenue (AEDm)", "EBITDA Margin", "Cost Ratio",
-               "Working Capital Days", "Recovery Rate", "Budget Adherence"),
-  target  = c(100, 40, 60, 45, 85, 95),
-  actual  = c(127, 37.5, 58, 38, 91, 88)
+  kpi             = c("Revenue (AEDm)", "EBITDA Margin", "Cost Ratio",
+                       "Working Capital Days", "Recovery Rate", "Budget Adherence"),
+  target          = c(100, 40, 60, 45, 85, 95),
+  actual          = c(127, 37.5, 58, 38, 91, 88),
+  lower_is_better = c(FALSE, FALSE, TRUE, TRUE, FALSE, FALSE),
+  unit            = c("M", "%", "%", "d", "%", "%")
 )
 df_kpi <- df_kpi |>
   mutate(kpi    = reorder(kpi, actual),
-         on_tgt = ifelse(actual >= target, GREEN, ORANGE),
+         on_tgt = case_when(
+           lower_is_better  & actual <= target ~ GREEN,
+           lower_is_better  & actual >  target ~ ORANGE,
+           !lower_is_better & actual >= target ~ GREEN,
+           TRUE                                ~ ORANGE),
          gap    = actual - target)
 
 p3b <- ggplot(df_kpi) +
@@ -220,7 +226,7 @@ p3b <- ggplot(df_kpi) +
   geom_point(aes(y = kpi, x = target), colour = LIGHT, size = 3.5) +
   geom_point(aes(y = kpi, x = actual, colour = on_tgt), size = 4.5) +
   geom_text(aes(y = kpi, x = actual,
-                label = paste0(actual, ifelse(kpi == "Revenue (AEDm)", "M", "%"))),
+                label = paste0(actual, unit)),
             hjust = -0.5, size = 2.9, fontface = "bold", colour = SLATE) +
   scale_colour_identity() +
   scale_x_continuous(expand = expansion(mult = c(0.02, 0.18))) +
@@ -471,10 +477,9 @@ df_stages <- df_stages |>
          start = lag(end, default = 0),
          mid   = (start + end) / 2)
 
-p7b <- ggplot(df_stages, aes(y = reorder(stage, -order),
-                              xmin = start, xmax = end)) +
-  geom_errorbarh(aes(xmin = start, xmax = end, y = reorder(stage, -order)),
-                 height = 0.5, colour = NAVY, linewidth = 5.5, alpha = 0.85) +
+p7b <- ggplot(df_stages) +
+  geom_tile(aes(x = mid, y = reorder(stage, -order), width = days, height = 0.72),
+            fill = NAVY, alpha = 0.88) +
   geom_text(aes(x = mid, y = reorder(stage, -order),
                 label = paste0(days, "d")),
             colour = "white", size = 3, fontface = "bold") +
@@ -551,7 +556,7 @@ p8b <- ggplot(df_trend, aes(x = cycle, y = score, colour = quartile,
   geom_line(linewidth = 1.3) +
   geom_point(size = 3.5) +
   geom_text(aes(label = paste0(score, "%")),
-            vjust = -0.8, size = 2.7, fontface = "bold") +
+            vjust = -0.8, size = 2.7, fontface = "bold", show.legend = FALSE) +
   geom_hline(yintercept = 70, linetype = "dashed", colour = GOLD, linewidth = 0.7) +
   scale_colour_manual(values = c(NAVY, TEAL, AMBER, RED)) +
   scale_y_continuous(labels = percent_format(scale = 1),
