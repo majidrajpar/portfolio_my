@@ -84,34 +84,38 @@ const categoryColors: Record<string, string> = {
         ))}
       </div>
 
-      <!-- Coming soon -->
-      <div class="mb-6" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Coming Soon — Batch 2</span>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {tools.filter(t => !t.isLive).map((tool, i) => (
-          <div
-            class="bg-slate-50 border border-slate-200 border-dashed flex flex-col p-8 opacity-70 h-full"
-            data-reveal
-            data-reveal-delay={String((i % 3) + 1)}
-          >
-            <div class="mb-5 flex items-center justify-between">
-              <span class={`inline-block px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] opacity-60 ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
-                {tool.category}
-              </span>
-              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest border border-slate-300 px-2 py-0.5">
-                Soon
-              </span>
-            </div>
-            <h3 class="text-xl font-black text-slate-400 mb-3 leading-tight">
-              {tool.title}
-            </h3>
-            <p class="text-slate-400 text-sm flex-1 leading-relaxed">
-              {tool.description}
-            </p>
+      <!-- Coming soon (only rendered if any tools are not yet live) -->
+      {tools.some(t => !t.isLive) && (
+        <>
+          <div class="mb-6" data-reveal>
+            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Coming Soon</span>
           </div>
-        ))}
-      </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {tools.filter(t => !t.isLive).map((tool, i) => (
+              <div
+                class="bg-slate-50 border border-slate-200 border-dashed flex flex-col p-8 opacity-70 h-full"
+                data-reveal
+                data-reveal-delay={String((i % 3) + 1)}
+              >
+                <div class="mb-5 flex items-center justify-between">
+                  <span class={`inline-block px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] opacity-60 ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
+                    {tool.category}
+                  </span>
+                  <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest border border-slate-300 px-2 py-0.5">
+                    Soon
+                  </span>
+                </div>
+                <h3 class="text-xl font-black text-slate-400 mb-3 leading-tight">
+                  {tool.title}
+                </h3>
+                <p class="text-slate-400 text-sm flex-1 leading-relaxed">
+                  {tool.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   </section>
 
