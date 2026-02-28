@@ -514,11 +514,8 @@ export const projects = [
 ];
 
 const FEATURED_IDS = [
+  'fraud-detection-ml',
   'dfm-ipo-readiness',
-  'ksa-real-estate-fraud',
-  'enterprise-audit-platform',
-  'food-safety-risk',
-  'multi-location-compliance',
   'coso-erm-9country',
 ];
 export const featuredProjects = FEATURED_IDS.map(id => projects.find(p => p.id === id)).filter(Boolean);
