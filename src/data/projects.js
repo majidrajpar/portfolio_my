@@ -511,6 +511,81 @@ export const projects = [
       'Programme Metrics — baseline usage and reporting metrics established; quarterly summary reporting template designed for Audit Committee to track programme health going forward'
     ]
   },
+  {
+    id: 'cae-establishment-tech-unicorn',
+    title: 'Internal Audit Function Build-Out — UAE Cloud Kitchen Tech Unicorn',
+    description: 'A UAE-based cloud kitchen technology company in hyper-growth pre-IPO mode had no internal audit function, no SOX 404 ICFR framework, and no governance documentation aligned to UAE Corporate Governance Code requirements for listed entities. Joined as Director of Internal Audit and built the function from zero: drafted the audit charter, sourced and onboarded a five-member audit team (plus two information security staff with indirect reporting lines), established the Audit Committee terms of reference aligned to the UAE Code of Corporate Governance, and implemented a full SOX 404 ICFR programme — delivering a clean first-time external audit opinion with zero material weaknesses or significant deficiencies. Ran in parallel with a 340% surge in transaction volumes during the company\'s hyper-growth phase.',
+    categories: ['Corporate Governance', 'Audit Transformation'],
+    duration: '3 years',
+    impact: 'Clean first-time SOX 404 opinion — zero material weaknesses — 7-member audit function built from zero — AED 7.7M total financial impact captured',
+    techStack: ['SOX 404 ICFR', 'COSO 2013', 'UAE Corporate Governance Code', 'IIA Standards 2024', 'Python/Pandas', 'Three Lines of Defence', 'Audit Committee ToR'],
+    image: '/portfolio_my/images/projects/cae-establishment/function-timeline.png',
+    additionalScreenshots: [
+      {
+        image: '/portfolio_my/images/projects/cae-establishment/sox-coverage.png',
+        caption: 'SOX 404 ICOFR Process Coverage — 7 key business processes scoped and tested for design and operating effectiveness, delivering a clean first-time external audit opinion with zero material weaknesses.'
+      }
+    ],
+    features: [
+      'Audit Charter & Mandate — Internal Audit charter, mission, authority, independence framework, and reporting lines drafted and Audit Committee-approved from day one',
+      'Team Build-Out — five audit professionals sourced, onboarded, and developed; two information security staff with indirect reporting lines integrated into the audit programme',
+      'Audit Committee Governance — Terms of Reference, meeting cadence, reporting templates, and escalation protocols established aligned to UAE Code of Corporate Governance for listed entities',
+      'SOX 404 ICOFR Programme — 7 key business processes scoped; controls designed, documented in Risk Control Matrices, and tested for design and operating effectiveness; clean first-time external audit opinion with zero material weaknesses or significant deficiencies',
+      'Tech-Enabled Methodology — proprietary Python/Pandas analytics engine achieving 100% population testing across 7 critical domains, replacing sample-based approach across all audit areas',
+      'Continuous Monitoring Suite — automated exception-reporting and predictive transaction monitoring capturing AED 7.7M in total financial impact (AED 3.2M recovered; AED 4.5M protected)',
+      'Board-Approved Automation Investment — data-driven business case secured Board approval for enterprise audit automation investment during a hyper-growth pre-IPO phase'
+    ]
+  },
+  {
+    id: 'qsr-risk-based-audit-transformation',
+    title: 'Risk-Based Audit Transformation — Global QSR Franchise, KSA',
+    description: 'The internal audit function of a leading global quick-service restaurant franchise operating across Saudi Arabia was limited to restaurant-level operational and hygiene audits — a compliance-tick approach with no enterprise risk perspective, no formal risk assessment, and a two-person team with limited scope and strategic impact. Brought in as Internal Audit Manager to transform the function: conducted the organisation\'s first enterprise risk assessment, built a risk-based annual audit plan, secured Board and Audit Committee approval for the expanded mandate, and grew the team from two to five professionals. The transformation repositioned internal audit from a restaurant operations checker to a strategic risk assurance function — lifting team utilisation and productivity by 70%.',
+    categories: ['Audit Transformation'],
+    duration: '2.5 years',
+    impact: '70% increase in audit team productivity — team scaled from 2 to 5 — risk-based audit plan board-approved — first enterprise risk assessment completed',
+    techStack: ['IIA Standards', 'Risk-Based Audit Planning', 'COSO ERM', 'Audit Committee Reporting', 'Enterprise Risk Assessment'],
+    image: '/portfolio_my/images/projects/qsr-transformation/methodology-shift.png',
+    additionalScreenshots: [
+      {
+        image: '/portfolio_my/images/projects/qsr-transformation/productivity-gains.png',
+        caption: 'Audit Function Growth — team scaled from 2 to 5 professionals and productivity utilisation increased 70% following the shift to risk-based audit planning and a board-approved expanded mandate.'
+      }
+    ],
+    features: [
+      'Enterprise Risk Assessment — first-ever risk assessment for the KSA franchise operations; identified and prioritised risks across financial, operational, compliance, and franchise integrity domains',
+      'Risk-Based Audit Plan — annual audit plan built on risk assessment outcomes, moving beyond restaurant checklists to strategic audit coverage; plan presented to and approved by Board and Audit Committee',
+      'Audit Charter & Mandate Expansion — formal charter drafted defining independence, authority, scope, and reporting lines; mandate elevated from restaurant operations to enterprise-wide risk assurance',
+      'Team Growth — recruited and onboarded three additional audit professionals, growing the team from two to five and enabling coverage of strategic audit domains for the first time',
+      'Audit Methodology Design — IIA-aligned audit methodology implemented: risk-based planning, fieldwork standards, finding classification, management reporting, and follow-up cadence',
+      '70% Productivity Uplift — structured workload allocation, risk-prioritised scheduling, and standardised audit programmes increased team utilisation and output quality across all audit engagements'
+    ]
+  },
+  {
+    id: 'group-audit-leadership-ksa-conglomerate',
+    title: 'Group Audit Leadership — Saudi Diversified Conglomerate (JSC)',
+    description: 'Appointed Group Director of Internal Audit & Risk at a publicly listed Saudi diversified conglomerate spanning F&B, real estate, retail, and hospitality across KSA. The mandate was three-layered: establish a new internal audit function from scratch for the group\'s F&B operations subsidiary; elevate and standardise audit practices across portfolio companies — each with its own Internal Audit Director reporting functionally to the Group; and strengthen audit capability at the holding company level. Held a concurrent seat on the Audit Committee of the restaurant sector subsidiary. Over 5.5 years, scaled the total group-wide audit capability from 3 professionals to 28 across the enterprise, achieved the IIA\'s highest external quality assessment rating ("Generally Conforms"), delivered SAR 4.2M in annual fraud savings, and protected $127M in M&A capital by uncovering SAR 15M in undisclosed litigation during due diligence.',
+    categories: ['Corporate Governance', 'Audit Transformation', 'Enterprise Risk'],
+    duration: '5.5 years',
+    impact: 'IIA "Generally Conforms" rating — 3 to 28 audit professionals — SAR 4.2M annual fraud savings — $127M M&A capital protected — 82% fraud loss reduction',
+    techStack: ['COSO ERM 2017', 'Saudi Corporate Governance Regulations', 'IIA Quality Assessment', 'Three Lines of Defence', 'Audit Committee Governance', 'Predictive Analytics', 'SAP GRC'],
+    image: '/portfolio_my/images/projects/group-audit-leadership/team-scaling.png',
+    additionalScreenshots: [
+      {
+        image: '/portfolio_my/images/projects/group-audit-leadership/outcomes-dashboard.png',
+        caption: 'Group Audit Programme — Key Outcomes across 5.5 years: SAR 4.2M annual fraud savings, $127M M&A capital protected, 82% fraud loss reduction, and 28-person group-wide audit capability. IIA "Generally Conforms" external quality assessment achieved.'
+      }
+    ],
+    features: [
+      'F&B Subsidiary Audit Establishment — built internal audit function from zero for the group\'s F&B operations subsidiary: charter, risk assessment, methodology, team, and Board/Audit Committee reporting cadence',
+      'Portfolio Company Audit Elevation — led and standardised audit programmes across all portfolio companies through Internal Audit Directors who reported functionally to the Group; coordinated a total portfolio audit team of 25 professionals',
+      'Holding Company Audit Strengthening — enhanced scope, methodology, and reporting quality of the holding company audit team; integrated with group-level risk and ERM reporting to the Board',
+      'COSO ERM Framework — implemented comprehensive enterprise risk management across the diversified portfolio meeting Saudi Corporate Governance Regulations; risk appetite statement adopted by Board Audit Committee',
+      'IIA External Quality Assessment — achieved "Generally Conforms" — the highest rating awarded by the IIA — validating the quality and independence of the group-wide audit function',
+      'Fraud Loss Reduction — deployed predictive analytics for high-risk transaction monitoring across the group; 82% reduction in fraud losses generating SAR 4.2M in quantified annual savings',
+      'M&A Capital Protection — identified SAR 15M in previously undisclosed litigation exposure during financial and operational due diligence, protecting $127M in committed capital and enabling executive renegotiation of deal terms',
+      'Audit Committee Membership — served concurrently as Audit Committee Member for the restaurant sector subsidiary (Feb 2021 – May 2022), bridging board-level oversight and operational audit execution'
+    ]
+  },
 ];
 
 const FEATURED_IDS = [
