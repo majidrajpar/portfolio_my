@@ -250,11 +250,11 @@ const FraudRiskCalculator = () => {
     ];
   }
 
-  // ── Radar data ─────────────────────────────────────────────────────
+  // ── Radar data (inverted: 6 - rawScore so larger polygon = lower risk) ──
   const radarData = DOMAINS.map((d, i) => ({
     domain: d.label,
-    'Your Score': domainScores[i] ?? 0,
-    'Best Practice': 1.5,
+    'Your Score': domainScores[i] !== null ? parseFloat((6 - domainScores[i]).toFixed(2)) : 0,
+    'Target': 4.5,
   }));
 
   // ── Handlers ──────────────────────────────────────────────────────
@@ -540,7 +540,7 @@ const FraudRiskCalculator = () => {
                 Fraud Triangle Radar
               </div>
               <p className="text-[10px] text-slate-400 mb-4 leading-relaxed">
-                Lower scores indicate lower fraud risk exposure. The dashed line shows a best-practice target of 1.5 — aim to stay at or below this level on all domains.
+                Scores are inverted for visual clarity — a larger polygon indicates lower fraud risk exposure. The green dashed line marks the low-risk target zone.
               </p>
               <ResponsiveContainer width="100%" height={300}>
                 <RadarChart data={radarData} margin={{ top: 10, right: 30, bottom: 10, left: 30 }}>
@@ -565,8 +565,8 @@ const FraudRiskCalculator = () => {
                     dot={{ r: 3, fill: '#001F5B' }}
                   />
                   <Radar
-                    name="Best Practice"
-                    dataKey="Best Practice"
+                    name="Target"
+                    dataKey="Target"
                     stroke="#22c55e"
                     fill="transparent"
                     strokeWidth={1.5}

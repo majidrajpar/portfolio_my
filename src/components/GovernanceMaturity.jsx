@@ -385,6 +385,16 @@ const GovernanceMaturity = () => {
   return (
     <div className="w-full max-w-5xl mx-auto">
 
+      {/* ── Scope indicator ── */}
+      <div className="flex items-center gap-3 mb-5 flex-wrap">
+        {['6 domains', '5 questions each', '~5 min', 'Instant ML result'].map((item, i, arr) => (
+          <React.Fragment key={item}>
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{item}</span>
+            {i < arr.length - 1 && <span className="text-slate-200 font-bold">·</span>}
+          </React.Fragment>
+        ))}
+      </div>
+
       {/* ── Overall progress bar ── */}
       <div className="mb-8">
         <div className="flex items-center justify-between mb-2">
