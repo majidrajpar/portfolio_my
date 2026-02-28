@@ -188,5 +188,15 @@
     "size": "33 KB",
     "pages": 8,
     "date": "2026-02-25"
+  },
+  {
+    "id": "doc-020",
+    "filename": "Fintech_Risk_Stack_Carousel.pdf",
+    "title": "The Fintech Risk Stack: 8 Product Risks Most Frameworks Underestimate",
+    "description": "A 10-slide visual intelligence carousel covering model risk, embedded finance risk amplification, regulatory fragmentation, concentration risk, operational resilience gaps, and compound risk interactions across fintech product lines.",
+    "category": "Risk Intelligence",
+    "size": "663 KB",
+    "pages": 10,
+    "date": "2026-02-28"
   }
 ]
