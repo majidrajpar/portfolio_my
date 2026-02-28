@@ -524,6 +524,14 @@ export const projects = [
       {
         image: '/portfolio_my/images/projects/cae-establishment/sox-coverage.png',
         caption: 'SOX 404 ICOFR Process Coverage — 7 key business processes scoped and tested for design and operating effectiveness, delivering a clean first-time external audit opinion with zero material weaknesses.'
+      },
+      {
+        image: '/portfolio_my/images/projects/cae-establishment/financial-impact.png',
+        caption: 'Continuous Monitoring Suite — AED 7.7M total financial impact across 7 monitored domains: AED 3.2M recovered and AED 4.5M protected, with aggregator billing as the highest-value domain.'
+      },
+      {
+        image: '/portfolio_my/images/projects/cae-establishment/population-testing.png',
+        caption: 'Audit Methodology Shift — Python/Pandas analytics engine enabled 100% population testing across all 7 critical domains, replacing sample rates of 5–15% and securing Board-approved automation investment.'
       }
     ],
     features: [
@@ -549,6 +557,14 @@ export const projects = [
       {
         image: '/portfolio_my/images/projects/qsr-transformation/productivity-gains.png',
         caption: 'Audit Function Growth — team scaled from 2 to 5 professionals and productivity utilisation increased 70% following the shift to risk-based audit planning, approved by the KSA Country President and the franchisor\'s Corporate Internal Audit Director.'
+      },
+      {
+        image: '/portfolio_my/images/projects/qsr-transformation/risk-heatmap.png',
+        caption: 'Enterprise Risk Assessment Heat Map — first-ever risk assessment for the KSA franchise operations. 12 risks plotted by likelihood and impact across financial, franchise, compliance, and operational domains. Assessment outputs directly informed the risk-based annual audit plan.'
+      },
+      {
+        image: '/portfolio_my/images/projects/qsr-transformation/findings-trend.png',
+        caption: 'Audit Findings Trend — Critical and High findings declined steadily across 2.5 years as the risk-based audit plan drove management remediation. Low severity findings grew as audit coverage expanded into new domains.'
       }
     ],
     features: [
@@ -573,6 +589,14 @@ export const projects = [
       {
         image: '/portfolio_my/images/projects/group-audit-leadership/outcomes-dashboard.png',
         caption: 'Group Audit Programme — Key Outcomes across 5.5 years: SAR 4.2M annual fraud savings, $127M M&A capital protected, 82% fraud loss reduction, and 28-person group-wide audit capability. IIA "Generally Conforms" external quality assessment achieved.'
+      },
+      {
+        image: '/portfolio_my/images/projects/group-audit-leadership/audit-coverage.png',
+        caption: 'Group-Wide Audit Engagements — Annual audit coverage grew from 12 engagements in 2017 to 36 in 2022 across the holding company, F&B subsidiary (Alfa Co., established from zero in 2018), and portfolio companies.'
+      },
+      {
+        image: '/portfolio_my/images/projects/group-audit-leadership/findings-improvement.png',
+        caption: 'Findings Severity Profile & IIA Quality Journey — Critical findings declined 92% and High findings 77% over 5.5 years, culminating in the IIA\'s highest external quality assessment rating: "Generally Conforms".'
       }
     ],
     features: [
