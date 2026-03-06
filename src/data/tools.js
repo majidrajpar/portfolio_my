@@ -20,6 +20,17 @@ export const tools = [
     ml: true,
   },
   {
+    id: 'forensic-validator',
+    title: 'Forensic Pattern Validator',
+    description: 'High-performance analytical tool using Benford\'s Law to detect financial manipulation. Powered by a Rust-based WebAssembly engine for instant, secure forensic analysis.',
+    category: 'Fraud & Forensics',
+    href: '/portfolio_my/tools/forensic-validator/',
+    isLive: true,
+    batch: 3,
+    ml: false,
+    rust: true,
+  },
+  {
     id: 'governance-maturity',
     title: 'Governance Maturity Assessment',
     description: 'Rate your organisation across six governance domains — Board & Leadership, Risk Management, Internal Controls, Ethics, Compliance, and Reporting — to receive an ML-computed maturity level and improvement roadmap.',
