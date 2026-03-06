@@ -3,20 +3,13 @@
 
 export function analyze_benfords_law(data: Float64Array): any;
 
-export function analyze_sod_conflicts(user_roles_json: string, conflict_rules_json: string): any;
-
-export function run_risk_simulation(avg_impact: number, probability: number, iterations: number): any;
-
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
 export interface InitOutput {
     readonly memory: WebAssembly.Memory;
     readonly analyze_benfords_law: (a: number, b: number) => any;
-    readonly analyze_sod_conflicts: (a: number, b: number, c: number, d: number) => any;
-    readonly run_risk_simulation: (a: number, b: number, c: number) => any;
     readonly __wbindgen_externrefs: WebAssembly.Table;
     readonly __wbindgen_malloc: (a: number, b: number) => number;
-    readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
     readonly __wbindgen_start: () => void;
 }
 
