@@ -21,7 +21,8 @@ const ForensicValidator = () => {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
 
   useEffect(() => {
-    init().then(() => setWasmReady(true));
+    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+    init(`${base}/wasm/audit_engine_bg.wasm`).then(() => setWasmReady(true));
   }, []);
 
   const generateDataset = (type = 'natural') => {
