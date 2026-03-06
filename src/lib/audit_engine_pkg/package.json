@@ -1,0 +1,15 @@
+{
+  "name": "audit_engine",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "audit_engine_bg.wasm",
+    "audit_engine.js",
+    "audit_engine.d.ts"
+  ],
+  "main": "audit_engine.js",
+  "types": "audit_engine.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
