@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ForensicValidator from '../components/ForensicValidator.jsx';
+import FraudRiskCalculator from '../components/FraudRiskCalculator.jsx';
+import GovernanceMaturity from '../components/GovernanceMaturity.jsx';
+import InternalControlEvaluator from '../components/InternalControlEvaluator.jsx';
+import RiskMatrix from '../components/RiskMatrix.jsx';
+
+const title = "Audit & GRC Tools | Majid Mumtaz";
+const description = "High-performance interactive tools for Internal Audit, Fraud Risk Assessment, and Governance Maturity. Powered by Rust and modern data science.";
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="max-w-3xl">
+        <div class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-4" data-reveal>
+          Audit Innovation
+        </div>
+        <h1 class="text-5xl md:text-7xl font-black text-slate-900 tracking-tight mb-8" data-reveal>
+          Professional <span class="text-[#001F5B]">Audit Tools</span>.
+        </h1>
+        <p class="text-lg text-slate-500 leading-relaxed mb-10" data-reveal>
+          A suite of interactive decision-support utilities designed for Chief Audit Executives and Board Members. 
+          From forensic pattern detection to quantitative risk modeling, these tools bring desktop-level 
+          performance to the browser using <span class="font-bold text-slate-800">Rust and WebAssembly</span>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Navigation -->
+  <nav class="sticky top-16 z-40 bg-white/80 backdrop-blur-md border-b border-slate-200 py-4">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="flex gap-8 overflow-x-auto no-scrollbar py-1">
+        <a href="#forensic" class="text-[10px] font-black uppercase tracking-widest text-slate-500 hover:text-[#001F5B] whitespace-nowrap transition-colors">Forensic Validator</a>
+        <a href="#fraud" class="text-[10px] font-black uppercase tracking-widest text-slate-500 hover:text-[#001F5B] whitespace-nowrap transition-colors">Fraud Risk</a>
+        <a href="#governance" class="text-[10px] font-black uppercase tracking-widest text-slate-500 hover:text-[#001F5B] whitespace-nowrap transition-colors">Governance Maturity</a>
+        <a href="#internal-control" class="text-[10px] font-black uppercase tracking-widest text-slate-500 hover:text-[#001F5B] whitespace-nowrap transition-colors">Internal Control</a>
+        <a href="#risk-matrix" class="text-[10px] font-black uppercase tracking-widest text-slate-500 hover:text-[#001F5B] whitespace-nowrap transition-colors">Risk Matrix</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Tool Sections -->
+  <div class="bg-slate-50 py-20 space-y-32">
+    
+    <!-- Forensic Validator (The New Rust Tool) -->
+    <section id="forensic" class="max-w-7xl mx-auto px-8">
+      <div class="mb-12">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="bg-[#001F5B] text-white text-[10px] font-black px-3 py-1 uppercase tracking-widest">High Performance</div>
+          <div class="bg-emerald-100 text-emerald-700 text-[10px] font-black px-3 py-1 uppercase tracking-widest">Rust Powered</div>
+        </div>
+        <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">Forensic Pattern Validator</h2>
+        <p class="text-slate-500 max-w-2xl text-sm leading-relaxed">
+          Specifically built to handle large-scale financial data forensics. This tool uses Benford's Law to detect 
+          anomalies in transaction distributions. Processing is handled by a custom Rust engine for sub-millisecond 
+          validation of thousands of records.
+        </p>
+      </div>
+      <div class="bg-white shadow-2xl shadow-slate-200/50">
+        <ForensicValidator client:load />
+      </div>
+    </section>
+
+    <!-- Fraud Risk Calculator -->
+    <section id="fraud" class="max-w-7xl mx-auto px-8">
+      <div class="mb-12">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="bg-[#001F5B] text-white text-[10px] font-black px-3 py-1 uppercase tracking-widest">Machine Learning</div>
+        </div>
+        <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">Fraud Risk Assessment Tool</h2>
+        <p class="text-slate-500 max-w-2xl text-sm leading-relaxed">
+          A data-driven approach to the Fraud Triangle. This tool uses a pre-trained machine learning model 
+          to predict fraud risk based on organisational pressures, opportunities, and rationalisation factors.
+        </p>
+      </div>
+      <div class="bg-white shadow-2xl shadow-slate-200/50">
+        <FraudRiskCalculator client:load />
+      </div>
+    </section>
+
+    <!-- Governance Maturity -->
+    <section id="governance" class="max-w-7xl mx-auto px-8">
+      <div class="mb-12">
+        <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">Governance Maturity Evaluator</h2>
+        <p class="text-slate-500 max-w-2xl text-sm leading-relaxed">
+          Assess your organisation's governance framework against global best practices (COSO, ISO). 
+          Generates a gap analysis and maturity roadmap for board-level reporting.
+        </p>
+      </div>
+      <div class="bg-white shadow-2xl shadow-slate-200/50">
+        <GovernanceMaturity client:load />
+      </div>
+    </section>
+
+    <!-- Internal Control Evaluator -->
+    <section id="internal-control" class="max-w-7xl mx-auto px-8">
+      <div class="mb-12">
+        <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">Internal Control Framework Designer</h2>
+        <p class="text-slate-500 max-w-2xl text-sm leading-relaxed">
+          Interactive tool for mapping business processes to key controls. Designed to streamline 
+          ITGC and financial control design for GCC-based organisations.
+        </p>
+      </div>
+      <div class="bg-white shadow-2xl shadow-slate-200/50">
+        <InternalControlEvaluator client:load />
+      </div>
+    </section>
+
+    <!-- Risk Matrix -->
+    <section id="risk-matrix" class="max-w-7xl mx-auto px-8">
+      <div class="mb-12">
+        <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tight">Interactive Risk Matrix</h2>
+        <p class="text-slate-500 max-w-2xl text-sm leading-relaxed">
+          A dynamic risk mapping utility. Move beyond static PDFs with a real-time matrix that allows 
+          you to visualise inherent and residual risk across your entire audit universe.
+        </p>
+      </div>
+      <div class="bg-white shadow-2xl shadow-slate-200/50 p-8">
+        <RiskMatrix client:load />
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Contact CTA -->
+  <section class="py-24 bg-[#001F5B] text-white">
+    <div class="max-w-7xl mx-auto px-8 text-center">
+      <div class="text-[10px] font-black uppercase tracking-[0.4em] text-white/50 mb-6">Need custom audit automation?</div>
+      <h2 class="text-4xl md:text-5xl font-black mb-10 tracking-tight">Let's Build Your <span class="text-emerald-400">Audit Future</span>.</h2>
+      <a href="/contact/" class="inline-block bg-white text-[#001F5B] px-10 py-5 text-[10px] font-black uppercase tracking-widest hover:bg-emerald-400 transition-colors">
+        Inquire for Custom Tools
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  [data-reveal].in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
