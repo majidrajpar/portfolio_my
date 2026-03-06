@@ -70,9 +70,27 @@ const ForensicValidator = () => {
   })) : [];
 
   const getAnomalyStatus = (score) => {
-    if (score < 1.0) return { label: 'Low Risk', color: 'text-emerald-600', bg: 'bg-emerald-50', border: 'border-emerald-200' };
-    if (score < 2.5) return { label: 'Moderate Deviation', color: 'text-amber-600', bg: 'bg-amber-50', border: 'border-amber-200' };
-    return { label: 'High Anomaly Detected', color: 'text-red-700', bg: 'bg-red-50', border: 'border-red-200' };
+    if (score < 1.0) return { 
+      label: 'Low Risk', 
+      color: 'text-emerald-600', 
+      bg: 'bg-emerald-50', 
+      border: 'border-emerald-200',
+      insight: 'Data distribution follows a natural pattern. No further forensic procedures required for this population.'
+    };
+    if (score < 2.5) return { 
+      label: 'Moderate Deviation', 
+      color: 'text-amber-600', 
+      bg: 'bg-amber-50', 
+      border: 'border-amber-200',
+      insight: 'Potential manual intervention or rounding detected. Recommended: Review transactions near approval thresholds.'
+    };
+    return { 
+      label: 'High Anomaly Detected', 
+      color: 'text-red-700', 
+      bg: 'bg-red-50', 
+      border: 'border-red-200',
+      insight: 'Significant statistical deviation. High probability of data manipulation or systematic error. Recommended: Full forensic sample testing.'
+    };
   };
 
   const status = results ? getAnomalyStatus(results.anomaly_score) : null;
@@ -135,13 +153,10 @@ const ForensicValidator = () => {
         >
           {/* Summary Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className={`p-5 border ${status.border} ${status.bg}`}>
-              <div className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1">Anomaly Rating</div>
-              <div className={`text-xl font-black uppercase ${status.color}`}>{status.label}</div>
-            </div>
-            <div className="p-5 border border-slate-200 bg-white">
-              <div className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1">Items Processed</div>
-              <div className="text-xl font-black text-slate-800">{results.total_count.toLocaleString()}</div>
+            <div className={`p-5 border ${status.border} ${status.bg} md:col-span-2`}>
+              <div className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1">Executive Interpretation</div>
+              <div className={`text-lg font-black uppercase ${status.color} mb-1`}>{status.label}</div>
+              <p className="text-[11px] font-bold text-slate-600 leading-tight">{status.insight}</p>
             </div>
             <div className="p-5 border border-slate-200 bg-white">
               <div className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1">Deviation Score (MAD)</div>

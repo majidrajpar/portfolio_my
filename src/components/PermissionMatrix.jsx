@@ -30,9 +30,22 @@ const PermissionMatrix = () => {
       ["IT Administration", "Payroll Processing"],
     ];
 
+    const remediationAdvice = {
+      "Accounts Payable & Vendor Setup": "Implementation of independent vendor bank account verification required. Ensure payment batches are approved by a distinct General Ledger head.",
+      "Purchase Order Creation & Goods Receipt": "Physical inventory verification must be performed by a third party. Segregate receiving dock staff from procurement team.",
+      "IT Administration & Payroll Processing": "Super-user access logs must be reviewed weekly by the CFO. Automate payroll integrity reports via an independent audit script.",
+    };
+
     setTimeout(() => {
       const res = analyze_sod_conflicts(JSON.stringify(userRoles), JSON.stringify(conflictRules));
-      setResults(res);
+      const enrichedRes = res.map(item => ({
+        ...item,
+        remediation: item.conflicts.map(c => {
+            const rule = c.replace('Conflict: ', '');
+            return remediationAdvice[rule] || "Implement manager review and secondary approval for all related transactions.";
+        })
+      }));
+      setResults(enrichedRes);
       setIsAnalyzing(false);
     }, 400);
   };
@@ -86,15 +99,17 @@ const PermissionMatrix = () => {
                 </div>
                 {item.conflicts.length > 0 && (
                   <div className="mt-4 pt-4 border-t border-red-200">
-                    <div className="flex items-start gap-2">
+                    <div className="flex items-start gap-2 mb-3">
                       <AlertTriangle size={14} className="text-red-700 mt-0.5" />
-                      <div className="text-[10px] font-bold text-red-800 uppercase tracking-widest">Conflicts:</div>
+                      <div className="text-[10px] font-bold text-red-800 uppercase tracking-widest">Remediation Roadmap:</div>
                     </div>
-                    <ul className="mt-2 space-y-1 ml-6">
-                      {item.conflicts.map((c, cIdx) => (
-                        <li key={cIdx} className="text-[10px] text-red-700 font-bold">• {c}</li>
+                    <div className="space-y-3 ml-6">
+                      {item.remediation.map((advice, rIdx) => (
+                        <div key={rIdx} className="bg-white border border-red-100 p-3 rounded-sm">
+                            <p className="text-[10px] text-red-800 font-bold leading-relaxed italic">“{advice}”</p>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 )}
               </div>

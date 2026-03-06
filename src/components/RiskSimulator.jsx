@@ -39,6 +39,26 @@ const RiskSimulator = () => {
     Frequency: val
   })) : [];
 
+  const getRiskInsight = (p95) => {
+    const appetite = 75000; // Hypothetical risk appetite
+    if (p95 < appetite) return {
+        label: 'Within Appetite',
+        color: 'text-emerald-700',
+        bg: 'bg-emerald-50',
+        border: 'border-emerald-200',
+        insight: `The 95th percentile loss ($${p95.toLocaleString(undefined, {maximumFractionDigits: 0})}) is within the organizational risk appetite of $${appetite.toLocaleString()}. No immediate capital allocation required.`
+    };
+    return {
+        label: 'Appetite Breach',
+        color: 'text-red-700',
+        bg: 'bg-red-50',
+        border: 'border-red-200',
+        insight: `Probability of loss exceeds risk appetite by $${(p95 - appetite).toLocaleString(undefined, {maximumFractionDigits: 0})}. Recommendation: Evaluate insurance or implement additional preventive controls.`
+    };
+  };
+
+  const insight = results ? getRiskInsight(results.p95_loss) : null;
+
   return (
     <div className="w-full max-w-4xl mx-auto bg-white border border-slate-200 p-8 shadow-sm font-sans">
       <div className="flex items-start justify-between mb-8 border-b border-slate-100 pb-6">
@@ -88,6 +108,16 @@ const RiskSimulator = () => {
 
       {results && !isSimulating && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
+          {/* Executive Summary */}
+          <div className={`p-6 border-2 ${insight.border} ${insight.bg}`}>
+            <div className="flex items-center justify-between mb-2">
+                <div className="text-[10px] font-black uppercase tracking-widest text-slate-500">Board-Level Risk Summary</div>
+                <div className={`px-3 py-1 text-[9px] font-black uppercase tracking-widest ${insight.bg} border ${insight.border} ${insight.color}`}>Appetite: $75,000</div>
+            </div>
+            <div className={`text-2xl font-black uppercase ${insight.color} mb-2`}>{insight.label}</div>
+            <p className="text-xs font-bold text-slate-700 leading-relaxed">{insight.insight}</p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-5 border border-slate-200 bg-slate-50">
               <div className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1">Mean Expected Loss</div>
