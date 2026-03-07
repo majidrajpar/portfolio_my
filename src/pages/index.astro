@@ -387,6 +387,67 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
+  <!-- LinkedIn Posts -->
+  <section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div data-reveal>
+          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-6 block">LinkedIn Posts</span>
+          <h2 class="text-[clamp(2rem,5vw,3.5rem)] text-slate-900 font-black tracking-tighter">From the Field.</h2>
+        </div>
+        <a href="https://www.linkedin.com/in/majid-m-4b097118/recent-activity/all/" target="_blank" rel="noopener noreferrer" class="text-[#001F5B] font-black text-xs uppercase tracking-widest hover:text-blue-700 transition-colors" data-reveal>
+          All Posts on LinkedIn →
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          {
+            tag: 'Fraud Investigation',
+            tagColor: 'text-red-700 bg-red-50 border-red-200',
+            title: 'The Fraud Investigator\'s Prior',
+            excerpt: 'Your entry assumption changes the verdict more than the evidence does. A Bayesian framing of why two investigators reading the same file reach opposite conclusions — and why the one who started with a lower prior is almost always right.',
+            url: 'https://www.linkedin.com/in/majid-m-4b097118/recent-activity/all/',
+          },
+          {
+            tag: 'Audit Methodology',
+            tagColor: 'text-blue-700 bg-blue-50 border-blue-200',
+            title: 'The Statistical Case Against Audit Sampling',
+            excerpt: 'A 5% sample has roughly a 40% chance of missing a fraud cluster. That\'s not a methodology — it\'s a liability transfer from the organisation to the auditor. The AED 7.7M we recovered only existed because we tested the full population.',
+            url: 'https://www.linkedin.com/in/majid-m-4b097118/recent-activity/all/',
+          },
+          {
+            tag: 'ML & Analytics',
+            tagColor: 'text-emerald-700 bg-emerald-50 border-emerald-200',
+            title: 'ML Fraud Detection: What the Model Can\'t See',
+            excerpt: 'Only 12% of the actual fraudulent transactions had been labelled by the time we trained the model. The other 88% was invisible to it. A clean output didn\'t mean no fraud — it meant the model had never seen that pattern. Coverage and assurance are not the same thing.',
+            url: 'https://www.linkedin.com/in/majid-m-4b097118/recent-activity/all/',
+          },
+          {
+            tag: 'GCC Governance',
+            tagColor: 'text-amber-700 bg-amber-50 border-amber-200',
+            title: 'The GCC IPO Governance Premium',
+            excerpt: 'Institutional investors price the gap between a company\'s stated control process and its operational reality. GCC boards treat IPO readiness as a documentation exercise. That mispricing is systematic — and it shows up in post-listing performance.',
+            url: 'https://www.linkedin.com/in/majid-m-4b097118/recent-activity/all/',
+          },
+        ].map((post, i) => (
+          <a
+            href={post.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group bg-white border border-slate-200 p-8 hover:border-[#001F5B]/40 hover:shadow-sm transition-all duration-200 flex flex-col gap-5"
+            data-reveal
+            data-reveal-delay={String((i % 2) + 1)}
+          >
+            <span class={`inline-block text-[10px] font-black uppercase tracking-wider px-3 py-1 border w-fit ${post.tagColor}`}>{post.tag}</span>
+            <h3 class="text-slate-900 font-black text-lg leading-snug group-hover:text-[#001F5B] transition-colors">{post.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed flex-1">{post.excerpt}</p>
+            <span class="text-[#001F5B] font-black text-[10px] uppercase tracking-widest mt-auto group-hover:text-blue-700 transition-colors">Read on LinkedIn →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Insights Teaser -->
   <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-8">
