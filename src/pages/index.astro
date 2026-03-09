@@ -402,11 +402,20 @@ const base = import.meta.env.BASE_URL;
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {[
           {
+            tag: 'Audit Independence',
+            tagColor: 'text-purple-700 bg-purple-50 border-purple-200',
+            title: 'The CFO Is the Audit Independence Risk You\'re Not Managing',
+            excerpt: 'When the CAE reports to the CFO, the person controlling audit budgets and headcount is also the person whose function audit evaluates. The conflict doesn\'t surface in findings — it surfaces in what gets scoped out before fieldwork begins.',
+            url: 'https://www.grcreport.com/post/the-cfo-is-the-audit-independence-risk-youre-not-managing',
+            source: 'GRC Report',
+          },
+          {
             tag: 'Fraud Investigation',
             tagColor: 'text-red-700 bg-red-50 border-red-200',
             title: 'The Fraud Investigator\'s Prior',
             excerpt: 'Your entry assumption changes the verdict more than the evidence does. A Bayesian framing of why two investigators reading the same file reach opposite conclusions — and why the one who started with a lower prior is almost always right.',
             url: 'https://www.linkedin.com/in/majid-m-4b097118/recent-activity/all/',
+            source: 'LinkedIn',
           },
           {
             tag: 'Audit Methodology',
@@ -414,6 +423,7 @@ const base = import.meta.env.BASE_URL;
             title: 'The Statistical Case Against Audit Sampling',
             excerpt: 'A 5% sample has roughly a 40% chance of missing a fraud cluster. That\'s not a methodology — it\'s a liability transfer from the organisation to the auditor. The AED 7.7M we recovered only existed because we tested the full population.',
             url: 'https://www.linkedin.com/in/majid-m-4b097118/recent-activity/all/',
+            source: 'LinkedIn',
           },
           {
             tag: 'ML & Analytics',
@@ -421,6 +431,7 @@ const base = import.meta.env.BASE_URL;
             title: 'ML Fraud Detection: What the Model Can\'t See',
             excerpt: 'Only 12% of the actual fraudulent transactions had been labelled by the time we trained the model. The other 88% was invisible to it. A clean output didn\'t mean no fraud — it meant the model had never seen that pattern. Coverage and assurance are not the same thing.',
             url: 'https://www.linkedin.com/in/majid-m-4b097118/recent-activity/all/',
+            source: 'LinkedIn',
           },
           {
             tag: 'GCC Governance',
@@ -428,6 +439,7 @@ const base = import.meta.env.BASE_URL;
             title: 'The GCC IPO Governance Premium',
             excerpt: 'Institutional investors price the gap between a company\'s stated control process and its operational reality. GCC boards treat IPO readiness as a documentation exercise. That mispricing is systematic — and it shows up in post-listing performance.',
             url: 'https://www.linkedin.com/feed/update/urn:li:activity:7436606697755860992/',
+            source: 'LinkedIn',
           },
         ].map((post, i) => (
           <a
@@ -441,7 +453,7 @@ const base = import.meta.env.BASE_URL;
             <span class={`inline-block text-[10px] font-black uppercase tracking-wider px-3 py-1 border w-fit ${post.tagColor}`}>{post.tag}</span>
             <h3 class="text-slate-900 font-black text-lg leading-snug group-hover:text-[#001F5B] transition-colors">{post.title}</h3>
             <p class="text-slate-500 text-sm leading-relaxed flex-1">{post.excerpt}</p>
-            <span class="text-[#001F5B] font-black text-[10px] uppercase tracking-widest mt-auto group-hover:text-blue-700 transition-colors">Read on LinkedIn →</span>
+            <span class="text-[#001F5B] font-black text-[10px] uppercase tracking-widest mt-auto group-hover:text-blue-700 transition-colors">Read on {post.source} →</span>
           </a>
         ))}
       </div>
