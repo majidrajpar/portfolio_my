@@ -23,11 +23,11 @@ const base = import.meta.env.BASE_URL;
         I Build Internal Audit<br />Functions from Zero.
       </h1>
       <p class="text-lg md:text-xl mb-14 text-blue-100 font-medium max-w-3xl leading-relaxed">
-        For GCC boards that need a fully operational internal audit function — governance, ICOFR, ERM, and a reporting structure that survives the first external review. Without hiring a full-time CAE.
+        Twenty years building internal audit functions that hold under external scrutiny — governance frameworks, ICOFR programmes that close Big 4 opinions clean, and ML-driven fraud detection that recovers what sampling misses. Currently open to full-time Director of Internal Audit and CAE roles across UAE and KSA.
       </p>
       <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-        <a href={`${base}contact/`} class="btn-primary">Start the Conversation →</a>
-        <a href="#case-studies" class="btn-secondary-light">See the Work ↓</a>
+        <a href="#case-studies" class="btn-primary">See the Work ↓</a>
+        <a href={`${base}contact/`} class="btn-secondary-light">Get in Touch →</a>
       </div>
     </div>
   </section>
@@ -207,34 +207,34 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <!-- How It Works -->
+  <!-- How I Work -->
   <section class="py-24 bg-[#001F5B]">
     <div class="max-w-7xl mx-auto px-8">
       <div class="text-center mb-16" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.4em] text-white/50 mb-6 block">Engagement Process</span>
-        <h2 class="text-[clamp(2.5rem,6vw,4rem)] text-white font-black tracking-tighter">How It Works.</h2>
+        <span class="text-[10px] font-black uppercase tracking-[0.4em] text-white/50 mb-6 block">Approach</span>
+        <h2 class="text-[clamp(2.5rem,6vw,4rem)] text-white font-black tracking-tighter">How I Work.</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-0">
         {[
           {
             step: '01',
-            title: 'Discovery Call',
-            desc: '30 minutes to understand your governance challenge and assess whether we are the right fit.',
+            title: 'Business First',
+            desc: 'Two weeks inside the commercial reality before forming audit opinion. The control environment is a symptom — I trace it to the business pressure that created it.',
           },
           {
             step: '02',
-            title: 'Diagnostic & Scope',
-            desc: 'I assess your current state — controls, gaps, regulatory context — and define the engagement scope clearly.',
+            title: 'Structural Independence',
+            desc: 'Audit charter, reporting line, and committee access established before fieldwork begins. Independence is a structural condition, not a professional posture.',
           },
           {
             step: '03',
-            title: 'Embedded Delivery',
-            desc: 'Hands-on implementation inside your organisation: audit framework, ICOFR documentation, ERM tools, or fraud detection.',
+            title: '100% Population Testing',
+            desc: 'Where most teams sample, I test the full population. The AED 7.7M we recovered existed in the 95% sampling would have missed. Analytics makes this scalable.',
           },
           {
             step: '04',
-            title: 'Board-Ready Output',
-            desc: 'Fully documented, auditor-testable deliverables. Board packs, risk registers, and frameworks built to survive external scrutiny.',
+            title: 'Board-Grade Reporting',
+            desc: 'Findings framed for the decision each committee member needs to make — not a status update, but a governance instrument built to survive external scrutiny.',
           },
         ].map((item, i) => (
           <div class={`relative p-8${i > 0 ? ' md:border-l md:border-white/10' : ''}`} data-reveal data-reveal-delay={String(i + 1)}>
@@ -245,7 +245,7 @@ const base = import.meta.env.BASE_URL;
         ))}
       </div>
       <div class="text-center mt-14" data-reveal>
-        <a href={`${base}contact/`} class="btn-secondary-light">Start the Conversation →</a>
+        <a href={`${base}contact/`} class="btn-secondary-light">Get in Touch →</a>
       </div>
     </div>
   </section>
@@ -493,10 +493,13 @@ const base = import.meta.env.BASE_URL;
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {articles.map((article, i) => (
-          <div class="bg-white border border-slate-200 p-8 hover:shadow-md hover:border-slate-300 transition-all" data-reveal data-reveal-delay={String(i + 1)}>
-            <span class="inline-block text-[10px] font-black uppercase tracking-wider px-3 py-1 border border-[#001F5B]/20 bg-[#001F5B]/5 text-[#001F5B] mb-6">{article.tag}</span>
-            <h3 class="text-slate-900 font-black text-base leading-tight mb-6">{article.title}</h3>
-            <a href="https://www.linkedin.com/newsletters/7339153291630510080/" target="_blank" rel="noopener noreferrer" class="text-[#001F5B] font-black text-[10px] uppercase tracking-widest hover:text-blue-700 transition-colors">
+          <div class="bg-white border border-slate-200 p-8 hover:shadow-md hover:border-slate-300 transition-all flex flex-col gap-5" data-reveal data-reveal-delay={String(i + 1)}>
+            <span class="inline-block text-[10px] font-black uppercase tracking-wider px-3 py-1 border border-[#001F5B]/20 bg-[#001F5B]/5 text-[#001F5B] w-fit">{article.tag}</span>
+            <h3 class="text-slate-900 font-black text-base leading-tight">{article.title}</h3>
+            {article.excerpt && (
+              <p class="text-slate-500 text-sm leading-relaxed flex-1">{article.excerpt}</p>
+            )}
+            <a href="https://www.linkedin.com/newsletters/7339153291630510080/" target="_blank" rel="noopener noreferrer" class="text-[#001F5B] font-black text-[10px] uppercase tracking-widest hover:text-blue-700 transition-colors mt-auto">
               Read on LinkedIn →
             </a>
           </div>
