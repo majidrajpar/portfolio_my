@@ -198,5 +198,55 @@
     "size": "663 KB",
     "pages": 10,
     "date": "2026-02-28"
+  },
+  {
+    "id": "doc-021",
+    "filename": "IPO_Readiness_Internal_Audit_Checklist.pdf",
+    "title": "IPO Readiness Internal Audit Checklist (SOX 404 / ICFR)",
+    "description": "Six-phase checklist for GCC pre-listing governance: independence structure, ICFR scoping, IT General Controls, testing and evidence, external auditor coordination, and GCC-specific regulatory requirements. Derived from zero-material-weakness SOX 404 implementation at a hyper-growth cloud kitchen operator.",
+    "category": "Checklists",
+    "size": "54 KB",
+    "pages": 2,
+    "date": "2026-03-10"
+  },
+  {
+    "id": "doc-022",
+    "filename": "Internal_Audit_Function_Setup_Checklist.pdf",
+    "title": "Internal Audit Function Setup Checklist",
+    "description": "Seven-phase checklist for building an IA function from zero: charter and independence, Audit Committee relationship, risk-based planning, methodology, team capability, performance measurement, and GCC context. Covers reporting line structure, IIA Standards compliance, and QAIP requirements.",
+    "category": "Checklists",
+    "size": "54 KB",
+    "pages": 2,
+    "date": "2026-03-10"
+  },
+  {
+    "id": "doc-023",
+    "filename": "Vendor_Billing_Fraud_Detection_Checklist.pdf",
+    "title": "Vendor Billing Fraud Detection Checklist (F&B / Aggregator)",
+    "description": "Six-section fraud detection checklist for third-party and aggregator billing: contract vs. actuals review, volume reconciliation, settlement timing, three-way matching controls, aggregator platform-specific tests, and data analytics tests. Derived from AED 7.7M fraud recovery at a GCC cloud kitchen operator.",
+    "category": "Checklists",
+    "size": "52 KB",
+    "pages": 2,
+    "date": "2026-03-10"
+  },
+  {
+    "id": "doc-024",
+    "filename": "Audit_Committee_Pack_Quality_Checklist.pdf",
+    "title": "Audit Committee Pack Quality Checklist",
+    "description": "Six-section checklist covering what separates a board-grade audit pack from a status update: executive summary standards, findings presentation, risk universe coverage, follow-up tracking, independence disclosures, and board communication quality. Developed from direct Audit Committee reporting experience across GCC JSC and pre-IPO entities.",
+    "category": "Checklists",
+    "size": "53 KB",
+    "pages": 2,
+    "date": "2026-03-10"
+  },
+  {
+    "id": "doc-025",
+    "filename": "GCC_ERM_Implementation_Checklist.pdf",
+    "title": "GCC ERM Implementation Checklist (COSO Framework)",
+    "description": "Seven-component COSO ERM checklist adapted for GCC regulatory context: governance and culture, strategy and objective-setting, risk identification, risk response, control activities, information and communication, and GCC-specific alignment including Saudi CMA, UAE SCA, Shari'ah compliance, and Vision 2030 considerations.",
+    "category": "Checklists",
+    "size": "54 KB",
+    "pages": 2,
+    "date": "2026-03-10"
   }
 ]
