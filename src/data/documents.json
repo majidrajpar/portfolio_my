@@ -248,5 +248,15 @@
     "size": "54 KB",
     "pages": 2,
     "date": "2026-03-10"
+  },
+  {
+    "id": "doc-026",
+    "filename": "GCC_AI_Governance_White_Paper.pdf",
+    "title": "The Assumption Every AI Governance Framework Makes — and Why It Fails in GCC",
+    "description": "White paper on why NIST AI RMF, ISO 42001, and UAE AI Policy Framework fail in GCC institutions. Three structural realities: informal authority concentration, board analytical capacity gap, and regulatory fragmentation — and the specific accountability reallocation each requires.",
+    "category": "Governance",
+    "size": "49 KB",
+    "pages": 4,
+    "date": "2026-03-10"
   }
 ]
