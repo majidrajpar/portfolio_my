@@ -1,28 +1,24 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { categoryMeta, projects } from '../../data/projects.js';
+import CaseStudyCard from '../../components/CaseStudyCard.jsx';
+import { strategicCaseStudies, professionalEngagements } from '../../data/projects.js';
 const base = import.meta.env.BASE_URL;
-
-const categoryWithProjects = categoryMeta.map(cat => ({
-  ...cat,
-  engagements: projects.filter(p => p.categories?.includes(cat.name)),
-}));
 ---
 
 <BaseLayout
-  title="Projects | Practice Areas — Majid Mumtaz"
-  description="Audit, risk, governance, compliance, and fraud engagements across GCC operations — organised by practice area."
+  title="Strategic Case Studies | Client Outcomes — Majid Mumtaz"
+  description="High-stakes audit, risk, and governance outcomes across GCC and international operations — delivered via STARR methodology."
 >
   <!-- Hero -->
   <section class="pt-32 pb-20 bg-[#001F5B]">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
       <div class="max-w-3xl" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Practice Areas</span>
-        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-          Client Outcomes.
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#C9A84C] mb-6 block">Executive Portfolio</span>
+        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight text-balance">
+          Strategic <span class="text-[#C9A84C]">Outcomes.</span>
         </h1>
         <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
-          Engagements organised by practice area — select a category to explore the work.
+          A selection of high-impact engagements demonstrating enterprise value protection, tech-enabled audit transformation, and board-level governance.
         </p>
       </div>
     </div>
@@ -30,75 +26,77 @@ const categoryWithProjects = categoryMeta.map(cat => ({
 
   <!-- Disclosure -->
   <div class="bg-slate-50 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-3 flex items-start gap-3">
-      <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-start gap-3">
+      <svg class="w-4 h-4 text-[#C9A84C] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
       </svg>
-      <p class="text-[11px] text-slate-500 leading-relaxed">
-        <span class="font-bold uppercase tracking-wider text-slate-600">Confidentiality Notice —</span>
-        All client and employer names, organisational identifiers, and sensitive data presented in these case studies have been anonymised to protect the privacy and confidentiality of the parties involved. Figures and outcomes reflect real engagements but are presented at a level of abstraction that prevents identification.
+      <p class="text-[11px] text-slate-500 leading-relaxed max-w-4xl">
+        <span class="font-bold uppercase tracking-wider text-slate-700">Engagement Privacy & Anonymisation —</span>
+        In accordance with professional standards and confidentiality agreements, all specific client names and proprietary identifiers have been anonymised. The figures and outcomes presented reflect real-world impact but are abstracted to protect the privacy of the organisations involved.
       </p>
     </div>
   </div>
 
-  <!-- Category Cards -->
+  <!-- Strategic Case Studies -->
   <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="mb-16">
+        <h2 class="text-3xl font-black text-[#001F5B] mb-2 uppercase tracking-tighter">Strategic Case Studies</h2>
+        <div class="h-1 w-20 bg-[#C9A84C]"></div>
+      </div>
+
+      <div class="space-y-4">
+        {strategicCaseStudies.map((study) => (
+          <CaseStudyCard client:visible study={study} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Engagements Catalog -->
+  <section class="py-24 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="mb-16 text-center">
+        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#8895AA] mb-4 block">Breadth of Experience</span>
+        <h2 class="text-3xl font-black text-[#001F5B] mb-4">Professional Engagements Catalog</h2>
+        <p class="text-slate-500 max-w-2xl mx-auto">A high-level summary of additional advisory and audit mandates across the GCC and international markets.</p>
+      </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {categoryWithProjects.map((cat, i) => (
-          <a
-            href={`${base}projects/category/${cat.slug}/`}
-            class="bg-white border border-slate-200 flex flex-col p-8 hover:shadow-md transition-shadow h-full text-left group"
+        {professionalEngagements.map((engagement, i) => (
+          <div 
+            class="bg-white p-8 border border-slate-200 shadow-sm flex flex-col group hover:border-[#C9A84C] transition-colors"
             data-reveal
             data-reveal-delay={String((i % 3) + 1)}
           >
-            <div class="flex items-center justify-between gap-3 mb-5">
-              <span class="inline-block px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] bg-[#001F5B] text-white">
-                {cat.name}
-              </span>
-              <span class="text-[9px] font-black uppercase tracking-widest text-slate-400">
-                {cat.engagements.length} engagement{cat.engagements.length !== 1 ? 's' : ''}
+            <div class="mb-4">
+              <span class="text-[9px] font-black uppercase tracking-widest text-[#C9A84C] bg-[#C9A84C]/5 px-2 py-1">
+                {engagement.category}
               </span>
             </div>
-            <p class="text-slate-600 text-sm leading-relaxed mb-5">
-              {cat.description}
+            <h4 class="text-lg font-black text-[#001F5B] mb-3 leading-tight">{engagement.title}</h4>
+            <p class="text-slate-500 text-xs leading-relaxed mb-6 flex-1">
+              {engagement.desc}
             </p>
-            <ul class="space-y-1.5 mb-6 flex-1">
-              {cat.engagements.slice(0, 3).map(p => (
-                <li class="flex items-start gap-2">
-                  <span class="mt-1.5 w-1 h-1 bg-[#001F5B]/30 flex-shrink-0"></span>
-                  <span class="text-[11px] text-slate-500 leading-snug">{p.title}</span>
-                </li>
-              ))}
-              {cat.engagements.length > 3 && (
-                <li class="text-[10px] font-bold text-slate-400 pl-3">
-                  +{cat.engagements.length - 3} more
-                </li>
-              )}
-            </ul>
-            <span class="inline-flex items-center text-[#001F5B] font-black text-xs uppercase tracking-widest group-hover:text-blue-700 transition-colors">
-              View Engagements
-              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
-            </span>
-          </a>
+            <div class="pt-4 border-t border-slate-100 mt-auto">
+              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Key Outcome</span>
+              <p class="text-[11px] font-black text-slate-700 leading-snug">{engagement.outcome}</p>
+            </div>
+          </div>
         ))}
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-20 bg-[#001F5B]">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center" data-reveal>
-      <h2 class="text-3xl font-black text-white mb-4">Ready to Discuss Your Challenge?</h2>
-      <p class="text-white/70 mb-8">Every engagement starts with understanding your specific context.</p>
-      <a href={`${base}contact/`} class="btn-primary">Start the Conversation</a>
-      <div class="mt-8">
-        <a href={`${base}downloads/Fraud_Detection_Forensics_Framework.pdf`} download class="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-white/60 border-b border-white/20 pb-1 hover:text-white hover:border-white/50 transition-colors">
-          <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-          Free Download: Fraud Detection & Forensics Framework
-        </a>
+  <section class="py-24 bg-[#001F5B] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#C9A84C 1px, transparent 1px); background-size: 40px 40px;"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center relative z-10" data-reveal>
+      <h2 class="text-4xl font-black text-white mb-6">Ready to Augment Your Governance?</h2>
+      <p class="text-xl text-white/70 mb-10 max-w-2xl mx-auto italic">"Transforming Internal Audit from a cost centre to a strategic protector of enterprise value."</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href={`${base}contact/`} class="btn-primary">Initiate Strategic Consultation</a>
+        <a href={`${base}consulting/`} class="bg-white/5 border border-white/20 text-white px-8 py-4 text-xs font-black uppercase tracking-widest hover:bg-[#C9A84C] hover:text-[#001F5B] transition-all">View Advisory Services</a>
       </div>
     </div>
   </section>
