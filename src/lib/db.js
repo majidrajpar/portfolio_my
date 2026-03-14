@@ -6,7 +6,7 @@ const dbPath = join(process.cwd(), 'portfolio.db');
 const db = new Database(dbPath);
 
 export function getCareerMilestones() {
-  return db.prepare('SELECT * FROM career_milestones ORDER BY year ASC').all().map(row => ({
+  return db.prepare('SELECT * FROM career_milestones ORDER BY x ASC').all().map(row => ({
     ...row,
     isSpecial: Boolean(row.is_special),
     isCurrent: Boolean(row.is_current)
