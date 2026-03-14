@@ -18,19 +18,19 @@ const careerData = [
   { x: 2011, y: 38, company: "KPMG\n(QATAR)", role: "Internal Audit Manager", dates: "2011–2013", align: "start", dx: 10, dy: -25 },
   { x: 2014, y: 50, company: "McDONALD'S\nKSA", role: "Manager, Internal Audit", dates: "2014–2016", align: "middle" },
   { x: 2017, y: 61, company: "AL-FAISALIAH\nGROUP", role: "Group Director, IA & Risk", dates: "2016–2022", align: "middle" },
-  { 
-    x: 2021, 
-    y: 72.2, 
-    company: "AFG Restaurants Sector", 
-    role: "Audit Committee Member", 
-    dates: "2021–2022", 
-    isSpecial: true,
-    align: "middle",
-    dy: -35
-  },
   { x: 2022, y: 75, company: "KITOPI", role: "Director of Internal Audit", dates: "2022–2025", align: "middle" },
   { x: 2025, y: 87, company: "VERITUX", role: "Internal Audit Director", dates: "2025–Present", align: "middle", isCurrent: true }
 ];
+
+// Concurrent board role — kept separate so the career progression line is not routed through it
+const auditCommitteePoint = {
+  x: 2021, y: 95,
+  curveY: 72.2, // approximate interpolated y on the career line at x=2021
+  company: "AFG Restaurants Sector",
+  role: "Audit Committee Member",
+  dates: "2021–2022",
+  isSpecial: true,
+};
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -195,52 +195,51 @@ export default function CareerTimeline() {
             <LabelList dataKey="role" content={<CustomizedLabel />} />
           </Area>
 
-          {/* Special Audit Committee Elements */}
-          {careerData.filter(d => d.isSpecial).map((point, idx) => (
-            <React.Fragment key={`ac-${idx}`}>
-              <ReferenceLine
-                x={point.x}
-                y1={point.y}
-                y2={point.y + 40}
-                stroke="#C9A84C"
-                strokeWidth={2}
-                strokeDasharray="4 4"
-              />
-              <ReferenceDot
-                x={point.x}
-                y={point.y + 45}
-                r={0}
-                label={{
-                  position: 'top',
-                  value: "AUDIT COMMITTEE",
-                  fill: "#C9A84C",
-                  fontSize: 10,
-                  fontWeight: 900,
-                  letterSpacing: '0.15em'
-                }}
-              />
-              {/* Diamond Shape for AC */}
-              <ReferenceDot
-                x={point.x}
-                y={point.y}
-                r={8}
-                fill="#C9A84C"
-                stroke="#FFFFFF"
-                strokeWidth={2}
-                shape={(props) => {
-                  const { cx, cy } = props;
-                  return (
-                    <path 
-                      d={`M ${cx} ${cy-8} L ${cx+8} ${cy} L ${cx} ${cy+8} L ${cx-8} ${cy} Z`} 
-                      fill="#C9A84C" 
-                      stroke="#FFFFFF" 
-                      strokeWidth="2"
-                    />
-                  );
-                }}
-              />
-            </React.Fragment>
-          ))}
+          {/* Audit Committee — concurrent board role, floated above the career line */}
+          <ReferenceLine
+            segment={[
+              { x: auditCommitteePoint.x, y: auditCommitteePoint.curveY },
+              { x: auditCommitteePoint.x, y: auditCommitteePoint.y - 2 }
+            ]}
+            stroke="#C9A84C"
+            strokeWidth={1.5}
+            strokeDasharray="4 4"
+            strokeOpacity={0.7}
+          />
+          <ReferenceDot
+            x={auditCommitteePoint.x}
+            y={auditCommitteePoint.y}
+            r={0}
+            label={{
+              position: 'top',
+              value: "AUDIT COMMITTEE",
+              fill: "#C9A84C",
+              fontSize: 9,
+              fontWeight: 900,
+            }}
+          />
+          <ReferenceDot
+            x={auditCommitteePoint.x}
+            y={auditCommitteePoint.y}
+            r={8}
+            fill="#C9A84C"
+            stroke="#FFFFFF"
+            strokeWidth={2}
+            shape={(props) => {
+              const { cx, cy } = props;
+              return (
+                <g>
+                  <path
+                    d={`M ${cx} ${cy-9} L ${cx+9} ${cy} L ${cx} ${cy+9} L ${cx-9} ${cy} Z`}
+                    fill="#C9A84C"
+                    stroke="#FFFFFF"
+                    strokeWidth="2"
+                  />
+                  <title>Audit Committee Member — AFG Restaurants Sector (2021–2022) — Concurrent board appointment during Al-Faisaliah Group tenure</title>
+                </g>
+              );
+            }}
+          />
 
           {/* Career Milestone Dots */}
           {careerData.filter(d => !d.isSpecial).map((point, index) => (
