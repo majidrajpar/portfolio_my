@@ -117,3 +117,40 @@ export function categorySlug(name) {
   const match = categoryMeta.find(c => c.name === name);
   return match ? match.slug : name.toLowerCase().replace(/\s+/g, '-');
 }
+
+// Combined flat list for category filtering (maps STARR studies + engagements)
+const caseStudyCategories = {
+  'ma-capital-protection':    ['Corporate Governance', 'Fraud Forensics'],
+  'audit-4-transformation':   ['Audit Transformation', 'Fraud Forensics'],
+  'ipo-governance-readiness': ['Corporate Governance'],
+};
+const engagementCategories = {
+  'KSA Real Estate Forensic Audit':             ['Fraud Forensics'],
+  'Executive Financial Dashboards':             ['Strategic Dashboards'],
+  'Tadawul Nomu Listing Readiness':             ['Corporate Governance'],
+  'Enterprise Risk Management (8 Countries)':   ['Enterprise Risk'],
+  'Whistleblowing Framework (QSR Leader)':      ['Corporate Governance'],
+  'Ethics & Compliance Programme (Multi-Country)': ['Corporate Governance'],
+};
+
+export const featuredProjects = strategicCaseStudies.slice(0, 3).map(s => ({
+  ...s,
+  description: s.subtitle,
+  categories: caseStudyCategories[s.id] || [],
+}));
+
+export const projects = [
+  ...strategicCaseStudies.map(s => ({
+    ...s,
+    description: s.subtitle,
+    categories: caseStudyCategories[s.id] || [],
+  })),
+  ...professionalEngagements.map((e, i) => ({
+    id: `engagement-${i}`,
+    title: e.title,
+    description: e.desc,
+    impact: e.outcome,
+    techStack: [],
+    categories: engagementCategories[e.title] || [],
+  })),
+];
