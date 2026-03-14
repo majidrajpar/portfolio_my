@@ -99,7 +99,7 @@ const Navbar = () => {
               Newsletter ↗
             </a>
             <a
-              href={`${base}/cv/Majid-Mumtaz-Internal-Audit-Director-UAE-KSA-CV.pdf`}
+              href={`${base}/cv/Majid-Mumtaz-Internal-Audit-Director-CV.pdf`}
               download
               className={`text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 border transition-all
                 ${showTransparent
@@ -154,7 +154,7 @@ const Navbar = () => {
               })}
               <div className="pt-4 flex flex-col gap-3">
                 <a
-                  href={`${base}/cv/Majid-Mumtaz-Internal-Audit-Director-UAE-KSA-CV.pdf`}
+                  href={`${base}/cv/Majid-Mumtaz-Internal-Audit-Director-CV.pdf`}
                   download
                   className="text-center text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2.5 bg-[#001F5B] text-white"
                 >
