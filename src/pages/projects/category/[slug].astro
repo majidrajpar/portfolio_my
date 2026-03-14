@@ -1,17 +1,38 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { projects, categoryMeta } from '../../../data/projects.js';
+import { getCaseStudies, getProfessionalEngagements, getCategoryMeta } from '../../../lib/db.js';
 const base = import.meta.env.BASE_URL;
 
 export function getStaticPaths() {
-  return categoryMeta.map((cat: any) => ({
+  const categoryMeta = getCategoryMeta();
+  const caseStudies = getCaseStudies().map(s => ({
+    id: s.slug,
+    title: s.title,
+    description: s.subtitle,
+    impact: s.impact,
+    categories: s.categories,
+    techStack: s.techStack,
+    starr: s.starr,
+  }));
+  const engagements = getProfessionalEngagements().map(e => ({
+    id: e.slug,
+    title: e.title,
+    description: e.desc,
+    impact: e.outcome,
+    categories: e.categories,
+    techStack: [],
+    starr: null,
+  }));
+  const allProjects = [...caseStudies, ...engagements];
+
+  return categoryMeta.map((cat) => ({
     params: { slug: cat.slug },
-    props: { cat },
+    props: { cat, allProjects },
   }));
 }
 
-const { cat } = Astro.props as { cat: any };
-const filtered = (projects as any[]).filter(p => p.categories.includes(cat.name));
+const { cat, allProjects } = Astro.props as { cat: any; allProjects: any[] };
+const filtered = allProjects.filter(p => p.categories.includes(cat.name));
 ---
 
 <BaseLayout

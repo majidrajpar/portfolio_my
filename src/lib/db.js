@@ -17,6 +17,8 @@ export function getCaseStudies() {
   return db.prepare('SELECT * FROM case_studies').all().map(row => ({
     ...row,
     techStack: JSON.parse(row.tech_stack),
+    categories: row.categories ? JSON.parse(row.categories) : [],
+    description: row.subtitle,
     starr: {
       situation: row.situation,
       task: row.task,
@@ -28,7 +30,10 @@ export function getCaseStudies() {
 }
 
 export function getProfessionalEngagements() {
-  return db.prepare('SELECT * FROM professional_engagements').all();
+  return db.prepare('SELECT * FROM professional_engagements ORDER BY display_order ASC').all().map(row => ({
+    ...row,
+    categories: row.categories ? JSON.parse(row.categories) : [],
+  }));
 }
 
 export function getAdvisoryTiers() {
@@ -37,6 +42,15 @@ export function getAdvisoryTiers() {
     deliverables: JSON.parse(row.deliverables),
     idealFor: row.ideal_for,
   }));
+}
+
+export function getCategoryMeta() {
+  return db.prepare('SELECT * FROM category_meta ORDER BY id ASC').all();
+}
+
+export function categorySlug(name) {
+  const match = db.prepare('SELECT slug FROM category_meta WHERE name = ?').get(name);
+  return match ? match.slug : name.toLowerCase().replace(/\s+/g, '-');
 }
 
 export default db;
