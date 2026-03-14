@@ -32,9 +32,10 @@ export function getProfessionalEngagements() {
 }
 
 export function getAdvisoryTiers() {
-  return db.prepare('SELECT * FROM advisory_tiers').all().map(row => ({
+  return db.prepare('SELECT * FROM advisory_tiers ORDER BY display_order ASC').all().map(row => ({
     ...row,
-    deliverables: JSON.parse(row.deliverables)
+    deliverables: JSON.parse(row.deliverables),
+    idealFor: row.ideal_for,
   }));
 }
 
