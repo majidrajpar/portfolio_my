@@ -55,7 +55,7 @@ const ContactForm = () => {
             <label className="text-[10px] font-black uppercase tracking-widest text-slate-600 mb-2 block">Engagement Type</label>
             <select name="engagement_type" className={inputClass}>
               <option value="">Select engagement type...</option>
-              <option value="Fractional CAE Engagement">Fractional CAE Engagement</option>
+              <option value="Retained CAE Engagement">Retained CAE Engagement</option>
               <option value="IPO Readiness / ICOFR">IPO Readiness / ICOFR</option>
               <option value="Fraud Investigation">Fraud Investigation</option>
               <option value="ERM Programme">ERM Programme</option>
