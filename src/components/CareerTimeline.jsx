@@ -18,21 +18,43 @@ const careerData = [
   { x: 2011, y: 38, company: "KPMG\n(QATAR)", role: "Internal Audit Manager", dates: "2011–2013", align: "start", dx: 10, dy: -25 },
   { x: 2014, y: 50, company: "McDONALD'S\nKSA", role: "Manager, Internal Audit", dates: "2014–2016", align: "middle" },
   { x: 2017, y: 61, company: "AL-FAISALIAH\nGROUP", role: "Group Director, IA & Risk", dates: "2016–2022", align: "middle" },
+  { 
+    x: 2021, 
+    y: 72.2, 
+    company: "AFG Restaurants Sector", 
+    role: "Audit Committee Member", 
+    dates: "2021–2022", 
+    isSpecial: true,
+    align: "middle",
+    dy: -35
+  },
   { x: 2022, y: 75, company: "KITOPI", role: "Director of Internal Audit", dates: "2022–2025", align: "middle" },
-  { x: 2025, y: 87, company: "VERITUX", role: "Internal Audit Director", dates: "2025–Present", align: "middle" }
+  { x: 2025, y: 87, company: "VERITUX", role: "Internal Audit Director", dates: "2025–Present", align: "middle", isCurrent: true }
 ];
-
-const acPoint = { x: 2021, y: 72.2, role: "Audit Committee Member", company: "AFG Restaurants Sector" };
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
+    const isAC = data.isSpecial;
+    
     return (
-      <div className="bg-[#001F5B] border border-[#C9A84C] p-4 shadow-[0_0_20px_rgba(201,168,76,0.2)] backdrop-blur-xl">
-        <p className="text-[10px] font-black text-[#C9A84C] uppercase tracking-[0.2em] mb-2 border-b border-[#C9A84C]/20 pb-1">{data.dates}</p>
-        <p className="text-white font-bold text-sm mb-0.5 leading-tight">{data.role}</p>
-        <p className="text-[#8895AA] text-[10px] font-bold uppercase tracking-tighter mt-1">{data.company.replace('\n', ' ')}</p>
-      </div>
+      <motion.div 
+        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        className="bg-[#001F5B]/95 border border-[#C9A84C] p-5 shadow-[0_0_30px_rgba(201,168,76,0.25)] backdrop-blur-xl min-w-[220px]"
+      >
+        <div className="flex justify-between items-start mb-3 border-b border-[#C9A84C]/20 pb-2">
+          <p className="text-[10px] font-black text-[#C9A84C] uppercase tracking-[0.2em]">{data.dates}</p>
+          {data.isCurrent && (
+            <span className="bg-[#C9A84C] text-[#001F5B] text-[8px] font-black px-1.5 py-0.5 rounded-sm animate-pulse">CURRENT</span>
+          )}
+          {isAC && (
+            <span className="bg-white/10 text-white text-[8px] font-black px-1.5 py-0.5 rounded-sm border border-[#C9A84C]/50">BOARD ADVISORY</span>
+          )}
+        </div>
+        <p className={`text-white font-black text-sm leading-tight mb-1 ${isAC ? 'text-[#C9A84C]' : ''}`}>{data.role}</p>
+        <p className="text-[#8895AA] text-[10px] font-bold uppercase tracking-tight">{data.company.replace('\n', ' ')}</p>
+      </motion.div>
     );
   }
   return null;
@@ -42,6 +64,8 @@ const CustomizedLabel = (props) => {
   const { x, y, value, index } = props;
   const data = careerData[index];
   
+  if (data.isSpecial) return null; // We'll handle AC label separately or via ReferenceDot
+
   const textAnchor = data.align || "middle";
   const dx = data.dx || 0;
   const dy = data.dy || -25;
@@ -51,10 +75,10 @@ const CustomizedLabel = (props) => {
       <text 
         x={x + dx} 
         y={y + dy} 
-        fill="white" 
+        fill={data.isCurrent ? "#C9A84C" : "white"} 
         textAnchor={textAnchor} 
         fontSize={9} 
-        fontWeight={800}
+        fontWeight={data.isCurrent ? 900 : 800}
         className="pointer-events-none select-none uppercase tracking-tighter"
       >
         {value.split('\n')[0]}
@@ -70,46 +94,48 @@ export default function CareerTimeline() {
     <motion.div 
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      className="w-full h-[600px] bg-[#000F2E] border border-slate-800 shadow-2xl overflow-hidden relative"
+      className="w-full h-[600px] bg-[#00081D] border border-slate-800 shadow-2xl overflow-hidden relative group"
     >
-      {/* Dynamic Background Elements */}
+      {/* Dynamic Grid Background */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
         <div className="absolute inset-0" 
              style={{ backgroundImage: 'radial-gradient(#C9A84C 0.5px, transparent 0.5px)', backgroundSize: '40px 40px' }}>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#000F2E]"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#00081D] via-transparent to-[#C9A84C]/5"></div>
       </div>
 
-      {/* Header Info */}
+      {/* Strategic Content */}
       <div className="absolute top-12 left-12 z-20 pointer-events-none">
         <motion.div
-          initial={{ x: -20, opacity: 0 }}
+          initial={{ x: -30, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 1, ease: "easeOut" }}
         >
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-8 h-[2px] bg-[#C9A84C]"></div>
+            <span className="text-[#C9A84C] text-[10px] font-black uppercase tracking-[0.5em]">Executive Experience</span>
+          </div>
           <h3 className="text-white font-black text-4xl tracking-tighter leading-none mb-4">
             STRATEGIC CAREER <span className="text-[#C9A84C]">ARCHITECTURE.</span>
           </h3>
-          <div className="flex items-center gap-4">
-            <div className="h-[1px] w-12 bg-[#C9A84C]"></div>
-            <p className="text-[#8895AA] text-[11px] font-bold uppercase tracking-[0.4em] opacity-80">
-              Two Decades of Leadership & Value Protection
-            </p>
-          </div>
+          <p className="text-[#8895AA] text-[11px] font-bold uppercase tracking-[0.3em] max-w-md leading-relaxed opacity-60">
+            A 20-Year Upward Trajectory from Big 4 Roots to Board Advisory
+          </p>
         </motion.div>
       </div>
 
-      {/* Strategic Badge */}
+      {/* Current Focus Badge */}
       <div className="absolute top-12 right-12 z-20 pointer-events-none">
         <motion.div
-          initial={{ x: 20, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="bg-[#C9A84C] p-[1px]"
+          initial={{ y: -20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="flex flex-col items-end"
         >
-          <div className="bg-[#000F2E] px-4 py-2 text-[10px] font-black text-[#C9A84C] uppercase tracking-[0.25em]">
-            Audit 4.0 & Strategic Advisory
+          <div className="bg-[#C9A84C]/10 border border-[#C9A84C]/30 px-4 py-2 backdrop-blur-md">
+            <span className="text-[10px] font-black text-[#C9A84C] uppercase tracking-[0.2em]">Audit 4.0 & AI Governance</span>
           </div>
+          <div className="mt-2 text-[#5A6A80] text-[8px] font-black uppercase tracking-widest">Digital Transformation Lead</div>
         </motion.div>
       </div>
 
@@ -124,11 +150,12 @@ export default function CareerTimeline() {
         >
           <defs>
             <linearGradient id="colorY" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#C9A84C" stopOpacity={0.5}/>
+              <stop offset="5%" stopColor="#C9A84C" stopOpacity={0.6}/>
+              <stop offset="50%" stopColor="#C9A84C" stopOpacity={0.2}/>
               <stop offset="95%" stopColor="#C9A84C" stopOpacity={0}/>
             </linearGradient>
             <filter id="glow">
-              <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+              <feGaussianBlur stdDeviation="4" result="coloredBlur" />
               <feMerge>
                 <feMergeNode in="coloredBlur" />
                 <feMergeNode in="SourceGraphic" />
@@ -151,67 +178,80 @@ export default function CareerTimeline() {
           
           <Tooltip 
             content={<CustomTooltip />} 
-            cursor={{ stroke: '#C9A84C', strokeWidth: 1, strokeDasharray: '6 6' }}
+            cursor={{ stroke: '#C9A84C', strokeWidth: 1, strokeDasharray: '8 4' }}
           />
           
           <Area
             type="monotone"
             dataKey="y"
             stroke="#C9A84C"
-            strokeWidth={4}
+            strokeWidth={5}
             fillOpacity={1}
             fill="url(#colorY)"
             filter="url(#glow)"
-            animationDuration={3000}
-            animationBegin={500}
+            animationDuration={3500}
+            animationBegin={300}
           >
             <LabelList dataKey="role" content={<CustomizedLabel />} />
           </Area>
 
-          {/* Audit Committee Point */}
-          <ReferenceLine
-            x={acPoint.x}
-            y1={acPoint.y}
-            y2={acPoint.y + 35}
-            stroke="#C9A84C"
-            strokeWidth={2}
-            strokeDasharray="4 4"
-          />
-          <ReferenceDot
-            x={acPoint.x}
-            y={acPoint.y}
-            r={7}
-            fill="#C9A84C"
-            stroke="#FFFFFF"
-            strokeWidth={2}
-            isFront={true}
-          />
-          
-          <ReferenceDot
-            x={acPoint.x}
-            y={acPoint.y + 40}
-            r={0}
-            label={{
-              position: 'top',
-              value: "Audit Committee Member",
-              fill: "#C9A84C",
-              fontSize: 10,
-              fontWeight: 900,
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em'
-            }}
-          />
+          {/* Special Audit Committee Elements */}
+          {careerData.filter(d => d.isSpecial).map((point, idx) => (
+            <React.Fragment key={`ac-${idx}`}>
+              <ReferenceLine
+                x={point.x}
+                y1={point.y}
+                y2={point.y + 40}
+                stroke="#C9A84C"
+                strokeWidth={2}
+                strokeDasharray="4 4"
+              />
+              <ReferenceDot
+                x={point.x}
+                y={point.y + 45}
+                r={0}
+                label={{
+                  position: 'top',
+                  value: "AUDIT COMMITTEE",
+                  fill: "#C9A84C",
+                  fontSize: 10,
+                  fontWeight: 900,
+                  letterSpacing: '0.15em'
+                }}
+              />
+              {/* Diamond Shape for AC */}
+              <ReferenceDot
+                x={point.x}
+                y={point.y}
+                r={8}
+                fill="#C9A84C"
+                stroke="#FFFFFF"
+                strokeWidth={2}
+                shape={(props) => {
+                  const { cx, cy } = props;
+                  return (
+                    <path 
+                      d={`M ${cx} ${cy-8} L ${cx+8} ${cy} L ${cx} ${cy+8} L ${cx-8} ${cy} Z`} 
+                      fill="#C9A84C" 
+                      stroke="#FFFFFF" 
+                      strokeWidth="2"
+                    />
+                  );
+                }}
+              />
+            </React.Fragment>
+          ))}
 
-          {/* Milestone Dots */}
-          {careerData.map((point, index) => (
+          {/* Career Milestone Dots */}
+          {careerData.filter(d => !d.isSpecial).map((point, index) => (
             <ReferenceDot
               key={index}
               x={point.x}
               y={point.y}
-              r={activeIndex === index ? 8 : 6}
-              fill={activeIndex === index ? "#FFFFFF" : "#C9A84C"}
-              stroke={activeIndex === index ? "#C9A84C" : "#FFFFFF"}
-              strokeWidth={activeIndex === index ? 3 : 2}
+              r={activeIndex === index || (point.isCurrent && activeIndex === null) ? 8 : 6}
+              fill={(activeIndex === index || point.isCurrent) ? "#FFFFFF" : "#C9A84C"}
+              stroke={(activeIndex === index || point.isCurrent) ? "#C9A84C" : "#FFFFFF"}
+              strokeWidth={(activeIndex === index || point.isCurrent) ? 3 : 2}
               isFront={true}
               className="transition-all duration-300 cursor-pointer"
             />
@@ -219,35 +259,40 @@ export default function CareerTimeline() {
         </AreaChart>
       </ResponsiveContainer>
       
-      {/* Elegant Company labels at the bottom */}
+      {/* Horizontal Label Strip */}
       <div className="absolute bottom-20 left-0 right-0 flex justify-between px-[100px] pointer-events-none">
-        {careerData.map((point, index) => (
-          <div key={index} className="flex flex-col items-center w-0 overflow-visible transition-all duration-500"
-               style={{ opacity: activeIndex === null || activeIndex === index ? 1 : 0.3 }}>
-            <motion.div 
-              initial={{ y: 10, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.1 * index }}
-              className="flex flex-col items-center"
-            >
-              <span className="text-white text-[10px] font-black uppercase tracking-[0.1em] text-center whitespace-pre-wrap leading-tight mb-2 min-h-[24px]">
-                {point.company}
-              </span>
-              <div className={`w-1 h-1 rounded-full mb-2 ${activeIndex === index ? 'bg-white scale-150' : 'bg-[#C9A84C]'}`}></div>
-              <span className="text-[#5A6A80] text-[9px] font-bold tracking-widest">
-                {point.dates.split('–')[0]}
-              </span>
-            </motion.div>
-          </div>
-        ))}
+        {careerData.filter(d => !d.isSpecial).map((point, index) => {
+          const isFocussed = activeIndex !== null ? (careerData[activeIndex]?.x === point.x) : point.isCurrent;
+          return (
+            <div key={index} className="flex flex-col items-center w-0 overflow-visible transition-all duration-700"
+                 style={{ opacity: activeIndex === null || isFocussed ? 1 : 0.25 }}>
+              <motion.div 
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.05 * index }}
+                className="flex flex-col items-center"
+              >
+                <span className={`text-white text-[10px] font-black uppercase tracking-widest text-center whitespace-pre-wrap leading-tight mb-3 min-h-[30px] transition-colors ${isFocussed ? 'text-[#C9A84C]' : ''}`}>
+                  {point.company}
+                </span>
+                <div className={`w-1.5 h-1.5 rounded-full mb-3 transition-all duration-500 ${isFocussed ? 'bg-[#C9A84C] scale-[2] shadow-[0_0_10px_#C9A84C]' : 'bg-white/20'}`}></div>
+                <span className="text-[#5A6A80] text-[9px] font-black tracking-[0.2em]">
+                  {point.dates.split('–')[0]}
+                </span>
+              </motion.div>
+            </div>
+          );
+        })}
       </div>
 
-      {/* Footer Accents */}
-      <div className="absolute bottom-0 left-0 w-full h-1.5 bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent opacity-30"></div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3 opacity-30">
-        <div className="w-12 h-[1px] bg-white/20"></div>
-        <span className="text-[8px] font-black text-white uppercase tracking-[0.5em]">Trajectory Path</span>
-        <div className="w-12 h-[1px] bg-white/20"></div>
+      {/* Status Bar */}
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-[#C9A84C]/20">
+        <motion.div 
+          className="h-full bg-[#C9A84C]"
+          initial={{ width: "0%" }}
+          whileInView={{ width: "100%" }}
+          transition={{ duration: 4, ease: "easeInOut" }}
+        />
       </div>
     </motion.div>
   );
