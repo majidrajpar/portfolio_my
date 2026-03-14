@@ -1,7 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CaseStudyCard from '../../components/CaseStudyCard.jsx';
-import { strategicCaseStudies, professionalEngagements } from '../../data/projects.js';
+import { getCaseStudies, getProfessionalEngagements } from '../../lib/db.js';
+
+const strategicCaseStudies = getCaseStudies();
+const professionalEngagements = getProfessionalEngagements();
 const base = import.meta.env.BASE_URL;
 ---
 

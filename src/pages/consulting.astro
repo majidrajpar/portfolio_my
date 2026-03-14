@@ -1,51 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const base = import.meta.env.BASE_URL;
+import { getAdvisoryTiers } from '../lib/db.js';
 
-const advisoryTiers = [
-  {
-    id: 'ipo-mna',
-    name: 'IPO & M&A Guardrail',
-    tagline: 'High-Stakes Transactional Assurance',
-    description: 'Specialised advisory for organisations at critical liquidity events. I provide the independent governance framework required to secure first-time clean opinions and protect M&A capital.',
-    deliverables: [
-      'ICOFR / SOX 404 Implementation',
-      'M&A Forensic Due Diligence',
-      'CMA / SCA Regulatory Compliance',
-      'Listing Prospectus Governance Prep'
-    ],
-    idealFor: 'Pre-IPO Tech Firms, PE Portfolio Companies, Acquiring Groups',
-    icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z'
-  },
-  {
-    id: 'audit-4',
-    name: 'Audit 4.0 Transformation',
-    tagline: 'Moving from Sampling to 100% Population Testing',
-    description: 'Modernising legacy Internal Audit functions using Python and Machine Learning. I augment your existing team by building the automated tools they need to achieve real-time risk intelligence.',
-    deliverables: [
-      'Python/ML Forensic Risk Engine',
-      'Continuous Monitoring Automation',
-      'Data-Driven Fraud Detection',
-      'Methodology Modernisation (IIA 2024)'
-    ],
-    idealFor: 'Established Audit Teams, High-Volume Transactional Businesses',
-    icon: 'M13 10V3L4 14h7v7l9-11h-7z'
-  },
-  {
-    id: 'fractional-cae',
-    name: ‘Retained CAE & Board Advisory’,
-    tagline: ‘Strategic Governance Oversight on Retainer’,
-    description: ‘Providing senior-level leadership for organisations that require a Chief Audit Executive or Board Advisor. Credible, board-facing, and built on 20 years of GCC institutional knowledge.’,
-    deliverables: [
-      'Audit Committee Advisory',
-      'ERM / COSO Framework Design',
-      'IA Function Build-Out (Scale 3 to 20+)',
-      'Whistleblowing & Ethics Oversight'
-    ],
-    idealFor: 'Family Offices, Mid-Market GCC Groups, Scaling Unicorns',
-    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
-  }
-];
+const advisoryTiers = getAdvisoryTiers();
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout

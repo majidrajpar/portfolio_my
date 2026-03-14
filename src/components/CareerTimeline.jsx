@@ -12,83 +12,68 @@ import {
 } from 'recharts';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const careerData = [
-  { x: 2005, y: 14, company: "EY", role: "Audit Manager", dates: "2004–2009", align: "middle" },
-  { x: 2010, y: 27, company: "BMA ASSET\nMANAGEMENT", role: "AVP, Internal Audit", dates: "2010–2011", align: "end", dx: -10, dy: -45 },
-  { x: 2011, y: 38, company: "KPMG\n(QATAR)", role: "Internal Audit Manager", dates: "2011–2013", align: "start", dx: 10, dy: -25 },
-  { x: 2014, y: 50, company: "McDONALD'S\nKSA", role: "Manager, Internal Audit", dates: "2014–2016", align: "middle" },
-  { x: 2017, y: 61, company: "AL-FAISALIAH\nGROUP", role: "Group Director, IA & Risk", dates: "2016–2022", align: "middle" },
-  { x: 2022, y: 75, company: "KITOPI", role: "Director of Internal Audit", dates: "2022–2025", align: "middle" },
-  { x: 2025, y: 87, company: "VERITUX", role: "Internal Audit Director", dates: "2025–Present", align: "middle", isCurrent: true }
-];
-
-// Concurrent board role — kept separate so the career progression line is not routed through it
-const auditCommitteePoint = {
-  x: 2021, y: 95,
-  curveY: 72.2, // approximate interpolated y on the career line at x=2021
-  company: "AFG Restaurants Sector",
-  role: "Audit Committee Member",
-  dates: "2021–2022",
-  isSpecial: true,
-};
-
-const CustomTooltip = ({ active, payload }) => {
-  if (active && payload && payload.length) {
-    const data = payload[0].payload;
-    const isAC = data.isSpecial;
-    
-    return (
-      <motion.div 
-        initial={{ opacity: 0, y: 10, scale: 0.95 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        className="bg-[#001F5B]/95 border border-[#C9A84C] p-5 shadow-[0_0_30px_rgba(201,168,76,0.25)] backdrop-blur-xl min-w-[220px]"
-      >
-        <div className="flex justify-between items-start mb-3 border-b border-[#C9A84C]/20 pb-2">
-          <p className="text-[10px] font-black text-[#C9A84C] uppercase tracking-[0.2em]">{data.dates}</p>
-          {data.isCurrent && (
-            <span className="bg-[#C9A84C] text-[#001F5B] text-[8px] font-black px-1.5 py-0.5 rounded-sm animate-pulse">CURRENT</span>
-          )}
-          {isAC && (
-            <span className="bg-white/10 text-white text-[8px] font-black px-1.5 py-0.5 rounded-sm border border-[#C9A84C]/50">BOARD ADVISORY</span>
-          )}
-        </div>
-        <p className={`text-white font-black text-sm leading-tight mb-1 ${isAC ? 'text-[#C9A84C]' : ''}`}>{data.role}</p>
-        <p className="text-[#8895AA] text-[10px] font-bold uppercase tracking-tight">{data.company.replace('\n', ' ')}</p>
-      </motion.div>
-    );
-  }
-  return null;
-};
-
-const CustomizedLabel = (props) => {
-  const { x, y, value, index } = props;
-  const data = careerData[index];
-  
-  if (data.isSpecial) return null; // We'll handle AC label separately or via ReferenceDot
-
-  const textAnchor = data.align || "middle";
-  const dx = data.dx || 0;
-  const dy = data.dy || -25;
-
-  return (
-    <g>
-      <text 
-        x={x + dx} 
-        y={y + dy} 
-        fill={data.isCurrent ? "#C9A84C" : "white"} 
-        textAnchor={textAnchor} 
-        fontSize={9} 
-        fontWeight={data.isCurrent ? 900 : 800}
-        className="pointer-events-none select-none uppercase tracking-tighter"
-      >
-        {value.split('\n')[0]}
-      </text>
-    </g>
-  );
-};
-
-export default function CareerTimeline() {
+export default function CareerTimeline({ careerData }) {
   const [activeIndex, setActiveIndex] = useState(null);
+
+  if (!careerData || careerData.length === 0) return null;
+
+  const acPoints = careerData.filter(d => d.isSpecial);
+  const milestonePoints = careerData.filter(d => !d.isSpecial);
+
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      const data = payload[0].payload;
+      const isAC = data.isSpecial;
+      
+      return (
+        <motion.div 
+          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          className="bg-[#001F5B]/95 border border-[#C9A84C] p-5 shadow-[0_0_30px_rgba(201,168,76,0.25)] backdrop-blur-xl min-w-[220px]"
+        >
+          <div className="flex justify-between items-start mb-3 border-b border-[#C9A84C]/20 pb-2">
+            <p className="text-[10px] font-black text-[#C9A84C] uppercase tracking-[0.2em]">{data.dates}</p>
+            {data.isCurrent && (
+              <span className="bg-[#C9A84C] text-[#001F5B] text-[8px] font-black px-1.5 py-0.5 rounded-sm animate-pulse">CURRENT</span>
+            )}
+            {isAC && (
+              <span className="bg-white/10 text-white text-[8px] font-black px-1.5 py-0.5 rounded-sm border border-[#C9A84C]/50">BOARD ADVISORY</span>
+            )}
+          </div>
+          <p className={`text-white font-black text-sm leading-tight mb-1 ${isAC ? 'text-[#C9A84C]' : ''}`}>{data.role}</p>
+          <p className="text-[#8895AA] text-[10px] font-bold uppercase tracking-tight">{data.company.replace('\n', ' ')}</p>
+        </motion.div>
+      );
+    }
+    return null;
+  };
+
+  const CustomizedLabel = (props) => {
+    const { x, y, value, index } = props;
+    const data = careerData[index];
+    
+    if (!data || data.isSpecial) return null;
+
+    const textAnchor = data.align || "middle";
+    const dx = data.dx || 0;
+    const dy = data.dy || -25;
+
+    return (
+      <g>
+        <text 
+          x={x + dx} 
+          y={y + dy} 
+          fill={data.isCurrent ? "#C9A84C" : "white"} 
+          textAnchor={textAnchor} 
+          fontSize={9} 
+          fontWeight={data.isCurrent ? 900 : 800}
+          className="pointer-events-none select-none uppercase tracking-tighter"
+        >
+          {value.split('\n')[0]}
+        </text>
+      </g>
+    );
+  };
 
   return (
     <motion.div 
@@ -195,54 +180,56 @@ export default function CareerTimeline() {
             <LabelList dataKey="role" content={<CustomizedLabel />} />
           </Area>
 
-          {/* Audit Committee — concurrent board role, floated above the career line */}
-          <ReferenceLine
-            segment={[
-              { x: auditCommitteePoint.x, y: auditCommitteePoint.curveY },
-              { x: auditCommitteePoint.x, y: auditCommitteePoint.y - 2 }
-            ]}
-            stroke="#C9A84C"
-            strokeWidth={1.5}
-            strokeDasharray="4 4"
-            strokeOpacity={0.7}
-          />
-          <ReferenceDot
-            x={auditCommitteePoint.x}
-            y={auditCommitteePoint.y}
-            r={0}
-            label={{
-              position: 'top',
-              value: "AUDIT COMMITTEE",
-              fill: "#C9A84C",
-              fontSize: 9,
-              fontWeight: 900,
-            }}
-          />
-          <ReferenceDot
-            x={auditCommitteePoint.x}
-            y={auditCommitteePoint.y}
-            r={8}
-            fill="#C9A84C"
-            stroke="#FFFFFF"
-            strokeWidth={2}
-            shape={(props) => {
-              const { cx, cy } = props;
-              return (
-                <g>
-                  <path
-                    d={`M ${cx} ${cy-9} L ${cx+9} ${cy} L ${cx} ${cy+9} L ${cx-9} ${cy} Z`}
-                    fill="#C9A84C"
-                    stroke="#FFFFFF"
-                    strokeWidth="2"
-                  />
-                  <title>Audit Committee Member — AFG Restaurants Sector (2021–2022) — Concurrent board appointment during Al-Faisaliah Group tenure</title>
-                </g>
-              );
-            }}
-          />
+          {/* Special Audit Committee Elements */}
+          {acPoints.map((point, idx) => (
+            <React.Fragment key={`ac-${idx}`}>
+              <ReferenceLine
+                segment={[
+                  { x: point.x, y: point.curveY ?? point.y - 23 },
+                  { x: point.x, y: point.y - 2 }
+                ]}
+                stroke="#C9A84C"
+                strokeWidth={1.5}
+                strokeDasharray="4 4"
+                strokeOpacity={0.7}
+              />
+              <ReferenceDot
+                x={point.x}
+                y={point.y + 12}
+                r={0}
+                label={{
+                  position: 'top',
+                  value: "AUDIT COMMITTEE",
+                  fill: "#C9A84C",
+                  fontSize: 9,
+                  fontWeight: 900,
+                }}
+              />
+              {/* Diamond Shape for AC */}
+              <ReferenceDot
+                x={point.x}
+                y={point.y}
+                r={8}
+                fill="#C9A84C"
+                stroke="#FFFFFF"
+                strokeWidth={2}
+                shape={(props) => {
+                  const { cx, cy } = props;
+                  return (
+                    <path 
+                      d={`M ${cx} ${cy-8} L ${cx+8} ${cy} L ${cx} ${cy+8} L ${cx-8} ${cy} Z`} 
+                      fill="#C9A84C" 
+                      stroke="#FFFFFF" 
+                      strokeWidth="2"
+                    />
+                  );
+                }}
+              />
+            </React.Fragment>
+          ))}
 
           {/* Career Milestone Dots */}
-          {careerData.filter(d => !d.isSpecial).map((point, index) => (
+          {milestonePoints.map((point, index) => (
             <ReferenceDot
               key={index}
               x={point.x}
@@ -260,7 +247,7 @@ export default function CareerTimeline() {
       
       {/* Horizontal Label Strip */}
       <div className="absolute bottom-20 left-0 right-0 flex justify-between px-[100px] pointer-events-none">
-        {careerData.filter(d => !d.isSpecial).map((point, index) => {
+        {milestonePoints.map((point, index) => {
           const isFocussed = activeIndex !== null ? (careerData[activeIndex]?.x === point.x) : point.isCurrent;
           return (
             <div key={index} className="flex flex-col items-center w-0 overflow-visible transition-all duration-700"
