@@ -130,8 +130,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   </footer>
 
   <!-- IntersectionObserver for data-reveal animations -->
+  <!-- astro:page-load fires on initial load AND after every View Transitions navigation -->
   <script is:inline>
-    (function() {
+    document.addEventListener('astro:page-load', function() {
       const io = new IntersectionObserver(
         function(entries) {
           entries.forEach(function(entry) {
@@ -146,7 +147,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       document.querySelectorAll('[data-reveal]').forEach(function(el) {
         io.observe(el);
       });
-    })();
+    });
   </script>
 
 </body>
