@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import * as Plot from '@observablehq/plot';
 
-// Grammar-of-graphics section backgrounds — ggplot2 register.
+// Grammar-of-graphics section backgrounds. ggplot2 register.
 // Low-opacity SVG geometry behind content. Three variants tied to page sections.
 // All data is synthetic but domain-calibrated (audit risk, control maturity, findings).
 
@@ -15,7 +15,7 @@ function lcg(seed) {
   };
 }
 
-// 80 quarterly audit-finding counts over 20 years — bimodal shape:
+// 80 quarterly audit-finding counts over 20 years. Bimodal shape:
 // high early (pre-transformation), dip mid (structural rebuild), rising post.
 function makeTimelineData() {
   const r = lcg(7);
@@ -28,7 +28,7 @@ function makeTimelineData() {
 }
 
 // 55 control-maturity vs residual-risk data points.
-// Classic inverse relationship with outliers — real audit pattern.
+// Classic inverse relationship with outliers. Real audit pattern.
 function makeScatterData() {
   const r = lcg(31);
   return Array.from({ length: 55 }, (_, i) => {
@@ -103,7 +103,7 @@ function renderCapabilities(el, w, h) {
       Plot.ruleY([2, 4, 6, 8], {
         stroke: '#001F5B', strokeOpacity: 0.04, strokeWidth: 0.6,
       }),
-      // Main scatter — bubble size = financial impact
+      // Main scatter: bubble size = financial impact
       Plot.dot(data, {
         x: 'maturity',
         y: 'risk',
