@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import NetworkCanvas from '../components/NetworkCanvas';
+import GrammarBackground from '../components/GrammarBackground';
 import { getAdvisoryTiers } from '../lib/db.js';
 
 const advisoryTiers = getAdvisoryTiers();
@@ -12,7 +14,7 @@ const base = import.meta.env.BASE_URL;
 >
   <!-- Hero -->
   <section class="pt-32 pb-24 bg-[#001F5B] relative overflow-hidden text-center">
-    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#C9A84C 1px, transparent 1px); background-size: 40px 40px;"></div>
+    <NetworkCanvas client:load nodeCount={35} />
     <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
       <div class="max-w-3xl mx-auto" data-reveal>
         <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#C9A84C] mb-6 block">Strategic Advisory</span>
@@ -93,6 +95,7 @@ const base = import.meta.env.BASE_URL;
 
   <!-- The "Independent Edge" Section -->
   <section class="py-32 bg-[#001F5B] text-white relative overflow-hidden">
+    <GrammarBackground client:visible variant="dark-grid" />
     <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div data-reveal>
