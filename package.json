@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.7.0",
+    "@observablehq/plot": "^0.6.17",
     "@tailwindcss/vite": "^4.2.0",
     "astro": "^5.17.3",
     "better-sqlite3": "^12.8.0",
