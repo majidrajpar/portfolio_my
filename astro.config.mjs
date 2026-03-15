@@ -13,7 +13,10 @@ export default defineConfig({
   trailingSlash: 'always',
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    ssr: {
+      external: ['@observablehq/plot']
+    }
   },
 
   build: {
