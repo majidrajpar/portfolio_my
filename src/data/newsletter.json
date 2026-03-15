@@ -1,20 +1,20 @@
 [
   {
-    "title": "Lessons from the 2026 Dubai Marina Signal Heists",
+    "title": "The Signal the Sample Couldn't Catch",
+    "tag": "Audit Methodology",
+    "tagColor": "text-blue-400 bg-blue-500/10 border-blue-500/20",
+    "excerpt": "A 5% sample returned clean. Full population testing found AED 7.7M. The assurance statement didn't fail — it transferred the detection risk invisibly to the organisation while appearing to address it."
+  },
+  {
+    "title": "The Assumption Every AI Governance Framework Makes",
+    "tag": "AI Governance",
+    "tagColor": "text-purple-400 bg-purple-500/10 border-purple-500/20",
+    "excerpt": "NIST AI RMF, ISO 42001, and the UAE AI Policy Framework all assume formal authority is real authority. In GCC institutions, the person accountable on the org chart is rarely the person who made the decision. That gap is where AI risk lives."
+  },
+  {
+    "title": "NMC Health: The Architecture of Invisible Debt",
     "tag": "Fraud Forensics",
     "tagColor": "text-red-400 bg-red-500/10 border-red-500/20",
-    "excerpt": "Three separate operators. Same anomaly pattern. None connected on paper. When fraud methodology migrates faster than audit methodology, the investigation always starts too late — and at the wrong company."
-  },
-  {
-    "title": "The Inventory Maze (Supply Chain)",
-    "tag": "Operations Risk",
-    "tagColor": "text-orange-400 bg-orange-500/10 border-orange-500/20",
-    "excerpt": "The inventory variance wasn't a theft problem — it was a measurement problem that created a theft opportunity. How a supply chain audit turned into a controls architecture rebuild because the data model was wrong from the start."
-  },
-  {
-    "title": "Why Data Cleaning Became My Unexpected Priority",
-    "tag": "Data & Analytics",
-    "tagColor": "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
-    "excerpt": "The model was accurate. The data it was trained on wasn't. Before ML can detect anomalies, someone has to decide which anomalies were real and which were system artefacts. That decision is audit work — and it's being skipped."
+    "excerpt": "A $6.6bn fraud built on 80+ direct bank relationships that bypassed treasury, management-facilitated confirmation letters, and a board with no structural position from which to notice. The auditor incompetence narrative misses the mechanism entirely."
   }
 ]
