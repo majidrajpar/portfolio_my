@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-// Relationship network visualization — hero background
+// Relationship network visualization : hero background
 // Renders entity/intermediary network topology using Rust WASM for physics.
 // Tier 0 = principal (large node), Tier 1 = intermediary (medium), Tier 2 = endpoint (small)
 
@@ -9,14 +9,14 @@ const GOLD = '#C9A84C';
 const WHITE = '#FFFFFF';
 
 const TIER_COLORS = [
-  `${GOLD}CC`,    // tier 0 — principal, gold, prominent
-  `${WHITE}55`,   // tier 1 — intermediary, white dim
-  `${WHITE}28`,   // tier 2 — endpoint, white very dim
+  `${GOLD}CC`,    // tier 0 : principal, gold, prominent
+  `${WHITE}55`,   // tier 1: intermediary, white dim
+  `${WHITE}28`,   // tier 2: endpoint, white very dim
 ];
 
 const EDGE_COLORS = [
-  `${GOLD}18`,    // principal edges — faint gold trace
-  `${WHITE}0D`,   // intermediary→endpoint — barely visible
+  `${GOLD}18`,    // principal edges : faint gold trace
+  `${WHITE}0D`,   // intermediary→endpoint : barely visible
 ];
 
 export default function NetworkCanvas({ nodeCount = 42, className = '' }) {
@@ -32,7 +32,7 @@ export default function NetworkCanvas({ nodeCount = 42, className = '' }) {
     async function init() {
       try {
         // Dynamic import of WASM module
-        // Use new Function to escape rolldown static import analysis — WASM is served from /public
+        // Use new Function to escape rolldown static import analysis . WASM is served from /public
         const dynamicImport = new Function('p', 'return import(p)');
         const wasm = await dynamicImport('/wasm/audit_engine.js');
         await wasm.default();
@@ -43,7 +43,7 @@ export default function NetworkCanvas({ nodeCount = 42, className = '' }) {
         stateRef.current = raw;
         startLoop();
       } catch (e) {
-        // WASM unavailable — fall back to pure-JS static render
+        // WASM unavailable : fall back to pure-JS static render
         stateRef.current = generateFallback(nodeCount);
         startLoop();
       }
