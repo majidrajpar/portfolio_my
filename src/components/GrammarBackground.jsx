@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import * as Plot from '@observablehq/plot';
+// Plot is lazy-imported inside useEffect to avoid SSR bundling failures
 
 // Grammar-of-graphics section backgrounds. ggplot2 register.
 // Low-opacity SVG geometry behind content. Three variants tied to page sections.
@@ -57,7 +57,7 @@ function makeRiskMatrix() {
 
 // --- Renderers ---
 
-function renderStats(el, w, h) {
+function renderStats(Plot, el, w, h) {
   const data = makeTimelineData();
   return Plot.plot({
     width: w,
@@ -86,7 +86,7 @@ function renderStats(el, w, h) {
   });
 }
 
-function renderCapabilities(el, w, h) {
+function renderCapabilities(Plot, el, w, h) {
   const data = makeScatterData();
   return Plot.plot({
     width: w,
@@ -124,7 +124,7 @@ function renderCapabilities(el, w, h) {
   });
 }
 
-function renderDarkGrid(el, w, h) {
+function renderDarkGrid(Plot, el, w, h) {
   const data = makeRiskMatrix();
   return Plot.plot({
     width: w,
@@ -178,26 +178,34 @@ export default function GrammarBackground({ variant = 'stats', className = '' })
     if (!el) return;
 
     let chart = null;
+    let cancelled = false;
 
-    const render = () => {
-      if (chart) { chart.remove(); chart = null; }
-      el.innerHTML = '';
-      const w = el.offsetWidth;
-      const h = el.offsetHeight;
-      if (!w || !h) return;
-      const fn = RENDERERS[variant];
-      if (!fn) return;
-      chart = fn(el, w, h);
-      if (chart) el.append(chart);
-    };
+    import('@observablehq/plot').then((Plot) => {
+      if (cancelled) return;
 
-    render();
+      const render = () => {
+        if (chart) { chart.remove(); chart = null; }
+        el.innerHTML = '';
+        const w = el.offsetWidth;
+        const h = el.offsetHeight;
+        if (!w || !h) return;
+        const fn = RENDERERS[variant];
+        if (!fn) return;
+        chart = fn(Plot, el, w, h);
+        if (chart) el.append(chart);
+      };
 
-    const ro = new ResizeObserver(render);
-    ro.observe(el);
+      render();
+
+      const ro = new ResizeObserver(render);
+      ro.observe(el);
+
+      el._roCleanup = () => { ro.disconnect(); if (chart) chart.remove(); };
+    });
 
     return () => {
-      ro.disconnect();
+      cancelled = true;
+      if (el._roCleanup) { el._roCleanup(); delete el._roCleanup; }
       if (chart) chart.remove();
     };
   }, [variant]);
