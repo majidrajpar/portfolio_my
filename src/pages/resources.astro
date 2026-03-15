@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import documents from '../data/documents.json';
+import NetworkCanvas from '../components/NetworkCanvas';
 const base = import.meta.env.BASE_URL;
 
 const categories = ['All', ...new Set((documents as any[]).map((d: any) => d.category))];
@@ -11,8 +12,9 @@ const categories = ['All', ...new Set((documents as any[]).map((d: any) => d.cat
   description="Professional internal audit frameworks, checklists, guides, and tools. Download risk control matrices, fraud prevention guides, SOX implementation guides, and more."
 >
   <!-- Hero -->
-  <section class="pt-32 pb-20 bg-[#001F5B]">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+  <section class="pt-32 pb-20 bg-[#001F5B] relative overflow-hidden">
+    <NetworkCanvas client:load nodeCount={35} />
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
       <div class="max-w-3xl" data-reveal>
         <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Professional Downloads</span>
         <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">

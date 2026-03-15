@@ -1,25 +1,27 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ForensicValidatorComponent from '../../components/ForensicValidator.jsx';
+import NetworkCanvas from '../../components/NetworkCanvas';
 
 const title = "Forensic Pattern Validator | Majid Mumtaz";
 const description = "High-performance forensic audit tool for detecting financial manipulation using Benford's Law. Powered by Rust and WebAssembly.";
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="pt-32 pb-20 bg-white border-b border-slate-100">
-    <div class="max-w-7xl mx-auto px-8">
+  <section class="pt-32 pb-20 bg-[#001F5B] relative overflow-hidden">
+    <NetworkCanvas client:load nodeCount={35} />
+    <div class="max-w-7xl mx-auto px-8 relative z-10">
       <div class="max-w-3xl">
-        <div class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-4">
+        <div class="text-[10px] font-black uppercase tracking-[0.4em] text-white/60 mb-4">
           Audit Analytics
         </div>
-        <h1 class="text-5xl font-black text-slate-900 tracking-tight mb-8">
-          Forensic Pattern <span class="text-[#001F5B]">Validator</span>.
+        <h1 class="text-5xl font-black text-white tracking-tight mb-8">
+          Forensic Pattern <span class="text-[#C9A84C]">Validator</span>.
         </h1>
-        <p class="text-lg text-slate-500 leading-relaxed mb-10">
-          This professional-grade utility analyzes transaction digit frequencies to identify 
-          statistical anomalies. Processing thousands of records instantly using a 
-          <span class="font-bold text-slate-800">Rust-based analytical engine</span>.
+        <p class="text-lg text-white/70 leading-relaxed mb-10">
+          This professional-grade utility analyzes transaction digit frequencies to identify
+          statistical anomalies. Processing thousands of records instantly using a
+          <span class="font-bold text-white">Rust-based analytical engine</span>.
         </p>
       </div>
     </div>

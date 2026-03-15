@@ -348,8 +348,9 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <!-- External Publications -->
-  <section class="py-24 bg-[#001F5B]">
-    <div class="max-w-7xl mx-auto px-8">
+  <section class="py-24 bg-[#001F5B] relative overflow-hidden">
+    <GrammarBackground client:visible variant="dark-grid" />
+    <div class="max-w-7xl mx-auto px-8 relative z-10">
       <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
         <div data-reveal>
           <span class="text-[10px] font-black uppercase tracking-[0.4em] text-white/50 mb-6 block">Published Work</span>
