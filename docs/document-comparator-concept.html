@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document Comparator — Concept Diagram</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: #f8fafc; color: #1e293b; padding: 40px 20px; }
+  h1 { font-size: 22px; font-weight: 900; color: #001F5B; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 4px; }
+  .subtitle { font-size: 12px; color: #64748b; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 40px; }
+
+  .diagram { display: flex; flex-direction: column; gap: 0; max-width: 1100px; }
+  .layer { border: 2px solid #e2e8f0; background: white; padding: 20px 24px; position: relative; }
+  .layer + .layer { border-top: none; }
+  .layer-label { font-size: 9px; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; color: white; padding: 3px 10px; display: inline-block; margin-bottom: 14px; }
+
+  /* Layer colours */
+  .l-input .layer-label { background: #001F5B; }
+  .l-extract .layer-label { background: #1e40af; }
+  .l-diff .layer-label { background: #7c3aed; }
+  .l-classify .layer-label { background: #b45309; }
+  .l-display .layer-label { background: #0f766e; }
+
+  .l-input { border-color: #001F5B44; }
+  .l-extract { border-color: #1e40af44; }
+  .l-diff { border-color: #7c3aed44; }
+  .l-classify { border-color: #b4530944; }
+  .l-display { border-color: #0f766e44; }
+
+  .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .box { border: 1.5px solid #e2e8f0; padding: 10px 14px; font-size: 12px; min-width: 140px; }
+  .box.primary { border-color: #001F5B; background: #f0f4ff; }
+  .box-title { font-weight: 800; font-size: 11px; color: #1e293b; margin-bottom: 4px; }
+  .box-sub { font-size: 10px; color: #64748b; line-height: 1.5; }
+  .box-tag { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1px 6px; margin-top: 4px; margin-right: 3px; }
+  .tag-pdf { background: #fee2e2; color: #b91c1c; }
+  .tag-docx { background: #dbeafe; color: #1d4ed8; }
+  .tag-excel { background: #dcfce7; color: #166534; }
+  .tag-txt { background: #f3f4f6; color: #4b5563; }
+  .tag-ocr { background: #fef9c3; color: #854d0e; }
+  .tag-control { background: #fee2e2; color: #b91c1c; }
+  .tag-threshold { background: #ffedd5; color: #c2410c; }
+  .tag-resp { background: #ede9fe; color: #7c3aed; }
+  .tag-scope { background: #dbeafe; color: #1d4ed8; }
+
+  .arrow { text-align: center; font-size: 20px; color: #94a3b8; padding: 4px 0; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+
+  .connector { display: flex; align-items: center; gap: 8px; margin: 6px 0; font-size: 11px; color: #475569; }
+  .connector::before { content: '→'; color: #94a3b8; font-size: 14px; }
+
+  .note { font-size: 10px; color: #94a3b8; margin-top: 8px; font-style: italic; }
+  .badge { font-size: 9px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 7px; border: 1px solid; display: inline-block; margin-left: 6px; }
+  .badge-auto { background: #dcfce7; border-color: #86efac; color: #15803d; }
+  .badge-fallback { background: #fef9c3; border-color: #fde047; color: #854d0e; }
+  .badge-critical { background: #fee2e2; border-color: #fca5a5; color: #b91c1c; }
+
+  .section-title { font-size: 10px; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 10px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; }
+
+  .limitation-box { background: #fffbeb; border: 1.5px solid #fde68a; padding: 12px 16px; margin-top: 14px; }
+  .limitation-box ul { padding-left: 16px; font-size: 11px; color: #78350f; line-height: 1.8; }
+
+  footer { margin-top: 32px; font-size: 10px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em; }
+</style>
+</head>
+<body>
+
+<h1>Document Version Comparator</h1>
+<p class="subtitle">Concept Architecture — compare against implementation</p>
+
+<div class="diagram">
+
+  <!-- LAYER 1: INPUT -->
+  <div class="layer l-input">
+    <span class="layer-label">Layer 1 — Input</span>
+    <div class="grid-2">
+      <div class="box primary">
+        <div class="box-title">Version A (Old)</div>
+        <div class="box-sub">Drag &amp; drop or click to upload<br/>File name + size displayed on select</div>
+        <span class="box-tag tag-pdf">PDF</span>
+        <span class="box-tag tag-docx">DOCX</span>
+        <span class="box-tag tag-excel">XLSX / XLS / CSV</span>
+        <span class="box-tag tag-txt">TXT</span>
+      </div>
+      <div class="box primary">
+        <div class="box-title">Version B (New)</div>
+        <div class="box-sub">Same format as A recommended<br/>Cross-format comparison supported</div>
+        <span class="box-tag tag-pdf">PDF</span>
+        <span class="box-tag tag-docx">DOCX</span>
+        <span class="box-tag tag-excel">XLSX / XLS / CSV</span>
+        <span class="box-tag tag-txt">TXT</span>
+      </div>
+    </div>
+    <p class="note">Both files processed entirely in-browser. No data transmitted or stored.</p>
+  </div>
+
+  <div class="arrow">↓</div>
+
+  <!-- LAYER 2: EXTRACTION -->
+  <div class="layer l-extract">
+    <span class="layer-label">Layer 2 — Extraction</span>
+    <div class="grid-4">
+
+      <div class="box">
+        <div class="box-title">PDF <span class="badge badge-auto">pdfjs-dist</span></div>
+        <div class="box-sub">
+          1. getTextContent() per page<br/>
+          2. Word count check<br/>
+          3. &lt; 20 words → OCR fallback
+        </div>
+        <div class="connector">Text output</div>
+      </div>
+
+      <div class="box">
+        <div class="box-title">Scanned PDF <span class="badge badge-fallback">Tesseract.js OCR</span></div>
+        <div class="box-sub">
+          Render each page to canvas (2× scale)<br/>
+          OCR per page with progress %<br/>
+          Language: English (eng)
+        </div>
+        <div class="connector">Text output</div>
+      </div>
+
+      <div class="box">
+        <div class="box-title">DOCX <span class="badge badge-auto">mammoth</span></div>
+        <div class="box-sub">
+          mammoth.extractRawText()<br/>
+          Accepted text only<br/>
+          Tracked changes excluded
+        </div>
+        <div class="connector">Text output</div>
+      </div>
+
+      <div class="box">
+        <div class="box-title">Excel <span class="badge badge-auto">SheetJS</span></div>
+        <div class="box-sub">
+          XLSX.read() → per-sheet cell map<br/>
+          Prefers formula (=) over value<br/>
+          Address: A1, B2 notation
+        </div>
+        <div class="connector">Structured output</div>
+      </div>
+
+    </div>
+    <p class="note">Extraction path detected from file extension. PDF auto-switches to OCR if native text is insufficient.</p>
+  </div>
+
+  <div class="arrow">↓</div>
+
+  <!-- LAYER 3: DIFF ENGINE -->
+  <div class="layer l-diff">
+    <span class="layer-label">Layer 3 — Diff Engine</span>
+    <div class="grid-2">
+
+      <div class="box">
+        <div class="section-title">Text Path (PDF / DOCX / TXT)</div>
+        <div class="box-sub">
+          <strong>lineDiff(oldText, newText)</strong><br/>
+          Split into non-empty lines/paragraphs<br/>
+          LCS algorithm (Myers-style DP table)<br/>
+          Adjacent removed+added → paired as <em>modified</em><br/>
+          <br/>
+          <strong>wordDiff(oldStr, newStr)</strong><br/>
+          Run on <em>modified</em> pairs only<br/>
+          Produces: equal / added / removed word tokens<br/>
+          Rendered as inline highlighted spans
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="section-title">Excel Path</div>
+        <div class="box-sub">
+          <strong>excelDiff(oldSheets, newSheets)</strong><br/>
+          Compare cell-by-cell per sheet<br/>
+          Detect: added cell / removed cell / changed cell<br/>
+          Sort by row then column (A1 → Z999)<br/>
+          Sheet-level: added sheet / removed sheet / changed<br/>
+          <br/>
+          <em>Limitation:</em> Row insertion shifts addresses.<br/>
+          No automatic row-key matching in v1.
+        </div>
+      </div>
+
+    </div>
+    <p class="note">Output: array of change objects [{type, old, new, tags, wordDiff?}] for text; {sheetName: [{cell, type, old, new, tags}]} for Excel.</p>
+  </div>
+
+  <div class="arrow">↓</div>
+
+  <!-- LAYER 4: CLASSIFICATION -->
+  <div class="layer l-classify">
+    <span class="layer-label">Layer 4 — Audit Classification (runs on every changed item)</span>
+    <div class="grid-4">
+
+      <div class="box">
+        <div class="box-title"><span class="box-tag tag-control">Control Weakened</span></div>
+        <div class="box-sub">
+          Old: <em>shall / must / is required to / will be</em><br/>
+          New: <em>should / may / can / is recommended</em><br/>
+          Binding → permissive shift
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="box-title"><span class="box-tag tag-control" style="background:#dcfce7;color:#166534">Control Strengthened</span></div>
+        <div class="box-sub">
+          Old: <em>should / may / can</em><br/>
+          New: <em>shall / must / is required</em><br/>
+          Permissive → binding shift
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="box-title"><span class="box-tag tag-threshold">Threshold Change</span></div>
+        <div class="box-sub">
+          Any numeric value differs between old and new<br/>
+          Captures: amounts, %, headcount, days, limits
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="box-title"><span class="box-tag tag-resp">Responsibility</span> <span class="box-tag tag-scope">Scope</span></div>
+        <div class="box-sub">
+          Resp: director / manager / board / head / officer keyword<br/>
+          Scope: includes / excludes / applies to / exempt
+        </div>
+      </div>
+
+    </div>
+    <p class="note">Multiple tags can apply to a single change. Tags drive the Critical filter in the display layer.</p>
+  </div>
+
+  <div class="arrow">↓</div>
+
+  <!-- LAYER 5: DISPLAY -->
+  <div class="layer l-display">
+    <span class="layer-label">Layer 5 — Display</span>
+
+    <div class="grid-2" style="margin-bottom:14px">
+      <div class="box">
+        <div class="section-title">Limitations Banner <span class="badge badge-critical">Always Visible at Top</span></div>
+        <div class="box-sub">
+          Shown above every result set — not dismissible<br/>
+          OCR accuracy warning (tables, two-column, handwriting)<br/>
+          Excel row-shift warning<br/>
+          DOCX tracked-changes exclusion note
+        </div>
+      </div>
+      <div class="box">
+        <div class="section-title">Stats Bar</div>
+        <div class="box-sub">
+          <strong>Additions</strong> (green count)<br/>
+          <strong>Deletions</strong> (red count)<br/>
+          <strong>Modifications</strong> (amber count)<br/>
+          <strong>Critical</strong> (control/threshold/scope/responsibility count)
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Filter Tabs → drives what's shown in the diff view</div>
+    <div class="row" style="margin-bottom:14px">
+      <div class="box" style="min-width:100px;text-align:center"><div class="box-title">All</div></div>
+      <div class="box" style="min-width:100px;text-align:center;background:#f0fdf4"><div class="box-title" style="color:#15803d">Additions</div></div>
+      <div class="box" style="min-width:100px;text-align:center;background:#fef2f2"><div class="box-title" style="color:#b91c1c">Deletions</div></div>
+      <div class="box" style="min-width:100px;text-align:center;background:#fffbeb"><div class="box-title" style="color:#b45309">Modifications</div></div>
+      <div class="box" style="min-width:100px;text-align:center;background:#fef2f2;border-color:#b91c1c"><div class="box-title" style="color:#b91c1c">Critical ⚑</div><div class="box-sub">control + threshold + scope + responsibility</div></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="box">
+        <div class="section-title">Text Diff View</div>
+        <div class="box-sub">
+          <strong>ADDED:</strong> green background, full new text<br/>
+          <strong>REMOVED:</strong> red background, old text strikethrough<br/>
+          <strong>MODIFIED:</strong> amber background, side-by-side Before/After<br/>
+          &nbsp;&nbsp;→ word-level inline diff inside modified items<br/>
+          <strong>Classification tags</strong> below each changed item
+        </div>
+      </div>
+      <div class="box">
+        <div class="section-title">Excel Diff View</div>
+        <div class="box-sub">
+          Sheet tabs at top (badge shows change count)<br/>
+          Table columns: Cell | Before | After | Type | Flags<br/>
+          Row-coloured by type (green/red/amber)<br/>
+          Formula changes shown as =formula string<br/>
+          New/removed sheets flagged on tab
+        </div>
+      </div>
+    </div>
+
+    <div class="limitation-box">
+      <strong style="font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;color:#92400e">Limitations — displayed at top of every result</strong>
+      <ul>
+        <li>OCR (Tesseract.js): unreliable on two-column layouts, tables, headers/footers, low-DPI scans, handwriting</li>
+        <li>Excel: row/column insertion shifts cell addresses — results may show false positives in dense tables</li>
+        <li>DOCX: tracked changes (Track Changes) are excluded — only the accepted final text is compared</li>
+        <li>Large files (&gt;10 MB PDFs, scans with many pages): OCR is slow on user device — progress shown</li>
+        <li>No export: use browser copy or screenshot for working papers</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<footer>Document Comparator — Concept v1 — built for portfolio_my audit tools suite</footer>
+
+</body>
+</html>
