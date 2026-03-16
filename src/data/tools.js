@@ -80,4 +80,14 @@ export const tools = [
     batch: 2,
     ml: false,
   },
+  {
+    id: 'document-comparator',
+    title: 'Document Version Comparator',
+    description: 'Upload two versions of any policy, contract, or report to see every change. Classifies control weakening, threshold shifts, scope changes, and responsibility reassignments. Supports PDF (OCR-enabled), Word, Excel, and plain text. All processing is in-browser.',
+    category: 'Audit Intelligence',
+    href: '/portfolio_my/tools/document-comparator/',
+    isLive: true,
+    batch: 4,
+    ml: false,
+  },
 ];
