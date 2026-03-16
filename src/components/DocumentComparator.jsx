@@ -7,7 +7,7 @@ const BRAND_GOLD = '#C9A84C';
 
 const LIMITATIONS = [
   'OCR (Tesseract.js): accuracy reduces on two-column layouts, tables, headers/footers, low-DPI scans, and handwriting.',
-  'Excel: row or column insertion shifts cell addresses — results may show false positives in dense tables. No row-key matching in this version.',
+  'Excel: row or column insertion shifts cell addresses; results may show false positives in dense tables. No row-key matching in this version.',
   'DOCX: tracked changes (Track Changes) are excluded. Only the accepted final text is compared.',
   'Large files (>10 MB PDFs, multi-page scans): OCR runs on your device and may take time. Progress is shown.',
   'No export: use browser copy or screenshot for working papers.',
@@ -108,7 +108,7 @@ function lineDiff(oldText, newText) {
       changes.push({ type: 'added', old: '', new: raw[i].val, tags });
       i++;
     } else {
-      i++; // equal — skip
+      i++; // equal: skip
     }
   }
   return changes;
@@ -128,9 +128,9 @@ function excelDiff(oldSheets, newSheets) {
   for (const name of allNames) {
     const changes = [];
     if (!oldSheets[name]) {
-      changes.push({ cell: '—', type: 'sheet-added', old: '', new: name, tags: [] });
+      changes.push({ cell: '(sheet)', type: 'sheet-added', old: '', new: name, tags: [] });
     } else if (!newSheets[name]) {
-      changes.push({ cell: '—', type: 'sheet-removed', old: name, new: '', tags: [] });
+      changes.push({ cell: '(sheet)', type: 'sheet-removed', old: name, new: '', tags: [] });
     } else {
       const oldCells = oldSheets[name];
       const newCells = newSheets[name];
@@ -197,7 +197,7 @@ function FileDropZone({ label, file, onFile, accept }) {
           <>
             <FileText size={28} style={{ color: BRAND }} />
             <div className="text-sm font-bold text-[#001F5B] break-all">{file.name}</div>
-            <div className="text-xs text-slate-500">{(file.size / 1024).toFixed(1)} KB — click to change</div>
+            <div className="text-xs text-slate-500">{(file.size / 1024).toFixed(1)} KB · click to change</div>
           </>
         ) : (
           <>
@@ -371,8 +371,8 @@ function ExcelDiffView({ diff, filter }) {
                 return (
                   <tr key={i} className={rowBg}>
                     <td className="px-3 py-1.5 font-mono font-bold border border-slate-200 text-slate-700">{r.cell}</td>
-                    <td className={`px-3 py-1.5 border border-slate-200 ${r.type === 'removed' ? 'line-through text-red-700' : 'text-slate-600'}`}>{r.old || '—'}</td>
-                    <td className={`px-3 py-1.5 border border-slate-200 ${r.type === 'added' ? 'text-green-700 font-semibold' : 'text-slate-800'}`}>{r.new || '—'}</td>
+                    <td className={`px-3 py-1.5 border border-slate-200 ${r.type === 'removed' ? 'line-through text-red-700' : 'text-slate-600'}`}>{r.old || '(empty)'}</td>
+                    <td className={`px-3 py-1.5 border border-slate-200 ${r.type === 'added' ? 'text-green-700 font-semibold' : 'text-slate-800'}`}>{r.new || '(empty)'}</td>
                     <td className="px-3 py-1.5 border border-slate-200 text-[10px] font-black uppercase tracking-wide text-slate-500">{r.type}</td>
                     <td className="px-3 py-1.5 border border-slate-200"><Tags tags={r.tags} /></td>
                   </tr>
@@ -420,7 +420,7 @@ export default function DocumentComparator() {
   // ── EXTRACT: PDF (native + OCR fallback) ─────────────────────────────────
   async function extractPdf(file, label) {
     const pdfjsLib = await import('pdfjs-dist');
-    // Set worker path — try standard paths
+    // Set worker path: try standard paths
     if (!pdfjsLib.GlobalWorkerOptions.workerSrc) {
       pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
         'pdfjs-dist/build/pdf.worker.min.mjs',
@@ -443,7 +443,7 @@ export default function DocumentComparator() {
     // OCR fallback if native text is sparse
     const wordCount = fullText.trim().split(/\s+/).filter(w => w.length > 0).length;
     if (wordCount < 20) {
-      setProgress(`${label}: sparse text detected — running OCR…`);
+      setProgress(`${label}: sparse text detected, running OCR…`);
       fullText = await extractPdfOcr(file, pdf, label);
     }
 
@@ -616,8 +616,8 @@ export default function DocumentComparator() {
         {!result && (
           <>
             <div className="grid grid-cols-2 gap-4 mb-6">
-              <FileDropZone label="Version A — Old Document" file={oldFile} onFile={setOldFile} accept={accept} />
-              <FileDropZone label="Version B — New Document" file={newFile} onFile={setNewFile} accept={accept} />
+              <FileDropZone label="Version A: Old Document" file={oldFile} onFile={setOldFile} accept={accept} />
+              <FileDropZone label="Version B: New Document" file={newFile} onFile={setNewFile} accept={accept} />
             </div>
 
             <div className="text-center text-xs text-slate-400 mb-6">
@@ -650,7 +650,7 @@ export default function DocumentComparator() {
         {/* ── RESULTS ── */}
         {result && (
           <>
-            {/* Limitations Banner — always visible, not dismissible */}
+            {/* Limitations Banner: always visible, not dismissible */}
             <div className="bg-amber-50 border border-amber-200 px-4 py-3 mb-6">
               <button
                 className="w-full flex items-center justify-between text-left"
@@ -658,7 +658,7 @@ export default function DocumentComparator() {
               >
                 <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wide text-amber-800">
                   <AlertTriangle size={14} />
-                  Accuracy Limitations — Read Before Using Results
+                  Accuracy Limitations: Read Before Using Results
                 </div>
                 {limitExpanded ? <ChevronUp size={14} className="text-amber-600" /> : <ChevronDown size={14} className="text-amber-600" />}
               </button>
