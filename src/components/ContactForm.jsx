@@ -43,7 +43,7 @@ const ContactForm = () => {
               <input name="name" type="text" required placeholder="Your full name" className={inputClass} />
             </div>
             <div>
-              <label className="text-[10px] font-black uppercase tracking-widest text-slate-600 mb-2 block">Organisation</label>
+              <label className="text-[10px] font-black uppercase tracking-widest text-slate-600 mb-2 block">Organisation <span className="font-normal normal-case tracking-normal text-slate-400">(optional)</span></label>
               <input name="organisation" type="text" placeholder="Company / Entity" className={inputClass} />
             </div>
           </div>
