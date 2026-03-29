@@ -4,7 +4,6 @@ import ContactForm from '../components/ContactForm';
 import NetworkCanvas from '../components/NetworkCanvas';
 import GrammarBackground from '../components/GrammarBackground';
 import { getCaseStudies } from '../lib/db.js';
-import stats from '../data/stats.json';
 
 const featuredProjects = getCaseStudies().slice(0, 3);
 
@@ -24,7 +23,7 @@ const base = import.meta.env.BASE_URL;
         Director of Internal Audit &nbsp;|&nbsp; CIA · ACA · FCCA
       </span>
       <h1 class="text-[clamp(3rem,9vw,6.5rem)] text-center leading-[0.93] mb-10 tracking-tight text-white font-black">
-        I Build Audit Functions<br />That Actually Protect Capital.
+        I Build Audit Functions<br />That Actually Protect<br />Capital.
       </h1>
       <p class="text-lg md:text-xl mb-14 text-blue-100 font-medium max-w-3xl leading-relaxed">
         Boards pay for audit assurance. Most receive compliance theatre. The gap between stated coverage and actual protection is structural: it persists because it is invisible from inside the function producing it. Twenty years closing that gap: governance frameworks that hold under external scrutiny, fraud detection that tests the full population instead of the 5% that misses most of it, and board reporting built around the operational risk the board has not yet priced. Open to full-time Director of Internal Audit and CAE roles globally.
@@ -82,8 +81,8 @@ const base = import.meta.env.BASE_URL;
       <div class="grid grid-cols-2 md:grid-cols-4 gap-px">
         {[
           { value: '20+', label: 'Years Experience', sub: 'GCC, MENA & emerging markets' },
-          { value: stats.linkedinFollowers, label: 'LinkedIn Followers', sub: 'Audit & governance community' },
-          { value: stats.newsletterSubscribers, label: 'Audit Signal Readers', sub: 'LinkedIn newsletter community' },
+          { value: '7', label: 'Countries', sub: 'Cross-border audit coverage' },
+          { value: '3', label: 'Published Outlets', sub: 'IIA, GRC Report, Consultancy ME' },
           { value: 'AED 7.7M', label: 'Total Financial Impact', sub: 'Fraud detected & losses prevented' },
         ].map((s) => (
           <div class="bg-white text-center px-6 py-8">
@@ -101,7 +100,7 @@ const base = import.meta.env.BASE_URL;
     <div class="max-w-7xl mx-auto px-8">
       <div class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-16 items-start max-w-6xl mx-auto" data-reveal>
         <div class="flex justify-center lg:justify-start lg:pt-2">
-          <div class="relative w-48 h-48 rounded-full overflow-hidden border-2 border-slate-200 shadow-xl flex-shrink-0">
+          <div class="relative w-48 h-48 overflow-hidden border border-slate-300 shadow-xl flex-shrink-0">
             <img src={`${base}images/majid-profile-home.jpg`} alt="Majid Mumtaz" class="w-full h-full object-cover object-top" />
           </div>
         </div>
@@ -441,7 +440,7 @@ const base = import.meta.env.BASE_URL;
         href="https://www.linkedin.com/feed/update/urn:li:activity:7440261971389648896/"
         target="_blank"
         rel="noopener noreferrer"
-        class="group block bg-white border border-slate-200 p-10 md:p-14 hover:border-[#001F5B]/40 hover:shadow-sm transition-all duration-200 mb-6"
+        class="group block bg-white border border-slate-200 border-l-4 border-l-[#C9A84C] p-10 md:p-14 hover:border-l-[#C9A84C] hover:border-[#001F5B]/40 hover:shadow-sm transition-all duration-200 mb-6"
         data-reveal
       >
         <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-6 block">LinkedIn</span>
