@@ -104,7 +104,7 @@ export default function CaseStudyCard({ study }) {
                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
               </svg>
             </div>
-            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#8895AA] mb-3 block">Director's Reflection</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#8895AA] mb-3 block">Reflection</span>
             <p className="text-[#001F5B] text-[15px] italic leading-relaxed font-semibold relative z-10">
               "{study.starr.reflection}"
             </p>
