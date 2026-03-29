@@ -5,7 +5,6 @@ import NetworkCanvas from '../components/NetworkCanvas';
 import GrammarBackground from '../components/GrammarBackground';
 import { getCaseStudies } from '../lib/db.js';
 import stats from '../data/stats.json';
-import articles from '../data/newsletter.json';
 
 const featuredProjects = getCaseStudies().slice(0, 3);
 
@@ -118,42 +117,6 @@ const base = import.meta.env.BASE_URL;
             Now seeking a full-time Director of Internal Audit or CAE role with organisations ready to make that same shift.
           </p>
           <a href={`${base}about/`} class="btn-secondary">Full Profile & Credentials</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Signature Capabilities -->
-  <section class="py-24 bg-white relative overflow-hidden">
-    <GrammarBackground client:visible variant="capabilities" />
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <div class="glass-card p-8" data-reveal data-reveal-delay="1">
-          <div class="p-3 bg-[#001F5B]/10 w-fit mb-6">
-            <svg class="w-7 h-7 text-[#001F5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-          </div>
-          <h4 class="text-slate-900 font-black text-base mb-3">IA Function Building</h4>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Most IA functions fail because they're built around compliance rather than risk. Department design, charter development, and team capability built to survive board scrutiny — not just pass it.
-          </p>
-        </div>
-        <div class="glass-card p-8" data-reveal data-reveal-delay="2">
-          <div class="p-3 bg-[#001F5B]/10 w-fit mb-6">
-            <svg class="w-7 h-7 text-[#001F5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2" /></svg>
-          </div>
-          <h4 class="text-slate-900 font-black text-base mb-3">Forensic Analytics & Fraud Detection</h4>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            ML anomaly detection, 100% population testing, and AED 7.7M total financial impact — turning audit from a sampling exercise into a capital protection engine.
-          </p>
-        </div>
-        <div class="glass-card p-8" data-reveal data-reveal-delay="3">
-          <div class="p-3 bg-[#001F5B]/10 w-fit mb-6">
-            <svg class="w-7 h-7 text-[#001F5B]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" /></svg>
-          </div>
-          <h4 class="text-slate-900 font-black text-base mb-3">Board Assurance & IPO Readiness</h4>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Boards receive audit updates, not governance instruments. The gap is structural: most audit reporting is designed for the committee, not for the decision the committee needs to make. ICOFR programmes that close Big 4 opinions, IPO readiness, and board reporting framed around the operational risk the board has not yet priced.
-          </p>
         </div>
       </div>
     </div>
@@ -464,120 +427,57 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <!-- LinkedIn Posts -->
+  <!-- Where the Arguments Live -->
   <section class="py-24 bg-slate-50">
     <div class="max-w-7xl mx-auto px-8">
-      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-        <div data-reveal>
-          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-6 block">LinkedIn Posts</span>
-          <h2 class="text-[clamp(2rem,5vw,3.5rem)] text-slate-900 font-black tracking-tighter">From the Field.</h2>
-        </div>
-        <a href="https://www.linkedin.com/in/majid-m-4b097118/recent-activity/all/" target="_blank" rel="noopener noreferrer" class="text-[#001F5B] font-black text-xs uppercase tracking-widest hover:text-blue-700 transition-colors" data-reveal>
-          All Posts on LinkedIn →
-        </a>
+      <div class="mb-16" data-reveal>
+        <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-6 block">The Thinking</span>
+        <h2 class="text-[clamp(2rem,5vw,3.5rem)] text-slate-900 font-black tracking-tighter">Where the Arguments Live.</h2>
+        <p class="text-slate-500 text-base mt-4 max-w-2xl leading-relaxed">The same argument runs at three depths. LinkedIn carries the mechanism. Substack carries the structural reason the mechanism exists. The newsletter connects it to the loss already on the books.</p>
       </div>
+
+      <!-- Featured -->
+      <a
+        href="https://www.linkedin.com/feed/update/urn:li:activity:7440261971389648896/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group block bg-white border border-slate-200 p-10 md:p-14 hover:border-[#001F5B]/40 hover:shadow-sm transition-all duration-200 mb-6"
+        data-reveal
+      >
+        <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-6 block">LinkedIn</span>
+        <h3 class="text-[clamp(1.4rem,3vw,2rem)] text-slate-900 font-black leading-tight mb-5 group-hover:text-[#001F5B] transition-colors">CAE Independence Is Not an Org Chart Problem</h3>
+        <p class="text-slate-500 text-base leading-relaxed max-w-3xl mb-8">The reporting line is not the independence mechanism. The risk universe construction process is. When the audit plan draws from three management-adjacent inputs, what gets excluded is never added. The independence gap is in scope design, not the chart.</p>
+        <span class="text-[#001F5B] font-black text-[10px] uppercase tracking-widest group-hover:text-blue-700 transition-colors">Read on LinkedIn →</span>
+      </a>
+
+      <!-- Secondary pair -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {[
-          {
-            tag: 'Audit Independence',
-            tagColor: 'text-blue-700 bg-blue-50 border-blue-200',
-            title: 'CAE Independence Is Not an Org Chart Problem',
-            excerpt: 'The reporting line is not the independence mechanism. The risk universe construction process is. When the audit plan draws from three management-adjacent inputs — management register, prior coverage, regulatory requirements — what gets excluded is never added. The independence gap is in scope design, not the chart.',
-            url: 'https://www.linkedin.com/feed/update/urn:li:activity:7440261971389648896/',
-            source: 'LinkedIn',
-          },
-          {
-            tag: 'Fraud Detection',
-            tagColor: 'text-red-700 bg-red-50 border-red-200',
-            title: "ML Fraud Detection: What the Model Can't See",
-            excerpt: "The model learned from 12% of occurring fraud. It has no signal on the other 88%. Model silence is not a cleared signal — it is an absence of signal. Three questions every audit committee should ask before relying on ML fraud detection.",
-            url: 'https://www.linkedin.com/feed/update/urn:li:activity:7442077366090203136/',
-            source: 'LinkedIn',
-          },
-          {
-            tag: 'Operational Risk',
-            tagColor: 'text-orange-700 bg-orange-50 border-orange-200',
-            title: 'GCC F&B: When Recovery Inherits the Crisis',
-            excerpt: 'GCC F&B operators recovering from supply chain disruption are not rebuilding into stability. They are rebuilding into the same risk that disrupted them. Recovery inherits the crisis — with the additional governance problem that emergency procurement overrides, built to survive the shock, are now the operating model.',
-            url: 'https://www.linkedin.com/feed/update/urn:li:activity:7440817069861859328/',
-            source: 'LinkedIn',
-          },
-          {
-            tag: 'Board Reporting',
-            tagColor: 'text-amber-700 bg-amber-50 border-amber-200',
-            title: 'The Board Receives the Consensus Version',
-            excerpt: 'Between operational reality and the board\'s decision layer, information passes through management layers. Each layer attenuates the signal. Bad news is attenuated more than good news. The board is not receiving inaccurate reports — it is receiving accurate reports of what each layer chose to pass upward.',
-            url: 'https://www.linkedin.com/feed/update/urn:li:activity:7440713243041558529/',
-            source: 'LinkedIn',
-          },
-          {
-            tag: 'Governance Philosophy',
-            tagColor: 'text-purple-700 bg-purple-50 border-purple-200',
-            title: 'The Floor Below the Mechanism',
-            excerpt: 'GCC franchise chains grow unit count without growing control capacity. LinkedIn carries the mechanism. The Substack carries the constitutive absence: why the denominator is structurally excluded, not missing by oversight. Growth, as a concept, cannot include the ratio that measures its own limit.',
-            url: 'https://www.linkedin.com/feed/update/urn:li:share:7442654701248159744/',
-            source: 'LinkedIn',
-          },
-        ].map((post, i) => (
-          <a
-            href={post.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group bg-white border border-slate-200 p-8 hover:border-[#001F5B]/40 hover:shadow-sm transition-all duration-200 flex flex-col gap-5"
-            data-reveal
-            data-reveal-delay={String((i % 2) + 1)}
-          >
-            <span class={`inline-block text-[10px] font-black uppercase tracking-wider px-3 py-1 border w-fit ${post.tagColor}`}>{post.tag}</span>
-            <h3 class="text-slate-900 font-black text-lg leading-snug group-hover:text-[#001F5B] transition-colors">{post.title}</h3>
-            <p class="text-slate-500 text-sm leading-relaxed flex-1">{post.excerpt}</p>
-            <span class="text-[#001F5B] font-black text-[10px] uppercase tracking-widest mt-auto group-hover:text-blue-700 transition-colors">Read on {post.source} →</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- The Floor Below — Substack -->
-  <section class="py-24 bg-slate-900">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
-        <div data-reveal>
-          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#C9A84C] mb-6 block">Substack</span>
-          <h2 class="text-[clamp(2rem,5vw,3.5rem)] text-white font-black tracking-tighter">The Floor Below.</h2>
-          <p class="text-slate-400 text-base mt-5 max-w-2xl leading-relaxed">Governance, risk, and leadership examined philosophically. Why the structures we build fail by design, what risk frameworks assume about human behaviour, and the mechanisms the field treats as settled but hasn't examined. The philosophical depth is the reason the business risk is systematic rather than accidental. The structure cannot see its own blind spot by design.</p>
-        </div>
-        <a href="https://majidmumtaz.substack.com" target="_blank" rel="noopener noreferrer" class="text-[#C9A84C] font-black text-xs uppercase tracking-widest hover:text-white transition-colors whitespace-nowrap" data-reveal>
-          Read on Substack →
+        <a
+          href="https://majidmumtaz.substack.com/p/what-controls-actually-certify"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group bg-white border border-slate-200 p-8 hover:border-[#001F5B]/40 hover:shadow-sm transition-all duration-200 flex flex-col gap-5"
+          data-reveal
+          data-reveal-delay="1"
+        >
+          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#C9A84C]">Substack — The Floor Below</span>
+          <h3 class="text-slate-900 font-black text-lg leading-snug group-hover:text-[#001F5B] transition-colors">What Controls Actually Certify</h3>
+          <p class="text-slate-500 text-sm leading-relaxed flex-1">Most boards believe they have controls that prevent. What they have is evidence that the process ran. The gap between the two is where the governance failure lives, and it is invisible from inside the function that produces the certification.</p>
+          <span class="text-[#001F5B] font-black text-[10px] uppercase tracking-widest mt-auto group-hover:text-blue-700 transition-colors">Read on Substack →</span>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Insights Teaser -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-        <div data-reveal>
-          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-6 block">Insights</span>
-          <h2 class="text-[clamp(2rem,5vw,3.5rem)] text-slate-900 font-black tracking-tighter">From the Newsletter.</h2>
-        </div>
-        <a href="https://www.linkedin.com/newsletters/7339153291630510080/" target="_blank" rel="noopener noreferrer" class="text-[#001F5B] font-black text-xs uppercase tracking-widest hover:text-blue-700 transition-colors" data-reveal>
-          Read on LinkedIn →
+        <a
+          href="https://www.linkedin.com/newsletters/7339153291630510080/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group bg-white border border-slate-200 p-8 hover:border-[#001F5B]/40 hover:shadow-sm transition-all duration-200 flex flex-col gap-5"
+          data-reveal
+          data-reveal-delay="2"
+        >
+          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B]">Newsletter — The Audit Signal</span>
+          <h3 class="text-slate-900 font-black text-lg leading-snug group-hover:text-[#001F5B] transition-colors">NMC Health: The Architecture of Invisible Debt</h3>
+          <p class="text-slate-500 text-sm leading-relaxed flex-1">A $6.6bn fraud built on 80+ direct bank relationships that bypassed treasury, management-facilitated confirmation letters, and a board with no structural position from which to notice. The auditor incompetence narrative misses the mechanism entirely.</p>
+          <span class="text-[#001F5B] font-black text-[10px] uppercase tracking-widest mt-auto group-hover:text-blue-700 transition-colors">Read on LinkedIn →</span>
         </a>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {articles.map((article, i) => (
-          <div class="bg-white border border-slate-200 p-8 hover:shadow-md hover:border-slate-300 transition-all flex flex-col gap-5" data-reveal data-reveal-delay={String(i + 1)}>
-            <span class="inline-block text-[10px] font-black uppercase tracking-wider px-3 py-1 border border-[#001F5B]/20 bg-[#001F5B]/5 text-[#001F5B] w-fit">{article.tag}</span>
-            <h3 class="text-slate-900 font-black text-base leading-tight">{article.title}</h3>
-            {article.excerpt && (
-              <p class="text-slate-500 text-sm leading-relaxed flex-1">{article.excerpt}</p>
-            )}
-            <a href="https://www.linkedin.com/newsletters/7339153291630510080/" target="_blank" rel="noopener noreferrer" class="text-[#001F5B] font-black text-[10px] uppercase tracking-widest hover:text-blue-700 transition-colors mt-auto">
-              Read on LinkedIn →
-            </a>
-          </div>
-        ))}
       </div>
     </div>
   </section>
