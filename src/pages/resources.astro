@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import documents from '../data/documents.json';
 import NetworkCanvas from '../components/NetworkCanvas';
+import RiskAppetiteInfographic from '../components/RiskAppetiteInfographic.astro';
 const base = import.meta.env.BASE_URL;
 
 const categories = ['All', ...new Set((documents as any[]).map((d: any) => d.category))];
@@ -24,6 +25,13 @@ const categories = ['All', ...new Set((documents as any[]).map((d: any) => d.cat
           Complimentary frameworks, checklists, and guides for internal audit professionals. Direct, Instant Access.
         </p>
       </div>
+    </div>
+  </section>
+
+  <!-- Featured Infographic -->
+  <section class="bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <RiskAppetiteInfographic />
     </div>
   </section>
 
