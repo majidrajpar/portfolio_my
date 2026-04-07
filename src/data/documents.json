@@ -268,5 +268,25 @@
     "size": "32 KB",
     "pages": 6,
     "date": "2026-04-07"
+  },
+  {
+    "id": "doc-028",
+    "filename": "PCI_DSS_Applicability_Review_Template.docx",
+    "title": "PCI DSS Applicability Review Template",
+    "description": "A strategic assessment framework for PCI DSS compliance in multi-channel food-tech environments. Outlines technical and operational controls, Cardholder Data Environment (CDE) scoping, encryption standards, and vulnerability management.",
+    "category": "Compliance",
+    "size": "36 KB",
+    "pages": 12,
+    "date": "2026-04-07"
+  },
+  {
+    "id": "doc-029",
+    "filename": "UAE_Operations_Evaluation_Template.docx",
+    "title": "UAE Operations Evaluation Template",
+    "description": "Comprehensive internal control assessment framework for scaling GCC logistics and kitchen fulfillment centers. Evaluates real-time inventory reconciliation, high-velocity fulfillment accuracy, and operational risk mitigation.",
+    "category": "Frameworks",
+    "size": "36 KB",
+    "pages": 15,
+    "date": "2026-04-07"
   }
 ]
