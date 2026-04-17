@@ -46,6 +46,47 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
   <title>{title}</title>
+
+  <!-- Structured data: Person schema -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Majid Mumtaz",
+    "givenName": "Majid",
+    "familyName": "Mumtaz",
+    "jobTitle": "Director of Internal Audit",
+    "url": "https://majidrajpar.github.io/portfolio_my/",
+    "image": "https://majidrajpar.github.io/portfolio_my/images/majid-profile.jpg",
+    "email": "mailto:majidrajpar@gmail.com",
+    "description": "Director of Internal Audit with 20+ years in Big 4 and GCC leadership. CIA, ACA, FCCA. Published in IIA, GRC Report, Consultancy ME, and Corporate Compliance Insights.",
+    "knowsAbout": [
+      "Internal Audit",
+      "Fraud Detection",
+      "Forensic Analytics",
+      "IPO Readiness",
+      "Board Governance",
+      "COSO ERM",
+      "ICOFR",
+      "Risk Management"
+    ],
+    "hasCredential": ["CIA", "ACA", "FCCA", "COSO ERM Certified"],
+    "alumniOf": [
+      { "@type": "Organization", "name": "Ernst & Young" },
+      { "@type": "Organization", "name": "KPMG" }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dubai",
+      "addressCountry": "AE"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/majid-m-4b097118/",
+      "https://www.youtube.com/@AuditBitz",
+      "https://majidmumtaz.substack.com/",
+      "https://veritux.com/consultants/majid-mumtaz/"
+    ]
+  })} />
+
   <ViewTransitions />
 
   <!-- Google Fonts -->
@@ -102,6 +143,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               { label: 'About', href: `${base}/about/` },
               { label: 'Projects', href: `${base}/projects/` },
               { label: 'Advisory', href: `${base}/consulting/` },
+              { label: 'Books', href: `${base}/about/#books` },
               { label: 'Newsletter', href: 'https://www.linkedin.com/newsletters/7339153291630510080/' },
               { label: 'Resources', href: `${base}/resources/` },
               { label: 'Tools', href: `${base}/tools/` },
