@@ -33,21 +33,33 @@ const metrics = [
   <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
     <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
       <NetworkCanvas client:load nodeCount={35} />
-      <div class="relative z-10 max-w-5xl" data-reveal>
-        <span class="hero-chip mb-8">Leadership Profile</span>
-        <h1 class="headline-display max-w-4xl text-[clamp(3rem,7vw,6.4rem)] font-black text-white">
-          Twenty years.
-          <span class="block text-[#f4c98b]">One mission.</span>
-          <span class="block">Protect the capital.</span>
-        </h1>
-        <p class="mt-8 max-w-3xl text-base leading-8 text-white/74 md:text-[1.15rem] md:leading-9">
-          Director of Internal Audit and board-facing advisor. Big 4 trained. Triple-certified. Published across external audit, governance, and compliance outlets. Built for organizations that need assurance with real operating weight.
-        </p>
-        <div class="luxury-divider mt-10 mb-8 max-w-lg"></div>
-        <div class="flex flex-wrap gap-3">
-          {['CIA', 'ACA', 'FCCA', 'Big 4 — EY & KPMG', 'Published · 5+ Outlets', '20+ Years'].map((badge) => (
-            <span class="hero-chip">{badge}</span>
-          ))}
+      <div class="relative z-10 grid gap-8 lg:grid-cols-[1fr_0.52fr] lg:items-end" data-reveal>
+        <div>
+          <span class="hero-chip mb-8">Leadership Profile</span>
+          <h1 class="headline-display max-w-4xl text-[clamp(3rem,7vw,6.4rem)] font-black text-white">
+            Twenty years.
+            <span class="block text-[#f4c98b]">One mission.</span>
+            <span class="block">Protect the capital.</span>
+          </h1>
+          <p class="mt-8 max-w-3xl text-base leading-8 text-white/74 md:text-[1.15rem] md:leading-9">
+            Director of Internal Audit and board-facing advisor. Big 4 trained. Triple-certified. Published across external audit, governance, and compliance outlets. Built for organizations that need assurance with real operating weight.
+          </p>
+          <div class="luxury-divider mt-10 mb-8 max-w-lg"></div>
+          <div class="flex flex-wrap gap-3">
+            {['CIA', 'ACA', 'FCCA', 'Big 4 — EY & KPMG', 'Published · 6 Articles', '20+ Years'].map((badge) => (
+              <span class="hero-chip">{badge}</span>
+            ))}
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <div class="overflow-hidden rounded-[28px] border border-white/12">
+            <img
+              src={`${base}images/majid-profile.jpg`}
+              alt="Majid Mumtaz"
+              class="h-[420px] w-full object-cover object-top"
+              loading="eager"
+            />
+          </div>
         </div>
       </div>
     </div>
