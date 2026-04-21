@@ -34,8 +34,8 @@ const impactChips = [
 
 const proofMetrics = [
   { value: '20+', label: 'Years of audit, risk, and governance leadership' },
-  { value: 'AED 7.7M', label: 'financial impact recovered or protected' },
-  { value: '47% → 3%', label: 'false positives reduced in fraud detection logic' },
+  { value: 'AED 7.7M', label: 'single-engagement fraud impact recovered or protected' },
+  { value: '47% → 3%', label: 'false positives reduced in one fraud detection programme' },
   { value: '7', label: 'countries across GCC and adjacent markets' },
 ];
 
@@ -422,34 +422,6 @@ const testimonials = [
     </div>
   </section>
 
-  <!-- 6. APPROACH — for those doing due diligence -->
-  <section class="px-4 py-4 md:px-8">
-    <div class="editorial-panel mx-auto max-w-7xl px-6 py-10 md:px-10" data-reveal>
-      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div class="flex flex-col justify-center">
-          <span class="meta-label text-[#f4c98b]">Approach</span>
-          <h2 class="mt-4 text-[clamp(2.1rem,5vw,4rem)] leading-[1.02] text-white">How the work is designed.</h2>
-          <div class="h-px max-w-sm bg-gradient-to-r from-[#c7964c]/60 to-transparent mt-6"></div>
-          <p class="mt-6 text-sm leading-7 text-white/60 max-w-xs">Each engagement follows the same sequence: commercial context first, structural independence second, population logic third.</p>
-        </div>
-        <div class="grid gap-4 md:grid-cols-2">
-          {[
-            ['01', 'Business First', 'Two weeks inside the commercial reality before opinion. The control environment is treated as a symptom, not the root issue.'],
-            ['02', 'Structural Independence', 'Audit charter, committee access, and reporting design are set before fieldwork. Independence is structural, not cosmetic.'],
-            ['03', 'Population Testing', 'Where others sample, the full population is tested. The economics of missing the pattern are too large for inherited comfort.'],
-            ['04', 'Board-Grade Reporting', 'Findings are framed for the decision each board member needs to make, not as a status update disguised as reporting.'],
-          ].map(([step, title, desc], i) => (
-            <div class="frame-panel p-6" data-reveal data-reveal-delay={String((i % 2) + 1)}>
-              <div class="meta-label text-[#f4c98b]">{step}</div>
-              <h3 class="mt-4 text-lg text-white">{title}</h3>
-              <p class="mt-3 text-sm leading-7 text-white/68">{desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="px-4 py-4 pb-10 md:px-8">
     <div class="editorial-panel mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
       <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
@@ -460,12 +432,13 @@ const testimonials = [
             Most organisations find out what that price is at the wrong moment. The work starts with a single conversation about where the assurance model has stopped keeping pace with the actual risk. If that conversation feels overdue, it probably is.
           </p>
           <div class="h-px max-w-sm bg-gradient-to-r from-[#c7964c]/60 to-transparent mt-8"></div>
-          <div class="mt-8 space-y-4">
-            <a href="mailto:majidrajpar@gmail.com" class="block text-sm font-black text-white/88">majidrajpar@gmail.com</a>
-            <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer" class="block text-sm font-black text-white/88">LinkedIn Profile</a>
-            <a href="https://veritux.com/consultants/majid-mumtaz/" target="_blank" rel="noopener noreferrer" class="block text-sm font-black text-white/88">Veritux Consultant Page</a>
-            <a href="https://app.gocatalant.com/c/_/profile/kd6vrg/verify/" target="_blank" rel="noopener noreferrer" class="block text-sm font-black text-white/88">Catalant Expert Profile</a>
-            <a href="https://wa.me/971507471708" target="_blank" rel="noopener noreferrer" class="block text-sm font-black text-white/88">WhatsApp</a>
+          <div class="mt-8">
+            <a href="mailto:majidrajpar@gmail.com" class="btn-primary inline-block">Start the Conversation</a>
+            <div class="mt-6 flex flex-wrap gap-5">
+              <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer" class="text-sm font-black text-white/50 hover:text-white/88 transition-colors">LinkedIn</a>
+              <a href="https://veritux.com/consultants/majid-mumtaz/" target="_blank" rel="noopener noreferrer" class="text-sm font-black text-white/50 hover:text-white/88 transition-colors">Veritux</a>
+              <a href="https://app.gocatalant.com/c/_/profile/kd6vrg/verify/" target="_blank" rel="noopener noreferrer" class="text-sm font-black text-white/50 hover:text-white/88 transition-colors">Catalant</a>
+            </div>
           </div>
         </div>
         <div data-reveal data-reveal-delay="2">
