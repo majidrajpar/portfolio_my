@@ -400,22 +400,36 @@ const testimonials = [
   <section class="px-4 py-4 md:px-8">
     <div class="mx-auto max-w-7xl" data-reveal>
       <div class="soft-shell px-7 py-10 md:px-10 md:py-12">
-        <span class="eyebrow-label">About</span>
-        <h2 class="mt-4 text-[clamp(2rem,5vw,3.9rem)] leading-[1.03] text-[#181511]">
-          Twenty years inside complex operating environments.
-        </h2>
-        <div class="luxury-divider mt-7 max-w-md"></div>
-        <div class="mt-6 grid gap-6 lg:grid-cols-2">
-          <p class="body-luxe">
-            Twenty years inside complex audit environments: multi-brand F&amp;B platforms spanning seven countries, healthcare subsidiaries targeting Nomu listing, and holding groups restructuring for a new governance era. The assumption that sampling equals coverage is how fraud compounds unseen. A 5% sample carries roughly a 40% chance of missing a fraud cluster. Not a methodology. A liability transfer.
-          </p>
-          <p class="text-lg leading-9 text-[#1d3557]">
-            The AED 7.7M recovered existed in the 95% that sampling would have missed. Where most programmes wait for the loss to surface, the work here builds detection before the pattern repeats.
-          </p>
-        </div>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href={`${base}about/`} class="btn-secondary">Full Profile</a>
-          <a href={`${base}cv/Majid-Mumtaz-Internal-Audit-Director-CV.pdf`} class="btn-primary" download>Download CV</a>
+        <div class="grid gap-8 lg:grid-cols-[0.38fr_1fr] lg:items-start">
+          <div class="hidden lg:block">
+            <div class="overflow-hidden rounded-[28px] border border-[color:var(--line-soft)]">
+              <img
+                src={`${base}images/majid-profile.jpg`}
+                alt="Majid Mumtaz"
+                class="h-[380px] w-full object-cover object-top"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div>
+            <span class="eyebrow-label">About</span>
+            <h2 class="mt-4 text-[clamp(2rem,5vw,3.9rem)] leading-[1.03] text-[#181511]">
+              Twenty years inside complex operating environments.
+            </h2>
+            <div class="luxury-divider mt-7 max-w-md"></div>
+            <div class="mt-6 grid gap-6 lg:grid-cols-2">
+              <p class="body-luxe">
+                Twenty years inside complex audit environments: multi-brand F&amp;B platforms spanning seven countries, healthcare subsidiaries targeting Nomu listing, and holding groups restructuring for a new governance era. The assumption that sampling equals coverage is how fraud compounds unseen. A 5% sample carries roughly a 40% chance of missing a fraud cluster. Not a methodology. A liability transfer.
+              </p>
+              <p class="text-lg leading-9 text-[#1d3557]">
+                The AED 7.7M recovered existed in the 95% that sampling would have missed. Where most programmes wait for the loss to surface, the work here builds detection before the pattern repeats.
+              </p>
+            </div>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href={`${base}about/`} class="btn-secondary">Full Profile</a>
+              <a href={`${base}cv/Majid-Mumtaz-Internal-Audit-Director-CV.pdf`} class="btn-primary" download>Download CV</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
