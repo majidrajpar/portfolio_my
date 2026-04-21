@@ -41,57 +41,65 @@ const filtered = allProjects.filter(p => p.categories.includes(cat.name));
   title={`${cat.name} | Engagements — Majid Mumtaz`}
   description={cat.description}
 >
-  <!-- Hero -->
-  <section class="pt-32 pb-20 bg-[#001F5B] relative overflow-hidden">
-    <NetworkCanvas client:load nodeCount={35} />
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-      <div class="mb-4">
-        <a href={`${base}projects/`} class="text-white/60 hover:text-white text-xs font-black uppercase tracking-widest transition-colors">
-          ← All Practice Areas
-        </a>
-      </div>
-      <div class="max-w-3xl" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Practice Area</span>
-        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-          {cat.name}
-        </h1>
-        <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
-          {cat.description}
-        </p>
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+      <NetworkCanvas client:load nodeCount={35} />
+      <div class="relative z-10 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:gap-10">
+        <div data-reveal>
+          <a href={`${base}projects/`} class="mb-7 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white">
+            ← All Practice Areas
+          </a>
+          <span class="hero-chip mb-6 md:mb-7">Practice Area</span>
+          <h1 class="headline-display max-w-4xl text-[clamp(3rem,6.3vw,5.5rem)] font-black text-white">
+            {cat.name}
+          </h1>
+          <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.1rem] md:leading-9">
+            {cat.description}
+          </p>
+        </div>
+        <div class="quote-panel p-6 md:p-8" data-reveal data-reveal-delay="1">
+          <span class="eyebrow-label text-[#f4c98b]/80">Coverage</span>
+          <p class="mt-4 text-base leading-7 text-white/82 md:mt-5 md:text-lg md:leading-8">{filtered.length} engagement{filtered.length === 1 ? '' : 's'} mapped to this area, presented as operational outcomes rather than framework slogans.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Disclosure -->
-  <div class="bg-slate-50 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-3 flex items-start gap-3">
-      <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <section class="px-4 py-5 md:px-8">
+    <div class="soft-shell mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
+      <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
       </svg>
-      <p class="text-[11px] text-slate-500 leading-relaxed">
-        <span class="font-bold uppercase tracking-wider text-slate-600">Confidentiality Notice —</span>
-        All client and employer names, organisational identifiers, and sensitive data presented in these case studies have been anonymised to protect the privacy and confidentiality of the parties involved. Figures and outcomes reflect real engagements but are presented at a level of abstraction that prevents identification.
+      <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
+        <span class="meta-label text-[#181511]">Confidentiality Notice</span>
+        Case studies are abstracted where required to protect client and employer confidentiality while preserving the actual decision pattern and business consequence.
       </p>
     </div>
-  </div>
+  </section>
 
-  <!-- Projects Grid -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <section class="px-4 py-4 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between" data-reveal>
+        <div>
+          <span class="eyebrow-label">Mapped Engagements</span>
+          <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Selected mandates in {cat.name.toLowerCase()}.</h2>
+        </div>
+        <p class="body-luxe max-w-2xl">Each entry is framed around mandate, intervention, and commercial or governance consequence rather than generic control language.</p>
+      </div>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
         {filtered.map((project: any, i: number) => (
           <article
-            class="bg-white border border-slate-200 flex flex-col p-8 hover:shadow-md transition-shadow h-full text-left"
+            class="glass-card flex h-full flex-col rounded-[30px] p-6 text-left md:p-8"
             data-reveal
             data-reveal-delay={String((i % 3) + 1)}
           >
-            <div class="mb-5 flex items-center justify-between gap-3">
-              <span class="inline-block px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] bg-[#001F5B] text-white">
+            <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <span class="inline-flex w-fit rounded-full bg-[#181512] px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#f4c98b]">
                 {cat.name}
               </span>
               {project.duration && (
-                <span class="flex items-center gap-1 text-[10px] font-bold text-slate-400 uppercase tracking-widest flex-shrink-0">
-                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span class="flex flex-shrink-0 items-center gap-1 text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">
+                  <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
                   {project.duration}
@@ -99,51 +107,56 @@ const filtered = allProjects.filter(p => p.categories.includes(cat.name));
               )}
             </div>
 
-            <h3 class="text-xl font-black text-slate-900 mb-4 leading-tight">
+            <h3 class="text-[1.28rem] leading-tight text-[#181511] md:text-[1.45rem]">
               {project.title}
             </h3>
 
-            <p class="text-slate-600 text-sm mb-6 flex-1 leading-relaxed line-clamp-3">
+            <p class="mt-4 flex-1 text-sm leading-7 text-[color:var(--text-secondary)] md:leading-8">
               {project.description}
             </p>
 
             {project.impact && (
-              <div class="mb-6 pl-4 border-l-4 border-[#001F5B]">
-                <div class="text-[10px] font-black text-[#001F5B] uppercase tracking-widest mb-1">Impact</div>
-                <div class="text-slate-900 font-bold text-sm leading-snug">{project.impact}</div>
+              <div class="quote-panel mt-6 p-5">
+                <span class="meta-label text-white/45">Impact</span>
+                <p class="mt-3 text-sm leading-7 text-white/82">{project.impact}</p>
               </div>
             )}
 
-            <div class="flex flex-wrap gap-2 mb-6">
-              {project.techStack.slice(0, 3).map((tech: string) => (
-                <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200">
-                  {tech}
-                </span>
-              ))}
-            </div>
+            {project.techStack?.length > 0 && (
+              <div class="mt-6 flex flex-wrap gap-2">
+                {project.techStack.slice(0, 3).map((tech: string) => (
+                  <span class="rounded-full border border-[color:var(--line-soft)] bg-white/75 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-600">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            )}
 
-            <a
-              href={`${base}projects/${project.id}/`}
-              class="inline-flex items-center text-[#001F5B] font-black text-xs uppercase tracking-widest hover:text-blue-700 transition-colors"
-            >
-              View Case Study
-              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-              </svg>
-            </a>
+            <div class="mt-7 border-t border-[color:var(--line-soft)] pt-5">
+              <a
+                href={`${base}projects/${project.id}/`}
+                class="inline-flex items-center text-[11px] font-black uppercase tracking-[0.24em] text-[#181511] transition-colors hover:text-[#8d6035]"
+              >
+                View Case Study
+                <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
           </article>
         ))}
       </div>
     </div>
   </section>
-
-  <!-- CTA -->
-  <section class="py-20 bg-[#001F5B] relative overflow-hidden">
+  <section class="relative overflow-hidden px-4 py-8 pb-12 md:px-8">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 text-center md:px-10 md:py-14">
     <GrammarBackground client:visible variant="dark-grid" />
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center relative z-10" data-reveal>
-      <h2 class="text-3xl font-black text-white mb-4">Ready to Discuss Your Challenge?</h2>
-      <p class="text-white/70 mb-8">Every engagement starts with understanding your specific context.</p>
-      <a href={`${base}contact/`} class="btn-primary">Start the Conversation</a>
+      <div class="relative z-10" data-reveal>
+        <span class="hero-chip mb-5 md:mb-6">Discuss The Brief</span>
+        <h2 class="mx-auto max-w-3xl text-[clamp(2rem,4.4vw,3.8rem)] leading-[1.03] text-white">If your challenge sits in this practice area, the next step is context, not theatre.</h2>
+        <p class="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-white/72 md:mt-6 md:text-base md:leading-8">The useful conversation starts with mandate, constraint, risk posture, and stakeholder reality. Everything else follows from that.</p>
+        <a href={`${base}contact/`} class="btn-primary mt-8 inline-flex">Start the Conversation</a>
+      </div>
     </div>
   </section>
 </BaseLayout>

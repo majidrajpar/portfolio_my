@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import MetricCard from '../components/MetricCard.astro';
 import CareerTimeline from '../components/CareerTimeline.jsx';
 import NetworkCanvas from '../components/NetworkCanvas';
-import GrammarBackground from '../components/GrammarBackground';
 import { getCareerMilestones } from '../lib/db.js';
 
 const careerData = getCareerMilestones();
@@ -31,120 +30,100 @@ const metrics = [
   title="About | Majid Mumtaz — Chief Audit Executive"
   description="20+ years finding the operational and governance gaps that cost businesses money — fraud detection, board-grade assurance, controls that close the risk they were built for. CIA, ACA, FCCA. Big 4 trained. Open to full-time roles globally."
 >
-  <!-- Hero -->
-  <section class="pt-32 pb-24 bg-[#001F5B] relative overflow-hidden">
-    <NetworkCanvas client:load nodeCount={35} />
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-      <div class="max-w-4xl" data-reveal>
-        <span class="inline-block text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-8">Leadership Profile</span>
-        <h1 class="text-[clamp(3rem,8vw,5.5rem)] font-black text-white mb-8 leading-[0.92] tracking-tighter">
-          Twenty Years.<br />One Mission:<br /><span class="text-[#C9A84C]">Protect the Capital.</span>
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+      <NetworkCanvas client:load nodeCount={35} />
+      <div class="relative z-10 max-w-5xl" data-reveal>
+        <span class="hero-chip mb-8">Leadership Profile</span>
+        <h1 class="headline-display max-w-4xl text-[clamp(3rem,7vw,6.4rem)] font-black text-white">
+          Twenty years.
+          <span class="block text-[#f4c98b]">One mission.</span>
+          <span class="block">Protect the capital.</span>
         </h1>
-        <p class="text-lg text-white/70 leading-relaxed max-w-2xl mb-10">
-          Director of Internal Audit and Board Advisor. Big 4 trained. Triple-certified. Published across five external outlets including IIA, GRC Report, and ACCA. Open to full-time IA leadership roles globally.
+        <p class="mt-8 max-w-3xl text-base leading-8 text-white/74 md:text-[1.15rem] md:leading-9">
+          Director of Internal Audit and board-facing advisor. Big 4 trained. Triple-certified. Published across external audit, governance, and compliance outlets. Built for organizations that need assurance with real operating weight.
         </p>
+        <div class="luxury-divider mt-10 mb-8 max-w-lg"></div>
         <div class="flex flex-wrap gap-3">
-          {['CIA', 'ACA', 'FCCA', 'Big 4 — EY & KPMG', 'Published · 5 Outlets', '20+ Years'].map(badge => (
-            <span class="inline-block px-4 py-2 border border-white/20 text-white/80 text-[10px] font-black uppercase tracking-[0.25em]">
-              {badge}
-            </span>
+          {['CIA', 'ACA', 'FCCA', 'Big 4 — EY & KPMG', 'Published · 5+ Outlets', '20+ Years'].map((badge) => (
+            <span class="hero-chip">{badge}</span>
           ))}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Bio -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        <!-- Photo -->
-        <div data-reveal>
-          <div class="aspect-[4/5] bg-slate-100 overflow-hidden max-w-sm">
-            <img
-              src={`${base}images/majid-profile.jpg`}
-              alt="Majid Mumtaz — Chief Audit Executive"
-              class="w-full h-full object-cover"
-              loading="lazy"
-            />
+  <section class="px-4 py-5 md:px-8">
+    <div class="mx-auto grid max-w-7xl gap-4 md:grid-cols-6">
+      {metrics.map((m, i) => (
+        <div data-reveal data-reveal-delay={String((i % 3) + 1)}>
+          <MetricCard value={m.value} label={m.label} />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="px-4 py-4 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-6 lg:grid-cols-[0.78fr_1.22fr]">
+        <div class="editorial-panel overflow-hidden px-7 py-8 md:px-8 md:py-10" data-reveal>
+          <div class="meta-label text-[#f4c98b]">Biography</div>
+          <div class="mt-6 overflow-hidden rounded-[28px] border border-white/12">
+            <img src={`${base}images/majid-profile.jpg`} alt="Majid Mumtaz" class="h-[520px] w-full object-cover" loading="lazy" />
           </div>
-          <!-- Social Proof Strip -->
           <div class="mt-6 flex flex-wrap gap-3">
-            <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-2 px-4 py-2 border border-slate-200 text-[10px] font-black uppercase tracking-widest text-slate-700 hover:border-[#001F5B] hover:text-[#001F5B] transition-colors">
-              LinkedIn Profile ↗
-            </a>
-            <a href="https://www.linkedin.com/newsletters/7339153291630510080/" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-2 px-4 py-2 border border-slate-200 text-[10px] font-black uppercase tracking-widest text-slate-700 hover:border-[#001F5B] hover:text-[#001F5B] transition-colors">
-              Newsletter ↗
-            </a>
-            <a href="https://www.youtube.com/@AuditBitz" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-2 px-4 py-2 border border-slate-200 text-[10px] font-black uppercase tracking-widest text-slate-700 hover:border-[#001F5B] hover:text-[#001F5B] transition-colors">
-              @AuditBitz ↗
-            </a>
+            <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer" class="btn-secondary-light">LinkedIn</a>
+            <a href="https://www.linkedin.com/newsletters/7339153291630510080/" target="_blank" rel="noopener noreferrer" class="btn-secondary-light">Newsletter</a>
+            <a href="https://www.youtube.com/@AuditBitz" target="_blank" rel="noopener noreferrer" class="btn-secondary-light">AuditBitz</a>
           </div>
         </div>
 
-        <!-- Bio Text -->
-        <div data-reveal data-reveal-delay="1">
-          <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Biography</span>
-          <h2 class="text-4xl font-black text-slate-900 mb-8 leading-tight">Majid Mumtaz<br/><span class="text-slate-400 font-normal text-2xl">CIA, ACA, FCCA</span></h2>
-          <div class="space-y-5 text-slate-600 leading-relaxed">
-            <p>
-              I build audit functions that protect capital. Over 20 years, I have designed and led internal audit departments from inception — embedding the governance structures, control frameworks, and technology platforms that give boards credible, board-grade assurance.
+        <div class="soft-shell px-7 py-10 md:px-10 md:py-12" data-reveal data-reveal-delay="1">
+          <span class="eyebrow-label">Biography</span>
+          <h2 class="mt-4 text-[clamp(2.1rem,4.8vw,4rem)] leading-[1.02] text-[#181511]">Built to turn assurance into an executive instrument.</h2>
+          <div class="luxury-divider mt-7 max-w-md"></div>
+          <div class="mt-8 space-y-6 text-[color:var(--text-secondary)]">
+            <p class="body-luxe">
+              I build audit functions that protect capital. Over 20 years, I have designed and led internal audit departments from inception, embedding governance structures, control frameworks, and technology platforms that give boards credible assurance.
             </p>
-            <p>
-              My work spans three interconnected domains: <strong class="text-slate-900">IA function building</strong> (designing departments, hiring teams, embedding IIA standards), <strong class="text-slate-900">forensic analytics and fraud detection</strong> (ML-powered continuous monitoring, population testing, fraud investigation), and <strong class="text-slate-900">board assurance and IPO readiness</strong> (ICOFR, COSO ERM, regulatory compliance for DFM, Tadawul, and Nomu listings).
+            <p class="body-luxe">
+              My work spans three connected domains: <strong class="text-[#181511]">IA function building</strong>, <strong class="text-[#181511]">forensic analytics and fraud detection</strong>, and <strong class="text-[#181511]">board assurance and IPO readiness</strong> across DFM, Tadawul, and Nomu-oriented programs.
             </p>
-            <p>
-              Big 4 trained (Ernst & Young, KPMG), I combine technical rigour with executive communication — translating complex risk and control findings into board-level insight that drives decisions, not just compliance.
+            <p class="body-luxe">
+              Big 4 trained through Ernst & Young and KPMG, I combine technical rigor with executive communication, translating complex findings into board-level decisions rather than compliance paperwork.
             </p>
-            <p>
-              Currently delivering governance, risk, and internal audit advisory through <strong class="text-slate-900">Veritux</strong> in Dubai — across real estate developers, family offices, and pre-IPO businesses. Open to full-time Director of Internal Audit and CAE roles globally.
+            <p class="body-luxe">
+              Currently delivering governance, risk, and internal audit advisory through <strong class="text-[#181511]">Veritux</strong> in Dubai across real estate developers, family offices, and pre-IPO businesses, with an active <a href="https://app.gocatalant.com/c/_/profile/kd6vrg/verify/" target="_blank" rel="noopener noreferrer" class="text-[#a33a21] font-semibold hover:underline">Catalant expert profile</a> for project-based mandates. Open to full-time Director of Internal Audit and CAE roles globally.
             </p>
           </div>
 
-          <!-- Credentials Row -->
-          <div class="mt-10 pt-10 border-t border-slate-100 grid grid-cols-3 gap-6">
-            <div>
-              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Certifications</div>
-              <div class="space-y-1">
-                <div class="text-xs font-bold text-slate-900">CIA</div>
-                <div class="text-xs font-bold text-slate-900">ACA</div>
-                <div class="text-xs font-bold text-slate-900">FCCA</div>
-                <div class="text-xs font-bold text-slate-900">COSO ERM Certified</div>
-                <div class="text-[10px] font-black uppercase tracking-widest text-slate-300 mt-3 mb-1">Executive Education</div>
-                <div class="text-xs font-bold text-slate-900">Harvard Online — Disruptive Strategy</div>
-                <div class="text-xs font-bold text-slate-900">HKUST — IT Governance</div>
-                <div class="text-xs font-bold text-slate-900">IBM — ML with Python</div>
-                <div class="text-xs font-bold text-slate-900">WVU — Forensic Acctg</div>
-                <div class="text-xs font-bold text-slate-900">NYIF — Risk Management</div>
+          <div class="mt-10 grid gap-4 md:grid-cols-3">
+            <div class="stat-plinth p-6">
+              <div class="meta-label text-[#a33a21]">Credentials</div>
+              <div class="mt-4 space-y-2 text-sm font-semibold text-[#181511]">
+                <div>CIA</div>
+                <div>ACA</div>
+                <div>FCCA</div>
+                <div>COSO ERM Certified</div>
               </div>
             </div>
-            <div>
-              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Background</div>
-              <div class="space-y-1">
-                <div class="text-xs font-bold text-slate-900">Ernst & Young</div>
-                <div class="text-xs font-bold text-slate-900">BMA Asset Management</div>
-                <div class="text-xs font-bold text-slate-900">KPMG</div>
-                <div class="text-xs font-bold text-slate-900">McDonald's KSA</div>
-                <div class="text-xs font-bold text-slate-900">Al Faisaliah Group</div>
-                <div class="text-xs font-bold text-slate-900">Kitopi</div>
-                <div class="text-xs font-bold text-slate-900">Veritux</div>
-                <div class="text-xs font-bold text-slate-900">20+ Years</div>
+            <div class="stat-plinth p-6">
+              <div class="meta-label text-[#a33a21]">Background</div>
+              <div class="mt-4 space-y-2 text-sm font-semibold text-[#181511]">
+                <div>Ernst & Young</div>
+                <div>KPMG</div>
+                <div>Al Faisaliah Group</div>
+                <div>Kitopi</div>
+                <div>Veritux</div>
               </div>
             </div>
-            <div>
-              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">Leadership</div>
-              <div class="space-y-1">
-                <div class="text-xs font-bold text-slate-900">CAE Function Build-Out</div>
-                <div class="text-xs font-bold text-slate-900">Board & AC Reporting</div>
-                <div class="text-xs font-bold text-slate-900">Risk Appetite Frameworks</div>
-                <div class="text-xs font-bold text-slate-900">C-Suite Advisory</div>
-                <div class="text-xs font-bold text-slate-900">Three Lines of Defence</div>
-                <div class="text-xs font-bold text-slate-900">Team Development</div>
-                <div class="text-xs font-bold text-slate-900">External Auditor Liaison</div>
-                <div class="text-xs font-bold text-slate-900">Multi-Jurisdiction Programmes</div>
+            <div class="stat-plinth p-6">
+              <div class="meta-label text-[#a33a21]">Leadership</div>
+              <div class="mt-4 space-y-2 text-sm font-semibold text-[#181511]">
+                <div>Board & AC Reporting</div>
+                <div>Three Lines of Defence</div>
+                <div>Risk Appetite Frameworks</div>
+                <div>Multi-Jurisdiction Programmes</div>
               </div>
             </div>
           </div>
@@ -153,144 +132,65 @@ const metrics = [
     </div>
   </section>
 
-  <!-- Career Timeline Visual -->
-  <section class="py-24 bg-slate-50 border-y border-slate-100 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="mb-14" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Professional Trajectory</span>
-        <h2 class="text-4xl font-black text-slate-900 leading-tight">Strategic Career Architecture.</h2>
-        <p class="text-slate-600 mt-4 max-w-2xl">A 20-year upward trajectory from Big 4 operational roots to group-level 'Profit Protection' leadership and board advisory.</p>
+  <section class="px-4 py-4 md:px-8">
+    <div class="soft-shell mx-auto max-w-7xl px-7 py-10 md:px-10 md:py-12">
+      <div class="mb-10" data-reveal>
+        <span class="eyebrow-label">Professional Trajectory</span>
+        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Strategic career architecture.</h2>
+        <p class="body-luxe mt-5 max-w-3xl">A 20-year progression from Big 4 operational roots to group-level profit protection, transformation, and board advisory.</p>
       </div>
-      
       <div class="relative group" data-reveal data-reveal-delay="1">
-        <div class="overflow-x-auto pb-6 -mx-6 px-6 lg:mx-0 lg:px-0">
-          <div class="min-w-[800px] lg:min-w-0 bg-[#001F5B] border border-slate-800 shadow-2xl">
+        <div class="overflow-x-auto pb-6 -mx-7 px-7 md:-mx-10 md:px-10">
+          <div class="min-w-[800px] lg:min-w-0 editorial-panel border border-white/10 shadow-2xl">
             <CareerTimeline client:visible careerData={careerData} />
           </div>
         </div>
-        <!-- Scroll indicator for mobile -->
-        <div class="absolute right-4 bottom-8 flex items-center gap-2 lg:hidden bg-[#001F5B]/80 px-3 py-1 text-[8px] font-black text-white uppercase tracking-widest backdrop-blur-sm animate-pulse">
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-          Scroll to view
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- Signature Capabilities -->
-  <section class="py-24 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="mb-14" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Core Practice Areas</span>
-        <h2 class="text-4xl font-black text-slate-900">Signature Capabilities.</h2>
+  <section class="px-4 py-4 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-10" data-reveal>
+        <span class="eyebrow-label">Core Practice Areas</span>
+        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Signature capabilities.</h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="glass-card p-8" data-reveal data-reveal-delay="1">
-          <div class="w-10 h-10 flex items-center justify-center mb-6 bg-[#001F5B]">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-            </svg>
-          </div>
-          <h3 class="text-lg font-black text-slate-900 mb-3">IA Function Building</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            Designing and building internal audit departments from the ground up — charter, methodology, risk-based audit plans, team structure, and IIA Standards alignment. From zero to board-grade assurance.
-          </p>
-        </div>
-
-        <div class="glass-card p-8" data-reveal data-reveal-delay="2">
-          <div class="w-10 h-10 flex items-center justify-center mb-6 bg-[#001F5B]">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-            </svg>
-          </div>
-          <h3 class="text-lg font-black text-slate-900 mb-3">Forensic Analytics & Fraud Detection</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            ML-powered continuous monitoring across 100% of transactions. Isolation Forest anomaly detection, Benford's Law analysis, and pattern recognition deployed across 2.3M+ monthly transactions.
-          </p>
-        </div>
-
-        <div class="glass-card p-8" data-reveal data-reveal-delay="3">
-          <div class="w-10 h-10 flex items-center justify-center mb-6 bg-[#001F5B]">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-            </svg>
-          </div>
-          <h3 class="text-lg font-black text-slate-900 mb-3">Board Assurance & IPO Readiness</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
-            End-to-end ICOFR implementation, COSO ERM frameworks, and regulatory compliance for DFM, Tadawul, and Nomu listings. Structured, board-grade reporting that satisfies both regulators and investors.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Impact Metrics -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="mb-14" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Quantified Impact</span>
-        <h2 class="text-4xl font-black text-slate-900">Results.</h2>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        {metrics.map((m, i) => (
-          <div data-reveal data-reveal-delay={String((i % 3) + 1)}>
-            <MetricCard value={m.value} label={m.label} />
+      <div class="grid gap-5 md:grid-cols-3">
+        {[
+          ['IA Function Building', 'Designing and building internal audit departments from the ground up — charter, methodology, risk-based audit plans, team structure, and IIA Standards alignment.'],
+          ['Forensic Analytics & Fraud Detection', 'ML-powered continuous monitoring, population testing, anomaly detection, and pattern recognition deployed where manual comfort is no longer defensible.'],
+          ['Board Assurance & IPO Readiness', 'ICOFR implementation, COSO ERM frameworks, and regulatory readiness structured for boards, regulators, and investors.'],
+        ].map(([title, desc], i) => (
+          <div class="glass-card rounded-[30px] p-8" data-reveal data-reveal-delay={String(i + 1)}>
+            <div class="meta-label text-[#a33a21]">0{i + 1}</div>
+            <h3 class="mt-4 text-xl leading-tight text-[#181511]">{title}</h3>
+            <p class="mt-4 text-sm leading-8 text-[color:var(--text-secondary)]">{desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Books -->
-  <section class="py-24 bg-slate-50" id="books">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="mb-14" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Published Works</span>
-        <h2 class="text-4xl font-black text-slate-900">5 Books on Amazon.</h2>
-        <p class="text-slate-600 mt-3">Sharing knowledge across internal audit, risk management, and forensic accounting.</p>
+  <section class="px-4 py-4 md:px-8" id="books">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-10" data-reveal>
+        <span class="eyebrow-label">Published Works</span>
+        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Books and frameworks.</h2>
+        <p class="body-luxe mt-5 max-w-3xl">Writing that extends the same operating thesis into internal audit, risk management, and forensic accounting.</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {books.map((book, i) => (
-          <a
-            href={book.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="glass-card overflow-hidden flex flex-row gap-5 p-5 group hover:border-[#001F5B]/40 transition-all items-start"
-            data-reveal
-            data-reveal-delay={String((i % 3) + 1)}
-          >
-            <div class="w-20 flex-shrink-0 aspect-[2/3] bg-slate-100 overflow-hidden">
-              <img
-                src={book.cover}
-                alt={book.title}
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                loading="lazy"
-              />
+          <a href={book.url} target="_blank" rel="noopener noreferrer" class="glass-card flex gap-5 rounded-[30px] p-6" data-reveal data-reveal-delay={String((i % 3) + 1)}>
+            <div class="w-24 flex-shrink-0 overflow-hidden rounded-[18px] bg-slate-100 aspect-[2/3]">
+              <img src={book.cover} alt={book.title} class="h-full w-full object-cover" loading="lazy" />
             </div>
-            <div class="flex flex-col flex-1 min-w-0">
-              <h4 class="text-slate-900 font-black text-sm mb-2 leading-snug group-hover:text-[#001F5B] transition-colors">{book.title}</h4>
-              <p class="text-slate-500 text-xs leading-relaxed flex-1 mb-3">{book.desc}</p>
-              <span class="text-[9px] font-black text-[#001F5B] uppercase tracking-widest">Amazon ↗</span>
+            <div class="flex min-w-0 flex-1 flex-col">
+              <div class="meta-label text-[#a33a21]">Amazon</div>
+              <h3 class="mt-3 text-lg leading-tight text-[#181511]">{book.title}</h3>
+              <p class="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">{book.desc}</p>
             </div>
           </a>
         ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-24 bg-[#001F5B] relative overflow-hidden">
-    <GrammarBackground client:visible variant="dark-grid" />
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center relative z-10" data-reveal>
-      <h2 class="text-4xl font-black text-white mb-6">Let's Work Together.</h2>
-      <p class="text-white/70 text-lg mb-10 max-w-xl mx-auto">
-        Open to full-time Director of Internal Audit and CAE roles globally. Interim mandates and board advisory also considered.
-      </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href={`${base}contact/`} class="btn-primary">Start the Conversation</a>
-        <a href={`${base}projects/`} class="btn-secondary-light">View Client Outcomes</a>
       </div>
     </div>
   </section>

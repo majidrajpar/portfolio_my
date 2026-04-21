@@ -6,17 +6,31 @@
   }
 
   :root {
-    --bg-deep: #001F5B;
-    --bg-surface: #ffffff;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --accent: #001F5B;
+    --bg-deep: #111827;
+    --bg-hero: #1e2a39;
+    --bg-surface: #fffaf4;
+    --bg-panel: rgba(255, 251, 246, 0.84);
+    --bg-panel-strong: rgba(17, 24, 39, 0.9);
+    --text-primary: #1b1a17;
+    --text-secondary: #5f554d;
+    --accent: #a33a21;
+    --accent-strong: #7c2712;
+    --accent-gold: #c7964c;
+    --line-soft: rgba(28, 27, 25, 0.12);
+    --shadow-soft: 0 20px 60px rgba(71, 38, 24, 0.08);
+    --shadow-strong: 0 30px 80px rgba(24, 17, 10, 0.18);
     --success: #10b981;
   }
 
   body {
-    @apply bg-white text-slate-900 font-sans antialiased selection:bg-blue-100;
+    @apply text-slate-900 font-sans antialiased;
+    background:
+      radial-gradient(circle at 8% 10%, rgba(195, 127, 71, 0.14), transparent 18%),
+      radial-gradient(circle at 92% 8%, rgba(201, 150, 76, 0.16), transparent 17%),
+      linear-gradient(180deg, #fbf5ed 0%, #f3e8da 46%, #eadbca 100%);
+    color: var(--text-primary);
     overflow-x: clip;
+    selection: #dbeafe;
   }
 
   h1, h2, h3, h4 {
@@ -26,7 +40,10 @@
 
 @layer components {
   .glass-card {
-    @apply bg-white border border-slate-200 shadow-sm transition-all duration-300 hover:shadow-md hover:border-slate-300;
+    background: var(--bg-panel);
+    border: 1px solid var(--line-soft);
+    box-shadow: var(--shadow-soft);
+    @apply transition-all duration-300 backdrop-blur-xl;
   }
 
   .mesh-bg {
@@ -38,15 +55,106 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center px-8 py-3 bg-[#001F5B] text-white font-black uppercase tracking-widest text-xs transition-all hover:bg-[#002d87];
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    box-shadow: 0 18px 36px rgba(124, 39, 18, 0.22);
+    @apply inline-flex items-center justify-center px-6 py-3 text-white font-black uppercase tracking-[0.22em] text-[10px] transition-all rounded-full sm:px-8 sm:text-[11px] sm:tracking-[0.26em];
   }
 
   .btn-secondary {
-    @apply inline-flex items-center px-8 py-3 bg-transparent border-2 border-[#001F5B] text-[#001F5B] font-black uppercase tracking-widest text-xs transition-all hover:bg-[#001F5B] hover:text-white;
+    border: 1px solid rgba(29, 53, 87, 0.2);
+    color: #1d3557;
+    background: rgba(255, 255, 255, 0.56);
+    @apply inline-flex items-center justify-center px-6 py-3 font-black uppercase tracking-[0.22em] text-[10px] transition-all rounded-full sm:px-8 sm:text-[11px] sm:tracking-[0.26em];
   }
 
   .btn-secondary-light {
-    @apply inline-flex items-center px-8 py-3 bg-transparent border-2 border-white text-white font-black uppercase tracking-widest text-xs transition-all hover:bg-white hover:text-[#001F5B];
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    @apply inline-flex items-center justify-center px-6 py-3 text-white font-black uppercase tracking-[0.22em] text-[10px] transition-all rounded-full sm:px-8 sm:text-[11px] sm:tracking-[0.26em];
+  }
+
+  .section-shell {
+    background: var(--bg-panel);
+    border: 1px solid var(--line-soft);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(16px);
+    @apply rounded-[34px];
+  }
+
+  .soft-shell {
+    background: rgba(255, 249, 242, 0.68);
+    border: 1px solid rgba(29, 53, 87, 0.08);
+    box-shadow: 0 18px 52px rgba(71, 38, 24, 0.06);
+    @apply rounded-[34px] backdrop-blur-xl;
+  }
+
+  .eyebrow-label {
+    color: var(--accent);
+    @apply text-[9px] font-black uppercase tracking-[0.28em] sm:text-[10px] sm:tracking-[0.38em];
+  }
+
+  .headline-display {
+    letter-spacing: -0.055em;
+    line-height: 0.94;
+    text-wrap: balance;
+  }
+
+  .body-luxe {
+    color: var(--text-secondary);
+    @apply text-[15px] leading-7 md:text-lg md:leading-9;
+  }
+
+  .meta-label {
+    @apply text-[9px] font-black uppercase tracking-[0.18em] sm:text-[10px] sm:tracking-[0.28em];
+  }
+
+  .hero-chip {
+    @apply inline-flex max-w-full items-center rounded-full px-4 py-2 text-[9px] font-black uppercase tracking-[0.2em] sm:text-[10px] sm:tracking-[0.35em];
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 250, 245, 0.92);
+  }
+
+  .impact-chip {
+    @apply rounded-full px-4 py-3 text-center text-[10px] font-black uppercase tracking-[0.24em];
+    border: 1px solid rgba(163, 58, 33, 0.12);
+    background: rgba(255, 255, 255, 0.56);
+    color: #5a4b41;
+  }
+
+  .editorial-panel {
+    background:
+      radial-gradient(circle at 15% 20%, rgba(201, 150, 76, 0.12), transparent 18%),
+      linear-gradient(135deg, rgba(20, 28, 39, 0.98), rgba(43, 30, 24, 0.98));
+    box-shadow: var(--shadow-strong);
+    @apply rounded-[32px];
+  }
+
+  .frame-panel {
+    border: 1px solid rgba(201, 150, 76, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+    @apply rounded-[28px] backdrop-blur-xl;
+  }
+
+  .luxury-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 150, 76, 0.6), transparent);
+  }
+
+  .quote-panel {
+    background: linear-gradient(135deg, rgba(255,255,255,0.58), rgba(255,255,255,0.36));
+    border: 1px solid rgba(29, 53, 87, 0.08);
+    @apply rounded-[28px] backdrop-blur-xl;
+  }
+
+  .stat-plinth {
+    background: rgba(255, 255, 255, 0.42);
+    border: 1px solid rgba(29, 53, 87, 0.08);
+    @apply rounded-[26px] px-5 py-5 backdrop-blur-xl sm:px-6 sm:py-6;
+  }
+
+  .footer-shell {
+    background: linear-gradient(135deg, rgba(17, 24, 39, 0.98), rgba(34, 27, 23, 0.98));
   }
 }
 
@@ -67,3 +175,43 @@
 [data-reveal-delay="3"] { transition-delay: 0.3s; }
 [data-reveal-delay="4"] { transition-delay: 0.4s; }
 [data-reveal-delay="5"] { transition-delay: 0.5s; }
+
+@media (hover: hover) {
+  .glass-card:hover,
+  .section-shell:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 28px 80px rgba(71, 38, 24, 0.12);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.04);
+  }
+
+  .btn-secondary:hover {
+    background: #1d3557;
+    color: white;
+  }
+
+  .btn-secondary-light:hover {
+    background: rgba(255, 255, 255, 0.96);
+    color: #1d3557;
+  }
+}
+
+@media (max-width: 767px) {
+  .soft-shell,
+  .section-shell,
+  .editorial-panel,
+  .quote-panel,
+  .glass-card,
+  .stat-plinth,
+  .frame-panel {
+    border-radius: 26px;
+  }
+
+  [data-reveal] {
+    transform: translateY(18px);
+    transition-duration: 0.65s;
+  }
+}

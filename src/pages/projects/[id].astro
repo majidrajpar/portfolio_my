@@ -40,44 +40,65 @@ const hasStarr = project.starr && project.starr.situation;
   title={`${project.title} | Majid Mumtaz`}
   description={project.description ?? ''}
 >
-  <!-- Hero -->
-  <section class="pt-32 pb-16 bg-[#001F5B] relative overflow-hidden">
-    <NetworkCanvas client:load nodeCount={35} />
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-      <div class="mb-4">
-        <a href={`${base}projects/`} class="text-white/60 hover:text-white text-xs font-black uppercase tracking-widest transition-colors">
-          ← All Case Studies
-        </a>
-      </div>
-      <div class="max-w-4xl" data-reveal>
-        {project.categories?.[0] && (
-          <span class="inline-block px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] bg-white text-[#001F5B] mb-6">
-            {project.categories[0]}
-          </span>
-        )}
-        <h1 class="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
-          {project.title}
-        </h1>
-        {project.impact && (
-          <div class="pl-5 border-l-4 border-white/40">
-            <div class="text-[10px] font-black text-white/50 uppercase tracking-widest mb-1">Impact Delivered</div>
-            <div class="text-white font-bold text-lg leading-snug">{project.impact}</div>
-          </div>
-        )}
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+      <NetworkCanvas client:load nodeCount={35} />
+      <div class="relative z-10 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:gap-10">
+        <div data-reveal>
+          <a href={`${base}projects/`} class="mb-7 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white">
+            ← All Case Studies
+          </a>
+          {project.categories?.[0] && (
+            <span class="hero-chip mb-6 md:mb-7">{project.categories[0]}</span>
+          )}
+          <h1 class="headline-display max-w-4xl text-[clamp(2.8rem,6vw,5.3rem)] font-black text-white">
+            {project.title}
+          </h1>
+          {project.description && (
+            <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.08rem] md:leading-9">{project.description}</p>
+          )}
+        </div>
+        <div class="quote-panel p-6 md:p-8" data-reveal data-reveal-delay="1">
+          <span class="eyebrow-label text-[#f4c98b]/80">Outcome Signal</span>
+          {project.impact ? (
+            <p class="mt-4 text-base leading-7 text-white/82 md:mt-5 md:text-lg md:leading-8">{project.impact}</p>
+          ) : (
+            <p class="mt-5 text-sm leading-7 text-white/72">Structured around the business problem, the mandate, and the operational result rather than generic control language.</p>
+          )}
+          {project.categories?.length > 0 && (
+            <div class="mt-7 border-t border-white/10 pt-5">
+              <span class="meta-label text-white/45">Practice Area</span>
+              <a href={`${base}projects/category/${catSlug}/`} class="mt-3 inline-flex text-[11px] font-black uppercase tracking-[0.24em] text-[#f4c98b] transition-colors hover:text-white">
+                {project.categories[0]}
+              </a>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Content -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+  <section class="px-4 py-5 md:px-8">
+    <div class="soft-shell mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
+      <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+      <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
+        <span class="meta-label text-[#181511]">Engagement Confidentiality</span>
+        Names, identifiers, and proprietary facts are abstracted where required. The underlying operational patterns and outcomes remain faithful to the real engagement.
+      </p>
+    </div>
+  </section>
 
-        <!-- Main Content -->
-        <div class="lg:col-span-2 space-y-12">
-
-          {hasStarr ? (
-            <!-- STARR Narrative -->
+  <section class="px-4 py-4 pb-12 md:px-8">
+    <div class="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[minmax(0,1.35fr)_380px] lg:gap-8">
+      <div class="space-y-8">
+        {hasStarr ? (
+          <div class="soft-shell px-6 py-8 md:px-10 md:py-12">
+            <div class="mb-10" data-reveal>
+              <span class="eyebrow-label">Mandate Narrative</span>
+              <h2 class="mt-4 text-[clamp(2rem,4vw,3.3rem)] leading-[1.04] text-[#181511]">How the engagement unfolded.</h2>
+            </div>
             <div class="space-y-10">
               {[
                 { label: 'The Situation', content: project.starr.situation },
@@ -85,78 +106,74 @@ const hasStarr = project.starr && project.starr.situation;
                 { label: 'The Intervention', content: project.starr.action },
                 { label: 'The Outcome', content: project.starr.result },
                 { label: 'Reflection', content: project.starr.reflection },
-              ].map((section, i) => (
-                <div class="relative pl-10 pb-10 border-l-2 border-slate-200 last:border-transparent" data-reveal>
-                  <div class="absolute left-[-11px] top-0 w-5 h-5 rounded-full bg-white border-4 border-[#001F5B] shadow-md"></div>
-                  <span class="text-[11px] font-black uppercase tracking-[0.25em] text-[#C9A84C] block mb-3">{section.label}</span>
-                  <p class="text-slate-700 text-base leading-relaxed">{section.content}</p>
+              ].map((section) => (
+                <div class="relative border-l border-[color:var(--line-soft)] pl-6 md:pl-9" data-reveal>
+                  <div class="absolute left-[-7px] top-1 h-3.5 w-3.5 rounded-full border border-[#c7964c] bg-[var(--surface)] shadow-[0_0_0_5px_rgba(255,250,244,0.9)] md:left-[-8px] md:h-4 md:w-4 md:shadow-[0_0_0_6px_rgba(255,250,244,0.9)]"></div>
+                  <span class="eyebrow-label text-[#a66c1c]">{section.label}</span>
+                  <p class="mt-3 text-[15px] leading-7 text-[color:var(--text-secondary)] md:mt-4 md:text-base md:leading-8">{section.content}</p>
                 </div>
               ))}
             </div>
-          ) : (
-            <!-- Simple description for engagements -->
-            <div data-reveal>
-              <p class="text-slate-600 leading-relaxed text-base">{project.description}</p>
-              {project.impact && (
-                <div class="mt-8 pl-5 border-l-4 border-[#001F5B]">
-                  <div class="text-[10px] font-black text-[#001F5B] uppercase tracking-widest mb-1">Key Outcome</div>
-                  <div class="text-slate-900 font-bold text-lg leading-snug">{project.impact}</div>
-                </div>
-              )}
-            </div>
-          )}
-
-          <!-- Data Disclaimer -->
-          <div class="p-4 bg-amber-50 border border-amber-200 text-xs text-amber-800" data-reveal>
-            <strong class="font-black uppercase tracking-wider">Engagement Privacy:</strong> All client names, organisational identifiers, and specific figures have been anonymised in accordance with professional standards and confidentiality obligations.
           </div>
+        ) : (
+          <div class="soft-shell px-6 py-8 md:px-10 md:py-12" data-reveal>
+            <span class="eyebrow-label">Engagement Summary</span>
+            <p class="body-luxe mt-5 max-w-3xl">{project.description}</p>
+            {project.impact && (
+              <div class="quote-panel mt-8 p-5 md:p-6">
+                <span class="meta-label text-white/45">Key Outcome</span>
+                <p class="mt-3 text-base leading-7 text-white/82 md:mt-4 md:text-lg md:leading-8">{project.impact}</p>
+              </div>
+            )}
+          </div>
+        )}
+
+        <div class="glass-card rounded-[30px] p-5 md:p-7" data-reveal>
+          <span class="eyebrow-label text-[#a66c1c]">Disclosure</span>
+          <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">
+            All client names, employer names, and specific figures have been anonymised in accordance with confidentiality obligations and professional standards.
+          </p>
         </div>
-
-        <!-- Sidebar -->
-        <div class="space-y-8" data-reveal data-reveal-delay="1">
-
+      </div>
+      <aside class="space-y-5 md:space-y-6" data-reveal data-reveal-delay="1">
+        <div class="glass-card rounded-[30px] p-6 md:p-7">
+          <span class="eyebrow-label">At A Glance</span>
+          <div class="mt-6 grid gap-4">
           {project.techStack && project.techStack.length > 0 && (
-            <div class="bg-white border border-slate-200 p-6">
-              <h3 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4">Tech Stack / Frameworks</h3>
-              <div class="flex flex-wrap gap-2">
+            <div>
+              <span class="meta-label">Frameworks</span>
+              <div class="mt-3 flex flex-wrap gap-2">
                 {project.techStack.map((tech: string) => (
-                  <span class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-700 border border-slate-200">
+                  <span class="rounded-full border border-[color:var(--line-soft)] bg-white/75 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-600">
                     {tech}
                   </span>
                 ))}
               </div>
             </div>
           )}
-
           {project.categories?.[0] && (
-            <div class="bg-white border border-slate-200 p-6">
-              <h3 class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">Practice Area</h3>
-              <span class="inline-block px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] bg-[#001F5B] text-white">
+            <div>
+              <span class="meta-label">Practice Area</span>
+              <a href={`${base}projects/category/${catSlug}/`} class="mt-3 inline-flex rounded-full bg-[#181512] px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-[#f4c98b] transition-colors hover:bg-[#2b241d]">
                 {project.categories[0]}
-              </span>
+              </a>
             </div>
           )}
-
-          <!-- CTA -->
-          <div class="bg-[#001F5B] p-6">
-            <h3 class="text-white font-black text-sm mb-3">Discuss a Similar Engagement</h3>
-            <p class="text-white/70 text-xs mb-5 leading-relaxed">Facing a similar challenge? Let's explore how this approach applies to your context.</p>
-            <a href={`${base}contact/`} class="block text-center px-4 py-3 bg-white text-[#001F5B] font-black text-xs uppercase tracking-widest hover:bg-slate-100 transition-colors">
-              Start the Conversation
-            </a>
-          </div>
-
-          <div>
-            <a
-              href={`${base}projects/`}
-              class="inline-flex items-center text-[#001F5B] font-black text-xs uppercase tracking-widest hover:text-blue-700 transition-colors"
-            >
-              ← All Case Studies
-            </a>
           </div>
         </div>
 
-      </div>
+        <div class="editorial-panel overflow-hidden rounded-[30px] px-6 py-7 md:px-7 md:py-8">
+          <span class="eyebrow-label text-[#f4c98b]/80">Discuss A Similar Engagement</span>
+          <p class="mt-4 text-sm leading-7 text-white/72">Facing a related governance, fraud, audit, or control challenge? The value is in tailoring the intervention to your operating context, not replicating a template.</p>
+          <a href={`${base}contact/`} class="btn-primary mt-7 inline-flex">Start the Conversation</a>
+        </div>
+
+        <div class="soft-shell px-5 py-4 md:px-6 md:py-5">
+          <a href={`${base}projects/`} class="inline-flex text-[11px] font-black uppercase tracking-[0.24em] text-[#181511] transition-colors hover:text-[#8d6035]">
+            ← Back to All Case Studies
+          </a>
+        </div>
+      </aside>
     </div>
   </section>
 </BaseLayout>

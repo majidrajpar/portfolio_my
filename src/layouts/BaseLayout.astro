@@ -45,6 +45,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <meta name="twitter:image" content={`https://majidrajpar.github.io${ogImage}`} />
 
   <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+  <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.ico`} sizes="any" />
   <title>{title}</title>
 
   <!-- Structured data: Person schema -->
@@ -83,7 +84,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       "https://www.linkedin.com/in/majid-m-4b097118/",
       "https://www.youtube.com/@AuditBitz",
       "https://majidmumtaz.substack.com/",
-      "https://veritux.com/consultants/majid-mumtaz/"
+      "https://veritux.com/consultants/majid-mumtaz/",
+      "https://app.gocatalant.com/c/_/profile/kd6vrg/verify/"
     ]
   })} />
 
@@ -92,7 +94,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
 
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9GCK25N9C5"></script>
@@ -119,26 +121,26 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   </main>
 
   <!-- Footer -->
-  <footer class="py-14 bg-[#001F5B] border-t border-white/10">
+  <footer class="footer-shell py-16 border-t border-white/10">
     <div class="max-w-7xl mx-auto px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-4 mb-14">
         <!-- Brand -->
         <div class="md:col-span-2">
-          <div class="text-white font-black text-xs uppercase tracking-[0.3em] mb-3">Majid Mumtaz</div>
-          <p class="text-white/70 text-xs leading-relaxed max-w-xs">
+          <div class="text-white font-black text-xs uppercase tracking-[0.34em] mb-4">Majid Mumtaz</div>
+          <p class="text-white/70 text-sm leading-7 max-w-sm">
             Director of Internal Audit | Board & C-Suite Advisory. 20+ years building audit functions boards actually act on.
           </p>
-          <div class="flex gap-4 mt-5">
+          <div class="flex gap-5 mt-6">
             <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer"
-               class="text-white/60 hover:text-white text-[10px] font-black uppercase tracking-widest transition-colors">LinkedIn ↗</a>
+               class="text-white/60 hover:text-white text-[10px] font-black uppercase tracking-[0.28em] transition-colors">LinkedIn ↗</a>
             <a href="https://www.linkedin.com/newsletters/7339153291630510080/" target="_blank" rel="noopener noreferrer"
-               class="text-white/60 hover:text-white text-[10px] font-black uppercase tracking-widest transition-colors">Newsletter ↗</a>
+               class="text-white/60 hover:text-white text-[10px] font-black uppercase tracking-[0.28em] transition-colors">Newsletter ↗</a>
           </div>
         </div>
         <!-- Pages -->
         <div>
-          <div class="text-white/50 text-[10px] font-black uppercase tracking-widest mb-4">Pages</div>
-          <ul class="space-y-2">
+          <div class="text-white/45 text-[10px] font-black uppercase tracking-[0.28em] mb-5">Pages</div>
+          <ul class="space-y-3">
             {[
               { label: 'About', href: `${base}/about/` },
               { label: 'Projects', href: `${base}/projects/` },
@@ -149,22 +151,22 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
               { label: 'Tools', href: `${base}/tools/` },
               { label: 'Contact', href: `${base}/contact/` },
             ].map(link => (
-              <li><a href={link.href} class="text-white/70 hover:text-white text-xs font-bold transition-colors">{link.label}</a></li>
+              <li><a href={link.href} class="text-white/72 hover:text-white text-sm font-semibold transition-colors">{link.label}</a></li>
             ))}
           </ul>
         </div>
         <!-- Contact -->
         <div>
-          <div class="text-white/50 text-[10px] font-black uppercase tracking-widest mb-4">Contact</div>
-          <ul class="space-y-2">
-            <li><a href="mailto:majidrajpar@gmail.com" class="text-white/70 hover:text-white text-xs font-bold transition-colors">majidrajpar@gmail.com</a></li>
-            <li><span class="text-white/70 text-xs font-bold">Dubai, UAE</span></li>
-            <li><a href={`${base}/cv/Majid-Mumtaz-Internal-Audit-Director-CV.pdf`} download class="text-white/70 hover:text-white text-xs font-bold transition-colors">Download CV</a></li>
+          <div class="text-white/45 text-[10px] font-black uppercase tracking-[0.28em] mb-5">Contact</div>
+          <ul class="space-y-3">
+            <li><a href="mailto:majidrajpar@gmail.com" class="text-white/72 hover:text-white text-sm font-semibold transition-colors">majidrajpar@gmail.com</a></li>
+            <li><span class="text-white/72 text-sm font-semibold">Dubai, UAE</span></li>
+            <li><a href={`${base}/cv/Majid-Mumtaz-Internal-Audit-Director-CV.pdf`} download class="text-white/72 hover:text-white text-sm font-semibold transition-colors">Download CV</a></li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-white/10 pt-6 text-center">
-        <div class="text-white/50 text-[9px] uppercase tracking-[0.5em] font-black">
+      <div class="border-t border-white/10 pt-7 text-center">
+        <div class="text-white/45 text-[9px] uppercase tracking-[0.42em] font-black">
           &copy; {new Date().getFullYear()} Majid Mumtaz CIA, ACA, FCCA. All Rights Reserved.
         </div>
       </div>
