@@ -61,6 +61,13 @@ const publications = [
     summary: 'A challenge to imported compliance frameworks that miss how relationship-based bribery risk actually operates in the Gulf.',
     href: 'https://www.corporatecomplianceinsights.com/fcpa-compliance-programs-missing-nuances-bribery-persian-gulf/',
   },
+  {
+    outlet: 'Consultancy ME',
+    date: 'April 2026',
+    title: 'The Risk of Algorithmic Entropy: When AI Models Age Faster Than Evolving Fraud',
+    summary: 'Fraud patterns shift continuously. AI models trained on historical data develop structural blind spots — the entropy accumulates invisibly until a loss makes it visible.',
+    href: 'https://www.consultancy-me.com/news/12980/the-risk-of-algorithmic-entropy-when-ai-models-age-faster-than-evolving-fraud',
+  },
 ];
 
 const testimonials = [
@@ -173,7 +180,7 @@ const testimonials = [
   </section>
 
   <section class="px-4 py-5 md:px-8">
-    <div class="mx-auto grid max-w-7xl gap-3 md:grid-cols-6">
+    <div class="mx-auto grid max-w-7xl gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-6">
       {impactChips.map((chip, i) => (
         <div class="impact-chip" data-reveal data-reveal-delay={String((i % 3) + 1)}>{chip}</div>
       ))}
