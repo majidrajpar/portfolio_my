@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CaseStudyCard from '../../components/CaseStudyCard.jsx';
 import NetworkCanvas from '../../components/NetworkCanvas';
-import GrammarBackground from '../../components/GrammarBackground';
 import { getCaseStudies, getProfessionalEngagements } from '../../lib/db.js';
 
 const strategicCaseStudies = getCaseStudies();
@@ -14,44 +13,42 @@ const base = import.meta.env.BASE_URL;
   title="Strategic Case Studies | Client Outcomes — Majid Mumtaz"
   description="High-stakes audit, risk, and governance outcomes across GCC and international operations. Structured around the business problem, not the control framework."
 >
-  <!-- Hero -->
-  <section class="pt-32 pb-20 bg-[#001F5B] relative overflow-hidden">
-    <NetworkCanvas client:load nodeCount={35} />
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-      <div class="max-w-3xl" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#C9A84C] mb-6 block">Executive Portfolio</span>
-        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight text-balance">
-          Strategic <span class="text-[#C9A84C]">Outcomes.</span>
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+      <NetworkCanvas client:load nodeCount={35} />
+      <div class="relative z-10 max-w-4xl" data-reveal>
+        <span class="hero-chip mb-8">Executive Portfolio</span>
+        <h1 class="headline-display max-w-4xl text-[clamp(3rem,7vw,6.2rem)] font-black text-white">
+          Strategic
+          <span class="block text-[#f4c98b]">outcomes</span>
+          <span class="block">with operating weight.</span>
         </h1>
-        <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
-          A selection of high-impact engagements demonstrating enterprise value protection, tech-enabled audit transformation, and board-level governance.
+        <p class="mt-8 max-w-3xl text-base leading-8 text-white/74 md:text-[1.15rem] md:leading-9">
+          High-stakes audit, risk, and governance engagements structured around the business problem, not the control framework that appears after the fact.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Disclosure -->
-  <div class="bg-slate-50 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-start gap-3">
-      <svg class="w-4 h-4 text-[#C9A84C] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <section class="px-4 py-5 md:px-8">
+    <div class="soft-shell mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
+      <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
       </svg>
-      <p class="text-[11px] text-slate-500 leading-relaxed max-w-4xl">
-        <span class="font-bold uppercase tracking-wider text-slate-700">Engagement Privacy & Anonymisation —</span>
-        In accordance with professional standards and confidentiality agreements, all specific client names and proprietary identifiers have been anonymised. The figures and outcomes presented reflect real-world impact but are abstracted to protect the privacy of the organisations involved.
+      <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
+        <span class="meta-label text-[#181511]">Engagement Privacy</span>
+        Client names and proprietary identifiers are anonymised in accordance with confidentiality obligations. Figures and outcomes reflect real-world impact while protecting organizational privacy.
       </p>
     </div>
-  </div>
+  </section>
 
-  <!-- Strategic Case Studies -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="mb-16">
-        <h2 class="text-3xl font-black text-[#001F5B] mb-2 uppercase tracking-tighter">Strategic Case Studies</h2>
-        <div class="h-1 w-20 bg-[#C9A84C]"></div>
+  <section class="px-4 py-4 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-10" data-reveal>
+        <span class="eyebrow-label">Strategic Case Studies</span>
+        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Selected mandates.</h2>
       </div>
-
-      <div class="space-y-4">
+      <div class="space-y-8">
         {strategicCaseStudies.map((study) => (
           <CaseStudyCard client:visible study={study} />
         ))}
@@ -59,50 +56,32 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <!-- Professional Engagements Catalog -->
-  <section class="py-24 bg-slate-50 border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="mb-16 text-center">
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#8895AA] mb-4 block">Breadth of Experience</span>
-        <h2 class="text-3xl font-black text-[#001F5B] mb-4">Professional Engagements Catalog</h2>
-        <p class="text-slate-500 max-w-2xl mx-auto">A high-level summary of additional advisory and audit mandates across the GCC and international markets.</p>
+  <section class="px-4 py-4 pb-8 md:px-8">
+    <div class="soft-shell mx-auto max-w-7xl px-7 py-10 md:px-10 md:py-12">
+      <div class="mb-10 text-center" data-reveal>
+        <span class="eyebrow-label">Breadth of Experience</span>
+        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Professional engagements catalog.</h2>
+        <p class="body-luxe mx-auto mt-5 max-w-3xl">Additional advisory and audit mandates across the GCC and international markets, presented as a higher-level portfolio of outcomes.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {professionalEngagements.map((engagement, i) => (
-          <div 
-            class="bg-white p-8 border border-slate-200 shadow-sm flex flex-col group hover:border-[#C9A84C] transition-colors"
-            data-reveal
-            data-reveal-delay={String((i % 3) + 1)}
-          >
+          <div class="glass-card flex flex-col rounded-[30px] p-8" data-reveal data-reveal-delay={String((i % 3) + 1)}>
             <div class="mb-4">
-              <span class="text-[9px] font-black uppercase tracking-widest text-[#C9A84C] bg-[#C9A84C]/5 px-2 py-1">
-                {engagement.category}
-              </span>
+              <span class="rounded-full bg-[#a33a21]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.24em] text-[#a33a21]">{engagement.category}</span>
             </div>
-            <h4 class="text-lg font-black text-[#001F5B] mb-3 leading-tight">{engagement.title}</h4>
-            <p class="text-slate-500 text-xs leading-relaxed mb-6 flex-1">
-              {engagement.desc}
-            </p>
-            <div class="pt-4 border-t border-slate-100 mt-auto">
-              <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Key Outcome</span>
-              <p class="text-[11px] font-black text-slate-700 leading-snug">{engagement.outcome}</p>
+            <h3 class="text-xl leading-tight text-[#181511]">{engagement.title}</h3>
+            <p class="mt-4 flex-1 text-sm leading-8 text-[color:var(--text-secondary)]">{engagement.desc}</p>
+            <div class="mt-6 border-t border-[color:var(--line-soft)] pt-5">
+              <span class="meta-label text-slate-400">Key Outcome</span>
+              <p class="mt-3 text-sm font-semibold leading-7 text-[#181511]">{engagement.outcome}</p>
             </div>
           </div>
         ))}
       </div>
-    </div>
-  </section>
 
-  <!-- CTA -->
-  <section class="py-24 bg-[#001F5B] relative overflow-hidden">
-    <GrammarBackground client:visible variant="dark-grid" />
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center relative z-10" data-reveal>
-      <h2 class="text-4xl font-black text-white mb-6">Close the Gap, Not Just Report It.</h2>
-      <p class="text-xl text-white/70 mb-10 max-w-2xl mx-auto">Every engagement starts with the business problem. The controls follow.</p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <div class="mt-10 flex justify-center">
         <a href={`${base}contact/`} class="btn-primary">Start the Conversation</a>
-        <a href={`${base}consulting/`} class="bg-white/5 border border-white/20 text-white px-8 py-4 text-xs font-black uppercase tracking-widest hover:bg-[#C9A84C] hover:text-[#001F5B] transition-all">View Advisory Services</a>
       </div>
     </div>
   </section>

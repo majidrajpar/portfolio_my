@@ -6,13 +6,13 @@ import GrammarBackground from '../../components/GrammarBackground';
 const base = import.meta.env.BASE_URL;
 
 const categoryColors: Record<string, string> = {
-  'Audit Intelligence': 'bg-[#001F5B] text-white',
-  'Fraud & Forensics':  'bg-rose-700 text-white',
-  'Governance':         'bg-indigo-700 text-white',
-  'Internal Controls':  'bg-teal-700 text-white',
-  'Enterprise Risk':    'bg-orange-600 text-white',
-  'Compliance':         'bg-purple-700 text-white',
-  'Reporting':          'bg-slate-700 text-white',
+  'Audit Intelligence': 'bg-[#181512] text-[#f4c98b]',
+  'Fraud & Forensics':  'bg-[#3a1913] text-[#f1b5a2]',
+  'Governance':         'bg-[#1f253a] text-[#c8d2f8]',
+  'Internal Controls':  'bg-[#17302e] text-[#b7e2db]',
+  'Enterprise Risk':    'bg-[#40250f] text-[#f3cf9b]',
+  'Compliance':         'bg-[#2f223f] text-[#d7c3f4]',
+  'Reporting':          'bg-[#293038] text-[#d4dee8]',
 };
 ---
 
@@ -20,83 +20,116 @@ const categoryColors: Record<string, string> = {
   title="Audit Intelligence Tools | Majid Mumtaz"
   description="Browser-based tools for audit professionals — ML-powered severity classifiers, fraud risk calculators, governance maturity assessments, and more. No data stored or transmitted."
 >
-  <!-- Hero -->
-  <section class="pt-32 pb-20 bg-[#001F5B] relative overflow-hidden">
-    <NetworkCanvas client:load nodeCount={35} />
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-      <div class="max-w-3xl" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Audit Intelligence Tools</span>
-        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-          Tools Built for<br/>Audit Professionals.
-        </h1>
-        <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
-          ML-powered, browser-based tools for risk assessment, governance evaluation, fraud detection, and compliance monitoring. Free to use — no account, no data stored.
-        </p>
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+      <NetworkCanvas client:load nodeCount={35} />
+      <div class="relative z-10 grid gap-8 lg:grid-cols-[1.35fr_0.85fr] lg:items-end lg:gap-10">
+        <div data-reveal>
+          <span class="hero-chip mb-6 sm:mb-8">Audit Intelligence Tools</span>
+          <h1 class="headline-display max-w-4xl text-[clamp(3rem,7vw,6rem)] font-black text-white">
+            Private-browser
+            <span class="block text-[#f4c98b]">tools for boards,</span>
+            <span class="block">audit, and risk.</span>
+          </h1>
+          <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.12rem] md:leading-9">
+            Browser-native tools for governance evaluation, fraud analysis, control review, and board-grade reporting. The point is usable judgment support, not demo-ware.
+          </p>
+        </div>
+        <div class="quote-panel p-6 md:p-8" data-reveal data-reveal-delay="1">
+          <span class="eyebrow-label text-[#f4c98b]/80">Operating Standard</span>
+          <div class="mt-4 space-y-4 text-sm leading-7 text-white/72 md:mt-5 md:space-y-5">
+            <p>Every tool runs locally in the browser and is structured for executive review, not just analyst experimentation.</p>
+            <p>Use them as decision-support surfaces for control design, risk scoring, investigation framing, and communication discipline.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Privacy notice -->
-  <div class="bg-slate-50 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-3 flex items-start gap-3">
-      <svg class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <section class="px-4 py-5 md:px-8">
+    <div class="soft-shell mx-auto grid max-w-7xl gap-4 px-5 py-5 md:grid-cols-[1.3fr_0.7fr] md:px-7" data-reveal>
+      <div class="flex items-start gap-3">
+        <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-      </svg>
-      <p class="text-[11px] text-slate-500 leading-relaxed">
-        <span class="font-bold uppercase tracking-wider text-slate-600">Privacy — </span>
-        All tools run entirely in your browser. No inputs, scores, or outputs are transmitted to any server or stored in any database.
-      </p>
-    </div>
-  </div>
-
-  <!-- Tool grid -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-
-      <!-- Live tools -->
-      <div class="mb-6" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B]">Available Now</span>
+        </svg>
+        <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
+          <span class="meta-label text-[#181511]">Privacy First</span>
+          Inputs, scores, files, and outputs remain on-device. The tooling is designed to be credible in live client or boardroom contexts where discretion matters.
+        </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      <div class="grid gap-3 sm:grid-cols-3 md:gap-4">
+        <div class="stat-plinth">
+          <span class="meta-label">Live Tools</span>
+          <strong class="mt-3 block text-3xl leading-none text-[#181511]">{tools.filter((t) => t.isLive).length}</strong>
+        </div>
+        <div class="stat-plinth">
+          <span class="meta-label">ML-Enhanced</span>
+          <strong class="mt-3 block text-3xl leading-none text-[#181511]">{tools.filter((t) => t.ml).length}</strong>
+        </div>
+        <div class="stat-plinth">
+          <span class="meta-label">Browser-Local</span>
+          <strong class="mt-3 block text-3xl leading-none text-[#181511]">100%</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-4 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between" data-reveal>
+        <div>
+          <span class="eyebrow-label">Available Now</span>
+          <h2 class="mt-4 text-[clamp(2rem,4.6vw,3.8rem)] leading-[1.02] text-[#181511]">Decision-support instruments.</h2>
+        </div>
+        <p class="body-luxe max-w-2xl">Designed to make audit judgment, risk triage, and board communication sharper without pushing sensitive information into third-party systems.</p>
+      </div>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
         {tools.filter(t => t.isLive).map((tool, i) => (
           <a
             href={tool.href}
-            class="group bg-white border border-slate-200 flex flex-col p-8 hover:shadow-lg hover:border-[#001F5B]/30 transition-all duration-300 h-full"
+            class="glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8"
             data-reveal
             data-reveal-delay={String((i % 3) + 1)}
           >
-            <div class="mb-5">
-              <span class={`inline-block px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
+            <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+              <span class={`inline-flex w-fit px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
                 {tool.category}
               </span>
+              <div class="flex flex-wrap gap-2">
+                {tool.ml && <span class="rounded-full border border-[#c7964c]/30 bg-[#c7964c]/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#a66c1c]">ML</span>}
+                {tool.rust && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">WASM</span>}
+              </div>
             </div>
 
-            <h3 class="text-xl font-black text-slate-900 mb-3 leading-tight group-hover:text-[#001F5B] transition-colors">
+            <h3 class="text-[1.28rem] leading-tight text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[1.45rem]">
               {tool.title}
             </h3>
-            <p class="text-slate-500 text-sm flex-1 leading-relaxed mb-6">
+            <p class="mt-4 flex-1 text-sm leading-7 text-[color:var(--text-secondary)] md:leading-8">
               {tool.description}
             </p>
-            <span class="inline-flex items-center text-[#001F5B] font-black text-xs uppercase tracking-widest group-hover:text-blue-700 transition-colors">
+            <div class="mt-6 border-t border-[color:var(--line-soft)] pt-4 md:mt-7 md:pt-5">
+              <span class="meta-label">Execution</span>
+              <span class="mt-3 inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[11px] md:tracking-[0.24em]">
               Launch Tool
-              <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
-            </span>
+              </span>
+            </div>
           </a>
         ))}
       </div>
 
-      <!-- Coming soon (only rendered if any tools are not yet live) -->
       {tools.some(t => !t.isLive) && (
-        <>
-          <div class="mb-6" data-reveal>
-            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Coming Soon</span>
+        <div class="soft-shell mt-10 px-6 py-8 md:px-10 md:py-12">
+          <div class="mb-8" data-reveal>
+            <span class="eyebrow-label text-slate-500">Coming Soon</span>
+            <h3 class="mt-4 text-[clamp(1.6rem,4vw,3rem)] leading-[1.04] text-[#181511]">Additional tools in reserve.</h3>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
             {tools.filter(t => !t.isLive).map((tool, i) => (
               <div
-                class="bg-slate-50 border border-slate-200 border-dashed flex flex-col p-8 opacity-70 h-full"
+                class="glass-card flex h-full flex-col rounded-[30px] border-dashed p-6 opacity-70 md:p-8"
                 data-reveal
                 data-reveal-delay={String((i % 3) + 1)}
               >
@@ -117,18 +150,20 @@ const categoryColors: Record<string, string> = {
               </div>
             ))}
           </div>
-        </>
+        </div>
       )}
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-20 bg-[#001F5B] relative overflow-hidden">
+  <section class="relative overflow-hidden px-4 py-8 pb-12 md:px-8">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 text-center md:px-10 md:py-14">
     <GrammarBackground client:visible variant="dark-grid" />
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center relative z-10" data-reveal>
-      <h2 class="text-3xl font-black text-white mb-4">Need a Custom Tool for Your Team?</h2>
-      <p class="text-white/70 mb-8 max-w-xl mx-auto">These tools are built on real engagement experience. If your organisation needs bespoke audit or governance tooling, let's talk.</p>
-      <a href={`${base}contact/`} class="btn-primary">Start the Conversation</a>
+      <div class="relative z-10" data-reveal>
+        <span class="hero-chip mb-5 md:mb-6">Custom Build</span>
+        <h2 class="mx-auto max-w-3xl text-[clamp(2rem,4.4vw,3.8rem)] leading-[1.03] text-white">Need a bespoke tool for an audit, risk, or governance workflow?</h2>
+        <p class="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-white/72 md:mt-6 md:text-base md:leading-8">These tools are grounded in live engagement patterns. If your team needs a more specific instrument, the right move is to build for your operating reality rather than force-fit a generic SaaS product.</p>
+        <a href={`${base}contact/`} class="btn-primary mt-8 inline-flex">Start the Conversation</a>
+      </div>
     </div>
   </section>
 </BaseLayout>

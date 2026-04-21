@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   AreaChart,
   Area,
@@ -14,6 +14,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function CareerTimeline({ careerData }) {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [isChartReady, setIsChartReady] = useState(false);
+
+  useEffect(() => {
+    const timer = window.requestAnimationFrame(() => setIsChartReady(true));
+    return () => {
+      window.cancelAnimationFrame(timer);
+      setIsChartReady(false);
+    };
+  }, []);
 
   if (!careerData || careerData.length === 0) return null;
 
@@ -124,7 +133,8 @@ export default function CareerTimeline({ careerData }) {
         </motion.div>
       </div>
 
-      <ResponsiveContainer width="100%" height="100%">
+      {isChartReady && (
+      <ResponsiveContainer width="100%" height={600} debounce={120}>
         <AreaChart
           data={careerData}
           margin={{ top: 180, right: 100, left: 100, bottom: 120 }}
@@ -244,6 +254,7 @@ export default function CareerTimeline({ careerData }) {
           ))}
         </AreaChart>
       </ResponsiveContainer>
+      )}
       
       {/* Horizontal Label Strip */}
       <div className="absolute bottom-20 left-0 right-0 flex justify-between px-[100px] pointer-events-none">

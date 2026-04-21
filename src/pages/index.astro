@@ -6,582 +6,405 @@ import GrammarBackground from '../components/GrammarBackground';
 import { getCaseStudies } from '../lib/db.js';
 
 const featuredProjects = getCaseStudies().slice(0, 3);
-
 const base = import.meta.env.BASE_URL;
+
+const signals = [
+  {
+    title: 'Governance That Survives Pressure',
+    body: 'Audit structures designed to hold when growth, incentives, regulatory friction, and operator shortcuts start bending the business out of shape.',
+  },
+  {
+    title: 'Commercially Literate Assurance',
+    body: 'Functions repositioned from compliance overhead into instruments for revenue protection, exposure detection, and board-grade decision support.',
+  },
+  {
+    title: 'Population-Based Risk Detection',
+    body: 'Full-population testing and exception design used where static controls and sample-based comfort are no longer defensible.',
+  },
+];
+
+const impactChips = [
+  'Pre-IPO governance',
+  'Board-grade reporting',
+  'Fraud analytics',
+  'ICOFR and SOX design',
+  'ERM architecture',
+  'Audit transformation',
+];
+
+const proofMetrics = [
+  { value: '20+', label: 'Years of audit, risk, and governance leadership' },
+  { value: 'AED 7.7M', label: 'financial impact recovered or protected' },
+  { value: '47% → 3%', label: 'false positives reduced in fraud detection logic' },
+  { value: '7', label: 'countries across GCC and adjacent markets' },
+];
+
+const publications = [
+  {
+    outlet: 'IIA Internal Auditor',
+    date: 'February 2026',
+    title: 'Teaching an Algorithm to Filter False Flags',
+    summary: 'A practitioner account of reducing false positives while making fraud logic trustworthy enough for operations teams to use.',
+    href: 'https://internalauditor.theiia.org/en/voices/2026/february/teaching-an-algorithm-to-filter-false-flags/',
+  },
+  {
+    outlet: 'GRC Report',
+    date: 'April 2026',
+    title: 'AI Authorization Is Not AI Accountability',
+    summary: 'Boards may approve AI, but accountability for what those systems decide in production is still structurally missing.',
+    href: 'https://www.grcreport.com/post/ai-authorization-is-not-ai-accountability',
+  },
+  {
+    outlet: 'Corporate Compliance Insights',
+    date: 'April 2026',
+    title: 'FCPA Compliance Programs Are Missing Important Nuances About How Bribery Works in the Persian Gulf',
+    summary: 'A challenge to imported compliance frameworks that miss how relationship-based bribery risk actually operates in the Gulf.',
+    href: 'https://www.corporatecomplianceinsights.com/fcpa-compliance-programs-missing-nuances-bribery-persian-gulf/',
+  },
+];
+
+const testimonials = [
+  {
+    photo: `${base}images/testimonials/sally.png`,
+    quote: 'Majid brings credibility, integrity, and a genuine collaborative mindset to internal audit, and any organisation would benefit greatly from his leadership and expertise.',
+    name: 'Sally Swanepoel',
+    role: 'VP Finance, Kitopi',
+  },
+  {
+    photo: `${base}images/testimonials/steve.png`,
+    quote: 'His intuitive approach allowed an efficient and speedy, yet thoughtful improvement of systems and culture. I can highly recommend him in future Internal Audit or Executive Leadership roles.',
+    name: 'Steve Skoien',
+    role: 'Restaurant Executive, ALFA',
+  },
+  {
+    photo: `${base}images/testimonials/alkadi.png`,
+    quote: 'He demonstrates superior technical Internal Audit & Risk ability and consistently produces work of exceptional quality.',
+    name: 'Abdulaziz AlKadi',
+    role: 'CHRO and Board Member',
+  },
+];
 ---
 
 <BaseLayout
   title="Majid Mumtaz | Director of Internal Audit — CIA, ACA, FCCA"
-  description="Director of Internal Audit with 20+ years finding the operational and governance gaps businesses haven't priced yet — fraud detection, board-grade assurance, and controls that actually close the risk they were built for. CIA, ACA, FCCA. Based in Dubai, open to full-time roles globally."
+  description="Director of Internal Audit with 20+ years finding the operational and governance gaps businesses have not priced yet — fraud detection, board-grade assurance, and controls that actually close the risk they were built for."
 >
-
-  <!-- Hero -->
-  <section class="min-h-screen flex items-center justify-center pt-20 overflow-hidden relative bg-[#001F5B]">
-    <NetworkCanvas client:load nodeCount={42} />
-    <div class="max-w-6xl mx-auto px-8 z-10 flex flex-col items-center text-center" data-reveal>
-      <span class="inline-block px-6 py-2 mb-10 bg-white/10 border border-white/30 text-white rounded text-[10px] font-black uppercase tracking-[0.4em]">
-        Director of Internal Audit &nbsp;|&nbsp; CIA · ACA · FCCA
-      </span>
-      <h1 class="text-[clamp(3rem,9vw,6.5rem)] text-center leading-[0.93] mb-10 tracking-tight text-white font-black">
-        I Build Audit Functions<br />That Actually Protect<br />Capital.
-      </h1>
-      <p class="text-lg md:text-xl mb-14 text-blue-100 font-medium max-w-3xl leading-relaxed">
-        Boards pay for audit assurance. Most receive compliance theatre. Twenty years closing that gap: governance that survives external scrutiny, fraud detection that tests the full population, and board reporting built around the risks not yet priced. Open to full-time Director of Internal Audit and CAE roles globally.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-        <a href="#case-studies" class="btn-primary">See the Work ↓</a>
-        <a href={`${base}contact/`} class="btn-secondary-light">Get in Touch →</a>
-      </div>
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute left-[6%] top-[10%] h-48 w-48 rounded-full bg-[#c7964c]/20 blur-3xl"></div>
+      <div class="absolute right-[8%] top-[12%] h-56 w-56 rounded-full bg-[#a33a21]/18 blur-3xl"></div>
     </div>
-  </section>
 
-  <!-- Client Logo Strip -->
-  <section class="bg-[#001F5B] py-12 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-8" data-reveal>
-      <p class="text-[10px] font-black uppercase tracking-[0.4em] text-white/60 text-center mb-10">Organisations I've Served</p>
-      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-14 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
-        {[
-          'EY',
-          'KPMG',
-          'Kitopi',
-          "McDonald's",
-          'Al Faisaliah Group',
-          'BMA Asset Management',
-          'Veritux',
-          'Umbrex',
-        ].map((org) => (
-          <div class="h-7 md:h-9 flex items-center justify-center">
-            <span class="text-white font-black text-[10px] md:text-xs uppercase tracking-[0.3em]">{org}</span>
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-8 md:px-10 md:py-10">
+      <NetworkCanvas client:load nodeCount={42} />
+
+      <div class="relative z-10 grid gap-8 lg:grid-cols-[1.5fr_0.82fr] lg:items-end">
+        <div class="pt-4" data-reveal>
+          <span class="hero-chip mb-8">Director of Internal Audit | CIA · ACA · FCCA</span>
+          <h1 class="headline-display max-w-4xl text-[clamp(3.1rem,8vw,7.1rem)] font-black text-white">
+            Audit leadership
+            <span class="block text-[#f4c98b]">for when capital</span>
+            <span class="block">is actually at risk.</span>
+          </h1>
+          <p class="mt-8 max-w-3xl text-base leading-8 text-white/74 md:text-[1.15rem] md:leading-9">
+            Boards pay for assurance. Most receive compliance theatre. Twenty years closing that gap: governance that survives scrutiny, fraud detection that tests the full population, and reporting built around the risks the business still has not priced.
+          </p>
+
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+            <a href="#case-studies" class="btn-primary">See the Work</a>
+            <a href={`${base}contact/`} class="btn-secondary-light">Get in Touch</a>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
 
-  <!-- Published Author Strip -->
-  <section class="bg-[#001F5B] py-3.5 border-t border-[#C9A84C]/20">
-    <div class="max-w-7xl mx-auto px-8">
-      <a href={`${base}about/#books`} class="flex flex-wrap items-center justify-center gap-2 md:gap-5 group">
-        <svg class="w-4 h-4 text-[#C9A84C] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-        </svg>
-        <span class="text-[#C9A84C] font-black text-[10px] uppercase tracking-[0.35em]">Published Author</span>
-        <span class="text-white/20 hidden md:inline">&middot;</span>
-        <span class="text-white/60 text-[11px] font-medium">5 Books on Amazon — Internal Audit, Risk Management & Forensic Accounting</span>
-        <span class="text-white/20 hidden md:inline">&middot;</span>
-        <span class="text-[#C9A84C] text-[10px] font-black uppercase tracking-[0.3em] group-hover:text-white transition-colors">View Books ↗</span>
-      </a>
-    </div>
-  </section>
+          <div class="luxury-divider mt-10 mb-7"></div>
 
-  <!-- Stats Strip -->
-  <section class="py-4 bg-slate-100 relative overflow-hidden">
-    <GrammarBackground client:visible variant="stats" />
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-px">
-        {[
-          { value: '20+', label: 'Years Experience', sub: 'GCC, MENA & emerging markets' },
-          { value: '7', label: 'Countries', sub: 'Cross-border audit coverage' },
-          { value: '5', label: 'Published Pieces', sub: 'IIA, GRC Report (x2), Consultancy ME, CCI' },
-          { value: 'AED 7.7M', label: 'Total Financial Impact', sub: 'Fraud detected & losses prevented' },
-        ].map((s) => (
-          <div class="bg-white text-center px-6 py-8">
-            <div class="text-3xl font-black text-[#001F5B] mb-1">{s.value}</div>
-            <div class="text-[10px] font-black uppercase tracking-widest text-slate-700 mb-0.5">{s.label}</div>
-            <div class="text-[10px] text-slate-400">{s.sub}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- About Teaser -->
-  <section class="py-24 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-16 items-start max-w-6xl mx-auto" data-reveal>
-        <div class="flex justify-center lg:justify-start lg:pt-2">
-          <div class="relative w-48 h-48 overflow-hidden border border-slate-300 shadow-xl flex-shrink-0">
-            <img src={`${base}images/majid-profile-home.jpg`} alt="Majid Mumtaz" class="w-full h-full object-cover object-top" />
+          <div class="grid gap-3 sm:grid-cols-3">
+            <div class="frame-panel px-4 py-4">
+              <div class="meta-label text-white/45">Current Focus</div>
+              <div class="mt-2 text-sm font-bold leading-6 text-white/85">Director of Internal Audit and CAE roles globally, plus selective advisory mandates.</div>
+            </div>
+            <div class="frame-panel px-4 py-4">
+              <div class="meta-label text-white/45">Markets</div>
+              <div class="mt-2 text-sm font-bold leading-6 text-white/85">UAE, KSA, Qatar, Pakistan, and cross-border GCC operations.</div>
+            </div>
+            <div class="frame-panel px-4 py-4">
+              <div class="meta-label text-white/45">Operating Model</div>
+              <div class="mt-2 text-sm font-bold leading-6 text-white/85">Business-first audit, structural independence, population testing, board-grade reporting.</div>
+            </div>
           </div>
         </div>
-        <div>
-          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-4 block">About</span>
-          <h2 class="text-[clamp(2rem,5vw,3.5rem)] text-slate-900 mb-8 leading-tight font-black tracking-tighter">
-            Twenty Years. One Focus:<br /><span class="text-[#001F5B]">Protecting Capital.</span>
+
+        <div class="relative" data-reveal data-reveal-delay="2">
+          <div class="frame-panel p-6 md:p-7">
+            <div class="flex items-center justify-between gap-4">
+              <div class="meta-label text-[#f4c98b]">Signal Board</div>
+              <div class="h-px flex-1 bg-gradient-to-r from-[#c7964c]/50 to-transparent"></div>
+            </div>
+            <div class="mt-5 space-y-4">
+              {proofMetrics.map((metric) => (
+                <div class="rounded-[24px] border border-white/10 bg-black/10 px-5 py-4">
+                  <div class="text-3xl font-black tracking-tight text-white">{metric.value}</div>
+                  <div class="mt-2 text-xs uppercase tracking-[0.2em] text-white/50">{metric.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-5 md:px-8">
+    <div class="mx-auto grid max-w-7xl gap-3 md:grid-cols-6">
+      {impactChips.map((chip, i) => (
+        <div class="impact-chip" data-reveal data-reveal-delay={String((i % 3) + 1)}>{chip}</div>
+      ))}
+    </div>
+  </section>
+
+  <section class="px-4 pb-4 md:px-8">
+    <div class="mx-auto max-w-7xl" data-reveal>
+      <div class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="soft-shell p-7 md:p-10">
+          <span class="eyebrow-label">Positioning</span>
+          <h2 class="mt-4 max-w-2xl text-[clamp(2.1rem,5vw,4.2rem)] leading-[1.01] text-[#181511]">
+            Protecting capital by redesigning how assurance is built, measured, and trusted.
           </h2>
-          <p class="text-slate-600 text-lg leading-relaxed mb-6">
-            Twenty years inside complex audit environments: multi-brand F&amp;B platforms spanning 7 countries, healthcare subsidiaries targeting Nomu listing, and holding groups restructuring for a new governance era. The assumption that sampling equals coverage is how fraud compounds unseen. A 5% sample carries roughly a 40% chance of missing a fraud cluster. Not a methodology. A liability transfer. The AED 7.7M we recovered existed in the 95% that sampling would have missed. Where most programmes waited for the loss to surface, we built detection before the pattern repeated.
+          <div class="luxury-divider mt-8 max-w-md"></div>
+          <p class="body-luxe mt-8 max-w-3xl">
+            The strongest audit functions do not merely confirm process compliance. They create visibility where the organisation has already become too complex for intuition, too fast for manual oversight, and too exposed for sample-based reassurance.
           </p>
-          <p class="text-[#001F5B] text-base font-bold italic leading-relaxed mb-10">
-            Now seeking a full-time Director of Internal Audit or CAE role with organisations ready to make that same shift.
+        </div>
+
+        <div class="quote-panel p-7 md:p-10">
+          <div class="meta-label text-[#1d3557]">Operating Thesis</div>
+          <p class="mt-6 font-serif text-[clamp(1.4rem,2vw,2.1rem)] leading-[1.7] text-[#1b1a17]">
+            Assurance should feel like strategic clarity, not procedural noise.
           </p>
-          <a href={`${base}about/`} class="btn-secondary">Full Profile & Credentials</a>
+          <p class="mt-6 text-sm leading-8 text-[color:var(--text-secondary)]">
+            That means structural independence, commercial context, full-population logic, and reporting that changes board behaviour rather than satisfying reporting rituals.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        {signals.map((signal, i) => (
+          <article class="glass-card rounded-[30px] p-7" data-reveal data-reveal-delay={String(i + 1)}>
+            <div class="meta-label text-[#a33a21]">0{i + 1}</div>
+            <h3 class="mt-4 text-xl leading-tight text-[#181511]">{signal.title}</h3>
+            <p class="mt-4 text-sm leading-8 text-[color:var(--text-secondary)]">{signal.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-4 md:px-8">
+    <div class="mx-auto max-w-7xl" data-reveal>
+      <div class="grid gap-6 lg:grid-cols-[0.78fr_1.22fr]">
+        <div class="editorial-panel overflow-hidden px-7 py-8 md:px-8 md:py-10">
+          <div class="relative z-10">
+            <div class="meta-label text-[#f4c98b]">Profile</div>
+            <div class="mt-6 overflow-hidden rounded-[26px] border border-white/12">
+              <img src={`${base}images/majid-profile-home.jpg`} alt="Majid Mumtaz" class="h-[420px] w-full object-cover object-top" />
+            </div>
+            <div class="meta-label mt-6 text-white/42">
+              Dubai, UAE · GCC and international mandates
+            </div>
+          </div>
+        </div>
+
+        <div class="soft-shell px-7 py-10 md:px-10 md:py-12">
+          <span class="eyebrow-label">About</span>
+          <h2 class="mt-4 text-[clamp(2rem,5vw,3.9rem)] leading-[1.03] text-[#181511]">
+            Twenty years inside complex operating environments.
+          </h2>
+          <div class="luxury-divider mt-7 max-w-md"></div>
+          <p class="body-luxe mt-6 max-w-4xl">
+            Twenty years inside complex audit environments: multi-brand F&amp;B platforms spanning seven countries, healthcare subsidiaries targeting Nomu listing, and holding groups restructuring for a new governance era. The assumption that sampling equals coverage is how fraud compounds unseen. A 5% sample carries roughly a 40% chance of missing a fraud cluster. Not a methodology. A liability transfer.
+          </p>
+          <p class="mt-6 max-w-4xl text-lg leading-9 text-[#1d3557]">
+            The AED 7.7M recovered existed in the 95% that sampling would have missed. Where most programmes wait for the loss to surface, the work here builds detection before the pattern repeats.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href={`${base}about/`} class="btn-secondary">Full Profile</a>
+            <a href={`${base}cv/Majid-Mumtaz-Internal-Audit-Director-CV.pdf`} class="btn-primary" download>Download CV</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Featured Case Studies -->
-  <section id="case-studies" class="py-24 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-10">
-        <div class="max-w-2xl" data-reveal>
-          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-6 block">Transformation Archive</span>
-          <h2 class="text-[clamp(2.5rem,6vw,4.5rem)] text-slate-900 mb-0 font-black tracking-tighter">Client Outcomes.</h2>
+  <section id="case-studies" class="px-4 py-4 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div class="max-w-3xl" data-reveal>
+          <span class="eyebrow-label">Transformation Archive</span>
+          <h2 class="mt-4 text-[clamp(2.1rem,5vw,4.4rem)] leading-[1.02] text-[#181511]">Client outcomes with operating weight.</h2>
         </div>
-        <p class="text-slate-600 text-lg max-w-md leading-relaxed text-right" data-reveal>
-          Every engagement starts with the business problem. The technology follows.
+        <p class="max-w-lg text-base leading-8 text-[color:var(--text-secondary)]" data-reveal data-reveal-delay="1">
+          Every engagement begins with the business problem. Controls, analytics, and reporting are designed around the commercial reality instead of retrofitted after the fact.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+      <div class="luxury-divider mt-8"></div>
+
+      <div class="mt-10 grid gap-5 lg:grid-cols-[1.08fr_0.92fr_0.92fr]">
         {featuredProjects.map((project, i) => (
           <a
             href={`${base}projects/${project.slug}/`}
-            class="group border border-slate-200 bg-white p-6 flex flex-col gap-4 hover:border-[#001F5B]/40 hover:shadow-sm transition-all duration-200"
+            class={`group glass-card flex h-full flex-col rounded-[32px] p-8 ${i === 0 ? 'lg:min-h-[420px]' : ''}`}
             data-reveal
             data-reveal-delay={String((i % 3) + 1)}
           >
             <div class="flex items-center justify-between gap-3">
-              <span class="text-[9px] font-black uppercase tracking-[0.25em] bg-[#001F5B]/8 text-[#001F5B] px-3 py-1 border border-[#001F5B]/15">
+              <span class="rounded-full bg-[#1d3557]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.25em] text-[#1d3557]">
                 {project.categories?.[0] ?? project.category}
               </span>
               {project.duration && (
-                <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest flex-shrink-0">
-                  {project.duration}
-                </span>
+                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">{project.duration}</span>
               )}
             </div>
-            <h3 class="text-sm font-black text-slate-900 leading-snug group-hover:text-[#001F5B] transition-colors">
+            <h3 class="mt-6 text-xl leading-tight text-[#181511] transition-colors group-hover:text-[#a33a21]">
               {project.title}
             </h3>
             {project.impact && (
-              <p class="text-[11px] text-slate-500 leading-relaxed border-l-2 border-[#001F5B]/30 pl-3">
+              <p class="mt-5 border-l-2 border-[#a33a21]/25 pl-4 text-sm leading-7 text-[color:var(--text-secondary)]">
                 {project.impact}
               </p>
             )}
-            <span class="text-[9px] font-black uppercase tracking-[0.25em] text-[#001F5B] mt-auto group-hover:text-blue-700 transition-colors">
-              View Details →
-            </span>
+            <div class="mt-8 pt-5 text-[10px] font-black uppercase tracking-[0.3em] text-[#1d3557]">
+              View Details
+            </div>
           </a>
         ))}
       </div>
 
-      <div class="flex justify-center">
-        <a href={`${base}projects/`} class="group flex items-center gap-4 text-slate-900 font-black tracking-[0.4em] uppercase text-xs hover:text-[#001F5B] transition-all border-b border-slate-300 pb-4">
-          View Key Projects
-          <span>→</span>
-        </a>
+      <div class="mt-10 flex justify-center">
+        <a href={`${base}projects/`} class="btn-primary">View Key Projects</a>
       </div>
     </div>
   </section>
 
-  <!-- How I Work -->
-  <section class="py-24 bg-[#001F5B] relative overflow-hidden">
-    <GrammarBackground client:visible variant="dark-grid" />
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="text-center mb-16" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.4em] text-white/50 mb-6 block">Approach</span>
-        <h2 class="text-[clamp(2.5rem,6vw,4rem)] text-white font-black tracking-tighter">How I Work.</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-0">
-        {[
-          {
-            step: '01',
-            title: 'Business First',
-            desc: 'Two weeks inside the commercial reality before forming audit opinion. The control environment is a symptom — I trace it to the business pressure that created it.',
-          },
-          {
-            step: '02',
-            title: 'Structural Independence',
-            desc: 'Audit charter, reporting line, and committee access established before fieldwork begins. Independence is a structural condition, not a professional posture.',
-          },
-          {
-            step: '03',
-            title: '100% Population Testing',
-            desc: 'Where most teams sample, I test the full population. The AED 7.7M we recovered existed in the 95% sampling would have missed. Analytics makes this scalable.',
-          },
-          {
-            step: '04',
-            title: 'Board-Grade Reporting',
-            desc: 'Findings framed for the decision each committee member needs to make — not a status update, but a governance instrument built to survive external scrutiny.',
-          },
-        ].map((item, i) => (
-          <div class={`relative p-8${i > 0 ? ' md:border-l md:border-white/10' : ''}`} data-reveal data-reveal-delay={String(i + 1)}>
-            <div class="w-10 h-10 flex items-center justify-center bg-white/10 font-black text-white text-sm mb-6">{item.step}</div>
-            <h4 class="text-white font-black text-base mb-3">{item.title}</h4>
-            <p class="text-white/60 text-sm leading-relaxed">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-      <div class="text-center mt-14" data-reveal>
-        <a href={`${base}contact/`} class="btn-secondary-light">Get in Touch →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="text-center mb-20" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-6 block">LinkedIn Recommendations</span>
-        <h2 class="text-[clamp(2.5rem,6vw,4.5rem)] text-slate-900 font-black tracking-tighter">What Colleagues Say.</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {[
-          {
-            photo: `${base}images/testimonials/sally.png`,
-            quote: 'Majid brings credibility, integrity, and a genuine collaborative mindset to internal audit, and any organisation — particularly within the F&B or consumer space — would benefit greatly from his leadership and expertise. I would recommend him without hesitation.',
-            name: 'Sally Swanepoel',
-            role: 'VP Finance',
-            org: 'Kitopi',
-            context: 'Senior Leadership',
-          },
-          {
-            photo: `${base}images/testimonials/steve.png`,
-            quote: 'Majid was, indeed, a pleasure to work alongside. His intuitive approach allowed an efficient and speedy, yet thoughtful improvement of ALFA\'s systems and culture. I can highly recommend Majid Mumtaz in future endeavors of Internal Audit or Executive Leadership.',
-            name: 'Steve Skoien',
-            role: 'Restaurant Executive',
-            org: 'ALFA · Al Faisaliah Group',
-            context: 'Direct Management',
-          },
-          {
-            photo: `${base}images/testimonials/alkadi.png`,
-            quote: 'He demonstrates superior technical Internal Audit & Risk ability and produces work of exceptional quality. Majid always committed to producing work that meets high standards.',
-            name: 'Abdulaziz AlKadi',
-            role: 'CHRO · Board Member',
-            org: 'Al Faisaliah Group',
-            context: 'Board Assurance',
-          },
-          {
-            photo: `${base}images/testimonials/osama.png`,
-            quote: 'His partnerships with the business and functional leaders was based on trust, integrity, and deep respect for his knowledge of the Alfa environment, people, and processes. He brought a hands-on approach to not only identifying risks but also how to best mitigate those risks, in a consultative manner.',
-            name: 'Osama Abu Baker',
-            role: 'Supply Chain Director',
-            org: 'Alfa co. · Al Faisaliah Group',
-            context: 'Cross-functional Partnership',
-          },
-          {
-            photo: `${base}images/testimonials/lane.png`,
-            quote: 'He has the strongest skills of any internal auditor that I have had the privilege of working with. He is methodical in his approach, yet intuitive in following the clues. He has made our organization stronger and safer because of his diligence and powerful skill set.',
-            name: 'Lane Cardwell',
-            role: 'President',
-            org: 'Cardwell Hospitality Advisory',
-            context: 'Direct Management',
-          },
-          {
-            photo: `${base}images/testimonials/leslie.png`,
-            quote: 'A trusted friend, colleague and confidant, Majid can be relied upon to do the right thing. His personable persona and good humour has often defused any number of potentially explosive situations, making him an asset irreplaceable in any audit or senior management team.',
-            name: 'Leslie D. Bailey',
-            role: 'Managing Director',
-            org: 'ALFA · Al Faisaliah Group',
-            context: 'Senior Leadership',
-          },
-        ].map((t, i) => (
-          <div class="glass-card p-10 flex flex-col" data-reveal data-reveal-delay={String(i + 1)}>
-            <div class="text-[#001F5B]/20 text-7xl font-black leading-none mb-4 select-none">"</div>
-            <p class="text-slate-700 text-[13px] leading-relaxed flex-1 mb-10 italic font-medium">{t.quote}</p>
-            <div class="pt-6 border-t border-slate-200">
-              <div class="flex items-center gap-4 mb-3">
-                <img 
-                  src={t.photo} 
-                  alt={t.name} 
-                  class="w-14 h-14 rounded-full object-cover aspect-square flex-shrink-0 ring-2 ring-[#001F5B]/10" 
-                />
-                <div class="flex-1">
-                  <div class="text-slate-900 font-black text-sm leading-tight">{t.name}</div>
-                  <div class="text-slate-500 text-[11px] font-bold mt-0.5 leading-tight">{t.role}</div>
-                  <div class="text-[#001F5B] text-[10px] font-black uppercase tracking-wider mt-1">{t.org}</div>
-                </div>
-              </div>
-              <div class="text-slate-400 text-[9px] font-black uppercase tracking-widest mt-2">{t.context}</div>
+  <section class="px-4 py-4 md:px-8">
+    <div class="editorial-panel mx-auto max-w-7xl px-6 py-12 md:px-10" data-reveal>
+      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div>
+          <span class="meta-label text-[#f4c98b]">Approach</span>
+          <h2 class="mt-4 text-[clamp(2.1rem,5vw,4rem)] leading-[1.02] text-white">How the work is designed.</h2>
+          <div class="h-px max-w-sm bg-gradient-to-r from-[#c7964c]/60 to-transparent mt-8"></div>
+        </div>
+        <div class="grid gap-4 md:grid-cols-2">
+          {[
+            ['01', 'Business First', 'Two weeks inside the commercial reality before opinion. The control environment is treated as a symptom, not the root issue.'],
+            ['02', 'Structural Independence', 'Audit charter, committee access, and reporting design are set before fieldwork. Independence is structural, not cosmetic.'],
+            ['03', 'Population Testing', 'Where others sample, the full population is tested. The economics of missing the pattern are too large for inherited comfort.'],
+            ['04', 'Board-Grade Reporting', 'Findings are framed for the decision each board member needs to make, not as a status update disguised as reporting.'],
+          ].map(([step, title, desc], i) => (
+            <div class="frame-panel p-6" data-reveal data-reveal-delay={String((i % 2) + 1)}>
+              <div class="meta-label text-[#f4c98b]">{step}</div>
+              <h3 class="mt-4 text-lg text-white">{title}</h3>
+              <p class="mt-3 text-sm leading-7 text-white/68">{desc}</p>
             </div>
-          </div>
-        ))}
-      </div>
-
-      <div class="flex justify-center mt-16">
-        <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer" class="btn-secondary inline-flex items-center gap-3">
-          View All Recommendations on LinkedIn →
-        </a>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- External Publications -->
-  <section class="py-24 bg-[#001F5B] relative overflow-hidden">
-    <GrammarBackground client:visible variant="dark-grid" />
-    <div class="max-w-7xl mx-auto px-8 relative z-10">
-      <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+  <section class="px-4 py-4 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         <div data-reveal>
-          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-white/50 mb-6 block">Published Work</span>
-          <h2 class="text-[clamp(2rem,5vw,3.5rem)] text-white font-black tracking-tighter">External Publications.</h2>
-        </div>
-      </div>
-
-      <!-- Primary: IIA -->
-      <a
-        href="https://internalauditor.theiia.org/en/voices/2026/february/teaching-an-algorithm-to-filter-false-flags/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="block border border-white/20 bg-white/5 p-10 md:p-16 hover:bg-white/10 transition-all duration-500 group mb-4"
-        data-reveal
-      >
-        <div class="flex flex-col md:flex-row gap-12 items-start">
-          <div class="flex-1">
-            <div class="flex flex-wrap items-center gap-3 mb-3">
-              <span class="text-[10px] font-black uppercase tracking-wider px-3 py-1.5 bg-white text-[#001F5B]">IIA &mdash; Internal Auditor Magazine</span>
-              <span class="text-[10px] font-black uppercase tracking-wider text-white/50">February 2026</span>
-            </div>
-            <p class="text-[#C9A84C]/80 text-[10px] font-bold uppercase tracking-widest mb-8">Voices Column — selected practitioners only</p>
-            <h3 class="text-[clamp(1.5rem,3vw,2.25rem)] text-white font-black leading-tight mb-6 group-hover:text-blue-200 transition-colors">
-              Teaching an Algorithm to Filter False Flags
-            </h3>
-            <p class="text-white/70 text-base leading-relaxed mb-10 max-w-2xl">
-              How iterative refinement of anomaly-detection logic, through close collaboration with operations teams, reduced false positives from 47% to 3% at a cloud kitchen operator. A practitioner's account of building ML fraud detection that earns trust across the business.
-            </p>
-            <span class="inline-flex items-center gap-2 text-white font-black text-[10px] uppercase tracking-[0.3em] border-b border-white/30 pb-1 group-hover:border-white transition-colors">
-              Read on IIA.org &nbsp;&rarr;
-            </span>
-          </div>
-          <div class="md:w-40 flex-shrink-0 flex flex-col items-center text-center pt-2">
-            <div class="border border-[#C9A84C]/30 bg-[#C9A84C]/5 px-8 py-6 flex flex-col items-center group-hover:border-[#C9A84C]/50 transition-colors">
-              <div class="text-[#C9A84C] font-black text-4xl leading-none tracking-tighter">47%</div>
-              <div class="text-white/40 text-lg font-black my-1">↓</div>
-              <div class="text-[#C9A84C] font-black text-4xl leading-none tracking-tighter mb-4">3%</div>
-              <div class="text-white/50 text-[9px] font-black uppercase tracking-widest leading-snug text-center">False Positive<br/>Reduction</div>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Secondary: GRC Report -->
-      <a
-        href="https://www.grcreport.com/post/ai-authorization-is-not-ai-accountability"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="block border border-white/20 bg-white/5 p-10 hover:bg-white/10 transition-all duration-500 group mb-4"
-        data-reveal
-      >
-        <div class="flex flex-col md:flex-row gap-8 items-start">
-          <div class="flex-1">
-            <div class="flex flex-wrap items-center gap-3 mb-3">
-              <span class="text-[10px] font-black uppercase tracking-wider px-3 py-1.5 bg-white text-[#001F5B]">GRC Report</span>
-              <span class="text-[10px] font-black uppercase tracking-wider text-white/50">April 2026</span>
-            </div>
-            <h3 class="text-[clamp(1.2rem,2.5vw,1.75rem)] text-white font-black leading-tight mb-4 group-hover:text-blue-200 transition-colors">
-              AI Authorization Is Not AI Accountability
-            </h3>
-            <p class="text-white/70 text-sm leading-relaxed mb-8 max-w-2xl">
-              Boards are approving AI authorization policies, but the accountability architecture for what those systems decide in production has not been built. The gap sits between sign-off and consequence.
-            </p>
-            <span class="inline-flex items-center gap-2 text-white font-black text-[10px] uppercase tracking-[0.3em] border-b border-white/30 pb-1 group-hover:border-white transition-colors">
-              Read on GRC Report &nbsp;&rarr;
-            </span>
-          </div>
-          <div class="md:w-40 flex-shrink-0 flex flex-col items-center text-center pt-2">
-            <div class="border border-[#C9A84C]/30 bg-[#C9A84C]/5 px-8 py-6 flex flex-col items-center group-hover:border-[#C9A84C]/50 transition-colors">
-              <div class="text-[#C9A84C] font-black text-3xl leading-none tracking-tighter mb-3">AED 7.7M</div>
-              <div class="text-white/50 text-[9px] font-black uppercase tracking-widest leading-snug text-center">Missed by sampling<br/>Found by population<br/>testing</div>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Tertiary: GRC Report #2 -->
-      <a
-        href="https://www.grcreport.com/post/the-cfo-is-the-audit-independence-risk-youre-not-managing"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="block border border-white/20 bg-white/5 p-10 hover:bg-white/10 transition-all duration-500 group mb-4"
-        data-reveal
-      >
-        <div class="flex flex-col md:flex-row gap-8 items-start">
-          <div class="flex-1">
-            <div class="flex flex-wrap items-center gap-3 mb-3">
-              <span class="text-[10px] font-black uppercase tracking-wider px-3 py-1.5 bg-white text-[#001F5B]">GRC Report</span>
-              <span class="text-[10px] font-black uppercase tracking-wider text-white/50">March 2026</span>
-            </div>
-            <h3 class="text-[clamp(1.2rem,2.5vw,1.75rem)] text-white font-black leading-tight mb-4 group-hover:text-blue-200 transition-colors">
-              The CFO Is the Audit Independence Risk You're Not Managing
-            </h3>
-            <p class="text-white/70 text-sm leading-relaxed mb-8 max-w-2xl">
-              Budget control, functional reporting, and remuneration authority sit with the CFO in most organisations. Each is an independence risk. None appear on the audit committee's agenda. The gap is structural, not interpersonal.
-            </p>
-            <span class="inline-flex items-center gap-2 text-white font-black text-[10px] uppercase tracking-[0.3em] border-b border-white/30 pb-1 group-hover:border-white transition-colors">
-              Read on GRC Report &nbsp;&rarr;
-            </span>
-          </div>
-          <div class="md:w-40 flex-shrink-0 flex flex-col items-center text-center pt-2">
-            <div class="border border-[#C9A84C]/30 bg-[#C9A84C]/5 px-8 py-6 flex flex-col items-center group-hover:border-[#C9A84C]/50 transition-colors">
-              <div class="text-[#C9A84C] font-black text-3xl leading-none tracking-tighter mb-3">3</div>
-              <div class="text-white/50 text-[9px] font-black uppercase tracking-widest leading-snug text-center">Independence<br/>Vectors the AC<br/>Isn't Watching</div>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Tertiary: Consultancy ME -->
-      <a
-        href="https://www.consultancy-me.com/news/12980/the-risk-of-algorithmic-entropy-when-ai-models-age-faster-than-evolving-fraud"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="block border border-white/20 bg-white/5 p-10 hover:bg-white/10 transition-all duration-500 group mb-4"
-        data-reveal
-      >
-        <div class="flex flex-col md:flex-row gap-8 items-start">
-          <div class="flex-1">
-            <div class="flex flex-wrap items-center gap-3 mb-3">
-              <span class="text-[10px] font-black uppercase tracking-wider px-3 py-1.5 bg-white text-[#001F5B]">Consultancy ME</span>
-              <span class="text-[10px] font-black uppercase tracking-wider text-white/50">March 2026</span>
-            </div>
-            <h3 class="text-[clamp(1.2rem,2.5vw,1.75rem)] text-white font-black leading-tight mb-4 group-hover:text-blue-200 transition-colors">
-              The Risk of Algorithmic Entropy: When AI Models Age Faster Than Evolving Fraud
-            </h3>
-            <p class="text-white/70 text-sm leading-relaxed mb-8 max-w-2xl">
-              AI fraud detection models degrade faster than fraud typologies evolve. The governance gap is not the technical decay: it is the accountability vacuum between review cycles. Who holds trigger authority for an off-cycle model refresh?
-            </p>
-            <span class="inline-flex items-center gap-2 text-white font-black text-[10px] uppercase tracking-[0.3em] border-b border-white/30 pb-1 group-hover:border-white transition-colors">
-              Read on Consultancy ME &nbsp;&rarr;
-            </span>
-          </div>
-          <div class="md:w-40 flex-shrink-0 flex flex-col items-center text-center pt-2">
-            <div class="border border-[#C9A84C]/30 bg-[#C9A84C]/5 px-8 py-6 flex flex-col items-center group-hover:border-[#C9A84C]/50 transition-colors">
-              <div class="text-[#C9A84C] font-black text-4xl leading-none tracking-tighter">95%</div>
-              <div class="text-white/40 text-lg font-black my-1">↓</div>
-              <div class="text-[#C9A84C] font-black text-4xl leading-none tracking-tighter mb-4">70%</div>
-              <div class="text-white/50 text-[9px] font-black uppercase tracking-widest leading-snug text-center">Model Accuracy<br/>After Drift</div>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Tertiary: Corporate Compliance Insights -->
-      <a
-        href="https://www.corporatecomplianceinsights.com/fcpa-compliance-programs-missing-nuances-bribery-persian-gulf/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="block border border-white/20 bg-white/5 p-10 hover:bg-white/10 transition-all duration-500 group"
-        data-reveal
-      >
-        <div class="flex flex-col md:flex-row gap-8 items-start">
-          <div class="flex-1">
-            <div class="flex flex-wrap items-center gap-3 mb-3">
-              <span class="text-[10px] font-black uppercase tracking-wider px-3 py-1.5 bg-white text-[#001F5B]">Corporate Compliance Insights</span>
-              <span class="text-[10px] font-black uppercase tracking-wider text-white/50">April 2026</span>
-            </div>
-            <h3 class="text-[clamp(1.2rem,2.5vw,1.75rem)] text-white font-black leading-tight mb-4 group-hover:text-blue-200 transition-colors">
-              FCPA Compliance Programs Are Missing Important Nuances About How Bribery Works in the Persian Gulf
-            </h3>
-            <p class="text-white/70 text-sm leading-relaxed mb-8 max-w-2xl">
-              Western compliance frameworks are calibrated for transactional bribery. In the Persian Gulf, the exposure lives in relationship-based commercial culture that those frameworks were not designed to detect. Four enforcement actions show where the gap costs companies.
-            </p>
-            <span class="inline-flex items-center gap-2 text-white font-black text-[10px] uppercase tracking-[0.3em] border-b border-white/30 pb-1 group-hover:border-white transition-colors">
-              Read on CCI &nbsp;&rarr;
-            </span>
-          </div>
-          <div class="md:w-40 flex-shrink-0 flex flex-col items-center text-center pt-2">
-            <div class="border border-[#C9A84C]/30 bg-[#C9A84C]/5 px-8 py-6 flex flex-col items-center group-hover:border-[#C9A84C]/50 transition-colors">
-              <div class="text-[#C9A84C] font-black text-4xl leading-none tracking-tighter mb-3">4</div>
-              <div class="text-white/50 text-[9px] font-black uppercase tracking-widest leading-snug text-center">FCPA Enforcement<br/>Actions Examined</div>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- Where the Arguments Live -->
-  <section class="py-24 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="mb-16" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-6 block">The Thinking</span>
-        <h2 class="text-[clamp(2rem,5vw,3.5rem)] text-slate-900 font-black tracking-tighter">Where the Arguments Live.</h2>
-        <p class="text-slate-500 text-base mt-4 max-w-2xl leading-relaxed">Governance, independence, and fraud examined at the level where the patterns become visible. Three formats, three depths of the same structural question.</p>
-      </div>
-
-      <!-- Featured -->
-      <a
-        href="https://www.linkedin.com/feed/update/urn:li:activity:7440261971389648896/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group block bg-white border border-slate-200 border-l-4 border-l-[#C9A84C] p-10 md:p-14 hover:border-l-[#C9A84C] hover:border-[#001F5B]/40 hover:shadow-sm transition-all duration-200 mb-6"
-        data-reveal
-      >
-        <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-6 block">LinkedIn</span>
-        <h3 class="text-[clamp(1.4rem,3vw,2rem)] text-slate-900 font-black leading-tight mb-5 group-hover:text-[#001F5B] transition-colors">CAE Independence Is Not an Org Chart Problem</h3>
-        <p class="text-slate-500 text-base leading-relaxed max-w-3xl mb-8">The reporting line is not the independence mechanism. The risk universe construction process is. When the audit plan draws from three management-adjacent inputs, what gets excluded is never added. The independence gap is in scope design, not the chart.</p>
-        <span class="text-[#001F5B] font-black text-[10px] uppercase tracking-widest group-hover:text-blue-700 transition-colors">Read on LinkedIn →</span>
-      </a>
-
-      <!-- Secondary pair -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <a
-          href="https://majidmumtaz.substack.com/p/what-controls-actually-certify"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group bg-white border border-slate-200 p-8 hover:border-[#001F5B]/40 hover:shadow-sm transition-all duration-200 flex flex-col gap-5"
-          data-reveal
-          data-reveal-delay="1"
-        >
-          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#C9A84C]">Substack — The Floor Below</span>
-          <h3 class="text-slate-900 font-black text-lg leading-snug group-hover:text-[#001F5B] transition-colors">What Controls Actually Certify</h3>
-          <p class="text-slate-500 text-sm leading-relaxed flex-1">Most boards believe they have controls that prevent. What they have is evidence that the process ran. The gap between the two is where the governance failure lives, and it is invisible from inside the function that produces the certification.</p>
-          <span class="text-[#001F5B] font-black text-[10px] uppercase tracking-widest mt-auto group-hover:text-blue-700 transition-colors">Read on Substack →</span>
-        </a>
-        <a
-          href="https://www.linkedin.com/newsletters/7339153291630510080/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group bg-white border border-slate-200 p-8 hover:border-[#001F5B]/40 hover:shadow-sm transition-all duration-200 flex flex-col gap-5"
-          data-reveal
-          data-reveal-delay="2"
-        >
-          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B]">Newsletter — The Audit Signal</span>
-          <h3 class="text-slate-900 font-black text-lg leading-snug group-hover:text-[#001F5B] transition-colors">NMC Health: The Architecture of Invisible Debt</h3>
-          <p class="text-slate-500 text-sm leading-relaxed flex-1">A $6.6bn fraud built on 80+ direct bank relationships that bypassed treasury, management-facilitated confirmation letters, and a board with no structural position from which to notice. The auditor incompetence narrative misses the mechanism entirely.</p>
-          <span class="text-[#001F5B] font-black text-[10px] uppercase tracking-widest mt-auto group-hover:text-blue-700 transition-colors">Read on LinkedIn →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact CTA -->
-  <section class="py-24 bg-white border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-        <div data-reveal>
-          <span class="text-[10px] font-black uppercase tracking-[0.4em] text-[#001F5B] mb-6 block">Contact</span>
-          <h2 class="text-[clamp(2.5rem,6vw,4rem)] text-slate-900 mb-8 leading-tight font-black tracking-tighter">Let's Work<br />Together.</h2>
-          <p class="text-slate-600 text-lg leading-relaxed mb-12">
-            If your audit function is built around compliance rather than risk, or your board is getting status updates instead of governance instruments — that's the gap I close.
+          <span class="eyebrow-label">External Publications</span>
+          <h2 class="mt-4 text-[clamp(2rem,5vw,4rem)] leading-[1.02] text-[#181511]">Arguments built for public scrutiny.</h2>
+          <p class="body-luxe mt-5 max-w-2xl">
+            Governance, AI accountability, fraud detection logic, and regional compliance frameworks argued in public rather than hidden inside internal decks.
           </p>
-          <div class="space-y-5">
-            <a href="mailto:majidrajpar@gmail.com" class="flex items-center gap-4 text-slate-600 hover:text-slate-900 transition-colors group">
-              <div class="w-10 h-10 rounded bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:border-[#001F5B]/30 transition-colors">
-                <span class="text-sm">✉</span>
+          <div class="quote-panel mt-8 p-7">
+            <div class="meta-label text-[#1d3557]">Editorial Thesis</div>
+            <p class="mt-4 text-xl leading-9 text-[#1b1a17]">
+              The point is not to prove that a control exists. The point is to prove whether it still works when incentives, complexity, and operating pressure start distorting the organization.
+            </p>
+          </div>
+
+          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            <div class="stat-plinth p-6">
+              <div class="meta-label text-[#a33a21]">Public Positioning</div>
+              <div class="mt-3 text-3xl font-black text-[#181511]">5+</div>
+              <div class="mt-2 text-sm leading-7 text-[color:var(--text-secondary)]">external outlets spanning audit, compliance, governance, and algorithmic risk.</div>
+            </div>
+            <div class="stat-plinth p-6">
+              <div class="meta-label text-[#a33a21]">Recurring Theme</div>
+              <div class="mt-3 text-3xl font-black text-[#181511]">Structure</div>
+              <div class="mt-2 text-sm leading-7 text-[color:var(--text-secondary)]">Most failures described as design failures, not isolated control misses.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          {publications.map((publication, i) => (
+            <a
+              href={publication.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="glass-card block rounded-[28px] p-7"
+              data-reveal
+              data-reveal-delay={String(i + 1)}
+            >
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="rounded-full bg-[#a33a21]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.24em] text-[#a33a21]">{publication.outlet}</span>
+                <span class="meta-label text-slate-400">{publication.date}</span>
               </div>
-              <span class="font-bold">majidrajpar@gmail.com</span>
+              <h3 class="mt-5 text-xl leading-tight text-[#181511]">{publication.title}</h3>
+              <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">{publication.summary}</p>
+              <div class="mt-5 text-[10px] font-black uppercase tracking-[0.3em] text-[#1d3557]">Read Article</div>
             </a>
-            <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 text-slate-600 hover:text-slate-900 transition-colors group">
-              <div class="w-10 h-10 rounded bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:border-[#001F5B]/30 transition-colors">
-                <span class="text-sm font-bold">in</span>
-              </div>
-              <span class="font-bold">LinkedIn Profile</span>
-            </a>
-            <a href="https://veritux.com/consultants/majid-mumtaz/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 text-slate-600 hover:text-slate-900 transition-colors group">
-              <div class="w-10 h-10 rounded bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:border-[#001F5B]/30 transition-colors">
-                <span class="text-[10px] font-black tracking-tighter">VX</span>
-              </div>
-              <span class="font-bold">Veritux Consultant Page</span>
-            </a>
-            <a href="https://wa.me/971507471708" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 text-slate-600 hover:text-slate-900 transition-colors group">
-              <div class="w-10 h-10 rounded bg-slate-100 border border-slate-200 flex items-center justify-center group-hover:border-[#001F5B]/30 transition-colors">
-                <span class="text-sm font-bold">WA</span>
-              </div>
-              <span class="font-bold">WhatsApp</span>
-            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-4 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-8" data-reveal>
+        <span class="eyebrow-label">Recommendations</span>
+        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">What colleagues say when the work is done well.</h2>
+      </div>
+      <div class="grid gap-5 lg:grid-cols-[1.12fr_0.94fr_0.94fr]">
+      {testimonials.map((testimonial, i) => (
+        <div class="glass-card rounded-[30px] p-8" data-reveal data-reveal-delay={String(i + 1)}>
+          <div class="text-5xl leading-none text-[#a33a21]/20">"</div>
+          <p class="mt-5 text-sm leading-8 text-[color:var(--text-secondary)]">{testimonial.quote}</p>
+          <div class="mt-8 flex items-center gap-4 border-t border-[color:var(--line-soft)] pt-5">
+            <img src={testimonial.photo} alt={testimonial.name} class="h-14 w-14 rounded-full object-cover ring-2 ring-[#1d3557]/8" />
+            <div>
+              <div class="text-sm font-black text-[#181511]">{testimonial.name}</div>
+              <div class="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400">{testimonial.role}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-4 pb-10 md:px-8">
+    <div class="editorial-panel mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+      <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+        <div data-reveal>
+          <span class="meta-label text-[#f4c98b]">Contact</span>
+          <h2 class="mt-4 text-[clamp(2.2rem,5vw,4rem)] leading-[1.02] text-white">Bring the audit function closer to the actual risk.</h2>
+          <p class="mt-6 max-w-xl text-base leading-8 text-white/70">
+            If the board is getting status updates instead of governance instruments, or the assurance model still assumes sampling is enough, that is the gap this work is built to close.
+          </p>
+          <div class="h-px max-w-sm bg-gradient-to-r from-[#c7964c]/60 to-transparent mt-8"></div>
+          <div class="mt-8 space-y-4">
+            <a href="mailto:majidrajpar@gmail.com" class="block text-sm font-black text-white/88">majidrajpar@gmail.com</a>
+            <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer" class="block text-sm font-black text-white/88">LinkedIn Profile</a>
+            <a href="https://veritux.com/consultants/majid-mumtaz/" target="_blank" rel="noopener noreferrer" class="block text-sm font-black text-white/88">Veritux Consultant Page</a>
+            <a href="https://app.gocatalant.com/c/_/profile/kd6vrg/verify/" target="_blank" rel="noopener noreferrer" class="block text-sm font-black text-white/88">Catalant Expert Profile</a>
+            <a href="https://wa.me/971507471708" target="_blank" rel="noopener noreferrer" class="block text-sm font-black text-white/88">WhatsApp</a>
           </div>
         </div>
         <div data-reveal data-reveal-delay="2">
@@ -590,5 +413,4 @@ const base = import.meta.env.BASE_URL;
       </div>
     </div>
   </section>
-
 </BaseLayout>

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ShieldAlert, BarChart3, Database, AlertCircle, Info, RefreshCw, Upload } from 'lucide-react';
 import {
@@ -117,7 +117,16 @@ const ForensicValidator = () => {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [sourceLabel, setSourceLabel] = useState(null);
   const [fileError, setFileError] = useState(null);
+  const [isChartReady, setIsChartReady] = useState(false);
   const fileRef = useRef(null);
+
+  useEffect(() => {
+    const timer = window.requestAnimationFrame(() => setIsChartReady(true));
+    return () => {
+      window.cancelAnimationFrame(timer);
+      setIsChartReady(false);
+    };
+  }, []);
 
   const runAnalysis = (numbers, label) => {
     setIsAnalyzing(true);
@@ -295,7 +304,8 @@ const ForensicValidator = () => {
               </div>
             </div>
             <div className="h-[300px]">
-              <ResponsiveContainer width="100%" height="100%">
+              {isChartReady && (
+              <ResponsiveContainer width="100%" height={300} debounce={120}>
                 <BarChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
                   <XAxis
@@ -320,6 +330,7 @@ const ForensicValidator = () => {
                   <Bar dataKey="Expected" fill="#10b981" fillOpacity={0.35} barSize={32} stroke="#10b981" strokeWidth={1} strokeDasharray="4 4" />
                 </BarChart>
               </ResponsiveContainer>
+              )}
             </div>
           </div>
 

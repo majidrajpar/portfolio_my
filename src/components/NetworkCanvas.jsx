@@ -25,6 +25,7 @@ export default function NetworkCanvas({ nodeCount = 42, className = '' }) {
   const wasmRef = useRef(null);
   const rafRef = useRef(null);
   const frameRef = useRef(0);
+  const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
 
   useEffect(() => {
     let cancelled = false;
@@ -34,7 +35,7 @@ export default function NetworkCanvas({ nodeCount = 42, className = '' }) {
         // Dynamic import of WASM module
         // Use new Function to escape rolldown static import analysis . WASM is served from /public
         const dynamicImport = new Function('p', 'return import(p)');
-        const wasm = await dynamicImport('/wasm/audit_engine.js');
+        const wasm = await dynamicImport(`${base}/wasm/audit_engine.js`);
         await wasm.default();
         if (cancelled) return;
         wasmRef.current = wasm;
@@ -174,7 +175,7 @@ export default function NetworkCanvas({ nodeCount = 42, className = '' }) {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       window.removeEventListener('resize', resize);
     };
-  }, [nodeCount]);
+  }, [base, nodeCount]);
 
   return (
     <canvas
