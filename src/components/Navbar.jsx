@@ -32,9 +32,6 @@ const Navbar = () => {
     { label: 'About', href: `${base}/about/` },
     { label: 'Projects', href: `${base}/projects/` },
     { label: 'Advisory', href: `${base}/consulting/` },
-    { label: 'Resources', href: `${base}/resources/` },
-    { label: 'Tools', href: `${base}/tools/` },
-    { label: 'Books', href: `${base}/about/#books` },
     { label: 'Contact', href: `${base}/contact/` },
   ];
 

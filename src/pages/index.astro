@@ -167,28 +167,6 @@ const testimonials = [
             </div>
           </div>
 
-          <!-- Executive Education -->
-          <div class="frame-panel p-5 md:p-6">
-            <div class="flex items-center justify-between gap-4 mb-4">
-              <div class="meta-label text-[#f4c98b]">Skills & Credentials</div>
-              <div class="h-px flex-1 bg-gradient-to-r from-[#c7964c]/50 to-transparent"></div>
-            </div>
-            <div class="space-y-3">
-              {[
-                ['Disruptive Strategy', 'Harvard Business School Online'],
-                ['Enterprise Risk Management', 'COSO'],
-                ['IS Auditing & IT Governance', 'HKUST'],
-                ['Machine Learning with Python', 'IBM'],
-                ['Forensic Accounting & Fraud Examination', 'West Virginia University'],
-                ['Risk Management Specialization', 'New York Institute of Finance'],
-              ].map(([course, institution]) => (
-                <div class="border-b border-white/8 pb-3 last:border-0 last:pb-0">
-                  <div class="text-[11px] font-bold leading-5 text-white/85">{course}</div>
-                  <div class="mt-0.5 text-[9px] font-black uppercase tracking-[0.18em] text-white/36">{institution}</div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -202,6 +180,144 @@ const testimonials = [
     </div>
   </section>
 
+  <!-- 1. CASE STUDIES — what has he done -->
+  <section id="case-studies" class="px-4 py-4 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div class="max-w-3xl" data-reveal>
+          <span class="eyebrow-label">Transformation Archive</span>
+          <h2 class="mt-4 text-[clamp(2.1rem,5vw,4.4rem)] leading-[1.02] text-[#181511]">Client outcomes with operating weight.</h2>
+        </div>
+        <p class="max-w-lg text-base leading-8 text-[color:var(--text-secondary)]" data-reveal data-reveal-delay="1">
+          Every engagement begins with the business problem. Controls, analytics, and reporting are designed around the commercial reality instead of retrofitted after the fact.
+        </p>
+      </div>
+
+      <div class="luxury-divider mt-8"></div>
+
+      <div class="mt-10 grid gap-5 lg:grid-cols-[1.08fr_0.92fr_0.92fr]">
+        {featuredProjects.map((project, i) => (
+          <a
+            href={`${base}projects/${project.slug}/`}
+            class={`group glass-card flex h-full flex-col rounded-[32px] p-8 ${i === 0 ? 'lg:min-h-[420px]' : ''}`}
+            data-reveal
+            data-reveal-delay={String((i % 3) + 1)}
+          >
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="rounded-full bg-[#1d3557]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.25em] text-[#1d3557]">
+                  {project.categories?.[0] ?? project.category}
+                </span>
+                {project.industry && (
+                  <span class="rounded-full bg-[#a33a21]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#a33a21]">
+                    {project.industry}
+                  </span>
+                )}
+              </div>
+              {project.duration && (
+                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 shrink-0">{project.duration}</span>
+              )}
+            </div>
+            <h3 class="mt-6 text-xl leading-tight text-[#181511] transition-colors group-hover:text-[#a33a21]">
+              {project.title}
+            </h3>
+            {project.impact && (
+              <p class="mt-5 border-l-2 border-[#a33a21]/25 pl-4 text-sm leading-7 text-[color:var(--text-secondary)]">
+                {project.impact}
+              </p>
+            )}
+            <div class="mt-auto pt-8 text-[10px] font-black uppercase tracking-[0.3em] text-[#1d3557]">
+              View Details
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-10 flex justify-center">
+        <a href={`${base}projects/`} class="btn-primary">View Key Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. TESTIMONIALS — what others say -->
+  <section class="px-4 py-4 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-8" data-reveal>
+        <span class="eyebrow-label">Recommendations</span>
+        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">What colleagues say when the work is done well.</h2>
+      </div>
+      <div class="grid gap-5 lg:grid-cols-[1.12fr_0.94fr_0.94fr]">
+        {testimonials.map((testimonial, i) => (
+          <div class="glass-card rounded-[30px] p-8" data-reveal data-reveal-delay={String(i + 1)}>
+            <div class="text-5xl leading-none text-[#a33a21]/20">"</div>
+            <p class="mt-5 text-sm leading-8 text-[color:var(--text-secondary)]">{testimonial.quote}</p>
+            <div class="mt-8 flex items-center gap-4 border-t border-[color:var(--line-soft)] pt-5">
+              <img src={testimonial.photo} alt={testimonial.name} class="h-14 w-14 rounded-full object-cover ring-2 ring-[#1d3557]/8" />
+              <div>
+                <div class="text-sm font-black text-[#181511]">{testimonial.name}</div>
+                <div class="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400">{testimonial.role}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PUBLICATIONS — external credibility -->
+  <section class="px-4 py-4 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+        <div data-reveal>
+          <span class="eyebrow-label">External Publications</span>
+          <h2 class="mt-4 text-[clamp(2rem,5vw,4rem)] leading-[1.02] text-[#181511]">Arguments built for public scrutiny.</h2>
+          <p class="body-luxe mt-5 max-w-2xl">
+            Governance, AI accountability, fraud detection logic, and regional compliance frameworks argued in public rather than hidden inside internal decks.
+          </p>
+          <div class="quote-panel mt-8 p-7">
+            <div class="meta-label text-[#1d3557]">Editorial Thesis</div>
+            <p class="mt-4 text-xl leading-9 text-[#1b1a17]">
+              The point is not to prove that a control exists. The point is to prove whether it still works when incentives, complexity, and operating pressure start distorting the organization.
+            </p>
+          </div>
+          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            <div class="stat-plinth p-6">
+              <div class="meta-label text-[#a33a21]">Public Positioning</div>
+              <div class="mt-3 text-3xl font-black text-[#181511]">5+</div>
+              <div class="mt-2 text-sm leading-7 text-[color:var(--text-secondary)]">external outlets spanning audit, compliance, governance, and algorithmic risk.</div>
+            </div>
+            <div class="stat-plinth p-6">
+              <div class="meta-label text-[#a33a21]">Recurring Theme</div>
+              <div class="mt-3 text-3xl font-black text-[#181511]">Structure</div>
+              <div class="mt-2 text-sm leading-7 text-[color:var(--text-secondary)]">Most failures described as design failures, not isolated control misses.</div>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-4">
+          {publications.map((publication, i) => (
+            <a
+              href={publication.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="glass-card block rounded-[28px] p-7"
+              data-reveal
+              data-reveal-delay={String(i + 1)}
+            >
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="rounded-full bg-[#a33a21]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.24em] text-[#a33a21]">{publication.outlet}</span>
+                <span class="meta-label text-slate-400">{publication.date}</span>
+              </div>
+              <h3 class="mt-5 text-xl leading-tight text-[#181511]">{publication.title}</h3>
+              <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">{publication.summary}</p>
+              <div class="mt-5 text-[10px] font-black uppercase tracking-[0.3em] text-[#1d3557]">Read Article</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. POSITIONING + PUBLISHED IN — philosophy + credibility -->
   <section class="px-4 pb-4 md:px-8">
     <div class="mx-auto max-w-7xl" data-reveal>
       <div class="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
@@ -265,6 +381,7 @@ const testimonials = [
     </div>
   </section>
 
+  <!-- 5. ABOUT BIO — deeper background -->
   <section class="px-4 py-4 md:px-8">
     <div class="mx-auto max-w-7xl" data-reveal>
       <div class="soft-shell px-7 py-10 md:px-10 md:py-12">
@@ -289,57 +406,7 @@ const testimonials = [
     </div>
   </section>
 
-  <section id="case-studies" class="px-4 py-4 md:px-8">
-    <div class="mx-auto max-w-7xl">
-      <div class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-        <div class="max-w-3xl" data-reveal>
-          <span class="eyebrow-label">Transformation Archive</span>
-          <h2 class="mt-4 text-[clamp(2.1rem,5vw,4.4rem)] leading-[1.02] text-[#181511]">Client outcomes with operating weight.</h2>
-        </div>
-        <p class="max-w-lg text-base leading-8 text-[color:var(--text-secondary)]" data-reveal data-reveal-delay="1">
-          Every engagement begins with the business problem. Controls, analytics, and reporting are designed around the commercial reality instead of retrofitted after the fact.
-        </p>
-      </div>
-
-      <div class="luxury-divider mt-8"></div>
-
-      <div class="mt-10 grid gap-5 lg:grid-cols-[1.08fr_0.92fr_0.92fr]">
-        {featuredProjects.map((project, i) => (
-          <a
-            href={`${base}projects/${project.slug}/`}
-            class={`group glass-card flex h-full flex-col rounded-[32px] p-8 ${i === 0 ? 'lg:min-h-[420px]' : ''}`}
-            data-reveal
-            data-reveal-delay={String((i % 3) + 1)}
-          >
-            <div class="flex items-center justify-between gap-3">
-              <span class="rounded-full bg-[#1d3557]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.25em] text-[#1d3557]">
-                {project.categories?.[0] ?? project.category}
-              </span>
-              {project.duration && (
-                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">{project.duration}</span>
-              )}
-            </div>
-            <h3 class="mt-6 text-xl leading-tight text-[#181511] transition-colors group-hover:text-[#a33a21]">
-              {project.title}
-            </h3>
-            {project.impact && (
-              <p class="mt-5 border-l-2 border-[#a33a21]/25 pl-4 text-sm leading-7 text-[color:var(--text-secondary)]">
-                {project.impact}
-              </p>
-            )}
-            <div class="mt-8 pt-5 text-[10px] font-black uppercase tracking-[0.3em] text-[#1d3557]">
-              View Details
-            </div>
-          </a>
-        ))}
-      </div>
-
-      <div class="mt-10 flex justify-center">
-        <a href={`${base}projects/`} class="btn-primary">View Key Projects</a>
-      </div>
-    </div>
-  </section>
-
+  <!-- 6. APPROACH — for those doing due diligence -->
   <section class="px-4 py-4 md:px-8">
     <div class="editorial-panel mx-auto max-w-7xl px-6 py-10 md:px-10" data-reveal>
       <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
@@ -347,7 +414,7 @@ const testimonials = [
           <span class="meta-label text-[#f4c98b]">Approach</span>
           <h2 class="mt-4 text-[clamp(2.1rem,5vw,4rem)] leading-[1.02] text-white">How the work is designed.</h2>
           <div class="h-px max-w-sm bg-gradient-to-r from-[#c7964c]/60 to-transparent mt-6"></div>
-          <p class="mt-6 text-sm leading-7 text-white/60 max-w-xs">Each engagement follows the same sequence — commercial context first, structural independence second, population logic third.</p>
+          <p class="mt-6 text-sm leading-7 text-white/60 max-w-xs">Each engagement follows the same sequence: commercial context first, structural independence second, population logic third.</p>
         </div>
         <div class="grid gap-4 md:grid-cols-2">
           {[
@@ -363,84 +430,6 @@ const testimonials = [
             </div>
           ))}
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="px-4 py-4 md:px-8">
-    <div class="mx-auto max-w-7xl">
-      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div data-reveal>
-          <span class="eyebrow-label">External Publications</span>
-          <h2 class="mt-4 text-[clamp(2rem,5vw,4rem)] leading-[1.02] text-[#181511]">Arguments built for public scrutiny.</h2>
-          <p class="body-luxe mt-5 max-w-2xl">
-            Governance, AI accountability, fraud detection logic, and regional compliance frameworks argued in public rather than hidden inside internal decks.
-          </p>
-          <div class="quote-panel mt-8 p-7">
-            <div class="meta-label text-[#1d3557]">Editorial Thesis</div>
-            <p class="mt-4 text-xl leading-9 text-[#1b1a17]">
-              The point is not to prove that a control exists. The point is to prove whether it still works when incentives, complexity, and operating pressure start distorting the organization.
-            </p>
-          </div>
-
-          <div class="mt-6 grid gap-4 sm:grid-cols-2">
-            <div class="stat-plinth p-6">
-              <div class="meta-label text-[#a33a21]">Public Positioning</div>
-              <div class="mt-3 text-3xl font-black text-[#181511]">5+</div>
-              <div class="mt-2 text-sm leading-7 text-[color:var(--text-secondary)]">external outlets spanning audit, compliance, governance, and algorithmic risk.</div>
-            </div>
-            <div class="stat-plinth p-6">
-              <div class="meta-label text-[#a33a21]">Recurring Theme</div>
-              <div class="mt-3 text-3xl font-black text-[#181511]">Structure</div>
-              <div class="mt-2 text-sm leading-7 text-[color:var(--text-secondary)]">Most failures described as design failures, not isolated control misses.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="space-y-4">
-          {publications.map((publication, i) => (
-            <a
-              href={publication.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="glass-card block rounded-[28px] p-7"
-              data-reveal
-              data-reveal-delay={String(i + 1)}
-            >
-              <div class="flex flex-wrap items-center gap-3">
-                <span class="rounded-full bg-[#a33a21]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.24em] text-[#a33a21]">{publication.outlet}</span>
-                <span class="meta-label text-slate-400">{publication.date}</span>
-              </div>
-              <h3 class="mt-5 text-xl leading-tight text-[#181511]">{publication.title}</h3>
-              <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">{publication.summary}</p>
-              <div class="mt-5 text-[10px] font-black uppercase tracking-[0.3em] text-[#1d3557]">Read Article</div>
-            </a>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="px-4 py-4 md:px-8">
-    <div class="mx-auto max-w-7xl">
-      <div class="mb-8" data-reveal>
-        <span class="eyebrow-label">Recommendations</span>
-        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">What colleagues say when the work is done well.</h2>
-      </div>
-      <div class="grid gap-5 lg:grid-cols-[1.12fr_0.94fr_0.94fr]">
-      {testimonials.map((testimonial, i) => (
-        <div class="glass-card rounded-[30px] p-8" data-reveal data-reveal-delay={String(i + 1)}>
-          <div class="text-5xl leading-none text-[#a33a21]/20">"</div>
-          <p class="mt-5 text-sm leading-8 text-[color:var(--text-secondary)]">{testimonial.quote}</p>
-          <div class="mt-8 flex items-center gap-4 border-t border-[color:var(--line-soft)] pt-5">
-            <img src={testimonial.photo} alt={testimonial.name} class="h-14 w-14 rounded-full object-cover ring-2 ring-[#1d3557]/8" />
-            <div>
-              <div class="text-sm font-black text-[#181511]">{testimonial.name}</div>
-              <div class="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400">{testimonial.role}</div>
-            </div>
-          </div>
-        </div>
-      ))}
       </div>
     </div>
   </section>
