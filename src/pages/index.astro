@@ -166,6 +166,29 @@ const testimonials = [
               ))}
             </div>
           </div>
+
+          <!-- Executive Education -->
+          <div class="frame-panel p-5 md:p-6">
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <div class="meta-label text-[#f4c98b]">Executive Education</div>
+              <div class="h-px flex-1 bg-gradient-to-r from-[#c7964c]/50 to-transparent"></div>
+            </div>
+            <div class="space-y-3">
+              {[
+                ['Disruptive Strategy', 'Harvard Business School Online'],
+                ['Enterprise Risk Management', 'COSO'],
+                ['IS Auditing & IT Governance', 'HKUST'],
+                ['Machine Learning with Python', 'IBM'],
+                ['Forensic Accounting & Fraud Examination', 'West Virginia University'],
+                ['Risk Management Specialization', 'New York Institute of Finance'],
+              ].map(([course, institution]) => (
+                <div class="border-b border-white/8 pb-3 last:border-0 last:pb-0">
+                  <div class="text-[11px] font-bold leading-5 text-white/85">{course}</div>
+                  <div class="mt-0.5 text-[9px] font-black uppercase tracking-[0.18em] text-white/36">{institution}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
