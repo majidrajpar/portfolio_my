@@ -219,14 +219,28 @@ const testimonials = [
   <section class="px-4 py-4 md:px-8">
     <div class="mx-auto max-w-7xl" data-reveal>
       <div class="grid gap-6 lg:grid-cols-[0.78fr_1.22fr]">
-        <div class="editorial-panel overflow-hidden px-7 py-8 md:px-8 md:py-10">
-          <div class="relative z-10">
-            <div class="meta-label text-[#f4c98b]">Profile</div>
-            <div class="mt-6 overflow-hidden rounded-[26px] border border-white/12">
-              <img src={`${base}images/majid-profile-home.jpg`} alt="Majid Mumtaz" class="h-[420px] w-full object-cover object-top" />
+        <div class="editorial-panel px-7 py-10 md:px-8 md:py-12">
+          <div class="relative z-10 flex h-full flex-col justify-between">
+            <div>
+              <div class="meta-label text-[#f4c98b]">Published In</div>
+              <div class="mt-6 space-y-3">
+                {[
+                  { outlet: 'IIA Internal Auditor', date: 'Feb 2026' },
+                  { outlet: 'ACCA AB Magazine', date: 'May 2026' },
+                  { outlet: 'GRC Report', date: 'Apr 2026' },
+                  { outlet: 'Corporate Compliance Insights', date: 'Apr 2026' },
+                  { outlet: 'Consultancy ME', date: 'Apr 2026' },
+                ].map(({ outlet, date }) => (
+                  <div class="flex items-center justify-between gap-4 border-b border-white/8 pb-3">
+                    <span class="text-sm font-bold text-white/88">{outlet}</span>
+                    <span class="text-[9px] font-black uppercase tracking-[0.2em] text-white/36 shrink-0">{date}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div class="meta-label mt-6 text-white/42">
-              Dubai, UAE · GCC and international mandates
+            <div class="mt-10">
+              <div class="meta-label text-white/36">Location</div>
+              <div class="mt-2 text-sm font-bold text-white/70">Dubai, UAE · GCC and international mandates</div>
             </div>
           </div>
         </div>
@@ -304,12 +318,13 @@ const testimonials = [
   </section>
 
   <section class="px-4 py-4 md:px-8">
-    <div class="editorial-panel mx-auto max-w-7xl px-6 py-12 md:px-10" data-reveal>
+    <div class="editorial-panel mx-auto max-w-7xl px-6 py-10 md:px-10" data-reveal>
       <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
+        <div class="flex flex-col justify-center">
           <span class="meta-label text-[#f4c98b]">Approach</span>
           <h2 class="mt-4 text-[clamp(2.1rem,5vw,4rem)] leading-[1.02] text-white">How the work is designed.</h2>
-          <div class="h-px max-w-sm bg-gradient-to-r from-[#c7964c]/60 to-transparent mt-8"></div>
+          <div class="h-px max-w-sm bg-gradient-to-r from-[#c7964c]/60 to-transparent mt-6"></div>
+          <p class="mt-6 text-sm leading-7 text-white/60 max-w-xs">Each engagement follows the same sequence — commercial context first, structural independence second, population logic third.</p>
         </div>
         <div class="grid gap-4 md:grid-cols-2">
           {[
