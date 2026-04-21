@@ -216,14 +216,40 @@ const testimonials = [
           </p>
         </div>
 
-        <div class="quote-panel p-7 md:p-10">
-          <div class="meta-label text-[#1d3557]">Operating Thesis</div>
-          <p class="mt-6 font-serif text-[clamp(1.4rem,2vw,2.1rem)] leading-[1.7] text-[#1b1a17]">
-            Assurance should feel like strategic clarity, not procedural noise.
-          </p>
-          <p class="mt-6 text-sm leading-8 text-[color:var(--text-secondary)]">
-            That means structural independence, commercial context, full-population logic, and reporting that changes board behaviour rather than satisfying reporting rituals.
-          </p>
+        <div class="flex flex-col gap-4">
+          <div class="quote-panel p-7">
+            <div class="meta-label text-[#1d3557]">Operating Thesis</div>
+            <p class="mt-5 font-serif text-[clamp(1.3rem,1.8vw,1.9rem)] leading-[1.7] text-[#1b1a17]">
+              Assurance should feel like strategic clarity, not procedural noise.
+            </p>
+            <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">
+              Structural independence, commercial context, full-population logic, and reporting that changes board behaviour rather than satisfying reporting rituals.
+            </p>
+          </div>
+
+          <div class="soft-shell p-6">
+            <div class="meta-label text-[#a33a21] mb-4">Published In</div>
+            <div class="space-y-2">
+              {[
+                { outlet: 'IIA Internal Auditor', date: 'Feb 2026', href: 'https://internalauditor.theiia.org/en/voices/2026/february/teaching-an-algorithm-to-filter-false-flags/' },
+                { outlet: 'ACCA AB Magazine', date: 'May 2026', href: null },
+                { outlet: 'GRC Report', date: 'Apr 2026', href: 'https://www.grcreport.com/post/ai-authorization-is-not-ai-accountability' },
+                { outlet: 'Corporate Compliance Insights', date: 'Apr 2026', href: 'https://www.corporatecomplianceinsights.com/fcpa-compliance-programs-missing-nuances-bribery-persian-gulf/' },
+                { outlet: 'Consultancy ME', date: 'Apr 2026', href: 'https://www.consultancy-me.com/news/12980/the-risk-of-algorithmic-entropy-when-ai-models-age-faster-than-evolving-fraud' },
+              ].map(({ outlet, date, href }) => (
+                <div class="flex items-center justify-between gap-3 border-b border-[color:var(--line-soft)] pb-2 last:border-0 last:pb-0">
+                  <span class="text-sm font-bold text-[#181511]">{outlet}</span>
+                  <div class="flex items-center gap-2 shrink-0">
+                    <span class="text-[9px] font-black uppercase tracking-[0.18em] text-slate-400">{date}</span>
+                    {href && (
+                      <a href={href} target="_blank" rel="noopener noreferrer" class="rounded-full bg-[#a33a21]/8 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.18em] text-[#a33a21] hover:bg-[#a33a21]/16 transition-colors">Read ↗</a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <a href={`${base}about/#books`} class="mt-4 block text-[10px] font-black uppercase tracking-[0.22em] text-slate-400 hover:text-[#a33a21] transition-colors">Published Books ↗</a>
+          </div>
         </div>
       </div>
 
@@ -241,48 +267,23 @@ const testimonials = [
 
   <section class="px-4 py-4 md:px-8">
     <div class="mx-auto max-w-7xl" data-reveal>
-      <div class="grid gap-6 lg:grid-cols-[0.78fr_1.22fr]">
-        <div class="editorial-panel px-7 py-10 md:px-8 md:py-12">
-          <div class="relative z-10 flex h-full flex-col justify-between">
-            <div>
-              <div class="meta-label text-[#f4c98b]">Published In</div>
-              <div class="mt-6 space-y-3">
-                {[
-                  { outlet: 'IIA Internal Auditor', date: 'Feb 2026' },
-                  { outlet: 'ACCA AB Magazine', date: 'May 2026' },
-                  { outlet: 'GRC Report', date: 'Apr 2026' },
-                  { outlet: 'Corporate Compliance Insights', date: 'Apr 2026' },
-                  { outlet: 'Consultancy ME', date: 'Apr 2026' },
-                ].map(({ outlet, date }) => (
-                  <div class="flex items-center justify-between gap-4 border-b border-white/8 pb-3">
-                    <span class="text-sm font-bold text-white/88">{outlet}</span>
-                    <span class="text-[9px] font-black uppercase tracking-[0.2em] text-white/36 shrink-0">{date}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div class="mt-10">
-              <a href={`${base}about/#books`} class="text-[10px] font-black uppercase tracking-[0.22em] text-white/40 hover:text-white/70 transition-colors">Published Books ↗</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="soft-shell px-7 py-10 md:px-10 md:py-12">
-          <span class="eyebrow-label">About</span>
-          <h2 class="mt-4 text-[clamp(2rem,5vw,3.9rem)] leading-[1.03] text-[#181511]">
-            Twenty years inside complex operating environments.
-          </h2>
-          <div class="luxury-divider mt-7 max-w-md"></div>
-          <p class="body-luxe mt-6 max-w-4xl">
+      <div class="soft-shell px-7 py-10 md:px-10 md:py-12">
+        <span class="eyebrow-label">About</span>
+        <h2 class="mt-4 text-[clamp(2rem,5vw,3.9rem)] leading-[1.03] text-[#181511]">
+          Twenty years inside complex operating environments.
+        </h2>
+        <div class="luxury-divider mt-7 max-w-md"></div>
+        <div class="mt-6 grid gap-6 lg:grid-cols-2">
+          <p class="body-luxe">
             Twenty years inside complex audit environments: multi-brand F&amp;B platforms spanning seven countries, healthcare subsidiaries targeting Nomu listing, and holding groups restructuring for a new governance era. The assumption that sampling equals coverage is how fraud compounds unseen. A 5% sample carries roughly a 40% chance of missing a fraud cluster. Not a methodology. A liability transfer.
           </p>
-          <p class="mt-6 max-w-4xl text-lg leading-9 text-[#1d3557]">
+          <p class="text-lg leading-9 text-[#1d3557]">
             The AED 7.7M recovered existed in the 95% that sampling would have missed. Where most programmes wait for the loss to surface, the work here builds detection before the pattern repeats.
           </p>
-          <div class="mt-8 flex flex-wrap gap-4">
-            <a href={`${base}about/`} class="btn-secondary">Full Profile</a>
-            <a href={`${base}cv/Majid-Mumtaz-Internal-Audit-Director-CV.pdf`} class="btn-primary" download>Download CV</a>
-          </div>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href={`${base}about/`} class="btn-secondary">Full Profile</a>
+          <a href={`${base}cv/Majid-Mumtaz-Internal-Audit-Director-CV.pdf`} class="btn-primary" download>Download CV</a>
         </div>
       </div>
     </div>
