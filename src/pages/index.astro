@@ -98,7 +98,7 @@ const testimonials = [
     <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-8 md:px-10 md:py-10">
       <NetworkCanvas client:load nodeCount={42} />
 
-      <div class="relative z-10 grid gap-8 lg:grid-cols-[1.5fr_0.82fr] lg:items-end">
+      <div class="relative z-10 grid gap-8 lg:grid-cols-[1.5fr_0.82fr] lg:items-start">
         <div class="pt-4" data-reveal>
           <span class="hero-chip mb-8">Director of Internal Audit | CIA · ACA · FCCA</span>
           <h1 class="headline-display max-w-4xl text-[clamp(3.1rem,8vw,7.1rem)] font-black text-white">
@@ -133,17 +133,35 @@ const testimonials = [
           </div>
         </div>
 
-        <div class="relative" data-reveal data-reveal-delay="2">
-          <div class="frame-panel p-6 md:p-7">
-            <div class="flex items-center justify-between gap-4">
+        <div class="flex flex-col gap-4" data-reveal data-reveal-delay="2">
+          <!-- Profile card -->
+          <div class="frame-panel overflow-hidden p-0">
+            <div class="relative">
+              <img
+                src={`${base}images/majid-profile-home.jpg`}
+                alt="Majid Mumtaz — Director of Internal Audit"
+                class="h-[300px] w-full object-cover object-top"
+                loading="eager"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 px-5 py-4">
+                <div class="text-base font-black text-white">Majid Mumtaz</div>
+                <div class="mt-1 text-[9px] font-black uppercase tracking-[0.26em] text-white/60">CIA · ACA · FCCA · Big 4 Trained</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Signal Board — 2×2 grid -->
+          <div class="frame-panel p-5 md:p-6">
+            <div class="flex items-center justify-between gap-4 mb-4">
               <div class="meta-label text-[#f4c98b]">Signal Board</div>
               <div class="h-px flex-1 bg-gradient-to-r from-[#c7964c]/50 to-transparent"></div>
             </div>
-            <div class="mt-5 space-y-4">
+            <div class="grid grid-cols-2 gap-3">
               {proofMetrics.map((metric) => (
-                <div class="rounded-[24px] border border-white/10 bg-black/10 px-5 py-4">
-                  <div class="text-3xl font-black tracking-tight text-white">{metric.value}</div>
-                  <div class="mt-2 text-xs uppercase tracking-[0.2em] text-white/50">{metric.label}</div>
+                <div class="rounded-[20px] border border-white/10 bg-black/10 px-4 py-3">
+                  <div class="text-2xl font-black tracking-tight text-white">{metric.value}</div>
+                  <div class="mt-1.5 text-[9px] uppercase tracking-[0.18em] text-white/50 leading-4">{metric.label}</div>
                 </div>
               ))}
             </div>
