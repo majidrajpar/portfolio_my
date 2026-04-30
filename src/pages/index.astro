@@ -61,6 +61,13 @@ const publications = [
     summary: 'Boards may approve AI, but accountability for what those systems decide in production is still structurally missing.',
     href: 'https://www.grcreport.com/post/ai-authorization-is-not-ai-accountability',
   },
+  {
+    outlet: 'ACCA AB Magazine',
+    date: 'April 2026',
+    title: 'Keeping Risk Registers Relevant',
+    summary: 'Risk registers built on annual governance cycles cannot track the pace at which operational exposures shift in hospitality and F&B. The case for a separate real-time monitoring layer alongside the register — not instead of it.',
+    href: 'https://abmagazine.accaglobal.com/global/articles/2026/apr/business/Keeping-risk-registers-relevant.html',
+  },
 ];
 
 const testimonials = [
@@ -113,6 +120,7 @@ const testimonials = [
           <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
             <a href="#case-studies" class="btn-primary">See the Work</a>
             <a href={`${base}contact/`} class="btn-secondary-light">Get in Touch</a>
+            <a href="https://majidmumtaz.substack.com" target="_blank" rel="noopener noreferrer" class="btn-secondary-light border-white/60 hover:bg-white hover:text-[#1d3557]">Read Substack ↗</a>
           </div>
 
           <div class="luxury-divider mt-10 mb-7"></div>
@@ -348,8 +356,9 @@ const testimonials = [
             <div class="meta-label text-[#a33a21] mb-4">Published In</div>
             <div class="space-y-2">
               {[
+                { outlet: 'Substack: The Corporate Mercenary', date: 'Weekly', href: 'https://majidmumtaz.substack.com' },
                 { outlet: 'IIA Internal Auditor', date: 'Feb 2026', href: 'https://internalauditor.theiia.org/en/voices/2026/february/teaching-an-algorithm-to-filter-false-flags/' },
-                { outlet: 'ACCA AB Magazine', date: 'May 2026', href: null },
+                { outlet: 'ACCA AB Magazine', date: 'May 2026', href: 'https://abmagazine.accaglobal.com/global/articles/2026/apr/business/Keeping-risk-registers-relevant.html' },
                 { outlet: 'GRC Report', date: 'Apr 2026', href: 'https://www.grcreport.com/post/ai-authorization-is-not-ai-accountability' },
                 { outlet: 'GRC Report', date: 'Mar 2026', href: 'https://www.grcreport.com/post/the-cfo-is-the-audit-independence-risk-youre-not-managing' },
                 { outlet: 'Corporate Compliance Insights', date: 'Apr 2026', href: 'https://www.corporatecomplianceinsights.com/fcpa-compliance-programs-missing-nuances-bribery-persian-gulf/' },
