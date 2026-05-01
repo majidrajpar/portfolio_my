@@ -151,19 +151,19 @@ const testimonials = [
         </div>
 
         <div class="flex flex-col gap-4" data-reveal data-reveal-delay="2">
-          <!-- Profile card -->
+          <!-- Featured work surface -->
           <div class="frame-panel overflow-hidden p-0">
             <div class="relative">
               <img
-                src={`${base}images/majid-profile-home.jpg`}
-                alt="Majid Mumtaz — Director of Internal Audit"
-                class="h-[300px] w-full object-cover object-top"
+                src={`${base}images/projects/finance-dashboard/executive-summary.png`}
+                alt="Executive reporting and board-facing dashboard sample"
+                class="h-[300px] w-full object-cover object-center"
                 loading="eager"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               <div class="absolute bottom-0 left-0 right-0 px-5 py-4">
-                <div class="text-base font-black text-white">Majid Mumtaz</div>
-                <div class="mt-1 text-[9px] font-black uppercase tracking-[0.26em] text-white/60">CIA · ACA · FCCA</div>
+                <div class="text-base font-black text-white">Board-Facing Reporting</div>
+                <div class="mt-1 text-[9px] font-black uppercase tracking-[0.26em] text-white/60">Audit intelligence translated into executive action</div>
               </div>
             </div>
           </div>
@@ -398,13 +398,19 @@ const testimonials = [
       <div class="soft-shell px-7 py-10 md:px-10 md:py-12">
         <div class="grid gap-8 lg:grid-cols-[0.38fr_1fr] lg:items-start">
           <div class="hidden lg:block">
-            <div class="overflow-hidden rounded-[28px] border border-[color:var(--line-soft)]">
+            <div class="overflow-hidden rounded-[28px] border border-[color:var(--line-soft)] bg-[#f7f1e8]">
               <img
-                src={`${base}images/majid-profile.jpg`}
-                alt="Majid Mumtaz"
-                class="h-[380px] w-full object-cover object-top"
+                src={`${base}images/projects/audit-tools/presentation-sample.png`}
+                alt="Audit committee presentation sample"
+                class="h-[380px] w-full object-cover object-center"
                 loading="lazy"
               />
+            </div>
+            <div class="mt-4 quote-panel p-6">
+              <div class="meta-label text-[#1d3557]">Why This Matters</div>
+              <p class="mt-4 text-base leading-8 text-[#1b1a17]">
+                The operating value is not in finding issues late. It is in giving boards a reporting surface they can act on before loss patterns harden.
+              </p>
             </div>
           </div>
           <div>
