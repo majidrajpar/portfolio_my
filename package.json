@@ -7,7 +7,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "db:init": "node scripts/init-db.mjs",
+    "db:check": "node scripts/check-db.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
