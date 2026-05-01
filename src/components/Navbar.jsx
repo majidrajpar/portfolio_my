@@ -1,22 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Navbar = () => {
+const Navbar = ({ initialPath = '' }) => {
   const [scrolled, setScrolled] = useState(false);
-  const [currentPath, setCurrentPath] = useState('');
+  const [currentPath, setCurrentPath] = useState(initialPath);
   const [mobileOpen, setMobileOpen] = useState(false);
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
   useEffect(() => {
-    setCurrentPath(window.location.pathname);
-
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
+    const syncPath = () => {
+      setCurrentPath(window.location.pathname);
+    };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('popstate', syncPath);
+    document.addEventListener('astro:page-load', syncPath);
+
+    syncPath();
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('popstate', syncPath);
+      document.removeEventListener('astro:page-load', syncPath);
+    };
   }, []);
 
   // Close mobile menu on route change
@@ -35,7 +44,7 @@ const Navbar = () => {
     { label: 'Contact', href: `${base}/contact/` },
   ];
 
-  const newsletterUrl = 'https://www.linkedin.com/newsletters/7339153291630510080/';
+  const newsletterUrl = 'https://majidmumtaz.substack.com';
 
   return (
     <motion.header
@@ -93,7 +102,7 @@ const Navbar = () => {
                   ? 'border-white/60 text-white hover:border-white'
                   : 'border-[#1d3557]/18 text-[#1d3557] hover:bg-[#1d3557] hover:text-white'}`}
             >
-              Newsletter ↗
+              Substack ↗
             </a>
             <a
               href={`${base}/cv/Majid-Mumtaz-Internal-Audit-Director-CV.pdf`}
@@ -163,7 +172,7 @@ const Navbar = () => {
                   rel="noopener noreferrer"
                   className="text-center text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2.5 rounded-full border border-[#1d3557]/18 text-[#1d3557]"
                 >
-                  Newsletter ↗
+                  Substack ↗
                 </a>
               </div>
             </div>

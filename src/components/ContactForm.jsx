@@ -36,18 +36,18 @@ const ContactForm = () => {
           <button onClick={() => setStatus('idle')} className="mt-8 btn-secondary text-xs">Send Another Message</button>
         </div>
       ) : (
-        <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-5" aria-busy={status === 'submitting'}>
           <div>
-            <label className="text-[10px] font-black uppercase tracking-[0.24em] text-white/48 mb-2 block">Name</label>
-            <input name="name" type="text" required placeholder="Your full name" className={inputClass} />
+            <label htmlFor="contact-name" className="text-[10px] font-black uppercase tracking-[0.24em] text-white/48 mb-2 block">Name</label>
+            <input id="contact-name" name="name" type="text" autoComplete="name" required placeholder="Your full name" className={inputClass} />
           </div>
           <div>
-            <label className="text-[10px] font-black uppercase tracking-[0.24em] text-white/48 mb-2 block">Email</label>
-            <input name="email" type="email" required placeholder="your@email.com" className={inputClass} />
+            <label htmlFor="contact-email" className="text-[10px] font-black uppercase tracking-[0.24em] text-white/48 mb-2 block">Email</label>
+            <input id="contact-email" name="email" type="email" autoComplete="email" required placeholder="your@email.com" className={inputClass} />
           </div>
           <div>
-            <label className="text-[10px] font-black uppercase tracking-[0.24em] text-white/48 mb-2 block">Message</label>
-            <textarea name="message" required rows={4} placeholder="Describe the challenge you're facing" className={`${inputClass} resize-none`} />
+            <label htmlFor="contact-message" className="text-[10px] font-black uppercase tracking-[0.24em] text-white/48 mb-2 block">Message</label>
+            <textarea id="contact-message" name="message" required rows={4} placeholder="Describe the challenge you're facing" className={`${inputClass} resize-none`} />
           </div>
           {status === 'error' && (
             <p role="alert" className="text-red-300 text-sm">Something went wrong. Please try emailing directly.</p>
