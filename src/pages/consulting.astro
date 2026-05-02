@@ -12,7 +12,7 @@ const base = import.meta.env.BASE_URL;
   description="Director-level advisory services: IPO readiness, M&A protection, Audit 4.0 transformation, and retained CAE board advisory for boards and leadership teams globally."
 >
   <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
-    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 text-center md:px-10 md:py-12">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-8 text-center md:px-10 md:py-9">
       <NetworkCanvas client:load nodeCount={35} />
       <div class="relative z-10 mx-auto max-w-4xl" data-reveal>
         <span class="hero-chip mb-8">Strategic Advisory</span>
@@ -33,7 +33,7 @@ const base = import.meta.env.BASE_URL;
       {advisoryTiers.map((tier, i) => (
         <div class="glass-card overflow-hidden rounded-[34px]" data-reveal data-reveal-delay={String(i + 1)}>
           <div class="grid lg:grid-cols-[0.9fr_1.1fr]">
-            <div class="editorial-panel px-8 py-10 md:px-10">
+            <div class="editorial-panel px-8 py-8 md:px-10">
               <div class="relative z-10 flex h-full flex-col justify-between">
                 <div>
                   <div class="flex items-center gap-4 mb-8">
@@ -53,7 +53,7 @@ const base = import.meta.env.BASE_URL;
               </div>
             </div>
 
-            <div class="soft-shell rounded-none px-8 py-10 md:px-10">
+            <div class="soft-shell rounded-none px-8 py-8 md:px-10">
               <p class="body-luxe max-w-3xl">{tier.description}</p>
               <div class="mt-8 grid gap-5 md:grid-cols-[1.1fr_0.9fr]">
                 <div class="stat-plinth p-6">
@@ -80,7 +80,7 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <section class="px-4 py-4 md:px-8">
-    <div class="soft-shell mx-auto max-w-7xl px-7 py-10 md:px-10 md:py-12" data-reveal>
+    <div class="soft-shell mx-auto max-w-7xl px-7 py-8 md:px-10 md:py-9" data-reveal>
       <div class="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
         <div>
           <span class="eyebrow-label">How Engagements Work</span>
@@ -105,7 +105,7 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <section class="px-4 py-4 md:px-8">
-    <div class="editorial-panel mx-auto max-w-7xl px-7 py-10 md:px-10 md:py-12">
+    <div class="editorial-panel mx-auto max-w-7xl px-7 py-8 md:px-10 md:py-9">
       <div class="grid gap-8 lg:grid-cols-[1fr_0.92fr]">
         <div data-reveal>
           <span class="meta-label text-[#f4c98b]">Why Independent</span>
@@ -125,7 +125,7 @@ const base = import.meta.env.BASE_URL;
           </div>
         </div>
 
-        <div class="frame-panel p-8 text-center" data-reveal data-reveal-delay="1">
+        <div class="frame-panel p-7 text-center" data-reveal data-reveal-delay="1">
           <div class="text-6xl font-black leading-none text-[#f4c98b]">20+</div>
           <div class="mt-3 meta-label text-white/40">Years Experience</div>
           <div class="mt-8 flex flex-wrap justify-center gap-2">

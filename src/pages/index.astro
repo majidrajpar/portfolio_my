@@ -73,7 +73,7 @@ const featuredPublications = publications.slice(0, 2);
       <div class="absolute right-[8%] top-[12%] h-56 w-56 rounded-full bg-[#a33a21]/18 blur-3xl"></div>
     </div>
 
-    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-8 md:px-10 md:py-10">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-7 md:px-10 md:py-8">
       <NetworkCanvas client:load nodeCount={42} />
 
       <div class="relative z-10 grid gap-8 lg:grid-cols-[1.48fr_0.82fr] lg:items-start">
@@ -116,7 +116,7 @@ const featuredPublications = publications.slice(0, 2);
               <img
                 src={`${base}images/majid-profile-home.jpg`}
                 alt="Majid Mumtaz — Director of Internal Audit"
-                class="h-[360px] w-full object-cover object-top"
+                class="h-[320px] w-full object-cover object-top"
                 loading="eager"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/12 to-transparent"></div>
@@ -174,7 +174,7 @@ const featuredPublications = publications.slice(0, 2);
         {featuredProjects.map((project, i) => (
           <a
             href={`${base}projects/${project.slug}/`}
-            class="group glass-card flex h-full flex-col rounded-[32px] p-8 lg:min-h-[400px]"
+            class="group glass-card flex h-full flex-col rounded-[32px] p-7 lg:min-h-[340px]"
             data-reveal
             data-reveal-delay={String(i + 1)}
           >
@@ -265,7 +265,7 @@ const featuredPublications = publications.slice(0, 2);
   <!-- 3. ABOUT BIO — deeper background -->
   <section class="px-4 py-4 md:px-8">
     <div class="mx-auto max-w-7xl" data-reveal>
-      <div class="soft-shell px-7 py-10 md:px-10 md:py-12">
+      <div class="soft-shell px-7 py-8 md:px-10 md:py-9">
         <div class="grid gap-8 lg:grid-cols-[0.68fr_0.32fr] lg:items-start">
           <div>
             <span class="eyebrow-label">About</span>
@@ -305,7 +305,7 @@ const featuredPublications = publications.slice(0, 2);
   </section>
 
   <section class="px-4 py-4 pb-10 md:px-8">
-    <div class="editorial-panel mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+    <div class="editorial-panel mx-auto max-w-7xl overflow-hidden px-6 py-8 md:px-10 md:py-9">
       <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div data-reveal>
           <span class="meta-label text-[#f4c98b]">Contact</span>
