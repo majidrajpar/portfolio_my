@@ -126,26 +126,22 @@ const testimonials = [
             Boards pay for assurance. Most receive compliance theatre. Twenty years closing that gap: governance that survives scrutiny, fraud detection that tests the full population, and reporting built around the risks the business still has not priced.
           </p>
 
-          <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
             <a href="#case-studies" class="btn-primary">See the Work</a>
             <a href={`${base}contact/`} class="btn-secondary-light">Get in Touch</a>
-            <a href="https://majidmumtaz.substack.com" target="_blank" rel="noopener noreferrer" class="btn-secondary-light border-white/60 hover:bg-white hover:text-[#1d3557]">Read Substack ↗</a>
+            <a href="https://majidmumtaz.substack.com" target="_blank" rel="noopener noreferrer" class="text-[10px] font-black uppercase tracking-[0.24em] text-white/62 transition-colors hover:text-white">Read Substack ↗</a>
           </div>
 
-          <div class="luxury-divider mt-10 mb-7"></div>
+          <div class="luxury-divider mt-9 mb-7"></div>
 
-          <div class="grid gap-3 sm:grid-cols-3">
+          <div class="grid gap-3 md:max-w-2xl sm:grid-cols-2">
             <div class="frame-panel px-4 py-4">
               <div class="meta-label text-white/45">Current Focus</div>
-              <div class="mt-2 text-sm font-bold leading-6 text-white/85">Open to full-time CAE and Director of Internal Audit roles globally. Active advisory through Veritux and Catalant.</div>
-            </div>
-            <div class="frame-panel px-4 py-4">
-              <div class="meta-label text-white/45">Markets</div>
-              <div class="mt-2 text-sm font-bold leading-6 text-white/85">UAE, KSA, Qatar, Pakistan, and cross-border GCC operations.</div>
+              <div class="mt-2 text-sm font-bold leading-6 text-white/85">Open to full-time CAE and Director of Internal Audit roles globally, alongside active advisory through Veritux and Catalant.</div>
             </div>
             <div class="frame-panel px-4 py-4">
               <div class="meta-label text-white/45">Operating Model</div>
-              <div class="mt-2 text-sm font-bold leading-6 text-white/85">Business-first audit, structural independence, population testing, board-grade reporting.</div>
+              <div class="mt-2 text-sm font-bold leading-6 text-white/85">Business-first audit, structural independence, population testing, and board-grade reporting across GCC and adjacent markets.</div>
             </div>
           </div>
         </div>
@@ -264,11 +260,11 @@ const testimonials = [
         <span class="eyebrow-label">Recommendations</span>
         <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">What colleagues say when the work is done well.</h2>
       </div>
-      <div class="grid gap-5 lg:grid-cols-[1.12fr_0.94fr_0.94fr]">
+      <div class="grid gap-5 lg:grid-cols-3">
         {testimonials.map((testimonial, i) => (
-          <div class="glass-card rounded-[30px] p-8" data-reveal data-reveal-delay={String(i + 1)}>
-            <div class="text-5xl leading-none text-[#a33a21]/20">"</div>
-            <p class="mt-5 text-sm leading-8 text-[color:var(--text-secondary)]">{testimonial.quote}</p>
+          <div class={`glass-card rounded-[30px] p-8 ${i === 0 ? 'lg:col-span-2 lg:p-10' : ''}`} data-reveal data-reveal-delay={String(i + 1)}>
+            <div class={`leading-none text-[#a33a21]/20 ${i === 0 ? 'text-6xl' : 'text-5xl'}`}>"</div>
+            <p class={`mt-5 text-[color:var(--text-secondary)] ${i === 0 ? 'text-base leading-9' : 'text-sm leading-8'}`}>{testimonial.quote}</p>
             <div class="mt-8 border-t border-[color:var(--line-soft)] pt-5">
               <div class="text-sm font-black text-[#181511]">{testimonial.name}</div>
               <div class="mt-1 text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400">{testimonial.role}</div>
