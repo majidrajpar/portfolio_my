@@ -16,12 +16,12 @@ const books = [
   { title: 'Internal Audit Guide for Dine-In Locations in the Middle East', desc: 'Comprehensive audit guide for restaurant operations in the GCC region.', url: 'https://www.amazon.com/dp/B0DY2NRPQ9', cover: `${base}images/books/internal-audit-dinein.jpg` },
 ];
 
+const featuredBooks = books.slice(0, 3);
+
 const metrics = [
   { value: 'AED 7.7M', label: 'Total Financial Impact — Fraud Detection' },
   { value: '$127M', label: 'M&A Due Diligence — Workstream Lead' },
-  { value: '78%', label: 'Reduction in Fraud Incidents' },
   { value: '20+', label: 'Years Leadership' },
-  { value: '100%', label: 'Population Testing — 7 Critical Domains' },
   { value: '2', label: 'Listing Readiness Programmes Delivered' },
 ];
 
@@ -51,11 +51,11 @@ const publicationChips = [
             <span class="block">Protect the capital.</span>
           </h1>
           <p class="mt-8 max-w-3xl text-base leading-8 text-white/74 md:text-[1.15rem] md:leading-9">
-            Director of Internal Audit and board-facing advisor. Big 4 trained. Triple-certified. Published across external audit, governance, and compliance outlets. Built for organizations that need assurance with real operating weight.
+            Director of Internal Audit and board-facing advisor. Big 4 trained. Triple-certified. Built for organizations that need assurance with operating weight.
           </p>
           <div class="luxury-divider mt-10 mb-8 max-w-lg"></div>
           <div class="flex flex-wrap gap-3">
-            {['CIA', 'ACA', 'FCCA', 'Big 4 — EY & KPMG', 'Published · 6 Articles', '20+ Years'].map((badge) => (
+            {['CIA', 'ACA', 'FCCA', 'Big 4 — EY & KPMG'].map((badge) => (
               <span class="hero-chip">{badge}</span>
             ))}
           </div>
@@ -75,7 +75,7 @@ const publicationChips = [
   </section>
 
   <section class="px-4 py-5 md:px-8">
-    <div class="mx-auto grid max-w-7xl gap-4 md:grid-cols-6">
+    <div class="mx-auto grid max-w-7xl gap-4 md:grid-cols-2 xl:grid-cols-4">
       {metrics.map((m, i) => (
         <div data-reveal data-reveal-delay={String((i % 3) + 1)}>
           <MetricCard value={m.value} label={m.label} />
@@ -115,16 +115,13 @@ const publicationChips = [
           <div class="luxury-divider mt-7 max-w-md"></div>
           <div class="mt-8 space-y-6 text-[color:var(--text-secondary)]">
             <p class="body-luxe">
-              I build audit functions that protect capital. Over 20 years, I have designed and led internal audit departments from inception, embedding governance structures, control frameworks, and technology platforms that give boards credible assurance.
+              I build audit functions that protect capital. Over 20 years, I have designed and led internal audit departments from inception, embedding governance structures, control frameworks, and technology that give boards credible assurance.
             </p>
             <p class="body-luxe">
-              My work spans three connected domains: <strong class="text-[#181511]">IA function building</strong>, <strong class="text-[#181511]">forensic analytics and fraud detection</strong>, and <strong class="text-[#181511]">board assurance and IPO readiness</strong> across DFM, Tadawul, and Nomu-oriented programs.
+              The work clusters into three domains: <strong class="text-[#181511]">IA function building</strong>, <strong class="text-[#181511]">forensic analytics and fraud detection</strong>, and <strong class="text-[#181511]">board assurance and IPO readiness</strong>.
             </p>
             <p class="body-luxe">
-              Big 4 trained through Ernst & Young and KPMG, I combine technical rigor with executive communication, translating complex findings into board-level decisions rather than compliance paperwork.
-            </p>
-            <p class="body-luxe">
-              Currently delivering governance, risk, and internal audit advisory through <a href="https://veritux.com/consultants/majid-mumtaz/" target="_blank" rel="noopener noreferrer" class="text-[#a33a21] font-semibold hover:underline">Veritux</a> in Dubai — real estate developers, family offices, and pre-IPO businesses — and through <a href="https://app.gocatalant.com/c/_/profile/kd6vrg/verify/" target="_blank" rel="noopener noreferrer" class="text-[#a33a21] font-semibold hover:underline">Catalant</a> for project-based mandates with global organisations. Open to full-time Director of Internal Audit and CAE roles globally.
+              Big 4 trained through Ernst &amp; Young and KPMG, I translate complex findings into board decisions rather than compliance paperwork. Current advisory work runs through <a href="https://veritux.com/consultants/majid-mumtaz/" target="_blank" rel="noopener noreferrer" class="text-[#a33a21] font-semibold hover:underline">Veritux</a> and <a href="https://app.gocatalant.com/c/_/profile/kd6vrg/verify/" target="_blank" rel="noopener noreferrer" class="text-[#a33a21] font-semibold hover:underline">Catalant</a>; open to full-time Director of Internal Audit and CAE roles globally.
             </p>
           </div>
 
@@ -167,8 +164,8 @@ const publicationChips = [
     <div class="soft-shell mx-auto max-w-7xl px-7 py-10 md:px-10 md:py-12">
       <div class="mb-10" data-reveal>
         <span class="eyebrow-label">Professional Trajectory</span>
-        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Strategic career architecture.</h2>
-        <p class="body-luxe mt-5 max-w-3xl">A 20-year progression from Big 4 operational roots to group-level profit protection, transformation, and board advisory.</p>
+        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Career trajectory.</h2>
+        <p class="mt-5 max-w-2xl text-base leading-8 text-[color:var(--text-secondary)]">From Big 4 roots to group-level profit protection, transformation, and board advisory.</p>
       </div>
       <div class="relative group" data-reveal data-reveal-delay="1">
         <div class="overflow-x-auto pb-6 -mx-7 px-7 md:-mx-10 md:px-10">
@@ -188,9 +185,9 @@ const publicationChips = [
       </div>
       <div class="grid gap-5 md:grid-cols-3">
         {[
-          ['IA Function Building', 'Designing and building internal audit departments from the ground up — charter, methodology, risk-based audit plans, team structure, and IIA Standards alignment.'],
-          ['Forensic Analytics & Fraud Detection', 'ML-powered continuous monitoring, population testing, anomaly detection, and pattern recognition deployed where manual comfort is no longer defensible.'],
-          ['Board Assurance & IPO Readiness', 'ICOFR implementation, COSO ERM frameworks, and regulatory readiness structured for boards, regulators, and investors.'],
+          ['IA Function Building', 'Charter, methodology, risk-based plans, team design, and standards alignment for new or reset internal audit functions.'],
+          ['Forensic Analytics & Fraud Detection', 'Population testing, anomaly detection, and ML-supported monitoring where manual comfort is no longer defensible.'],
+          ['Board Assurance & IPO Readiness', 'ICOFR, COSO ERM, and regulatory readiness structured for boards, regulators, and investors.'],
         ].map(([title, desc], i) => (
           <div class="glass-card rounded-[30px] p-8" data-reveal data-reveal-delay={String(i + 1)}>
             <div class="meta-label text-[#a33a21]">0{i + 1}</div>
@@ -202,40 +199,15 @@ const publicationChips = [
     </div>
   </section>
 
-  <section class="px-4 py-4 md:px-8">
-    <div class="soft-shell mx-auto max-w-7xl px-7 py-10 md:px-10 md:py-12">
-      <div class="mb-8" data-reveal>
-        <span class="eyebrow-label">Skills & Credentials</span>
-        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Continuing education and technical skills.</h2>
-      </div>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {[
-          { institution: 'Harvard Business School Online', program: 'Disruptive Strategy', area: 'Strategy' },
-          { institution: 'COSO', program: 'ERM Framework Certification', area: 'Risk Management' },
-          { institution: 'HKUST', program: 'Blockchain & Financial Innovation', area: 'Technology' },
-          { institution: 'IBM', program: 'AI Governance & Ethics', area: 'Governance' },
-          { institution: 'West Virginia University', program: 'Fraud Investigation Techniques', area: 'Forensics' },
-          { institution: 'NYIF', program: 'Financial Modeling & Valuation', area: 'Finance' },
-        ].map((item, i) => (
-          <div class="glass-card rounded-[28px] p-6" data-reveal data-reveal-delay={String((i % 3) + 1)}>
-            <div class="meta-label text-[#a33a21]">{item.area}</div>
-            <h3 class="mt-3 text-base leading-tight font-bold text-[#181511]">{item.program}</h3>
-            <p class="mt-2 text-sm text-[color:var(--text-secondary)]">{item.institution}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <section class="px-4 py-4 md:px-8" id="books">
     <div class="mx-auto max-w-7xl">
       <div class="mb-10" data-reveal>
         <span class="eyebrow-label">Published Works</span>
-        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Books and frameworks.</h2>
-        <p class="body-luxe mt-5 max-w-3xl">Writing that extends the same operating thesis into internal audit, risk management, and forensic accounting.</p>
+        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Selected books and frameworks.</h2>
+        <p class="mt-5 max-w-2xl text-base leading-8 text-[color:var(--text-secondary)]">A smaller selection of writing that extends the same operating thesis into audit, risk, and forensic work.</p>
       </div>
       <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {books.map((book, i) => (
+        {featuredBooks.map((book, i) => (
           <a href={book.url} target="_blank" rel="noopener noreferrer" class="glass-card flex gap-5 rounded-[30px] p-6" data-reveal data-reveal-delay={String((i % 3) + 1)}>
             <div class="w-24 flex-shrink-0 overflow-hidden rounded-[18px] bg-slate-100 aspect-[2/3]">
               <img src={book.cover} alt={book.title} class="h-full w-full object-cover" loading="lazy" />
@@ -247,6 +219,9 @@ const publicationChips = [
             </div>
           </a>
         ))}
+      </div>
+      <div class="mt-8 flex justify-center">
+        <a href="https://www.amazon.com/s?k=Majid+Mumtaz" target="_blank" rel="noopener noreferrer" class="btn-secondary">View More Writing</a>
       </div>
     </div>
   </section>

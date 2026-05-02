@@ -5,7 +5,7 @@ import NetworkCanvas from '../../components/NetworkCanvas';
 import { getCaseStudies, getProfessionalEngagements } from '../../lib/db.js';
 
 const strategicCaseStudies = getCaseStudies();
-const professionalEngagements = getProfessionalEngagements();
+const professionalEngagements = getProfessionalEngagements().slice(0, 4);
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -24,7 +24,7 @@ const base = import.meta.env.BASE_URL;
           <span class="block">with operating weight.</span>
         </h1>
         <p class="mt-8 max-w-3xl text-base leading-8 text-white/74 md:text-[1.15rem] md:leading-9">
-          High-stakes audit, risk, and governance engagements structured around the business problem, not the control framework that appears after the fact.
+          High-stakes audit, risk, and governance engagements structured around the business problem, not the paperwork that follows it.
         </p>
       </div>
     </div>
@@ -37,7 +37,7 @@ const base = import.meta.env.BASE_URL;
       </svg>
       <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
         <span class="meta-label text-[#181511]">Engagement Privacy</span>
-        Client names and proprietary identifiers are anonymised in accordance with confidentiality obligations. Figures and outcomes reflect real-world impact while protecting organizational privacy.
+        Client names and proprietary identifiers are anonymised. Figures and outcomes reflect real work while protecting confidentiality obligations.
       </p>
     </div>
   </section>
@@ -45,7 +45,7 @@ const base = import.meta.env.BASE_URL;
   <section class="px-4 py-4 md:px-8">
     <div class="mx-auto max-w-7xl">
       <div class="mb-10" data-reveal>
-        <span class="eyebrow-label">Strategic Case Studies</span>
+        <span class="eyebrow-label">Case Studies</span>
         <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Selected mandates.</h2>
       </div>
       <div class="space-y-8">
@@ -59,12 +59,12 @@ const base = import.meta.env.BASE_URL;
   <section class="px-4 py-4 pb-8 md:px-8">
     <div class="soft-shell mx-auto max-w-7xl px-7 py-10 md:px-10 md:py-12">
       <div class="mb-10 text-center" data-reveal>
-        <span class="eyebrow-label">Breadth of Experience</span>
-        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Professional engagements catalog.</h2>
-        <p class="body-luxe mx-auto mt-5 max-w-3xl">Additional advisory and audit mandates across the GCC and international markets, presented as a higher-level portfolio of outcomes.</p>
+        <span class="eyebrow-label">Additional Engagements</span>
+        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Broader engagement range.</h2>
+        <p class="mx-auto mt-5 max-w-2xl text-base leading-8 text-[color:var(--text-secondary)]">A tighter cross-section of advisory and audit work across GCC and international markets.</p>
       </div>
 
-      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-5 md:grid-cols-2">
         {professionalEngagements.map((engagement, i) => (
           <div class="glass-card flex flex-col rounded-[30px] p-8" data-reveal data-reveal-delay={String((i % 3) + 1)}>
             <div class="mb-4">
@@ -81,7 +81,7 @@ const base = import.meta.env.BASE_URL;
       </div>
 
       <div class="mt-10 flex justify-center">
-        <a href={`${base}contact/`} class="btn-primary">Start the Conversation</a>
+        <a href={`${base}contact/`} class="btn-primary">Discuss a Mandate</a>
       </div>
     </div>
   </section>
