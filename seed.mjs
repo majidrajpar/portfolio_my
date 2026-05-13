@@ -150,9 +150,9 @@ const cases = [
     situation: "A hyper-growth tech unicorn operating 100+ locations across 8 countries was experiencing a 340% surge in transaction volumes. The existing audit methodology relied on 5–15% manual sampling, leaving significant gaps in fraud detection.",
     task: "Build a modern, scalable Internal Audit function capable of providing real-time assurance across multi-billion dollar transaction cycles without slowing down business growth.",
     action: "I developed and deployed a proprietary Python/Pandas-based \"Forensic Risk Engine.\" This shifted the audit methodology from sampling to 100% population testing. I integrated automated exception reporting for high-risk areas like third-party aggregator billing and payroll.",
-    result: "Identified and captured AED 7.7M in total financial impact (AED 3.2M recovered; AED 4.5M protected). Delivered a clean first-time external audit opinion with zero material weaknesses and secured board-approved investment for enterprise automation.",
+    result: "Reduced fraud incidents by 78% during a 340% transaction surge. Identified and captured AED 7.7M in total financial impact (AED 3.2M recovered; AED 4.5M protected). Delivered a clean first-time external audit opinion with zero material weaknesses.",
     reflection: "Technology-enabled auditing turns Internal Audit from a historical \"checker\" into a real-time risk intelligence partner for the Board.",
-    impact: 'AED 7.7M financial impact — 100% population coverage — Clean SOX 404 opinion',
+    impact: '78% Fraud Reduction — AED 7.7M impact — 100% population coverage',
     tech_stack: JSON.stringify(['Python','Pandas','Machine Learning','SOX 404']),
   },
   {
