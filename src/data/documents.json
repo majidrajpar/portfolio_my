@@ -288,5 +288,55 @@
     "size": "36 KB",
     "pages": 15,
     "date": "2026-04-07"
+  },
+  {
+    "id": "doc-030",
+    "filename": "Saudi_Family_Office_Governance_Charter_Template.pdf",
+    "title": "Saudi Family Office Governance Charter Template",
+    "description": "Board-level financial charter and reporting framework tailored for Saudi Family Offices. Designed to meet KSA CMA requirements for institutional capital market activity and long-term regulatory health.",
+    "category": "Governance",
+    "size": "124 KB",
+    "pages": 8,
+    "date": "2026-05-13"
+  },
+  {
+    "id": "doc-031",
+    "filename": "KSA_Vision_2030_Audit_Compliance_Guide.pdf",
+    "title": "KSA Vision 2030 Audit Compliance Guide",
+    "description": "Strategic audit guide for institutionalizing robust governance within KSA Vision 2030 giga-projects. Focuses on neutralizing hidden risks and ensuring 100% population assurance in high-volume environments.",
+    "category": "Audit Guides",
+    "size": "98 KB",
+    "pages": 12,
+    "date": "2026-05-13"
+  },
+  {
+    "id": "doc-032",
+    "filename": "AI_Risk_Accountability_White_Paper.pdf",
+    "title": "AI Risk Accountability: Beyond Authorization",
+    "description": "A strategic white paper on why board approval of AI does not solve accountability. Outlines the framework for managing 'Algorithmic Entropy' and establishing 100% population monitoring suites.",
+    "category": "Governance",
+    "size": "145 KB",
+    "pages": 10,
+    "date": "2026-05-13"
+  },
+  {
+    "id": "doc-033",
+    "filename": "Fractional_CAE_Engagement_Model.pdf",
+    "title": "The Fractional CAE Engagement Model",
+    "description": "Strategic guide for mid-market and family offices on how to leverage senior-level audit leadership on a fractional basis to institutionalize governance without full-time overhead.",
+    "category": "Frameworks",
+    "size": "85 KB",
+    "pages": 5,
+    "date": "2026-05-13"
+  },
+  {
+    "id": "doc-034",
+    "filename": "Audit_4.0_Readiness_Assessment.pdf",
+    "title": "Audit 4.0 Readiness Assessment (Self-Check)",
+    "description": "A 20-point diagnostic tool to determine if your organization's data architecture and control environment are ready for ML-driven population testing and automated forensics.",
+    "category": "Audit Guides",
+    "size": "64 KB",
+    "pages": 3,
+    "date": "2026-05-13"
   }
 ]
