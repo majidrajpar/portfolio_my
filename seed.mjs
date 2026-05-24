@@ -77,7 +77,7 @@ const milestones = [
   { x: 2017, y: 61,  curve_y: null,  company: "AL-FAISALIAH\nGROUP",   role: "Group Director, IA & Risk",   dates: "2016–2022", align: "middle", dx: 0,   dy: -25, is_special: 0, is_current: 0 },
   { x: 2021, y: 95,  curve_y: 72.2,  company: "AFG Restaurants Sector", role: "Audit Committee Member",     dates: "2021–2022", align: "middle", dx: 0,   dy: -25, is_special: 1, is_current: 0 },
   { x: 2022, y: 75,  curve_y: null,  company: "KITOPI",                 role: "Director of Internal Audit", dates: "2022–2025", align: "middle", dx: 0,   dy: -25, is_special: 0, is_current: 0 },
-  { x: 2025, y: 87,  curve_y: null,  company: "VERITUX",                role: "Principal, IA & Risk Advisory", dates: "2025–Present", align: "middle", dx: 0, dy: -25, is_special: 0, is_current: 1 },
+  { x: 2025, y: 87,  curve_y: null,  company: "VERITUX",                role: "Senior Advisor, IA & Risk", dates: "2025–2026", align: "middle", dx: 0, dy: -25, is_special: 0, is_current: 0 },
 ];
 
 const insertAll = db.transaction((rows) => {
