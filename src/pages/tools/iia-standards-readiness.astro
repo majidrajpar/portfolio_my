@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import IIAStandardsDiagnostic from '../../components/IIAStandardsDiagnostic';
+import NetworkCanvas from '../../components/NetworkCanvas';
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="IIA Global Audit Standards (2024) Readiness Assessment | Majid Mumtaz"
+  description="Audit Committee and CAE Diagnostic. Evaluate your corporate audit function against the new 2024 IIA Global Standards (live Jan 2025). Get an instant compliance scorecard and gap analysis."
+>
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+      <NetworkCanvas client:load nodeCount={35} />
+      <div class="relative z-10 max-w-4xl" data-reveal>
+        <a href={`${base}tools/`} class="mb-7 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white">
+          ← Back to Tools
+        </a>
+        <span class="hero-chip mb-6 md:mb-7">Governance Evaluation Instrument</span>
+        <h1 class="headline-display max-w-4xl text-[clamp(2.8rem,6vw,5rem)] font-black text-white">
+          IIA Standards
+          <span class="block text-[#f4c98b]">2024 Readiness</span>
+          <span class="block">Diagnostic.</span>
+        </h1>
+        <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.08rem] md:leading-9">
+          Measure your internal audit function's maturity against the newly issued **2024 Global Internal Audit Standards** (enforced January 2025). Review compliance scores across all 5 domains and instantly generate your Board gap-remediation roadmap.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-5 md:px-8">
+    <div class="soft-shell mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
+      <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+      </svg>
+      <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
+        <span class="meta-label text-[#181511]">Governance Privacy</span>
+        All diagnostic answers, compliance scores, and recommendations are parsed and rendered 100% locally in your active browser session. Zero data is cached, recorded, or sent off-device, ensuring absolute confidentiality for your internal audit diagnostics.
+      </p>
+    </div>
+  </section>
+
+  <section class="px-4 py-4 pb-16 md:px-8">
+    <div class="mx-auto max-w-7xl" data-reveal data-reveal-delay="1">
+      <IIAStandardsDiagnostic client:load />
+    </div>
+  </section>
+</BaseLayout>

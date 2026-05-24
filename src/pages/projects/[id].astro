@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NetworkCanvas from '../../components/NetworkCanvas';
+import CodeSnippetsVault from '../../components/CodeSnippetsVault';
 import { getCaseStudies, getProfessionalEngagements, categorySlug } from '../../lib/db.js';
 const base = import.meta.env.BASE_URL;
 
@@ -127,6 +128,10 @@ const hasStarr = project.starr && project.starr.situation;
             )}
           </div>
         )}
+
+        <div data-reveal>
+          <CodeSnippetsVault client:load />
+        </div>
 
         <div class="glass-card rounded-[30px] p-5 md:p-7" data-reveal>
           <span class="eyebrow-label text-[#a66c1c]">Disclosure</span>
