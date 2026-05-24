@@ -29,7 +29,7 @@ jobs:
         run: npm ci
 
       - name: Fetch latest newsletter articles
-        run: node scripts/sync-newsletter.js
+        run: node scripts/sync-newsletter.cjs
 
       - name: Commit updated articles back to repo
         run: |
@@ -38,6 +38,9 @@ jobs:
           git add src/data/newsletter.json
           git diff --staged --quiet || git commit -m "chore: sync LinkedIn newsletter articles [skip ci]"
           git push || true
+
+      - name: Initialize SQLite Database
+        run: npm run db:init
 
       - name: Build React site
         run: npm run build
