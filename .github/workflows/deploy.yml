@@ -28,6 +28,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Initialize SQLite Database
+        run: npm run db:init
+
       - name: Build React site
         run: npm run build
 
