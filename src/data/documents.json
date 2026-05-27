@@ -348,5 +348,15 @@
     "size": "64 KB",
     "pages": 3,
     "date": "2026-05-13"
+  },
+  {
+    "id": "doc-035",
+    "filename": "SOC_2_Internal_Audit_Readiness_and_Review_Guide.docx",
+    "title": "SOC 2 Internal Audit Readiness & Vendor Review Guide (Word Template)",
+    "description": "An enterprise-grade, board-ready framework for internal audit and risk leaders. Covers Type I vs. Type II scoping, Section IV exception analysis, and an actionable 5-phase internal readiness and 10-step vendor intake checklist.",
+    "category": "Checklists",
+    "size": "43 KB",
+    "pages": 14,
+    "date": "2026-05-24"
   }
 ]
