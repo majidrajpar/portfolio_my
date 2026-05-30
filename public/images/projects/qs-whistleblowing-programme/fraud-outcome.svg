@@ -1,0 +1,127 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+
+  <!-- Header -->
+  <rect width="1200" height="56" fill="#1e293b"/>
+  <text x="24" y="34" fill="#f8fafc" font-size="15" font-weight="700">Whistleblowing Programme — Fraud Discovery Chain</text>
+  <text x="24" y="50" fill="#475569" font-size="10">Anonymised Engagement · ⚠ DUMMY DATA — FOR ILLUSTRATION PURPOSES ONLY</text>
+  <rect x="1058" y="15" width="120" height="24" rx="12" fill="#1d4ed8" opacity="0.3" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1118" y="31" fill="#93c5fd" font-size="10" font-weight="700" text-anchor="middle">CONFIDENTIAL</text>
+
+  <text x="24" y="76" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">PROGRAMME LIVE → REPORT RECEIVED → INVESTIGATION → SAR 12M FRAUD IDENTIFIED</text>
+
+  <!-- ═══ STAGE 1: PROGRAMME LIVE ═══ -->
+  <rect x="20" y="84" width="264" height="220" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <rect x="20" y="84" width="264" height="26" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="152" y="101" fill="#94a3b8" font-size="11" font-weight="800" text-anchor="middle">① PROGRAMME LIVE</text>
+  <text x="36" y="126" fill="#94a3b8" font-size="9">Channel and policy launched:</text>
+  <text x="36" y="144" fill="#94a3b8" font-size="9">· Email reporting channel active</text>
+  <text x="36" y="160" fill="#94a3b8" font-size="9">· Policy communicated to all staff</text>
+  <text x="36" y="176" fill="#94a3b8" font-size="9">· Training completed group-wide</text>
+  <text x="36" y="192" fill="#94a3b8" font-size="9">· Non-retaliation assurances given</text>
+  <text x="36" y="208" fill="#94a3b8" font-size="9">· Manager briefings delivered</text>
+  <rect x="36" y="222" width="232" height="22" rx="11" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="152" y="237" fill="#94a3b8" font-size="9" font-weight="700" text-anchor="middle">Month 0 — Launch</text>
+  <text x="36" y="278" fill="#475569" font-size="8" font-style="italic">Programme designed and</text>
+  <text x="36" y="290" fill="#475569" font-size="8" font-style="italic">deployed from scratch</text>
+
+  <!-- Arrow 1 -->
+  <line x1="284" y1="194" x2="306" y2="194" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="304,189 314,194 304,199" fill="#475569"/>
+
+  <!-- ═══ STAGE 2: REPORT RECEIVED ═══ -->
+  <rect x="314" y="84" width="264" height="220" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <rect x="314" y="84" width="264" height="26" rx="6" fill="#422006"/>
+  <rect x="314" y="100" width="264" height="10" fill="#422006"/>
+  <text x="446" y="101" fill="#fcd34d" font-size="11" font-weight="800" text-anchor="middle">② REPORT RECEIVED</text>
+  <text x="330" y="126" fill="#94a3b8" font-size="9">Staff member submits concern:</text>
+  <text x="330" y="144" fill="#94a3b8" font-size="9">· Submitted via email channel</text>
+  <text x="330" y="160" fill="#94a3b8" font-size="9">· Anonymous submission</text>
+  <text x="330" y="176" fill="#94a3b8" font-size="9">· Specific and credible allegation</text>
+  <text x="330" y="192" fill="#94a3b8" font-size="9">· Relates to financial misconduct</text>
+  <text x="330" y="208" fill="#94a3b8" font-size="9">· Triaged under new process</text>
+  <rect x="330" y="222" width="232" height="22" rx="11" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+  <text x="446" y="237" fill="#fcd34d" font-size="9" font-weight="700" text-anchor="middle">Within Months of Launch</text>
+  <text x="330" y="278" fill="#475569" font-size="8" font-style="italic">Channel immediately used —</text>
+  <text x="330" y="290" fill="#475569" font-size="8" font-style="italic">staff trust established</text>
+
+  <!-- Arrow 2 -->
+  <line x1="578" y1="194" x2="600" y2="194" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="598,189 608,194 598,199" fill="#475569"/>
+
+  <!-- ═══ STAGE 3: INVESTIGATION ═══ -->
+  <rect x="608" y="84" width="264" height="220" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="608" y="84" width="264" height="26" rx="6" fill="#1e3a5f"/>
+  <rect x="608" y="100" width="264" height="10" fill="#1e3a5f"/>
+  <text x="740" y="101" fill="#93c5fd" font-size="11" font-weight="800" text-anchor="middle">③ INVESTIGATION</text>
+  <text x="624" y="126" fill="#94a3b8" font-size="9">Investigation initiated:</text>
+  <text x="624" y="144" fill="#94a3b8" font-size="9">· Report assessed under framework</text>
+  <text x="624" y="160" fill="#94a3b8" font-size="9">· Escalated per authority matrix</text>
+  <text x="624" y="176" fill="#94a3b8" font-size="9">· Evidence gathered and preserved</text>
+  <text x="624" y="192" fill="#94a3b8" font-size="9">· Financial records reviewed</text>
+  <text x="624" y="208" fill="#94a3b8" font-size="9">· Allegation substantiated</text>
+  <rect x="624" y="222" width="232" height="22" rx="11" fill="#0c2a3e" stroke="#3b82f6" stroke-width="1"/>
+  <text x="740" y="237" fill="#93c5fd" font-size="9" font-weight="700" text-anchor="middle">Framework Applied as Designed</text>
+  <text x="624" y="278" fill="#475569" font-size="8" font-style="italic">Investigation process worked</text>
+  <text x="624" y="290" fill="#475569" font-size="8" font-style="italic">exactly as designed</text>
+
+  <!-- Arrow 3 -->
+  <line x1="872" y1="194" x2="894" y2="194" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="892,189 902,194 892,199" fill="#475569"/>
+
+  <!-- ═══ STAGE 4: FRAUD IDENTIFIED ═══ -->
+  <rect x="902" y="84" width="278" height="220" rx="6" fill="#052e16" stroke="#10b981" stroke-width="2"/>
+  <rect x="902" y="84" width="278" height="26" rx="6" fill="#052e16"/>
+  <rect x="902" y="100" width="278" height="10" fill="#052e16"/>
+  <text x="1041" y="101" fill="#6ee7b7" font-size="11" font-weight="800" text-anchor="middle">④ FRAUD IDENTIFIED</text>
+  <text x="918" y="126" fill="#94a3b8" font-size="9">Investigation outcome:</text>
+  <text x="918" y="144" fill="#6ee7b7" font-size="22" font-weight="900">SAR 12M</text>
+  <text x="918" y="168" fill="#94a3b8" font-size="9">Fraud substantiated and escalated</text>
+  <text x="918" y="184" fill="#94a3b8" font-size="9">· Financial misconduct confirmed</text>
+  <text x="918" y="200" fill="#94a3b8" font-size="9">· Recovery action initiated</text>
+  <text x="918" y="216" fill="#94a3b8" font-size="9">· Reported to senior management</text>
+  <rect x="918" y="222" width="246" height="22" rx="11" fill="#052e16" stroke="#10b981" stroke-width="1.5"/>
+  <text x="1041" y="237" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">✓ Direct Result of Programme</text>
+  <text x="918" y="278" fill="#6ee7b7" font-size="8" font-style="italic">Programme justified within</text>
+  <text x="918" y="290" fill="#6ee7b7" font-size="8" font-style="italic">months of launch</text>
+
+  <!-- ═══ IMPACT SUMMARY ═══ -->
+  <rect x="20" y="326" width="1160" height="240" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="36" y="346" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">WHAT THIS DEMONSTRATES</text>
+
+  <!-- Stat 1 -->
+  <rect x="36" y="354" width="260" height="80" rx="4" fill="#0f172a" stroke="#10b981" stroke-width="1"/>
+  <text x="166" y="380" fill="#6ee7b7" font-size="22" font-weight="900" text-anchor="middle">SAR 12M</text>
+  <text x="166" y="400" fill="#64748b" font-size="8.5" text-anchor="middle">Fraud value identified</text>
+  <text x="166" y="416" fill="#64748b" font-size="8.5" text-anchor="middle">via whistleblowing channel</text>
+
+  <!-- Stat 2 -->
+  <rect x="310" y="354" width="260" height="80" rx="4" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="440" y="380" fill="#fcd34d" font-size="22" font-weight="900" text-anchor="middle">&lt; 6 months</text>
+  <text x="440" y="400" fill="#64748b" font-size="8.5" text-anchor="middle">From programme launch</text>
+  <text x="440" y="416" fill="#64748b" font-size="8.5" text-anchor="middle">to fraud discovery</text>
+
+  <!-- Stat 3 -->
+  <rect x="584" y="354" width="260" height="80" rx="4" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+  <text x="714" y="380" fill="#93c5fd" font-size="22" font-weight="900" text-anchor="middle">1 report</text>
+  <text x="714" y="400" fill="#64748b" font-size="8.5" text-anchor="middle">Single submission</text>
+  <text x="714" y="416" fill="#64748b" font-size="8.5" text-anchor="middle">led to full investigation</text>
+
+  <!-- Stat 4 -->
+  <rect x="858" y="354" width="306" height="80" rx="4" fill="#0f172a" stroke="#818cf8" stroke-width="1"/>
+  <text x="1011" y="380" fill="#a5b4fc" font-size="22" font-weight="900" text-anchor="middle">From scratch</text>
+  <text x="1011" y="400" fill="#64748b" font-size="8.5" text-anchor="middle">No prior programme, policy</text>
+  <text x="1011" y="416" fill="#64748b" font-size="8.5" text-anchor="middle">or channel of any kind</text>
+
+  <!-- Key learning -->
+  <rect x="36" y="448" width="1128" height="96" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="52" y="468" fill="#475569" font-size="9" font-weight="700" letter-spacing="1">KEY INSIGHT</text>
+  <text x="52" y="488" fill="#94a3b8" font-size="9">A well-designed whistleblowing programme does not require sophisticated technology to be effective. The email-based channel — supported by a clear policy,</text>
+  <text x="52" y="504" fill="#94a3b8" font-size="9">a structured investigation framework, and organisation-wide training — created sufficient trust for staff to come forward. The SAR 12M fraud discovery within</text>
+  <text x="52" y="520" fill="#94a3b8" font-size="9">months of launch demonstrates that accessibility and trust are more important than platform complexity when designing a reporting mechanism from scratch.</text>
+  <text x="52" y="536" fill="#475569" font-size="9" font-style="italic">Without this programme, this fraud would have remained undetected.</text>
+
+  <!-- Footer -->
+  <rect x="0" y="598" width="1200" height="32" fill="#1e293b"/>
+  <text x="24" y="619" fill="#475569" font-size="10">All names, company identifiers, and figures shown are fictitious and used for portfolio illustration only · Not based on any real client engagement</text>
+</svg>
