@@ -1,0 +1,157 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+
+  <!-- Header -->
+  <rect width="1200" height="56" fill="#1e293b"/>
+  <text x="24" y="34" fill="#f8fafc" font-size="15" font-weight="700">Whistleblowing System Design — UAE Mid-Market Company</text>
+  <text x="24" y="50" fill="#475569" font-size="10">Anonymised Engagement · ⚠ DUMMY DATA — FOR ILLUSTRATION PURPOSES ONLY</text>
+  <rect x="1058" y="15" width="120" height="24" rx="12" fill="#1d4ed8" opacity="0.3" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1118" y="31" fill="#93c5fd" font-size="10" font-weight="700" text-anchor="middle">CONFIDENTIAL</text>
+
+  <!-- Row label -->
+  <text x="24" y="76" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">REPORT LIFECYCLE — END TO END</text>
+
+  <!-- ═══ STAGE 1: REPORTING CHANNELS (x=20, w=196) ═══ -->
+  <rect x="20" y="84" width="196" height="212" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+  <rect x="20" y="84" width="196" height="26" rx="6" fill="#1e3a5f"/>
+  <rect x="20" y="100" width="196" height="10" fill="#1e3a5f"/>
+  <text x="118" y="101" fill="#93c5fd" font-size="10" font-weight="800" text-anchor="middle">① REPORTING CHANNELS</text>
+  <text x="36" y="126" fill="#94a3b8" font-size="9">· Anonymous web portal</text>
+  <text x="36" y="142" fill="#94a3b8" font-size="9">· Dedicated hotline (external)</text>
+  <text x="36" y="158" fill="#94a3b8" font-size="9">· Encrypted email channel</text>
+  <text x="36" y="174" fill="#94a3b8" font-size="9">· In-person (Audit Committee)</text>
+  <text x="36" y="190" fill="#94a3b8" font-size="9">· Third-party ethics line</text>
+  <rect x="36" y="202" width="164" height="22" rx="11" fill="#0c2a3e" stroke="#3b82f6" stroke-width="1"/>
+  <text x="118" y="217" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">✓ Anonymity Assured at Source</text>
+  <text x="36" y="252" fill="#475569" font-size="8" font-style="italic">5 channels reviewed</text>
+  <text x="36" y="265" fill="#475569" font-size="8" font-style="italic">and gap-assessed</text>
+
+  <!-- Arrow 1 -->
+  <line x1="216" y1="190" x2="232" y2="190" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="230,185 240,190 230,195" fill="#475569"/>
+
+  <!-- ═══ STAGE 2: INTAKE & TRIAGE (x=240, w=196) ═══ -->
+  <rect x="240" y="84" width="196" height="212" rx="6" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <rect x="240" y="84" width="196" height="26" rx="6" fill="#2e1065"/>
+  <rect x="240" y="100" width="196" height="10" fill="#2e1065"/>
+  <text x="338" y="101" fill="#c4b5fd" font-size="10" font-weight="800" text-anchor="middle">② INTAKE &amp; TRIAGE</text>
+  <text x="256" y="126" fill="#94a3b8" font-size="9">· Receipt &amp; acknowledgment</text>
+  <text x="256" y="142" fill="#94a3b8" font-size="9">· Initial credibility assessment</text>
+  <text x="256" y="158" fill="#94a3b8" font-size="9">· Severity classification</text>
+  <text x="256" y="174" fill="#94a3b8" font-size="9">· Investigator assignment</text>
+  <text x="256" y="190" fill="#94a3b8" font-size="9">· Conflict-of-interest check</text>
+  <rect x="256" y="202" width="164" height="22" rx="11" fill="#1e1b4b" stroke="#7c3aed" stroke-width="1"/>
+  <text x="338" y="217" fill="#a5b4fc" font-size="9" font-weight="700" text-anchor="middle">⏱ 48-Hour SLA</text>
+  <text x="256" y="252" fill="#475569" font-size="8" font-style="italic">Non-credible reports</text>
+  <text x="256" y="265" fill="#475569" font-size="8" font-style="italic">closed with written rationale</text>
+
+  <!-- Arrow 2 -->
+  <line x1="436" y1="190" x2="452" y2="190" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="450,185 460,190 450,195" fill="#475569"/>
+
+  <!-- ═══ STAGE 3: INVESTIGATION (x=460, w=220) ═══ -->
+  <rect x="460" y="84" width="220" height="212" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <rect x="460" y="84" width="220" height="26" rx="6" fill="#422006"/>
+  <rect x="460" y="100" width="220" height="10" fill="#422006"/>
+  <text x="570" y="101" fill="#fcd34d" font-size="10" font-weight="800" text-anchor="middle">③ INVESTIGATION</text>
+  <text x="476" y="126" fill="#94a3b8" font-size="9">· Evidence gathering &amp; preservation</text>
+  <text x="476" y="142" fill="#94a3b8" font-size="9">· Structured witness interviews</text>
+  <text x="476" y="158" fill="#94a3b8" font-size="9">· Document &amp; data analysis</text>
+  <text x="476" y="174" fill="#94a3b8" font-size="9">· Chain of custody maintained</text>
+  <text x="476" y="190" fill="#94a3b8" font-size="9">· Legal counsel referral if required</text>
+  <rect x="476" y="202" width="188" height="22" rx="11" fill="#422006" stroke="#f59e0b" stroke-width="1"/>
+  <text x="570" y="217" fill="#fcd34d" font-size="9" font-weight="700" text-anchor="middle">30-Day Investigation Target</text>
+  <text x="476" y="252" fill="#475569" font-size="8" font-style="italic">Authority tiers defined in</text>
+  <text x="476" y="265" fill="#475569" font-size="8" font-style="italic">Investigation Policy</text>
+
+  <!-- Arrow 3 -->
+  <line x1="680" y1="190" x2="696" y2="190" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="694,185 704,190 694,195" fill="#475569"/>
+
+  <!-- ═══ STAGE 4: OUTCOME (x=704, w=196) ═══ -->
+  <rect x="704" y="84" width="196" height="212" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <rect x="704" y="84" width="196" height="26" rx="6" fill="#052e16"/>
+  <rect x="704" y="100" width="196" height="10" fill="#052e16"/>
+  <text x="802" y="101" fill="#6ee7b7" font-size="10" font-weight="800" text-anchor="middle">④ OUTCOME &amp; CLOSURE</text>
+  <text x="720" y="126" fill="#94a3b8" font-size="9">· Substantiated / Unsubstantiated</text>
+  <text x="720" y="142" fill="#94a3b8" font-size="9">· Remediation or referral action</text>
+  <text x="720" y="158" fill="#94a3b8" font-size="9">· Disciplinary process if required</text>
+  <text x="720" y="174" fill="#94a3b8" font-size="9">· Reporter notification (anon.)</text>
+  <text x="720" y="190" fill="#94a3b8" font-size="9">· Case file archived securely</text>
+  <rect x="720" y="202" width="164" height="22" rx="11" fill="#052e16" stroke="#10b981" stroke-width="1"/>
+  <text x="802" y="217" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">✓ Closed-Loop Process</text>
+  <text x="720" y="252" fill="#475569" font-size="8" font-style="italic">Outcome communicated</text>
+  <text x="720" y="265" fill="#475569" font-size="8" font-style="italic">to reporter anonymously</text>
+
+  <!-- Arrow 4 -->
+  <line x1="900" y1="190" x2="916" y2="190" stroke="#475569" stroke-width="1.5"/>
+  <polygon points="914,185 924,190 914,195" fill="#475569"/>
+
+  <!-- ═══ STAGE 5: GOVERNANCE REPORTING (x=924, w=256) ═══ -->
+  <rect x="924" y="84" width="256" height="212" rx="6" fill="#1e293b" stroke="#818cf8" stroke-width="1.5"/>
+  <rect x="924" y="84" width="256" height="26" rx="6" fill="#1e1b4b"/>
+  <rect x="924" y="100" width="256" height="10" fill="#1e1b4b"/>
+  <text x="1052" y="101" fill="#a5b4fc" font-size="10" font-weight="800" text-anchor="middle">⑤ GOVERNANCE REPORTING</text>
+  <text x="940" y="126" fill="#94a3b8" font-size="9">· Quarterly Audit Committee report</text>
+  <text x="940" y="142" fill="#94a3b8" font-size="9">· Aggregated case summary (anon.)</text>
+  <text x="940" y="158" fill="#94a3b8" font-size="9">· Trend analysis &amp; root causes</text>
+  <text x="940" y="174" fill="#94a3b8" font-size="9">· Sr. Management escalation path</text>
+  <text x="940" y="190" fill="#94a3b8" font-size="9">· Annual programme review</text>
+  <rect x="940" y="202" width="224" height="22" rx="11" fill="#1e1b4b" stroke="#818cf8" stroke-width="1"/>
+  <text x="1052" y="217" fill="#a5b4fc" font-size="9" font-weight="700" text-anchor="middle">Board Oversight Embedded</text>
+  <text x="940" y="252" fill="#475569" font-size="8" font-style="italic">Cases implicating senior mgmt</text>
+  <text x="940" y="265" fill="#475569" font-size="8" font-style="italic">escalate directly to AC Chair</text>
+
+  <!-- ═══ DELIVERABLES ROW ═══ -->
+  <rect x="20" y="312" width="1160" height="72" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="36" y="332" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">ENGAGEMENT DELIVERABLES</text>
+
+  <rect x="36" y="340" width="262" height="32" rx="4" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+  <text x="52" y="354" fill="#64748b" font-size="8" font-weight="600" letter-spacing="0.5">POLICIES DELIVERED</text>
+  <text x="52" y="366" fill="#93c5fd" font-size="10" font-weight="700">Whistleblowing + Investigation Policy</text>
+
+  <rect x="310" y="340" width="262" height="32" rx="4" fill="#0f172a" stroke="#ef4444" stroke-width="1"/>
+  <text x="326" y="354" fill="#64748b" font-size="8" font-weight="600" letter-spacing="0.5">ACCESS CONTROL</text>
+  <text x="326" y="366" fill="#fca5a5" font-size="10" font-weight="700">Over-privileged roles identified &amp; remediated</text>
+
+  <rect x="584" y="340" width="262" height="32" rx="4" fill="#0f172a" stroke="#10b981" stroke-width="1"/>
+  <text x="600" y="354" fill="#64748b" font-size="8" font-weight="600" letter-spacing="0.5">ANONYMITY ASSURANCE</text>
+  <text x="600" y="366" fill="#6ee7b7" font-size="10" font-weight="700">Metadata &amp; routing gaps identified &amp; closed</text>
+
+  <rect x="858" y="340" width="296" height="32" rx="4" fill="#0f172a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="874" y="354" fill="#64748b" font-size="8" font-weight="600" letter-spacing="0.5">ROLLOUT COVERAGE</text>
+  <text x="874" y="366" fill="#fcd34d" font-size="10" font-weight="700">Board → Management → All Staff</text>
+
+  <!-- ═══ FRAMEWORK + NON-RETALIATION ROW ═══ -->
+  <rect x="20" y="396" width="560" height="98" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="36" y="416" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">FRAMEWORK ALIGNMENT</text>
+  <rect x="36" y="424" width="148" height="22" rx="4" fill="#1e3a5f"/>
+  <text x="110" y="439" fill="#93c5fd" font-size="9" font-weight="700" text-anchor="middle">ISO 37002:2021</text>
+  <rect x="194" y="424" width="168" height="22" rx="4" fill="#1e3a5f"/>
+  <text x="278" y="439" fill="#93c5fd" font-size="9" font-weight="700" text-anchor="middle">UAE Labour Law (2021)</text>
+  <rect x="372" y="424" width="192" height="22" rx="4" fill="#1e3a5f"/>
+  <text x="468" y="439" fill="#93c5fd" font-size="9" font-weight="700" text-anchor="middle">Three Lines of Defence (IIA)</text>
+  <rect x="36" y="454" width="148" height="22" rx="4" fill="#1e3a5f"/>
+  <text x="110" y="469" fill="#93c5fd" font-size="9" font-weight="700" text-anchor="middle">IIA Standards</text>
+  <rect x="194" y="454" width="168" height="22" rx="4" fill="#1e3a5f"/>
+  <text x="278" y="469" fill="#93c5fd" font-size="9" font-weight="700" text-anchor="middle">Investigation Best Practice</text>
+  <rect x="372" y="454" width="192" height="22" rx="4" fill="#1e3a5f"/>
+  <text x="468" y="469" fill="#93c5fd" font-size="9" font-weight="700" text-anchor="middle">COSO ERM 2017</text>
+
+  <rect x="592" y="396" width="588" height="98" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="608" y="416" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">NON-RETALIATION PROTECTIONS — UAE LABOUR LAW ALIGNED</text>
+  <text x="608" y="436" fill="#64748b" font-size="9">· Explicit non-retaliation clause — reporters protected from adverse employment actions</text>
+  <text x="608" y="452" fill="#64748b" font-size="9">· Violations of the clause trigger immediate Audit Committee escalation</text>
+  <text x="608" y="468" fill="#64748b" font-size="9">· Escalation path is independent of line management to prevent suppression</text>
+  <text x="608" y="484" fill="#64748b" font-size="9">· Aligned to Federal Decree-Law No. 33 of 2021 on Labour Relations</text>
+
+  <!-- ═══ SCOPE NOTE ═══ -->
+  <rect x="20" y="506" width="1160" height="66" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="36" y="526" fill="#475569" font-size="10" font-weight="700" letter-spacing="1.5">SCOPE OF ENGAGEMENT</text>
+  <text x="36" y="546" fill="#64748b" font-size="9">· Policy design (Whistleblowing Policy + Investigation Policy)  ·  Access control review &amp; permission restructure  ·  Anonymity assurance assessment</text>
+  <text x="36" y="562" fill="#64748b" font-size="9">· Organisation-wide rollout plan  ·  FAQ &amp; communication materials  ·  Audit Committee reporting template design</text>
+
+  <!-- Footer -->
+  <rect x="0" y="598" width="1200" height="32" fill="#1e293b"/>
+  <text x="24" y="619" fill="#475569" font-size="10">All names, company identifiers, and figures shown are fictitious and used for portfolio illustration only · Not based on any real client engagement</text>
+</svg>

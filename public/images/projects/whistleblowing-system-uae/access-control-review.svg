@@ -1,0 +1,161 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+
+  <!-- Header -->
+  <rect width="1200" height="56" fill="#1e293b"/>
+  <text x="24" y="34" fill="#f8fafc" font-size="15" font-weight="700">Access Control Review — Whistleblowing Report Visibility</text>
+  <text x="24" y="50" fill="#475569" font-size="10">Anonymised Engagement · ⚠ DUMMY DATA — FOR ILLUSTRATION PURPOSES ONLY</text>
+  <rect x="1058" y="15" width="120" height="24" rx="12" fill="#1d4ed8" opacity="0.3" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1118" y="31" fill="#93c5fd" font-size="10" font-weight="700" text-anchor="middle">CONFIDENTIAL</text>
+
+  <!-- Panel headers -->
+  <!-- LEFT PANEL — BEFORE -->
+  <rect x="16" y="64" width="572" height="30" rx="4" fill="#450a0a" stroke="#ef4444" stroke-width="1"/>
+  <text x="302" y="83" fill="#fca5a5" font-size="11" font-weight="800" text-anchor="middle">BEFORE REVIEW — Over-Privileged Access</text>
+
+  <!-- RIGHT PANEL — AFTER -->
+  <rect x="612" y="64" width="572" height="30" rx="4" fill="#052e16" stroke="#10b981" stroke-width="1"/>
+  <text x="898" y="83" fill="#6ee7b7" font-size="11" font-weight="800" text-anchor="middle">AFTER REMEDIATION — Need-to-Know Only</text>
+
+  <!-- VS divider -->
+  <text x="600" y="91" fill="#334155" font-size="11" font-weight="900" text-anchor="middle">→</text>
+
+  <!-- Column headers LEFT -->
+  <rect x="16" y="96" width="572" height="22" fill="#1e293b"/>
+  <text x="30" y="111" fill="#64748b" font-size="9" font-weight="700" letter-spacing="0.5">ROLE</text>
+  <text x="370" y="111" fill="#64748b" font-size="9" font-weight="700" letter-spacing="0.5">ACCESS LEVEL</text>
+  <text x="530" y="111" fill="#64748b" font-size="9" font-weight="700" letter-spacing="0.5">STATUS</text>
+
+  <!-- Column headers RIGHT -->
+  <rect x="612" y="96" width="572" height="22" fill="#1e293b"/>
+  <text x="626" y="111" fill="#64748b" font-size="9" font-weight="700" letter-spacing="0.5">ROLE</text>
+  <text x="966" y="111" fill="#64748b" font-size="9" font-weight="700" letter-spacing="0.5">ACCESS LEVEL</text>
+  <text x="1126" y="111" fill="#64748b" font-size="9" font-weight="700" letter-spacing="0.5">STATUS</text>
+
+  <!-- ═══ ROW 1: Audit Committee ═══ -->
+  <rect x="16" y="118" width="572" height="36" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="30" y="140" fill="#e2e8f0" font-size="10" font-weight="600">Audit Committee (Chair &amp; Members)</text>
+  <rect x="350" y="124" width="160" height="20" rx="10" fill="#052e16"/>
+  <text x="430" y="138" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">Full Read Access</text>
+  <text x="530" y="140" fill="#6ee7b7" font-size="9" font-weight="700">✓ Correct</text>
+
+  <rect x="612" y="118" width="572" height="36" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="626" y="140" fill="#e2e8f0" font-size="10" font-weight="600">Audit Committee (Chair &amp; Members)</text>
+  <rect x="946" y="124" width="160" height="20" rx="10" fill="#052e16"/>
+  <text x="1026" y="138" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">Full Read Access</text>
+  <text x="1126" y="140" fill="#6ee7b7" font-size="9" font-weight="700">✓ Retained</text>
+
+  <!-- ═══ ROW 2: Head of Internal Audit ═══ -->
+  <rect x="16" y="154" width="572" height="36" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="30" y="176" fill="#e2e8f0" font-size="10" font-weight="600">Head of Internal Audit</text>
+  <rect x="350" y="160" width="160" height="20" rx="10" fill="#052e16"/>
+  <text x="430" y="174" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">Full Read Access</text>
+  <text x="530" y="176" fill="#6ee7b7" font-size="9" font-weight="700">✓ Correct</text>
+
+  <rect x="612" y="154" width="572" height="36" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="626" y="176" fill="#e2e8f0" font-size="10" font-weight="600">Head of Internal Audit</text>
+  <rect x="946" y="160" width="160" height="20" rx="10" fill="#052e16"/>
+  <text x="1026" y="174" fill="#6ee7b7" font-size="9" font-weight="700" text-anchor="middle">Full Read Access</text>
+  <text x="1126" y="176" fill="#6ee7b7" font-size="9" font-weight="700">✓ Retained</text>
+
+  <!-- ═══ ROW 3: CEO / MD ═══ -->
+  <rect x="16" y="190" width="572" height="36" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="30" y="212" fill="#e2e8f0" font-size="10" font-weight="600">CEO / Managing Director</text>
+  <rect x="350" y="196" width="160" height="20" rx="10" fill="#450a0a"/>
+  <text x="430" y="210" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">Full Read Access</text>
+  <text x="530" y="212" fill="#f87171" font-size="9" font-weight="700">⚠ Risk</text>
+
+  <rect x="612" y="190" width="572" height="36" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="626" y="212" fill="#e2e8f0" font-size="10" font-weight="600">CEO / Managing Director</text>
+  <rect x="946" y="196" width="160" height="20" rx="10" fill="#422006"/>
+  <text x="1026" y="210" fill="#fcd34d" font-size="9" font-weight="700" text-anchor="middle">Restricted*</text>
+  <text x="1126" y="212" fill="#fcd34d" font-size="9" font-weight="700">↓ Reduced</text>
+
+  <!-- ═══ ROW 4: HR Director ═══ -->
+  <rect x="16" y="226" width="572" height="36" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="30" y="248" fill="#e2e8f0" font-size="10" font-weight="600">HR Director</text>
+  <rect x="350" y="232" width="160" height="20" rx="10" fill="#450a0a"/>
+  <text x="430" y="246" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">Full Read Access</text>
+  <text x="530" y="248" fill="#f87171" font-size="9" font-weight="700">⚠ Risk</text>
+
+  <rect x="612" y="226" width="572" height="36" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="626" y="248" fill="#e2e8f0" font-size="10" font-weight="600">HR Director</text>
+  <rect x="946" y="232" width="160" height="20" rx="10" fill="#422006"/>
+  <text x="1026" y="246" fill="#fcd34d" font-size="9" font-weight="700" text-anchor="middle">Assigned Cases Only</text>
+  <text x="1126" y="248" fill="#fcd34d" font-size="9" font-weight="700">↓ Reduced</text>
+
+  <!-- ═══ ROW 5: Legal Counsel ═══ -->
+  <rect x="16" y="262" width="572" height="36" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="30" y="284" fill="#e2e8f0" font-size="10" font-weight="600">Legal Counsel</text>
+  <rect x="350" y="268" width="160" height="20" rx="10" fill="#422006"/>
+  <text x="430" y="282" fill="#fcd34d" font-size="9" font-weight="700" text-anchor="middle">Read Access</text>
+  <text x="530" y="284" fill="#fcd34d" font-size="9" font-weight="700">! Review</text>
+
+  <rect x="612" y="262" width="572" height="36" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="626" y="284" fill="#e2e8f0" font-size="10" font-weight="600">Legal Counsel</text>
+  <rect x="946" y="268" width="160" height="20" rx="10" fill="#422006"/>
+  <text x="1026" y="282" fill="#fcd34d" font-size="9" font-weight="700" text-anchor="middle">When Legally Assigned</text>
+  <text x="1126" y="284" fill="#fcd34d" font-size="9" font-weight="700">↓ Scoped</text>
+
+  <!-- ═══ ROW 6: Company Secretary ═══ -->
+  <rect x="16" y="298" width="572" height="36" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="30" y="320" fill="#e2e8f0" font-size="10" font-weight="600">Company Secretary</text>
+  <rect x="350" y="304" width="160" height="20" rx="10" fill="#450a0a"/>
+  <text x="430" y="318" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">Full Read Access</text>
+  <text x="530" y="320" fill="#f87171" font-size="9" font-weight="700">⚠ Risk</text>
+
+  <rect x="612" y="298" width="572" height="36" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="626" y="320" fill="#e2e8f0" font-size="10" font-weight="600">Company Secretary</text>
+  <rect x="946" y="304" width="160" height="20" rx="10" fill="#1e3a5f"/>
+  <text x="1026" y="318" fill="#93c5fd" font-size="9" font-weight="700" text-anchor="middle">AC Summary Only</text>
+  <text x="1126" y="320" fill="#6ee7b7" font-size="9" font-weight="700">↓ Scoped</text>
+
+  <!-- ═══ ROW 7: Finance / Ops Directors ═══ -->
+  <rect x="16" y="334" width="572" height="36" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="30" y="356" fill="#e2e8f0" font-size="10" font-weight="600">Finance &amp; Operations Directors</text>
+  <rect x="350" y="340" width="160" height="20" rx="10" fill="#422006"/>
+  <text x="430" y="354" fill="#fcd34d" font-size="9" font-weight="700" text-anchor="middle">Partial Read Access</text>
+  <text x="530" y="356" fill="#f87171" font-size="9" font-weight="700">⚠ Risk</text>
+
+  <rect x="612" y="334" width="572" height="36" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="626" y="356" fill="#e2e8f0" font-size="10" font-weight="600">Finance &amp; Operations Directors</text>
+  <rect x="946" y="340" width="160" height="20" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="1026" y="354" fill="#64748b" font-size="9" font-weight="700" text-anchor="middle">No Direct Access</text>
+  <text x="1126" y="356" fill="#6ee7b7" font-size="9" font-weight="700">✓ Removed</text>
+
+  <!-- ═══ ROW 8: IT Administrator ═══ -->
+  <rect x="16" y="370" width="572" height="36" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="30" y="392" fill="#e2e8f0" font-size="10" font-weight="600">IT Administrator</text>
+  <rect x="350" y="376" width="160" height="20" rx="10" fill="#450a0a"/>
+  <text x="430" y="390" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">Full System Access</text>
+  <text x="530" y="392" fill="#f87171" font-size="9" font-weight="700">⚠ Critical</text>
+
+  <rect x="612" y="370" width="572" height="36" fill="#111827" stroke="#1e293b" stroke-width="1"/>
+  <text x="626" y="392" fill="#e2e8f0" font-size="10" font-weight="600">IT Administrator</text>
+  <rect x="946" y="376" width="160" height="20" rx="10" fill="#422006"/>
+  <text x="1026" y="390" fill="#fcd34d" font-size="9" font-weight="700" text-anchor="middle">Technical Only†</text>
+  <text x="1126" y="392" fill="#fcd34d" font-size="9" font-weight="700">↓ Segregated</text>
+
+  <!-- ═══ FINDINGS SUMMARY ROW ═══ -->
+  <rect x="16" y="420" width="572" height="72" rx="4" fill="#1e293b" stroke="#ef4444" stroke-width="1"/>
+  <text x="30" y="440" fill="#f87171" font-size="10" font-weight="700" letter-spacing="1">BEFORE — FINDINGS</text>
+  <text x="30" y="458" fill="#64748b" font-size="9">· 5 of 8 roles were over-privileged relative to their function</text>
+  <text x="30" y="474" fill="#64748b" font-size="9">· IT access could technically de-anonymise reporters via metadata</text>
+  <text x="30" y="490" fill="#64748b" font-size="9">· CEO access created conflict-of-interest risk if named in a report</text>
+
+  <rect x="612" y="420" width="572" height="72" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+  <text x="626" y="440" fill="#6ee7b7" font-size="10" font-weight="700" letter-spacing="1">AFTER — OUTCOME</text>
+  <text x="626" y="458" fill="#64748b" font-size="9">· Access limited to need-to-know roles with documented rationale</text>
+  <text x="626" y="474" fill="#64748b" font-size="9">· IT access segregated: technical admin with no report content visibility</text>
+  <text x="626" y="490" fill="#64748b" font-size="9">· CEO / MD access restricted if named; AC Chair escalation path defined</text>
+
+  <!-- ═══ FOOTNOTES ═══ -->
+  <rect x="16" y="504" width="1168" height="66" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="30" y="522" fill="#475569" font-size="9" font-weight="700" letter-spacing="1">NOTES</text>
+  <text x="30" y="538" fill="#64748b" font-size="9">* CEO / MD access restricted by default; can be granted on a case-by-case basis by AC Chair only when the CEO is not a subject of the report.</text>
+  <text x="30" y="554" fill="#64748b" font-size="9">† IT Administrator retains system-level technical access (backups, uptime) but report content is encrypted and inaccessible without AC-issued decryption authority.</text>
+
+  <!-- Footer -->
+  <rect x="0" y="598" width="1200" height="32" fill="#1e293b"/>
+  <text x="24" y="619" fill="#475569" font-size="10">All names, company identifiers, and figures shown are fictitious and used for portfolio illustration only · Not based on any real client engagement</text>
+</svg>

@@ -1,0 +1,194 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI',system-ui,-apple-system,sans-serif">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <!-- Header -->
+  <rect width="1200" height="56" fill="#1e293b"/>
+  <text x="24" y="34" fill="#f8fafc" font-size="15" font-weight="700">Business Continuity Programme Tracker — BCP / DRP Status Dashboard</text>
+  <text x="24" y="50" fill="#475569" font-size="10">Al Nakheel F&amp;B Technology Platform · ISO 22301 Aligned · ⚠ DUMMY DATA — FOR ILLUSTRATION PURPOSES ONLY</text>
+  <rect x="1090" y="14" width="90" height="26" rx="13" fill="#1d4ed8" opacity="0.3" stroke="#3b82f6" stroke-width="1"/>
+  <text x="1135" y="31" fill="#93c5fd" font-size="10" font-weight="700" text-anchor="middle">CONFIDENTIAL</text>
+
+  <!-- KPI Strip -->
+  <rect x="24" y="66" width="130" height="60" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="89" y="90" fill="#e2e8f0" font-size="22" font-weight="800" text-anchor="middle">12</text>
+  <text x="89" y="106" fill="#64748b" font-size="9" text-anchor="middle" letter-spacing="1">CRITICAL FUNCTIONS</text>
+  <text x="89" y="118" fill="#475569" font-size="9" text-anchor="middle">BCP coverage</text>
+
+  <rect x="164" y="66" width="130" height="60" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="229" y="90" fill="#22c55e" font-size="22" font-weight="800" text-anchor="middle">9</text>
+  <text x="229" y="106" fill="#64748b" font-size="9" text-anchor="middle" letter-spacing="1">BCP READY</text>
+  <text x="229" y="118" fill="#475569" font-size="9" text-anchor="middle">Tested &amp; approved</text>
+
+  <rect x="304" y="66" width="130" height="60" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="369" y="90" fill="#f59e0b" font-size="22" font-weight="800" text-anchor="middle">2</text>
+  <text x="369" y="106" fill="#64748b" font-size="9" text-anchor="middle" letter-spacing="1">IN DEVELOPMENT</text>
+  <text x="369" y="118" fill="#475569" font-size="9" text-anchor="middle">Draft plans active</text>
+
+  <rect x="444" y="66" width="130" height="60" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="509" y="90" fill="#ef4444" font-size="22" font-weight="800" text-anchor="middle">1</text>
+  <text x="509" y="106" fill="#64748b" font-size="9" text-anchor="middle" letter-spacing="1">GAP IDENTIFIED</text>
+  <text x="509" y="118" fill="#475569" font-size="9" text-anchor="middle">Remediation required</text>
+
+  <rect x="584" y="66" width="130" height="60" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="649" y="90" fill="#34d399" font-size="22" font-weight="800" text-anchor="middle">75%</text>
+  <text x="649" y="106" fill="#64748b" font-size="9" text-anchor="middle" letter-spacing="1">OVERALL READINESS</text>
+  <text x="649" y="118" fill="#475569" font-size="9" text-anchor="middle">Programme maturity</text>
+
+  <rect x="1000" y="66" width="176" height="60" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="1088" y="85" fill="#64748b" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="1">LAST ENTERPRISE TEST</text>
+  <text x="1088" y="105" fill="#e2e8f0" font-size="12" font-weight="700" text-anchor="middle">Nov 2025 Tabletop</text>
+  <text x="1088" y="120" fill="#475569" font-size="9" text-anchor="middle">Next: May 2026 Full Simulation</text>
+
+  <!-- Section Title: Critical Systems RTO/RPO -->
+  <text x="24" y="150" fill="#475569" font-size="10" font-weight="700" letter-spacing="2">CRITICAL SYSTEMS — RTO / RPO TARGETS &amp; RECOVERY STATUS</text>
+
+  <!-- Table header -->
+  <rect x="24" y="156" width="1152" height="26" fill="#0f172a" rx="4"/>
+  <text x="34" y="173" fill="#475569" font-size="9" font-weight="700">CRITICAL FUNCTION / SYSTEM</text>
+  <text x="330" y="173" fill="#475569" font-size="9" font-weight="700">RTO TARGET</text>
+  <text x="420" y="173" fill="#475569" font-size="9" font-weight="700">RPO TARGET</text>
+  <text x="510" y="173" fill="#475569" font-size="9" font-weight="700">BCP STATUS</text>
+  <text x="620" y="173" fill="#475569" font-size="9" font-weight="700">LAST TEST DATE</text>
+  <text x="730" y="173" fill="#475569" font-size="9" font-weight="700">TEST RESULT</text>
+  <text x="840" y="173" fill="#475569" font-size="9" font-weight="700">NEXT TEST</text>
+  <text x="960" y="173" fill="#475569" font-size="9" font-weight="700">GAPS / NOTES</text>
+
+  <!-- Row 1: Kitchen OS -->
+  <rect x="24" y="182" width="1152" height="28" fill="#1e293b"/>
+  <text x="34" y="200" fill="#e2e8f0" font-size="10">Kitchen Operating System (Order Mgmt)</text>
+  <text x="330" y="200" fill="#22c55e" font-size="10" font-weight="700">4 hours</text>
+  <text x="420" y="200" fill="#22c55e" font-size="10" font-weight="700">30 mins</text>
+  <rect x="506" y="188" width="56" height="14" rx="7" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="1"/>
+  <text x="534" y="199" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">APPROVED</text>
+  <text x="620" y="200" fill="#94a3b8" font-size="9">Nov 2025</text>
+  <rect x="726" y="188" width="54" height="14" rx="7" fill="#22c55e" opacity="0.2"/>
+  <text x="753" y="199" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">PASSED</text>
+  <text x="840" y="200" fill="#94a3b8" font-size="9">May 2026</text>
+  <text x="960" y="200" fill="#64748b" font-size="8.5">Cloud failover validated · 2.5 hr actual RTO achieved</text>
+
+  <!-- Row 2: Payment Processing -->
+  <rect x="24" y="210" width="1152" height="28" fill="#161f2e"/>
+  <text x="34" y="228" fill="#e2e8f0" font-size="10">Payment Processing Systems</text>
+  <text x="330" y="228" fill="#22c55e" font-size="10" font-weight="700">2 hours</text>
+  <text x="420" y="228" fill="#22c55e" font-size="10" font-weight="700">15 mins</text>
+  <rect x="506" y="216" width="56" height="14" rx="7" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="1"/>
+  <text x="534" y="227" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">APPROVED</text>
+  <text x="620" y="228" fill="#94a3b8" font-size="9">Nov 2025</text>
+  <rect x="726" y="216" width="54" height="14" rx="7" fill="#22c55e" opacity="0.2"/>
+  <text x="753" y="227" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">PASSED</text>
+  <text x="840" y="228" fill="#94a3b8" font-size="9">May 2026</text>
+  <text x="960" y="228" fill="#64748b" font-size="8.5">Payment processor SLA confirmed · Backup gateway live</text>
+
+  <!-- Row 3: High-Volume Kitchens -->
+  <rect x="24" y="238" width="1152" height="28" fill="#1e293b"/>
+  <text x="34" y="256" fill="#e2e8f0" font-size="10">Kitchen Operations (Tier-1 High-Volume Sites)</text>
+  <text x="330" y="256" fill="#22c55e" font-size="10" font-weight="700">8 hours</text>
+  <text x="420" y="256" fill="#94a3b8" font-size="10">N/A</text>
+  <rect x="506" y="244" width="56" height="14" rx="7" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="1"/>
+  <text x="534" y="255" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">APPROVED</text>
+  <text x="620" y="256" fill="#94a3b8" font-size="9">Oct 2025</text>
+  <rect x="726" y="244" width="86" height="14" rx="7" fill="#f59e0b" opacity="0.2"/>
+  <text x="769" y="255" fill="#f59e0b" font-size="9" font-weight="700" text-anchor="middle">PARTIAL PASS</text>
+  <text x="840" y="256" fill="#94a3b8" font-size="9">Apr 2026</text>
+  <text x="960" y="256" fill="#64748b" font-size="8.5">UAE backup capacity confirmed · KSA gap — action plan Q2</text>
+
+  <!-- Row 4: Financial Reporting -->
+  <rect x="24" y="266" width="1152" height="28" fill="#161f2e"/>
+  <text x="34" y="284" fill="#e2e8f0" font-size="10">Financial Reporting &amp; ERP Systems</text>
+  <text x="330" y="284" fill="#22c55e" font-size="10" font-weight="700">24 hours</text>
+  <text x="420" y="284" fill="#22c55e" font-size="10" font-weight="700">4 hours</text>
+  <rect x="506" y="272" width="56" height="14" rx="7" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="1"/>
+  <text x="534" y="283" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">APPROVED</text>
+  <text x="620" y="284" fill="#94a3b8" font-size="9">Sep 2025</text>
+  <rect x="726" y="272" width="54" height="14" rx="7" fill="#22c55e" opacity="0.2"/>
+  <text x="753" y="283" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">PASSED</text>
+  <text x="840" y="284" fill="#94a3b8" font-size="9">Mar 2026</text>
+  <text x="960" y="284" fill="#64748b" font-size="8.5">Cloud ERP DR tested · Daily backup verified · RTO 18 hrs</text>
+
+  <!-- Row 5: Employee Payroll -->
+  <rect x="24" y="294" width="1152" height="28" fill="#1e293b"/>
+  <text x="34" y="312" fill="#e2e8f0" font-size="10">Employee Payroll Processing</text>
+  <text x="330" y="312" fill="#22c55e" font-size="10" font-weight="700">48 hours</text>
+  <text x="420" y="312" fill="#22c55e" font-size="10" font-weight="700">24 hours</text>
+  <rect x="506" y="300" width="56" height="14" rx="7" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="1"/>
+  <text x="534" y="311" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">APPROVED</text>
+  <text x="620" y="312" fill="#94a3b8" font-size="9">Nov 2025</text>
+  <rect x="726" y="300" width="54" height="14" rx="7" fill="#22c55e" opacity="0.2"/>
+  <text x="753" y="311" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">PASSED</text>
+  <text x="840" y="312" fill="#94a3b8" font-size="9">May 2026</text>
+  <text x="960" y="312" fill="#64748b" font-size="8.5">Manual payroll procedures documented · 5 staff trained</text>
+
+  <!-- Row 6: Data Security / Cybersecurity Incident -->
+  <rect x="24" y="322" width="1152" height="28" fill="#161f2e"/>
+  <text x="34" y="340" fill="#e2e8f0" font-size="10">Cybersecurity Incident Response Plan</text>
+  <text x="330" y="340" fill="#22c55e" font-size="10" font-weight="700">1 hour</text>
+  <text x="420" y="340" fill="#22c55e" font-size="10" font-weight="700">1 hour</text>
+  <rect x="506" y="328" width="80" height="14" rx="7" fill="#f59e0b" opacity="0.2" stroke="#f59e0b" stroke-width="1"/>
+  <text x="546" y="339" fill="#f59e0b" font-size="9" font-weight="700" text-anchor="middle">IN DEVELOPMENT</text>
+  <text x="620" y="340" fill="#94a3b8" font-size="9">Not yet tested</text>
+  <rect x="726" y="328" width="68" height="14" rx="7" fill="#f59e0b" opacity="0.2"/>
+  <text x="760" y="339" fill="#f59e0b" font-size="9" font-weight="700" text-anchor="middle">NOT TESTED</text>
+  <text x="840" y="340" fill="#94a3b8" font-size="9">Mar 2026</text>
+  <text x="960" y="340" fill="#f59e0b" font-size="8.5">IRP 80% complete — playbook test scheduled Q1 2026</text>
+
+  <!-- Row 7: Food Safety Outbreak -->
+  <rect x="24" y="350" width="1152" height="28" fill="#1e293b"/>
+  <text x="34" y="368" fill="#e2e8f0" font-size="10">Food Safety Outbreak / Product Recall</text>
+  <text x="330" y="368" fill="#22c55e" font-size="10" font-weight="700">2 hours</text>
+  <text x="420" y="368" fill="#94a3b8" font-size="10">N/A</text>
+  <rect x="506" y="356" width="56" height="14" rx="7" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="1"/>
+  <text x="534" y="367" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">APPROVED</text>
+  <text x="620" y="368" fill="#94a3b8" font-size="9">Nov 2025</text>
+  <rect x="726" y="356" width="54" height="14" rx="7" fill="#22c55e" opacity="0.2"/>
+  <text x="753" y="367" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">PASSED</text>
+  <text x="840" y="368" fill="#94a3b8" font-size="9">May 2026</text>
+  <text x="960" y="368" fill="#64748b" font-size="8.5">Recall procedure tested · Regulator hotline list updated</text>
+
+  <!-- Row 8: Corporate Communications -->
+  <rect x="24" y="378" width="1152" height="28" fill="#161f2e"/>
+  <text x="34" y="396" fill="#e2e8f0" font-size="10">Corporate Communications &amp; Media Response</text>
+  <text x="330" y="396" fill="#22c55e" font-size="10" font-weight="700">4 hours</text>
+  <text x="420" y="396" fill="#94a3b8" font-size="10">N/A</text>
+  <rect x="506" y="384" width="80" height="14" rx="7" fill="#ef4444" opacity="0.2" stroke="#ef4444" stroke-width="1"/>
+  <text x="546" y="395" fill="#ef4444" font-size="9" font-weight="700" text-anchor="middle">GAP IDENTIFIED</text>
+  <text x="620" y="396" fill="#94a3b8" font-size="9">Not yet tested</text>
+  <rect x="726" y="384" width="68" height="14" rx="7" fill="#ef4444" opacity="0.2"/>
+  <text x="760" y="395" fill="#ef4444" font-size="9" font-weight="700" text-anchor="middle">NOT TESTED</text>
+  <text x="840" y="396" fill="#94a3b8" font-size="9">Feb 2026</text>
+  <text x="960" y="396" fill="#ef4444" font-size="8.5">Media playbook not finalized · CMO remediation plan active</text>
+
+  <!-- BCP Test Summary -->
+  <rect x="24" y="422" width="1152" height="80" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="44" y="442" fill="#64748b" font-size="10" font-weight="700" letter-spacing="1">BCP TESTING PROGRAMME — ANNUAL SCHEDULE</text>
+
+  <rect x="44" y="450" width="270" height="40" rx="6" fill="#22c55e" opacity="0.06" stroke="#22c55e" stroke-width="1"/>
+  <text x="179" y="466" fill="#22c55e" font-size="9" font-weight="700" text-anchor="middle">NOV 2025 — ENTERPRISE TABLETOP</text>
+  <text x="179" y="480" fill="#94a3b8" font-size="8.5" text-anchor="middle">COMPLETED · 9/12 functions tested · 3 gaps logged</text>
+
+  <rect x="324" y="450" width="270" height="40" rx="6" fill="#3b82f6" opacity="0.08" stroke="#3b82f6" stroke-width="1"/>
+  <text x="459" y="466" fill="#3b82f6" font-size="9" font-weight="700" text-anchor="middle">MAR 2026 — DRP FAILOVER TEST</text>
+  <text x="459" y="480" fill="#94a3b8" font-size="8.5" text-anchor="middle">SCHEDULED · Kitchen OS &amp; payment systems · CTO lead</text>
+
+  <rect x="604" y="450" width="270" height="40" rx="6" fill="#a78bfa" opacity="0.08" stroke="#a78bfa" stroke-width="1"/>
+  <text x="739" y="466" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">MAY 2026 — FULL SIMULATION EXERCISE</text>
+  <text x="739" y="480" fill="#94a3b8" font-size="8.5" text-anchor="middle">PLANNED · Multi-scenario · CMT + all markets</text>
+
+  <rect x="884" y="450" width="270" height="40" rx="6" fill="#475569" opacity="0.2" stroke="#475569" stroke-width="1"/>
+  <text x="1019" y="466" fill="#94a3b8" font-size="9" font-weight="700" text-anchor="middle">NOV 2026 — ANNUAL TABLETOP</text>
+  <text x="1019" y="480" fill="#94a3b8" font-size="8.5" text-anchor="middle">FUTURE · Full BCP refresh cycle</text>
+
+  <!-- Crisis Classification -->
+  <text x="24" y="522" fill="#475569" font-size="9" font-weight="700" letter-spacing="1">CRISIS CLASSIFICATION:</text>
+  <rect x="184" y="510" width="130" height="16" rx="8" fill="#22c55e" opacity="0.1" stroke="#22c55e" stroke-width="1"/>
+  <text x="249" y="522" fill="#22c55e" font-size="8.5" font-weight="700" text-anchor="middle">L1 — Operational Incident</text>
+  <rect x="324" y="510" width="118" height="16" rx="8" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="1"/>
+  <text x="383" y="522" fill="#f59e0b" font-size="8.5" font-weight="700" text-anchor="middle">L2 — Business Crisis</text>
+  <rect x="452" y="510" width="120" height="16" rx="8" fill="#ef4444" opacity="0.1" stroke="#ef4444" stroke-width="1"/>
+  <text x="512" y="522" fill="#ef4444" font-size="8.5" font-weight="700" text-anchor="middle">L3 — Enterprise Crisis</text>
+  <text x="590" y="522" fill="#475569" font-size="9">L3 triggers CEO Crisis Management Team activation · Board notification within 24 hrs</text>
+
+  <text x="24" y="545" fill="#475569" font-size="9">Recovery Time Objectives reviewed annually by Risk Committee · RTO/RPO targets aligned with Business Impact Analysis findings · MTPD assessed per critical function</text>
+
+  <!-- Footer -->
+  <rect x="0" y="598" width="1200" height="32" fill="#1e293b"/>
+  <text x="24" y="619" fill="#475569" font-size="10">All company names, risk data, and financial figures shown are fictitious and used for portfolio demonstration only · Not based on any real client engagement</text>
+</svg>
