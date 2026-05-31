@@ -44,6 +44,7 @@ const Navbar = ({ initialPath = '' }) => {
     { label: 'Home', href: `${base}/` },
     { label: 'About', href: `${base}/about/` },
     { label: 'Projects', href: `${base}/projects/` },
+    { label: 'Tools', href: `${base}/tools/` },
     { label: 'Advisory', href: `${base}/advisory/` },
     { label: 'Contact', href: `${base}/contact/` },
   ];
