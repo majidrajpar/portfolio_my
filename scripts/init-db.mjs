@@ -96,7 +96,7 @@ const reset = db.transaction(() => {
     [2017, 61, null, 'AL-FAISALIAH\nGROUP', 'Group Director, IA & Risk', '2016-2022', 'middle', 0, -25, 0, 0],
     [2021, 72.2, null, 'AFG Restaurants Sector', 'Audit Committee Member', '2021-2022', 'middle', 0, -35, 1, 0],
     [2022, 75, null, 'KITOPI', 'Director of Internal Audit', '2022-2025', 'middle', 0, -25, 0, 0],
-    [2025, 87, null, 'VERITUX', 'Internal Audit Director', '2025-Present', 'middle', 0, -25, 0, 1],
+    [2025, 87, null, 'VERITUX', 'Registered Independent Consultant', '2025-Present', 'middle', 0, -25, 0, 1],
   ].forEach((row) => insertMilestone.run(...row));
 
   const insertCaseStudy = db.prepare(`
