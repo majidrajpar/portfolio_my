@@ -61,6 +61,11 @@ const publications = [
 ];
 
 const publicationOutlets = [
+  'IIA Internal Auditor',
+  'GRC Report',
+  'ACCA AB Magazine',
+  'Corporate Compliance Insights',
+  'Consultancy ME',
   'Substack: The Corporate Mercenary',
 ];
 
@@ -243,9 +248,11 @@ const featuredPublications = publications.slice(0, 2);
         <div>
           <div class="meta-label text-[#a33a21]">Regularly Featured In</div>
           <div class="mt-4 flex flex-wrap gap-2">
-            <span class="rounded-full bg-[#1d3557]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-[#1d3557]">
-              Substack: The Corporate Mercenary
-            </span>
+            {publicationOutlets.map((outlet) => (
+              <span class="rounded-full bg-[#1d3557]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-[#1d3557]">
+                {outlet}
+              </span>
+            ))}
           </div>
         </div>
         <a href="https://majidmumtaz.substack.com/" target="_blank" rel="noopener noreferrer" class="btn-primary shrink-0 self-start md:self-auto">
