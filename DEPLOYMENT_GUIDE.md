@@ -246,7 +246,7 @@ If you encounter issues:
 Once your site is live:
 
 1. **Add Content**:
-   - Upload your CV to `public/cv/Majid_Mumtaz_CV.pdf`
+   - Upload your CV to `public/cv/Majid_Mumtaz_IA_GRC_Executive_CV.pdf`
    - Add project screenshots to `public/images/projects/`
    - Create detailed project pages
 
