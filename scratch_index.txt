@@ -56,7 +56,7 @@ const publications = [
     date: 'May 2026',
     title: 'Keeping Risk Registers Relevant',
     summary: 'Why risk registers drift from operational reality and how to rebuild them as live intelligence rather than compliance artefacts.',
-    href: 'https://abmagazine.accaglobal.com/global/articles/2026/apr/business/Keeping-risk-registers-relevant.html',
+    href: 'https://www.accaglobal.com/gb/en/member/member/accounting-business.html',
   },
 ];
 
@@ -244,25 +244,6 @@ const featuredPublications = publications.slice(0, 2);
 
       <SubstackFeed client:load />
 
-      <div class="mt-16 mb-8" data-reveal>
-        <h3 class="text-2xl font-black text-[#181511]">Industry Articles & Features</h3>
-      </div>
-      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {publications.map((pub, i) => (
-          <a href={pub.href} target="_blank" rel="noopener noreferrer" class="group glass-card flex flex-col rounded-[24px] p-6 transition-transform hover:-translate-y-1" data-reveal data-reveal-delay={String((i % 3) + 1)}>
-            <div class="meta-label text-[#a33a21]">{pub.outlet} &middot; {pub.date}</div>
-            <h4 class="mt-3 text-lg leading-tight text-[#181511] group-hover:text-[#a33a21] transition-colors">{pub.title}</h4>
-            <p class="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">{pub.summary}</p>
-          </a>
-        ))}
-      </div>
-
-      <div class="mt-8 flex justify-center" data-reveal>
-        <a href="https://www.linkedin.com/in/majid-m-4b097118/details/publications/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-          View Complete Publication History on LinkedIn
-        </a>
-      </div>
-
       <div class="mt-10 soft-shell p-6 md:p-8 flex flex-col gap-6 md:flex-row md:items-center md:justify-between" data-reveal>
         <div>
           <div class="meta-label text-[#a33a21]">Regularly Featured In</div>
@@ -295,8 +276,7 @@ const featuredPublications = publications.slice(0, 2);
             </p>
             <div class="mt-6 flex flex-wrap gap-4">
               <a href={`${base}about/`} class="btn-secondary">View Full Profile</a>
-              <a href={`${base}downloads/Majid_Mumtaz_Capabilities_Deck.pdf`} class="btn-primary" download>Download Pitch Deck</a>
-              <a href={`${base}cv/Majid-Mumtaz-CAE-CV.pdf`} class="btn-secondary" download>Download CV</a>
+              <a href={`${base}cv/Majid-Mumtaz-CAE-CV.pdf`} class="btn-primary" download>Download CV</a>
             </div>
           </div>
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
