@@ -276,7 +276,7 @@ const featuredPublications = publications.slice(0, 2);
             </p>
             <div class="mt-6 flex flex-wrap gap-4">
               <a href={`${base}about/`} class="btn-secondary">View Full Profile</a>
-              <a href={`${base}cv/Majid-Mumtaz-CAE-CV.pdf`} class="btn-primary" download>Download CV</a>
+              <a href={`${base}cv/Majid_Mumtaz_IA_GRC_Executive_CV.pdf`} class="btn-primary" download>Download CV</a>
             </div>
           </div>
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">

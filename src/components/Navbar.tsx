@@ -120,7 +120,7 @@ const Navbar = ({ initialPath = '' }) => {
               Pitch Deck ↓
             </a>
             <a
-              href={`${base}/cv/Majid-Mumtaz-CAE-CV.pdf`}
+              href={`${base}/cv/Majid_Mumtaz_IA_GRC_Executive_CV.pdf`}
               download
               className={`text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 rounded-full border transition-all
                 ${showTransparent
@@ -182,7 +182,7 @@ const Navbar = ({ initialPath = '' }) => {
                   Download Pitch Deck ↓
                 </a>
                 <a
-                  href={`${base}/cv/Majid-Mumtaz-CAE-CV.pdf`}
+                  href={`${base}/cv/Majid_Mumtaz_IA_GRC_Executive_CV.pdf`}
                   download
                   className="text-center text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2.5 rounded-full bg-[#a33a21] text-white"
                 >

@@ -23,8 +23,8 @@
 ## ✅ Downloads Functionality
 
 ### CV Downloads
-- [ ] Hero section CV download works (downloads Majid_Mumtaz_CV.pdf)
-- [ ] Resources section CV download works (downloads Majid_Mumtaz_CV.pdf)
+- [ ] Hero section CV download works (downloads Majid_Mumtaz_IA_GRC_Executive_CV.pdf)
+- [ ] Resources section CV download works (downloads Majid_Mumtaz_IA_GRC_Executive_CV.pdf)
 - [ ] Both downloads are 321KB file size
 - [ ] Downloaded PDF opens correctly
 
