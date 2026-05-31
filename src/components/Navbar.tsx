@@ -109,6 +109,16 @@ const Navbar = ({ initialPath = '' }) => {
               Substack ↗
             </a>
             <a
+              href={`${base}/downloads/Majid_Mumtaz_Capabilities_Deck.pdf`}
+              download
+              className={`text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 rounded-full border transition-all
+                ${showTransparent
+                  ? 'border-white/60 text-white hover:border-white'
+                  : 'border-[#1d3557]/18 text-[#1d3557] hover:bg-[#1d3557] hover:text-white'}`}
+            >
+              Pitch Deck ↓
+            </a>
+            <a
               href={`${base}/cv/Majid-Mumtaz-CAE-CV.pdf`}
               download
               className={`text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 rounded-full border transition-all
@@ -163,6 +173,13 @@ const Navbar = ({ initialPath = '' }) => {
                 );
               })}
               <div className="pt-4 flex flex-col gap-3">
+                <a
+                  href={`${base}/downloads/Majid_Mumtaz_Capabilities_Deck.pdf`}
+                  download
+                  className="text-center text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2.5 rounded-full border border-[#1d3557]/18 text-[#1d3557]"
+                >
+                  Download Pitch Deck ↓
+                </a>
                 <a
                   href={`${base}/cv/Majid-Mumtaz-CAE-CV.pdf`}
                   download
