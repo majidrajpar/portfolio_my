@@ -97,38 +97,39 @@ const Navbar = ({ initialPath = '' }) => {
 
         {/* Right: CTAs (desktop) + Hamburger (mobile) */}
         <div className="flex items-center gap-3">
-          <div className="hidden lg:flex items-center gap-3">
-            <a
-              href={newsletterUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+          <div className="hidden lg:flex items-center gap-3 group relative">
+            <button
               className={`text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 rounded-full border transition-all
                 ${showTransparent
-                  ? 'border-white/60 text-white hover:border-white'
-                  : 'border-[#1d3557]/18 text-[#1d3557] hover:bg-[#1d3557] hover:text-white'}`}
+                  ? 'border-white/60 text-white hover:bg-white/10'
+                  : 'border-[#1d3557]/18 text-[#1d3557] hover:bg-[#1d3557]/5'}`}
             >
-              Substack ↗
-            </a>
-            <a
-              href={`${base}/downloads/Majid_Mumtaz_Capabilities_Deck.pdf`}
-              download
-              className={`text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 rounded-full border transition-all
-                ${showTransparent
-                  ? 'border-white/60 text-white hover:border-white'
-                  : 'border-[#1d3557]/18 text-[#1d3557] hover:bg-[#1d3557] hover:text-white'}`}
-            >
-              Pitch Deck ↓
-            </a>
-            <a
-              href={`${base}/cv/Majid_Mumtaz_IA_GRC_Executive_CV.pdf`}
-              download
-              className={`text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 rounded-full border transition-all
-                ${showTransparent
-                  ? 'bg-white text-[#1d3557] border-white hover:bg-blue-50'
-                  : 'bg-[#a33a21] text-white border-[#a33a21] hover:bg-[#7c2712]'}`}
-            >
-              Executive CV ↓
-            </a>
+              Resources ↓
+            </button>
+            <div className="absolute top-full right-0 mt-2 flex flex-col gap-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all bg-white rounded-2xl shadow-[0_18px_50px_rgba(71,38,24,0.08)] border border-[rgba(29,53,87,0.10)] p-3 w-48">
+              <a
+                href={newsletterUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 text-[#1d3557] hover:bg-gray-50 rounded-lg transition-colors"
+              >
+                Substack ↗
+              </a>
+              <a
+                href={`${base}/downloads/Majid_Mumtaz_Capabilities_Deck.pdf`}
+                download
+                className="text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 text-[#1d3557] hover:bg-gray-50 rounded-lg transition-colors"
+              >
+                Pitch Deck ↓
+              </a>
+              <a
+                href={`${base}/cv/Majid_Mumtaz_Director_Internal_Audit.pdf`}
+                download
+                className="text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 bg-[#a33a21] text-white hover:bg-[#7c2712] rounded-lg transition-colors"
+              >
+                Executive CV ↓
+              </a>
+            </div>
           </div>
 
           {/* Hamburger button (mobile only) */}
