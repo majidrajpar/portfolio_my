@@ -10,6 +10,9 @@ const careerData = getCareerMilestones();
 const base = import.meta.env.BASE_URL;
 
 const books = [
+  { title: 'The Auditor’s Risk Compass', desc: 'Targeted industry frameworks for specialized audit and governance programs.', url: 'https://www.amazon.com/dp/B0H4S6JNHF', cover: `${base}images/books/auditors-risk-compass.jpg` },
+  { title: 'The Blueprint of Operations', desc: 'Mastering 15 core business processes in the age of Agentic AI.', url: 'https://www.amazon.com/dp/B0GX33CDRF', cover: `${base}images/books/blueprint-of-operations.jpg` },
+  { title: 'The Power Professional', desc: 'A tactical manual for dominance, strategy, and corporate authority.', url: 'https://www.amazon.com/dp/B0G51LS6D6', cover: `${base}images/books/power-professional.jpg` },
   { title: 'Handbook of Risk Red Flags in Restaurants', desc: "A practitioner's guide to preventing failure through early detection of risk indicators.", url: 'https://www.amazon.com/dp/B0GDTBRZPM', cover: `${base}images/books/risk-red-flags.jpg` },
   { title: 'The Un-Financial Risk Manager', desc: 'Protecting value in the real world — ESG, cyber, and emerging strategic risks.', url: 'https://www.amazon.com/dp/B0GDMW53GG', cover: `${base}images/books/unfinancial-risk-manager.jpg` },
   { title: '10 Forensic Accounting Skills', desc: 'Practical handbook on fraud detection, forensic investigation, and evidence management.', url: 'https://www.amazon.com/dp/B0G7T4X3RT', cover: `${base}images/books/forensic-accounting-skills.jpg` },
@@ -17,7 +20,7 @@ const books = [
   { title: 'Internal Audit Guide for Dine-In Locations in the Middle East', desc: 'Comprehensive audit guide for restaurant operations in the GCC region.', url: 'https://www.amazon.com/dp/B0DY2NRPQ9', cover: `${base}images/books/internal-audit-dinein.jpg` },
 ];
 
-const featuredBooks = books.slice(0, 3);
+const featuredBooks = books;
 
 const metrics = [
   { value: '17', label: 'Consulting Projects — UAE, KSA, Qatar, USA & Pakistan' },
