@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DeficiencyExposureCalculator from '../../components/DeficiencyExposureCalculator';
+
+const title = "Control Deficiency Exposure Calculator | Majid Mumtaz";
+const description = "Translate abstract audit findings and control deficiencies into Board-level financial risk metrics.";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="pt-24 pb-16 px-4 md:px-8 max-w-7xl mx-auto">
+    <div class="mb-10" data-reveal>
+      <a href="/portfolio_my/tools/" class="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white transition-colors flex items-center gap-2 mb-6">
+        &larr; Back to Tools
+      </a>
+      <h1 class="text-4xl md:text-5xl font-black text-white tracking-tight mb-4">Control Deficiency Exposure</h1>
+      <p class="text-slate-400 max-w-2xl text-lg">Translate operational and financial control failures into hard dollar figures. Calculate cascading exposure based on failure rates and detection delays.</p>
+    </div>
+    
+    <div class="mt-12" data-reveal data-reveal-delay="1">
+      <DeficiencyExposureCalculator client:load />
+    </div>
+  </div>
+</BaseLayout>
