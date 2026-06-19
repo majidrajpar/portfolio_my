@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Bot, User, ShieldAlert, Cpu, CheckCircle2, ChevronRight, Activity } from 'lucide-react';
+import { Bot, ShieldAlert, Cpu, ChevronRight, Activity } from 'lucide-react';
 
 const scenarios = [
   { id: 'procurement', label: 'Procurement Fraud Detection', severity: 'High' },
@@ -27,25 +27,48 @@ const agentLogs = {
   ]
 };
 
+interface LogEntry {
+  agent: string;
+  icon: React.ComponentType<{ className?: string }>;
+  color: string;
+  bg: string;
+  msg: string;
+}
+
+const typedAgentLogs: Record<string, LogEntry[]> = agentLogs;
+
 export default function AgenticAuditSimulator() {
   const [activeScenario, setActiveScenario] = useState<string | null>(null);
-  const [logs, setLogs] = useState<any[]>([]);
+  const [logs, setLogs] = useState<LogEntry[]>([]);
   const [isSimulating, setIsSimulating] = useState(false);
 
   useEffect(() => {
     if (!activeScenario) return;
-    
-    setIsSimulating(true);
-    setLogs([]);
-    const sequence = agentLogs[activeScenario as keyof typeof agentLogs];
-    
-    sequence.forEach((log, index) => {
-      setTimeout(() => {
-        setLogs(prev => [...prev, log]);
-        if (index === sequence.length - 1) setIsSimulating(false);
-      }, (index + 1) * 1500);
-    });
 
+    const sequence = typedAgentLogs[activeScenario];
+    const timeouts: number[] = [];
+
+    const scheduleLog = (index: number) => {
+      if (index === 0) {
+        setIsSimulating(true);
+        setLogs([]);
+      }
+      const timeout = window.setTimeout(() => {
+        setLogs(prev => [...prev, sequence[index]]);
+        if (index === sequence.length - 1) {
+          setIsSimulating(false);
+        } else {
+          scheduleLog(index + 1);
+        }
+      }, 1500);
+      timeouts.push(timeout);
+    };
+
+    scheduleLog(0);
+
+    return () => {
+      timeouts.forEach(window.clearTimeout);
+    };
   }, [activeScenario]);
 
   return (
