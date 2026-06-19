@@ -123,7 +123,7 @@ const Navbar = ({ initialPath = '' }) => {
                 Pitch Deck ↓
               </a>
               <a
-                href={`${base}/cv/Majid_Mumtaz_Director_Internal_Audit.pdf`}
+                href={`${base}/cv/Majid_Mumtaz_Director_Internal_Audit_GRC_UAE.pdf`}
                 download
                 className="text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 bg-[#a33a21] text-white hover:bg-[#7c2712] rounded-lg transition-colors"
               >
@@ -183,7 +183,7 @@ const Navbar = ({ initialPath = '' }) => {
                   Download Pitch Deck ↓
                 </a>
                 <a
-                  href={`${base}/cv/Majid_Mumtaz_IA_GRC_Executive_CV.pdf`}
+                  href={`${base}/cv/Majid_Mumtaz_Director_Internal_Audit_GRC_UAE.pdf`}
                   download
                   className="text-center text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2.5 rounded-full bg-[#a33a21] text-white"
                 >
