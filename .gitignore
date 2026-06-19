@@ -25,3 +25,5 @@ dist-ssr
 *.sln
 *.sw?
 scripts/agents/.venv
+__pycache__/
+*.py[cod]

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { DollarSign, AlertTriangle, TrendingUp, ShieldX } from 'lucide-react';
+import { DollarSign, ShieldX } from 'lucide-react';
 
 export default function DeficiencyExposureCalculator() {
   const [revenue, setRevenue] = useState(500000000);
@@ -68,13 +68,13 @@ export default function DeficiencyExposureCalculator() {
               Control Domain
             </label>
             <div className="flex gap-2">
-              {['financial', 'operational', 'compliance'].map((type) => (
+              {(['financial', 'operational', 'compliance'] as const).map((type) => (
                 <button
                   key={type}
-                  onClick={() => setControlType(type as any)}
+                  onClick={() => setControlType(type)}
                   className={`flex-1 py-2 px-3 rounded-lg text-xs font-bold uppercase tracking-wider border transition-colors ${
-                    controlType === type 
-                      ? 'bg-emerald-500/20 border-emerald-500/50 text-emerald-300' 
+                    controlType === type
+                      ? 'bg-emerald-500/20 border-emerald-500/50 text-emerald-300'
                       : 'bg-white/5 border-white/10 text-slate-400 hover:bg-white/10'
                   }`}
                 >
