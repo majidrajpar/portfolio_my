@@ -1,17 +1,17 @@
 [
   {
+    "title": "Would Your Governance Framework Catch The Next One?",
+    "tag": "Board Advisory",
+    "tagColor": "text-blue-400 bg-blue-500/10 border-blue-500/20"
+  },
+  {
+    "title": "Your Bonus Matrix is Rigged: The Hidden Danger of Paying Auditors Like Sales…",
+    "tag": "Audit & Risk",
+    "tagColor": "text-blue-400 bg-blue-500/10 border-blue-500/20"
+  },
+  {
     "title": "The Anatomy of Evasion: Navigating Adversarial Management in Internal Audit",
     "tag": "Audit & Risk",
     "tagColor": "text-blue-400 bg-blue-500/10 border-blue-500/20"
-  },
-  {
-    "title": "Why Internal Audit Must Adopt Hypothesis-Driven Testing",
-    "tag": "Audit & Risk",
-    "tagColor": "text-blue-400 bg-blue-500/10 border-blue-500/20"
-  },
-  {
-    "title": "Stress-Testing a Financial Ledger in the Age of Big Data",
-    "tag": "Data & Analytics",
-    "tagColor": "text-emerald-400 bg-emerald-500/10 border-emerald-500/20"
   }
 ]
