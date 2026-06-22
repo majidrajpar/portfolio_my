@@ -129,6 +129,20 @@ const hasStarr = project.starr && project.starr.situation;
           </div>
         )}
 
+        {project.id === 'audit-4-transformation' && (
+          <div class="soft-shell p-6 md:p-8" data-reveal>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+              <span class="eyebrow-label">Executive Dashboard Mockup</span>
+              <a href={`${base}downloads/Continuous_Audit_Monitoring_Dashboard.pdf`} download class="btn-primary py-2 px-4 text-[10px] inline-flex gap-2 items-center w-fit">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                Download PDF
+              </a>
+            </div>
+            <img src={`${base}images/projects/Anomaly_Dashboard_Mockup.jpg`} alt="Continuous Audit Dashboard" class="w-full rounded-xl border border-[color:var(--line-soft)] shadow-xl" />
+            <p class="mt-5 text-xs text-[color:var(--text-secondary)] leading-relaxed border-l-2 border-[#c7964c] pl-3">Sanitized executive view of real-time anomaly flagging, derived from live point-of-sale data passed through the Isolation Forest engine.</p>
+          </div>
+        )}
+
         <div data-reveal>
           <CodeSnippetsVault client:load />
         </div>

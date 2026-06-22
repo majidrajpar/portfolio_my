@@ -146,6 +146,34 @@ def analyze_control_language(document_text):
         }
     }`,
     controlContext: "In pre-IPO or rapid scaling environments, policies often drift from strict mandates to loose suggestions. This engine audits policy drift across 100+ documents, flagging when crucial security controls have been quietly watered down by departments from strict 'shall' mandates to permissive 'should' guidelines."
+  },
+  {
+    id: 'pos-isolation-forest',
+    title: "4. ML POS Anomaly Detection (Python)",
+    lang: 'python',
+    purpose: "Machine learning engine using Isolation Forests to continuously monitor POS transaction data, automatically flagging unauthorized discount abuse, void manipulations, and inventory discrepancies without manual sampling.",
+    code: `import pandas as pd
+from sklearn.ensemble import IsolationForest
+import numpy as np
+
+def detect_pos_anomalies(df: pd.DataFrame, contamination_rate=0.01):
+    """
+    Sanitized snippet demonstrating the core anomaly detection logic 
+    applied to restaurant POS transaction data.
+    """
+    # Feature engineering: extracting key risk indicators
+    features = ['transaction_amount', 'void_percentage', 'discount_applied', 'time_since_last_order', 'is_after_hours']
+    
+    X = df[features].fillna(0)
+    
+    model = IsolationForest(n_estimators=150, max_samples='auto', contamination=contamination_rate, random_state=42)
+    
+    df['anomaly_score'] = model.fit_predict(X)
+    df['risk_score'] = model.decision_function(X)
+    
+    high_risk = df[df['anomaly_score'] == -1].copy()
+    return high_risk.sort_values(by='risk_score')`,
+    controlContext: "Eliminates the traditional 5% audit sampling illusion. By running an Isolation Forest across 100% of branch data, we can instantly target the specific shifts and cashiers executing fractional fraud, rather than waiting for month-end inventory reconciliation to show unexplained losses."
   }
 ];
 
