@@ -147,6 +147,20 @@ const reset = db.transaction(() => {
       JSON.stringify(['Corporate Governance']),
       'ipo-governance-readiness',
     ],
+    [
+      'Data Analytics & Continuous Monitoring Training',
+      'Transforming traditional audit teams into data-driven advisory units',
+      'F&B / QSR',
+      'A leading Quick Service Restaurant (QSR) player in KSA relied on manual sampling for audits, limiting coverage and leading to high false positives. The traditional, compliance-centric audit team lacked the technical capability to automate testing.',
+      'Design and facilitate a comprehensive upskilling program to teach auditors how to leverage Python, Pandas, and machine learning for automated testing and continuous anomaly detection.',
+      'I developed and delivered a masterclass covering the full data lifecycle—from extracting data from complex ERPs (SAP/Oracle) to writing continuous monitoring scripts and translating findings into executive risk dashboards.',
+      'The training fostered a culture of innovation, leading to the development of in-house vendor-testing tools. We significantly increased productivity per planned audit hour and recovered millions of dollars in revenue leakage.',
+      'Empowering audit functions with data analytics skills transforms them from traditional compliance checkers into confident, proactive assurance providers over complex operational data.',
+      'Millions recovered in revenue leakage - Productivity increased - In-house automated tools developed',
+      JSON.stringify(['Python', 'Pandas', 'Machine Learning', 'Data Analytics']),
+      JSON.stringify(['Audit Transformation']),
+      'data-analytics-audit-training',
+    ],
   ].forEach((row) => insertCaseStudy.run(...row));
 
   const insertEngagement = db.prepare(`
