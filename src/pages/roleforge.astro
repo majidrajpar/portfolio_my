@@ -1,0 +1,295 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NetworkCanvas from '../components/NetworkCanvas';
+import PricingAdvisor from '../components/PricingAdvisor';
+import GrammarBackground from '../components/GrammarBackground';
+import { roleforgeProducts, roleforgeStats, freeRoles } from '../data/roleforge.js';
+
+const base = import.meta.env.BASE_URL;
+
+const domainMeta = [
+  { id: 'audit',     label: 'Audit',      count: 6, color: 'bg-[#3a1913] text-[#f1b5a2]', desc: 'Internal audit, IT audit, forensic, compliance, report writing, board liaison' },
+  { id: 'risk',      label: 'Risk',       count: 5, color: 'bg-[#40250f] text-[#f3cf9b]', desc: 'Enterprise risk, credit risk, market quant, operational risk, scenario modeling' },
+  { id: 'governance',label: 'Governance', count: 3, color: 'bg-[#1f253a] text-[#c8d2f8]', desc: 'Governance analysis, data governance, ethics & culture' },
+  { id: 'philosophy',label: 'Philosophy', count: 4, color: 'bg-[#2f223f] text-[#d7c3f4]', desc: 'Ethics, epistemology, logic, history of philosophy' },
+  { id: 'creative',  label: 'Creative',   count: 6, color: 'bg-[#17302e] text-[#b7e2db]', desc: 'Ghostwriting, character development, world-building, dialogue, narrative, editing' },
+  { id: 'book',      label: 'Book',       count: 3, color: 'bg-[#293038] text-[#d4dee8]', desc: 'Project management, copy editing, policy drafting' },
+  { id: 'data',      label: 'Data',       count: 5, color: 'bg-[#181512] text-[#f4c98b]', desc: 'Data science, BI analysis, storytelling, statistical review' },
+];
+
+const comparisonStats = [
+  { stat: '31', label: 'Production Roles', desc: 'Each role tested across CrewAI, LangChain, and LangGraph with 43 passing tests' },
+  { stat: '62', label: 'Framework Overlays', desc: '31 CrewAI overlays + 31 LangGraph overlays optimizing prompts per runtime' },
+  { stat: '100%', label: 'Framework Agnostic', desc: 'Same YAML definition works in any framework via validated JSON Schema' },
+];
+
+const categoryColors: Record<string, string> = {
+  entry:    'bg-[#293038] text-[#d4dee8]',
+  bundle:   'bg-[#17302e] text-[#b7e2db]',
+  complete: 'bg-[#3a1913] text-[#f1b5a2]',
+  enterprise:'bg-[#40250f] text-[#f3cf9b]',
+};
+---
+
+<BaseLayout
+  title="RoleForge | AI Agent Role Library"
+  description="Production-grade YAML agent roles for CrewAI, LangChain & LangGraph. 31 validated personas across audit, risk, governance, and creative domains."
+>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+      <NetworkCanvas client:load nodeCount={40} />
+      <div class="relative z-10 grid gap-8 lg:grid-cols-[1.35fr_0.85fr] lg:items-end lg:gap-10">
+        <div data-reveal>
+          <span class="hero-chip mb-6 sm:mb-8">AI Agent Role Library</span>
+          <h1 class="headline-display max-w-4xl text-[clamp(3rem,7vw,6rem)] font-black text-white">
+            Portable
+            <span class="block text-[#f4c98b]">agent identities</span>
+            <span class="block">for any framework.</span>
+          </h1>
+          <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.12rem] md:leading-9">
+            Framework-agnostic YAML personas validated by JSON Schema. Plug into CrewAI, LangChain, or LangGraph. One-time purchase. No subscriptions.
+          </p>
+        </div>
+        <div class="quote-panel p-6 md:p-8" data-reveal data-reveal-delay="1">
+          <span class="eyebrow-label text-[#f4c98b]/80">What You Get</span>
+          <div class="mt-4 space-y-4 text-sm leading-7 text-white/72 md:mt-5 md:space-y-5">
+            <p><strong class="text-white">{roleforgeStats.roles}</strong> validated roles across <strong class="text-white">{roleforgeStats.domains}</strong> domains</p>
+            <p><strong class="text-white">{roleforgeStats.overlays}</strong> framework-specific overlays</p>
+            <p><strong class="text-white">{roleforgeStats.tests}</strong> tests, JSON Schema validation</p>
+            <p>Core engine free under Apache 2.0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREE CORE -->
+  <section class="px-4 py-5 md:px-8">
+    <div class="soft-shell mx-auto max-w-7xl px-6 py-8 md:px-10 md:py-10" data-reveal>
+      <div class="mb-8 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+        <div>
+          <span class="eyebrow-label">Free Forever</span>
+          <h2 class="mt-4 text-[clamp(2rem,4vw,3.2rem)] leading-[1.05] text-[#181511]">Core engine + starter roles.</h2>
+          <p class="body-luxe mt-4 max-w-2xl">
+            The role loader, validators, and adapters are free and open-source. Get started with three starter roles — no purchase required.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3 lg:items-end">
+          <a href="https://github.com/majidrajpar/roleforge" target="_blank" rel="noopener" class="btn-secondary inline-flex">
+            <svg class="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.084 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            View on GitHub
+          </a>
+          <p class="text-xs text-[color:var(--text-secondary)]">Apache 2.0 licensed</p>
+        </div>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-3">
+        {freeRoles.map((role, i) => (
+          <div class="stat-plinth" data-reveal data-reveal-delay={String(i + 1)}>
+            <span class="meta-label text-[#a33a21]">{role.category}</span>
+            <div class="mt-3 text-2xl font-black text-[#181511]">{role.name}</div>
+            <p class="mt-2 text-sm leading-7 text-[color:var(--text-secondary)]">YAML definition + overlays + validation</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DOMAIN GRID -->
+  <section class="px-4 py-4 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between" data-reveal>
+        <div>
+          <span class="eyebrow-label">Domains</span>
+          <h2 class="mt-4 text-[clamp(2rem,4.6vw,3.8rem)] leading-[1.02] text-[#181511]">7 professional domains.</h2>
+        </div>
+        <p class="body-luxe max-w-2xl">Each domain includes validated roles with framework-specific overlays for CrewAI, LangChain, and LangGraph.</p>
+      </div>
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {domainMeta.map((domain, i) => (
+          <div 
+            class="glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8"
+            data-reveal
+            data-reveal-delay={String((i % 4) + 1)}
+          >
+            <div class="mb-5 flex items-start justify-between">
+              <span class={`inline-flex px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${domain.color}`}>
+                {domain.count} roles
+              </span>
+            </div>
+            <h3 class="text-[1.28rem] leading-tight text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[1.45rem]">{domain.label}</h3>
+            <p class="mt-4 flex-1 text-sm leading-7 text-[color:var(--text-secondary)] md:leading-8">{domain.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING TABLE -->
+  <section class="px-4 py-4 md:px-8" id="pricing">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between" data-reveal>
+        <div>
+          <span class="eyebrow-label">Pricing Preview</span>
+          <h2 class="mt-4 text-[clamp(2rem,4.6vw,3.8rem)] leading-[1.02] text-[#181511]">Planned pricing tiers.</h2>
+        </div>
+        <p class="body-luxe max-w-2xl">One-time purchases. No subscriptions. The core engine is free — pay only for the roles you need. Payment integration coming soon.</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {roleforgeProducts.map((product, i) => (
+          <div 
+            class={`glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8 ${product.highlight ? 'ring-2 ring-[#c7964c] shadow-lg' : ''}`}
+            data-reveal
+            data-reveal-delay={String((i % 3) + 1)}
+          >
+            <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+              <span class={`inline-flex w-fit px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${categoryColors[product.category]}`}>
+                {product.category === 'entry' ? 'Individual' : 
+                 product.category === 'bundle' ? 'Domain Pack' :
+                 product.category === 'complete' ? 'Complete' : 'Enterprise'}
+              </span>
+              <div class="flex flex-wrap gap-2">
+                {product.popular && (
+                  <span class="rounded-full border border-[#c7964c]/30 bg-[#c7964c]/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#a66c1c]">Popular</span>
+                )}
+                {product.highlight && (
+                  <span class="rounded-full border border-[#a33a21]/30 bg-[#a33a21]/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#a33a21]">Best Value</span>
+                )}
+                <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">Soon</span>
+              </div>
+            </div>
+
+            <h3 class="text-[1.28rem] leading-tight text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[1.45rem]">{product.name}</h3>
+            
+            <div class="mt-4 flex items-baseline gap-3">
+              <span class="text-3xl font-black text-[#181511]">${product.price}</span>
+              {product.originalPrice && (
+                <span class="text-lg text-slate-400 line-through">${product.originalPrice}</span>
+              )}
+              <span class="text-sm text-[color:var(--text-secondary)]">one-time</span>
+            </div>
+
+            <p class="mt-4 flex-1 text-sm leading-7 text-[color:var(--text-secondary)] md:leading-8">{product.contents}</p>
+
+            <div class="mt-6 border-t border-[color:var(--line-soft)] pt-4 md:mt-7 md:pt-5">
+              <div class="flex items-center justify-between">
+                <span class="meta-label">{product.target}</span>
+              </div>
+              <span class="mt-3 inline-flex w-full items-center justify-center rounded-full border border-dashed border-slate-300 bg-slate-50 px-5 py-3 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 md:text-[11px] md:tracking-[0.24em]">
+                Coming Soon
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ROLEFORGE WINS -->
+  <section class="px-4 py-4 md:px-8">
+    <div class="soft-shell mx-auto max-w-7xl px-6 py-8 md:px-10 md:py-10" data-reveal>
+      <div class="mb-8 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+        <div>
+          <span class="eyebrow-label">Why RoleForge</span>
+          <h2 class="mt-4 text-[clamp(1.8rem,3.5vw,3rem)] leading-[1.05] text-[#181511]">The professional standard.</h2>
+        </div>
+        <p class="body-luxe max-w-2xl">No other library combines framework-agnostic YAML, JSON Schema validation, and multi-framework adapters in one package.</p>
+      </div>
+      
+      <div class="grid gap-6 md:grid-cols-3">
+        {comparisonStats.map((item, i) => (
+          <div class="stat-plinth" data-reveal data-reveal-delay={String(i + 1)}>
+            <div class="text-4xl font-black text-[#a33a21] leading-none">{item.stat}</div>
+            <div class="mt-3 meta-label text-[#181511]">{item.label}</div>
+            <p class="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE ADVISOR -->
+  <section class="px-4 py-4 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="editorial-panel overflow-hidden rounded-[30px] px-6 py-8 md:px-10 md:py-12" data-reveal>
+        <div class="relative z-10 grid gap-8 lg:grid-cols-[1fr_0.92fr]">
+          <div>
+            <span class="hero-chip mb-6">AI-Powered Advisor</span>
+            <h2 class="text-[clamp(2rem,4vw,3.2rem)] leading-[1.05] text-white">
+              Not sure what to buy?
+            </h2>
+            <p class="mt-4 max-w-2xl text-base leading-8 text-white/70">
+              Tell the advisor what you're building. It will recommend the right tier and roles for your specific use case when the store launches.
+            </p>
+            <div class="mt-8 grid gap-4 sm:grid-cols-2">
+              <div class="frame-panel p-5">
+                <div class="meta-label text-[#f4c98b]">Individual</div>
+                <p class="mt-3 text-sm leading-7 text-white/70">One role at $19 to test the system before committing.</p>
+              </div>
+              <div class="frame-panel p-5">
+                <div class="meta-label text-[#f4c98b]">Complete Library</div>
+                <p class="mt-3 text-sm leading-7 text-white/70">All 31 roles for $199 — 66% less than buying individually.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex items-start justify-center">
+            <PricingAdvisor client:load />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="px-4 py-4 md:px-8">
+    <div class="soft-shell mx-auto max-w-7xl px-6 py-8 md:px-10 md:py-10" data-reveal>
+      <span class="eyebrow-label">FAQ</span>
+      <h2 class="mt-4 text-[clamp(2rem,4.6vw,3.8rem)] leading-[1.02] text-[#181511]">Common questions.</h2>
+      
+      <div class="mt-8 grid gap-5 md:grid-cols-2">
+        {[
+          { q: 'What is the difference between free and paid roles?', a: 'Free roles include 3 starter personas plus the core engine (loader, validators, adapters). Paid roles are 31 production-grade personas with deeper expertise, framework-specific overlays, and continuous updates.' },
+          { q: 'Can I use roles in commercial projects?', a: 'Yes. All purchases include commercial use rights for your own projects. The Enterprise License adds internal redistribution rights for teams.' },
+          { q: 'Do I need a subscription?', a: 'No. All purchases are one-time. The Complete Bundle includes 12 months of updates. Enterprise includes lifetime updates.' },
+          { q: 'What frameworks are supported?', a: 'CrewAI, LangChain, and LangGraph. Each role includes framework-specific overlays that optimize prompts and tool bindings for that runtime.' },
+          { q: 'How do I install a purchased role?', a: 'Download the ZIP, unzip into your project, and load with the free RoleForge core: registry.load_role("path/to/role.yaml").' },
+          { q: 'What if I need a custom role?', a: 'Enterprise License holders get priority support and custom role development. Alternatively, use the free core to build your own following the JSON Schema.' },
+        ].map((faq, i) => (
+          <div class="glass-card p-6 rounded-[24px]" data-reveal data-reveal-delay={String((i % 2) + 1)}>
+            <h3 class="text-lg font-black text-[#181511] leading-snug">{faq.q}</h3>
+            <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative overflow-hidden px-4 py-8 pb-12 md:px-8">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 text-center md:px-10 md:py-14">
+      <GrammarBackground client:visible variant="dark-grid" />
+      <div class="relative z-10" data-reveal>
+        <span class="hero-chip mb-5 md:mb-6">Get Started</span>
+        <h2 class="mx-auto max-w-3xl text-[clamp(2rem,4.4vw,3.8rem)] leading-[1.03] text-white">Start with the free core.</h2>
+        <p class="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-white/72 md:mt-6 md:text-base md:leading-8">
+          The role loader, validators, and adapters are free and open-source. Premium packs will be available when payment integration is complete.
+        </p>
+        <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <a href="https://github.com/majidrajpar/roleforge" target="_blank" rel="noopener" class="btn-primary inline-flex">
+            <svg class="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.084 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            View Free Core
+          </a>
+          <a href="#pricing" class="btn-secondary-light inline-flex">View Pricing Preview</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

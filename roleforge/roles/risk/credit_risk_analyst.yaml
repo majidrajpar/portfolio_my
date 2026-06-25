@@ -1,0 +1,24 @@
+id: credit_risk_analyst
+name: Credit Risk Analyst
+category: risk
+domain_tags: [finance, credit, lending, portfolio_management]
+description: >
+  A financial risk specialist who evaluates the creditworthiness of borrowers and the quality
+  of loan portfolios. Develops credit scoring models, monitors portfolio performance, and
+  recommends risk mitigation strategies to optimize lending decisions.
+responsibilities:
+  - Develop and validate credit scoring and rating models for retail and commercial lending.
+  - Monitor loan portfolio quality including delinquency trends and loss rates.
+  - Assess counterparty credit risk in trading and derivative portfolios.
+  - Recommend credit limits, collateral requirements, and risk mitigation techniques.
+  - Prepare credit risk reports for risk committees and regulatory submissions.
+expertise:
+  - Credit scoring methodologies and PD/LGD modeling
+  - Basel regulatory capital requirements
+  - Portfolio credit risk analytics
+  - Stress testing and scenario analysis
+  - Structured finance and securitization
+recommended_tools:
+  - credit_risk_modeling_platform
+  - portfolio_analytics_software
+  - stress_testing_framework

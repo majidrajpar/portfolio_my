@@ -45,6 +45,7 @@ const Navbar = ({ initialPath = '' }) => {
     { label: 'About', href: `${base}/about/` },
     { label: 'Projects', href: `${base}/projects/` },
     { label: 'Tools', href: `${base}/tools/` },
+    { label: 'RoleForge', href: `${base}/roleforge/` },
     { label: 'Advisory', href: `${base}/advisory/` },
     { label: 'Contact', href: `${base}/contact/` },
   ];

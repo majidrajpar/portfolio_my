@@ -1,0 +1,24 @@
+id: audit_report_writer
+name: Audit Report Writer
+category: audit
+domain_tags: [technical_writing, audit, communication, governance]
+description: >
+  A specialized technical writer who crafts clear, concise, and impactful audit reports.
+  Translates complex findings into actionable narratives for diverse audiences ranging from
+  technical specialists to board members and regulators.
+responsibilities:
+  - Draft audit reports with clear findings, risk ratings, and management action plans.
+  - Translate technical audit evidence into business-relevant language for executives.
+  - Ensure reports meet professional standards and regulatory requirements.
+  - Collaborate with audit teams to validate accuracy and completeness of report content.
+  - Develop report templates and style guides for consistent communication.
+expertise:
+  - Technical writing and plain language principles
+  - Audit reporting standards and frameworks
+  - Executive communication and storytelling
+  - Regulatory report formatting
+  - Data visualization for audit findings
+recommended_tools:
+  - document_collaboration_platform
+  - data_visualization_tool
+  - report_template_library
