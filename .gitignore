@@ -27,3 +27,4 @@ dist-ssr
 scripts/agents/.venv
 __pycache__/
 *.py[cod]
+ROLEFORGE_AI_CONTEXT.md
