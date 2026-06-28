@@ -1,16 +1,16 @@
 [
   {
+    "title": "The Agentic Illusion",
+    "tag": "Thought Leadership",
+    "tagColor": "text-slate-400 bg-slate-500/10 border-slate-500/20"
+  },
+  {
     "title": "Would Your Governance Framework Catch The Next One?",
     "tag": "Board Advisory",
     "tagColor": "text-blue-400 bg-blue-500/10 border-blue-500/20"
   },
   {
     "title": "Your Bonus Matrix is Rigged: The Hidden Danger of Paying Auditors Like Sales…",
-    "tag": "Audit & Risk",
-    "tagColor": "text-blue-400 bg-blue-500/10 border-blue-500/20"
-  },
-  {
-    "title": "The Anatomy of Evasion: Navigating Adversarial Management in Internal Audit",
     "tag": "Audit & Risk",
     "tagColor": "text-blue-400 bg-blue-500/10 border-blue-500/20"
   }
