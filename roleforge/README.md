@@ -1,253 +1,128 @@
-# Agent Roles Library
+# RoleForge
 
-A framework-agnostic YAML-based library for defining agent roles, with tailored adapters for CrewAI, LangChain, and LangGraph.
+**31 production-grade agent roles. One YAML library. Three framework adapters. Zero prompt engineering.**
+
+RoleForge is the fastest way to build coherent AI agent teams. Stop writing ad-hoc system prompts. Start deploying expert personas that work across CrewAI, LangChain, and LangGraph.
+
+---
+
+## Why RoleForge?
+
+Most agent teams fail because the prompts are fragile. "You are a helpful assistant" doesn't cut it when you need a Credit Risk Analyst or a Forensic Auditor.
+
+RoleForge gives you:
+
+- **31 validated roles** across Audit, Risk, Governance, Philosophy, Creative Writing, Book Writing, and Data Analysis
+- **Framework adapters** that turn YAML into CrewAI Agents, LangChain Chains, or LangGraph Nodes
+- **Smart matching** — point a query at the library and get the right agent, automatically
+- **Graph templates** — 9 pre-built LangGraph patterns (supervisor-worker, debate, map-reduce, human-in-the-loop, and more)
+- **Full test coverage** — 43 tests, JSON Schema validation, Pydantic models
+
+---
 
 ## Quick Start
 
-### Installation
-
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/majidrajpar/roleforge.git
 cd roleforge
 
 # Install dependencies with uv
 uv sync
+
+# Validate all roles
+uv run python tools/validate_roles.py
+
+# Run tests
+uv run pytest tests/
 ```
 
-### Basic Usage
-
-#### 1. Load and Discover Roles
-
 ```python
-import sys
-from pathlib import Path
-
-# Add src to path
-sys.path.insert(0, str(Path(__file__).parent / "src"))
-
 from loader import RoleRegistry
-from role_selector import RoleSelector
-
-# Index all roles
-registry = RoleRegistry()
-registry.index()
-
-# List all 31 roles
-roles = registry.list_roles()
-print(f"Loaded {len(roles)} roles")
-
-# Search for specific roles
-results = registry.search("risk")
-for role in results:
-    print(f"- {role.name} ({role.category})")
-```
-
-#### 2. Get Role Recommendations for a Task
-
-```python
-from role_selector import RoleSelector
-
-selector = RoleSelector()
-
-# Find best agents for your task
-task = "I need to audit our cloud infrastructure for security risks"
-recommendations = selector.recommend(task, top_k=3)
-
-for i, role in enumerate(recommendations, 1):
-    print(f"{i}. {role['name']} (Score: {role['score']})")
-    print(f"   {role['description'][:100]}...")
-
-# Or compose a multi-agent team
-team = selector.recommend_team(
-    "Write a corporate governance policy for AI usage",
-    team_size=4
-)
-```
-
-#### 3. Create a CrewAI Agent
-
-```python
-from crewai import LLM
-from models import RuntimeContext
 from adapters.crewai_adapter import CrewAIAdapter
 
-# Load role with overlay
-role, overlay = registry.get_role_with_overlay(
-    "lead_internal_auditor", 
-    "crewai"
-)
-
-# Create LLM
-llm = LLM(
-    model="kimi-k2.7-code:cloud",
-    base_url="https://ollama.com/v1",
-    api_key="your-api-key",
-)
-
-# Create runtime context
-context = RuntimeContext(llm=llm, tools=[], allow_delegation=True)
+# Load a role
+registry = RoleRegistry()
+registry.index()
+role = registry.get("lead_internal_auditor")
 
 # Adapt to CrewAI Agent
 adapter = CrewAIAdapter(context)
-agent = adapter.adapt(role, overlay.data if overlay else None)
-
-# Use in a CrewAI Crew
-from crewai import Task, Crew
-
-task = Task(
-    description="Assess IT controls and identify risks",
-    expected_output="Risk assessment report",
-    agent=agent,
-)
-
-crew = Crew(agents=[agent], tasks=[task])
-result = crew.kickoff()
+agent = adapter.adapt(role)
 ```
 
-#### 4. Create a LangChain Chain
+See [examples/](examples/) for CrewAI, LangChain, and LangGraph integrations.
 
-```python
-from langchain_core.language_models.fake import FakeListLLM
-from models import RuntimeContext
-from adapters.langchain_adapter import LangChainAdapter
+---
 
-# Load role
-role = registry.get("data_scientist")
+## What's Included
 
-# Create LLM
-llm = FakeListLLM(responses=["Analysis complete"])
+| Domain | Roles | Use Case |
+|---|---|---|
+| **Audit** | 6 | Internal audit, IT audit, compliance, forensic investigation |
+| **Risk** | 5 | Credit, operational, enterprise, scenario modeling |
+| **Governance** | 3 | Board liaison, governance analysis, ethics |
+| **Philosophy** | 4 | Epistemology, ethics, metaphysics, logic |
+| **Creative Writing** | 4 | Narrative architect, character developer, world builder, dialogue |
+| **Book Writing** | 3 | Developmental editor, copy editor, project manager |
+| **Data Analysis** | 5 | Data scientist, storyteller, governance, ML engineer, visualization |
 
-# Create runtime context with tools
-context = RuntimeContext(llm=llm, tools=[])
-
-# Adapt to LangChain chain
-adapter = LangChainAdapter(context)
-chain = adapter.adapt(role)
-
-# Invoke
-result = chain.invoke({"input": "Analyze this dataset"})
-```
-
-#### 5. Create a LangGraph Node
-
-```python
-from models import RuntimeContext
-from adapters.langgraph_adapter import LangGraphAdapter
-from graphs.templates import create_sequential_pipeline_graph
-
-# Load roles
-narrative = registry.get("narrative_architect")
-editor = registry.get("developmental_editor")
-
-# Create runtime context
-context = RuntimeContext(llm=llm, tools=[])
-
-# Create sequential pipeline graph
-graph = create_sequential_pipeline_graph(
-    roles=[narrative, editor],
-    runtime_context=context,
-)
-
-# Execute
-from langchain_core.messages import HumanMessage
-
-result = graph.invoke({
-    "messages": [HumanMessage(content="Write a sci-fi story outline")],
-    "next": "",
-})
-```
-
-### Advanced: Using LLM-Powered Recommendations
-
-```python
-from crewai import LLM
-from role_selector import LLMRoleRecommender
-
-# Initialize LLM
-llm = LLM(model="kimi-k2.7-code:cloud", base_url="...", api_key="...")
-
-# Create semantic recommender
-recommender = LLMRoleRecommender(llm=llm)
-
-# Get LLM-powered recommendations
-results = recommender.recommend(
-    "Evaluate the philosophical implications of AI consciousness",
-    top_k=3,
-    use_llm=True
-)
-```
+---
 
 ## Project Structure
 
 ```
 roleforge/
 ├── roles/              # 31 framework-agnostic role YAMLs
-│   ├── audit/
-│   ├── governance/
-│   ├── risk/
-│   ├── philosophy/
-│   ├── creative_writing/
-│   ├── book_writing/
-│   └── data_analysis/
-├── overlays/           # Framework-specific overlays
-│   ├── crewai/        # 31 overlays with goals/backstories
-│   └── langgraph/     # 31 overlays with node types
+├── overlays/           # Framework-specific overlays (CrewAI, LangGraph)
 ├── src/
 │   ├── models.py      # RoleDefinition, RuntimeContext
 │   ├── loader.py      # YAML loading & registry
 │   ├── validators.py  # Deterministic validation
 │   ├── role_selector.py # Query-to-agent matching
 │   └── adapters/      # CrewAI, LangChain, LangGraph
-├── graphs/
-│   └── templates.py   # 9 pre-built LangGraph patterns
-├── schemas/
-│   └── role.schema.json
-├── tests/             # 43 tests (pytest)
-└── examples/          # Jupyter notebooks & demos
+├── graphs/            # 9 pre-built LangGraph patterns
+├── schemas/           # JSON Schema for role validation
+├── tests/             # 43 unit tests
+└── examples/          # Jupyter notebooks & usage demos
 ```
 
-## Key Concepts
+---
 
-| Component | Purpose |
-|---|---|
-| **RoleDefinition** | Framework-agnostic YAML schema for agent personas |
-| **RuntimeContext** | Framework-specific runtime config (LLM, tools, memory) |
-| **Overlay** | Optional framework hints (CrewAI goals, LangGraph node types) |
-| **Adapter** | Converts RoleDefinition + RuntimeContext → framework-native object |
-| **RoleSelector** | Keyword-based query → agent matching |
-| **LLMRoleRecommender** | Semantic query → agent matching using an LLM |
+## Pricing: Free to Build, Pay for Convenience
 
-## Validation
+The **core engine is free** under the Elastic License 2.0. Use it for personal projects, education, research, internal business, and even startups under $1M ARR.
 
-```bash
-# Validate all 31 roles and overlays
-uv run python validate_roles.py
+Want to save time? Buy validated role packs (one-time purchase, lifetime access):
 
-# Run all tests
-uv run pytest tests/
-```
+| Tier | Price | What You Get |
+|---|---|---|
+| **Starter Pack** | **Free** | 3 roles + overlays. Build something real before paying. |
+| **Domain Pack** | **$49** | All roles in one domain (e.g., Audit: 6 roles) + overlays |
+| **Professional Pack** | **$99** | 3 domains + graph templates + priority support |
+| **Complete Bundle** ⭐ | **$199** | All 31 roles + 12mo updates + Discord |
+| **Enterprise License** | **$499** | Everything + commercial rights + 5 custom roles + dedicated support |
 
-## Requirements
+**Why this pricing?** Market research shows prompt marketplaces sell at $3-$15 (hobbyist territory). RoleForge is a professional tool, priced between commodity prompts and enterprise frameworks. See [archive/research/market_research_report.md](archive/research/market_research_report.md) for the full analysis.
 
-- Python >= 3.11
-- uv (dependency manager)
-- Optional: Ollama Cloud API key for examples
+**The rule:** Build with it for free. Extract commercial value from it? License it.
 
-See `pyproject.toml` for full dependency list.
+See [COMMERCIAL_LICENSE.md](COMMERCIAL_LICENSE.md) for full details and [LICENSE](LICENSE) for the legal text.
 
-## License
+---
 
-Elastic License 2.0 — see [LICENSE](LICENSE) for full details.
+## Contributing
 
-**What this means:**
-- ✅ Free for personal, educational, and internal business use
-- ✅ Free to embed in commercial products
-- ✅ Free to modify and share
-- ❌ Cannot offer as a competing managed/hosted service without permission
-- ❌ Commercial SaaS requires a license
+We welcome contributions. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add roles, submit PRs, and run tests.
 
-**Commercial Licensing:** For hosted service rights, enterprise support, and custom development, contact the maintainer.
+---
 
-**Philosophy:** The core library is free and open for the community. Commercial extraction as a service requires giving back through licensing.
+## Questions?
 
+- **Docs:** See [AGENTS.md](AGENTS.md) for detailed architecture and conventions
+- **Issues:** [GitHub Issues](https://github.com/majidrajpar/roleforge/issues)
+- **Commercial:** [majidrajpar@gmail.com](mailto:majidrajpar@gmail.com)
+
+---
+
+<sub>Built by [Your Name](https://majidrajpar.github.io/portfolio_my/roleforge/). Commercialization is a virtue.</sub>

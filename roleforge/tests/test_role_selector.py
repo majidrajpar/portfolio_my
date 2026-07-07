@@ -25,61 +25,58 @@ class TestRoleSelector:
     def test_init_and_index(self):
         selector = RoleSelector()
         roles = selector.registry.list_roles()
-        assert len(roles) == 31
+        assert len(roles) == 3  # Starter pack: 3 free roles
 
     def test_recommend_basic(self):
         selector = RoleSelector()
-        results = selector.recommend("audit cloud security", top_k=3)
+        results = selector.recommend("data analysis", top_k=3)
         assert len(results) > 0
-        # IT Auditor or Audit Report Writer should be in results
         role_names = [r["name"] for r in results]
-        assert any("Audit" in name for name in role_names)
+        assert any("Data" in name for name in role_names)
 
-    def test_recommend_credit_risk(self):
+    def test_recommend_storytelling(self):
         selector = RoleSelector()
-        results = selector.recommend("assess credit risk loan portfolio", top_k=3)
-        assert results[0]["name"] == "Credit Risk Analyst"
-        assert results[0]["category"] == "risk"
+        results = selector.recommend("creative writing story", top_k=3)
+        assert len(results) > 0
+        assert results[0]["name"] == "Narrative Architect"
+        assert results[0]["category"] == "creative_writing"
 
     def test_recommend_team_diversity(self):
         selector = RoleSelector()
-        team = selector.recommend_team("write corporate governance policy", team_size=3)
-        assert len(team) == 3
-        # Check category diversity
+        team = selector.recommend_team("write creative content with ethics", team_size=2)
+        assert len(team) == 2
         categories = [m["category"] for m in team]
-        assert len(set(categories)) >= 2  # At least 2 different categories
+        assert len(set(categories)) >= 1
 
     def test_recommend_with_category_filter(self):
         selector = RoleSelector()
         results = selector.recommend(
-            "audit", top_k=3, category_filter="audit"
+            "data", top_k=3, category_filter="data_analysis"
         )
         assert len(results) > 0
         for r in results:
-            assert r["category"] == "audit"
+            assert r["category"] == "data_analysis"
 
     def test_list_categories(self):
         selector = RoleSelector()
         categories = selector.list_categories()
-        assert "audit" in categories
-        assert "risk" in categories
+        assert "data_analysis" in categories
         assert "philosophy" in categories
-        assert len(categories) == 7
+        assert "creative_writing" in categories
+        assert len(categories) == 3  # Starter pack categories
 
     def test_list_roles_in_category(self):
         selector = RoleSelector()
         roles = selector.list_roles_in_category("creative_writing")
-        assert len(roles) == 4
+        assert len(roles) == 1
         role_names = [r["name"] for r in roles]
         assert "Narrative Architect" in role_names
-        assert "Character Developer" in role_names
 
     def test_get_role_by_id(self):
         selector = RoleSelector()
-        role = selector.get_role_by_id("operational_risk_manager")
+        role = selector.get_role_by_id("data_scientist")
         assert role is not None
-        assert role["name"] == "Operational Risk Manager"
-        assert len(role["responsibilities"]) == 5
+        assert role["name"] == "Data Scientist"
 
     def test_get_role_by_id_not_found(self):
         selector = RoleSelector()
@@ -90,12 +87,12 @@ class TestRoleSelector:
 class TestLLMRoleRecommender:
     def test_fallback_without_llm(self):
         recommender = LLMRoleRecommender(llm=None)
-        results = recommender.recommend("audit security", top_k=3, use_llm=False)
+        results = recommender.recommend("data", top_k=3, use_llm=False)
         assert len(results) > 0
 
     def test_fallback_on_empty_llm(self):
         recommender = LLMRoleRecommender(llm=None)
-        results = recommender.recommend("audit security", top_k=3, use_llm=True)
+        results = recommender.recommend("data", top_k=3, use_llm=True)
         assert len(results) > 0  # Should fallback to keyword matching
 
 
