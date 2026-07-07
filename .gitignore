@@ -28,3 +28,10 @@ scripts/agents/.venv
 __pycache__/
 *.py[cod]
 ROLEFORGE_AI_CONTEXT.md
+
+# Astro framework state (auto-generated, not source)
+.astro/
+
+# Python venvs
+roleforge/.venv/
+.venv/

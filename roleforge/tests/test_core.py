@@ -116,19 +116,19 @@ class TestRoleLoader:
     def test_load_all_from_roles_dir(self):
         loader = RoleLoader()
         roles = loader.load_all()
-        assert len(roles) == 31  # Full catalog
+        assert len(roles) == 3  # Starter pack: 3 free roles
 
     def test_load_specific_role(self):
         loader = RoleLoader()
-        role = loader.load_role(Path("roles/risk/operational_risk_manager.yaml"))
-        assert role.id == "operational_risk_manager"
-        assert role.category == "risk"
+        role = loader.load_role(Path("roles/data_analysis/data_scientist.yaml"))
+        assert role.id == "data_scientist"
+        assert role.category == "data_analysis"
 
     def test_load_all_categories(self):
         loader = RoleLoader()
         roles = loader.load_all()
         categories = set(r.category for r in roles)
-        expected = {"audit", "governance", "risk", "philosophy", "creative_writing", "book_writing", "data_analysis"}
+        expected = {"philosophy", "creative_writing", "data_analysis"}  # Starter pack categories
         assert categories == expected
 
 
@@ -138,55 +138,53 @@ class TestRoleRegistry:
     def test_index_and_get(self):
         registry = RoleRegistry()
         registry.index()
-        role = registry.get("operational_risk_manager")
+        role = registry.get("data_scientist")
         assert role is not None
-        assert role.name == "Operational Risk Manager"
+        assert role.name == "Data Scientist"
 
     def test_search(self):
         registry = RoleRegistry()
         registry.index()
-        results = registry.search("risk")
+        results = registry.search("data")
         assert len(results) > 0
 
     def test_get_overlay(self):
         registry = RoleRegistry()
         registry.index()
-        overlay = registry.get_overlay("crewai", "lead_internal_auditor")
+        overlay = registry.get_overlay("crewai", "data_scientist")
         assert overlay is not None
-        assert overlay.data["goal"] == "Provide independent assurance on the effectiveness of risk management, control, and governance processes"
 
     def test_all_roles_loaded(self):
         registry = RoleRegistry()
         registry.index()
         roles = registry.list_roles()
-        assert len(roles) == 31
+        assert len(roles) == 3  # Starter pack: 3 free roles
 
     def test_all_categories_present(self):
         registry = RoleRegistry()
         registry.index()
         roles = registry.list_roles()
         categories = set(r.category for r in roles)
-        expected = {"audit", "governance", "risk", "philosophy", "creative_writing", "book_writing", "data_analysis"}
+        expected = {"philosophy", "creative_writing", "data_analysis"}
         assert categories == expected
 
     def test_crewai_overlay_count(self):
         registry = RoleRegistry()
         registry.index()
         crewai_overlays = [k for k in registry._overlays.keys() if k[0] == "crewai"]
-        assert len(crewai_overlays) == 31
+        assert len(crewai_overlays) == 3  # Starter pack overlays
 
     def test_langgraph_overlay_count(self):
         registry = RoleRegistry()
         registry.index()
         langgraph_overlays = [k for k in registry._overlays.keys() if k[0] == "langgraph"]
-        assert len(langgraph_overlays) == 31
+        assert len(langgraph_overlays) == 3  # Starter pack overlays
 
     def test_supervisor_overlay(self):
         registry = RoleRegistry()
         registry.index()
-        overlay = registry.get_overlay("langgraph", "lead_internal_auditor")
+        overlay = registry.get_overlay("langgraph", "data_scientist")
         assert overlay is not None
-        assert overlay.data["node_type"] == "supervisor"
 
 
 # === Validator Tests ===

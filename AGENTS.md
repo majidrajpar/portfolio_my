@@ -1,7 +1,7 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-This repository is an Astro-based portfolio site with embedded React tools. Main app code lives in `src/`: page routes in `src/pages`, shared UI in `src/components`, layouts in `src/layouts`, data files in `src/data`, and utility/database code in `src/lib`. Static assets and downloadable files live in `public/`. Rust/WebAssembly sources for the audit engine are under `src/rust/audit_engine`. Maintenance scripts and content update helpers are in `scripts/`, while targeted regression tests currently live in `tests/`.
+This repository is an Astro-based portfolio site with embedded React tools. Main app code lives in `src/`: page routes in `src/pages`, shared UI in `src/components`, layouts in `src/layouts`, data files in `src/data`, and utility/database code in `src/lib`. Static assets and downloadable files live in `public/`. Rust/WebAssembly sources for the audit engine are under `src/rust/audit_engine`. Maintenance scripts and content update helpers are in `scripts/`, while targeted regression tests currently live in `tests/`. The `roleforge/` subdirectory is a standalone Python package (agent role library) with its own `AGENTS.md` — see that file for roleforge-specific guidance. The `brand_evaluator.py` script at the repo root is a one-off agent that crawls the live site and rates the personal brand via the Ollama Cloud API.
 
 ## Build, Test, and Development Commands
 Use `npm install` once to install dependencies. Run `npm run dev` for local development, `npm run build` to create the production build, `npm run preview` to serve the built site locally, and `npm run lint` to run ESLint across the repo. The current regression test is manual: `node tests/document-comparator.test.js`.
@@ -17,3 +17,6 @@ Recent history mixes concise imperative messages and small `fix:` commits, for e
 
 ## Security & Content Notes
 Do not commit secrets, personal tokens, or generated SQLite data dumps. Treat `public/downloads`, `public/images`, and generated screenshots as user-facing assets: preserve filenames unless you also update the references that consume them.
+
+## Framework State (do not commit)
+The `.astro/` directory contains auto-generated framework state (data-store.json, settings.json) that changes on every `astro dev` / `astro build` run. It is listed in `.gitignore` and should never be staged. Python virtual environments (`.venv/`) and `__pycache__/` are also ignored.
