@@ -1,0 +1,49 @@
+=== COMPANY: Enron Corporation (NYSE: ENE) ===
+=== FISCAL YEAR: 2000 (year ended Dec 31, 2000) ===
+=== AUDITOR: Arthur Andersen LLP ===
+=== AUDITOR TENURE: Since 1985 (16 years) ===
+
+=== EXCERPT: Enron 10-K, Consolidated Balance Sheet (Dec 31, 2000) ===
+Total assets: $65.5 billion
+Total liabilities: $54.0 billion
+Total equity: $11.5 billion
+Revenue (2000): $100.8 billion (vs. $40.1B in 1999, $13.3B in 1998 — tripling in two years)
+Net income (2000): $979 million
+
+=== EXCERPT: Enron 10-K, Selected Notes ===
+Note 1 — "Enron operates a market-based risk management business (EnronOnline) and a wholesale energy services business."
+Note 2 — Equity earnings from unconsolidated special-purpose entities (SPEs): $425 million in 2000.
+Note 14 — Related-party transactions: "Enron engages in transactions with partnerships and other entities controlled by the Chief Financial Officer of Enron. These transactions include the sale of financial assets, equity investments, and hedging arrangements."
+Note 14 — Aggregate value of transactions with CFO-controlled entities: not fully quantified; disclosed as "material."
+
+=== EXCERPT: Enron 10-K, Revenue Recognition ===
+"Enron recognizes revenue from energy contracts and risk management activities at the time the underlying commodity is delivered or the contract is settled. Revenues from price-risk management contracts are reported gross (i.e., at the notional value of the contract)."
+
+=== EXCERPT: Enron Proxy Statement (filed April 2001) ===
+Total compensation paid to CFO Andrew Fastow in 2000: not fully disclosed in standard comp tables.
+Footnote references compensation through "affiliated partnerships" without dollar value.
+
+=== EXCERPT: Arthur Andersen Engagement Letter (obtained via public filings) ===
+"Audit fees: $25 million. Non-audit consulting fees: $27 million (tax, internal audit outsourcing, systems advisory)."
+
+=== EXCERPT: Enron 10-K, Cash Flow Statement (Dec 31, 2000) ===
+Operating cash flow: $4.8 billion
+Investing cash flow: $(5.2) billion
+Net cash from financing: $5.1 billion (heavily reliant on debt issuance and asset sales to SPEs)
+"Proceeds from sales of assets to unconsolidated affiliates: $1.2 billion"
+
+=== EXCERPT: Wall Street Journal, October 16-22, 2001 (public reporting emerging) ===
+"Enron reports a $618 million third-quarter charge and a $1.2 billion write-down in equity related to transactions with partnerships run by CFO Fastow. SEC announces inquiry. Enron stock falls from $33 to $15."
+
+=== EXCERPT: Enron 10-K, Going Concern Statement ===
+No going-concern language. Arthur Andersen issued an unqualified ('clean') audit opinion on Feb 2, 2001 — eight months before the third-quarter charge.
+
+=== EXCERPT: Analyst Reports, Q1-Q3 2001 ===
+Of 17 sell-side analysts covering Enron, 15 maintained 'Buy' or 'Strong Buy' ratings through Q3 2001.
+One analyst (Chung Wu at UBS PaineWebber) downgraded to 'Neutral' in August 2001; he was reassigned off the Enron account the next week.
+
+=== KEY DATES ===
+Feb 2, 2001 — Andersen issues clean audit opinion for FY2000.
+Oct 16, 2001 — Enron announces $618M charge + $1.2B equity write-down from CFO partnerships.
+Oct 31, 2001 — SEC formal investigation.
+Dec 2, 2001 — Enron files Chapter 11.

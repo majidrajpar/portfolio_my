@@ -1,0 +1,42 @@
+=== COMPANY: Tesco PLC (LSE: TSCO) ===
+=== FIRST HALF: 26 weeks ended Aug 23, 2014 ===
+=== AUDITOR: PwC (Tesco UK auditor since the 1980s, 30+ years) ===
+=== SCOPE OF ERROR: Commercial income (supplier rebates) overstatement ===
+
+=== EXCERPT: Tesco interim results, Sept 1, 2014 (pre-warning) ===
+Trading profit (UK & ROI): reported as £1.1 billion for H1 2014.
+Commercial income line: £202 million for H1 2014.
+Commercial income description: "Income earned from suppliers in respect of promotional contributions, rebates, and supplier investment in trade."
+
+=== EXCERPT: Tesco Press Release, Sept 22, 2014 ===
+"Tesco has identified an overstatement of approximately £263 million in commercial income in the first half of 2014/15. The overstatement relates principally to the accrual of commercial income. The half-year results previously announced on 1 September 2014 overstated profits by approximately 23%."
+
+=== EXCERPT: Deloitte forensic investigation (commissioned by Tesco, Oct 2014) ===
+Deloitte found: "The overstatement arose from the recognition of commercial income on a 'gross' basis in periods where the offsetting promotional costs had not been incurred. Rebate income was recognised in advance of the underlying customer behaviour that would trigger the rebate."
+Three senior executives suspended pending investigation.
+Eight auditors (PwC) had signed off the H1 2014 commercial income without independent supplier confirmation.
+
+=== EXCERPT: Tesco 2013/14 Annual Report, Supplier Agreements ===
+"Commercial income is recognised when the relevant sales to customers occur. Recognition is based on agreements with suppliers and is calculated on a consistent basis to the prior year."
+Note: actual practice diverged — Tesco UK recognised rebates based on *forecast* customer behaviour, not actuals.
+
+=== EXCERPT: PwC Audit Workpapers (later examined by FRC) ===
+PwC obtained supplier rebates confirmations for FY2013/14 from a sample of 19 suppliers out of >2,000.
+Of the 19 confirmations requested, 12 were obtained; 7 were not returned and follow-up was limited.
+Sample covered approximately 8% of commercial income by value.
+
+=== EXCERPT: FRC Tribunal Findings (2017-2019) ===
+The Financial Reporting Council brought a case against PwC and senior engagement partner Stephen Duenwald over the FY2013/14 audit.
+Findings: PwC failed to obtain sufficient appropriate audit evidence for commercial income. Reliance on management representations without independent confirmation. No consideration of fraud risk specific to commercial income (a known high-fraud-risk area for retailers).
+
+=== EXCERPT: Tesco Financial Calendar ===
+Sep 1, 2014 — Tesco announces H1 results (showing inflated £202M commercial income).
+Sep 22, 2014 — Tesco issues profit warning, suspends 4 senior UK executives, admits £263M overstatement.
+Oct 1, 2014 — FRC opens investigation into PwC's FY2013/14 audit.
+
+=== EXCERPT: PwC Audit Approach to Commercial Income (per FRC ruling) ===
+PwC had audited Tesco since the 1980s. The commercial income accrual was tested through:
+- Comparisons to prior-year trends.
+- Management representations.
+- Limited supplier confirmations (sample size not adjusted for growth in commercial income).
+No substantive analytical procedures specific to the rebate accrual methodology change in 2013/14.

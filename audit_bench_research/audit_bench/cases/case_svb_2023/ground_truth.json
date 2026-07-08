@@ -1,0 +1,28 @@
+{
+  "case_id": "case_svb_2023",
+  "entity": "Silicon Valley Bank / SVB Financial Group",
+  "fiscal_year": 2022,
+  "auditor": "KPMG LLP",
+  "audit_opinion_issued": "Unqualified (clean)",
+  "correct_opinion_in_hindsight": "Qualified",
+  "scandal_summary": "SVB collapsed on March 10, 2023, just 14 days after KPMG signed a clean opinion. SVB had $15.1B of unrealized losses on a $91B HTM Treasury/MBS portfolio, funded by 87% uninsured demand deposits concentrated in tech/VC. The Fed raised rates 425bp during 2022. The asset-liability duration mismatch (6.2-year assets vs near-zero deposits) was disclosed in footnotes but not flagged in the audit opinion. KPMG issued no going-concern or emphasis-of-matter paragraph.",
+  "key_red_flags_that_should_have_been_raised": [
+    "$15.1B unrealized losses on HTM portfolio — economically the same loss as if classified AFS; classification shifted opacity but did not eliminate economic exposure",
+    "87% uninsured deposit concentration — extraordinary liquidity risk; deposit flight risk not theoretical",
+    "Deposit concentration in tech/VC sector (>50%) — sector-specific depositor correlation (when VC funding slows, all depositors withdraw simultaneously)",
+    "3x asset growth in 2 years ($71B -> $212B) funded by concentrated deposits — growth beyond risk-management capacity",
+    "Asset-liability duration mismatch: 6.2-year assets vs near-zero deposits — textbook ALM risk",
+    "Fed raised rates 425bp during 2022 — direct macro trigger amplifying duration risk; should have triggered going-concern re-evaluation",
+    "KPMG 20+ year tenure — long tenure has well-documented association with delayed going-concern modifications",
+    "No going-concern or emphasis-of-matter paragraph despite $15B unrealized losses on collateral — clean opinion 14 days before failure is implausible",
+    "CEO stock sale Feb 27, 2023 (3 days after opinion) under 10b5-1 plan adopted Jan 26 — auditors should consider insider-trading signals when assessing going concern"
+  ],
+  "expected_judgement_axes": {
+    "evidence_sufficiency": "Sufficient — the disclosed unrealized losses and deposit concentration were material enough to warrant an emphasis-of-matter paragraph and a serious going-concern assessment.",
+    "independence_concern": "Moderate — 20+ year KPMG tenure created a comfort dynamic.",
+    "going_concern": "Going-concern modification warranted by liquidity mismatch and rate trajectory; clean opinion failed to consider correlated depositor flight."
+  },
+  "scored_correct_rating": "Qualified",
+  "acceptable_ratings": ["Qualified", "Adverse"],
+  "reject_clean": true
+}

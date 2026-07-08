@@ -35,3 +35,13 @@ ROLEFORGE_AI_CONTEXT.md
 # Python venvs
 roleforge/.venv/
 .venv/
+
+# audit_bench_research — generated output and build artefacts
+audit_bench_research/audit_bench/runs/
+audit_bench_research/toto/internal_audit_engagement/
+audit_bench_research/.venv/
+audit_bench_research/jumbo/
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz

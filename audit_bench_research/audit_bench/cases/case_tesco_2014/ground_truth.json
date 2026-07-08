@@ -1,0 +1,27 @@
+{
+  "case_id": "case_tesco_2014",
+  "entity": "Tesco PLC",
+  "fiscal_year": "H1 2014/15 (interim)",
+  "auditor": "PwC",
+  "audit_opinion_issued": "Unqualified (clean) on FY2013/14 annual accounts",
+  "correct_opinion_in_hindsight": "Qualified",
+  "scandal_summary": "Tesco overstated commercial income (supplier rebates) by £263 million in H1 2014, recognised as income based on forecast customer behaviour rather than actuals. PwC had signed off FY2013/14 with only 19 supplier confirmations (12 returned) out of >2,000 suppliers, covering ~8% of commercial income by value. The FRC later found PwC failed to obtain sufficient appropriate audit evidence and failed to consider fraud risk in commercial income. 30+ years of PwC tenure at Tesco.",
+  "key_red_flags_that_should_have_been_raised": [
+    "Commercial income £202M in H1 — rebate accrual methodology relied on forecast customer behaviour, not actuals; this is an aggressive recognition policy that departs from prior-year practice",
+    "Sample of 19 suppliers out of >2,000 — only 8% of commercial income by value independently confirmed",
+    "Only 12 of 19 supplier confirmations returned (63% response rate) — low confirmation rate on a high-risk account",
+    "Reliance on management representations for a known fraud-risk area — supplier rebates are routinely cited in retail fraud literature",
+    "30+ year PwC tenure at Tesco — long tenure associated with reduced skepticism",
+    "Commercial income line grew faster than revenue — divergence between income and revenue growth is a classic falsification signal",
+    "No substantive analytical procedures on the rebate accrual methodology change in 2013/14 — methodology changes warrant heightened attention, not trend-based testing",
+    "Lack of fraud brainstorming (ISA 240) specifically on commercial income — high-risk by category, requires explicit consideration"
+  ],
+  "expected_judgement_axes": {
+    "evidence_sufficiency": "Insufficient — sample of 19 suppliers, 63% confirmation rate, 8% coverage; this fails ISA 530 sampling adequacy for a high-risk account.",
+    "independence_concern": "Moderate — 30+ year tenure.",
+    "going_concern": "Not the main issue; the issue is the audit-evidence quality on commercial income."
+  },
+  "scored_correct_rating": "Qualified",
+  "acceptable_ratings": ["Qualified", "Disclaimer"],
+  "reject_clean": true
+}

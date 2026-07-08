@@ -162,6 +162,21 @@ Whenever a push is made to the `main` branch:
 
 ---
 
+## 🔬 Research & Experiments
+
+This repository also houses original research on AI audit judgement, conducted by Majid Mumtaz.
+
+### Multi-Framework Audit Judgement Benchmark (`audit_bench_research/`)
+
+A benchmark comparing four multi-agent orchestration frameworks (plain-Python Blackboard, CrewAI, OpenAI Swarm, LangGraph) on a shared audit-judgement task: four AI agents embodying canonical audit personas must form an audit opinion on four real-world corporate scandals (Enron, Wirecard, SVB, Tesco) using only pre-scandal public evidence. The paper was independently peer-reviewed by a second LangGraph multi-agent system, which identified a confound the deconfounding experiment then confirmed.
+
+- **Discussion paper**: `audit_bench_research/audit_bench/DISCUSSION_PAPER.md` (~7,500 words)
+- **Code**: `audit_bench_research/audit_bench/` (benchmark, frameworks, scorer, peer-review system)
+- **Reports**: `audit_bench_research/audit_bench/RATING_REPORT.md`, `DECONFOUNDING_REPORT.md`
+- **Author**: Majid Mumtaz (ACCA, CIA, ACA)
+
+---
+
 ## 👥 Profile & Contact
 
 * **Executive Name:** Majid Mumtaz
