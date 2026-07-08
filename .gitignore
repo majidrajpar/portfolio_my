@@ -36,7 +36,15 @@ ROLEFORGE_AI_CONTEXT.md
 roleforge/.venv/
 .venv/
 
-# audit_bench_research — generated output and build artefacts
+# Local backup of research files (not for git)
+audit_bench_research_local_backup/
+
+# audit_bench_research — keep only README.md public in this repo.
+# All other research files (paper, code, cases, reports, toto/) live in the
+# private standalone repo: github.com/majidrajpar/audit_bench_research
+# and will be made public alongside the arXiv preprint.
+audit_bench_research/*
+!audit_bench_research/README.md
 audit_bench_research/audit_bench/runs/
 audit_bench_research/toto/internal_audit_engagement/
 audit_bench_research/.venv/

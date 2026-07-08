@@ -170,10 +170,8 @@ This repository also houses original research on AI audit judgement, conducted b
 
 A benchmark comparing four multi-agent orchestration frameworks (plain-Python Blackboard, CrewAI, OpenAI Swarm, LangGraph) on a shared audit-judgement task: four AI agents embodying canonical audit personas must form an audit opinion on four real-world corporate scandals (Enron, Wirecard, SVB, Tesco) using only pre-scandal public evidence. The paper was independently peer-reviewed by a second LangGraph multi-agent system, which identified a confound the deconfounding experiment then confirmed.
 
-- **Discussion paper**: `audit_bench_research/audit_bench/DISCUSSION_PAPER.md` (~7,500 words)
-- **Code**: `audit_bench_research/audit_bench/` (benchmark, frameworks, scorer, peer-review system)
-- **Reports**: `audit_bench_research/audit_bench/RATING_REPORT.md`, `DECONFOUNDING_REPORT.md`
-- **Private repo**: [github.com/majidrajpar/audit_bench_research](https://github.com/majidrajpar/audit_bench_research) (private; will be made public alongside the arXiv preprint)
+- **Public summary**: `audit_bench_research/README.md` in this repo (abstract, headline results, key findings)
+- **Full research** (discussion paper, code, cases, reports): private repo at [github.com/majidrajpar/audit_bench_research](https://github.com/majidrajpar/audit_bench_research) — will be made public alongside the arXiv preprint
 - **Author**: Majid Mumtaz (ACCA, CIA, ACA)
 
 ---
