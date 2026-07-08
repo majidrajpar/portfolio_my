@@ -24,12 +24,13 @@ The failure mode is not poor judgement. It is refusal to judge.
 
 ## Framework comparison
 
-| Framework | Judgement accuracy | Evidence recall | Outcome |
-|---|---|---|---|
-| plain Python | 3.25/5 | 3.58/5 | Committed. Got SVB right (Qualified) — the only framework that did. |
-| LangGraph | 2.50/5 | 3.59/5 | Conditional revisit loop fired on 3 of 4 cases but refined evidence, not the opinion. |
-| Swarm | 1.50/5 | 4.44/5 | Surfaced 100% of red flags on Tesco. Still said "Unable." The opinion step was never reached. |
-| CrewAI | 0.00 | — | Never emitted parseable structured output. Integration failure, not judgement failure. |
+**plain Python** — Judgement accuracy 3.25/5, evidence recall 3.58/5. Committed. Got SVB right (Qualified) — the only framework that did.
+
+**LangGraph** — Judgement accuracy 2.50/5, evidence recall 3.59/5. Conditional revisit loop fired on 3 of 4 cases but refined evidence, not the opinion.
+
+**Swarm** — Judgement accuracy 1.50/5, evidence recall 4.44/5. Surfaced 100% of red flags on Tesco. Still said "Unable." The opinion step was never reached.
+
+**CrewAI** — Judgement accuracy 0.00. Never emitted parseable structured output. Integration failure, not judgement failure.
 
 The more "agentic" the framework (autonomy, handoffs, tool-calling), the worse it performed on judgement. The more "scripted" (fixed order, output contract, rejection loop), the better. This is a matching problem, not a ranking one — different task failure modes require different control flows.
 
