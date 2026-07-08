@@ -173,6 +173,7 @@ A benchmark comparing four multi-agent orchestration frameworks (plain-Python Bl
 - **Discussion paper**: `audit_bench_research/audit_bench/DISCUSSION_PAPER.md` (~7,500 words)
 - **Code**: `audit_bench_research/audit_bench/` (benchmark, frameworks, scorer, peer-review system)
 - **Reports**: `audit_bench_research/audit_bench/RATING_REPORT.md`, `DECONFOUNDING_REPORT.md`
+- **Private repo**: [github.com/majidrajpar/audit_bench_research](https://github.com/majidrajpar/audit_bench_research) (private; will be made public alongside the arXiv preprint)
 - **Author**: Majid Mumtaz (ACCA, CIA, ACA)
 
 ---
