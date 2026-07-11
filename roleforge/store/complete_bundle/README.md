@@ -20,7 +20,7 @@
 | Governance | 4 roles |
 | Philosophy | 4 roles |
 | Creative Writing | 4 roles |
-| Book Writing | 4 roles |
+| Book Writing | 3 roles |
 | Data Analysis | 5 roles |
 
 ## Pricing Psychology

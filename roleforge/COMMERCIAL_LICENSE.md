@@ -35,21 +35,16 @@ These are **convenience subscriptions**, not legal requirements. You can build y
 - All roles in **one domain** of your choice (e.g., Audit: 6 roles)
 - CrewAI + LangChain + LangGraph overlays
 - Usage examples
+- **Seat:** Single user
 - **Target:** Specialists who need depth in one area
 - **Psychology:** Job-oriented subscription. "I need audit roles."
-
-### Professional Pack — $39/mo
-- All roles in **three domains** of your choice
-- All 9 pre-built LangGraph graph templates
-- Priority GitHub issue support
-- **Target:** Consultants and agencies building for clients
-- **Psychology:** Volume discount. Feels like a tool, not a toy.
 
 ### Complete Bundle — $79/mo ⭐ BEST VALUE
 - All **31 roles** + all overlays
 - All 9 graph templates
 - Continuous updates (new roles, framework adapters)
 - Private Discord community access
+- **Seat:** Single user
 - **Target:** Power users, agencies, fractional CTOs
 - **Psychology:** Anchor at $279/mo (31×$9). $79/mo is 72% off.
 
@@ -59,6 +54,7 @@ These are **convenience subscriptions**, not legal requirements. You can build y
 - Custom role development (up to 5 roles)
 - Dedicated support channel (24-hour response)
 - Continuous updates
+- **Seats:** Up to 5 users
 - **Target:** Teams building agent platforms commercially
 - **Psychology:** Legal protection + custom work = no-brainer for enterprises.
 
@@ -66,7 +62,7 @@ These are **convenience subscriptions**, not legal requirements. You can build y
 
 ## Why Pay?
 
-1. **Time:** Buying validated roles saves days of prompt engineering.
+1. **Time:** Subscribing to validated roles saves days of prompt engineering.
 2. **Support:** Priority response on GitHub issues and Discord.
 3. **Early Access:** New roles and framework adapters before public release.
 4. **Custom Development:** We build domain-specific roles for your industry.
@@ -110,6 +106,9 @@ A: You already have it. The entire repo is public. You're paying for convenience
 
 **Q: Can I cancel my subscription?**  
 A: Yes. All paid tiers are month-to-month — cancel anytime. The free core and starter roles remain yours forever. If you cancel a paid tier, you retain what you already downloaded but stop receiving new roles and updates.
+
+**Q: Is the subscription per-seat or unlimited?**  
+A: Domain Pack and Complete Bundle are single-seat (one user). Enterprise License includes up to 5 seats — contact us for additional seats.
 
 **Q: Why not just sell individual roles?**  
 A: Market research shows individual prompts sell for $3-$15 and attract hobbyists. Subscription bundles at $19-$79/mo attract professionals with real budgets. See [archive/research/market_research_report.md](archive/research/market_research_report.md) for full analysis.

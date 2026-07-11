@@ -8,13 +8,13 @@ import { roleforgeProducts, roleforgeStats, freeRoles } from '../data/roleforge.
 const base = import.meta.env.BASE_URL;
 
 const domainMeta = [
-  { id: 'audit',     label: 'Audit',      count: 6, color: 'bg-[#3a1913] text-[#f1b5a2]', desc: 'Internal audit, IT audit, forensic, compliance, report writing, board liaison' },
+  { id: 'audit',     label: 'Audit',      count: 6, color: 'bg-[#3a1913] text-[#f1b5a2]', desc: 'Internal audit, IT audit, forensic, compliance, report writing, BI analysis' },
   { id: 'risk',      label: 'Risk',       count: 5, color: 'bg-[#40250f] text-[#f3cf9b]', desc: 'Enterprise risk, credit risk, market quant, operational risk, scenario modeling' },
-  { id: 'governance',label: 'Governance', count: 3, color: 'bg-[#1f253a] text-[#c8d2f8]', desc: 'Governance analysis, data governance, ethics & culture' },
+  { id: 'governance',label: 'Governance', count: 4, color: 'bg-[#1f253a] text-[#c8d2f8]', desc: 'Board liaison, governance analysis, ethics, data governance' },
   { id: 'philosophy',label: 'Philosophy', count: 4, color: 'bg-[#2f223f] text-[#d7c3f4]', desc: 'Ethics, epistemology, logic, history of philosophy' },
-  { id: 'creative',  label: 'Creative',   count: 6, color: 'bg-[#17302e] text-[#b7e2db]', desc: 'Ghostwriting, character development, world-building, dialogue, narrative, editing' },
-  { id: 'book',      label: 'Book',       count: 3, color: 'bg-[#293038] text-[#d4dee8]', desc: 'Project management, copy editing, policy drafting' },
-  { id: 'data',      label: 'Data',       count: 5, color: 'bg-[#181512] text-[#f4c98b]', desc: 'Data science, BI analysis, storytelling, statistical review' },
+  { id: 'creative',  label: 'Creative',   count: 4, color: 'bg-[#17302e] text-[#b7e2db]', desc: 'Narrative, character development, world-building, dialogue' },
+  { id: 'book',      label: 'Book',       count: 3, color: 'bg-[#293038] text-[#d4dee8]', desc: 'Project management, copy editing, developmental editing' },
+  { id: 'data',      label: 'Data',       count: 5, color: 'bg-[#181512] text-[#f4c98b]', desc: 'Data science, storytelling, ML engineering, statistical review, visualization' },
 ];
 
 const comparisonStats = [
@@ -166,10 +166,13 @@ const categoryColors: Record<string, string> = {
 
             <h3 class="text-[1.28rem] leading-tight text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[1.45rem]">{product.name}</h3>
             
-            <div class="mt-4 flex items-baseline gap-3">
+            <div class="mt-4 flex flex-wrap items-baseline gap-3">
               <span class="text-3xl font-black text-[#181511]">${product.price}</span>
               {product.originalPrice && (
-                <span class="text-lg text-slate-400 line-through">${product.originalPrice}</span>
+                <>
+                  <span class="text-lg text-slate-400 line-through">${product.originalPrice}</span>
+                  <span class="text-[10px] uppercase tracking-[0.18em] text-slate-400">if subscribed individually</span>
+                </>
               )}
               <span class="text-sm text-[color:var(--text-secondary)]">/mo</span>
             </div>
@@ -256,10 +259,11 @@ const categoryColors: Record<string, string> = {
         {[
           { q: 'What is the difference between free and paid roles?', a: 'Free roles include 3 starter personas plus the core engine (loader, validators, adapters). Paid roles are 31 production-grade personas with deeper expertise, framework-specific overlays, and continuous updates.' },
           { q: 'Can I use roles in commercial projects?', a: 'Yes. All purchases include commercial use rights for your own projects. The Enterprise License adds internal redistribution rights for teams.' },
-          { q: 'How does the subscription work?', a: 'Paid tiers are billed monthly — cancel anytime. The Complete and Enterprise tiers include continuous updates and new roles as they are added. The free core and starter roles never expire.' },
+          { q: 'How does the subscription work?', a: 'Paid tiers are billed monthly — cancel anytime. The Complete and Enterprise tiers include continuous updates and new roles as they are added. Domain and Complete subscriptions are per-seat (one user). Enterprise includes up to 5 seats. The free core and starter roles never expire.' },
           { q: 'What frameworks are supported?', a: 'CrewAI, LangChain, and LangGraph. Each role includes framework-specific overlays that optimize prompts and tool bindings for that runtime.' },
           { q: 'How do I install a purchased role?', a: 'Download the ZIP, unzip into your project, and load with the free RoleForge core: registry.load_role("path/to/role.yaml").' },
           { q: 'What if I need a custom role?', a: 'Enterprise License holders get priority support and custom role development. Alternatively, use the free core to build your own following the JSON Schema.' },
+          { q: 'What happens when I cancel?', a: "You keep any role files you've already downloaded but lose access to new roles and ongoing updates. The free core and Starter Pack never expire." },
         ].map((faq, i) => (
           <div class="glass-card p-6 rounded-[24px]" data-reveal data-reveal-delay={String((i % 2) + 1)}>
             <h3 class="text-lg font-black text-[#181511] leading-snug">{faq.q}</h3>

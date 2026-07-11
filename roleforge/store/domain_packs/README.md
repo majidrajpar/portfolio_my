@@ -11,8 +11,8 @@ Choose the domain that matches your needs:
 | **Governance Pack** | $19/mo | 4 roles | Board secretaries, governance officers |
 | **Philosophy Pack** | $24/mo | 4 roles | Ethics researchers, policy advisors |
 | **Creative Writing Pack** | $34/mo | 4 roles | Fiction writers, game designers |
-| **Book Writing Pack** | $19/mo | 4 roles | Authors, editors, publishers |
-| **Data Analysis Pack** | $29/mo | 5 roles | Data scientists, BI analysts |
+| **Book Writing Pack** | $19/mo | 3 roles | Authors, editors, publishers |
+| **Data Analysis Pack** | $29/mo | 5 roles | Data scientists, ML engineers |
 
 Each pack includes:
 - All roles in the domain (YAML definitions)
