@@ -89,19 +89,19 @@ roleforge/
 
 ---
 
-## Pricing: Free to Build, Pay for Convenience
+## Pricing: Free to Build, Subscribe for Convenience
 
 The **core engine is free** under the Elastic License 2.0. Use it for personal projects, education, research, internal business, and even startups under $1M ARR.
 
-Want to save time? Buy validated role packs (one-time purchase, lifetime access):
+Want to save time? Subscribe to validated role packs (billed monthly, cancel anytime):
 
 | Tier | Price | What You Get |
 |---|---|---|
 | **Starter Pack** | **Free** | 3 roles + overlays. Build something real before paying. |
-| **Domain Pack** | **$49** | All roles in one domain (e.g., Audit: 6 roles) + overlays |
-| **Professional Pack** | **$99** | 3 domains + graph templates + priority support |
-| **Complete Bundle** ⭐ | **$199** | All 31 roles + 12mo updates + Discord |
-| **Enterprise License** | **$499** | Everything + commercial rights + 5 custom roles + dedicated support |
+| **Domain Pack** | **$19–$34/mo** | All roles in one domain (e.g., Audit: 6 roles) + overlays |
+| **Professional Pack** | **$39/mo** | 3 domains + graph templates + priority support |
+| **Complete Bundle** ⭐ | **$79/mo** | All 31 roles + continuous updates + Discord |
+| **Enterprise License** | **$149/mo** | Everything + commercial rights + 5 custom roles + dedicated support |
 
 **Why this pricing?** Market research shows prompt marketplaces sell at $3-$15 (hobbyist territory). RoleForge is a professional tool, priced between commodity prompts and enterprise frameworks. See [archive/research/market_research_report.md](archive/research/market_research_report.md) for the full analysis.
 

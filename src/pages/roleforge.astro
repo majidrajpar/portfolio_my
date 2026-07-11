@@ -49,7 +49,7 @@ const categoryColors: Record<string, string> = {
             <span class="block">for any framework.</span>
           </h1>
           <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.12rem] md:leading-9">
-            Framework-agnostic YAML personas validated by JSON Schema. Plug into CrewAI, LangChain, or LangGraph. One-time purchase. No subscriptions.
+            Framework-agnostic YAML personas validated by JSON Schema. Plug into CrewAI, LangChain, or LangGraph. Subscription-based access. Cancel anytime.
           </p>
         </div>
         <div class="quote-panel p-6 md:p-8" data-reveal data-reveal-delay="1">
@@ -137,7 +137,7 @@ const categoryColors: Record<string, string> = {
           <span class="eyebrow-label">Pricing Preview</span>
           <h2 class="mt-4 text-[clamp(2rem,4.6vw,3.8rem)] leading-[1.02] text-[#181511]">Planned pricing tiers.</h2>
         </div>
-        <p class="body-luxe max-w-2xl">One-time purchases. No subscriptions. The core engine is free — pay only for the roles you need. Payment integration coming soon.</p>
+        <p class="body-luxe max-w-2xl">Monthly subscriptions. The core engine is free — pay only for the roles you need. Payment integration coming soon.</p>
       </div>
 
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -171,7 +171,7 @@ const categoryColors: Record<string, string> = {
               {product.originalPrice && (
                 <span class="text-lg text-slate-400 line-through">${product.originalPrice}</span>
               )}
-              <span class="text-sm text-[color:var(--text-secondary)]">one-time</span>
+              <span class="text-sm text-[color:var(--text-secondary)]">/mo</span>
             </div>
 
             <p class="mt-4 flex-1 text-sm leading-7 text-[color:var(--text-secondary)] md:leading-8">{product.contents}</p>
@@ -229,11 +229,11 @@ const categoryColors: Record<string, string> = {
             <div class="mt-8 grid gap-4 sm:grid-cols-2">
               <div class="frame-panel p-5">
                 <div class="meta-label text-[#f4c98b]">Individual</div>
-                <p class="mt-3 text-sm leading-7 text-white/70">One role at $19 to test the system before committing.</p>
+                <p class="mt-3 text-sm leading-7 text-white/70">One role at $9/mo to test the system before committing.</p>
               </div>
               <div class="frame-panel p-5">
                 <div class="meta-label text-[#f4c98b]">Complete Library</div>
-                <p class="mt-3 text-sm leading-7 text-white/70">All 31 roles for $199 — 66% less than buying individually.</p>
+                <p class="mt-3 text-sm leading-7 text-white/70">All 31 roles for $79/mo — 72% less than subscribing individually.</p>
               </div>
             </div>
           </div>
@@ -256,7 +256,7 @@ const categoryColors: Record<string, string> = {
         {[
           { q: 'What is the difference between free and paid roles?', a: 'Free roles include 3 starter personas plus the core engine (loader, validators, adapters). Paid roles are 31 production-grade personas with deeper expertise, framework-specific overlays, and continuous updates.' },
           { q: 'Can I use roles in commercial projects?', a: 'Yes. All purchases include commercial use rights for your own projects. The Enterprise License adds internal redistribution rights for teams.' },
-          { q: 'Do I need a subscription?', a: 'No. All purchases are one-time. The Complete Bundle includes 12 months of updates. Enterprise includes lifetime updates.' },
+          { q: 'How does the subscription work?', a: 'Paid tiers are billed monthly — cancel anytime. The Complete and Enterprise tiers include continuous updates and new roles as they are added. The free core and starter roles never expire.' },
           { q: 'What frameworks are supported?', a: 'CrewAI, LangChain, and LangGraph. Each role includes framework-specific overlays that optimize prompts and tool bindings for that runtime.' },
           { q: 'How do I install a purchased role?', a: 'Download the ZIP, unzip into your project, and load with the free RoleForge core: registry.load_role("path/to/role.yaml").' },
           { q: 'What if I need a custom role?', a: 'Enterprise License holders get priority support and custom role development. Alternatively, use the free core to build your own following the JSON Schema.' },
