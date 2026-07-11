@@ -1,6 +1,6 @@
 # RoleForge Professional Pack
 
-**$99 one-time**
+**$39/mo — cancel anytime**
 
 ## What's Included
 
@@ -27,4 +27,4 @@ Professional Pack is sold under the **Elastic License 2.0** with commercial use 
 
 ---
 
-**Want all domains?** The [Complete Bundle](complete_bundle/) is $199 (only $100 more for 4 extra domains + Discord + updates).
+**Want all domains?** The [Complete Bundle](complete_bundle/) is $79/mo (only $40/mo more for 4 extra domains + Discord + updates).

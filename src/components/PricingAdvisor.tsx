@@ -81,64 +81,64 @@ const questions: Record<string, Question> = {
     id: 'budget-audit',
     text: 'Budget preference?',
     options: [
-      { label: 'Domain pack only ($79)', value: 'pack', next: null },
-      { label: 'Complete library for cross-domain work ($199)', value: 'complete', next: null },
+      { label: 'Domain pack only ($34/mo)', value: 'pack', next: null },
+      { label: 'Complete library for cross-domain work ($79/mo)', value: 'complete', next: null },
     ],
   },
   'budget-book': {
     id: 'budget-book',
     text: 'Budget preference?',
     options: [
-      { label: 'Book Writing Pack ($49)', value: 'pack', next: null },
-      { label: 'Complete library for variety ($199)', value: 'complete', next: null },
+      { label: 'Book Writing Pack ($19/mo)', value: 'pack', next: null },
+      { label: 'Complete library for variety ($79/mo)', value: 'complete', next: null },
     ],
   },
   'budget-creative': {
     id: 'budget-creative',
     text: 'Budget preference?',
     options: [
-      { label: 'Creative Writing Pack ($79)', value: 'pack', next: null },
-      { label: 'Complete library ($199)', value: 'complete', next: null },
+      { label: 'Creative Writing Pack ($34/mo)', value: 'pack', next: null },
+      { label: 'Complete library ($79/mo)', value: 'complete', next: null },
     ],
   },
   'budget-philosophy': {
     id: 'budget-philosophy',
     text: 'Budget preference?',
     options: [
-      { label: 'Philosophy Pack ($59)', value: 'pack', next: null },
-      { label: 'Complete library ($199)', value: 'complete', next: null },
+      { label: 'Philosophy Pack ($24/mo)', value: 'pack', next: null },
+      { label: 'Complete library ($79/mo)', value: 'complete', next: null },
     ],
   },
   'budget-data': {
     id: 'budget-data',
     text: 'Budget preference?',
     options: [
-      { label: 'Data Analysis Pack ($69)', value: 'pack', next: null },
-      { label: 'Complete library ($199)', value: 'complete', next: null },
+      { label: 'Data Analysis Pack ($29/mo)', value: 'pack', next: null },
+      { label: 'Complete library ($79/mo)', value: 'complete', next: null },
     ],
   },
   'budget-risk': {
     id: 'budget-risk',
     text: 'Budget preference?',
     options: [
-      { label: 'Risk Pack ($69)', value: 'pack', next: null },
-      { label: 'Complete library ($199)', value: 'complete', next: null },
+      { label: 'Risk Pack ($29/mo)', value: 'pack', next: null },
+      { label: 'Complete library ($79/mo)', value: 'complete', next: null },
     ],
   },
   'budget-governance': {
     id: 'budget-governance',
     text: 'Budget preference?',
     options: [
-      { label: 'Governance Pack ($49)', value: 'pack', next: null },
-      { label: 'Complete library ($199)', value: 'complete', next: null },
+      { label: 'Governance Pack ($19/mo)', value: 'pack', next: null },
+      { label: 'Complete library ($79/mo)', value: 'complete', next: null },
     ],
   },
   'budget-multiple': {
     id: 'budget-multiple',
     text: 'Budget preference?',
     options: [
-      { label: 'Complete library ($199)', value: 'complete', next: null },
-      { label: 'Enterprise license for team ($499)', value: 'enterprise', next: null },
+      { label: 'Complete library ($79/mo)', value: 'complete', next: null },
+      { label: 'Enterprise license for team ($149/mo)', value: 'enterprise', next: null },
     ],
   },
   'budget-complete': {
@@ -162,146 +162,146 @@ const questions: Record<string, Question> = {
 const recommendations: Record<string, Recommendation> = {
   'audit-one-min': {
     product: 'Individual Role',
-    price: 19,
+    price: 9,
     reason: 'You only need one specific audit role. Start with the individual tier — you can always upgrade to the Audit Pack later.',
     roles: ['Lead Internal Auditor', 'IT Auditor', 'Forensic Auditor', 'Compliance Auditor', 'Audit Report Writer', 'Board Liaison'],
   },
   'audit-one-future': {
     product: 'Audit Pack',
-    price: 79,
-    reason: 'Since you might expand, the Audit Pack gives you all 6 audit roles at a 31% discount vs buying individually.',
+    price: 34,
+    reason: 'Since you might expand, the Audit Pack gives you all 6 audit roles at a 37% discount vs subscribing individually.',
     roles: ['Lead Internal Auditor', 'IT Auditor', 'Forensic Auditor', 'Compliance Auditor', 'Audit Report Writer', 'Board Liaison'],
   },
   'audit-team-pack': {
     product: 'Audit Pack',
-    price: 79,
+    price: 34,
     reason: 'Perfect — the Audit Pack includes all 6 audit roles with framework overlays for CrewAI, LangChain, and LangGraph.',
     roles: ['Lead Internal Auditor', 'IT Auditor', 'Forensic Auditor', 'Compliance Auditor', 'Audit Report Writer', 'Board Liaison'],
   },
   'audit-team-complete': {
     product: 'Complete Library',
-    price: 199,
+    price: 79,
     reason: 'For cross-domain audit work, the Complete Library gives you all 31 roles across 7 domains — including risk, governance, and data analysis roles that complement audit workflows.',
     roles: ['All 31 roles across Audit, Risk, Governance, and Data Analysis'],
   },
   'creative-book-pack': {
     product: 'Book Writing Pack',
-    price: 49,
+    price: 19,
     reason: 'The Book Writing Pack covers project management, editing, and policy drafting — everything you need for book production.',
     roles: ['Book Project Manager', 'Copy Editor/Proofreader', 'Policy Drafter'],
   },
   'creative-book-complete': {
     product: 'Complete Library',
-    price: 199,
+    price: 79,
     reason: 'For variety across genres and formats, the Complete Library includes creative writing, book production, and philosophy roles.',
     roles: ['Book Project Manager', 'Copy Editor/Proofreader', 'Policy Drafter', 'Ghostwriter', 'Character Developer', 'World Builder', 'Dialogue Specialist', 'Narrative Architect', 'Developmental Editor'],
   },
   'creative-story-pack': {
     product: 'Creative Writing Pack',
-    price: 79,
+    price: 34,
     reason: 'The Creative Writing Pack includes all 6 storytelling roles — from character development to world-building.',
     roles: ['Ghostwriter', 'Character Developer', 'World Builder', 'Dialogue Specialist', 'Narrative Architect', 'Developmental Editor'],
   },
   'creative-story-complete': {
     product: 'Complete Library',
-    price: 199,
+    price: 79,
     reason: 'For diverse creative projects, the Complete Library adds book production and philosophy roles to your storytelling toolkit.',
     roles: ['Ghostwriter', 'Character Developer', 'World Builder', 'Dialogue Specialist', 'Narrative Architect', 'Developmental Editor', 'Book Project Manager', 'Copy Editor/Proofreader', 'Policy Drafter'],
   },
   'creative-philosophy-pack': {
     product: 'Philosophy Pack',
-    price: 59,
+    price: 24,
     reason: 'The Philosophy Pack includes ethics, epistemology, logic, and history of philosophy roles.',
     roles: ['Ethics Advisor', 'Epistemology Reviewer', 'Logic & Argumentation Analyst', 'History of Philosophy Scholar'],
   },
   'creative-philosophy-complete': {
     product: 'Complete Library',
-    price: 199,
+    price: 79,
     reason: 'For deep philosophical analysis in creative work, the Complete Library adds storytelling and book production roles.',
     roles: ['Ethics Advisor', 'Epistemology Reviewer', 'Logic & Argumentation Analyst', 'History of Philosophy Scholar', 'Ghostwriter', 'Character Developer', 'World Builder', 'Dialogue Specialist', 'Narrative Architect', 'Developmental Editor'],
   },
   'data-general-pack': {
     product: 'Data Analysis Pack',
-    price: 69,
+    price: 29,
     reason: 'The Data Analysis Pack includes data science, BI, storytelling, and statistical review roles.',
     roles: ['Data Scientist', 'BI Analyst', 'Data Storyteller', 'Statistical Reviewer'],
   },
   'data-general-complete': {
     product: 'Complete Library',
-    price: 199,
+    price: 79,
     reason: 'For comprehensive data operations, add risk modeling and governance roles from the Complete Library.',
     roles: ['Data Scientist', 'BI Analyst', 'Data Storyteller', 'Statistical Reviewer', 'Enterprise Risk Strategist', 'Credit Risk Analyst', 'Market Risk Quant', 'Operational Risk Manager', 'Scenario Modeler'],
   },
   'data-risk-pack': {
     product: 'Risk Pack',
-    price: 69,
+    price: 29,
     reason: 'The Risk Pack includes enterprise risk, credit risk, market risk, operational risk, and scenario modeling roles.',
     roles: ['Enterprise Risk Strategist', 'Credit Risk Analyst', 'Market Risk Quant', 'Operational Risk Manager', 'Scenario Modeler'],
   },
   'data-risk-complete': {
     product: 'Complete Library',
-    price: 199,
+    price: 79,
     reason: 'For integrated risk and data operations, the Complete Library combines risk modeling with data analysis and governance roles.',
     roles: ['Enterprise Risk Strategist', 'Credit Risk Analyst', 'Market Risk Quant', 'Operational Risk Manager', 'Scenario Modeler', 'Data Scientist', 'BI Analyst', 'Data Storyteller', 'Statistical Reviewer'],
   },
   'governance-board-pack': {
     product: 'Governance Pack',
-    price: 49,
+    price: 19,
     reason: 'The Governance Pack includes governance analysis, data governance, and ethics/culture advisory roles.',
     roles: ['Governance Analyst', 'Data Governance Specialist', 'Ethics & Culture Advisor'],
   },
   'governance-board-complete': {
     product: 'Complete Library',
-    price: 199,
+    price: 79,
     reason: 'For board-level governance, add audit and risk roles from the Complete Library for a complete governance toolkit.',
     roles: ['Governance Analyst', 'Data Governance Specialist', 'Ethics & Culture Advisor', 'Lead Internal Auditor', 'IT Auditor', 'Forensic Auditor', 'Enterprise Risk Strategist', 'Credit Risk Analyst'],
   },
   'governance-data-gov-pack': {
     product: 'Governance Pack',
-    price: 49,
+    price: 19,
     reason: 'The Governance Pack includes data governance, governance analysis, and ethics advisory roles.',
     roles: ['Governance Analyst', 'Data Governance Specialist', 'Ethics & Culture Advisor'],
   },
   'governance-data-gov-complete': {
     product: 'Complete Library',
-    price: 199,
+    price: 79,
     reason: 'For enterprise data governance, add risk and audit roles for a comprehensive governance framework.',
     roles: ['Governance Analyst', 'Data Governance Specialist', 'Ethics & Culture Advisor', 'Lead Internal Auditor', 'IT Auditor', 'Enterprise Risk Strategist', 'Credit Risk Analyst'],
   },
   'governance-enterprise-complete': {
     product: 'Complete Library',
-    price: 199,
+    price: 79,
     reason: 'For enterprise-wide governance, you need roles across audit, risk, and governance domains.',
     roles: ['All 31 roles across Audit, Risk, Governance, and Data Analysis'],
   },
   'governance-enterprise-enterprise': {
     product: 'Enterprise License',
-    price: 499,
-    reason: 'For enterprise-wide deployment with multiple teams, the Enterprise License includes redistribution rights and lifetime updates.',
+    price: 149,
+    reason: 'For enterprise-wide deployment with multiple teams, the Enterprise License includes redistribution rights and continuous updates.',
     roles: ['All 31 roles + custom development + priority support'],
   },
   'multiple-personal-small': {
     product: 'Individual Role',
-    price: 19,
-    reason: 'Start with one role that matches your immediate need. Upgrade anytime — your purchase counts toward bundles.',
+    price: 9,
+    reason: 'Start with one role that matches your immediate need. Upgrade to a bundle subscription anytime you need more roles.',
     roles: ['Any single role of your choice'],
   },
   'multiple-personal-complete': {
     product: 'Complete Library',
-    price: 199,
-    reason: 'Best value for personal multi-domain projects. All 31 roles for the price of 10 individual purchases.',
+    price: 79,
+    reason: 'Best value for personal multi-domain projects. All 31 roles for the price of 9 individual subscriptions.',
     roles: ['All 31 roles across 7 domains'],
   },
   'multiple-team-small-team': {
     product: 'Complete Library',
-    price: 199,
+    price: 79,
     reason: 'For small teams working across domains, the Complete Library gives everyone access to all 31 roles.',
     roles: ['All 31 roles across 7 domains'],
   },
   'multiple-team-org': {
     product: 'Enterprise License',
-    price: 499,
-    reason: 'For organizations with 10+ people, the Enterprise License includes internal redistribution rights, lifetime updates, and priority support.',
+    price: 149,
+    reason: 'For organizations with 10+ people, the Enterprise License includes internal redistribution rights, continuous updates, and priority support.',
     roles: ['All 31 roles + redistribution rights + custom role development'],
   },
   explore: {
@@ -440,7 +440,7 @@ export default function PricingAdvisor() {
                 {recommendation.price === 0 ? 'Free' : `$${recommendation.price}`}
               </span>
               {recommendation.price > 0 && (
-                <span className="text-sm text-white/50">one-time</span>
+                <span className="text-sm text-white/50">/mo</span>
               )}
             </div>
 
