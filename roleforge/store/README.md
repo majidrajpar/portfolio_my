@@ -10,7 +10,6 @@
 |---|---|---|---|
 | **[Starter Pack](starter_pack/)** | **Free** | 3 roles + overlays | Evaluating RoleForge |
 | **[Domain Pack](domain_packs/)** | **$19–$34/mo** | All roles in 1 domain | Specialists |
-| **[Professional Pack](professional_pack/)** | **$39/mo** | 3 domains + templates | Consultants |
 | **[Complete Bundle](complete_bundle/)** ⭐ | **$79/mo** | All 31 roles + continuous updates | Power users |
 | **[Enterprise License](enterprise_bundle/)** | **$149/mo** | Everything + redistribution | Commercial teams |
 
@@ -19,10 +18,10 @@
 ## How It Works
 
 1. **Free tier:** Download the [Starter Pack](starter_pack/) from GitHub. Build something real.
-2. **Upgrade:** Subscribe to a Domain Pack, Professional Pack, or Complete Bundle on Gumroad.
+2. **Upgrade:** Subscribe to a Domain Pack or Complete Bundle on Gumroad.
 3. **Enterprise:** Need redistribution rights? Get the Enterprise License.
 
-All paid tiers are **monthly subscriptions** — cancel anytime. The free core and starter roles never expire.
+All paid tiers are **monthly subscriptions** — cancel anytime. Domain Pack and Complete Bundle are single-seat; Enterprise License includes up to 5 seats. The free core and starter roles never expire.
 
 ---
 
@@ -41,7 +40,6 @@ See [COMMERCIAL_LICENSE.md](../COMMERCIAL_LICENSE.md) for full details.
 | Product | Gumroad Link |
 |---|---|
 | Domain Pack ($19–$34/mo) | [Buy on Gumroad](https://gumroad.com/your-store) |
-| Professional Pack ($39/mo) | [Buy on Gumroad](https://gumroad.com/your-store) |
 | Complete Bundle ($79/mo) ⭐ | [Buy on Gumroad](https://gumroad.com/your-store) |
 | Enterprise License ($149/mo) | [Buy on Gumroad](https://gumroad.com/your-store) |
 

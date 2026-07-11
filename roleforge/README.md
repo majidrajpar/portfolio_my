@@ -61,11 +61,11 @@ See [examples/](examples/) for CrewAI, LangChain, and LangGraph integrations.
 |---|---|---|
 | **Audit** | 6 | Internal audit, IT audit, compliance, forensic investigation |
 | **Risk** | 5 | Credit, operational, enterprise, scenario modeling |
-| **Governance** | 3 | Board liaison, governance analysis, ethics |
-| **Philosophy** | 4 | Epistemology, ethics, metaphysics, logic |
+| **Governance** | 4 | Board liaison, governance analysis, ethics, data governance |
+| **Philosophy** | 4 | Epistemology, ethics culture, logic, history of philosophy |
 | **Creative Writing** | 4 | Narrative architect, character developer, world builder, dialogue |
 | **Book Writing** | 3 | Developmental editor, copy editor, project manager |
-| **Data Analysis** | 5 | Data scientist, storyteller, governance, ML engineer, visualization |
+| **Data Analysis** | 5 | Data scientist, storyteller, ML engineer, visualization, statistical review |
 
 ---
 
@@ -99,7 +99,6 @@ Want to save time? Subscribe to validated role packs (billed monthly, cancel any
 |---|---|---|
 | **Starter Pack** | **Free** | 3 roles + overlays. Build something real before paying. |
 | **Domain Pack** | **$19–$34/mo** | All roles in one domain (e.g., Audit: 6 roles) + overlays |
-| **Professional Pack** | **$39/mo** | 3 domains + graph templates + priority support |
 | **Complete Bundle** ⭐ | **$79/mo** | All 31 roles + continuous updates + Discord |
 | **Enterprise License** | **$149/mo** | Everything + commercial rights + 5 custom roles + dedicated support |
 

@@ -7,7 +7,7 @@
 - [x] 43 tests passing
 - [x] Free starter pack (3 roles) in `store/starter_pack/`
 - [x] Paid product pages in `store/`
-- [x] Subscription pricing: $19 / $39 / $79 / $149 per month
+- [x] Subscription pricing: $19–$34 / $79 / $149 per month
 - [x] README, LICENSE, CONTRIBUTING, CHANGELOG ready
 - [x] CI/CD workflow configured
 - [x] Market research report generated
@@ -38,7 +38,6 @@ git push -u origin main
 1. Go to https://gumroad.com and create an account
 2. Create products:
    - Domain Pack - $19–$34/mo
-   - Professional Pack - $39/mo
    - Complete Bundle - $79/mo (mark as "Best Value")
    - Enterprise License - $149/mo
 3. Upload the role files as ZIPs for each tier
