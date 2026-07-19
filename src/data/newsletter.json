@@ -1,16 +1,16 @@
 [
   {
+    "title": "AI Audit Judgement: A Multi-Framework Benchmark on Real Scandal Cases",
+    "tag": "Data & Analytics",
+    "tagColor": "text-emerald-400 bg-emerald-500/10 border-emerald-500/20"
+  },
+  {
     "title": "Beyond ReAct: The Dialectical Agent",
     "tag": "Thought Leadership",
     "tagColor": "text-slate-400 bg-slate-500/10 border-slate-500/20"
   },
   {
     "title": "Can an LLM Replace My Judgment?",
-    "tag": "Thought Leadership",
-    "tagColor": "text-slate-400 bg-slate-500/10 border-slate-500/20"
-  },
-  {
-    "title": "The Loop Is the Agent, YAML Is the Contract",
     "tag": "Thought Leadership",
     "tagColor": "text-slate-400 bg-slate-500/10 border-slate-500/20"
   }
