@@ -81,13 +81,25 @@ const categories = ['All', ...new Set((documents as any[]).map((d: any) => d.cat
               <span>{doc.filename.toUpperCase().endsWith('.DOCX') ? 'WORD' : 'PDF'}</span>
             </div>
 
-            <a
-              href={`${base}downloads/${doc.filename}`}
-              download
-              class="mt-6 btn-secondary self-start"
-            >
-              Download
-            </a>
+            <div class="mt-6 flex flex-wrap items-center gap-3">
+              <a
+                href={`${base}downloads/${doc.filename}`}
+                download
+                class="btn-secondary self-start"
+              >
+                Download
+              </a>
+              {doc.link && (
+                <a
+                  href={doc.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-secondary self-start"
+                >
+                  {doc.linkLabel ?? 'View Original'}
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>
