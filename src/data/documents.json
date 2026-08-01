@@ -358,5 +358,17 @@
     "size": "43 KB",
     "pages": 14,
     "date": "2026-05-24"
+  },
+  {
+    "id": "doc-036",
+    "filename": "Forced_Verdict_Gates_Multi-Framework_Benchmark_AI_Audit_Judgement.pdf",
+    "title": "Forced Verdict Gates, Not Graph Sophistication: A Multi-Framework Benchmark of AI Audit Judgement",
+    "description": "Discussion paper benchmarking plain Python, CrewAI, Swarm, and LangGraph on real audit scandals (Enron, Wirecard, SVB, Tesco). AI agents avoided the human failure mode (0 of 16 issued a Clean opinion) but failed by refusing to commit (9 of 16 said Unable). Peer-reviewed by a second LangGraph multi-agent system. Full paper on SSRN.",
+    "category": "Research",
+    "size": "460 KB",
+    "pages": 21,
+    "date": "2026-07-31",
+    "link": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7087838",
+    "linkLabel": "View on SSRN"
   }
 ]
