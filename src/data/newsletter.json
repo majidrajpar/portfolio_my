@@ -1,17 +1,17 @@
 [
   {
-    "title": "Gold-Plated Governance: When the Org Chart Looks Great and the Substance Is…",
-    "tag": "Board Advisory",
-    "tagColor": "text-blue-400 bg-blue-500/10 border-blue-500/20"
-  },
-  {
-    "title": "The AED17 CAC Gap That Sank a Funding Round",
+    "title": "The Glassdoor Rating Hides What the Reviews Reveal",
     "tag": "Thought Leadership",
     "tagColor": "text-slate-400 bg-slate-500/10 border-slate-500/20"
   },
   {
-    "title": "The Risk That Destroys You Is Rarely the One You Are Watching - F&B/Restaurants",
-    "tag": "Audit & Risk",
+    "title": "Fraud Findings Outrank Control Findings. Here's Why It Matters in the GCC.",
+    "tag": "Fraud Forensics",
+    "tagColor": "text-red-400 bg-red-500/10 border-red-500/20"
+  },
+  {
+    "title": "Gold-Plated Governance: When the Org Chart Looks Great and the Substance Is…",
+    "tag": "Board Advisory",
     "tagColor": "text-blue-400 bg-blue-500/10 border-blue-500/20"
   }
 ]
