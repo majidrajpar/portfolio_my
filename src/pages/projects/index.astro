@@ -85,4 +85,41 @@ const base = import.meta.env.BASE_URL;
       </div>
     </div>
   </section>
+
+  {/* Open Source Section */}
+  <section class="px-4 py-4 pb-8 md:px-8">
+    <div class="soft-shell mx-auto max-w-7xl px-7 py-8 md:px-10 md:py-9">
+      <div class="mb-10" data-reveal>
+        <span class="eyebrow-label">Open Source</span>
+        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Tools built for the audit community.</h2>
+        <p class="mx-auto mt-5 max-w-2xl text-base leading-8 text-[color:var(--text-secondary)]">Production-grade applications released under MIT license for internal audit, risk, and compliance teams worldwide.</p>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-2">
+        <div class="glass-card flex flex-col rounded-[30px] p-7" data-reveal data-reveal-delay="1">
+          <div class="mb-4">
+            <span class="rounded-full bg-[#001F5B]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.24em] text-[#001F5B]">Whistleblowing</span>
+          </div>
+          <h3 class="text-xl leading-tight text-[#181511]">Corporate Whistleblower Lite</h3>
+          <p class="mt-4 flex-1 text-sm leading-8 text-[color:var(--text-secondary)]">A lightweight, self-hosted whistleblowing platform. Anonymous reporting, file uploads, role-based dashboards for Internal Audit and CEO, audit trail, and SQLite database — deploys in minutes, not hours.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200 rounded">React 18</span>
+            <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200 rounded">Node.js</span>
+            <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200 rounded">Prisma</span>
+            <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200 rounded">JWT Auth</span>
+          </div>
+          <div class="mt-6 border-t border-[color:var(--line-soft)] pt-5">
+            <span class="meta-label text-slate-400">Impact</span>
+            <p class="mt-3 text-sm font-semibold leading-7 text-[#181511]">Eliminates dependency on SaaS whistleblowing vendors. Complete data sovereignty with zero external API calls.</p>
+          </div>
+          <a href="https://github.com/majidrajpar/corporate-whistleblower-lite" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center text-[#001F5B] font-black text-[10px] uppercase tracking-[0.2em] hover:text-blue-700 transition-colors">
+            View on GitHub
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
