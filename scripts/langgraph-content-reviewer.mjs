@@ -25,7 +25,7 @@ const GraphState = Annotation.Root({
 const llm = new ChatOpenAI({
   modelName: 'deepseek-chat', 
   temperature: 0.2,
-  apiKey: 'sk-68f2adab4c564098992cd9eceedc53df', // Provided DeepSeek API Key
+  apiKey: process.env.DEEPSEEK_API_KEY || '', // Set DEEPSEEK_API_KEY environment variable
   configuration: {
     baseURL: 'https://api.deepseek.com',
   },
