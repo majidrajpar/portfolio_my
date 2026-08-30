@@ -50,7 +50,7 @@ const Navbar = ({ initialPath = '' }) => {
     { label: 'Contact', href: `${base}/contact/` },
   ];
 
-  const newsletterUrl = 'https://majidmumtaz.substack.com';
+  const newsletterUrl = 'https://www.linkedin.com/newsletters/the-audit-signal-7339153291630510080/';
 
   return (
     <motion.header
@@ -114,7 +114,7 @@ const Navbar = ({ initialPath = '' }) => {
                 rel="noopener noreferrer"
                 className="text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 text-[#1d3557] hover:bg-gray-50 rounded-lg transition-colors"
               >
-                Substack ↗
+                The Audit Signal ↗
               </a>
               <a
                 href={`${base}/downloads/Majid_Mumtaz_Capabilities_Deck.pdf`}
@@ -196,7 +196,7 @@ const Navbar = ({ initialPath = '' }) => {
                   rel="noopener noreferrer"
                   className="text-center text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2.5 rounded-full border border-[#1d3557]/18 text-[#1d3557]"
                 >
-                  Substack ↗
+                  The Audit Signal ↗
                 </a>
               </div>
             </div>
