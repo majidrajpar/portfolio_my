@@ -139,5 +139,15 @@ export const tools = [
     isLive: true,
     batch: 6,
     ml: true,
+  },
+  {
+    id: 'auditdesk',
+    title: 'AuditDesk',
+    description: 'An open-source audit management and reporting platform.',
+    category: 'Audit Intelligence',
+    href: 'https://github.com/majidrajpar/auditdesk',
+    isLive: true,
+    batch: 7,
+    ml: false,
   }
 ];
