@@ -87,6 +87,8 @@ const categoryColors: Record<string, string> = {
         {tools.filter(t => t.isLive).map((tool, i) => (
           <a
             href={tool.href}
+            target={tool.href.startsWith('http') ? '_blank' : undefined}
+            rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
             class="glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8"
             data-reveal
             data-reveal-delay={String((i % 3) + 1)}
