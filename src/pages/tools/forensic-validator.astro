@@ -2,34 +2,47 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ForensicValidatorComponent from '../../components/ForensicValidator.jsx';
 import NetworkCanvas from '../../components/NetworkCanvas';
+const base = import.meta.env.BASE_URL;
 
 const title = "Forensic Pattern Validator | Majid Mumtaz";
 const description = "High-performance forensic audit tool for detecting financial manipulation using Benford's Law. Powered by Rust and WebAssembly.";
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="pt-32 pb-20 bg-[#001F5B] relative overflow-hidden">
-    <NetworkCanvas client:load nodeCount={35} />
-    <div class="max-w-7xl mx-auto px-8 relative z-10">
-      <div class="max-w-3xl">
-        <div class="text-[10px] font-black uppercase tracking-[0.4em] text-white/60 mb-4">
-          Audit Analytics
-        </div>
-        <h1 class="text-5xl font-black text-white tracking-tight mb-8">
-          Forensic Pattern <span class="text-[#C9A84C]">Validator</span>.
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+      <NetworkCanvas client:load nodeCount={35} />
+      <div class="relative z-10 max-w-4xl" data-reveal>
+        <a href={`${base}tools/`} class="mb-7 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white">
+          &larr; Back to Tools
+        </a>
+        <span class="hero-chip mb-6 md:mb-7">Forensic Analytics</span>
+        <h1 class="headline-display max-w-4xl text-[clamp(2.8rem,6vw,5rem)] font-black text-white">
+          Forensic Pattern
+          <span class="block text-[#f4c98b]">Validator.</span>
         </h1>
-        <p class="text-lg text-white/70 leading-relaxed mb-10">
-          This professional-grade utility analyzes transaction digit frequencies to identify
-          statistical anomalies. Processing thousands of records instantly using a
-          <span class="font-bold text-white">Rust-based analytical engine</span>.
+        <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.08rem] md:leading-9">
+          Professional-grade forensic utility analyzing transaction first-digit and second-digit frequencies against Benford's Law distribution to detect artificial rounding, kickback limits, and manipulation patterns.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="py-20 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="bg-white shadow-2xl shadow-slate-200/50">
+  <section class="px-4 py-5 md:px-8">
+    <div class="soft-shell mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
+      <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+      </svg>
+      <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
+        <span class="meta-label text-[#181511]">WebAssembly In-Memory Processing</span>
+        Executes via a compiled Rust engine directly in your browser. Handles thousands of ledger entries in sub-milliseconds with complete client-side confidentiality.
+      </p>
+    </div>
+  </section>
+
+  <section class="px-4 py-4 pb-16 md:px-8">
+    <div class="mx-auto max-w-7xl" data-reveal data-reveal-delay="1">
+      <div class="soft-shell p-6 md:p-10">
         <ForensicValidatorComponent client:load />
       </div>
     </div>

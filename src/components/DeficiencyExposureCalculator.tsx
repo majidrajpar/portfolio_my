@@ -142,6 +142,12 @@ export default function DeficiencyExposureCalculator() {
           </p>
         </div>
       </div>
+      
+      <div className="mt-8 pt-6 border-t border-white/10 text-center">
+        <p className="text-xs text-slate-500 max-w-2xl mx-auto leading-relaxed">
+          <strong className="text-slate-400">Methodology Note:</strong> This diagnostic serves as an illustrative financial sizing model calibrated against empirical operational failure distributions (COSO &amp; ACFE baselines). Formal audit deficiency classification requires entity-specific quantitative and qualitative materiality assessments under PCAOB AS 2201 and IIA standards.
+        </p>
+      </div>
     </div>
   );
 }

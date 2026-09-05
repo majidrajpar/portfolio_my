@@ -111,11 +111,13 @@ const featuredPublications = publications.slice(0, 2);
             Boards pay for assurance. Most receive compliance theater. Delivering 20+ years of governance, fraud analytics, and scrutiny-resistant reporting.
           </p>
 
-          <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
-            <a href="#case-studies" class="btn-primary">See the Work</a>
-            <a href={`${base}tools/`} class="btn-secondary-light">Interactive Tools</a>
-            <a href={`${base}contact/`} class="btn-secondary-light border-dashed">Book a Confidential Strategy Call</a>
-            <a href="https://www.linkedin.com/newsletters/the-audit-signal-7339153291630510080/" target="_blank" rel="noopener noreferrer" class="text-[10px] font-black uppercase tracking-[0.24em] text-white/62 transition-colors hover:text-white">Read The Audit Signal ↗</a>
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <a href="#case-studies" class="btn-primary">Examine Proven Outcomes</a>
+            <a href={`${base}contact/`} class="btn-secondary-light">Book Strategy Call</a>
+            <div class="flex items-center gap-4 sm:ml-2">
+              <a href={`${base}tools/`} class="text-[10px] font-black uppercase tracking-[0.24em] text-[#f4c98b] transition-colors hover:text-white">Interactive Tools &rarr;</a>
+              <a href="https://www.linkedin.com/newsletters/the-audit-signal-7339153291630510080/" target="_blank" rel="noopener noreferrer" class="text-[10px] font-black uppercase tracking-[0.24em] text-white/62 transition-colors hover:text-white">The Audit Signal &nearr;</a>
+            </div>
           </div>
 
           <div class="luxury-divider mt-9 mb-6"></div>
@@ -277,11 +279,66 @@ const featuredPublications = publications.slice(0, 2);
 
       <SubstackFeed client:load />
 
-      <div class="mt-16 mb-8" data-reveal>
+      <!-- FEATURED RESEARCH SPOTLIGHT -->
+      <div class="mt-16 mb-12 soft-shell p-8 md:p-10 border-l-4 border-[#c7964c]" data-reveal>
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-2 rounded-full bg-[#c7964c]/15 px-3.5 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-[#a33a21] mb-4">
+              Original Empirical Research &middot; July 2026
+            </div>
+            <h3 class="text-2xl md:text-3xl font-black text-[#181511] leading-tight">
+              Forced Verdict Gates, Not Graph Sophistication: A Multi-Framework Benchmark of AI Audit Judgement
+            </h3>
+            <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">
+              Benchmarking plain Python, CrewAI, Swarm, and LangGraph against historical audit failures (Enron, Wirecard, Silicon Valley Bank, Tesco). Autonomous AI agents avoided false clean opinions (0 of 16 issued Clean), but failed by refusing to commit (9 of 16 returned "Unable to Conclude") until structured Forced Verdict Gates were enforced.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-4 items-center">
+              <a 
+                href="https://github.com/majidrajpar/portfolio_my/tree/main/audit_bench_research" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="btn-primary inline-flex text-xs"
+              >
+                Access Paper &amp; Benchmark Code &rarr;
+              </a>
+              <a 
+                href={`${base}tools/agentic-audit-simulator/`} 
+                class="text-xs font-bold text-[#1d3557] hover:text-[#a33a21] transition-colors"
+              >
+                Explore Multi-Agent Triage Trace &rarr;
+              </a>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 shrink-0 lg:w-72">
+            <div class="stat-plinth p-4 text-center">
+              <span class="meta-label text-[9px]">Case Audits</span>
+              <div class="text-2xl font-black text-[#181511] mt-1">16</div>
+              <div class="text-[9px] uppercase tracking-wider text-slate-400 mt-1">SEC Filings</div>
+            </div>
+            <div class="stat-plinth p-4 text-center">
+              <span class="meta-label text-[9px]">Frameworks</span>
+              <div class="text-2xl font-black text-[#181511] mt-1">4</div>
+              <div class="text-[9px] uppercase tracking-wider text-slate-400 mt-1">Agent Engines</div>
+            </div>
+            <div class="stat-plinth p-4 text-center">
+              <span class="meta-label text-[9px]">Clean Opinions</span>
+              <div class="text-2xl font-black text-emerald-700 mt-1">0 / 16</div>
+              <div class="text-[9px] uppercase tracking-wider text-slate-400 mt-1">False Comfort</div>
+            </div>
+            <div class="stat-plinth p-4 text-center">
+              <span class="meta-label text-[9px]">Verdict Evasion</span>
+              <div class="text-2xl font-black text-amber-700 mt-1">9 / 16</div>
+              <div class="text-[9px] uppercase tracking-wider text-slate-400 mt-1">Unbounded</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 mb-8" data-reveal>
         <h3 class="text-2xl font-black text-[#181511]">Industry Articles & Features</h3>
       </div>
       <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {publications.map((pub, i) => (
+        {publications.slice(1).map((pub, i) => (
           <a href={pub.href} target="_blank" rel="noopener noreferrer" class="group glass-card flex flex-col rounded-[24px] p-6 transition-transform hover:-translate-y-1" data-reveal data-reveal-delay={String((i % 3) + 1)}>
             <div class="meta-label text-[#a33a21]">{pub.outlet} &middot; {pub.date}</div>
             <h4 class="mt-3 text-lg leading-tight text-[#181511] group-hover:text-[#a33a21] transition-colors">{pub.title}</h4>
@@ -329,7 +386,7 @@ const featuredPublications = publications.slice(0, 2);
             <div class="mt-6 flex flex-wrap gap-4">
               <a href={`${base}about/`} class="btn-secondary">View Full Profile</a>
               <a href={`${base}downloads/Majid_Mumtaz_Capabilities_Deck.pdf`} class="btn-primary" download>Download Pitch Deck</a>
-              <a href={`${base}cv/Majid_Mumtaz_Director_Internal_Audit_GRC_UAE.pdf`} class="btn-secondary" download>Download CV</a>
+              <a href={`${base}cv/Majid_Mumtaz_Internal_Audit_GRC.pdf`} class="btn-secondary" download>Download CV</a>
             </div>
           </div>
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">

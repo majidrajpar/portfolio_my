@@ -2,86 +2,73 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ChartCreator from '../../components/ChartCreator.jsx';
 import NetworkCanvas from '../../components/NetworkCanvas';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
-  title="Chart & Infographic Creator | Majid Mumtaz"
-  description="Design professional bar, line, pie, and radar charts for audit reports and governance presentations. Live preview, colour themes, no design skills required."
+  title="Chart & Visual Reporting Tool | Majid Mumtaz"
+  description="Design bar, line, pie, and radar charts for audit reports and governance presentations. Live preview and themes designed for boardroom communication."
 >
-
-  <!-- Hero -->
-  <section class="pt-32 pb-20 bg-[#001F5B] relative overflow-hidden">
-    <NetworkCanvas client:load nodeCount={35} />
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-      <div class="max-w-3xl" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Reporting</span>
-        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-          Chart & Infographic Creator.
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+      <NetworkCanvas client:load nodeCount={35} />
+      <div class="relative z-10 max-w-4xl" data-reveal>
+        <a href={`${base}tools/`} class="mb-7 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white">
+          &larr; Back to Tools
+        </a>
+        <span class="hero-chip mb-6 md:mb-7">Executive Reporting</span>
+        <h1 class="headline-display max-w-4xl text-[clamp(2.8rem,6vw,5rem)] font-black text-white">
+          Audit Visual
+          <span class="block text-[#f4c98b]">Reporting Builder.</span>
         </h1>
-        <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
-          Build professional charts for audit reports and governance presentations — bar, line, pie, and radar — with a live preview and colour themes designed for boardroom use. No design tools required.
+        <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.08rem] md:leading-9">
+          Construct calibrated data visualizations for audit committees and executive packs. Generates bar, line, pie, and radar profiles formatted for executive clarity.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Tool -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="mb-12" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Live Chart Builder</span>
-        <h2 class="text-3xl font-black text-slate-900 mb-3">Select a chart type and enter your data.</h2>
-        <p class="text-slate-500 text-sm max-w-2xl">
-          Enter labels and values, choose a colour theme, and watch your chart build in real time. Copy the formatted data table for inclusion in audit reports or board packs.
-        </p>
-      </div>
-
-      <ChartCreator client:load />
+  <section class="px-4 py-5 md:px-8">
+    <div class="soft-shell mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
+      <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+      </svg>
+      <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
+        <span class="meta-label text-[#181511]">Client-Side Confidentiality</span>
+        Chart parameters and data tables render in local memory. No figures are stored or sent externally.
+      </p>
     </div>
   </section>
 
-  <!-- Methodology -->
-  <section class="py-20 bg-slate-50 border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="max-w-3xl" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Chart Guide</span>
-        <h2 class="text-3xl font-black text-slate-900 mb-4">Choosing the right chart type.</h2>
-        <p class="text-slate-600 text-sm leading-relaxed mb-8">
-          Chart selection affects how clearly your data communicates to a board or audit committee audience. Use this guide to match your data story to the right visual format.
-        </p>
+  <section class="px-4 py-4 pb-16 md:px-8">
+    <div class="mx-auto max-w-7xl" data-reveal data-reveal-delay="1">
+      <div class="soft-shell p-6 md:p-10 mb-8">
+        <div class="mb-8">
+          <span class="eyebrow-label">Chart Generator</span>
+          <h2 class="mt-3 text-2xl md:text-3xl font-black text-[#181511]">Configure and preview.</h2>
+          <p class="mt-2 text-sm text-[color:var(--text-secondary)]">Enter metrics and labels to preview charts with boardroom-grade contrast.</p>
+        </div>
+        <ChartCreator client:load />
+      </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+      <div class="soft-shell p-6 md:p-10">
+        <span class="eyebrow-label">Visual Guidance</span>
+        <h3 class="mt-3 text-2xl font-black text-[#181511] mb-6">Chart selection standard.</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
-            { type: 'Bar Chart', best: 'Comparing discrete categories — audit finding counts by department, compliance scores by location, spend by vendor.', avoid: 'Time series with many data points or showing proportions of a whole.' },
-            { type: 'Line Chart', best: 'Showing trends over time — monthly fraud incidents, quarterly control failures, year-on-year KPI movement.', avoid: 'Comparing unrelated categories or showing composition.' },
-            { type: 'Pie / Donut Chart', best: 'Showing composition — finding distribution by severity, budget allocation by department, risk by category.', avoid: 'More than 6 segments or when precise comparison between segments matters.' },
-            { type: 'Radar Chart', best: 'Comparing performance across multiple dimensions simultaneously — COSO component scores, governance domain ratings, maturity levels.', avoid: 'Audiences unfamiliar with radar charts or when precise values need to be read off axes.' },
+            { type: 'Bar Chart', best: 'Discrete departmental finding counts, compliance score comparisons.', avoid: 'Long multi-year time series.' },
+            { type: 'Line Chart', best: 'Multi-quarter trendlines, fraud incident velocity.', avoid: 'Unordered category comparisons.' },
+            { type: 'Pie / Donut', best: 'Proportional budget allocations and finding severity share.', avoid: 'More than 5-6 segments.' },
+            { type: 'Radar Chart', best: 'Multi-dimensional COSO component or governance maturity comparison.', avoid: 'Audiences requiring exact axis point readings.' },
           ].map(({ type, best, avoid }) => (
-            <div class="bg-white border border-slate-200 border-t-2 border-t-[#001F5B] p-5">
-              <div class="text-[#001F5B] font-black text-xs uppercase tracking-widest mb-3">{type}</div>
-              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Best for</div>
-              <p class="text-slate-600 text-xs leading-relaxed mb-3">{best}</p>
-              <div class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">Avoid when</div>
-              <p class="text-slate-500 text-xs leading-relaxed">{avoid}</p>
+            <div class="stat-plinth p-5">
+              <div class="meta-label text-[#a33a21]">{type}</div>
+              <p class="mt-2 text-xs text-[color:var(--text-secondary)]"><strong class="text-[#181511]">Best for:</strong> {best}</p>
+              <p class="mt-1 text-xs text-[color:var(--text-secondary)]"><strong class="text-rose-700">Avoid when:</strong> {avoid}</p>
             </div>
           ))}
         </div>
-
-        <!-- Privacy -->
-        <div class="bg-white border border-slate-200 px-6 py-5 flex items-start gap-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#001F5B] flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          <div>
-            <div class="text-[10px] font-black uppercase tracking-widest text-[#001F5B] mb-1">Privacy &amp; Confidentiality</div>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              This tool operates entirely within your browser. No data labels, values, or chart outputs are transmitted to any server or stored in any database.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
-
 </BaseLayout>
