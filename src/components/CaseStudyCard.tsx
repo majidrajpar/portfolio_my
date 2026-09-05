@@ -79,7 +79,7 @@ export default function CaseStudyCard({ study }: { study: any }) {
                   >
                     <div className="flex flex-wrap gap-2 pt-4">
                       {study.techStack.map((tech: string, i: number) => (
-                        <span key={i} className="text-[9px] font-bold px-2 py-1 rounded-full bg-[#C9A84C] text-[#001F5B]">
+                        <span key={i} className="text-[9px] font-bold px-2.5 py-1 rounded-full bg-[#1d3557]/10 text-[#1d3557] border border-[#1d3557]/20">
                           {tech}
                         </span>
                       ))}

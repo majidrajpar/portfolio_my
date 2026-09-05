@@ -2,36 +2,48 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DocumentComparator from '../../components/DocumentComparator.jsx';
 import NetworkCanvas from '../../components/NetworkCanvas';
+const base = import.meta.env.BASE_URL;
 
 const title = "Document Version Comparator | Majid Mumtaz";
 const description = "Compare two document versions side-by-side. Supports PDF, DOCX, Excel, and TXT. Highlights additions, deletions, and modifications with audit-focused classification tags.";
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="pt-32 pb-20 bg-[#001F5B] relative overflow-hidden">
-    <NetworkCanvas client:load nodeCount={35} />
-    <div class="max-w-7xl mx-auto px-8 relative z-10">
-      <div class="max-w-3xl">
-        <div class="text-[10px] font-black uppercase tracking-[0.4em] text-white/60 mb-4">
-          Audit Intelligence
-        </div>
-        <h1 class="text-5xl font-black text-white tracking-tight mb-8">
-          Document Version <span class="text-[#C9A84C]">Comparator</span>.
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+      <NetworkCanvas client:load nodeCount={35} />
+      <div class="relative z-10 max-w-4xl" data-reveal>
+        <a href={`${base}tools/`} class="mb-7 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white">
+          &larr; Back to Tools
+        </a>
+        <span class="hero-chip mb-6 md:mb-7">Audit Intelligence & Forensics</span>
+        <h1 class="headline-display max-w-4xl text-[clamp(2.8rem,6vw,5rem)] font-black text-white">
+          Document Version
+          <span class="block text-[#f4c98b]">Comparator.</span>
         </h1>
-        <p class="text-lg text-white/70 leading-relaxed mb-10">
-          Upload two versions of any policy, contract, or report and instantly see every change.
-          Audit-focused classification flags <span class="font-bold text-white">control weakening</span>,
-          threshold shifts, scope changes, and responsibility reassignments.
-          Supports PDF (with OCR fallback), Word, Excel, and plain text.
-          <span class="font-bold text-white">Everything runs in your browser — no data is uploaded.</span>
+        <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.08rem] md:leading-9">
+          Upload two versions of any policy, contract, or report and instantly detect every change.
+          Audit-focused heuristic classification automatically flags control weakening (<code class="text-white">shall</code> &rarr; <code class="text-white">should</code>), threshold shifts, scope exclusions, and responsibility reassignments.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="py-20 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-8">
-      <div class="bg-white shadow-2xl shadow-slate-200/50">
+  <section class="px-4 py-5 md:px-8">
+    <div class="soft-shell mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
+      <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+      </svg>
+      <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
+        <span class="meta-label text-[#181511]">100% Client-Side Privacy</span>
+        Supports PDF (with local OCR fallback), Word, Excel, and TXT. Extraction and comparison run strictly inside your browser memory. Zero document data is uploaded, stored, or transmitted.
+      </p>
+    </div>
+  </section>
+
+  <section class="px-4 py-4 pb-16 md:px-8">
+    <div class="mx-auto max-w-7xl" data-reveal data-reveal-delay="1">
+      <div class="soft-shell p-6 md:p-10">
         <DocumentComparator client:load />
       </div>
     </div>

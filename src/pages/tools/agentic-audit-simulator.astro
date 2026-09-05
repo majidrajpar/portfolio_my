@@ -1,22 +1,36 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AgenticAuditSimulator from '../../components/AgenticAuditSimulator';
+const base = import.meta.env.BASE_URL;
 
-const title = "Agentic Audit Simulator | Majid Mumtaz";
-const description = "Autonomous multi-agent risk detection simulation. See how AI swarms analyze and escalate audit findings.";
+const title = "Agentic Audit Architecture Walkthrough | Majid Mumtaz";
+const description = "Interactive multi-agent audit triage trace based on our LangGraph and CrewAI research. Visualizing autonomous risk identification, forensic correlation, and executive escalation.";
 ---
 
 <BaseLayout title={title} description={description}>
   <div class="pt-24 pb-16 px-4 md:px-8 max-w-7xl mx-auto">
     <div class="mb-10" data-reveal>
-      <a href="/portfolio_my/tools/" class="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white transition-colors flex items-center gap-2 mb-6">
+      <a href={`${base}tools/`} class="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white transition-colors flex items-center gap-2 mb-6">
         &larr; Back to Tools
       </a>
-      <h1 class="text-4xl md:text-5xl font-black text-white tracking-tight mb-4">Agentic Audit Simulator</h1>
-      <p class="text-slate-400 max-w-2xl text-lg">Watch a simulated swarm of specialized AI agents (Risk Assessor, Forensic Analyst, and Chief Audit Executive) autonomously triage and investigate risk scenarios in real-time.</p>
+      <span class="hero-chip mb-4">Multi-Agent Governance Research</span>
+      <h1 class="text-4xl md:text-5xl font-black text-white tracking-tight mb-4">Agentic Audit Architecture Walkthrough</h1>
+      <p class="text-slate-400 max-w-3xl text-base leading-relaxed">
+        An interactive execution trace demonstrating multi-agent triage—coordinating Risk Assessor, Forensic Analyst, and Chief Audit Executive personas across complex operational scenarios. Derived from our published empirical benchmark comparing LangGraph, CrewAI, and Swarm on historical financial fraud cases.
+      </p>
+      <div class="mt-4">
+        <a 
+          href="https://github.com/majidrajpar/portfolio_my/tree/main/audit_bench_research" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="text-xs font-bold text-[#f4c98b] hover:text-white underline transition-colors"
+        >
+          View Full Research Paper & Benchmark Code &rarr;
+        </a>
+      </div>
     </div>
     
-    <div class="mt-12" data-reveal data-reveal-delay="1">
+    <div class="mt-10" data-reveal data-reveal-delay="1">
       <AgenticAuditSimulator client:load />
     </div>
   </div>

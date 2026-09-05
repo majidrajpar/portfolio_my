@@ -40,6 +40,23 @@ This is a **framework-agnostic YAML core** with tailored Python adapters, distri
 4. If the role belongs in a commercial pack, also add it to the relevant `store/{pack}/` directory and regenerate via `tools/package_bundles.py`.
 5. Add unit tests if needed (see `tests/test_core.py` for patterns).
 
+## opencode Integration
+
+RoleForge roles can be exported as opencode subagents. The repo ships the 3 free
+starter roles in `roles/`; the 28 paid roles are stored locally outside the repo at
+`~/.config/opencode/roleforge/roles/` to keep the public repo an open-core sample.
+
+- `uv run python tools/restore_paid_roles.py` — re-extract the 28 paid roles + 56
+  overlays from the repo's git history (`70fb922^`) into the local catalog dir.
+  Idempotent; re-run to recover or refresh the catalog.
+- `uv run python tools/export_opencode_agents.py` — validate the combined 31-role
+  catalog and write one opencode subagent to `~/.config/opencode/agent/<role_id>.md`.
+  Run with `--dry-run` to preview, `--role <id>` to export a subset, `--free-only`
+  for just the starter roles.
+
+After adding or editing a role, re-run the export script, then restart opencode to
+pick up the regenerated agents.
+
 ## Adapter Contract
 
 Adapters implement `BaseAdapter` (`src/adapters/base.py`):

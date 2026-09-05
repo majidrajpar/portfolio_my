@@ -106,7 +106,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <body class="min-h-screen">
 
   <!-- Skip to main content (keyboard/screen-reader users) -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-white focus:text-[#001F5B] focus:font-black focus:text-xs focus:uppercase focus:tracking-widest focus:border focus:border-[#001F5B] focus:outline-none">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-white focus:text-[#181511] focus:font-black focus:text-xs focus:uppercase focus:tracking-widest focus:border focus:border-[#181511] focus:outline-none">
     Skip to main content
   </a>
 
@@ -137,16 +137,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </div>
         <!-- Pages -->
         <div>
-          <div class="text-white/45 text-[10px] font-black uppercase tracking-[0.28em] mb-5">Pages</div>
+          <div class="text-white/45 text-[10px] font-black uppercase tracking-[0.28em] mb-5">Navigation</div>
           <ul class="space-y-3">
             {[
               { label: 'About', href: `${base}/about/` },
               { label: 'Projects', href: `${base}/projects/` },
               { label: 'Advisory', href: `${base}/advisory/` },
-              { label: 'Books', href: `${base}/about/#books` },
-              { label: 'The Audit Signal', href: 'https://www.linkedin.com/newsletters/the-audit-signal-7339153291630510080/' },
-              { label: 'Resources', href: `${base}/resources/` },
               { label: 'Tools', href: `${base}/tools/` },
+              { label: 'Resources', href: `${base}/resources/` },
+              { label: 'RoleForge (Agent Roles)', href: `${base}/roleforge/` },
+              { label: 'Books', href: `${base}/about/#books` },
               { label: 'Contact', href: `${base}/contact/` },
             ].map(link => (
               <li><a href={link.href} class="text-white/72 hover:text-white text-sm font-semibold transition-colors">{link.label}</a></li>
@@ -159,7 +159,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <ul class="space-y-3">
             <li><a href="mailto:majidrajpar@gmail.com" class="text-white/72 hover:text-white text-sm font-semibold transition-colors">majidrajpar@gmail.com</a></li>
             <li><span class="text-white/72 text-sm font-semibold">Dubai, UAE</span></li>
-            <li><a href={`${base}/cv/Majid_Mumtaz_Director_Internal_Audit_GRC_UAE.pdf`} download class="text-white/72 hover:text-white text-sm font-semibold transition-colors">Download CV</a></li>
+            <li><a href={`${base}/cv/Majid_Mumtaz_Internal_Audit_GRC.pdf`} download class="text-white/72 hover:text-white text-sm font-semibold transition-colors">Download CV</a></li>
           </ul>
         </div>
       </div>

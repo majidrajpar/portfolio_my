@@ -45,7 +45,6 @@ const Navbar = ({ initialPath = '' }) => {
     { label: 'About', href: `${base}/about/` },
     { label: 'Projects', href: `${base}/projects/` },
     { label: 'Tools', href: `${base}/tools/` },
-    { label: 'RoleForge', href: `${base}/roleforge/` },
     { label: 'Advisory', href: `${base}/advisory/` },
     { label: 'Contact', href: `${base}/contact/` },
   ];
@@ -124,7 +123,7 @@ const Navbar = ({ initialPath = '' }) => {
                 Pitch Deck ↓
               </a>
               <a
-                href={`${base}/cv/Majid_Mumtaz_Director_Internal_Audit_GRC_UAE.pdf`}
+                href={`${base}/cv/Majid_Mumtaz_Internal_Audit_GRC.pdf`}
                 download
                 className="text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 bg-[#a33a21] text-white hover:bg-[#7c2712] rounded-lg transition-colors"
               >
@@ -184,7 +183,7 @@ const Navbar = ({ initialPath = '' }) => {
                   Download Pitch Deck ↓
                 </a>
                 <a
-                  href={`${base}/cv/Majid_Mumtaz_Director_Internal_Audit_GRC_UAE.pdf`}
+                  href={`${base}/cv/Majid_Mumtaz_Internal_Audit_GRC.pdf`}
                   download
                   className="text-center text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2.5 rounded-full bg-[#a33a21] text-white"
                 >

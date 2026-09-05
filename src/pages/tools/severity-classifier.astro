@@ -2,107 +2,72 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SeverityClassifier from '../../components/SeverityClassifier.jsx';
 import NetworkCanvas from '../../components/NetworkCanvas';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
   title="Audit Finding Severity Classifier | Majid Mumtaz"
-  description="A free, browser-based tool for internal auditors to score findings across four risk factors and generate an IIA-aligned severity rating with report-ready language."
+  description="A browser-based tool for internal auditors to score findings across four risk factors and generate an IIA-aligned severity rating with report-ready language."
 >
-
-  <!-- Hero -->
-  <section class="pt-32 pb-20 bg-[#001F5B] relative overflow-hidden">
-    <NetworkCanvas client:load nodeCount={35} />
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-      <div class="max-w-3xl" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Audit Intelligence Tool</span>
-        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-          Finding Severity Classifier.
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+      <NetworkCanvas client:load nodeCount={35} />
+      <div class="relative z-10 max-w-4xl" data-reveal>
+        <a href={`${base}tools/`} class="mb-7 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white">
+          &larr; Back to Tools
+        </a>
+        <span class="hero-chip mb-6 md:mb-7">ML Audit Intelligence</span>
+        <h1 class="headline-display max-w-4xl text-[clamp(2.8rem,6vw,5rem)] font-black text-white">
+          Finding Severity
+          <span class="block text-[#f4c98b]">Classifier.</span>
         </h1>
-        <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
-          Score any audit finding across four risk factors and instantly generate an IIA-aligned severity rating with report-ready language — all in your browser.
+        <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.08rem] md:leading-9">
+          Score any audit observation across four empirical risk dimensions. Powered by a client-side logistic regression model trained on 81 expert scenarios to generate an IIA-aligned severity verdict and board-ready reporting draft.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Tool -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="mb-12" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Step-by-Step</span>
-        <h2 class="text-3xl font-black text-slate-900 mb-3">Select the four risk factors.</h2>
-        <p class="text-slate-500 text-sm max-w-xl">
-          Choose the option that best reflects your finding across each of the four factors. The classifier analyses the combination and determines the severity rating.
-        </p>
-      </div>
-
-      <SeverityClassifier client:load />
+  <section class="px-4 py-5 md:px-8">
+    <div class="soft-shell mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
+      <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+      </svg>
+      <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
+        <span class="meta-label text-[#181511]">Browser-Native Inference</span>
+        Model coefficients evaluate directly in client memory without third-party API dependencies. No finding text or scores leave your machine.
+      </p>
     </div>
   </section>
 
-  <!-- Methodology -->
-  <section class="py-20 bg-slate-50 border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="max-w-3xl" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Methodology</span>
-        <h2 class="text-3xl font-black text-slate-900 mb-4">How ratings are determined.</h2>
-        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-          The classifier uses a model trained on expert-labelled combinations of the four risk factors, consistent with IIA Standards and GCC audit committee expectations. It weighs factors and their interactions — not just a simple sum — to produce the severity rating.
-        </p>
-        <p class="text-slate-500 text-xs leading-relaxed mb-10">
-          Financial exposure is assessed relative to the entity's own materiality threshold — not against absolute figures. An AED 500K exposure is immaterial for a billion-dirham group and critical for an SME. Apply your own materiality judgement when selecting this factor.
-        </p>
-
-        <!-- Severity legend -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-          <div class="bg-white border border-slate-200 border-t-2 border-t-green-500 p-5">
-            <div class="text-green-600 font-black text-xs uppercase tracking-widest mb-2">Low</div>
-            <div class="text-slate-600 text-xs leading-snug">Monitor and track. Follow up in next audit cycle.</div>
-          </div>
-          <div class="bg-white border border-slate-200 border-t-2 border-t-amber-500 p-5">
-            <div class="text-amber-600 font-black text-xs uppercase tracking-widest mb-2">Medium</div>
-            <div class="text-slate-600 text-xs leading-snug">Remediation plan with agreed timelines required.</div>
-          </div>
-          <div class="bg-white border border-slate-200 border-t-2 border-t-orange-500 p-5">
-            <div class="text-orange-600 font-black text-xs uppercase tracking-widest mb-2">High</div>
-            <div class="text-slate-600 text-xs leading-snug">Prompt escalation to senior management. Root cause analysis mandatory.</div>
-          </div>
-          <div class="bg-white border border-slate-200 border-t-2 border-t-red-700 p-5">
-            <div class="text-red-700 font-black text-xs uppercase tracking-widest mb-2">Critical</div>
-            <div class="text-slate-600 text-xs leading-snug">Immediate Board / Audit Committee notification required.</div>
-          </div>
+  <section class="px-4 py-4 pb-16 md:px-8">
+    <div class="mx-auto max-w-7xl" data-reveal data-reveal-delay="1">
+      <div class="soft-shell p-6 md:p-10 mb-8">
+        <div class="mb-8">
+          <span class="eyebrow-label">Interactive Classification</span>
+          <h2 class="mt-3 text-2xl md:text-3xl font-black text-[#181511]">Select finding attributes.</h2>
+          <p class="mt-2 text-sm text-[color:var(--text-secondary)]">The model analyzes parameter interactions to classify findings into Low, Medium, High, or Critical.</p>
         </div>
+        <SeverityClassifier client:load />
+      </div>
 
-        <!-- Factor table -->
-        <div class="border border-slate-200 overflow-hidden">
-          <table class="w-full text-xs">
-            <thead>
-              <tr class="bg-[#001F5B] text-white">
-                <th class="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px]">Factor</th>
-                <th class="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px]">Lower risk</th>
-                <th class="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px]">Moderate risk</th>
-                <th class="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px]">Higher risk</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-100">
-              {[
-                ['Financial Exposure', 'Immaterial', 'Potentially material', 'Material'],
-                ['Likelihood', 'Rare / isolated', 'Possible / occasional', 'Likely / recurring'],
-                ['Detection', 'Easy — controls catch it', 'Moderate', 'Hard — likely undetected'],
-                ['Scope', 'Single transaction', 'Single department', 'Entity-wide'],
-              ].map(([factor, s1, s2, s3]) => (
-                <tr class="bg-white hover:bg-slate-50 transition-colors">
-                  <td class="px-5 py-3.5 font-black text-slate-900">{factor}</td>
-                  <td class="px-5 py-3.5 text-slate-600">{s1}</td>
-                  <td class="px-5 py-3.5 text-slate-600">{s2}</td>
-                  <td class="px-5 py-3.5 text-slate-600">{s3}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      <div class="soft-shell p-6 md:p-10">
+        <span class="eyebrow-label">Methodology & Rubric</span>
+        <h3 class="mt-3 text-2xl font-black text-[#181511] mb-6">Severity classification bands.</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          {[
+            { label: 'Low', color: 'border-t-emerald-600', text: 'text-emerald-700', desc: 'Monitor and track. Routine follow-up in regular audit cycle.' },
+            { label: 'Medium', color: 'border-t-amber-500', text: 'text-amber-700', desc: 'Agreed remediation plan with designated departmental ownership.' },
+            { label: 'High', color: 'border-t-orange-500', text: 'text-orange-700', desc: 'Prompt senior management escalation. Root cause analysis required.' },
+            { label: 'Critical', color: 'border-t-rose-600', text: 'text-rose-700', desc: 'Immediate Audit Committee & Board notification required.' },
+          ].map(({ label, color, text, desc }) => (
+            <div class={`stat-plinth p-5 border-t-2 ${color}`}>
+              <div class={`font-black text-xs uppercase tracking-widest mb-1 ${text}`}>{label}</div>
+              <div class="text-xs leading-snug text-[color:var(--text-secondary)] mt-2">{desc}</div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   </section>
-
 </BaseLayout>
