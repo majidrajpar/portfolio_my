@@ -304,6 +304,7 @@ export default function NomuGovernanceReadiness() {
 
     const summaryHeader = [
       `"TADAWUL NOMU PRE-IPO GOVERNANCE READINESS EVALUATION"`,
+      `"Regulatory Edition: 2026 Active Regulatory Baseline (CMA Governance Regulations & Royal Decree M/132)"`,
       `"Entity: ${targetEntity.replace(/"/g, '""')}"`,
       `"Evaluation Date: ${date}"`,
       `"Overall Readiness Score: ${results.overallPercentage}% (${results.totalScore}/${results.maxScore})"`,
@@ -317,7 +318,7 @@ export default function NomuGovernanceReadiness() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.setAttribute('download', `Nomu_Governance_Readiness_${targetEntity.replace(/\s+/g, '_')}_${date}.csv`);
+    link.setAttribute('download', `Nomu_Governance_Readiness_2026_${targetEntity.replace(/\s+/g, '_')}_${date}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -330,6 +331,7 @@ export default function NomuGovernanceReadiness() {
     const date = new Date().toISOString().split('T')[0];
 
     let md = `# TADAWUL NOMU PRE-IPO GOVERNANCE READINESS BRIEFING\n\n`;
+    md += `**Regulatory Framework:** 2026 Edition (CMA Governance Regulations & Royal Decree M/132)\n`;
     md += `**Evaluated Entity:** ${targetEntity}\n`;
     md += `**Assessment Date:** ${date}\n`;
     md += `**Overall Governance Readiness Index:** ${results.overallPercentage}% (${results.classification})\n\n`;
@@ -361,14 +363,16 @@ export default function NomuGovernanceReadiness() {
       {/* 0. START VIEW */}
       {step === 0 && (
         <div className="soft-shell max-w-2xl mx-auto p-8 md:p-10 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#c7964c]/30 bg-[#c7964c]/10 px-3.5 py-1 text-[10px] font-black uppercase tracking-[0.24em] text-[#a66c1c] mb-6">
-            KSA CMA & Nomu Governance Standard
+          <div className="inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-[#c7964c]/30 bg-[#c7964c]/10 px-3.5 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-[#a66c1c] mb-6">
+            <span>KSA CMA Governance Standard</span>
+            <span className="text-[#c7964c]">·</span>
+            <span>2026 Active Regulatory Edition</span>
           </div>
           <h2 className="text-3xl font-black text-[#181511] tracking-tight md:text-4xl">
             Tadawul Nomu Pre-IPO Readiness Diagnostic
           </h2>
           <p className="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">
-            A structured, 10-point diagnostic assessing company readiness against the <strong>Saudi Capital Market Authority (CMA) Corporate Governance Regulations</strong>, the <strong>New Saudi Companies Law</strong>, and <strong>Tadawul Nomu Listing Rules</strong>.
+            A structured, 10-point diagnostic assessing company readiness against the <strong>Saudi Capital Market Authority (CMA) Corporate Governance Regulations</strong>, the <strong>New Saudi Companies Law (Royal Decree M/132)</strong>, and <strong>Tadawul Nomu Listing Rules</strong>.
           </p>
 
           <div className="mt-6 text-left">
@@ -389,12 +393,12 @@ export default function NomuGovernanceReadiness() {
                 <p className="text-sm font-black text-[#181511]">5 Core Domains</p>
               </div>
               <div className="rounded-xl border border-slate-100 bg-white/70 p-3">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Benchmark</span>
-                <p className="text-sm font-black text-[#181511]">CMA / Tadawul</p>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Standard</span>
+                <p className="text-sm font-black text-[#181511]">CMA 2026 Edition</p>
               </div>
               <div className="col-span-2 sm:col-span-1 rounded-xl border border-slate-100 bg-white/70 p-3">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Privacy</span>
-                <p className="text-sm font-black text-[#181511]">100% On-Device</p>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Status</span>
+                <p className="text-sm font-black text-[#059669]">Current & Active</p>
               </div>
             </div>
 
@@ -476,7 +480,7 @@ export default function NomuGovernanceReadiness() {
                       <span className="inline-flex rounded bg-slate-100 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-slate-700">
                         Item {activePillarIndex * 2 + qIdx + 1}
                       </span>
-                      <span className="text-[10px] font-mono text-slate-400 italic text-right max-w-[50%] truncate">
+                      <span className="text-[10px] font-mono text-[#a66c1c] text-right font-medium">
                         {q.regulatoryRef}
                       </span>
                     </div>
@@ -560,9 +564,15 @@ export default function NomuGovernanceReadiness() {
                 <h3 className="mt-2 text-2xl md:text-3xl font-black text-[#181511] tracking-tight">
                   {companyName.trim() ? companyName.trim() : 'Pre-IPO Candidate Enterprise'}
                 </h3>
-                <div className="mt-3 inline-flex items-center gap-2">
+                <div className="mt-3 flex flex-wrap items-center gap-2">
                   <span className={`inline-flex rounded-full border px-3 py-1 text-[11px] font-black uppercase tracking-widest ${results.colorClass}`}>
                     {results.classification}
+                  </span>
+                  <span className="inline-flex rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[10px] font-mono text-slate-500 uppercase tracking-wider">
+                    2026 Regulatory Benchmark
+                  </span>
+                  <span className="inline-flex rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[10px] font-mono text-slate-500">
+                    Evaluated: {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
                   </span>
                 </div>
                 <p className="mt-5 text-sm md:text-[15px] leading-7 text-[color:var(--text-secondary)]">
@@ -636,15 +646,29 @@ export default function NomuGovernanceReadiness() {
                 </button>
               </div>
 
-              <button
-                onClick={() => {
-                  setStep(1);
-                  setActivePillarIndex(0);
-                }}
-                className="text-[11px] font-black uppercase tracking-wider text-slate-500 hover:text-slate-900 transition-colors"
-              >
-                ← Adjust Diagnostic Inputs
-              </button>
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={() => {
+                    setStep(1);
+                    setActivePillarIndex(0);
+                  }}
+                  className="text-[11px] font-black uppercase tracking-wider text-slate-500 hover:text-slate-900 transition-colors"
+                >
+                  ← Adjust Diagnostic Inputs
+                </button>
+                <span className="text-slate-300">|</span>
+                <button
+                  onClick={() => {
+                    setAnswers({});
+                    setCompanyName('');
+                    setActivePillarIndex(0);
+                    setStep(0);
+                  }}
+                  className="text-[11px] font-black uppercase tracking-wider text-slate-500 hover:text-[#a33a21] transition-colors"
+                >
+                  New Assessment
+                </button>
+              </div>
             </div>
           </div>
 
@@ -694,8 +718,11 @@ export default function NomuGovernanceReadiness() {
                           <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
                             {g.pillarShortName}
                           </span>
+                          <span className="text-[10px] font-mono text-slate-400">
+                            · {g.answerValue === 5 ? 'Partially Implemented' : 'Unimplemented'}
+                          </span>
                         </div>
-                        <span className="text-[10px] font-mono text-slate-400">
+                        <span className="text-[10px] font-mono text-[#a66c1c]">
                           {g.remediation.reference}
                         </span>
                       </div>
