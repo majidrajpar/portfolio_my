@@ -142,8 +142,8 @@ export const tools = [
   },
   {
     id: 'nomu-governance-readiness',
-    title: 'Tadawul Nomu Pre-IPO Governance Readiness Diagnostic',
-    description: 'Benchmark private enterprises against Saudi Capital Market Authority (CMA) Corporate Governance Regulations and the new Companies Law. Generates an instant Nomu listing readiness rating and gap remediation roadmap.',
+    title: 'Tadawul Nomu Pre-IPO Governance Readiness Diagnostic (2026 Edition)',
+    description: 'Benchmark private enterprises against the active 2026 Saudi Capital Market Authority (CMA) Corporate Governance Regulations and the new Companies Law. Generates an instant Nomu listing readiness rating and gap remediation roadmap.',
     category: 'Governance',
     href: '/portfolio_my/tools/nomu-governance-readiness/',
     isLive: true,
