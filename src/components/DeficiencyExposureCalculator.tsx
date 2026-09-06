@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { DollarSign, ShieldX } from 'lucide-react';
+import { DollarSign, ShieldX, Download } from 'lucide-react';
 
 export default function DeficiencyExposureCalculator() {
   const [revenue, setRevenue] = useState(500000000);
@@ -32,15 +32,44 @@ export default function DeficiencyExposureCalculator() {
 
   const exposure = calculateExposure();
 
+  const exportCSV = () => {
+    const headers = ['Metric', 'Value'];
+    const rows = [
+      ['Annual Revenue (USD)', `$${(revenue / 1000000).toFixed(1)}M`],
+      ['Control Domain', controlType.toUpperCase()],
+      ['Control Failure Rate (%)', `${failureRate}%`],
+      ['Detection Delay (Days)', `${detectionDelay} Days`],
+      ['Projected Value at Risk (USD)', `$${Math.round(exposure).toLocaleString()}`],
+      ['Materiality Risk Tier', exposure > 5000000 ? 'Critical (Material Weakness)' : exposure > 1000000 ? 'Significant Deficiency' : 'Low / Control Deficiency'],
+      ['Calibration Basis', 'COSO 2013 & PCAOB AS 2201 Sizing Baseline']
+    ];
+    const csvContent = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows.map(r => r.join(',').replace(/\$/g, ''))].join('\n');
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement('a');
+    link.setAttribute('href', encodedUri);
+    link.setAttribute('download', `Deficiency_Exposure_Brief_${new Date().toISOString().slice(0, 10)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="glass-card rounded-[32px] border border-white/10 bg-black/40 p-8 w-full max-w-4xl mx-auto shadow-2xl">
-      <div className="flex items-center justify-between mb-8 pb-6 border-b border-white/10">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 pb-6 border-b border-white/10 gap-4">
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white flex items-center gap-3">
             <DollarSign className="text-emerald-400" /> Control Deficiency Exposure
           </h2>
           <p className="text-slate-400 text-sm mt-2">Translating audit findings into Board-level financial risk.</p>
         </div>
+        <button
+          onClick={exportCSV}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30 transition-colors cursor-pointer w-fit"
+          title="Export Sizing Brief as CSV"
+        >
+          <Download className="w-3.5 h-3.5" />
+          <span>Export Sizing Brief</span>
+        </button>
       </div>
 
       <div className="grid md:grid-cols-2 gap-12">

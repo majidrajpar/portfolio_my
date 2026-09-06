@@ -288,7 +288,7 @@ const SeverityClassifier: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
         {FIELDS.map((field) => (
           <div key={field.id} className="bg-white border border-slate-200 p-7">
-            <div className="text-[10px] font-black uppercase tracking-[0.25em] text-[#001F5B] mb-1">
+            <div className="text-[10px] font-black uppercase tracking-[0.25em] text-[#a33a21] mb-1">
               {field.label}
             </div>
             {field.hint && (
@@ -307,8 +307,8 @@ const SeverityClassifier: React.FC = () => {
                       w-full text-left px-4 py-3.5 border
                       transition-all duration-200 cursor-pointer flex items-start gap-3
                       ${isSelected
-                        ? 'bg-[#001F5B] border-[#001F5B] text-white'
-                        : 'bg-white border-slate-200 text-slate-600 hover:border-[#001F5B]/40 hover:text-slate-900'
+                        ? 'bg-[#181511] border-[#181511] text-white'
+                        : 'bg-white border-slate-200 text-slate-600 hover:border-[#181511]/40 hover:text-slate-900'
                       }
                     `}
                   >
@@ -447,7 +447,7 @@ const SeverityClassifier: React.FC = () => {
                 border transition-all duration-200
                 ${copied
                   ? 'bg-emerald-50 border-emerald-400 text-emerald-700'
-                  : 'bg-[#001F5B] border-[#001F5B] text-white hover:bg-[#002d87]'
+                  : 'bg-[#181511] border-[#181511] text-white hover:bg-[#a33a21]'
                 }
               `}
             >

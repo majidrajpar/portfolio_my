@@ -4,7 +4,7 @@ import { FileText, Upload, AlertTriangle, RefreshCw, ChevronDown, ChevronUp } fr
 import type { TextItem } from 'pdfjs-dist/types/src/display/api';
 
 // ─── CONSTANTS ────────────────────────────────────────────────────────────────
-const BRAND = '#001F5B';
+const BRAND = '#181511';
 
 const LIMITATIONS = [
   'OCR (Tesseract.js): accuracy reduces on two-column layouts, tables, headers/footers, low-DPI scans, and handwriting.',
@@ -208,7 +208,7 @@ function FileDropZone({ label, file, onFile, accept }: FileDropZoneProps) {
   return (
     <div
       className={`border-2 border-dashed rounded-none cursor-pointer transition-all duration-200 p-6 text-center ${
-        dragging ? 'border-[#C9A84C] bg-amber-50' : file ? 'border-[#001F5B] bg-blue-50/30' : 'border-slate-300 bg-white hover:border-[#001F5B] hover:bg-slate-50'
+        dragging ? 'border-[#c7964c] bg-amber-50' : file ? 'border-[#181511] bg-amber-50/20' : 'border-slate-300 bg-white hover:border-[#181511] hover:bg-slate-50'
       }`}
       onClick={() => inputRef.current?.click()}
       onDrop={onDrop}
@@ -220,7 +220,7 @@ function FileDropZone({ label, file, onFile, accept }: FileDropZoneProps) {
         {file ? (
           <>
             <FileText size={28} style={{ color: BRAND }} />
-            <div className="text-sm font-bold text-[#001F5B] break-all">{file.name}</div>
+            <div className="text-sm font-bold text-[#181511] break-all">{file.name}</div>
             <div className="text-xs text-slate-500">{(file.size / 1024).toFixed(1)} KB · click to change</div>
           </>
         ) : (
@@ -367,8 +367,8 @@ function ExcelDiffView({ diff, filter }: { diff: Record<string, ExcelChange[]>; 
           <button
             key={s}
             onClick={() => setActiveSheet(s)}
-            className={`text-xs px-3 py-1 font-bold border transition-colors ${
-              (current === s) ? 'bg-[#001F5B] text-white border-[#001F5B]' : 'bg-white text-slate-600 border-slate-300 hover:border-[#001F5B]'
+            className={`text-xs px-3 py-1 font-bold border transition-colors cursor-pointer ${
+              (current === s) ? 'bg-[#181511] text-white border-[#181511]' : 'bg-white text-slate-600 border-slate-300 hover:border-[#181511]'
             }`}
           >
             {s} <span className="ml-1 opacity-60">({diff[s]?.length})</span>
@@ -638,10 +638,10 @@ export default function DocumentComparator() {
       <div className="px-8 py-6 border-b border-slate-100 flex items-center justify-between">
         <div>
           <div className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-0.5">Document Intelligence</div>
-          <h2 className="text-xl font-black text-[#001F5B]">Version Comparator</h2>
+          <h2 className="text-xl font-black text-[#181511]">Version Comparator</h2>
         </div>
         {result && (
-          <button onClick={reset} className="flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-[#001F5B] transition-colors">
+          <button onClick={reset} className="flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-[#a33a21] transition-colors cursor-pointer">
             <RefreshCw size={13} /> New Comparison
           </button>
         )}
@@ -665,7 +665,7 @@ export default function DocumentComparator() {
               <button
                 onClick={handleCompare}
                 disabled={!oldFile || !newFile || processing}
-                className="px-10 py-3 bg-[#001F5B] text-white text-sm font-black uppercase tracking-[0.2em] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#001845] transition-colors"
+                className="px-10 py-3 bg-[#181511] text-white text-sm font-black uppercase tracking-[0.2em] disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#a33a21] transition-colors cursor-pointer"
               >
                 {processing ? progress || 'Processing…' : 'Compare Documents'}
               </button>
@@ -732,10 +732,10 @@ export default function DocumentComparator() {
                 <button
                   key={tab.id}
                   onClick={() => setFilter(tab.id)}
-                  className={`px-4 py-1.5 text-xs font-bold border transition-all ${
+                  className={`px-4 py-1.5 text-xs font-bold border transition-all cursor-pointer ${
                     filter === tab.id
-                      ? 'bg-[#001F5B] text-white border-[#001F5B]'
-                      : 'bg-white text-slate-600 border-slate-200 hover:border-[#001F5B] hover:text-[#001F5B]'
+                      ? 'bg-[#181511] text-white border-[#181511]'
+                      : 'bg-white text-slate-600 border-slate-200 hover:border-[#181511] hover:text-[#181511]'
                   } ${tab.id === 'critical' && stats.critical > 0 && filter !== 'critical' ? 'border-red-300' : ''}`}
                 >
                   {tab.label} {tab.count !== undefined && <span className="ml-1 opacity-70">({tab.count})</span>}
@@ -758,7 +758,7 @@ export default function DocumentComparator() {
 
             {/* Reset at bottom */}
             <div className="mt-8 pt-6 border-t border-slate-100 text-center">
-              <button onClick={reset} className="px-8 py-2.5 border border-[#001F5B] text-[#001F5B] text-xs font-bold uppercase tracking-widest hover:bg-[#001F5B] hover:text-white transition-colors">
+              <button onClick={reset} className="px-8 py-2.5 border border-[#181511] text-[#181511] text-xs font-bold uppercase tracking-widest hover:bg-[#181511] hover:text-white transition-colors cursor-pointer">
                 New Comparison
               </button>
             </div>

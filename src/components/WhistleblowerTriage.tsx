@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { AlertOctagon, Filter, Eye, Gavel, ArrowRight } from 'lucide-react';
+import { AlertOctagon, Filter, Eye, Gavel, ArrowRight, Download } from 'lucide-react';
 
 const tips = [
   { id: 'TIP-892', dept: 'Procurement', severity: 9, credibility: 8, status: 'Escalated', desc: 'Vendor kickbacks involving Director of Sourcing.' },
@@ -15,27 +15,48 @@ export default function WhistleblowerTriage() {
 
   const filteredTips = filter === 'All' ? tips : tips.filter(t => t.status === filter);
 
+  const exportCSV = () => {
+    const headers = ['Case ID', 'Department', 'Severity (1-10)', 'Credibility (1-10)', 'Status', 'Description'];
+    const rows = tips.map(t => [t.id, t.dept, t.severity, t.credibility, t.status, `"${t.desc.replace(/"/g, '""')}"`]);
+    const csvContent = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement('a');
+    link.setAttribute('href', encodedUri);
+    link.setAttribute('download', `Whistleblower_Triage_Log_${new Date().toISOString().slice(0, 10)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="glass-card rounded-[32px] border border-white/10 bg-[#0a0a0a] p-8 w-full max-w-6xl mx-auto shadow-2xl text-slate-300">
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-10 border-b border-white/10 pb-6">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-10 border-b border-white/10 pb-6 gap-4">
         <div>
           <h2 className="text-2xl font-black tracking-tight text-white flex items-center gap-3">
             <AlertOctagon className="text-rose-500" /> Whistleblower Triage Engine
           </h2>
           <p className="text-slate-400 text-sm mt-2">Automated matrix scoring for anonymous corporate ethics reports.</p>
         </div>
-        <div className="flex gap-2 mt-4 md:mt-0">
+        <div className="flex flex-wrap items-center gap-2">
           {['All', 'Active', 'Review', 'Escalated'].map(f => (
             <button 
               key={f}
               onClick={() => setFilter(f)}
-              className={`px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest transition-colors ${
+              className={`px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest transition-colors cursor-pointer ${
                 filter === f ? 'bg-rose-500/20 text-rose-400 border border-rose-500/30' : 'bg-white/5 border border-white/10 hover:bg-white/10'
               }`}
             >
               {f}
             </button>
           ))}
+          <button
+            onClick={exportCSV}
+            className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest bg-white/10 text-white hover:bg-white/20 transition-colors border border-white/15 cursor-pointer ml-2"
+            title="Export Triage Log as CSV"
+          >
+            <Download className="w-3.5 h-3.5" />
+            <span>Export CSV</span>
+          </button>
         </div>
       </div>
 
@@ -92,7 +113,7 @@ export default function WhistleblowerTriage() {
             <div className="bg-amber-500/10 rounded-tl-xl border border-white/5"></div>
             <div className="bg-rose-500/10 border border-white/5"></div>
             <div className="bg-rose-500/20 rounded-tr-xl border border-rose-500/20 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 mix-blend-overlay"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(#f43f5e_1px,transparent_1px)] [background-size:8px_8px] opacity-25"></div>
                 <span className="text-[9px] uppercase font-black text-rose-400 tracking-widest z-10">Escalate</span>
             </div>
             
@@ -137,7 +158,7 @@ export default function WhistleblowerTriage() {
              <div className="flex items-center gap-3 text-slate-300 bg-rose-500/10 p-4 rounded-xl border border-rose-500/20">
                 <Gavel className="w-5 h-5 text-rose-400 shrink-0" />
                 <p className="text-xs leading-relaxed">
-                  <span className="font-bold text-white">Action Required:</span> Tip TIP-892 crosses the Board Escalation threshold. Generative AI summary prepared for Audit Committee review.
+                  <span className="font-bold text-white">Action Required:</span> Case TIP-892 crosses the Board Escalation threshold. Forensic triage summary prepared for Audit Committee briefing.
                 </p>
              </div>
           </div>

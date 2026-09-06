@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AgenticAuditSimulator from '../../components/AgenticAuditSimulator';
+import NetworkCanvas from '../../components/NetworkCanvas';
 const base = import.meta.env.BASE_URL;
 
 const title = "Agentic Audit Architecture Walkthrough | Majid Mumtaz";
@@ -8,30 +9,56 @@ const description = "Interactive multi-agent audit triage trace based on our Lan
 ---
 
 <BaseLayout title={title} description={description}>
-  <div class="pt-24 pb-16 px-4 md:px-8 max-w-7xl mx-auto">
-    <div class="mb-10" data-reveal>
-      <a href={`${base}tools/`} class="text-[10px] font-black uppercase tracking-[0.2em] text-white/50 hover:text-white transition-colors flex items-center gap-2 mb-6">
-        &larr; Back to Tools
-      </a>
-      <span class="hero-chip mb-4">Multi-Agent Governance Research</span>
-      <h1 class="text-4xl md:text-5xl font-black text-white tracking-tight mb-4">Agentic Audit Architecture Walkthrough</h1>
-      <p class="text-slate-400 max-w-3xl text-base leading-relaxed">
-        An interactive execution trace demonstrating multi-agent triage—coordinating Risk Assessor, Forensic Analyst, and Chief Audit Executive personas across complex operational scenarios. Derived from our published empirical benchmark comparing LangGraph, CrewAI, and Swarm on historical financial fraud cases.
-      </p>
-      <div class="mt-4">
-        <a 
-          href="https://github.com/majidrajpar/portfolio_my/tree/main/audit_bench_research" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="text-xs font-bold text-[#f4c98b] hover:text-white underline transition-colors"
-        >
-          View Full Research Paper & Benchmark Code &rarr;
+  <!-- Hero -->
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+      <NetworkCanvas client:load nodeCount={35} />
+      <div class="relative z-10 max-w-4xl" data-reveal>
+        <a href={`${base}tools/`} class="mb-7 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white">
+          &larr; Back to Tools
         </a>
+        <span class="hero-chip mb-6 md:mb-7">Empirical AI Research & Multi-Agent Architecture</span>
+        <h1 class="headline-display max-w-4xl text-[clamp(2.8rem,6vw,5rem)] font-black text-white">
+          Agentic Audit Architecture
+          <span class="block text-[#f4c98b]">Walkthrough.</span>
+        </h1>
+        <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.08rem] md:leading-9">
+          An interactive execution trace demonstrating multi-agent triage—coordinating Risk Assessor, Forensic Analyst, and Chief Audit Executive personas across complex operational scenarios. Derived from our published empirical benchmark comparing LangGraph, CrewAI, and Swarm on historical financial fraud cases.
+        </p>
+        <div class="mt-6">
+          <a 
+            href="https://github.com/majidrajpar/portfolio_my/tree/main/audit_bench_research" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 text-xs font-bold text-[#f4c98b] hover:text-white transition-colors"
+          >
+            <span>View Full Research Paper & Benchmark Code</span>
+            <span>&rarr;</span>
+          </a>
+        </div>
       </div>
     </div>
-    
-    <div class="mt-10" data-reveal data-reveal-delay="1">
-      <AgenticAuditSimulator client:load />
+  </section>
+
+  <!-- Privacy Banner -->
+  <section class="px-4 py-5 md:px-8">
+    <div class="soft-shell mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
+      <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+      </svg>
+      <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
+        <span class="meta-label text-[#181511]">Empirical Architecture Trace</span>
+        Demonstrates the deterministic Forced Verdict Gates framework enforcing non-collusive multi-agent deliberation for board assurance.
+      </p>
     </div>
-  </div>
+  </section>
+
+  <!-- Tool -->
+  <section class="px-4 py-4 pb-20 md:px-8">
+    <div class="mx-auto max-w-7xl" data-reveal data-reveal-delay="1">
+      <div class="soft-shell p-6 md:p-10">
+        <AgenticAuditSimulator client:load />
+      </div>
+    </div>
+  </section>
 </BaseLayout>
