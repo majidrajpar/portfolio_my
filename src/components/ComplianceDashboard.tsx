@@ -19,7 +19,7 @@ const FRAMEWORKS = [
     id: 'sox',
     name: 'SOX / ICFR',
     tagline: 'Sarbanes-Oxley internal financial control compliance',
-    color: '#001F5B',
+    color: '#181511',
     controls: [
       'Financial Reporting Controls',
       'ICFR Documentation & Testing',
@@ -84,14 +84,14 @@ const FRAMEWORKS = [
 
 // ─── HELPERS ─────────────────────────────────────────────────────────
 function scoreColor(score: number) {
-  if (score >= 85) return '#001F5B';
+  if (score >= 85) return '#059669';
   if (score >= 70) return '#16a34a';
   if (score >= 50) return '#d97706';
   return '#991b1b';
 }
 
 function scoreBarClass(score: number) {
-  if (score >= 85) return 'bg-[#001F5B]';
+  if (score >= 85) return 'bg-emerald-600';
   if (score >= 70) return 'bg-green-600';
   if (score >= 50) return 'bg-amber-600';
   return 'bg-red-800';
@@ -228,7 +228,7 @@ const ComplianceDashboard = () => {
 
       {/* ── Step 1: Framework Selector ───────────────────────────── */}
       <div className="mb-8">
-        <div className="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-1">
+        <div className="text-[10px] font-black uppercase tracking-[0.3em] text-[#a33a21] mb-1">
           Step 1
         </div>
         <h2 className="text-xl font-black text-slate-900 mb-1">Select Regulatory Frameworks</h2>
@@ -245,15 +245,15 @@ const ComplianceDashboard = () => {
                 onClick={() => toggleFramework(fw.id)}
                 whileTap={{ scale: 0.98 }}
                 className={`
-                  relative text-left p-5 border-2 transition-all duration-200
+                  relative text-left p-5 border-2 transition-all duration-200 cursor-pointer
                   ${isSelected
-                    ? 'border-[#001F5B] bg-[#001F5B]/5'
+                    ? 'border-[#181511] bg-[#181511]/5'
                     : 'border-slate-200 bg-white hover:border-slate-400'
                   }
                 `}
               >
                 {isSelected && (
-                  <div className="absolute top-3 right-3 w-5 h-5 bg-[#001F5B] flex items-center justify-center flex-shrink-0">
+                  <div className="absolute top-3 right-3 w-5 h-5 bg-[#181511] flex items-center justify-center flex-shrink-0">
                     <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
                       <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
@@ -284,7 +284,7 @@ const ComplianceDashboard = () => {
                   if (firstSelected && !activeFramework) setActiveFramework(firstSelected.id);
                   document.getElementById('compliance-scoring-panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }}
-                className="flex items-center gap-2.5 px-6 py-3 bg-[#001F5B] border-2 border-[#001F5B] text-white text-[10px] font-black uppercase tracking-[0.2em] hover:bg-[#002d87] transition-colors"
+                className="flex items-center gap-2.5 px-6 py-3 bg-[#181511] border-2 border-[#181511] text-white text-[10px] font-black uppercase tracking-[0.2em] hover:bg-[#a33a21] transition-colors cursor-pointer"
               >
                 Score Your Frameworks
                 <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
@@ -308,7 +308,7 @@ const ComplianceDashboard = () => {
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className="mb-8"
           >
-            <div className="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-1">
+            <div className="text-[10px] font-black uppercase tracking-[0.3em] text-[#a33a21] mb-1">
               Step 2
             </div>
             <h2 className="text-xl font-black text-slate-900 mb-1">Score Control Areas</h2>
@@ -328,9 +328,9 @@ const ComplianceDashboard = () => {
                       key={fw.id}
                       onClick={() => setActiveFramework(fw.id)}
                       className={`
-                        flex items-center justify-between px-4 py-3 border text-left transition-all duration-150
+                        flex items-center justify-between px-4 py-3 border text-left transition-all duration-150 cursor-pointer
                         ${isActive
-                          ? 'bg-[#001F5B] border-[#001F5B] text-white'
+                          ? 'bg-[#181511] border-[#181511] text-white'
                           : 'bg-white border-slate-200 text-slate-700 hover:border-slate-400'
                         }
                       `}
@@ -391,8 +391,8 @@ const ComplianceDashboard = () => {
                                 step={1}
                                 value={val}
                                 onChange={e => handleSlider(activeFw.id, control, e.target.value)}
-                                className="w-full h-1.5 appearance-none cursor-pointer accent-[#001F5B]"
-                                style={{ accentColor: '#001F5B' }}
+                                className="w-full h-1.5 appearance-none cursor-pointer accent-[#a33a21]"
+                                style={{ accentColor: '#a33a21' }}
                               />
                               <div className="h-1 mt-1.5 bg-slate-100 overflow-hidden">
                                 <motion.div
@@ -464,9 +464,9 @@ const ComplianceDashboard = () => {
                 <Radar
                   name="Compliance Score"
                   dataKey="score"
-                  stroke="#001F5B"
-                  fill="#001F5B"
-                  fillOpacity={0.15}
+                  stroke="#181511"
+                  fill="#181511"
+                  fillOpacity={0.12}
                   strokeWidth={2}
                   dot={(props: any) => {
                     const { cx, cy, index } = props;
@@ -477,7 +477,7 @@ const ComplianceDashboard = () => {
                         cx={cx}
                         cy={cy}
                         r={4}
-                        fill={fw?.color ?? '#001F5B'}
+                        fill={fw?.color ?? '#181511'}
                         stroke="white"
                         strokeWidth={1.5}
                       />
@@ -534,7 +534,7 @@ const ComplianceDashboard = () => {
                   Rating Scale
                 </div>
                 {[
-                  { range: '85 – 100', label: 'Strong', color: '#001F5B' },
+                  { range: '85 – 100', label: 'Strong', color: '#059669' },
                   { range: '70 – 84', label: 'Adequate', color: '#16a34a' },
                   { range: '50 – 69', label: 'Developing', color: '#d97706' },
                   { range: '0 – 49', label: 'Non-Compliant', color: '#991b1b' },
@@ -560,7 +560,7 @@ const ComplianceDashboard = () => {
               <div className="border border-slate-200 overflow-hidden">
                 <table className="w-full text-xs">
                   <thead>
-                    <tr className="bg-[#001F5B] text-white">
+                    <tr className="bg-[#181511] text-white">
                       <th className="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px]">Framework</th>
                       <th className="text-center px-5 py-3 font-black uppercase tracking-widest text-[10px]">Score</th>
                       <th className="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px]">Rating</th>
@@ -612,10 +612,10 @@ const ComplianceDashboard = () => {
                 onClick={handleCopy}
                 className={`
                   flex items-center gap-2.5 px-5 py-3 text-[10px] font-black uppercase tracking-[0.2em]
-                  border transition-all duration-200
+                  border transition-all duration-200 cursor-pointer
                   ${copied
                     ? 'bg-emerald-50 border-emerald-400 text-emerald-700'
-                    : 'bg-[#001F5B] border-[#001F5B] text-white hover:bg-[#002d87]'
+                    : 'bg-[#181511] border-[#181511] text-white hover:bg-[#a33a21]'
                   }
                 `}
               >

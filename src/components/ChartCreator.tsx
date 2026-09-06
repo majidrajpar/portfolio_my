@@ -13,10 +13,10 @@ import {
 type ThemeKey = 'navy' | 'gold' | 'teal' | 'mixed';
 
 const THEMES: Record<ThemeKey, string[]> = {
-  navy:  ['#001F5B', '#1e3a8a', '#3b82f6', '#93c5fd', '#dbeafe'],
+  navy:  ['#181511', '#38322a', '#6b5e52', '#a89d91', '#e8e4df'],
   gold:  ['#C9A84C', '#b45309', '#d97706', '#fbbf24', '#fef3c7'],
   teal:  ['#0f766e', '#0d9488', '#14b8a6', '#5eead4', '#ccfbf1'],
-  mixed: ['#001F5B', '#C9A84C', '#0f766e', '#dc2626', '#7c3aed'],
+  mixed: ['#181511', '#a33a21', '#c7964c', '#0f766e', '#7c3aed'],
 };
 
 const CHART_TYPES = [
@@ -208,9 +208,9 @@ export default function ChartCreator() {
                   <button
                     key={key}
                     onClick={() => setChartType(key)}
-                    className={`flex flex-col items-center gap-1.5 py-3 px-2 border text-[10px] font-black uppercase tracking-wide transition-colors ${
+                    className={`flex flex-col items-center gap-1.5 py-3 px-2 border text-[10px] font-black uppercase tracking-wide transition-colors cursor-pointer ${
                       active
-                        ? 'bg-[#001F5B] border-[#001F5B] text-white'
+                        ? 'bg-[#181511] border-[#181511] text-white'
                         : 'bg-white border-slate-200 text-slate-600 hover:border-slate-400'
                     }`}
                   >
@@ -232,7 +232,7 @@ export default function ChartCreator() {
               value={title}
               onChange={e => setTitle(e.target.value)}
               placeholder="e.g. Q1–Q4 Revenue Variance"
-              className="w-full border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#001F5B]"
+              className="w-full border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#181511]"
             />
           </div>
 
@@ -249,9 +249,9 @@ export default function ChartCreator() {
                   <button
                     key={key}
                     onClick={() => setTheme(key as ThemeKey)}
-                    className={`flex items-center gap-3 px-3 py-2 border text-xs font-black transition-colors text-left ${
+                    className={`flex items-center gap-3 px-3 py-2 border text-xs font-black transition-colors text-left cursor-pointer ${
                       active
-                        ? 'border-[#001F5B] bg-white text-[#001F5B]'
+                        ? 'border-[#181511] bg-white text-[#181511]'
                         : 'border-slate-200 bg-white text-slate-600 hover:border-slate-400'
                     }`}
                   >
@@ -266,7 +266,7 @@ export default function ChartCreator() {
                     </span>
                     <span>{label}</span>
                     {active && (
-                      <span className="ml-auto w-2 h-2 bg-[#001F5B]" />
+                      <span className="ml-auto w-2 h-2 bg-[#181511]" />
                     )}
                   </button>
                 );
@@ -304,19 +304,19 @@ export default function ChartCreator() {
                         value={row.label}
                         onChange={e => updateRow(row.id, 'label', e.target.value)}
                         placeholder="Label"
-                        className="border border-slate-200 bg-white px-2 py-1.5 text-sm text-slate-800 placeholder-slate-300 focus:outline-none focus:border-[#001F5B] min-w-0"
+                        className="border border-slate-200 bg-white px-2 py-1.5 text-sm text-slate-800 placeholder-slate-300 focus:outline-none focus:border-[#181511] min-w-0"
                       />
                       <input
                         type="number"
                         value={row.value}
                         onChange={e => updateRow(row.id, 'value', e.target.value)}
                         placeholder="0"
-                        className="border border-slate-200 bg-white px-2 py-1.5 text-sm text-slate-800 placeholder-slate-300 focus:outline-none focus:border-[#001F5B] w-full"
+                        className="border border-slate-200 bg-white px-2 py-1.5 text-sm text-slate-800 placeholder-slate-300 focus:outline-none focus:border-[#181511] w-full"
                       />
                       <button
                         onClick={() => removeRow(row.id)}
                         disabled={rows.length <= 2}
-                        className="flex items-center justify-center w-7 h-7 text-slate-400 hover:text-red-500 hover:bg-red-50 border border-transparent hover:border-red-200 transition-colors disabled:opacity-30 disabled:pointer-events-none"
+                        className="flex items-center justify-center w-7 h-7 text-slate-400 hover:text-red-500 hover:bg-red-50 border border-transparent hover:border-red-200 transition-colors disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
                         aria-label="Remove row"
                       >
                         <X size={14} />
@@ -330,7 +330,7 @@ export default function ChartCreator() {
               <button
                 onClick={addRow}
                 disabled={rows.length >= 12}
-                className="mt-2 flex items-center gap-1.5 text-xs font-medium text-[#001F5B] hover:text-blue-700 disabled:opacity-40 disabled:pointer-events-none"
+                className="mt-2 flex items-center gap-1.5 text-xs font-medium text-[#181511] hover:text-[#a33a21] disabled:opacity-40 disabled:pointer-events-none cursor-pointer"
               >
                 <Plus size={14} />
                 Add Row
@@ -343,7 +343,7 @@ export default function ChartCreator() {
             <button
               onClick={handleCopy}
               disabled={chartData.length === 0}
-              className="w-full flex items-center justify-center gap-2.5 px-4 py-2.5 bg-[#001F5B] text-white text-[10px] font-black uppercase tracking-[0.2em] hover:bg-[#002d87] transition-colors disabled:opacity-40 disabled:pointer-events-none"
+              className="w-full flex items-center justify-center gap-2.5 px-4 py-2.5 bg-[#181511] text-white text-[10px] font-black uppercase tracking-[0.2em] hover:bg-[#a33a21] transition-colors disabled:opacity-40 disabled:pointer-events-none cursor-pointer"
             >
               {copied ? <Check size={15} /> : <Copy size={15} />}
               {copied ? 'Copied' : 'Copy Data Table'}

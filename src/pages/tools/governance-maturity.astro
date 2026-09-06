@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import GovernanceMaturity from '../../components/GovernanceMaturity.jsx';
 import NetworkCanvas from '../../components/NetworkCanvas';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
@@ -10,107 +11,141 @@ import NetworkCanvas from '../../components/NetworkCanvas';
 >
 
   <!-- Hero -->
-  <section class="pt-32 pb-20 bg-[#001F5B] relative overflow-hidden">
-    <NetworkCanvas client:load nodeCount={35} />
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-      <div class="max-w-3xl" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-6 block">Governance</span>
-        <h1 class="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-          Governance Maturity Assessment.
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+      <NetworkCanvas client:load nodeCount={35} />
+      <div class="relative z-10 max-w-4xl" data-reveal>
+        <a href={`${base}tools/`} class="mb-7 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white">
+          &larr; Back to Tools
+        </a>
+        <span class="hero-chip mb-6 md:mb-7">Governance & Board Assurance</span>
+        <h1 class="headline-display max-w-4xl text-[clamp(2.8rem,6vw,5rem)] font-black text-white">
+          Governance Maturity
+          <span class="block text-[#f4c98b]">Assessment.</span>
         </h1>
-        <p class="text-xl text-white/70 leading-relaxed max-w-2xl">
-          Benchmark your organisation across six governance domains against a COSO and King IV aligned five-level maturity model — fully in your browser, no data stored.
+        <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.08rem] md:leading-9">
+          Benchmark your organisation across six governance domains against a COSO and King IV aligned five-level maturity model — fully in your browser, with zero external data egress.
         </p>
       </div>
+    </div>
+  </section>
+
+  <!-- Privacy Banner -->
+  <section class="px-4 py-5 md:px-8">
+    <div class="soft-shell mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
+      <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+      </svg>
+      <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
+        <span class="meta-label text-[#181511]">Board-Grade Privacy</span>
+        All evaluations and scores run locally in browser memory. No board data, scoring responses, or gap analyses are ever transmitted or stored externally.
+      </p>
     </div>
   </section>
 
   <!-- Tool -->
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="mb-12" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Step-by-Step</span>
-        <h2 class="text-3xl font-black text-slate-900 mb-3">Rate your organisation across 30 statements.</h2>
-        <p class="text-slate-500 text-sm max-w-xl">
-          Work through six governance domains and score each statement from Strongly Disagree to Strongly Agree. The model analyses your responses and generates a maturity level, domain breakdown, gap analysis, and a prioritised improvement roadmap.
-        </p>
-      </div>
+  <section class="px-4 py-4 md:px-8">
+    <div class="mx-auto max-w-7xl" data-reveal data-reveal-delay="1">
+      <div class="soft-shell p-6 md:p-10">
+        <div class="mb-10" data-reveal>
+          <span class="eyebrow-label text-[#a33a21]">Diagnostic Evaluation</span>
+          <h2 class="mt-2 text-2xl md:text-3xl font-black text-[#181511]">Rate your organisation across 30 statements.</h2>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600 max-w-xl">
+            Work through six governance domains and score each statement from Strongly Disagree to Strongly Agree. The model evaluates interaction effects between domains to produce an executive maturity profile and prioritised roadmap.
+          </p>
+        </div>
 
-      <GovernanceMaturity client:load />
+        <GovernanceMaturity client:load />
+      </div>
     </div>
   </section>
 
   <!-- Methodology -->
-  <section class="py-20 bg-slate-50 border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12">
-      <div class="max-w-3xl" data-reveal>
-        <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#001F5B] mb-4 block">Methodology</span>
-        <h2 class="text-3xl font-black text-slate-900 mb-4">How the assessment works.</h2>
-        <p class="text-slate-600 text-sm leading-relaxed mb-4">
-          The tool implements a five-level governance maturity model aligned to COSO's Internal Control — Integrated Framework and the King IV Report on Corporate Governance. The 30 statements — five per domain — are drawn from established governance best practice and weighted to reflect their relative significance in a mature governance structure.
-        </p>
-        <p class="text-slate-500 text-xs leading-relaxed mb-10">
-          Your six domain averages (scored 1–5) are fed into a polynomial logistic regression classifier trained on expert-labelled governance profiles. The model returns a maturity band, a confidence percentage, and a probability distribution across all five levels. All inference runs client-side — no inputs or results leave your browser.
-        </p>
+  <section class="px-4 py-8 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="soft-shell p-6 md:p-10" data-reveal>
+        <div class="max-w-3xl">
+          <span class="eyebrow-label text-[#c7964c]">Methodology & Framework</span>
+          <h2 class="mt-2 text-2xl md:text-3xl font-black text-[#181511] mb-4">How the assessment works.</h2>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            The diagnostic implements a five-level governance maturity model aligned to COSO's Internal Control — Integrated Framework and the King IV Report on Corporate Governance. The 30 statements — five per domain — reflect established board governance standards and evaluate structural controls against commercial realities.
+          </p>
+          <p class="text-slate-500 text-xs leading-relaxed mb-10">
+            Domain averages feed into a calibrated classifier trained on institutional governance profiles, calculating interaction effects between control and risk oversight rather than presenting a naive unweighted average.
+          </p>
 
-        <!-- Maturity levels -->
-        <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 mb-10">
-          {[
-            { level: 1, label: 'Initial',     color: '#ef4444', desc: 'Ad hoc and reactive. No formal governance processes in place.' },
-            { level: 2, label: 'Developing',  color: '#f97316', desc: 'Processes emerging but inconsistently applied across the organisation.' },
-            { level: 3, label: 'Defined',     color: '#eab308', desc: 'Standardised processes documented, approved, and communicated.' },
-            { level: 4, label: 'Managed',     color: '#22c55e', desc: 'Processes measured, monitored, and controlled through defined metrics.' },
-            { level: 5, label: 'Optimising',  color: '#3b82f6', desc: 'Continuous improvement embedded; aligned to international best practice.' },
-          ].map(m => (
-            <div class="bg-white border border-slate-200 p-5" style={`border-top: 3px solid ${m.color}`}>
-              <div class="font-black text-xs uppercase tracking-widest mb-1" style={`color: ${m.color}`}>
-                Level {m.level} — {m.label}
+          <!-- Maturity levels -->
+          <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 mb-10">
+            {[
+              { level: 1, label: 'Initial',     color: '#ef4444', desc: 'Ad hoc and reactive. No formal governance processes in place.' },
+              { level: 2, label: 'Developing',  color: '#f97316', desc: 'Processes emerging but inconsistently applied across operating units.' },
+              { level: 3, label: 'Defined',     color: '#eab308', desc: 'Standardised processes documented, approved, and communicated.' },
+              { level: 4, label: 'Managed',     color: '#10b981', desc: 'Processes measured, monitored, and controlled through defined KRIs.' },
+              { level: 5, label: 'Optimising',  color: '#c7964c', desc: 'Continuous improvement embedded; aligned to international standards.' },
+            ].map(m => (
+              <div class="bg-[#faf8f5] border border-[color:var(--line-soft)] p-4 rounded-lg" style={`border-top: 3px solid ${m.color}`}>
+                <div class="font-black text-xs uppercase tracking-widest mb-1" style={`color: ${m.color}`}>
+                  Level {m.level} — {m.label}
+                </div>
+                <div class="text-slate-500 text-[11px] leading-snug">{m.desc}</div>
               </div>
-              <div class="text-slate-500 text-[11px] leading-snug">{m.desc}</div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <!-- Domain table -->
-        <div class="border border-slate-200 overflow-hidden mb-10">
-          <table class="w-full text-xs">
-            <thead>
-              <tr class="bg-[#001F5B] text-white">
-                <th class="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px]">Domain</th>
-                <th class="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px]">What is assessed</th>
-                <th class="text-left px-5 py-3 font-black uppercase tracking-widest text-[10px] hidden md:table-cell">Framework alignment</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-100">
-              {[
-                ['Board & Leadership',       'Board composition, committee structure, effectiveness evaluation, and tone from the top.', 'King IV Principle 6–8; COSO Principle 1–2'],
-                ['Risk Management',          'ERM framework, risk appetite, risk registers, KRIs, and strategic integration.',            'COSO ERM 2017; King IV Principle 11'],
-                ['Internal Controls',        'Control documentation, segregation of duties, testing, deficiency remediation, and internal audit.', 'COSO IC-IF 2013; IIA Standards'],
-                ['Ethics & Integrity',       'Code of conduct, whistleblowing, conflicts of interest, ethics training, and enforcement.',  'King IV Principle 2–3; COSO Principle 1'],
-                ['Compliance & Regulation',  'Regulatory mapping, monitoring schedules, change management, and sanction history.',          'King IV Principle 13; COSO Principle 2'],
-                ['Reporting & Transparency', 'Financial reporting, board reporting, external disclosures, and governance publications.',   'King IV Principle 14–15; COSO Principle 14–16'],
-              ].map(([domain, assessed, alignment]) => (
-                <tr class="bg-white hover:bg-slate-50 transition-colors">
-                  <td class="px-5 py-3.5 font-black text-slate-900 align-top">{domain}</td>
-                  <td class="px-5 py-3.5 text-slate-600 align-top leading-snug">{assessed}</td>
-                  <td class="px-5 py-3.5 text-slate-400 align-top leading-snug hidden md:table-cell">{alignment}</td>
+          <!-- Domain table -->
+          <div class="border border-[color:var(--line-soft)] rounded-lg overflow-hidden mb-10">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="bg-[#181511] text-white">
+                  <th class="text-left px-5 py-3.5 font-black uppercase tracking-widest text-[10px]">Domain</th>
+                  <th class="text-left px-5 py-3.5 font-black uppercase tracking-widest text-[10px]">What is assessed</th>
+                  <th class="text-left px-5 py-3.5 font-black uppercase tracking-widest text-[10px] hidden md:table-cell">Framework alignment</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white">
+                {[
+                  ['Board & Leadership',       'Board composition, committee structure, effectiveness evaluation, and tone from the top.', 'King IV Principle 6–8; COSO Principle 1–2'],
+                  ['Risk Management',          'ERM framework, risk appetite, risk registers, KRIs, and strategic integration.',            'COSO ERM 2017; King IV Principle 11'],
+                  ['Internal Controls',        'Control documentation, segregation of duties, testing, deficiency remediation, and internal audit.', 'COSO IC-IF 2013; IIA Standards'],
+                  ['Ethics & Integrity',       'Code of conduct, whistleblowing, conflicts of interest, ethics training, and enforcement.',  'King IV Principle 2–3; COSO Principle 1'],
+                  ['Compliance & Regulation',  'Regulatory mapping, monitoring schedules, change management, and sanction history.',          'King IV Principle 13; COSO Principle 2'],
+                  ['Reporting & Transparency', 'Financial reporting, board reporting, external disclosures, and governance publications.',   'King IV Principle 14–15; COSO Principle 14–16'],
+                ].map(([domain, assessed, alignment]) => (
+                  <tr class="hover:bg-slate-50 transition-colors">
+                    <td class="px-5 py-3.5 font-black text-slate-900 align-top">{domain}</td>
+                    <td class="px-5 py-3.5 text-slate-600 align-top leading-snug">{assessed}</td>
+                    <td class="px-5 py-3.5 text-slate-400 align-top leading-snug hidden md:table-cell">{alignment}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
 
-        <!-- Scoring note -->
-        <div class="bg-white border border-slate-200 p-6">
-          <div class="text-[10px] font-black uppercase tracking-widest text-[#001F5B] mb-3">Scoring Note</div>
-          <p class="text-slate-600 text-xs leading-relaxed mb-3">
-            Each of the 30 statements is rated on a five-point scale: Strongly Disagree (1), Disagree (2), Neutral (3), Agree (4), Strongly Agree (5). The average of the five responses within each domain produces a domain score, which feeds directly into the ML classifier as one of six input features.
-          </p>
-          <p class="text-slate-500 text-xs leading-relaxed">
-            Maturity bands are determined by domain average score thresholds: Initial (≤ 1.8), Developing (≤ 2.6), Defined (≤ 3.5), Managed (≤ 4.4), Optimising (> 4.4). The overall organisational maturity level is the ML classifier's output — not a simple average of the six domain bands — which accounts for interaction effects between domains.
-          </p>
+          <!-- Scoring note -->
+          <div class="bg-[#faf8f5] border border-[color:var(--line-soft)] p-6 rounded-lg">
+            <div class="text-[10px] font-black uppercase tracking-widest text-[#a33a21] mb-3">Scoring & Threshold Calibration</div>
+            <p class="text-slate-600 text-xs leading-relaxed mb-3">
+              Each statement is rated on a 1–5 scale: Strongly Disagree (1) to Strongly Agree (5). Domain averages map to formal maturity bands: Initial (≤ 1.8), Developing (≤ 2.6), Defined (≤ 3.5), Managed (≤ 4.4), Optimising (&gt; 4.4).
+            </p>
+            <p class="text-slate-500 text-xs leading-relaxed">
+              The overall organisational rating is computed to reflect systemic risk: severe vulnerabilities in Internal Controls or Ethics will drag down high scores in Board reporting.
+            </p>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Next Steps CTA -->
+  <section class="px-4 py-8 pb-20 md:px-8">
+    <div class="editorial-panel mx-auto max-w-7xl px-6 py-12 text-center" data-reveal>
+      <h2 class="text-3xl font-black text-white mb-4">Preparing for IPO or Board Governance Overhaul?</h2>
+      <p class="text-white/70 mb-8 max-w-2xl mx-auto text-sm leading-relaxed">
+        Let's bridge the gap between compliance binders and commercial reality. Available for independent Audit Committee advisory and governance transformation.
+      </p>
+      <a href={`${base}contact/`} class="btn-primary">
+        Initiate a Governance Review
+      </a>
     </div>
   </section>
 

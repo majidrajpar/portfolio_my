@@ -14,6 +14,12 @@ const categoryColors: Record<string, string> = {
   'Compliance':         'bg-[#2f223f] text-[#d7c3f4]',
   'Reporting':          'bg-[#293038] text-[#d4dee8]',
 };
+
+const resolveHref = (href: string) => {
+  if (href.startsWith('http')) return href;
+  const slug = href.replace(/^\/portfolio_my\/tools\//, '').replace(/^\/tools\//, '').replace(/\/$/, '');
+  return `${base}tools/${slug}/`;
+};
 ---
 
 <BaseLayout
@@ -85,14 +91,14 @@ const categoryColors: Record<string, string> = {
       </div>
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
         {tools.filter(t => t.isLive).map((tool, i) => (
-          <a
-            href={tool.href}
-            target={tool.href.startsWith('http') ? '_blank' : undefined}
-            rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            class="glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8"
-            data-reveal
-            data-reveal-delay={String((i % 3) + 1)}
-          >
+            <a
+              href={resolveHref(tool.href)}
+              target={tool.href.startsWith('http') ? '_blank' : undefined}
+              rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              class="glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8"
+              data-reveal
+              data-reveal-delay={String((i % 3) + 1)}
+            >
             <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <span class={`inline-flex w-fit px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
                 {tool.category}
