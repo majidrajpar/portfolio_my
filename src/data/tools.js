@@ -141,6 +141,16 @@ export const tools = [
     ml: false,
   },
   {
+    id: 'nomu-governance-readiness',
+    title: 'Tadawul Nomu Pre-IPO Governance Readiness Diagnostic',
+    description: 'Benchmark private enterprises against Saudi Capital Market Authority (CMA) Corporate Governance Regulations and the new Companies Law. Generates an instant Nomu listing readiness rating and gap remediation roadmap.',
+    category: 'Governance',
+    href: '/portfolio_my/tools/nomu-governance-readiness/',
+    isLive: true,
+    batch: 7,
+    ml: false,
+  },
+  {
     id: 'auditdesk',
     title: 'AuditDesk',
     description: 'An open-source audit management and reporting platform.',

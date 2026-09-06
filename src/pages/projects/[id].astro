@@ -143,6 +143,24 @@ const hasStarr = project.starr && project.starr.situation;
           </div>
         )}
 
+        {project.id === 'tadawul-nomu-listing-readiness' && (
+          <div class="soft-shell p-6 md:p-8" data-reveal>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+              <div>
+                <span class="eyebrow-label text-[#a33a21]">Interactive Regulatory Tool</span>
+                <h3 class="mt-1 text-xl font-black text-[#181511]">Test Your Enterprise Against CMA Nomu Standards</h3>
+              </div>
+              <a href={`${base}tools/nomu-governance-readiness/`} class="btn-primary py-2.5 px-5 text-[10px] uppercase tracking-wider inline-flex gap-2 items-center w-fit">
+                Launch Diagnostic
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
+            </div>
+            <p class="text-sm text-[color:var(--text-secondary)] leading-relaxed">
+              Derived directly from the regulatory methodology used in this engagement, test your organization's compliance across all 5 CMA Governance Pillars: Board Composition, Audit Committee Mandate, ICOFR Controls, and Related Party Disclosures.
+            </p>
+          </div>
+        )}
+
         <div data-reveal>
           <CodeSnippetsVault client:load />
         </div>
