@@ -129,47 +129,23 @@ const resolveHref = (href: string) => {
         ))}
       </div>
 
-      {tools.some(t => !t.isLive) && (
-        <div class="soft-shell mt-10 px-6 py-8 md:px-10 md:py-12">
-          <div class="mb-8" data-reveal>
-            <span class="eyebrow-label text-[#c7964c]">In Development</span>
-            <h3 class="mt-4 text-[clamp(1.6rem,4vw,3rem)] leading-[1.04] text-[#181511]">Additional instruments in reserve.</h3>
-          </div>
-          <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-            {tools.filter(t => !t.isLive).map((tool, i) => (
-              <div
-                class="glass-card flex h-full flex-col rounded-[30px] border-dashed p-6 md:p-8"
-                data-reveal
-                data-reveal-delay={String((i % 3) + 1)}
-              >
-                <div class="mb-5 flex items-center justify-between">
-                  <span class={`inline-block px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
-                    {tool.category}
-                  </span>
-                  <div class="flex flex-wrap gap-2">
-                    {tool.ml && <span class="rounded-full border border-[#c7964c]/30 bg-[#c7964c]/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#a66c1c]">ML</span>}
-                    <span class="rounded-full border border-slate-300 bg-white/80 px-2.5 py-1 text-[9px] font-mono font-bold text-slate-600 uppercase tracking-widest">
-                      {tool.badge ?? 'Private Repo'}
-                    </span>
-                  </div>
-                </div>
-                <h3 class="text-xl font-black text-[#181511] mb-3 leading-tight">
-                  {tool.title}
-                </h3>
-                <p class="text-slate-600 text-sm flex-1 leading-relaxed">
-                  {tool.description}
-                </p>
-                <div class="mt-6 border-t border-[color:var(--line-soft)] pt-4">
-                  <span class="meta-label text-slate-400">Access Status</span>
-                  <span class="mt-2 block text-xs font-mono text-slate-500">
-                    Private repository · Pre-release triage engine
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+      <div class="soft-shell mt-12 p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6" data-reveal>
+        <div class="max-w-2xl">
+          <span class="eyebrow-label text-[#c7964c]">Audit Software & Open-Source</span>
+          <h3 class="mt-2 text-2xl md:text-3xl font-black text-[#181511] tracking-tight">
+            Fieldwork Workbenches & Algorithmic Codebases
+          </h3>
+          <p class="mt-3 text-sm md:text-[15px] leading-relaxed text-[color:var(--text-secondary)]">
+            Explore production-grade open-source tools including <strong>AuditDesk</strong> (zero-dependency CAATs & AICPA sampling), <strong>ThirdEye</strong> (AI vendor risk scanner), and <strong>Corporate Whistleblower Lite</strong>.
+          </p>
         </div>
-      )}
+        <a href={`${base}software/`} class="btn-primary flex-shrink-0 px-6 py-3 text-[11px] font-black uppercase tracking-wider inline-flex items-center gap-2">
+          Explore Audit Software
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
 
