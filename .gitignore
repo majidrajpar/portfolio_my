@@ -57,3 +57,6 @@ audit_bench_research/jumbo/
 *.out
 *.snm
 *.toc
+
+# Standalone repository: github.com/majidrajpar/ledger-sentinel
+src/rust/ledger-sentinel/
