@@ -149,5 +149,25 @@ export const tools = [
     isLive: true,
     batch: 7,
     ml: false,
+  },
+  {
+    id: 'game-theory-audit-simulator',
+    title: 'Game Theory Audit & Deterrence Simulator',
+    description: 'Solve for Pure and Mixed Nash Equilibria in corporate control evasion vs continuous monitoring. Mathematical payoff bimatrix modeling frontline evasion under varying audit intensities.',
+    category: 'Audit Intelligence',
+    href: '/portfolio_my/tools/game-theory-audit-simulator/',
+    isLive: true,
+    batch: 8,
+    ml: false,
+  },
+  {
+    id: 'audit-sample-size-calculator',
+    title: 'Audit Sample Size & Precision Sizer',
+    description: 'AICPA attribute sampling engine with Finite Population Correction (FPC). Compute statistically defensible sample sizes and diagnose sampling risk vs 100% continuous controls monitoring.',
+    category: 'Internal Controls',
+    href: '/portfolio_my/tools/audit-sample-size-calculator/',
+    isLive: true,
+    batch: 8,
+    ml: false,
   }
 ];

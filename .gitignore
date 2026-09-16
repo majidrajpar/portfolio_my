@@ -53,3 +53,7 @@ audit_bench_research/jumbo/
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+*.nav
+*.out
+*.snm
+*.toc
