@@ -10,8 +10,17 @@ import asyncio
 import sys
 from pathlib import Path
 
-# Load API key
-API_KEY = Path(r"C:\Users\sorat\Desktop\Coding\Dev_api\ollama_api_key.txt").read_text().splitlines()[0].strip()
+# Load API key from environment variable or local config
+def get_api_key() -> str:
+    env_key = os.getenv("OLLAMA_API_KEY")
+    if env_key:
+        return env_key.strip()
+    key_path = Path.home() / "Desktop" / "Coding" / "Dev_api" / "ollama_api_key.txt"
+    if key_path.exists():
+        return key_path.read_text().splitlines()[0].strip()
+    return ""
+
+API_KEY = get_api_key()
 BASE_URL = "https://ollama.com/v1"
 MODEL = "glm-5.2:cloud"
 WEBSITE_URL = "https://majidrajpar.github.io/portfolio_my/"
