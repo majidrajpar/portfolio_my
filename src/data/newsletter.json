@@ -1,16 +1,16 @@
 [
   {
+    "title": "Your Aggregator Rating Is Hiding Your True Margin Bleed",
+    "tag": "Thought Leadership",
+    "tagColor": "text-slate-400 bg-slate-500/10 border-slate-500/20"
+  },
+  {
     "title": "The Top Risks UAE Restaurant Boards Are Missing",
     "tag": "Board Advisory",
     "tagColor": "text-blue-400 bg-blue-500/10 border-blue-500/20"
   },
   {
     "title": "The Three Gaps That Destroy Restaurant Chains",
-    "tag": "Thought Leadership",
-    "tagColor": "text-slate-400 bg-slate-500/10 border-slate-500/20"
-  },
-  {
-    "title": "The Glassdoor Rating Hides What the Reviews Reveal",
     "tag": "Thought Leadership",
     "tagColor": "text-slate-400 bg-slate-500/10 border-slate-500/20"
   }
