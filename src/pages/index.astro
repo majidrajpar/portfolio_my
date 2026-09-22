@@ -24,6 +24,13 @@ const publications = [
     href: 'https://github.com/majidrajpar/portfolio_my/tree/main/audit_bench_research',
   },
   {
+    outlet: 'ISACA Journal',
+    date: 'September 2026',
+    title: "Independent Assurance, Invisible Method: AI Augmentation and the Audit Committee's Transparency Gap",
+    summary: "When AI produces audit work, what is the audit committee actually trusting? Examining the structural governance blind spots created when internal audit teams adopt automated testing pipelines without committee transparency.",
+    href: 'https://www.isaca.org/resources/isaca-journal/issues/2026/volume-5/ai-augmentation-and-audits-transparency-gap',
+  },
+  {
     outlet: 'Corporate Compliance Insights',
     date: 'August 2025',
     title: 'FCPA Compliance Programs Are Missing Important Nuances',
@@ -69,6 +76,7 @@ const publications = [
 
 const publicationOutlets = [
   'Original Research',
+  'ISACA Journal',
   'IIA Internal Auditor',
   'GRC Report',
   'ACCA AB Magazine',
@@ -112,7 +120,7 @@ const featuredPublications = publications.slice(0, 2);
           </p>
 
           <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a href="#case-studies" class="btn-primary">Examine Proven Outcomes</a>
+            <a href={`${base}value-delivered/`} class="btn-primary">View Value Delivered Ledger &rarr;</a>
             <a href={`${base}contact/`} class="btn-secondary-light">Book Strategy Call</a>
             <div class="flex items-center gap-4 sm:ml-2">
               <a href={`${base}tools/`} class="text-[10px] font-black uppercase tracking-[0.24em] text-[#f4c98b] transition-colors hover:text-white">Interactive Tools &rarr;</a>
@@ -180,6 +188,28 @@ const featuredPublications = publications.slice(0, 2);
       </div>
     </div>
   </section>
+ 
+  <!-- ENTERPRISE CREDENTIALS BAR -->
+  <section class="px-4 py-3 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="soft-shell px-6 py-4 md:px-8 md:py-5 flex flex-col md:flex-row md:items-center justify-between gap-4" data-reveal>
+        <div class="text-[10px] font-black uppercase tracking-[0.28em] text-[#a33a21] shrink-0">
+          Executive Leadership &amp; Advisory At
+        </div>
+        <div class="flex flex-wrap items-center gap-5 sm:gap-8">
+          <span class="text-xs sm:text-sm font-black tracking-widest text-[#181511]/85 hover:text-[#181511] transition-colors">KITOPI</span>
+          <span class="text-black/15 hidden sm:inline">&middot;</span>
+          <span class="text-xs sm:text-sm font-black tracking-widest text-[#181511]/85 hover:text-[#181511] transition-colors">AL-FAISALIAH GROUP</span>
+          <span class="text-black/15 hidden sm:inline">&middot;</span>
+          <span class="text-xs sm:text-sm font-black tracking-widest text-[#181511]/85 hover:text-[#181511] transition-colors">MCDONALD'S KSA</span>
+          <span class="text-black/15 hidden sm:inline">&middot;</span>
+          <span class="text-xs sm:text-sm font-black tracking-widest text-[#181511]/85 hover:text-[#181511] transition-colors">ERNST &amp; YOUNG</span>
+          <span class="text-black/15 hidden sm:inline">&middot;</span>
+          <span class="text-xs sm:text-sm font-black tracking-widest text-[#181511]/85 hover:text-[#181511] transition-colors">KPMG</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- 0. METHODOLOGY / FRAMEWORK -->
   <section class="px-4 py-8 md:px-8">
@@ -205,61 +235,142 @@ const featuredPublications = publications.slice(0, 2);
     </div>
   </section>
 
-  <!-- 1. CASE STUDIES — what has he done -->
-  <section id="case-studies" class="px-4 py-4 md:px-8">
+  <!-- 1. VALUE DELIVERED SCORECARDS -->
+  <section id="value-delivered" class="px-4 py-6 md:px-8">
     <div class="mx-auto max-w-7xl">
       <div class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
         <div class="max-w-3xl" data-reveal>
-          <span class="eyebrow-label">High-Stakes Case Studies: How Audit Saved Capital & Built Trust</span>
-          <h2 class="mt-4 text-[clamp(2.1rem,5vw,4.4rem)] leading-[1.02] text-[#181511]">Client outcomes with operating weight.</h2>
+          <span class="eyebrow-label">Audited Capital &amp; Fiduciary Ledger</span>
+          <h2 class="mt-4 text-[clamp(2.1rem,5vw,4.4rem)] leading-[1.02] text-[#181511]">Value delivered on the balance sheet.</h2>
         </div>
         <p class="max-w-lg text-base leading-8 text-[color:var(--text-secondary)]" data-reveal data-reveal-delay="1">
-          Prioritizing commercial reality. Designing controls and reporting frameworks that solve complex business problems.
+          Moving beyond checklist compliance. Verifiable capital recovered, contingent liabilities neutralized, and board-grade internal controls that withstand external scrutiny.
         </p>
       </div>
 
       <div class="luxury-divider mt-8"></div>
 
-      <div class="mt-10 grid gap-5 lg:grid-cols-2">
-        {featuredProjects.map((project, i) => (
-          <a
-            href={`${base}projects/${project.slug}/`}
-            class="group glass-card flex h-full flex-col rounded-[32px] p-7 lg:min-h-[340px]"
-            data-reveal
-            data-reveal-delay={String(i + 1)}
-          >
-            <div class="flex items-center justify-between gap-3">
-              <div class="flex flex-wrap items-center gap-2">
-                <span class="rounded-full bg-[#1d3557]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.25em] text-[#1d3557]">
-                  {project.categories?.[0] ?? project.category}
-                </span>
-                {project.industry && (
-                  <span class="rounded-full bg-[#a33a21]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#a33a21]">
-                    {project.industry}
-                  </span>
-                )}
-              </div>
-              {project.duration && (
-                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 shrink-0">{project.duration}</span>
-              )}
-            </div>
-            <h3 class="mt-6 text-xl leading-tight text-[#181511] transition-colors group-hover:text-[#a33a21]">
-              {project.title}
-            </h3>
-            {project.impact && (
-              <p class="mt-5 border-l-2 border-[#a33a21]/25 pl-4 text-sm leading-7 text-[color:var(--text-secondary)]">
-                {project.impact}
-              </p>
-            )}
-            <div class="mt-auto pt-8 text-[10px] font-black uppercase tracking-[0.3em] text-[#1d3557]">
-              View Details
-            </div>
-          </a>
-        ))}
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        <a
+          href={`${base}value-delivered/#pillar-01`}
+          class="group glass-card flex h-full flex-col rounded-[32px] p-7 md:p-8 hover:border-[#a33a21]/40 transition-all"
+          data-reveal
+          data-reveal-delay="1"
+        >
+          <div class="flex items-center justify-between gap-3">
+            <span class="rounded-full bg-[#a33a21]/10 px-3.5 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#a33a21]">
+              Capital Recovery &middot; Kitopi
+            </span>
+            <span class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">8 Countries</span>
+          </div>
+          <div class="mt-6 text-3xl font-black text-[#181511] group-hover:text-[#a33a21] transition-colors">
+            AED 7.7M Recouped &amp; Protected
+          </div>
+          <p class="mt-3 text-xs font-black uppercase tracking-[0.16em] text-[#1d3557]">
+            Hyper-Growth Cloud Kitchen Unicorn
+          </p>
+          <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">
+            Replaced 5–15% manual sampling with 100% automated continuous testing during a 340% transaction surge. Recouped aggregator remittance discrepancies and eliminated duplicate vendor disbursements.
+          </p>
+          <div class="mt-auto pt-6 flex items-center justify-between border-t border-black/6">
+            <span class="text-[10px] font-black uppercase tracking-[0.24em] text-[#1d3557] group-hover:text-[#a33a21] transition-colors">
+              Examine Forensic Dossier &rarr;
+            </span>
+            <span class="rounded-md bg-black/4 px-2 py-1 text-[9px] font-bold text-slate-500">Continuous Monitoring</span>
+          </div>
+        </a>
+
+        <a
+          href={`${base}value-delivered/#pillar-01`}
+          class="group glass-card flex h-full flex-col rounded-[32px] p-7 md:p-8 hover:border-[#a33a21]/40 transition-all"
+          data-reveal
+          data-reveal-delay="2"
+        >
+          <div class="flex items-center justify-between gap-3">
+            <span class="rounded-full bg-[#1d3557]/10 px-3.5 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#1d3557]">
+              M&amp;A Diligence &middot; Al-Faisaliah
+            </span>
+            <span class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">$127M Deal</span>
+          </div>
+          <div class="mt-6 text-3xl font-black text-[#181511] group-hover:text-[#a33a21] transition-colors">
+            SAR 15M Hidden Exposure Disclosed
+          </div>
+          <p class="mt-3 text-xs font-black uppercase tracking-[0.16em] text-[#1d3557]">
+            Diversified Conglomerate Mandate
+          </p>
+          <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">
+            Bypassed seller sample packets by deploying automated contract risk modeling across 100% of historical litigation and vendor contracts, uncovering unaccrued liabilities before deal close.
+          </p>
+          <div class="mt-auto pt-6 flex items-center justify-between border-t border-black/6">
+            <span class="text-[10px] font-black uppercase tracking-[0.24em] text-[#1d3557] group-hover:text-[#a33a21] transition-colors">
+              Examine M&amp;A Defense &rarr;
+            </span>
+            <span class="rounded-md bg-black/4 px-2 py-1 text-[9px] font-bold text-slate-500">Contract Forensics</span>
+          </div>
+        </a>
+
+        <a
+          href={`${base}value-delivered/#pillar-01`}
+          class="group glass-card flex h-full flex-col rounded-[32px] p-7 md:p-8 hover:border-[#a33a21]/40 transition-all"
+          data-reveal
+          data-reveal-delay="3"
+        >
+          <div class="flex items-center justify-between gap-3">
+            <span class="rounded-full bg-[#c7964c]/20 px-3.5 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#a33a21]">
+              Fraud Triage &middot; McDonald's KSA
+            </span>
+            <span class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Enterprise QSR</span>
+          </div>
+          <div class="mt-6 text-3xl font-black text-[#181511] group-hover:text-[#a33a21] transition-colors">
+            SAR 12M Tender Fraud Intercepted
+          </div>
+          <p class="mt-3 text-xs font-black uppercase tracking-[0.16em] text-[#1d3557]">
+            Procurement &amp; Whistleblower Governance
+          </p>
+          <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">
+            Designed confidential reporting workflows and vendor price telemetry, discovering and dismantling a systemic procurement collusion ring within months of intake deployment.
+          </p>
+          <div class="mt-auto pt-6 flex items-center justify-between border-t border-black/6">
+            <span class="text-[10px] font-black uppercase tracking-[0.24em] text-[#1d3557] group-hover:text-[#a33a21] transition-colors">
+              Examine Investigation Trace &rarr;
+            </span>
+            <span class="rounded-md bg-black/4 px-2 py-1 text-[9px] font-bold text-slate-500">Whistleblower Triage</span>
+          </div>
+        </a>
+
+        <a
+          href={`${base}value-delivered/#pillar-03`}
+          class="group glass-card flex h-full flex-col rounded-[32px] p-7 md:p-8 hover:border-[#a33a21]/40 transition-all"
+          data-reveal
+          data-reveal-delay="4"
+        >
+          <div class="flex items-center justify-between gap-3">
+            <span class="rounded-full bg-[#1d3557]/10 px-3.5 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#1d3557]">
+              Listing Readiness &middot; Pre-IPO
+            </span>
+            <span class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">7 Jurisdictions</span>
+          </div>
+          <div class="mt-6 text-3xl font-black text-[#181511] group-hover:text-[#a33a21] transition-colors">
+            175+ Control ICOFR Architecture
+          </div>
+          <p class="mt-3 text-xs font-black uppercase tracking-[0.16em] text-[#1d3557]">
+            Regional Technology Platform
+          </p>
+          <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">
+            Built an end-to-end Internal Controls Over Financial Reporting framework from scratch, achieving zero material weaknesses in external Big-4 inspection ahead of planned listing.
+          </p>
+          <div class="mt-auto pt-6 flex items-center justify-between border-t border-black/6">
+            <span class="text-[10px] font-black uppercase tracking-[0.24em] text-[#1d3557] group-hover:text-[#a33a21] transition-colors">
+              Examine Governance Roadmap &rarr;
+            </span>
+            <span class="rounded-md bg-black/4 px-2 py-1 text-[9px] font-bold text-slate-500">ICOFR / Big-4</span>
+          </div>
+        </a>
       </div>
 
-      <div class="mt-10 flex justify-center">
-        <a href={`${base}projects/`} class="btn-primary">View All Projects</a>
+      <div class="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href={`${base}value-delivered/`} class="btn-primary">Explore Full Value Delivered Ledger &rarr;</a>
+        <a href={`${base}projects/`} class="btn-secondary">View Case Study Archives</a>
       </div>
     </div>
   </section>

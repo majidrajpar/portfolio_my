@@ -42,11 +42,11 @@ const Navbar = ({ initialPath = '' }) => {
 
   const navItems = [
     { label: 'Home', href: `${base}/` },
-    { label: 'About', href: `${base}/about/` },
+    { label: 'Value Delivered', href: `${base}/value-delivered/` },
     { label: 'Projects', href: `${base}/projects/` },
     { label: 'Tools', href: `${base}/tools/` },
-    { label: 'Software', href: `${base}/software/` },
     { label: 'Advisory', href: `${base}/advisory/` },
+    { label: 'About', href: `${base}/about/` },
     { label: 'Contact', href: `${base}/contact/` },
   ];
 
