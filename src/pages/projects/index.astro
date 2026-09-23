@@ -7,30 +7,52 @@ import { getCaseStudies, getProfessionalEngagements } from '../../lib/db.js';
 const strategicCaseStudies = getCaseStudies();
 const professionalEngagements = getProfessionalEngagements().slice(0, 4);
 const base = import.meta.env.BASE_URL;
+
+const headlineMetrics = [
+  { value: 'AED 7.7M', label: 'Financial Impact Captured', sublabel: 'Kitopi — 100% population testing during 340% volume surge' },
+  { value: 'SAR 15M', label: 'Hidden Exposure Neutralized', sublabel: '$127M M&A due diligence — undisclosed legal & contract liabilities' },
+  { value: 'SAR 12M', label: 'Procurement Fraud Terminated', sublabel: "McDonald's KSA — whistleblower intake & tender collusion triage" },
+  { value: '100%', label: 'Population Testing Standard', sublabel: 'Continuous controls monitoring replacing 20-invoice sample blindspots' },
+];
 ---
 
 <BaseLayout
-  title="Strategic Case Studies | Client Outcomes — Majid Mumtaz"
-  description="High-stakes audit, risk, and governance outcomes across GCC and international operations. Structured around the business problem, not the control framework."
+  title="Case Studies & Audited Ledger | Strategic Outcomes — Majid Mumtaz"
+  description="Audited ledger of capital protected, balance-sheet leakage recouped, and high-stakes case studies across GCC and international operations."
 >
   <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
     <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-8 md:px-10 md:py-9">
       <NetworkCanvas client:load nodeCount={35} />
       <div class="relative z-10 max-w-4xl" data-reveal>
-        <span class="hero-chip mb-8">Executive Portfolio</span>
+        <span class="hero-chip mb-8">Audited Ledger &middot; 2004–Present</span>
         <h1 class="headline-display max-w-4xl text-[clamp(3rem,7vw,6.2rem)] font-black text-white">
           Strategic
           <span class="block text-[#f4c98b]">outcomes</span>
           <span class="block">with operating weight.</span>
         </h1>
         <p class="mt-8 max-w-3xl text-base leading-8 text-white/74 md:text-[1.15rem] md:leading-9">
-          High-stakes audit, risk, and governance engagements structured around the business problem, not the paperwork that follows it.
+          Internal audit is not a checklist exercise; it is an EBITDA defense instrument. Below is the audited record of capital protected, balance-sheet leakage recouped, and high-stakes case studies structured around business problems rather than compliance paperwork.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="px-4 py-5 md:px-8">
+  <!-- Headline Impact Ledger Strip -->
+  <section class="px-4 py-6 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {headlineMetrics.map((item, i) => (
+          <div class="soft-shell p-6" data-reveal data-reveal-delay={String(i + 1)}>
+            <div class="text-3xl md:text-4xl font-black tracking-tight text-[#a33a21]">{item.value}</div>
+            <div class="mt-2 text-xs font-black uppercase tracking-[0.16em] text-[#181511]">{item.label}</div>
+            <p class="mt-2 text-xs leading-5 text-[color:var(--text-secondary)]">{item.sublabel}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 py-3 md:px-8">
     <div class="soft-shell mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
       <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
