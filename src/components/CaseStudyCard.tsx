@@ -61,7 +61,7 @@ export default function CaseStudyCard({ study }: { study: any }) {
             <div>
               <button 
                 onClick={() => setShowTech(!showTech)}
-                className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.24em] text-[#C9A84C] hover:text-white transition-colors group/btn"
+                className="flex items-center gap-2.5 text-[11px] font-black uppercase tracking-[0.22em] text-[#f4c98b] hover:text-white transition-colors group/btn"
               >
                 {showTech ? 'Hide Technical Stack' : 'View Technical Stack'}
                 <svg className={`w-4 h-4 transition-transform duration-300 ${showTech ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@ export default function CaseStudyCard({ study }: { study: any }) {
                   >
                     <div className="flex flex-wrap gap-2 pt-4">
                       {study.techStack.map((tech: string, i: number) => (
-                        <span key={i} className="text-[9px] font-bold px-2.5 py-1 rounded-full bg-[#1d3557]/10 text-[#1d3557] border border-[#1d3557]/20">
+                        <span key={i} className="text-[10px] font-bold px-3 py-1 rounded-full bg-white/12 text-white border border-white/20 shadow-sm">
                           {tech}
                         </span>
                       ))}
