@@ -1,5 +1,10 @@
 [
   {
+    "title": "Five Reasons Cyberattacks Succeed",
+    "tag": "Thought Leadership",
+    "tagColor": "text-slate-400 bg-slate-500/10 border-slate-500/20"
+  },
+  {
     "title": "5 Practical Actions Any Organization Can Take to Reduce Fraud Risk",
     "tag": "Fraud Forensics",
     "tagColor": "text-red-400 bg-red-500/10 border-red-500/20"
@@ -8,10 +13,5 @@
     "title": "Your Aggregator Rating Is Hiding Your True Margin Bleed",
     "tag": "Thought Leadership",
     "tagColor": "text-slate-400 bg-slate-500/10 border-slate-500/20"
-  },
-  {
-    "title": "The Top Risks UAE Restaurant Boards Are Missing",
-    "tag": "Board Advisory",
-    "tagColor": "text-blue-400 bg-blue-500/10 border-blue-500/20"
   }
 ]
