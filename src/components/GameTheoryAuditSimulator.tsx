@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ShieldAlert, Scale, Sliders, RotateCcw, Download } from 'lucide-react';
+import { Scale, Sliders, RotateCcw, Download } from 'lucide-react';
 import { analyzeGame } from '../utils/gameTheoryEngine';
 import type { GameAnalysisResult } from '../utils/gameTheoryEngine';
 import { auditGameScenarios } from '../data/gameTheoryScenarios';

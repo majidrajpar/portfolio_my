@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calculator, Download, RotateCcw, AlertTriangle, ShieldCheck } from 'lucide-react';
+import { Calculator, Download, RotateCcw, AlertTriangle } from 'lucide-react';
 
 export default function AuditSampleSizeCalculator() {
   const [population, setPopulation] = useState<number>(5000);
