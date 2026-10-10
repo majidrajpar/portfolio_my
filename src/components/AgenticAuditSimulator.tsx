@@ -112,7 +112,7 @@ export default function AgenticAuditSimulator() {
           {!activeScenario ? (
             <div className="flex flex-col items-center justify-center h-full text-slate-500 space-y-4">
               <Bot className="w-12 h-12 opacity-20" />
-              <p>Awaiting scenario injection to deploy AI audit swarm...</p>
+              <p>Awaiting scenario injection to execute multi-agent triage trace...</p>
             </div>
           ) : (
             <div className="space-y-6 flex-1 overflow-y-auto pr-2">

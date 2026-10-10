@@ -383,7 +383,7 @@ const SeverityClassifier: React.FC = () => {
             {/* Confidence bar across all classes */}
             <div className="mb-6">
               <div className="text-[10px] font-black uppercase tracking-[0.25em] text-slate-400 mb-3">
-                How certain is this rating?
+                Model Probability Distribution
               </div>
               <div className="space-y-2">
                 {modelData.classes.map((cls) => {
@@ -481,7 +481,7 @@ const SeverityClassifier: React.FC = () => {
           >
             <ShieldAlert className="w-9 h-9 text-slate-300 mx-auto mb-3" />
             <p className="text-slate-400 text-[10px] uppercase tracking-widest font-black">
-              Select all four factors above to generate your severity rating
+              Select all four risk dimensions above to compute severity classification
             </p>
           </motion.div>
         )}

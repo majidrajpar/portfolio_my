@@ -22,7 +22,7 @@ export const tools = [
   {
     id: 'forensic-validator',
     title: 'Forensic Pattern Validator',
-    description: 'High-performance analytical tool using Benford\'s Law to detect financial manipulation. Powered by a Rust-based WebAssembly engine for instant, secure forensic analysis.',
+    description: 'Benford\'s Law distribution analysis to detect journal entry manipulation, vendor invoice tampering, and anomalous disbursement amounts. Executed in-browser via Rust/WASM.',
     category: 'Fraud & Forensics',
     href: '/portfolio_my/tools/forensic-validator/',
     isLive: true,
@@ -33,7 +33,7 @@ export const tools = [
   {
     id: 'governance-maturity',
     title: 'Governance Maturity Assessment',
-    description: 'Rate your organisation across six governance domains — Board & Leadership, Risk Management, Internal Controls, Ethics, Compliance, and Reporting — to receive an ML-computed maturity level and improvement roadmap.',
+    description: 'Benchmark corporate governance across six core domains — Board & Leadership, Risk Management, Internal Controls, Ethics, Compliance, and Reporting — generating an ML-computed maturity profile and remediation roadmap.',
     category: 'Governance',
     href: '/portfolio_my/tools/governance-maturity/',
     isLive: true,
@@ -53,7 +53,7 @@ export const tools = [
   {
     id: 'risk-matrix',
     title: 'Risk Assessment Matrix Builder',
-    description: 'Build and visualise a risk matrix by plotting organisational risks on a colour-coded likelihood × impact grid. Export the completed matrix for audit planning or board reporting.',
+    description: 'Plot and rank enterprise exposures on a calibrated 5×5 Likelihood × Impact grid. Generates export-ready risk matrices structured for audit planning and executive risk oversight.',
     category: 'Enterprise Risk',
     href: '/portfolio_my/tools/risk-matrix/',
     isLive: true,
@@ -63,7 +63,7 @@ export const tools = [
   {
     id: 'compliance-dashboard',
     title: 'Compliance Dashboard',
-    description: 'Monitor adherence across regulatory frameworks including SOX, GDPR, ISO 27001, and UAE SCA. Visual status indicators and weighted scoring give instant oversight of your compliance posture.',
+    description: 'Monitor control adherence across regulatory frameworks including SOX, PDPL, ISO 27001, UAE SCA, and COSO ERM. Weighted scoring models compliance posture for executive review.',
     category: 'Compliance',
     href: '/portfolio_my/tools/compliance-dashboard/',
     isLive: true,
@@ -73,7 +73,7 @@ export const tools = [
   {
     id: 'chart-creator',
     title: 'Chart & Infographic Creator',
-    description: 'Design professional charts for audit reports and governance presentations — bar, line, pie, and radar — with live preview and export guidance. No design skills required.',
+    description: 'Construct calibrated charts for audit committee packs and governance reporting — bar, line, pie, and radar — with live preview and structured data export.',
     category: 'Reporting',
     href: '/portfolio_my/tools/chart-creator/',
     isLive: true,
@@ -83,7 +83,7 @@ export const tools = [
   {
     id: 'document-comparator',
     title: 'Document Version Comparator',
-    description: 'Upload two versions of any policy, contract, or report to see every change. Classifies control weakening, threshold shifts, scope changes, and responsibility reassignments. Supports PDF (OCR-enabled), Word, Excel, and plain text. All processing is in-browser.',
+    description: 'Compare policy, contract, or audit report revisions side-by-side. Automatically flags control weakening, threshold shifts, scope exclusions, and responsibility reassignments across PDF, Word, Excel, and plain text.',
     category: 'Audit Intelligence',
     href: '/portfolio_my/tools/document-comparator/',
     isLive: true,
@@ -103,7 +103,7 @@ export const tools = [
   {
     id: 'iia-standards-readiness',
     title: 'IIA Global Standards 2024 Readiness Diagnostic',
-    description: 'Evaluate your internal audit department against the newly issued 2024 Global IIA Standards. Get domain scores, compliance ratings, and a board-grade gap-remediation roadmap.',
+    description: 'Evaluate internal audit department maturity against the 2024 Global IIA Standards. Generates domain compliance scores and a board-grade gap-remediation roadmap.',
     category: 'Governance',
     href: '/portfolio_my/tools/iia-standards-readiness/',
     isLive: true,

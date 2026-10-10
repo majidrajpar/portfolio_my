@@ -131,7 +131,7 @@ const REMEDIATION_MAP: Record<string, { priority: 'Urgent' | 'High' | 'Medium'; 
   },
   q2: {
     priority: 'High',
-    action: 'Establish an annual Board calendar with at least 4 mandatory meetings. Formalize a comprehensive Delegation of Authority (DOA) matrix separating Board, Executive Committee, and CEO financial authorization ceilings.',
+    action: 'Establish an annual Board calendar with at least 4 mandatory meetings. Formalize a Delegation of Authority (DOA) matrix separating Board, Executive Committee, and CEO financial authorization ceilings.',
     reference: 'CMA Regs Art. 30, 32'
   },
   q3: {
@@ -156,7 +156,7 @@ const REMEDIATION_MAP: Record<string, { priority: 'Urgent' | 'High' | 'Medium'; 
   },
   q7: {
     priority: 'Urgent',
-    action: 'Implement a comprehensive Conflict of Interest Policy. Mandate annual written disclosures from all directors and executive officers, maintaining a central register of related parties and business affiliations.',
+    action: 'Implement a board-approved Conflict of Interest Policy. Mandate annual written disclosures from all directors and executive officers, maintaining a central register of related parties and business affiliations.',
     reference: 'CMA Regs Art. 42 & Companies Law Art. 71'
   },
   q8: {
@@ -697,7 +697,7 @@ export default function NomuGovernanceReadiness() {
               </div>
             ) : (
               <div className="space-y-4">
-                {results.gaps.map((g, idx) => {
+                {results.gaps.map((g) => {
                   const priorityBg =
                     g.remediation.priority === 'Urgent'
                       ? 'bg-[#a33a21]/10 text-[#a33a21] border-[#a33a21]/30'
