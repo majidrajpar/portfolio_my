@@ -5,6 +5,10 @@ import http from 'http';
 
 const logos = [
   {
+    name: 'veritux.svg',
+    url: 'https://veritux.com/wp-content/uploads/2023/07/veritux_logo.svg'
+  },
+  {
     name: 'kitopi.png',
     url: 'https://tadasj.com/assets/kitopi-logo-rebrand-v-qRU7B_.png'
   },
