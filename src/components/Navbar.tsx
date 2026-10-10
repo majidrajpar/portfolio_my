@@ -106,7 +106,13 @@ const Navbar = ({ initialPath = '' }) => {
             >
               Resources ↓
             </button>
-            <div className="absolute top-full right-0 mt-2 flex flex-col gap-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all bg-white rounded-2xl shadow-[0_18px_50px_rgba(71,38,24,0.08)] border border-[rgba(29,53,87,0.10)] p-3 w-48">
+            <div className="absolute top-full right-0 mt-2 flex flex-col gap-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all bg-white rounded-2xl shadow-[0_18px_50px_rgba(71,38,24,0.08)] border border-[rgba(29,53,87,0.10)] p-3 w-56">
+              <a
+                href={`${base}/resources/`}
+                className="text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 text-[#1d3557] hover:bg-gray-50 rounded-lg transition-colors"
+              >
+                Resource library
+              </a>
               <a
                 href={newsletterUrl}
                 target="_blank"
@@ -175,6 +181,12 @@ const Navbar = ({ initialPath = '' }) => {
                 );
               })}
               <div className="pt-4 flex flex-col gap-3">
+                <a
+                  href={`${base}/resources/`}
+                  className="text-center text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2.5 rounded-full border border-[#1d3557]/18 text-[#1d3557]"
+                >
+                  Resource library
+                </a>
                 <a
                   href={`${base}/downloads/Majid_Mumtaz_Capabilities_Deck.pdf`}
                   download
