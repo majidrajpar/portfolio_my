@@ -42,7 +42,7 @@ const DOMAINS: Domain[] = [
     name: "Domain IV: Professional Practice",
     questions: [
       { id: 'q7', text: "Does the audit team utilize advanced data analytics, forensic scripting, or full-population transaction testing rather than legacy manual sampling?", weight: 10 },
-      { id: 'q8', text: "Does the audit scope comprehensively cover critical IT General Controls (ITGCs), cybersecurity, third-party vendor risks, and ESG readiness?", weight: 10 }
+      { id: 'q8', text: "Does the audit scope directly evaluate critical IT General Controls (ITGCs), cybersecurity, third-party vendor risks, and ESG readiness?", weight: 10 }
     ]
   },
   {
@@ -57,7 +57,7 @@ const DOMAINS: Domain[] = [
 
 const RECOMMENDATIONS: Record<string, string> = {
   q1: "Revise the Internal Audit Charter to align with the new 2024 IIA Global Standards, clearly declaring direct reporting to the Audit Committee.",
-  q2: "Establish robust, documented annual conflict-of-interest certifications for all internal audit practitioners and key financial leaders.",
+  q2: "Formalize documented annual conflict-of-interest certifications for all internal audit practitioners and key financial leaders.",
   q3: "Formalize a Board resolution confirming the Audit Committee's sole authority over the CAE's appraisal, compensation, and dismissal.",
   q4: "Amend the Audit Committee charter to mandate a private session with the CAE at every quarterly meeting to secure safe-disclosure lines.",
   q5: "Modernize your risk assessment methodology; replace annual risk registers with dynamic, quarterly rolling audit plans.",

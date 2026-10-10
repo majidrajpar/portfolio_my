@@ -102,7 +102,7 @@ export default function ChartCreator() {
     if (!hasEnoughData) {
       return (
         <div className="flex items-center justify-center h-[300px] text-slate-400 text-sm text-center px-4">
-          Add at least 2 rows with valid values to preview your chart.
+          Enter at least 2 data rows with numeric values to render preview.
         </div>
       );
     }

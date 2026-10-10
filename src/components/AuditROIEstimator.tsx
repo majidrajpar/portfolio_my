@@ -169,7 +169,7 @@ export default function AuditROIEstimator() {
               </div>
               <div className="text-right shrink-0">
                 <span className="rounded-full bg-[#f4c98b] text-black font-black text-[9px] uppercase tracking-widest px-3 py-1">
-                  majids model
+                  100% Telemetry Model
                 </span>
               </div>
             </div>
@@ -199,7 +199,7 @@ export default function AuditROIEstimator() {
               <tr className="border-b border-slate-200">
                 <th className="pb-3 meta-label text-[#181511]">Assurance Metric</th>
                 <th className="pb-3 meta-label text-slate-400">Legacy Sampling (5% Check)</th>
-                <th className="pb-3 meta-label text-[#a33a21]">Majid's 100% Population Scan</th>
+                <th className="pb-3 meta-label text-[#a33a21]">Continuous 100% Population Scan</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 font-medium">
