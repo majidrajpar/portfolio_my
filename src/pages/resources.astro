@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import documents from '../data/documents.json';
 import NetworkCanvas from '../components/NetworkCanvas';
 import RiskAppetiteInfographic from '../components/RiskAppetiteInfographic.astro';
-import { RESOURCE_GATE_CONFIG } from '../config/resources';
 const base = import.meta.env.BASE_URL;
 
 const categories = ['All', ...new Set((documents as any[]).map((d: any) => d.category))];
@@ -90,16 +89,13 @@ function fileMeta(filename: string) {
             </div>
 
             <div class="mt-6 flex flex-wrap items-center gap-3">
-              <button
-                type="button"
-                class="btn-secondary self-start resource-download-trigger cursor-pointer"
-                data-filename={doc.filename}
-                data-title={doc.title}
-                data-category={doc.category}
-                data-url={`${base}downloads/${doc.filename}`}
+              <a
+                href={`${base}downloads/${doc.filename}`}
+                download
+                class="btn-secondary self-start"
               >
                 Download
-              </button>
+              </a>
               {doc.link && (
                 <a
                   href={doc.link}
@@ -117,6 +113,41 @@ function fileMeta(filename: string) {
     </div>
   </section>
 
+  <script is:inline>
+    (function () {
+      const bar = document.getElementById('filter-bar');
+      const grid = document.getElementById('docs-grid');
+      if (!bar || !grid) return;
+
+      const cards = Array.from(grid.querySelectorAll('[data-category]'));
+
+      bar.addEventListener('click', function (e) {
+        const btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+
+        const selected = btn.dataset.filter;
+
+        bar.querySelectorAll('.filter-btn').forEach(function (b) {
+          if (b === btn) {
+            b.classList.add('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
+            b.classList.remove('text-[color:var(--text-secondary)]', 'bg-white/60');
+          } else {
+            b.classList.remove('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
+            b.classList.add('text-[color:var(--text-secondary)]', 'bg-white/60');
+          }
+        });
+
+        cards.forEach(function (card) {
+          if (selected === 'All' || card.dataset.category === selected) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    })();
+  </script>
+
   <section class="px-4 py-4 pb-10 md:px-8">
     <div class="editorial-panel mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-7 py-10 md:flex-row md:items-center md:px-10" data-reveal>
       <div>
@@ -127,277 +158,4 @@ function fileMeta(filename: string) {
       <a href={`${base}cv/Majid_Mumtaz_Internal_Audit_GRC.pdf`} download class="btn-secondary-light">Download CV</a>
     </div>
   </section>
-
-  <!-- Resource Download Email Gate Modal -->
-  <div
-    id="resource-modal-overlay"
-    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-200"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="modal-doc-title"
-    data-webhook-url={RESOURCE_GATE_CONFIG.googleSheetsWebhookUrl}
-    data-formspree={RESOURCE_GATE_CONFIG.formspreeEndpoint}
-  >
-    <div
-      id="resource-modal-card"
-      class="editorial-panel relative w-full max-w-lg overflow-hidden rounded-[32px] border border-white/16 bg-[#111827] p-7 md:p-9 text-white shadow-2xl transition-all duration-200 scale-95"
-    >
-      <!-- Close button -->
-      <button
-        type="button"
-        id="modal-close-btn"
-        class="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-2 text-lg leading-none cursor-pointer"
-        aria-label="Close dialog"
-      >
-        ✕
-      </button>
-
-      <span class="hero-chip text-[9px] uppercase tracking-[0.24em] mb-4 inline-block">Practitioner Download</span>
-      <h3 id="modal-doc-title" class="text-xl md:text-2xl font-black text-white leading-snug"></h3>
-      <p id="modal-doc-meta" class="mt-2 text-xs font-mono uppercase tracking-widest text-[#f4c98b]"></p>
-
-      <div class="luxury-divider my-5"></div>
-
-      <p class="text-sm leading-relaxed text-white/75">
-        Share your email to download this resource. We maintain an assurance practitioner registry for future updates and tools.
-      </p>
-
-      <form id="resource-gate-form" class="mt-6 space-y-4">
-        <div>
-          <label for="resource-gate-email" class="text-[10px] font-black uppercase tracking-[0.24em] text-white/50 mb-2 block">
-            Work Email Address
-          </label>
-          <input
-            type="email"
-            id="resource-gate-email"
-            name="email"
-            required
-            autocomplete="email"
-            placeholder="name@company.com"
-            class="w-full rounded-2xl border border-white/14 bg-white/8 px-5 py-3.5 text-white placeholder:text-white/35 focus:outline-none focus:border-[#c7964c] transition-colors text-sm backdrop-blur"
-          />
-        </div>
-
-        <div id="modal-status-msg" class="text-xs hidden" role="status"></div>
-
-        <div class="flex items-center gap-3 pt-2">
-          <button
-            type="submit"
-            id="modal-submit-btn"
-            class="btn-primary flex-1 justify-center cursor-pointer"
-          >
-            Download Resource
-          </button>
-          <button
-            type="button"
-            id="modal-cancel-btn"
-            class="btn-secondary-light px-5 py-3 text-[10px] cursor-pointer"
-          >
-            Cancel
-          </button>
-        </div>
-
-        <p class="text-[10px] text-white/40 leading-relaxed text-center">
-          Direct file download starts immediately upon submission.
-        </p>
-      </form>
-    </div>
-  </div>
-
-  <script is:inline>
-    (function () {
-      // 1. Category Filter
-      const bar = document.getElementById('filter-bar');
-      const grid = document.getElementById('docs-grid');
-      if (bar && grid) {
-        const cards = Array.from(grid.querySelectorAll('[data-category]'));
-        bar.addEventListener('click', function (e) {
-          const btn = e.target.closest('.filter-btn');
-          if (!btn) return;
-          const selected = btn.dataset.filter;
-          bar.querySelectorAll('.filter-btn').forEach(function (b) {
-            if (b === btn) {
-              b.classList.add('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
-              b.classList.remove('text-[color:var(--text-secondary)]', 'bg-white/60');
-            } else {
-              b.classList.remove('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
-              b.classList.add('text-[color:var(--text-secondary)]', 'bg-white/60');
-            }
-          });
-          cards.forEach(function (card) {
-            if (selected === 'All' || card.dataset.category === selected) {
-              card.style.display = '';
-            } else {
-              card.style.display = 'none';
-            }
-          });
-        });
-      }
-
-      // 2. Resource Download Email Gate & Database Logger
-      const overlay = document.getElementById('resource-modal-overlay');
-      const card = document.getElementById('resource-modal-card');
-      const closeBtn = document.getElementById('modal-close-btn');
-      const cancelBtn = document.getElementById('modal-cancel-btn');
-      const form = document.getElementById('resource-gate-form');
-      const emailInput = document.getElementById('resource-gate-email');
-      const submitBtn = document.getElementById('modal-submit-btn');
-      const statusMsg = document.getElementById('modal-status-msg');
-      const docTitle = document.getElementById('modal-doc-title');
-      const docMeta = document.getElementById('modal-doc-meta');
-
-      if (!overlay || !form || !emailInput || !submitBtn) return;
-
-      const webhookUrl = overlay.dataset.webhookUrl || '';
-      const formspreeUrl = overlay.dataset.formspree || '';
-      let pendingDoc = null;
-
-      function openModal(doc) {
-        pendingDoc = doc;
-        if (docTitle) docTitle.textContent = doc.title;
-        if (docMeta) docMeta.textContent = doc.category + ' • ' + doc.filename;
-
-        try {
-          const remembered = localStorage.getItem('resource_subscriber_email');
-          if (remembered) {
-            emailInput.value = remembered;
-          }
-        } catch (err) {}
-
-        if (statusMsg) {
-          statusMsg.classList.add('hidden');
-          statusMsg.textContent = '';
-        }
-
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Download Resource';
-
-        overlay.classList.remove('opacity-0', 'pointer-events-none');
-        overlay.classList.add('opacity-100', 'pointer-events-auto');
-        if (card) {
-          card.classList.remove('scale-95');
-          card.classList.add('scale-100');
-        }
-
-        setTimeout(function () {
-          emailInput.focus();
-        }, 50);
-      }
-
-      function closeModal() {
-        overlay.classList.remove('opacity-100', 'pointer-events-auto');
-        overlay.classList.add('opacity-0', 'pointer-events-none');
-        if (card) {
-          card.classList.remove('scale-100');
-          card.classList.add('scale-95');
-        }
-        pendingDoc = null;
-      }
-
-      document.addEventListener('click', function (e) {
-        const trigger = e.target.closest('.resource-download-trigger');
-        if (!trigger) return;
-        e.preventDefault();
-
-        const doc = {
-          title: trigger.dataset.title || 'Internal Audit Resource',
-          filename: trigger.dataset.filename || 'resource.pdf',
-          category: trigger.dataset.category || 'Framework',
-          url: trigger.dataset.url || '#'
-        };
-
-        openModal(doc);
-      });
-
-      if (closeBtn) closeBtn.addEventListener('click', closeModal);
-      if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
-      overlay.addEventListener('click', function (e) {
-        if (e.target === overlay) closeModal();
-      });
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && !overlay.classList.contains('pointer-events-none')) {
-          closeModal();
-        }
-      });
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const email = emailInput.value.trim();
-        if (!email || !pendingDoc) return;
-
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          if (statusMsg) {
-            statusMsg.textContent = 'Please enter a valid work email address.';
-            statusMsg.className = 'text-xs text-rose-400 block';
-          }
-          return;
-        }
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Initiating Download…';
-
-        const leadData = {
-          timestamp: new Date().toISOString(),
-          email: email,
-          resourceTitle: pendingDoc.title,
-          filename: pendingDoc.filename,
-          category: pendingDoc.category,
-          referrer: window.location.href
-        };
-
-        // 1. Remember email & append to local leads DB
-        try {
-          localStorage.setItem('resource_subscriber_email', email);
-          const localDb = JSON.parse(localStorage.getItem('portfolio_resource_leads') || '[]');
-          localDb.push(leadData);
-          localStorage.setItem('portfolio_resource_leads', JSON.stringify(localDb));
-        } catch (err) {}
-
-        // 2. Dispatch to Google Sheets Webhook
-        if (webhookUrl) {
-          fetch(webhookUrl, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(leadData)
-          }).catch(function (err) {
-            console.warn('Webhook dispatch error:', err);
-          });
-        }
-
-        // 3. Backup to Formspree
-        if (formspreeUrl) {
-          fetch(formspreeUrl, {
-            method: 'POST',
-            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              _subject: '[Resource Lead] ' + pendingDoc.title + ' (' + email + ')',
-              email: email,
-              resource: pendingDoc.title,
-              filename: pendingDoc.filename,
-              category: pendingDoc.category,
-              downloaded_at: leadData.timestamp
-            })
-          }).catch(function () {});
-        }
-
-        // 4. Trigger file download immediately
-        const link = document.createElement('a');
-        link.href = pendingDoc.url;
-        link.download = pendingDoc.filename;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-        if (statusMsg) {
-          statusMsg.textContent = '✓ Download starting.';
-          statusMsg.className = 'text-xs text-emerald-400 block';
-        }
-
-        setTimeout(function () {
-          closeModal();
-        }, 500);
-      });
-    })();
-  </script>
 </BaseLayout>
