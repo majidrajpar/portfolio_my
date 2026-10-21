@@ -1,5 +1,18 @@
 [
   {
+    "id": "doc-040",
+    "filename": "invoice-audit-v1.0.0-windows-x64.zip",
+    "title": "Invoice Audit Engine (Windows Standalone App & Python Engine)",
+    "description": "Air-gapped 100% continuous controls monitoring & invoice document audit engine. Extracts printed invoices and thermal till receipts via local OCR, reconciles 3-way line math, flags tax billed without TRN, and exports an executive 5-tab Excel register. Includes zero-dependency Windows x64 standalone executable.",
+    "category": "Audit Tools",
+    "size": "333 MB",
+    "pages": 1,
+    "date": "2026-10-21",
+    "downloadUrl": "https://github.com/majidrajpar/invoice-audit-engine/releases/tag/v1.0.0",
+    "link": "https://github.com/majidrajpar/invoice-audit-engine",
+    "linkLabel": "View on GitHub"
+  },
+  {
     "id": "doc-038",
     "filename": "Internal_Audit_Report_Evaluation_Matrix_GIAS_2024.xlsx",
     "title": "Internal Audit Report Evaluation Matrix (GIAS 2024)",
