@@ -1,5 +1,23 @@
 export const software = [
   {
+    id: 'invoice-audit-engine',
+    name: 'Invoice Audit Engine',
+    tagline: 'Air-gapped 100% continuous controls monitoring & invoice document audit telemetry.',
+    description: 'An open-source, on-premise document audit engine for accounts payable and procurement teams. Runs 100% locally with zero cloud API dependencies to protect confidential vendor pricing. Extracts printed invoices and thermal till receipts via local OCR, reconciles 3-way line item arithmetic, flags VAT billed without a valid Tax Registration Number (TRN), and generates an executive 5-tab Excel audit register.',
+    category: 'Forensic Analytics',
+    techStack: ['Python', 'RapidOCR', 'OpenCV', 'ONNX Runtime', 'OpenPyXL', 'Standalone EXE'],
+    githubUrl: 'https://github.com/majidrajpar/invoice-audit-engine',
+    downloadUrl: 'https://github.com/majidrajpar/invoice-audit-engine/releases/tag/v1.0.0',
+    isPublic: true,
+    status: 'Production / Open Source',
+    keyFeatures: [
+      '100% air-gapped on-premise execution with zero cloud telemetry or vendor pricing data leakage',
+      'Three-way mathematical verification: Qty × Rate == Line Total, Sum(Lines) == Subtotal, Subtotal - Discount + Tax == Total',
+      'Statutory tax compliance gate detecting VAT charged without valid TRN / VAT identification',
+      'Zero-install Windows x64 standalone executable with automated multi-tab Excel register generation'
+    ]
+  },
+  {
     id: 'auditdesk',
     name: 'AuditDesk',
     tagline: 'Privacy-first, zero-dependency fieldwork & forensic workbench for internal auditors.',
