@@ -52,13 +52,13 @@ export const software = [
     ]
   },
   {
-    id: 'corporate-whistleblower-lite',
-    name: 'Corporate Whistleblower Lite',
-    tagline: 'Lightweight, self-hosted corporate whistleblowing intake platform with end-to-end anonymity.',
+    id: 'zk-whistleblower',
+    name: 'ZK Whistleblower',
+    tagline: 'Sovereign whistleblowing intake platform with zero-server cryptographic anonymity.',
     description: 'A sovereign, self-hosted ethics intake platform engineered for enterprises that require a secure reporting channel without routing sensitive disclosures through third-party multi-tenant SaaS providers. Features encrypted intake tokens, role-based investigator access, and Audit Committee briefing exports.',
     category: 'Compliance & Ethics',
     techStack: ['TypeScript', 'Node.js', 'Docker', 'SQLite / PostgreSQL'],
-    githubUrl: 'https://github.com/majidrajpar/corporate-whistleblower-lite',
+    githubUrl: 'https://github.com/majidrajpar/zk-whistleblower',
     isPublic: true,
     status: 'Production / Open Source',
     keyFeatures: [
