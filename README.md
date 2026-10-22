@@ -1,4 +1,7 @@
 # 💼 Executive Portfolio — Majid Mumtaz
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 > **Director of Internal Audit & Risk Advisory**
 > 
 > *A high-performance, data-driven, and editorial-grade showcase of modern corporate governance, internal audit automation, fraud detection, and executive leadership.*
@@ -181,3 +184,9 @@ A benchmark comparing four multi-agent orchestration frameworks (plain-Python Bl
 * **Executive Name:** Majid Mumtaz
 * **Position:** Director of Internal Audit & Risk Advisory
 * **LinkedIn:** [majid-m-4b097118](https://www.linkedin.com/in/majid-m-4b097118/)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
