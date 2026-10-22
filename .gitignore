@@ -58,8 +58,9 @@ audit_bench_research/jumbo/
 *.snm
 *.toc
 
-# Standalone repository: github.com/majidrajpar/ledger-sentinel
+# Standalone repository: github.com/majidrajpar/gl-outlier-engine
 src/rust/ledger-sentinel/
+src/rust/gl-outlier-engine/
 
 # Playwright MCP artifacts
 .playwright-mcp/
