@@ -1,5 +1,7 @@
 # RoleForge Commercial Licensing
 
+Copyright (c) 2026 Majid Mumtaz
+
 > **TL;DR:** RoleForge Core is free for personal, education, research, and internal business use. Startups under $1M ARR are also free. Want to sell it as a service, embed it commercially, or need custom roles? That's what we charge for.
 
 ---
@@ -76,9 +78,8 @@ These are **convenience subscriptions**, not legal requirements. You can build y
 | Method | Contact |
 |---|---|
 | Email | [majidrajpar@gmail.com](mailto:majidrajpar@gmail.com) |
-| Gumroad | [gumroad.com/your-store](https://gumroad.com/your-store) |
+| Store & Catalog | [majidrajpar.github.io/portfolio_my/roleforge](https://majidrajpar.github.io/portfolio_my/roleforge/) |
 | GitHub Sponsors | [github.com/sponsors/majidrajpar](https://github.com/sponsors/majidrajpar) |
-| Calendly | [calendly.com/your-link](https://calendly.com/your-link) |
 
 For enterprise purchases (>$10,000 annual contracts), we provide formal invoices and contracts.
 
@@ -121,5 +122,6 @@ A: Market research shows individual prompts sell for $3-$15 and attract hobbyist
 - **Role Packs:** Proprietary content, sold as convenience products
 - **Commercial Rights:** Governed by this document
 - **Disputes:** Governing law is the jurisdiction of the licensor
+- **Copyright:** Copyright (c) 2026 Majid Mumtaz
 
 *Last updated: June 2026*
