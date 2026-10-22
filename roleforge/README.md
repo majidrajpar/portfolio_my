@@ -1,5 +1,7 @@
 # RoleForge
 
+[![CI](https://github.com/majidrajpar/roleforge/actions/workflows/ci.yml/badge.svg)](https://github.com/majidrajpar/roleforge/actions/workflows/ci.yml)
+
 **31 production-grade agent roles. One YAML library. Three framework adapters. Zero prompt engineering.**
 
 RoleForge is the fastest way to build coherent AI agent teams. Stop writing ad-hoc system prompts. Start deploying expert personas that work across CrewAI, LangChain, and LangGraph.
@@ -124,4 +126,4 @@ We welcome contributions. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add 
 
 ---
 
-<sub>Built by [Your Name](https://majidrajpar.github.io/portfolio_my/roleforge/). Commercialization is a virtue.</sub>
+<sub>Built by [Majid Mumtaz](https://majidrajpar.github.io/portfolio_my/roleforge/). Commercialization is a virtue.</sub>
