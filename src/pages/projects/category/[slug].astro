@@ -6,12 +6,21 @@ import { getCaseStudies, getProfessionalEngagements, getCategoryMeta } from '../
 const base = import.meta.env.BASE_URL;
 
 export function getStaticPaths() {
+  const engagementIndustry = {
+    'whistleblowing-framework-qsr-leader': 'QSR',
+    'ksa-real-estate-forensic-audit': 'KSA real estate',
+    'executive-financial-dashboards': 'Strategic Dashboards',
+    'tadawul-nomu-listing-readiness': 'KSA healthcare subsidiary',
+    'enterprise-risk-management-8-countries': '8 countries',
+    'ethics-compliance-programme-multi-country': 'Multi-country',
+  };
   const categoryMeta = getCategoryMeta();
   const caseStudies = getCaseStudies().map(s => ({
     id: s.slug,
     title: s.title,
     description: s.subtitle,
     impact: s.impact,
+    industry: s.industry,
     categories: s.categories,
     techStack: s.techStack,
     starr: s.starr,
@@ -21,6 +30,7 @@ export function getStaticPaths() {
     title: e.title,
     description: e.desc,
     impact: e.outcome,
+    industry: engagementIndustry[e.slug],
     categories: e.categories,
     techStack: [],
     starr: null,
@@ -71,8 +81,8 @@ const filtered = allProjects.filter(p => p.categories.includes(cat.name));
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
       </svg>
       <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
-        <span class="meta-label text-[#181511]">Confidentiality Notice</span>
-        Case studies are abstracted where required to protect client and employer confidentiality while preserving the actual decision pattern and business consequence.
+        <span class="meta-label text-[#181511]">Disclosure</span>
+        Employer names are on the career record. This page uses the industry field and the stored figures.
       </p>
     </div>
   </section>
@@ -95,7 +105,7 @@ const filtered = allProjects.filter(p => p.categories.includes(cat.name));
           >
             <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <span class="inline-flex w-fit rounded-full bg-[#181512] px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#f4c98b]">
-                {cat.name}
+                {project.industry}
               </span>
               {project.duration && (
                 <span class="flex flex-shrink-0 items-center gap-1 text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">

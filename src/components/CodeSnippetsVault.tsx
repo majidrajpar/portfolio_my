@@ -177,9 +177,14 @@ def detect_pos_anomalies(df: pd.DataFrame, contamination_rate=0.01):
   }
 ];
 
-export default function CodeSnippetsVault() {
-  const [activeTab, setActiveTab] = useState(SNIPPETS[0].id);
-  const activeSnippet = SNIPPETS.find((s) => s.id === activeTab) || SNIPPETS[0];
+type Props = { snippetIds?: string[] };
+
+export default function CodeSnippetsVault({ snippetIds }: Props) {
+  const ids = snippetIds ?? [];
+  const visible = SNIPPETS.filter((snippet) => ids.includes(snippet.id));
+  const [activeTab, setActiveTab] = useState(visible[0]?.id ?? '');
+  if (visible.length === 0) return null;
+  const activeSnippet = visible.find((snippet) => snippet.id === activeTab) ?? visible[0];
 
   return (
     <div className="frame-panel overflow-hidden p-0 border border-white/12 shadow-2xl">
@@ -189,7 +194,7 @@ export default function CodeSnippetsVault() {
           <div className="text-[10px] uppercase tracking-widest text-slate-400 mt-1">Anonymized Production-Grade Scripts</div>
         </div>
         <div className="flex flex-wrap gap-2">
-          {SNIPPETS.map((snippet) => (
+          {visible.map((snippet) => (
             <button
               key={snippet.id}
               onClick={() => setActiveTab(snippet.id)}

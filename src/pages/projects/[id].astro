@@ -1,16 +1,24 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NetworkCanvas from '../../components/NetworkCanvas';
-import CodeSnippetsVault from '../../components/CodeSnippetsVault';
 import { getCaseStudies, getProfessionalEngagements, categorySlug } from '../../lib/db.js';
 const base = import.meta.env.BASE_URL;
 
 export function getStaticPaths() {
+  const engagementIndustry = {
+    'whistleblowing-framework-qsr-leader': 'QSR',
+    'ksa-real-estate-forensic-audit': 'KSA real estate',
+    'executive-financial-dashboards': 'Strategic Dashboards',
+    'tadawul-nomu-listing-readiness': 'KSA healthcare subsidiary',
+    'enterprise-risk-management-8-countries': '8 countries',
+    'ethics-compliance-programme-multi-country': 'Multi-country',
+  };
   const caseStudies = getCaseStudies().map(s => ({
     id: s.slug,
     title: s.title,
     description: s.subtitle,
     impact: s.impact,
+    industry: s.industry,
     categories: s.categories,
     techStack: s.techStack,
     starr: s.starr,
@@ -21,6 +29,7 @@ export function getStaticPaths() {
     title: e.title,
     description: e.desc,
     impact: e.outcome,
+    industry: engagementIndustry[e.slug],
     categories: e.categories,
     techStack: [],
     starr: null,
@@ -49,8 +58,8 @@ const hasStarr = project.starr && project.starr.situation;
           <a href={`${base}projects/`} class="mb-7 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white">
             ← All Case Studies
           </a>
-          {project.categories?.[0] && (
-            <span class="hero-chip mb-6 md:mb-7">{project.categories[0]}</span>
+          {project.industry && (
+            <span class="hero-chip mb-6 md:mb-7">{project.industry}</span>
           )}
           <h1 class="headline-display max-w-4xl text-[clamp(2.8rem,6vw,5.3rem)] font-black text-white">
             {project.title}
@@ -85,8 +94,8 @@ const hasStarr = project.starr && project.starr.situation;
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
       </svg>
       <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
-        <span class="meta-label text-[#181511]">Engagement Confidentiality</span>
-        Names, identifiers, and proprietary facts are abstracted where required. The underlying operational patterns and outcomes remain faithful to the real engagement.
+        <span class="meta-label text-[#181511]">Disclosure</span>
+        Employer names are on the career record. This page uses the industry field and the stored figures.
       </p>
     </div>
   </section>
@@ -143,34 +152,19 @@ const hasStarr = project.starr && project.starr.situation;
           </div>
         )}
 
-        {project.id === 'tadawul-nomu-listing-readiness' && (
-          <div class="soft-shell p-6 md:p-8" data-reveal>
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
-              <div>
-                <span class="eyebrow-label text-[#a33a21]">Interactive Regulatory Tool</span>
-                <h3 class="mt-1 text-xl font-black text-[#181511]">Test Your Enterprise Against CMA Nomu Standards</h3>
-              </div>
-              <a href={`${base}tools/nomu-governance-readiness/`} class="btn-primary py-2.5 px-5 text-[10px] uppercase tracking-wider inline-flex gap-2 items-center w-fit">
-                Launch Diagnostic
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-              </a>
-            </div>
-            <p class="text-sm text-[color:var(--text-secondary)] leading-relaxed">
-              Derived directly from the regulatory methodology used in this engagement, test your organization's compliance across all 5 CMA Governance Pillars: Board Composition, Audit Committee Mandate, ICOFR Controls, and Related Party Disclosures.
-            </p>
+        {project.id === 'ipo-governance-readiness' && (
+          <div class="soft-shell px-6 py-8 md:px-10 md:py-12" data-reveal>
+            <span class="eyebrow-label">Listing result</span>
+            <p class="mt-4 text-[15px] leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">Not stated in the case record.</p>
           </div>
         )}
 
-        <div data-reveal>
-          <CodeSnippetsVault client:load />
-        </div>
-
-        <div class="glass-card rounded-[30px] p-5 md:p-7" data-reveal>
-          <span class="eyebrow-label text-[#a66c1c]">Disclosure</span>
-          <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">
-            All client names, employer names, and specific figures have been anonymised in accordance with confidentiality obligations and professional standards.
-          </p>
-        </div>
+        {project.id === 'data-analytics-audit-training' && (
+          <div class="soft-shell px-6 py-8 md:px-10 md:py-12" data-reveal>
+            <span class="eyebrow-label">Record type</span>
+            <p class="mt-4 text-[15px] leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">Capability. The stored figure is the 60% fieldwork-cycle cut.</p>
+          </div>
+        )}
       </div>
       <aside class="space-y-5 md:space-y-6" data-reveal data-reveal-delay="1">
         <div class="glass-card rounded-[30px] p-6 md:p-7">
