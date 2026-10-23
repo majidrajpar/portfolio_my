@@ -98,20 +98,34 @@ const featuredTools = tools
   </section>
 
   <section class="px-4 pb-8 md:px-8">
-    <div class="soft-shell mx-auto max-w-7xl px-6 py-2 md:px-8">
-      {featuredTools.map((tool) => (
-        <div class="flex flex-col gap-2 border-b border-[color:var(--line-soft)] py-4 last:border-b-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-          <span class="meta-label shrink-0 text-[#8d6035]">{tool.domain}</span>
-          <span class="min-w-0 flex-1 text-[#181511]">{tool.title}</span>
-          <a href={`${base}tools/${tool.id}/`} data-event="home_tool_click" data-slug={tool.id} class="shrink-0 text-sm font-semibold text-[#181511] underline underline-offset-4">
-            Open
-          </a>
-        </div>
-      ))}
-    </div>
     <div class="mx-auto max-w-7xl">
-      <a href={`${base}tools/`} class="mt-8 inline-flex text-sm font-semibold text-[#181511] underline underline-offset-4">
-        Tools
+      <h2 id="home-tools" class="text-2xl text-[#181511]">Tools</h2>
+      <div class="glass-card mt-5 overflow-x-auto rounded-[30px]">
+        <table class="w-full border-collapse text-left" aria-labelledby="home-tools">
+          <thead>
+            <tr class="border-b border-[color:var(--line-soft)]">
+              <th scope="col" class="px-5 py-4 text-[10px] font-black uppercase tracking-[0.18em] text-[#8d6035] sm:px-7">Domain</th>
+              <th scope="col" class="px-5 py-4 text-[10px] font-black uppercase tracking-[0.18em] text-[#8d6035] sm:px-7">Tool</th>
+              <th scope="col" class="px-5 py-4 text-right sm:px-7"><span class="sr-only">Open</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            {featuredTools.map((tool) => (
+              <tr class="border-b border-[color:var(--line-soft)] last:border-b-0">
+                <td class="px-5 py-4 align-top text-sm text-[#5f554d] sm:px-7">{tool.domain}</td>
+                <td class="px-5 py-4 align-top text-base font-semibold text-[#181511] sm:px-7">{tool.title}</td>
+                <td class="px-5 py-4 text-right align-top sm:px-7">
+                  <a href={`${base}tools/${tool.id}/`} data-event="home_tool_click" data-slug={tool.id} class="text-sm font-semibold text-[#181511] underline underline-offset-4">
+                    Open
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <a href={`${base}tools/`} class="mt-6 inline-flex text-sm font-semibold text-[#181511] underline underline-offset-4">
+        All tools
       </a>
     </div>
   </section>
