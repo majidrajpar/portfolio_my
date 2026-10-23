@@ -6,7 +6,7 @@ const Navbar = ({ initialPath = '' }) => {
   const [currentPath, setCurrentPath] = useState(initialPath);
   const [mobileOpen, setMobileOpen] = useState(false);
   const baseUrl = import.meta.env.BASE_URL;
-  const base = baseUrl.replace(/\/$/, '');
+  const isCurrent = (href: string) => currentPath === href || currentPath === href.replace(/\/$/, '');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +38,7 @@ const Navbar = ({ initialPath = '' }) => {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  const isHome = currentPath === `${base}/` || currentPath === `${base}`;
+  const isHome = isCurrent(baseUrl);
   const showTransparent = isHome && !scrolled && !mobileOpen;
 
   const navItems = [
@@ -48,7 +48,6 @@ const Navbar = ({ initialPath = '' }) => {
     { label: 'Advisory', href: `${baseUrl}advisory/` },
   ];
   const contactHref = `${baseUrl}contact/`;
-  const isCurrent = (href: string) => currentPath === href || currentPath === href.replace(/\/$/, '');
 
   return (
     <motion.header
