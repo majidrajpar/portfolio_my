@@ -25,5 +25,10 @@ export default defineConfig({
     inlineStylesheets: 'auto'
   },
 
-  integrations: [react(), sitemap()]
+  integrations: [
+    react(),
+    sitemap({
+      filter: (page) => !page.includes('/projects/category/'),
+    }),
+  ]
 });
