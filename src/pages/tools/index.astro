@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { tools } from '../../data/tools.js';
 import NetworkCanvas from '../../components/NetworkCanvas';
-import GrammarBackground from '../../components/GrammarBackground';
 const base = import.meta.env.BASE_URL;
 
 const categoryColors: Record<string, string> = {
@@ -20,88 +19,94 @@ const resolveHref = (href: string) => {
   const slug = href.replace(/^\/portfolio_my\/tools\//, '').replace(/^\/tools\//, '').replace(/\/$/, '');
   return `${base}tools/${slug}/`;
 };
+
+const catalogOrder = [
+  'severity-classifier',
+  'forensic-validator',
+  'risk-matrix',
+  'iia-standards-readiness',
+  'nomu-governance-readiness',
+  'audit-roi-estimator',
+];
+
+const shelfOrder = [
+  'chart-creator',
+  'compliance-dashboard',
+  'deficiency-exposure-calculator',
+  'game-theory-audit-simulator',
+  'whistleblower-triage',
+  'document-comparator',
+  'agentic-audit-simulator',
+];
+
+const byListedOrder = (ids: string[]) => (a: { id: string }, b: { id: string }) => {
+  const rank = (id: string) => {
+    const index = ids.indexOf(id);
+    return index === -1 ? ids.length : index;
+  };
+  return rank(a.id) - rank(b.id);
+};
+
+const featured = tools
+  .filter((tool) => tool.tier === 'featured')
+  .sort((a, b) => a.featuredOrder - b.featuredOrder);
+
+const catalog = tools
+  .filter((tool) => tool.tier === 'catalog')
+  .sort(byListedOrder(catalogOrder));
+
+const shelf = tools
+  .filter((tool) => tool.tier === 'shelf')
+  .sort(byListedOrder(shelfOrder));
 ---
 
 <BaseLayout
-  title="Audit Intelligence Tools | Majid Mumtaz"
-  description="Browser-based tools for audit professionals — ML-powered severity classifiers, fraud risk calculators, governance maturity assessments, and more. No data stored or transmitted."
+  title="Tools | Majid Mumtaz"
+  description="Four tools are listed first."
 >
   <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
     <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
       <NetworkCanvas client:load nodeCount={35} />
-      <div class="relative z-10 grid gap-8 lg:grid-cols-[1.35fr_0.85fr] lg:items-end lg:gap-10">
-        <div data-reveal>
-          <span class="hero-chip mb-6 sm:mb-8">Audit Intelligence Tools</span>
-          <h1 class="headline-display max-w-4xl text-[clamp(3rem,7vw,6rem)] font-black text-white">
-            Private-browser
-            <span class="block text-[#f4c98b]">tools for boards,</span>
-            <span class="block">audit, and risk.</span>
-          </h1>
-          <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.12rem] md:leading-9">
-            Browser-native tools for governance evaluation, fraud analysis, control review, and board-grade reporting. The point is usable judgment support, not demo-ware.
-          </p>
-        </div>
-        <div class="quote-panel p-6 md:p-8" data-reveal data-reveal-delay="1">
-          <span class="eyebrow-label text-[#f4c98b]/80">Operating Standard</span>
-          <div class="mt-4 space-y-4 text-sm leading-7 text-white/72 md:mt-5 md:space-y-5">
-            <p>Interactive tools run client-side on-device with zero telemetry or third-party egress, accompanied by open-source audit workbenches for specialized fieldwork.</p>
-            <p>Use them as decision-support surfaces for control design, risk scoring, investigation framing, and communication discipline.</p>
-          </div>
-        </div>
+      <div class="relative z-10 max-w-4xl" data-reveal>
+        <h1 class="headline-display max-w-4xl text-[clamp(3rem,7vw,6rem)] font-black text-white">
+          Tools
+        </h1>
+        <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.12rem] md:leading-9">
+          Four tools are listed first.
+        </p>
       </div>
     </div>
   </section>
 
   <section class="px-4 py-5 md:px-8">
-    <div class="soft-shell mx-auto grid max-w-7xl gap-4 px-5 py-5 md:grid-cols-[1.3fr_0.7fr] md:px-7" data-reveal>
+    <div class="soft-shell mx-auto max-w-7xl px-5 py-5 md:px-7" data-reveal>
       <div class="flex items-start gap-3">
         <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
         </svg>
         <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
           <span class="meta-label text-[#181511]">Privacy First</span>
           Inputs, scores, files, and outputs remain on-device. The tooling is designed to be credible in live client or boardroom contexts where discretion matters.
         </p>
       </div>
-      <div class="grid gap-3 sm:grid-cols-3 md:gap-4">
-        <div class="stat-plinth">
-          <span class="meta-label">Live Tools</span>
-          <strong class="mt-3 block text-3xl leading-none text-[#181511]">{tools.filter((t) => t.isLive).length}</strong>
-        </div>
-        <div class="stat-plinth">
-          <span class="meta-label">ML-Enhanced</span>
-          <strong class="mt-3 block text-3xl leading-none text-[#181511]">{tools.filter((t) => t.ml).length}</strong>
-        </div>
-        <div class="stat-plinth">
-          <span class="meta-label">Zero Cloud Egress</span>
-          <strong class="mt-3 block text-3xl leading-none text-[#181511]">100%</strong>
-        </div>
-      </div>
     </div>
   </section>
 
-  <section class="px-4 py-4 md:px-8">
+  <section class="px-4 py-4 pb-16 md:px-8">
     <div class="mx-auto max-w-7xl">
-      <div class="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between" data-reveal>
-        <div>
-          <span class="eyebrow-label">Available Now</span>
-          <h2 class="mt-4 text-[clamp(2rem,4.6vw,3.8rem)] leading-[1.02] text-[#181511]">Decision-support instruments.</h2>
-        </div>
-        <p class="body-luxe max-w-2xl">Designed to make audit judgment, risk triage, and board communication sharper without pushing sensitive information into third-party systems.</p>
-      </div>
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
-        {tools.filter(t => t.isLive).map((tool, i) => (
-            <a
-              href={resolveHref(tool.href)}
-              target={tool.href.startsWith('http') ? '_blank' : undefined}
-              rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              class="glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8"
-              data-reveal
-              data-reveal-delay={String((i % 3) + 1)}
-            >
+        {featured.map((tool, i) => (
+          <a
+            href={resolveHref(tool.href)}
+            target={tool.href.startsWith('http') ? '_blank' : undefined}
+            rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            class="glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8"
+            data-reveal
+            data-reveal-delay={String((i % 3) + 1)}
+          >
             <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <span class={`inline-flex w-fit px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
-                {tool.category}
+                {tool.domain}
               </span>
               <div class="flex flex-wrap gap-2">
                 {tool.href.startsWith('http') && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-700">GitHub</span>}
@@ -109,54 +114,79 @@ const resolveHref = (href: string) => {
                 {tool.rust && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">WASM</span>}
               </div>
             </div>
-
-            <h3 class="text-[1.28rem] leading-tight text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[1.45rem]">
+            <h2 class="text-[1.28rem] leading-tight text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[1.45rem]">
               {tool.title}
-            </h3>
+            </h2>
             <p class="mt-4 flex-1 text-sm leading-7 text-[color:var(--text-secondary)] md:leading-8">
               {tool.description}
             </p>
             <div class="mt-6 border-t border-[color:var(--line-soft)] pt-4 md:mt-7 md:pt-5">
               <span class="meta-label">{tool.href.startsWith('http') ? 'Repository' : 'Execution'}</span>
               <span class="mt-3 inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[11px] md:tracking-[0.24em]">
-              {tool.href.startsWith('http') ? 'View on GitHub' : 'Launch Tool'}
-              <svg class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={tool.href.startsWith('http') ? "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" : "M17 8l4 4m0 0l-4 4m4-4H3"}/>
-              </svg>
+                {tool.href.startsWith('http') ? 'View on GitHub' : 'Launch Tool'}
+                <svg class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={tool.href.startsWith('http') ? "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" : "M17 8l4 4m0 0l-4 4m4-4H3"}/>
+                </svg>
               </span>
             </div>
           </a>
         ))}
       </div>
 
-      <div class="soft-shell mt-12 p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6" data-reveal>
-        <div class="max-w-2xl">
-          <span class="eyebrow-label text-[#c7964c]">Audit Software & Open-Source</span>
-          <h3 class="mt-2 text-2xl md:text-3xl font-black text-[#181511] tracking-tight">
-            Fieldwork Workbenches & Algorithmic Codebases
-          </h3>
-          <p class="mt-3 text-sm md:text-[15px] leading-relaxed text-[color:var(--text-secondary)]">
-            Explore production-grade open-source tools including <strong>AuditDesk</strong> (zero-dependency CAATs & AICPA sampling), <strong>ThirdEye</strong> (AI vendor risk scanner), and <strong>Corporate Whistleblower Lite</strong>.
-          </p>
-        </div>
-        <a href={`${base}software/`} class="btn-primary flex-shrink-0 px-6 py-3 text-[11px] font-black uppercase tracking-wider inline-flex items-center gap-2">
-          Explore Audit Software
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </a>
+      <div class="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
+        {catalog.map((tool, i) => (
+          <a
+            href={resolveHref(tool.href)}
+            target={tool.href.startsWith('http') ? '_blank' : undefined}
+            rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            class="glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8"
+            data-reveal
+            data-reveal-delay={String((i % 3) + 1)}
+          >
+            <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+              <span class={`inline-flex w-fit px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
+                {tool.domain}
+              </span>
+              <div class="flex flex-wrap gap-2">
+                {tool.href.startsWith('http') && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-700">GitHub</span>}
+                {tool.ml && <span class="rounded-full border border-[#c7964c]/30 bg-[#c7964c]/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#a66c1c]">ML</span>}
+                {tool.rust && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">WASM</span>}
+              </div>
+            </div>
+            <h2 class="text-[1.28rem] leading-tight text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[1.45rem]">
+              {tool.title}
+            </h2>
+            <p class="mt-4 flex-1 text-sm leading-7 text-[color:var(--text-secondary)] md:leading-8">
+              {tool.description}
+            </p>
+            <div class="mt-6 border-t border-[color:var(--line-soft)] pt-4 md:mt-7 md:pt-5">
+              <span class="meta-label">{tool.href.startsWith('http') ? 'Repository' : 'Execution'}</span>
+              <span class="mt-3 inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[11px] md:tracking-[0.24em]">
+                {tool.href.startsWith('http') ? 'View on GitHub' : 'Launch Tool'}
+                <svg class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={tool.href.startsWith('http') ? "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" : "M17 8l4 4m0 0l-4 4m4-4H3"}/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
       </div>
-    </div>
-  </section>
 
-  <section class="relative overflow-hidden px-4 py-8 pb-12 md:px-8">
-    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 text-center md:px-10 md:py-14">
-    <GrammarBackground client:visible variant="dark-grid" />
-      <div class="relative z-10" data-reveal>
-        <span class="hero-chip mb-5 md:mb-6">Custom Build</span>
-        <h2 class="mx-auto max-w-3xl text-[clamp(2rem,4.4vw,3.8rem)] leading-[1.03] text-white">Need a bespoke tool for an audit, risk, or governance workflow?</h2>
-        <p class="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-white/72 md:mt-6 md:text-base md:leading-8">These tools are grounded in live engagement patterns. If your team needs a more specific instrument, the right move is to build for your operating reality rather than force-fit a generic SaaS product.</p>
-        <a href={`${base}contact/`} class="btn-primary mt-8 inline-flex">Get in Touch</a>
+      <div class="soft-shell mt-8 px-6 py-2 md:px-8">
+        {shelf.map((tool) => (
+          <div class="flex flex-col gap-2 border-b border-[color:var(--line-soft)] py-4 last:border-b-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+            <span class="meta-label shrink-0 text-[#8d6035]">{tool.domain}</span>
+            <span class="min-w-0 flex-1 text-[#181511]">{tool.title}</span>
+            <a href={resolveHref(tool.href)} class="shrink-0 text-sm font-semibold text-[#181511] underline underline-offset-4">
+              Open
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-8 flex gap-6">
+        <a href={`${base}software/`} class="text-sm font-semibold text-[#181511] underline underline-offset-4">Builds</a>
+        <a href={`${base}contact/`} class="text-sm font-semibold text-[#181511] underline underline-offset-4">Contact</a>
       </div>
     </div>
   </section>
