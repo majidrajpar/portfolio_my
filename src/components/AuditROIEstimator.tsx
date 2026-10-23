@@ -178,7 +178,7 @@ export default function AuditROIEstimator() {
           <div className="mt-8 pt-6 border-t border-white/10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="text-left">
               <div className="text-[8px] font-black uppercase tracking-[0.24em] text-white/40">Secure Board Mandate</div>
-              <div className="text-xs font-semibold text-white/80 mt-1">AED 7.7M secured in single Kitopi role</div>
+              <div className="text-xs font-semibold text-white/80 mt-1">Illustrative calculator.</div>
             </div>
             <a href="/portfolio_my/contact/" className="btn-primary bg-gradient-to-r from-[#c7964c] to-[#a66c1c] text-black !font-black !shadow-[0_12px_24px_rgba(199,150,76,0.18)] self-start sm:self-auto">
               Discuss Audit Setup
