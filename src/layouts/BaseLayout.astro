@@ -16,7 +16,7 @@ const {
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -70,14 +70,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       "Risk Management"
     ],
     "hasCredential": ["CIA", "ACA", "FCCA", "COSO ERM Certified"],
-    "alumniOf": [
-      { "@type": "Organization", "name": "Kitopi" },
-      { "@type": "Organization", "name": "Al-Faisaliah Group" },
-      { "@type": "Organization", "name": "McDonald's" },
-      { "@type": "Organization", "name": "BMA Asset Management" },
-      { "@type": "Organization", "name": "Ernst & Young" },
-      { "@type": "Organization", "name": "KPMG" }
-    ],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Dubai",
@@ -126,44 +118,46 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <footer class="footer-shell py-16 border-t border-white/10">
     <div class="max-w-7xl mx-auto px-8">
       <div class="grid grid-cols-1 gap-12 md:grid-cols-4 mb-14">
-        <!-- Brand -->
-        <div class="md:col-span-2">
-          <div class="text-white font-black text-xs uppercase tracking-[0.34em] mb-4">Majid Mumtaz</div>
-          <p class="text-white/70 text-sm leading-7 max-w-sm">
-            Strategic Audit Advisory | Board & C-Suite Consulting. 20+ years building audit functions boards actually act on.
-          </p>
-          <div class="flex gap-5 mt-6">
-            <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer"
-               class="text-white/60 hover:text-white text-[10px] font-black uppercase tracking-[0.28em] transition-colors">LinkedIn ↗</a>
-            <a href="https://www.linkedin.com/newsletters/the-audit-signal-7339153291630510080/" target="_blank" rel="noopener noreferrer"
-               class="text-white/60 hover:text-white text-[10px] font-black uppercase tracking-[0.28em] transition-colors">The Audit Signal ↗</a>
-          </div>
-        </div>
-        <!-- Pages -->
         <div>
-          <div class="text-white/45 text-[10px] font-black uppercase tracking-[0.28em] mb-5">Navigation</div>
+          <div class="text-white font-black text-xs uppercase tracking-[0.34em] mb-4">Majid Mumtaz</div>
+          <p class="text-white/70 text-sm leading-7 max-w-sm">Case studies and tools.</p>
+        </div>
+        <div>
+          <div class="text-white/45 text-[10px] font-black uppercase tracking-[0.28em] mb-5">Proof</div>
           <ul class="space-y-3">
             {[
-              { label: 'Case Studies', href: `${base}/projects/` },
-              { label: 'About', href: `${base}/about/` },
-              { label: 'Advisory', href: `${base}/advisory/` },
-              { label: 'Tools', href: `${base}/tools/` },
-              { label: 'Resources', href: `${base}/resources/` },
-              { label: 'RoleForge (Agent Roles)', href: `${base}/roleforge/` },
-              { label: 'Books', href: `${base}/about/#books` },
-              { label: 'Contact', href: `${base}/contact/` },
+              { label: 'Case Studies', href: `${baseUrl}projects/` },
+              { label: 'Tools', href: `${baseUrl}tools/` },
+              { label: 'About', href: `${baseUrl}about/` },
+              { label: 'Advisory', href: `${baseUrl}advisory/` },
+              { label: 'Contact', href: `${baseUrl}contact/` },
             ].map(link => (
               <li><a href={link.href} class="text-white/72 hover:text-white text-sm font-semibold transition-colors">{link.label}</a></li>
             ))}
           </ul>
         </div>
-        <!-- Contact -->
         <div>
-          <div class="text-white/45 text-[10px] font-black uppercase tracking-[0.28em] mb-5">Contact</div>
+          <div class="text-white/45 text-[10px] font-black uppercase tracking-[0.28em] mb-5">Shelf</div>
+          <ul class="space-y-3">
+            {[
+              { label: 'Builds', href: `${baseUrl}software/` },
+              { label: 'Resource library', href: `${baseUrl}resources/` },
+              { label: 'RoleForge', href: `${baseUrl}roleforge/` },
+              { label: 'Books', href: `${baseUrl}about/#books` },
+            ].map(link => (
+              <li><a href={link.href} class="text-white/72 hover:text-white text-sm font-semibold transition-colors">{link.label}</a></li>
+            ))}
+            <li>
+              <a href="https://www.linkedin.com/newsletters/the-audit-signal-7339153291630510080/" target="_blank" rel="noopener noreferrer" class="text-white/72 hover:text-white text-sm font-semibold transition-colors">The Audit Signal</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="text-white/45 text-[10px] font-black uppercase tracking-[0.28em] mb-5">Reach</div>
           <ul class="space-y-3">
             <li><a href="mailto:majidrajpar@gmail.com" class="text-white/72 hover:text-white text-sm font-semibold transition-colors">majidrajpar@gmail.com</a></li>
-            <li><span class="text-white/72 text-sm font-semibold">Dubai, UAE</span></li>
-            <li><a href={`${base}/cv/Majid_Mumtaz_Internal_Audit_GRC.pdf`} download class="text-white/72 hover:text-white text-sm font-semibold transition-colors">Download CV</a></li>
+            <li><span class="text-white/72 text-sm font-semibold">Dubai</span></li>
+            <li><a href={`${baseUrl}cv/Majid_Mumtaz_Internal_Audit_GRC.pdf`} download class="text-white/72 hover:text-white text-sm font-semibold transition-colors">CV</a></li>
           </ul>
         </div>
       </div>
