@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import MetricCard from '../components/MetricCard.astro';
 import CareerTimeline from '../components/CareerTimeline.jsx';
 import NetworkCanvas from '../components/NetworkCanvas';
 import { getCareerMilestones } from '../lib/db.js';
@@ -22,48 +21,51 @@ const books = [
 
 const featuredBooks = books;
 
-const metrics = [
-  { value: '17', label: 'Consulting Projects — UAE, KSA, Qatar, USA & Pakistan' },
-  { value: 'AED 7.7M', label: 'Total Financial Impact — Fraud Detection' },
-  { value: '$127M', label: 'M&A Due Diligence — Uncovered SAR 15M in hidden exposure' },
-  { value: '2', label: 'Listing Readiness Programmes Delivered' },
+const alumniOf = [
+  { '@type': 'Organization', name: 'Kitopi' },
+  { '@type': 'Organization', name: 'Al-Faisaliah Group' },
+  { '@type': 'Organization', name: "McDonald's" },
+  { '@type': 'Organization', name: 'BMA Asset Management' },
+  { '@type': 'Organization', name: 'Ernst & Young' },
+  { '@type': 'Organization', name: 'KPMG' },
 ];
 
-const publicationChips = [
-  'Original Research',
-  'ISACA Journal',
-  'IIA Internal Auditor',
-  'GRC Report',
-  'ACCA AB Magazine',
-  'Corporate Compliance Insights',
-  'Consultancy ME',
-  'The Audit Signal (Newsletter)',
+const employers = [
+  { name: 'Veritux Consulting Network', alt: 'Veritux', src: `${base}images/logos/veritux.svg`, height: 'h-6 sm:h-7' },
+  { name: 'Kitopi', alt: 'Kitopi', src: `${base}images/logos/kitopi.png`, height: 'h-6 sm:h-7' },
+  { name: 'Al-Faisaliah Group', alt: 'Al-Faisaliah Group', src: `${base}images/logos/al-faisaliah.png`, height: 'h-7 sm:h-8' },
+  { name: "McDonald's KSA", alt: "McDonald's", src: `${base}images/logos/mcdonalds.svg`, height: 'h-6 sm:h-7', label: "McDonald's" },
+  { name: 'BMA Asset Management', alt: 'BMA Asset Management', src: `${base}images/logos/bma.png`, height: 'h-7 sm:h-8' },
+  { name: 'Ernst & Young', alt: 'Ernst & Young', src: `${base}images/logos/ey.svg`, height: 'h-7 sm:h-8' },
+  { name: 'KPMG', alt: 'KPMG', src: `${base}images/logos/kpmg.svg`, height: 'h-6 sm:h-7' },
 ];
 ---
 
 <BaseLayout
-  title="About | Majid Mumtaz — Strategic Audit Advisory"
-  description="20+ years finding the operational and governance gaps that cost businesses money — fraud detection, board-grade assurance, controls that close the risk they were built for. CIA, ACA, FCCA. Big 4 trained. Available for independent consulting and advisory engagements globally."
+  title="Career record | Majid Mumtaz"
+  description="Employment history is on this page. Outcomes are on the case studies page."
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Majid Mumtaz',
+    alumniOf,
+  })} />
+
   <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
     <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-8 md:px-10 md:py-9">
       <NetworkCanvas client:load nodeCount={35} />
       <div class="relative z-10 grid gap-8 lg:grid-cols-[1fr_0.52fr] lg:items-end" data-reveal>
         <div>
-          <span class="hero-chip mb-8">Leadership Profile</span>
           <h1 class="headline-display max-w-4xl text-[clamp(3rem,7vw,6.4rem)] font-black text-white">
-            Twenty years.
-            <span class="block text-[#f4c98b]">One mission.</span>
-            <span class="block">Protect the capital.</span>
+            Career record.
           </h1>
           <p class="mt-8 max-w-3xl text-base leading-8 text-white/74 md:text-[1.15rem] md:leading-9">
-            Independent strategic auditor and board-facing advisor. Big-4 trained and triple-certified. Built for organizations demanding assurance with operating weight.
+            Employment history is on this page. Outcomes are on the case studies page.
           </p>
-          <div class="luxury-divider mt-10 mb-8 max-w-lg"></div>
-          <div class="flex flex-wrap gap-3">
-            {['CIA', 'ACA', 'FCCA', 'Big 4 — EY & KPMG'].map((badge) => (
-              <span class="hero-chip">{badge}</span>
-            ))}
+          <div class="mt-10 flex flex-wrap items-center gap-6">
+            <a href={`${base}projects/`} class="text-sm font-semibold text-[#f4c98b] underline underline-offset-4">Case studies</a>
+            <a href={`${base}cv/Majid_Mumtaz_Internal_Audit_GRC.pdf`} download class="text-sm font-semibold text-white/80 underline underline-offset-4">Download CV</a>
           </div>
         </div>
         <div class="hidden lg:block">
@@ -81,41 +83,33 @@ const publicationChips = [
   </section>
 
   <section class="px-4 py-5 md:px-8">
-    <div class="mx-auto grid max-w-7xl gap-4 md:grid-cols-2 xl:grid-cols-4">
-      {metrics.map((m, i) => (
-        <div data-reveal data-reveal-delay={String((i % 3) + 1)}>
-          <MetricCard value={m.value} label={m.label} />
+    <div class="mx-auto max-w-7xl">
+      <div class="soft-shell flex flex-col justify-between gap-6 px-6 py-5 md:px-8 md:py-6 lg:flex-row lg:items-center" data-reveal>
+        <div class="shrink-0 text-[10px] font-black uppercase tracking-[0.28em] text-[#a33a21]">
+          Employers and firms.
         </div>
-      ))}
+        <div class="flex flex-wrap items-center justify-between gap-7 sm:justify-start sm:gap-10">
+          {employers.map((employer) => (
+            <div class="flex items-center gap-2.5" title={employer.name}>
+              <img
+                src={employer.src}
+                alt={employer.alt}
+                class={`${employer.height} w-auto object-contain transition-transform duration-300 hover:scale-105`}
+                loading="lazy"
+              />
+              {employer.label && (
+                <span class="hidden text-xs font-black tracking-wider text-[#181511] sm:inline">{employer.label}</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="px-4 py-4 md:px-8">
     <div class="mx-auto max-w-7xl">
-      <div class="grid gap-6 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
-        <div class="editorial-panel overflow-hidden px-7 py-8 md:px-8 md:py-10" data-reveal>
-          <div class="meta-label text-[#f4c98b]">Biography</div>
-          <div class="mt-6 quote-panel p-6">
-            <div class="meta-label text-[#1d3557]">Operating Principle</div>
-            <p class="mt-4 text-xl leading-9 text-[#1b1a17]">
-              Internal audit is a commercial intelligence asset—designed to change executive decisions before the pattern becomes loss.
-            </p>
-          </div>
-          <div class="mt-6 flex flex-wrap gap-2">
-            {publicationChips.map((chip) => (
-              <span class="rounded-full border border-white/14 bg-white/6 px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-white/78">
-                {chip}
-              </span>
-            ))}
-          </div>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="https://www.linkedin.com/in/majid-m-4b097118/" target="_blank" rel="noopener noreferrer" class="btn-secondary-light">LinkedIn</a>
-            <a href="https://www.linkedin.com/newsletters/the-audit-signal-7339153291630510080/" target="_blank" rel="noopener noreferrer" class="btn-secondary-light">The Audit Signal</a>
-            <a href="https://www.youtube.com/@AuditBitz" target="_blank" rel="noopener noreferrer" class="btn-secondary-light">AuditBitz</a>
-          </div>
-        </div>
-
-        <div class="soft-shell px-7 py-8 md:px-10 md:py-9" data-reveal data-reveal-delay="1">
+      <div class="soft-shell px-7 py-8 md:px-10 md:py-9" data-reveal>
           <span class="eyebrow-label">Biography</span>
           <h2 class="mt-4 text-[clamp(2.1rem,4.8vw,4rem)] leading-[1.02] text-[#181511]">Built to turn assurance into an executive instrument.</h2>
           <div class="luxury-divider mt-7 max-w-md"></div>
@@ -172,7 +166,6 @@ const publicationChips = [
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </section>
@@ -197,34 +190,12 @@ const publicationChips = [
   <section class="px-4 py-4 md:px-8">
     <div class="mx-auto max-w-7xl">
       <div class="mb-10" data-reveal>
-        <span class="eyebrow-label">Core Practice Areas</span>
-        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Signature capabilities.</h2>
-      </div>
-      <div class="grid gap-5 md:grid-cols-3">
-        {[
-          ['IA Function Building', 'Designing charters, methodologies, risk-based plans, and team structures to build or reset internal audit functions.'],
-          ['Forensic Analytics & Fraud Detection', 'Deploying population testing, ML-driven anomaly detection, and continuous automated telemetry to eliminate sample-based blind spots.'],
-          ['Board Assurance & IPO Readiness', 'Structuring ICOFR, COSO ERM, and regulatory readiness frameworks tailored for boards, regulators, and investors.'],
-        ].map(([title, desc], i) => (
-          <div class="glass-card rounded-[30px] p-8" data-reveal data-reveal-delay={String(i + 1)}>
-            <div class="meta-label text-[#a33a21]">0{i + 1}</div>
-            <h3 class="mt-4 text-xl leading-tight text-[#181511]">{title}</h3>
-            <p class="mt-4 text-sm leading-8 text-[color:var(--text-secondary)]">{desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="px-4 py-4 md:px-8">
-    <div class="mx-auto max-w-7xl">
-      <div class="mb-10" data-reveal>
         <span class="eyebrow-label">Executive Endorsements</span>
         <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Board and executive feedback.</h2>
         <p class="mt-5 max-w-2xl text-base leading-8 text-[color:var(--text-secondary)]">Direct perspective from the C-suite, Audit Committees, and Senior Partners on the impact of my advisory work.</p>
       </div>
       <div class="grid gap-5 md:grid-cols-2">
-        {testimonials.slice(0, 4).map((t, i) => (
+        {testimonials.slice(0, 2).map((t, i) => (
           <div class="soft-shell p-8" data-reveal data-reveal-delay={String(i + 1)}>
             <div class="flex items-center gap-4 mb-6">
               <div class="h-12 w-12 rounded-full bg-[#1b1a17] text-white flex items-center justify-center font-bold text-xl">
@@ -245,9 +216,7 @@ const publicationChips = [
   <section class="px-4 py-4 md:px-8" id="books">
     <div class="mx-auto max-w-7xl">
       <div class="mb-10" data-reveal>
-        <span class="eyebrow-label">Published Works</span>
-        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Selected books and frameworks.</h2>
-        <p class="mt-5 max-w-2xl text-base leading-8 text-[color:var(--text-secondary)]">A smaller selection of writing that extends the same operating thesis into audit, risk, and forensic work.</p>
+        <h2 class="text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Books.</h2>
       </div>
       <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {featuredBooks.map((book, i) => (
