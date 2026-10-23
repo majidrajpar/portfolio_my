@@ -1,18 +1,5 @@
 [
   {
-    "id": "doc-040",
-    "filename": "invoice-audit-v1.0.0-windows-x64.zip",
-    "title": "Invoice Audit Engine (Windows Standalone App & Python Engine)",
-    "description": "Air-gapped 100% continuous controls monitoring & invoice document audit engine. Extracts printed invoices and thermal till receipts via local OCR, reconciles 3-way line math, flags tax billed without TRN, and exports an executive 5-tab Excel register. Includes zero-dependency Windows x64 standalone executable.",
-    "category": "Audit Tools",
-    "size": "333 MB",
-    "pages": 1,
-    "date": "2026-10-21",
-    "downloadUrl": "https://github.com/majidrajpar/invoice-audit-engine/releases/tag/v1.0.0",
-    "link": "https://github.com/majidrajpar/invoice-audit-engine",
-    "linkLabel": "View on GitHub"
-  },
-  {
     "id": "doc-038",
     "filename": "Internal_Audit_Report_Evaluation_Matrix_GIAS_2024.xlsx",
     "title": "Internal Audit Report Evaluation Matrix (GIAS 2024)",
@@ -236,7 +223,7 @@
     "id": "doc-021",
     "filename": "IPO_Readiness_Internal_Audit_Checklist.pdf",
     "title": "IPO Readiness Internal Audit Checklist (SOX 404 / ICFR)",
-    "description": "Six-phase checklist for GCC pre-listing governance: independence structure, ICFR scoping, IT General Controls, testing and evidence, external auditor coordination, and GCC-specific regulatory requirements. Derived from zero-material-weakness SOX 404 implementation at a hyper-growth cloud kitchen operator.",
+    "description": "Six-phase checklist for GCC pre-listing governance: independence structure, ICFR scoping, IT General Controls, testing and evidence, external auditor coordination, and GCC-specific regulatory requirements.",
     "category": "Checklists",
     "size": "54 KB",
     "pages": 2,
@@ -256,7 +243,7 @@
     "id": "doc-023",
     "filename": "Vendor_Billing_Fraud_Detection_Checklist.pdf",
     "title": "Vendor Billing Fraud Detection Checklist (F&B / Aggregator)",
-    "description": "Six-section fraud detection checklist for third-party and aggregator billing: contract vs. actuals review, volume reconciliation, settlement timing, three-way matching controls, aggregator platform-specific tests, and data analytics tests. Derived from AED 7.7M fraud recovery at a GCC cloud kitchen operator.",
+    "description": "Six-section fraud detection checklist for third-party and aggregator billing: contract vs. actuals review, volume reconciliation, settlement timing, three-way matching controls, aggregator platform-specific tests, and data analytics tests.",
     "category": "Checklists",
     "size": "52 KB",
     "pages": 2,
