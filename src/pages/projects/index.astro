@@ -1,171 +1,59 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import CaseStudyCard from '../../components/CaseStudyCard.jsx';
-import NetworkCanvas from '../../components/NetworkCanvas';
-import { getCaseStudies, getProfessionalEngagements } from '../../lib/db.js';
+import { getCaseStudies } from '../../lib/db.js';
 
-const strategicCaseStudies = getCaseStudies();
-const professionalEngagements = getProfessionalEngagements().slice(0, 4);
+const cases = getCaseStudies();
 const base = import.meta.env.BASE_URL;
-
-const headlineMetrics = [
-  { value: 'AED 7.7M', label: 'Financial Impact Captured', sublabel: 'Kitopi — 100% population testing during 340% volume surge' },
-  { value: 'SAR 15M', label: 'Hidden Exposure Neutralized', sublabel: '$127M M&A due diligence — undisclosed legal & contract liabilities' },
-  { value: 'SAR 12M', label: 'Procurement Fraud Terminated', sublabel: "McDonald's KSA — whistleblower intake & tender collusion triage" },
-  { value: '100%', label: 'Population Testing Standard', sublabel: 'Continuous controls monitoring replacing 20-invoice sample blindspots' },
-];
+const lead = cases.filter((item) => item.displayOrder <= 4);
+const alsoListed = cases.filter((item) => item.displayOrder >= 5);
 ---
 
 <BaseLayout
-  title="Case Studies & Audited Ledger | Strategic Outcomes — Majid Mumtaz"
-  description="Audited ledger of capital protected, balance-sheet leakage recouped, and high-stakes case studies across GCC and international operations."
+  title="Case studies | Majid Mumtaz"
+  description="Ten records. Each title links to its page."
 >
-  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
-    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-8 md:px-10 md:py-9">
-      <NetworkCanvas client:load nodeCount={35} />
-      <div class="relative z-10 max-w-4xl" data-reveal>
-        <span class="hero-chip mb-8">Audited Ledger &middot; 2004–Present</span>
-        <h1 class="headline-display max-w-4xl text-[clamp(3rem,7vw,6.2rem)] font-black text-white">
-          Strategic
-          <span class="block text-[#f4c98b]">outcomes</span>
-          <span class="block">with operating weight.</span>
-        </h1>
-        <p class="mt-8 max-w-3xl text-base leading-8 text-white/74 md:text-[1.15rem] md:leading-9">
-          Internal audit is not a checklist exercise; it is an EBITDA defense instrument. Below is the audited record of capital protected, balance-sheet leakage recouped, and high-stakes case studies structured around business problems rather than compliance paperwork.
-        </p>
-      </div>
+  <section class="px-4 pt-24 md:px-8 md:pt-28">
+    <div class="mx-auto max-w-7xl" data-reveal>
+      <h1 class="text-[clamp(2.6rem,6vw,4.8rem)] font-black leading-[1.02] text-[#181511]">Case studies.</h1>
+      <p class="mt-5 max-w-3xl text-base leading-8 text-[color:var(--text-secondary)] md:text-[1.15rem] md:leading-9">Ten records. Each title links to its page.</p>
     </div>
   </section>
 
-  <!-- Headline Impact Ledger Strip -->
-  <section class="px-4 py-6 md:px-8">
-    <div class="mx-auto max-w-7xl">
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {headlineMetrics.map((item, i) => (
-          <div class="soft-shell p-6" data-reveal data-reveal-delay={String(i + 1)}>
-            <div class="text-3xl md:text-4xl font-black tracking-tight text-[#a33a21]">{item.value}</div>
-            <div class="mt-2 text-xs font-black uppercase tracking-[0.16em] text-[#181511]">{item.label}</div>
-            <p class="mt-2 text-xs leading-5 text-[color:var(--text-secondary)]">{item.sublabel}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="px-4 py-3 md:px-8">
+  <section class="px-4 py-5 md:px-8">
     <div class="soft-shell mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
       <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
       </svg>
       <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
-        <span class="meta-label text-[#181511]">Engagement Privacy</span>
-        Client names and proprietary identifiers are anonymised. Figures and outcomes reflect real work while protecting confidentiality obligations.
+        <span class="meta-label text-[#181511]">Disclosure</span>
+        Employer names are on the career record. This page uses the industry field and the stored figures.
       </p>
     </div>
   </section>
 
-  <section class="px-4 py-4 md:px-8">
+  <section class="px-4 py-4 pb-12 md:px-8">
     <div class="mx-auto max-w-7xl">
-      <div class="mb-10" data-reveal>
-        <span class="eyebrow-label">Case Studies</span>
-        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Selected mandates.</h2>
-      </div>
-      <div class="space-y-8">
-        {strategicCaseStudies.map((study) => (
-          <CaseStudyCard client:visible study={study} />
+      <div class="space-y-5">
+        {lead.map((study) => (
+          <a href={`${base}projects/${study.slug}/`} class="glass-card block rounded-[30px] p-7 md:p-8">
+            <span class="inline-flex rounded-full bg-[#181512] px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#f4c98b]">{study.industry}</span>
+            <h2 class="mt-4 text-[clamp(1.6rem,3vw,2.4rem)] leading-tight text-[#181511]">{study.title}</h2>
+            <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">{study.impact}</p>
+          </a>
         ))}
       </div>
-    </div>
-  </section>
-
-  <section class="px-4 py-4 pb-8 md:px-8">
-    <div class="soft-shell mx-auto max-w-7xl px-7 py-8 md:px-10 md:py-9">
-      <div class="mb-10 text-center" data-reveal>
-        <span class="eyebrow-label">Additional Engagements</span>
-        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Broader engagement range.</h2>
-        <p class="mx-auto mt-5 max-w-2xl text-base leading-8 text-[color:var(--text-secondary)]">A tighter cross-section of advisory and audit work across GCC and international markets.</p>
-      </div>
-
-      <div class="grid gap-5 md:grid-cols-2">
-        {professionalEngagements.map((engagement, i) => (
-          <div class="glass-card flex flex-col rounded-[30px] p-7" data-reveal data-reveal-delay={String((i % 3) + 1)}>
-            <div class="mb-4">
-              <span class="rounded-full bg-[#a33a21]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.24em] text-[#a33a21]">{engagement.category}</span>
-            </div>
-            <h3 class="text-xl leading-tight text-[#181511]">{engagement.title}</h3>
-            <p class="mt-4 flex-1 text-sm leading-8 text-[color:var(--text-secondary)]">{engagement.desc}</p>
-            <div class="mt-6 border-t border-[color:var(--line-soft)] pt-5">
-              <span class="meta-label text-slate-400">Key Outcome</span>
-              <p class="mt-3 text-sm font-semibold leading-7 text-[#181511]">{engagement.outcome}</p>
-            </div>
-          </div>
+      <div class="mt-5 grid gap-5 md:grid-cols-2">
+        {alsoListed.map((study) => (
+          <a href={`${base}projects/${study.slug}/`} class="glass-card block rounded-[30px] p-7">
+            <span class="inline-flex rounded-full bg-[#181512] px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#f4c98b]">{study.industry}</span>
+            <h2 class="mt-4 text-xl leading-tight text-[#181511]">{study.title}</h2>
+            <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">{study.impact}</p>
+          </a>
         ))}
       </div>
-
-      <div class="mt-10 flex justify-center">
-        <a href={`${base}contact/`} class="btn-primary">Discuss a Mandate</a>
-      </div>
-    </div>
-  </section>
-
-  {/* Open Source Section */}
-  <section class="px-4 py-4 pb-8 md:px-8">
-    <div class="soft-shell mx-auto max-w-7xl px-7 py-8 md:px-10 md:py-9">
-      <div class="mb-10" data-reveal>
-        <span class="eyebrow-label">Open Source</span>
-        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Tools built for the audit community.</h2>
-        <p class="mx-auto mt-5 max-w-2xl text-base leading-8 text-[color:var(--text-secondary)]">Production-grade applications released under MIT license for internal audit, risk, and compliance teams worldwide.</p>
-      </div>
-
-      <div class="grid gap-5 md:grid-cols-2">
-        <div class="glass-card flex flex-col rounded-[30px] p-7" data-reveal data-reveal-delay="1">
-          <div class="mb-4">
-            <span class="rounded-full bg-[#a33a21]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.24em] text-[#a33a21]">Whistleblowing</span>
-          </div>
-          <h3 class="text-xl leading-tight text-[#181511]">Corporate Whistleblower Lite</h3>
-          <p class="mt-4 flex-1 text-sm leading-8 text-[color:var(--text-secondary)]">A lightweight, self-hosted whistleblowing platform. Anonymous reporting, file uploads, role-based dashboards for Internal Audit and CEO, audit trail, and SQLite database — deploys in minutes, not hours.</p>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200 rounded">React 18</span>
-            <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200 rounded">Node.js</span>
-            <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200 rounded">Prisma</span>
-            <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200 rounded">JWT Auth</span>
-          </div>
-          <div class="mt-6 border-t border-[color:var(--line-soft)] pt-5">
-            <span class="meta-label text-slate-400">Impact</span>
-            <p class="mt-3 text-sm font-semibold leading-7 text-[#181511]">Eliminates dependency on SaaS whistleblowing vendors. Complete data sovereignty with zero external API calls.</p>
-          </div>
-          <a href="https://github.com/majidrajpar/zk-whistleblower" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center text-[#a33a21] font-black text-[10px] uppercase tracking-[0.2em] hover:text-[#7c2712] transition-colors">
-            View on GitHub
-            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
-        </div>
-
-        <div class="glass-card flex flex-col rounded-[30px] p-7" data-reveal data-reveal-delay="2">
-          <div class="mb-4">
-            <span class="rounded-full bg-[#a33a21]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.24em] text-[#a33a21]">Continuous Controls Monitoring</span>
-          </div>
-          <h3 class="text-xl leading-tight text-[#181511]">Invoice Audit Engine</h3>
-          <p class="mt-4 flex-1 text-sm leading-8 text-[color:var(--text-secondary)]">Air-gapped 100% continuous controls monitoring and document telemetry for accounts payable and procurement. Runs 100% locally with zero cloud API dependencies: evaluates scan quality, reconciles 3-way line item arithmetic, flags VAT billed without a valid TRN, and generates a 5-tab Excel audit register.</p>
-          <div class="mt-4 flex flex-wrap gap-2">
-            <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200 rounded">Python 3.9+</span>
-            <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200 rounded">RapidOCR</span>
-            <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200 rounded">ONNX Runtime</span>
-            <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200 rounded">OpenCV</span>
-            <span class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200 rounded">Standalone EXE</span>
-          </div>
-          <div class="mt-6 border-t border-[color:var(--line-soft)] pt-5">
-            <span class="meta-label text-slate-400">Impact</span>
-            <p class="mt-3 text-sm font-semibold leading-7 text-[#181511]">Replaces retrospective 25-invoice sample blindspots with 100% population verification on-premise, keeping proprietary pricing data strictly internal.</p>
-          </div>
-          <a href="https://github.com/majidrajpar/invoice-audit-engine" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center text-[#a33a21] font-black text-[10px] uppercase tracking-[0.2em] hover:text-[#7c2712] transition-colors">
-            View on GitHub
-            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-          </a>
-        </div>
+      <div class="mt-10 flex flex-wrap gap-6">
+        <a href={`${base}contact/`} class="text-sm font-semibold text-[#181511] underline decoration-[#c7964c] underline-offset-4 transition-colors hover:text-[#8d6035]">Contact</a>
+        <a href={`${base}tools/`} class="text-sm font-semibold text-[#181511] underline decoration-[#c7964c] underline-offset-4 transition-colors hover:text-[#8d6035]">Tools</a>
       </div>
     </div>
   </section>

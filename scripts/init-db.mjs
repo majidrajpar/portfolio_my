@@ -40,7 +40,13 @@ db.exec(`
     impact TEXT,
     tech_stack TEXT,
     categories TEXT DEFAULT '[]',
-    slug TEXT
+    slug TEXT,
+    display_order INTEGER,
+    tier TEXT,
+    related_tool TEXT,
+    related_build TEXT,
+    related_case TEXT,
+    snippet_ids TEXT
   );
 
   CREATE TABLE IF NOT EXISTS professional_engagements (
@@ -74,6 +80,21 @@ db.exec(`
   );
 `);
 
+// CREATE TABLE IF NOT EXISTS does not add columns on a database file that already exists.
+const caseColumnNames = db.prepare('PRAGMA table_info(case_studies)').all().map((column) => column.name);
+for (const [name, type] of [
+  ['display_order', 'INTEGER'],
+  ['tier', 'TEXT'],
+  ['related_tool', 'TEXT'],
+  ['related_build', 'TEXT'],
+  ['related_case', 'TEXT'],
+  ['snippet_ids', 'TEXT'],
+]) {
+  if (!caseColumnNames.includes(name)) {
+    db.exec(`ALTER TABLE case_studies ADD COLUMN ${name} ${type}`);
+  }
+}
+
 const reset = db.transaction(() => {
   db.prepare('DELETE FROM career_milestones').run();
   db.prepare('DELETE FROM case_studies').run();
@@ -100,82 +121,220 @@ const reset = db.transaction(() => {
   ].forEach((row) => insertMilestone.run(...row));
 
   const insertCaseStudy = db.prepare(`
-    INSERT INTO case_studies (title, subtitle, industry, situation, task, action, result, reflection, impact, tech_stack, categories, slug)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO case_studies (
+      title, subtitle, industry, situation, task, action, result, reflection, impact,
+      tech_stack, categories, slug, display_order, tier, related_tool, related_build, related_case, snippet_ids
+    ) VALUES (
+      @title, @subtitle, @industry, @situation, @task, @action, @result, @reflection, @impact,
+      @tech_stack, @categories, @slug, @display_order, @tier, @related_tool, @related_build, @related_case, @snippet_ids
+    )
   `);
 
-  [
-    [
-      'M&A Capital Protection & High-Stakes Due Diligence',
-      'Protecting $127M in committed capital for a Diversified GCC Conglomerate',
-      'Hospitality & F&B',
-      'A diversified GCC conglomerate was in the final stages of a major acquisition within the hospitality and F&B sector. The deal involved a committed capital of $127M, but the existing due diligence relied on standard seller disclosures and limited sampling.',
-      "As Group Director of Internal Audit, my mandate was to perform a final layer of independent operational and financial due diligence to validate the target's internal control environment and uncover any contingent liabilities.",
-      `I deployed a full-population forensic review across the target's supplier agreements, lease commitments, and litigation filings. Instead of relying on the seller's curated disclosure schedule, we indexed and cross-matched every active contract clause against historical claims and regulatory filings.`,
-      'The audit uncovered SAR 15M in previously undisclosed litigation exposure and significant regulatory non-compliance issues. This discovery provided the executive team with critical leverage to renegotiate deal terms, protecting the entire $127M in capital from post-acquisition shocks.',
-      `Standard M&A due diligence relies on sampled vendor files and seller warranties, which routinely miss off-balance-sheet exposures. Running full-population contract forensics defends acquisition EBITDA before capital is committed.`,
-      'SAR 15M unrecorded exposure identified — $127M capital defended — Acquisition terms restructured prior to close',
-      JSON.stringify(['Forensic Data Analytics', 'Contract Risk Modelling', 'Board Advisory']),
-      JSON.stringify(['Corporate Governance']),
-      'ma-capital-protection',
-    ],
-    [
-      'Audit 4.0: Shifting to 100% Population Testing',
-      'Scaling real-time assurance for a Multi-Jurisdiction Tech Unicorn',
-      'Technology / Cloud Kitchens',
-      'A hyper-growth tech unicorn operating 100+ locations across 8 countries was experiencing a 340% surge in transaction volumes. The existing audit methodology relied on 5-15% manual sampling, leaving significant gaps in fraud detection.',
-      'Replace retrospective 20-sample audits with automated continuous controls monitoring across multi-market food-tech transactions without disrupting kitchen fulfillment velocity.',
-      `Built automated telemetry pipelines reconciling store point-of-sale till receipts directly against third-party delivery aggregator remittance schemas (delivery aggregators). Deployed exception-clustering scripts to isolate ghost orders, commission overcharges, recipe yield variances, and off-cycle payroll edits across 100% of transactions.`,
-      'Identified and captured AED 7.7M in total financial impact (AED 3.2M recovered from aggregator over-deductions and billing leakages; AED 4.5M protected). Delivered a clean first-time external audit opinion with zero material weaknesses and secured board-approved funding for enterprise telemetry.',
-      `A 20-invoice sample cannot detect systemic commission leakages hidden across millions of aggregator order lines. Continuous controls monitoring automates transactional telemetry, freeing audit to focus on the physical operational boundaries—recipe yields, stock waste, and kitchen craft—where sensors and code cannot substitute for human presence.`,
-      'AED 7.7M financial recovery & defense — 100% aggregator remittance reconciliation — Clean SOX 404 / ICFR opinion',
-      JSON.stringify(['Python', 'Pandas', 'Machine Learning', 'SOX 404']),
-      JSON.stringify(['Audit Transformation']),
-      'audit-4-transformation',
-    ],
-    [
-      'IPO Readiness & Governance Architecture',
-      'Delivering a clean roadmap for a High-Growth F&B Technology Platform',
-      'F&B / Financial Markets',
-      'A high-growth technology platform operating across 7 jurisdictions was targeting a major stock market listing. The organization had no formal internal audit function, no documented ICOFR framework, and significant governance gaps.',
-      'As Strategic Advisor, I was mandated to oversee the end-to-end IPO readiness programme, ensuring full compliance with regional corporate governance codes and establishing a board-grade control environment within 18 months.',
-      'I led seven integrated workstreams, including the build-out of a 175+ control ICOFR framework and the design of a group-wide whistleblowing and ethics programme. I established the Audit Committee charters and reporting protocols aligned to listing requirements.',
-      'Delivered a clean, first-time external audit opinion on ICOFR. Successfully aligned board and committee structures with regional market regulations across all jurisdictions, providing the governance foundation required for the listing prospectus.',
-      'Pre-IPO governance collapses when treated as retrospective compliance theater. Designing deterministic control gates across order-to-cash, inventory accounting, and month-end financial close produces clean audit opinions while preserving operating momentum.',
-      'Zero material weaknesses on initial ICFR audit — 175+ controls codified — Board and Audit Committee governance operationalized for prospectus',
-      JSON.stringify(['ICOFR', 'Corporate Governance', 'SCA/DFM Regulations']),
-      JSON.stringify(['Corporate Governance']),
-      'ipo-governance-readiness',
-    ],
-    [
-      'Data Analytics & Continuous Monitoring Training',
-      'Transitioning QSR audit fieldwork from 20-invoice samples to automated population analytics',
-      'F&B / QSR',
-      'A leading Quick Service Restaurant (QSR) player in KSA relied on manual sampling for audits, limiting coverage and leading to high false positives. The traditional, compliance-centric audit team lacked the technical capability to automate testing.',
-      'Equip frontline internal auditors to write and execute automated data tests against raw ERP ledgers and point-of-sale datasets, eliminating reliance on manual spreadsheet sampling.',
-      'Trained the audit team on direct ERP query extraction (Oracle/SAP), scripting continuous controls monitoring in Python, and building deterministic anomaly models to reconcile point-of-sale till receipts against store inventory consumption and vendor disbursements.',
-      'The team built internal automated tests across vendor disbursements and store recipe yields, eliminating manual 25-sample vouchers, cutting fieldwork testing cycles by 60%, and surfacing recurrent inventory and billing variances directly to the Audit Committee.',
-      'Auditors who rely on manual samples are blind to systemic operational leakage. Training teams to interrogate raw transaction populations bridges the gap between store-level till receipts and board-level financial integrity.',
-      '60% reduction in sample fieldwork testing cycle — Automated POS-to-inventory reconciliation deployed — 100% population coverage across QSR store network',
-      JSON.stringify(['Python', 'Pandas', 'Machine Learning', 'Data Analytics']),
-      JSON.stringify(['Audit Transformation']),
-      'data-analytics-audit-training',
-    ],
-  ].forEach((row) => insertCaseStudy.run(...row));
+  const caseRows = [
+    {
+      title: 'M&A Capital Protection & High-Stakes Due Diligence',
+      subtitle: 'Protecting $127M in committed capital for a Diversified GCC Conglomerate',
+      industry: 'Hospitality & F&B',
+      situation: 'A diversified GCC conglomerate was in the final stages of a major acquisition within the hospitality and F&B sector. The deal involved a committed capital of $127M, but the existing due diligence relied on standard seller disclosures and limited sampling.',
+      task: `As Group Director of Internal Audit, my mandate was to perform a final layer of independent operational and financial due diligence to validate the target's internal control environment and uncover any contingent liabilities.`,
+      action: `I deployed a full-population forensic review across the target's supplier agreements, lease commitments, and litigation filings. Instead of relying on the seller's curated disclosure schedule, we indexed and cross-matched every active contract clause against historical claims and regulatory filings.`,
+      result: 'The audit uncovered SAR 15M in previously undisclosed litigation exposure and significant regulatory non-compliance issues. This discovery provided the executive team with critical leverage to renegotiate deal terms, protecting the entire $127M in capital from post-acquisition shocks.',
+      reflection: 'Standard M&A due diligence relies on sampled vendor files and seller warranties, which routinely miss off-balance-sheet exposures. Running full-population contract forensics defends acquisition EBITDA before capital is committed.',
+      impact: 'SAR 15M unrecorded exposure identified — $127M capital defended — Acquisition terms restructured prior to close',
+      tech_stack: '["Forensic Data Analytics","Contract Risk Modelling","Board Advisory"]',
+      categories: '["Corporate Governance"]',
+      slug: 'ma-capital-protection',
+      display_order: 1,
+      tier: 'primary',
+      related_tool: null,
+      related_build: null,
+      related_case: null,
+      snippet_ids: null,
+    },
+    {
+      title: 'Audit 4.0: Shifting to 100% Population Testing',
+      subtitle: 'Scaling real-time assurance for a Multi-Jurisdiction Tech Unicorn',
+      industry: 'Technology / Cloud Kitchens',
+      situation: 'A hyper-growth tech unicorn operating 100+ locations across 8 countries was experiencing a 340% surge in transaction volumes. The existing audit methodology relied on 5-15% manual sampling, leaving significant gaps in fraud detection.',
+      task: 'Replace retrospective 20-sample audits with automated continuous controls monitoring across multi-market food-tech transactions without disrupting kitchen fulfillment velocity.',
+      action: 'Built automated telemetry pipelines reconciling store point-of-sale till receipts directly against third-party delivery aggregator remittance schemas (delivery aggregators). Deployed exception-clustering scripts to isolate ghost orders, commission overcharges, recipe yield variances, and off-cycle payroll edits across 100% of transactions.',
+      result: 'Identified and captured AED 7.7M in total financial impact (AED 3.2M recovered from aggregator over-deductions and billing leakages; AED 4.5M protected). Delivered a clean first-time external audit opinion with zero material weaknesses and secured board-approved funding for enterprise telemetry.',
+      reflection: 'A 20-invoice sample cannot detect systemic commission leakages hidden across millions of aggregator order lines. Continuous controls monitoring automates transactional telemetry, freeing audit to focus on the physical operational boundaries—recipe yields, stock waste, and kitchen craft—where sensors and code cannot substitute for human presence.',
+      impact: 'AED 7.7M financial recovery & defense — 100% aggregator remittance reconciliation — Clean SOX 404 / ICFR opinion',
+      tech_stack: '["Python","Pandas","Machine Learning","SOX 404"]',
+      categories: '["Audit Transformation"]',
+      slug: 'audit-4-transformation',
+      display_order: 2,
+      tier: 'primary',
+      related_tool: null,
+      related_build: null,
+      related_case: null,
+      snippet_ids: null,
+    },
+    {
+      title: 'Whistleblowing Framework (QSR Leader)',
+      subtitle: 'Designed email-based reporting and investigation protocols from scratch.',
+      industry: 'QSR',
+      situation: null,
+      task: null,
+      action: null,
+      result: null,
+      reflection: null,
+      impact: 'Uncovered SAR 12M procurement tender collusion within months of launch.',
+      tech_stack: '[]',
+      categories: '["Corporate Governance"]',
+      slug: 'whistleblowing-framework-qsr-leader',
+      display_order: 3,
+      tier: 'primary',
+      related_tool: null,
+      related_build: 'zk-whistleblower',
+      related_case: null,
+      snippet_ids: null,
+    },
+    {
+      title: 'KSA Real Estate Forensic Audit',
+      subtitle: 'Monitoring SAR 500M+ Capex/OpEx across residential and commercial portfolios.',
+      industry: 'KSA real estate',
+      situation: null,
+      task: null,
+      action: null,
+      result: null,
+      reflection: null,
+      impact: 'Recovered SAR 3.2M annually via automated risk engine.',
+      tech_stack: '[]',
+      categories: '["Fraud Forensics"]',
+      slug: 'ksa-real-estate-forensic-audit',
+      display_order: 4,
+      tier: 'primary',
+      related_tool: null,
+      related_build: null,
+      related_case: null,
+      snippet_ids: null,
+    },
+    {
+      title: 'IPO Readiness & Governance Architecture',
+      subtitle: 'Delivering a clean roadmap for a High-Growth F&B Technology Platform',
+      industry: 'F&B / Financial Markets',
+      situation: 'A high-growth technology platform operating across 7 jurisdictions was targeting a major stock market listing. The organization had no formal internal audit function, no documented ICOFR framework, and significant governance gaps.',
+      task: 'As Strategic Advisor, I was mandated to oversee the end-to-end IPO readiness programme, ensuring full compliance with regional corporate governance codes and establishing a board-grade control environment within 18 months.',
+      action: 'I led seven integrated workstreams, including the build-out of a 175+ control ICOFR framework and the design of a group-wide whistleblowing and ethics programme. I established the Audit Committee charters and reporting protocols aligned to listing requirements.',
+      result: 'Delivered a clean, first-time external audit opinion on ICOFR. Successfully aligned board and committee structures with regional market regulations across all jurisdictions, providing the governance foundation required for the listing prospectus.',
+      reflection: 'Pre-IPO governance collapses when treated as retrospective compliance theater. Designing deterministic control gates across order-to-cash, inventory accounting, and month-end financial close produces clean audit opinions while preserving operating momentum.',
+      impact: 'Zero material weaknesses on initial ICFR audit — 175+ controls codified — Board and Audit Committee governance operationalized for prospectus',
+      tech_stack: '["ICOFR","Corporate Governance","SCA/DFM Regulations"]',
+      categories: '["Corporate Governance"]',
+      slug: 'ipo-governance-readiness',
+      display_order: 5,
+      tier: 'secondary',
+      related_tool: 'nomu-governance-readiness',
+      related_build: null,
+      related_case: null,
+      snippet_ids: null,
+    },
+    {
+      title: 'Data Analytics & Continuous Monitoring Training',
+      subtitle: 'Transitioning QSR audit fieldwork from 20-invoice samples to automated population analytics',
+      industry: 'F&B / QSR',
+      situation: 'A leading Quick Service Restaurant (QSR) player in KSA relied on manual sampling for audits, limiting coverage and leading to high false positives. The traditional, compliance-centric audit team lacked the technical capability to automate testing.',
+      task: 'Equip frontline internal auditors to write and execute automated data tests against raw ERP ledgers and point-of-sale datasets, eliminating reliance on manual spreadsheet sampling.',
+      action: 'Trained the audit team on direct ERP query extraction (Oracle/SAP), scripting continuous controls monitoring in Python, and building deterministic anomaly models to reconcile point-of-sale till receipts against store inventory consumption and vendor disbursements.',
+      result: 'The team built internal automated tests across vendor disbursements and store recipe yields, eliminating manual 25-sample vouchers, cutting fieldwork testing cycles by 60%, and surfacing recurrent inventory and billing variances directly to the Audit Committee.',
+      reflection: 'Auditors who rely on manual samples are blind to systemic operational leakage. Training teams to interrogate raw transaction populations bridges the gap between store-level till receipts and board-level financial integrity.',
+      impact: '60% reduction in sample fieldwork testing cycle — Automated POS-to-inventory reconciliation deployed — 100% population coverage across QSR store network',
+      tech_stack: '["Python","Pandas","Machine Learning","Data Analytics"]',
+      categories: '["Audit Transformation"]',
+      slug: 'data-analytics-audit-training',
+      display_order: 6,
+      tier: 'capability',
+      related_tool: 'audit-sample-size-calculator',
+      related_build: null,
+      related_case: null,
+      snippet_ids: null,
+    },
+    {
+      title: 'Tadawul Nomu Listing Readiness',
+      subtitle: 'Coordinated ICOFR and regulatory submissions for KSA healthcare subsidiary.',
+      industry: 'KSA healthcare subsidiary',
+      situation: null,
+      task: null,
+      action: null,
+      result: null,
+      reflection: null,
+      impact: 'Successful governance structuring for parallel market listing.',
+      tech_stack: '[]',
+      categories: '["Corporate Governance"]',
+      slug: 'tadawul-nomu-listing-readiness',
+      display_order: 7,
+      tier: 'secondary',
+      related_tool: 'nomu-governance-readiness',
+      related_build: null,
+      related_case: null,
+      snippet_ids: null,
+    },
+    {
+      title: 'Enterprise Risk Management (8 Countries)',
+      subtitle: 'Designed and implemented COSO ERM 2017 / ISO 31000 framework.',
+      industry: '8 countries',
+      situation: null,
+      task: null,
+      action: null,
+      result: null,
+      reflection: null,
+      impact: '50+ risks mapped; 28 KRIs live across 8 jurisdictions.',
+      tech_stack: '[]',
+      categories: '["Enterprise Risk"]',
+      slug: 'enterprise-risk-management-8-countries',
+      display_order: 8,
+      tier: 'secondary',
+      related_tool: 'risk-matrix',
+      related_build: null,
+      related_case: null,
+      snippet_ids: null,
+    },
+    {
+      title: 'Executive Financial Dashboards',
+      subtitle: 'Real-time board-level visibility into capital leaks and variance analysis.',
+      industry: 'Strategic Dashboards',
+      situation: null,
+      task: null,
+      action: null,
+      result: null,
+      reflection: null,
+      impact: 'Automated monthly board variance reporting across multi-entity P&L and balance-sheet ledgers.',
+      tech_stack: '[]',
+      categories: '["Strategic Dashboards"]',
+      slug: 'executive-financial-dashboards',
+      display_order: 9,
+      tier: 'secondary',
+      related_tool: null,
+      related_build: null,
+      related_case: null,
+      snippet_ids: null,
+    },
+    {
+      title: 'Ethics & Compliance Programme (Multi-Country)',
+      subtitle: 'Engineered confidential intake channels, investigative playbooks, and Audit Committee reporting protocols.',
+      industry: 'Multi-country',
+      situation: null,
+      task: null,
+      action: null,
+      result: null,
+      reflection: null,
+      impact: 'Full ethics governance deployed across 7 operating countries with case tracking integrated.',
+      tech_stack: '[]',
+      categories: '["Corporate Governance"]',
+      slug: 'ethics-compliance-programme-multi-country',
+      display_order: 10,
+      tier: 'secondary',
+      related_tool: null,
+      related_build: null,
+      related_case: 'whistleblowing-framework-qsr-leader',
+      snippet_ids: null,
+    },
+    // __CASE_ROWS_END__
+  ];
 
-  const insertEngagement = db.prepare(`
-    INSERT INTO professional_engagements (title, category, desc, outcome, display_order, categories, slug)
-    VALUES (?, ?, ?, ?, ?, ?, ?)
-  `);
-
-  [
-    ['KSA Real Estate Forensic Audit', 'Fraud Forensics', 'Monitoring SAR 500M+ Capex/OpEx across residential and commercial portfolios.', 'Recovered SAR 3.2M annually via automated risk engine.', 1, JSON.stringify(['Fraud Forensics']), 'ksa-real-estate-forensic-audit'],
-    ['Executive Financial Dashboards', 'Strategic Dashboards', 'Real-time board-level visibility into capital leaks and variance analysis.', 'Automated monthly board variance reporting across multi-entity P&L and balance-sheet ledgers.', 2, JSON.stringify(['Strategic Dashboards']), 'executive-financial-dashboards'],
-    ['Tadawul Nomu Listing Readiness', 'Corporate Governance', 'Coordinated ICOFR and regulatory submissions for KSA healthcare subsidiary.', 'Successful governance structuring for parallel market listing.', 3, JSON.stringify(['Corporate Governance']), 'tadawul-nomu-listing-readiness'],
-    ['Enterprise Risk Management (8 Countries)', 'Enterprise Risk', 'Designed and implemented COSO ERM 2017 / ISO 31000 framework.', '50+ risks mapped; 28 KRIs live across 8 jurisdictions.', 4, JSON.stringify(['Enterprise Risk']), 'enterprise-risk-management-8-countries'],
-    ['Whistleblowing Framework (QSR Leader)', 'Corporate Governance', 'Designed email-based reporting and investigation protocols from scratch.', 'Uncovered SAR 12M procurement tender collusion within months of launch.', 5, JSON.stringify(['Corporate Governance']), 'whistleblowing-framework-qsr-leader'],
-    ['Ethics & Compliance Programme (Multi-Country)', 'Corporate Governance', 'Engineered confidential intake channels, investigative playbooks, and Audit Committee reporting protocols.', 'Full ethics governance deployed across 7 operating countries with case tracking integrated.', 6, JSON.stringify(['Corporate Governance']), 'ethics-compliance-programme-multi-country'],
-  ].forEach((row) => insertEngagement.run(...row));
+  for (const row of caseRows) insertCaseStudy.run(row);
 
   const insertTier = db.prepare(`
     INSERT INTO advisory_tiers (tier_id, name, tagline, description, deliverables, ideal_for, icon, display_order)
