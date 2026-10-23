@@ -5,7 +5,8 @@ const Navbar = ({ initialPath = '' }) => {
   const [scrolled, setScrolled] = useState(false);
   const [currentPath, setCurrentPath] = useState(initialPath);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  const baseUrl = import.meta.env.BASE_URL;
+  const base = baseUrl.replace(/\/$/, '');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,15 +42,13 @@ const Navbar = ({ initialPath = '' }) => {
   const showTransparent = isHome && !scrolled && !mobileOpen;
 
   const navItems = [
-    { label: 'Home', href: `${base}/` },
-    { label: 'Case Studies', href: `${base}/projects/` },
-    { label: 'Tools', href: `${base}/tools/` },
-    { label: 'Advisory', href: `${base}/advisory/` },
-    { label: 'About', href: `${base}/about/` },
-    { label: 'Contact', href: `${base}/contact/` },
+    { label: 'Case Studies', href: `${baseUrl}projects/` },
+    { label: 'Tools', href: `${baseUrl}tools/` },
+    { label: 'About', href: `${baseUrl}about/` },
+    { label: 'Advisory', href: `${baseUrl}advisory/` },
   ];
-
-  const newsletterUrl = 'https://www.linkedin.com/newsletters/the-audit-signal-7339153291630510080/';
+  const contactHref = `${baseUrl}contact/`;
+  const isCurrent = (href: string) => currentPath === href || currentPath === href.replace(/\/$/, '');
 
   return (
     <motion.header
@@ -63,7 +62,7 @@ const Navbar = ({ initialPath = '' }) => {
       `}>
         {/* Left: Brand */}
         <a
-          href={`${base}/`}
+          href={baseUrl}
           className={`text-xs font-black uppercase tracking-[0.32em] transition-colors duration-300 ${showTransparent ? 'text-white' : 'text-[#181511]'}`}
         >
           Majid Mumtaz
@@ -72,7 +71,7 @@ const Navbar = ({ initialPath = '' }) => {
         {/* Center: Nav items (desktop) */}
         <div className="hidden md:flex items-center gap-7">
           {navItems.map((item) => {
-            const isActive = currentPath === item.href || currentPath === item.href.replace(/\/$/, '');
+            const isActive = isCurrent(item.href);
             return (
               <a
                 key={item.label}
@@ -97,46 +96,13 @@ const Navbar = ({ initialPath = '' }) => {
 
         {/* Right: CTAs (desktop) + Hamburger (mobile) */}
         <div className="flex items-center gap-3">
-          <div className="hidden lg:flex items-center gap-3 group relative">
-            <button
-              className={`text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 rounded-full border transition-all
-                ${showTransparent
-                  ? 'border-white/60 text-white hover:bg-white/10'
-                  : 'border-[#1d3557]/18 text-[#1d3557] hover:bg-[#1d3557]/5'}`}
-            >
-              Resources ↓
-            </button>
-            <div className="absolute top-full right-0 mt-2 flex flex-col gap-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all bg-white rounded-2xl shadow-[0_18px_50px_rgba(71,38,24,0.08)] border border-[rgba(29,53,87,0.10)] p-3 w-56">
-              <a
-                href={`${base}/resources/`}
-                className="text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 text-[#1d3557] hover:bg-gray-50 rounded-lg transition-colors"
-              >
-                Resource library
-              </a>
-              <a
-                href={newsletterUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 text-[#1d3557] hover:bg-gray-50 rounded-lg transition-colors"
-              >
-                The Audit Signal ↗
-              </a>
-              <a
-                href={`${base}/downloads/Majid_Mumtaz_Capabilities_Deck.pdf`}
-                download
-                className="text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 text-[#1d3557] hover:bg-gray-50 rounded-lg transition-colors"
-              >
-                Pitch Deck ↓
-              </a>
-              <a
-                href={`${base}/cv/Majid_Mumtaz_Internal_Audit_GRC.pdf`}
-                download
-                className="text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 bg-[#a33a21] text-white hover:bg-[#7c2712] rounded-lg transition-colors"
-              >
-                Executive CV ↓
-              </a>
-            </div>
-          </div>
+          <a
+            href={contactHref}
+            aria-current={isCurrent(contactHref) ? 'page' : undefined}
+            className="hidden md:inline-flex text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 rounded-full bg-[#a33a21] text-white hover:bg-[#7c2712] transition-colors"
+          >
+            Contact
+          </a>
 
           {/* Hamburger button (mobile only) */}
           <button
@@ -167,7 +133,7 @@ const Navbar = ({ initialPath = '' }) => {
           >
             <div className="px-6 py-4 space-y-1">
               {navItems.map((item) => {
-                const isActive = currentPath === item.href || currentPath === item.href.replace(/\/$/, '');
+                const isActive = isCurrent(item.href);
                 return (
                   <a
                     key={item.label}
@@ -180,36 +146,13 @@ const Navbar = ({ initialPath = '' }) => {
                   </a>
                 );
               })}
-              <div className="pt-4 flex flex-col gap-3">
-                <a
-                  href={`${base}/resources/`}
-                  className="text-center text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2.5 rounded-full border border-[#1d3557]/18 text-[#1d3557]"
-                >
-                  Resource library
-                </a>
-                <a
-                  href={`${base}/downloads/Majid_Mumtaz_Capabilities_Deck.pdf`}
-                  download
-                  className="text-center text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2.5 rounded-full border border-[#1d3557]/18 text-[#1d3557]"
-                >
-                  Download Pitch Deck ↓
-                </a>
-                <a
-                  href={`${base}/cv/Majid_Mumtaz_Internal_Audit_GRC.pdf`}
-                  download
-                  className="text-center text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2.5 rounded-full bg-[#a33a21] text-white"
-                >
-                  Download Executive CV ↓
-                </a>
-                <a
-                  href={newsletterUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-center text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2.5 rounded-full border border-[#1d3557]/18 text-[#1d3557]"
-                >
-                  The Audit Signal ↗
-                </a>
-              </div>
+              <a
+                href={contactHref}
+                aria-current={isCurrent(contactHref) ? 'page' : undefined}
+                className="mt-4 block text-center text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2.5 rounded-full bg-[#a33a21] text-white"
+              >
+                Contact
+              </a>
             </div>
           </motion.div>
         )}
