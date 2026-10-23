@@ -174,7 +174,36 @@ const baseUrl = import.meta.env.BASE_URL;
 
   <!-- IntersectionObserver for data-reveal animations -->
   <!-- astro:page-load fires on initial load AND after every View Transitions navigation -->
-  <script is:inline>
+  <script is:inline data-base={import.meta.env.BASE_URL}>
+    window.__recallBase = (document.currentScript && document.currentScript.getAttribute('data-base')) || '/';
+    if (!window.__recallViewsBound) {
+      window.__recallViewsBound = true;
+      document.addEventListener('astro:page-load', function() {
+        var base = window.__recallBase || '/';
+        var path = window.location.pathname || '';
+        if (base !== '/') {
+          if (base.charAt(0) !== '/') base = '/' + base;
+          if (base.charAt(base.length - 1) !== '/') base += '/';
+          if (path.indexOf(base) === 0) path = path.slice(base.length);
+        }
+        if (path.charAt(0) === '/') path = path.slice(1);
+        var name = '';
+        var slug = '';
+        var caseMatch = /^projects\/([^/]+)\/$/.exec(path);
+        if (caseMatch && caseMatch[1] && caseMatch[1] !== 'category') {
+          name = 'case_view';
+          slug = caseMatch[1];
+        } else {
+          var toolMatch = /^tools\/([^/]+)\/$/.exec(path);
+          if (toolMatch && toolMatch[1]) {
+            name = 'tool_view';
+            slug = toolMatch[1];
+          }
+        }
+        if (!name || typeof gtag !== 'function') return;
+        gtag('event', name, { slug: slug });
+      });
+    }
     document.addEventListener('astro:page-load', function() {
       const io = new IntersectionObserver(
         function(entries) {
