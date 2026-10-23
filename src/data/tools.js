@@ -1,6 +1,8 @@
 export const tools = [
   {
     id: 'severity-classifier',
+    tier: 'catalog',
+    domain: 'Finding severity',
     title: 'Audit Finding Severity Classifier',
     description: 'ML-powered tool that classifies audit findings as Low, Medium, High, or Critical based on financial exposure, likelihood, detection difficulty, and scope. Generates report-ready finding text.',
     category: 'Audit Intelligence',
@@ -11,6 +13,9 @@ export const tools = [
   },
   {
     id: 'fraud-risk-calculator',
+    tier: 'featured',
+    domain: 'Fraud Triangle',
+    featuredOrder: 3,
     title: 'Fraud Risk Calculator',
     description: 'Assess organisational fraud vulnerability using the Fraud Triangle framework — Opportunity, Pressure, Rationalization, and Control Environment — producing an ML-scored risk rating with targeted recommendations.',
     category: 'Fraud & Forensics',
@@ -21,6 +26,8 @@ export const tools = [
   },
   {
     id: 'forensic-validator',
+    tier: 'catalog',
+    domain: 'Benford’s Law',
     title: 'Forensic Pattern Validator',
     description: 'Benford\'s Law distribution analysis to detect journal entry manipulation, vendor invoice tampering, and anomalous disbursement amounts. Executed in-browser via Rust/WASM.',
     category: 'Fraud & Forensics',
@@ -32,6 +39,9 @@ export const tools = [
   },
   {
     id: 'governance-maturity',
+    tier: 'featured',
+    domain: 'Six governance domains',
+    featuredOrder: 2,
     title: 'Governance Maturity Assessment',
     description: 'Benchmark corporate governance across six core domains — Board & Leadership, Risk Management, Internal Controls, Ethics, Compliance, and Reporting — generating an ML-computed maturity profile and remediation roadmap.',
     category: 'Governance',
@@ -42,6 +52,9 @@ export const tools = [
   },
   {
     id: 'internal-control-evaluator',
+    tier: 'featured',
+    domain: 'COSO 2013',
+    featuredOrder: 1,
     title: 'Internal Control Evaluator',
     description: 'Evaluate your control environment across all five COSO 2013 components. The ML model identifies deficiency types — from control gaps to material weaknesses — and generates a prioritised action plan.',
     category: 'Internal Controls',
@@ -52,6 +65,8 @@ export const tools = [
   },
   {
     id: 'risk-matrix',
+    tier: 'catalog',
+    domain: '5×5 likelihood and impact',
     title: 'Risk Assessment Matrix Builder',
     description: 'Plot and rank enterprise exposures on a calibrated 5×5 Likelihood × Impact grid. Generates export-ready risk matrices structured for audit planning and executive risk oversight.',
     category: 'Enterprise Risk',
@@ -62,6 +77,8 @@ export const tools = [
   },
   {
     id: 'compliance-dashboard',
+    tier: 'shelf',
+    domain: 'SOX, PDPL, ISO 27001, UAE SCA, COSO ERM',
     title: 'Compliance Dashboard',
     description: 'Monitor control adherence across regulatory frameworks including SOX, PDPL, ISO 27001, UAE SCA, and COSO ERM. Weighted scoring models compliance posture for executive review.',
     category: 'Compliance',
@@ -72,6 +89,8 @@ export const tools = [
   },
   {
     id: 'chart-creator',
+    tier: 'shelf',
+    domain: 'Board-pack charts',
     title: 'Chart & Infographic Creator',
     description: 'Construct calibrated charts for audit committee packs and governance reporting — bar, line, pie, and radar — with live preview and structured data export.',
     category: 'Reporting',
@@ -82,6 +101,8 @@ export const tools = [
   },
   {
     id: 'document-comparator',
+    tier: 'shelf',
+    domain: 'Policy and report diff',
     title: 'Document Version Comparator',
     description: 'Compare policy, contract, or audit report revisions side-by-side. Automatically flags control weakening, threshold shifts, scope exclusions, and responsibility reassignments across PDF, Word, Excel, and plain text.',
     category: 'Audit Intelligence',
@@ -92,6 +113,8 @@ export const tools = [
   },
   {
     id: 'audit-roi-estimator',
+    tier: 'catalog',
+    domain: 'Illustrative leakage model',
     title: 'Audit ROI & Leakage Estimator',
     description: 'Evaluate potential operational leakages—from duplicate billing to POS anomalies—using global GRC baselines, modeling the profit-recovery impact of shifting to a 100% population scan.',
     category: 'Audit Intelligence',
@@ -102,6 +125,8 @@ export const tools = [
   },
   {
     id: 'iia-standards-readiness',
+    tier: 'catalog',
+    domain: 'IIA Standards 2024',
     title: 'IIA Global Standards 2024 Readiness Diagnostic',
     description: 'Evaluate internal audit department maturity against the 2024 Global IIA Standards. Generates domain compliance scores and a board-grade gap-remediation roadmap.',
     category: 'Governance',
@@ -112,6 +137,8 @@ export const tools = [
   },
   {
     id: 'agentic-audit-simulator',
+    tier: 'shelf',
+    domain: 'Multi-agent audit trace',
     title: 'Agentic Audit Architecture Walkthrough',
     description: 'Interactive execution trace demonstrating multi-agent triage (Risk Assessor, Forensic Analyst, CAE) derived from our published LangGraph benchmark methodology.',
     category: 'Audit Intelligence',
@@ -122,6 +149,8 @@ export const tools = [
   },
   {
     id: 'deficiency-exposure-calculator',
+    tier: 'shelf',
+    domain: 'Control deficiency exposure',
     title: 'Control Deficiency Exposure Calculator',
     description: 'Model potential dollar exposure from operational and financial control gaps using empirical failure rates and delayed remediation factors.',
     category: 'Internal Controls',
@@ -132,6 +161,8 @@ export const tools = [
   },
   {
     id: 'whistleblower-triage',
+    tier: 'shelf',
+    domain: 'Intake scoring matrix',
     title: 'Whistleblower Triage Matrix',
     description: 'Interactive matrix scoring and department-level intake triage for anonymous corporate ethics and fraud disclosures.',
     category: 'Fraud & Forensics',
@@ -142,6 +173,8 @@ export const tools = [
   },
   {
     id: 'nomu-governance-readiness',
+    tier: 'catalog',
+    domain: 'CMA and Tadawul Nomu',
     title: 'Tadawul Nomu Pre-IPO Governance Readiness Diagnostic (2026 Edition)',
     description: 'Benchmark private enterprises against the active 2026 Saudi Capital Market Authority (CMA) Corporate Governance Regulations and the new Companies Law. Generates an instant Nomu listing readiness rating and gap remediation roadmap.',
     category: 'Governance',
@@ -152,6 +185,8 @@ export const tools = [
   },
   {
     id: 'game-theory-audit-simulator',
+    tier: 'shelf',
+    domain: 'Nash equilibrium, audit intensity',
     title: 'Game Theory Audit & Deterrence Simulator',
     description: 'Solve for Pure and Mixed Nash Equilibria in corporate control evasion vs continuous monitoring. Mathematical payoff bimatrix modeling frontline evasion under varying audit intensities.',
     category: 'Audit Intelligence',
@@ -162,6 +197,9 @@ export const tools = [
   },
   {
     id: 'audit-sample-size-calculator',
+    tier: 'featured',
+    domain: 'AICPA attribute sampling',
+    featuredOrder: 4,
     title: 'Audit Sample Size & Precision Sizer',
     description: 'AICPA attribute sampling engine with Finite Population Correction (FPC). Compute statistically defensible sample sizes and diagnose sampling risk vs 100% continuous controls monitoring.',
     category: 'Internal Controls',
