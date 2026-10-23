@@ -1,18 +1,32 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NetworkCanvas from '../../components/NetworkCanvas';
-import { getCaseStudies, getProfessionalEngagements, categorySlug } from '../../lib/db.js';
+import { software } from '../../data/software.js';
+import { getCaseStudies, categorySlug } from '../../lib/db.js';
 const base = import.meta.env.BASE_URL;
 
+const relatedLabels = {
+  'whistleblowing-framework-qsr-leader': {
+    build: 'ZK Whistleblower repository.',
+  },
+  'ipo-governance-readiness': {
+    tool: 'Nomu governance readiness diagnostic.',
+  },
+  'data-analytics-audit-training': {
+    tool: 'Audit sample size calculator.',
+  },
+  'tadawul-nomu-listing-readiness': {
+    tool: 'Nomu governance readiness diagnostic.',
+  },
+  'enterprise-risk-management-8-countries': {
+    tool: 'Risk assessment matrix.',
+  },
+  'ethics-compliance-programme-multi-country': {
+    case: 'Whistleblowing framework (QSR leader). Different case.',
+  },
+};
+
 export function getStaticPaths() {
-  const engagementIndustry = {
-    'whistleblowing-framework-qsr-leader': 'QSR',
-    'ksa-real-estate-forensic-audit': 'KSA real estate',
-    'executive-financial-dashboards': 'Strategic Dashboards',
-    'tadawul-nomu-listing-readiness': 'KSA healthcare subsidiary',
-    'enterprise-risk-management-8-countries': '8 countries',
-    'ethics-compliance-programme-multi-country': 'Multi-country',
-  };
   const caseStudies = getCaseStudies().map(s => ({
     id: s.slug,
     title: s.title,
@@ -22,20 +36,13 @@ export function getStaticPaths() {
     categories: s.categories,
     techStack: s.techStack,
     starr: s.starr,
+    relatedTool: s.relatedTool,
+    relatedBuild: s.relatedBuild,
+    relatedCase: s.relatedCase,
+    snippetIds: s.snippetIds,
   }));
 
-  const engagements = getProfessionalEngagements().map(e => ({
-    id: e.slug,
-    title: e.title,
-    description: e.desc,
-    impact: e.outcome,
-    industry: engagementIndustry[e.slug],
-    categories: e.categories,
-    techStack: [],
-    starr: null,
-  }));
-
-  return [...caseStudies, ...engagements].map((p) => ({
+  return caseStudies.map((p) => ({
     params: { id: p.id },
     props: { project: p },
   }));
@@ -44,6 +51,18 @@ export function getStaticPaths() {
 const { project } = Astro.props as { project: any };
 const catSlug = project.categories?.[0] ? categorySlug(project.categories[0]) : 'corporate-governance';
 const hasStarr = project.starr && project.starr.situation;
+const buildRecord = software.find((item) => item.id === project.relatedBuild);
+const relatedLines = [
+  project.relatedTool
+    ? { href: `${base}tools/${project.relatedTool}/`, label: relatedLabels[project.id]?.tool }
+    : null,
+  project.relatedBuild && buildRecord
+    ? { href: buildRecord.githubUrl, label: relatedLabels[project.id]?.build, external: true }
+    : null,
+  project.relatedCase
+    ? { href: `${base}projects/${project.relatedCase}/`, label: relatedLabels[project.id]?.case }
+    : null,
+].filter((line) => line && line.href && line.label);
 ---
 
 <BaseLayout
@@ -163,6 +182,25 @@ const hasStarr = project.starr && project.starr.situation;
           <div class="soft-shell px-6 py-8 md:px-10 md:py-12" data-reveal>
             <span class="eyebrow-label">Record type</span>
             <p class="mt-4 text-[15px] leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">Capability. The stored figure is the 60% fieldwork-cycle cut.</p>
+          </div>
+        )}
+
+        {relatedLines.length > 0 && (
+          <div class="soft-shell px-6 py-8 md:px-10 md:py-12" data-reveal>
+            <div class="space-y-4">
+              {relatedLines.map((line) => (
+                <p class="text-[15px] leading-7 md:text-base md:leading-8">
+                  <a
+                    href={line.href}
+                    class="font-semibold text-[#181511] underline decoration-[#c7964c] underline-offset-4 transition-colors hover:text-[#8d6035]"
+                    target={line.external ? '_blank' : undefined}
+                    rel={line.external ? 'noopener noreferrer' : undefined}
+                  >
+                    {line.label}
+                  </a>
+                </p>
+              ))}
+            </div>
           </div>
         )}
       </div>

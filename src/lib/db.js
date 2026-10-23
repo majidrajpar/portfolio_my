@@ -14,11 +14,18 @@ export function getCareerMilestones() {
 }
 
 export function getCaseStudies() {
-  return db.prepare('SELECT * FROM case_studies').all().map(row => ({
+  return db.prepare('SELECT * FROM case_studies ORDER BY display_order ASC').all().map(row => ({
     ...row,
-    techStack: JSON.parse(row.tech_stack),
+    techStack: row.tech_stack ? JSON.parse(row.tech_stack) : [],
     categories: row.categories ? JSON.parse(row.categories) : [],
     description: row.subtitle,
+    tier: row.tier,
+    displayOrder: row.display_order,
+    industry: row.industry,
+    relatedTool: row.related_tool ?? null,
+    relatedBuild: row.related_build ?? null,
+    relatedCase: row.related_case ?? null,
+    snippetIds: row.snippet_ids ? JSON.parse(row.snippet_ids) : [],
     starr: {
       situation: row.situation,
       task: row.task,
