@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CafeInventoryApp from '../../components/CafeInventoryApp';
+import NetworkCanvas from '../../components/NetworkCanvas';
+const base = import.meta.env.BASE_URL;
+
+const title = "Cafe Inventory, Recipe Costing & POS Depletion Engine | Majid Mumtaz";
+const description = "End-to-end cafe operations simulator linking Bill of Materials (BOM), recipe costing, and real-time POS stock depletion with Theoretical vs. Actual (TvA) audit variance tracking.";
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+      <NetworkCanvas client:load nodeCount={35} />
+      <div class="relative z-10 max-w-4xl" data-reveal>
+        <a href={`${base}tools/`} class="mb-7 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white">
+          &larr; Back to Tools
+        </a>
+        <span class="hero-chip mb-6 md:mb-7">Trench Operations to Boardroom EBITDA</span>
+        <h1 class="headline-display max-w-4xl text-[clamp(2.6rem,5.5vw,4.8rem)] font-black text-white">
+          Cafe Inventory, Recipe Costing
+          <span class="block text-[#f4c98b]">& POS Depletion Engine.</span>
+        </h1>
+        <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.08rem] md:leading-9">
+          Bridge the structural gap between POS telemetry and trench-level physical stock. Model recipe bills of materials (BOM), ingredient unit costing, live till deductions, and reconcile theoretical usage against physical count variance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy & Methodology Banner -->
+  <section class="px-4 py-5 md:px-8">
+    <div class="soft-shell mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
+      <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+      </svg>
+      <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
+        <span class="meta-label text-[#181511]">100% Client-Side Privacy</span>
+        All recipe specs, supplier pricing, inventory levels, and POS transactions run strictly within your local browser storage. Zero operational telemetry is sent externally.
+      </p>
+    </div>
+  </section>
+
+  <section class="px-4 md:px-8">
+    <p class="mx-auto max-w-7xl text-sm leading-7 text-[color:var(--text-secondary)]">
+      Specialty cafe inventory control architecture featuring Bill of Materials (BOM) costing, live touch POS simulation, automatic raw ingredient depletion, and Theoretical vs. Actual (TvA) audit variance decomposition.
+    </p>
+  </section>
+
+  <!-- Main Interactive App Component -->
+  <section class="px-4 py-4 pb-20 md:px-8">
+    <div class="mx-auto max-w-7xl" data-reveal data-reveal-delay="1">
+      <div class="soft-shell p-6 md:p-8">
+        <CafeInventoryApp client:load />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
