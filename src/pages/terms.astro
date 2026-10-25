@@ -6,308 +6,237 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
-  title="Methodology Licensing & Advisory Terms | Majid Mumtaz"
-  description="Intellectual property guidelines, permitted enterprise evaluation use, open-source boundaries, and statutory audit disclaimers."
+  title="Methodology, Licensing & Advisory Terms | Majid Mumtaz"
+  description="Intellectual property guidelines, permitted enterprise evaluation use, open-source boundaries, and professional assurance disclaimers."
 >
   <!-- Hero Section -->
   <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
     <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-14">
       <NetworkCanvas client:load nodeCount={35} />
-      <div class="relative z-10 grid gap-8 lg:grid-cols-[1.3fr_0.8fr] lg:items-end" data-reveal>
-        <div>
-          <span class="hero-chip mb-6 sm:mb-8">Governance &amp; Intellectual Property</span>
-          <h1 class="headline-display text-[clamp(2.5rem,5.5vw,5rem)] font-black text-white">
-            Methodology Licensing
-            <span class="block text-[#f4c98b]">&amp; Terms of Advisory</span>
-          </h1>
-          <p class="mt-6 max-w-2xl text-[15px] leading-7 text-white/75 md:mt-8 md:text-[1.1rem] md:leading-9">
-            Intellectual property boundaries, permitted enterprise evaluation scope, dual-architecture open-source licensing, and statutory assurance disclaimers.
-          </p>
-          <div class="mt-8 flex flex-wrap gap-4">
-            <a href={`${base}tools/`} class="btn-primary">Explore In-Browser Tools</a>
-            <a href={`${base}contact/`} class="btn-secondary-light">Advisory Inquiries</a>
-          </div>
-        </div>
-        <div class="quote-panel p-6 md:p-8" data-reveal data-reveal-delay="1">
-          <span class="eyebrow-label text-[#a33a21]">Operating Charter</span>
-          <div class="mt-4 space-y-4 text-sm leading-7 text-[#181511]">
-            <p class="font-semibold text-[#181511]">
-              Every tool and methodology on this domain operates under strict technical transparency and zero data retention.
-            </p>
-            <p class="text-[color:var(--text-secondary)]">
-              This notice outlines the structural boundaries between proprietary in-browser diagnostic calculators, independently licensed open-source engineering codebases, and formal audit committee advisory engagements.
-            </p>
-          </div>
-        </div>
+      <div class="relative z-10 max-w-4xl" data-reveal>
+        <a href={`${base}tools/`} class="mb-7 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white">
+          &larr; Back to Tools
+        </a>
+        <span class="hero-chip mb-6 md:mb-7">Governance &amp; Intellectual Property</span>
+        <h1 class="headline-display max-w-4xl text-[clamp(2.6rem,5.5vw,4.8rem)] font-black text-white">
+          Methodology, Licensing
+          <span class="block text-[#f4c98b]">&amp; Advisory Terms.</span>
+        </h1>
+        <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/75 md:mt-8 md:text-[1.08rem] md:leading-9">
+          Clear boundaries between proprietary in-browser diagnostic calculators, open-source engineering builds, and formal internal audit advisory engagements.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- Summary Plinths -->
-  <section class="px-4 py-6 md:px-8">
-    <div class="mx-auto max-w-7xl grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4" data-reveal>
-      <div class="stat-plinth">
-        <span class="meta-label text-[#a33a21]">01. Intellectual Property</span>
-        <div class="mt-2 text-base font-black text-[#181511]">Proprietary Algorithms</div>
-        <p class="mt-1 text-xs leading-6 text-[color:var(--text-secondary)]">Formulas, sampling heuristics, and UI workflows are &copy; Majid Mumtaz.</p>
-      </div>
-      <div class="stat-plinth">
-        <span class="meta-label text-[#1d3557]">02. Software Dualism</span>
-        <div class="mt-2 text-base font-black text-[#181511]">Tools vs. Open Source</div>
-        <p class="mt-1 text-xs leading-6 text-[color:var(--text-secondary)]">Web tools are advisory assets; standalone builds carry dedicated repo licenses.</p>
-      </div>
-      <div class="stat-plinth">
-        <span class="meta-label text-[#a33a21]">03. Professional Scope</span>
-        <div class="mt-2 text-base font-black text-[#181511]">Statutory Boundary</div>
-        <p class="mt-1 text-xs leading-6 text-[color:var(--text-secondary)]">Simulators provide illustrative estimates, not ISA audit opinions or legal advice.</p>
-      </div>
-      <div class="stat-plinth">
-        <span class="meta-label text-[#10b981]">04. Client Privacy</span>
-        <div class="mt-2 text-base font-black text-[#181511]">Zero Cloud Telemetry</div>
-        <p class="mt-1 text-xs leading-6 text-[color:var(--text-secondary)]">100% on-device browser execution. Ledger inputs never leave your perimeter.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 1: Intellectual Property & Enterprise Evaluation License -->
+  <!-- Section 1: Intellectual Property & Enterprise Evaluation Scope -->
   <section class="px-4 py-8 md:px-8">
     <div class="mx-auto max-w-7xl">
-      <div class="soft-shell p-8 md:p-12 border-l-4 border-[#a33a21]" data-reveal>
-        <span class="eyebrow-label">Section 01 // Intellectual Property</span>
-        <h2 class="mt-4 text-[clamp(1.8rem,3.8vw,3rem)] leading-[1.08] text-[#181511]">
-          Intellectual Property &amp; Enterprise Evaluation License
+      <div class="soft-shell p-8 md:p-12 border-l-4 border-[#c7964c]" data-reveal>
+        <span class="eyebrow-label text-[#a66c1c]">01 // Ownership</span>
+        <h2 class="mt-4 text-[clamp(1.8rem,3.8vw,2.8rem)] leading-[1.08] text-[#181511]">
+          Intellectual Property &amp; Permitted Evaluation Scope
         </h2>
         <p class="mt-4 max-w-3xl text-sm leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">
-          The proprietary analytical frameworks, continuous controls monitoring (CCM) scoring engines, mathematical formalisms, and user experience workflows published on this platform represent over two decades of specialized internal audit, risk advisory, and forensic practice.
+          The analytical frameworks, scoring models, mathematical formalisms, and user workflows published on this platform represent proprietary work developed across internal audit, risk advisory, and forensic practice.
         </p>
 
-        <div class="mt-8 grid gap-6 md:grid-cols-2">
-          <!-- Protected Assets -->
-          <div class="quote-panel p-6 sm:p-7">
-            <span class="meta-label text-[#a33a21]">Protected Methodological Assets</span>
-            <ul class="mt-4 space-y-3 text-sm leading-7 text-[#181511]">
-              <li class="flex items-start gap-3">
-                <span class="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#a33a21]"></span>
-                <span><strong>Mathematical &amp; Statistical Formulas:</strong> Finite Population Correction (FPC) attribute sampling tables, Target vs. Actual (TvA) operational variance models, and weighted deficiency exposure formulas.</span>
+        <div class="mt-8 grid gap-6 lg:grid-cols-2">
+          <div class="rounded-3xl border border-[color:var(--line-soft)] bg-white/70 p-6 shadow-sm dark:bg-white/5">
+            <span class="meta-label text-[#107c41]">Permitted Scope</span>
+            <ul class="mt-4 space-y-3 text-xs leading-6 text-[#181511] dark:text-white/80">
+              <li class="flex items-start gap-2.5">
+                <span class="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#107c41]"></span>
+                <span><strong>Internal Enterprise Evaluation:</strong> Internal audit teams, CFOs, and Audit Committees are welcome to test and evaluate these tools against their operational scenarios.</span>
               </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#a33a21]"></span>
-                <span><strong>Governance Scoring Engines:</strong> Multi-tiered COSO 2013 internal control maturity models, IIA Global Internal Audit Standards readiness matrices, and Nomu SME governance diagnostics.</span>
+              <li class="flex items-start gap-2.5">
+                <span class="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#107c41]"></span>
+                <span><strong>Methodological Review:</strong> Independent practitioners may review calculations, formulas (such as AICPA attribute sampling with finite population correction), and report templates.</span>
               </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#a33a21]"></span>
-                <span><strong>Game-Theoretic Simulators:</strong> Nash bimatrix strategic equilibrium algorithms modeling auditor audit coverage against management compliance evasion.</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#a33a21]"></span>
-                <span><strong>UI Workflows &amp; Layout Systems:</strong> Interactive executive dashboards, working paper export layouts, and data visualization schemas are &copy; {new Date().getFullYear()} Majid Mumtaz. All rights reserved.</span>
+              <li class="flex items-start gap-2.5">
+                <span class="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#107c41]"></span>
+                <span><strong>Academic &amp; Professional Citation:</strong> Discussion or citation in professional forums is permitted with direct attribution to Majid Mumtaz.</span>
               </li>
             </ul>
           </div>
 
-          <!-- Permitted vs Prohibited -->
-          <div class="space-y-6">
-            <div class="stat-plinth p-6">
-              <div class="flex items-center gap-2">
-                <span class="h-2 w-2 rounded-full bg-[#10b981]"></span>
-                <span class="meta-label text-[#10b981]">Permitted Scope (Evaluation &amp; Review)</span>
-              </div>
-              <ul class="mt-3 space-y-2 text-xs leading-6 text-[#181511]">
-                <li>&bull; Individual audit, finance, and GRC practitioner review and testing.</li>
-                <li>&bull; Internal enterprise evaluation across Corporate Audit, Risk, and Audit Committees.</li>
-                <li>&bull; Scenario modeling and internal audit resource budgeting for client organizations.</li>
-                <li>&bull; Academic study and methodological citation with direct attribution to Majid Mumtaz.</li>
-              </ul>
-            </div>
-
-            <div class="stat-plinth p-6 border-l-2 border-[#a33a21]">
-              <div class="flex items-center gap-2">
-                <span class="h-2 w-2 rounded-full bg-[#a33a21]"></span>
-                <span class="meta-label text-[#a33a21]">Strictly Prohibited Uses</span>
-              </div>
-              <ul class="mt-3 space-y-2 text-xs leading-6 text-[color:var(--text-secondary)]">
-                <li>&bull; Commercial white-labeling, reselling, or charging fees for access to these calculators.</li>
-                <li>&bull; Embedding or sublicensing mathematical algorithms into proprietary third-party SaaS tools.</li>
-                <li>&bull; Removing author copyright tags, attribution notices, or disclaimer metadata from exports.</li>
-                <li>&bull; Automated crawling or systematic extraction to train commercial artificial intelligence products without explicit written consent.</li>
-              </ul>
-            </div>
+          <div class="rounded-3xl border border-[color:var(--line-soft)] bg-white/70 p-6 shadow-sm dark:bg-white/5">
+            <span class="meta-label text-[#d9381e]">Restrictions</span>
+            <ul class="mt-4 space-y-3 text-xs leading-6 text-[#181511] dark:text-white/80">
+              <li class="flex items-start gap-2.5">
+                <span class="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#d9381e]"></span>
+                <span><strong>No Commercial Resale or White-Labeling:</strong> Incorporating these calculators or scoring engines into third-party commercial consulting packages or charging fees for their access is prohibited.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#d9381e]"></span>
+                <span><strong>No Proprietary Embedding:</strong> Embedding or sublicensing mathematical algorithms into third-party commercial SaaS products without written permission is prohibited.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#d9381e]"></span>
+                <span><strong>Preservation of Attribution:</strong> Removing author copyright tags, attribution notices, or disclaimer metadata from generated exports is not permitted.</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 2: Dual Architecture (In-Browser Tools vs Open-Source Codebases) -->
-  <section class="px-4 py-8 md:px-8">
-    <div class="mx-auto max-w-7xl">
-      <div class="glass-card rounded-[34px] p-8 md:p-12" data-reveal>
-        <span class="eyebrow-label text-[#1d3557]">Section 02 // Software Architecture</span>
-        <h2 class="mt-4 text-[clamp(1.8rem,3.8vw,3rem)] leading-[1.08] text-[#181511]">
-          Dual Architecture: In-Browser Tools vs. Open-Source Codebases
-        </h2>
-        <p class="mt-4 max-w-3xl text-sm leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">
-          This platform separates interactive, browser-based advisory instruments from standalone engineering software builds. Each tier operates under distinct licensing boundaries designed to uphold institutional sovereignty.
-        </p>
-
-        <div class="mt-8 grid gap-8 lg:grid-cols-2">
-          <!-- Tier A: In-Browser Advisory Instruments -->
-          <div class="editorial-panel p-8 text-white">
-            <div class="flex items-center justify-between">
-              <span class="meta-label text-[#f4c98b]">Tier A // Advisory Instruments</span>
-              <span class="rounded-full bg-white/10 px-3 py-1 text-[9px] font-black uppercase tracking-wider text-white/80">Proprietary</span>
-            </div>
-            <h3 class="mt-4 text-2xl font-black text-white">In-Browser Diagnostic Calculators</h3>
-            <p class="mt-3 text-sm leading-7 text-white/74">
-              The calculators hosted on this domain (located at <a href={`${base}tools/`} class="text-[#f4c98b] underline underline-offset-4">/tools/</a>), including the Forensic Validator, Deficiency Exposure Calculator, Fraud Risk Calculator, and Audit ROI Estimator, are proprietary advisory instruments.
-            </p>
-            <div class="mt-6 space-y-3 text-xs leading-6 text-white/70">
-              <p>&bull; Designed for executive demonstration, preliminary benchmarking, and interactive methodology verification.</p>
-              <p>&bull; Delivered directly through this web interface without standalone redistribution rights.</p>
-              <p>&bull; Governed entirely by the enterprise evaluation terms outlined in Section 01.</p>
-            </div>
-            <div class="mt-8">
-              <a href={`${base}tools/`} class="btn-secondary-light">Browse In-Browser Tools</a>
-            </div>
-          </div>
-
-          <!-- Tier B: Open-Source Codebases -->
-          <div class="soft-shell p-8">
-            <div class="flex items-center justify-between">
-              <span class="meta-label text-[#a33a21]">Tier B // Sovereign Builds</span>
-              <span class="rounded-full bg-[#181511]/10 px-3 py-1 text-[9px] font-black uppercase tracking-wider text-[#181511]">Open Source</span>
-            </div>
-            <h3 class="mt-4 text-2xl font-black text-[#181511]">Standalone Open-Source Codebases</h3>
-            <p class="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">
-              Standalone engineering platforms showcased at <a href={`${base}software/`} class="text-[#a33a21] font-semibold underline underline-offset-4">/software/</a> (such as <em>Invoice Audit Engine</em>, <em>AuditDesk</em>, <em>ThirdEye: Vendor Risk Scanner</em>, and <em>RoleForge</em>) are sovereign open-source systems.
-            </p>
-            <div class="mt-6 space-y-3 text-xs leading-6 text-[color:var(--text-secondary)]">
-              <p>&bull; Each repository carries its own independent open-source license hosted on GitHub (e.g., Elastic License 2.0 or MIT License).</p>
-              <p>&bull; Organizations are permitted to clone, inspect, audit, fork, and deploy these codebases on-premise in strict accordance with the LICENSE file in their respective source repositories.</p>
-              <p>&bull; Built specifically to eliminate recurring SaaS fees, cloud vendor lock-in, and confidential ledger transmission.</p>
-            </div>
-            <div class="mt-8">
-              <a href={`${base}software/`} class="btn-primary">View Open-Source Builds</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 3: Statutory Assurance & Professional Boundary -->
+  <!-- Section 2: Dual Architecture (In-Browser Tools vs Open-Source Codebases) -->
   <section class="px-4 py-8 md:px-8">
     <div class="mx-auto max-w-7xl">
       <div class="soft-shell p-8 md:p-12 border-l-4 border-[#1d3557]" data-reveal>
-        <span class="eyebrow-label text-[#1d3557]">Section 03 // Professional Practice Disclaimers</span>
-        <h2 class="mt-4 text-[clamp(1.8rem,3.8vw,3rem)] leading-[1.08] text-[#181511]">
+        <span class="eyebrow-label text-[#1d3557]">02 // Architecture</span>
+        <h2 class="mt-4 text-[clamp(1.8rem,3.8vw,2.8rem)] leading-[1.08] text-[#181511]">
+          In-Browser Tools vs. Open-Source Repositories
+        </h2>
+        <p class="mt-4 max-w-3xl text-sm leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">
+          This site maintains a clean distinction between interactive web demonstration tools and standalone open-source engineering projects.
+        </p>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-2">
+          <div class="rounded-3xl border border-[color:var(--line-soft)] bg-white/70 p-6 shadow-sm dark:bg-white/5">
+            <span class="meta-label text-[#8d6035]">Web Tools (/tools/*)</span>
+            <h3 class="mt-2 text-xl font-bold text-[#181511] dark:text-white">In-Browser Advisory Instruments</h3>
+            <p class="mt-3 text-xs leading-relaxed text-[color:var(--text-secondary)]">
+              The calculators hosted on this domain (such as the Forensic Pattern Validator, Control Deficiency Exposure Calculator, Fraud Risk Calculator, and Cafe Inventory Engine) are proprietary advisory instruments.
+            </p>
+            <p class="mt-3 text-xs leading-relaxed text-[color:var(--text-secondary)]">
+              They are delivered as client-side web applications for interactive demonstration and enterprise evaluation. They do not carry standalone redistribution rights.
+            </p>
+            <div class="mt-6">
+              <a href={`${base}tools/`} class="text-xs font-bold text-[#181511] underline underline-offset-4 hover:text-[#8d6035] dark:text-white">
+                View Tools Directory &rarr;
+              </a>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-[color:var(--line-soft)] bg-white/70 p-6 shadow-sm dark:bg-white/5">
+            <span class="meta-label text-[#181511] dark:text-white/70">Builds (/software/*)</span>
+            <h3 class="mt-2 text-xl font-bold text-[#181511] dark:text-white">Standalone Codebases &amp; Repositories</h3>
+            <p class="mt-3 text-xs leading-relaxed text-[color:var(--text-secondary)]">
+              Standalone programs listed under <a href={`${base}software/`} class="underline underline-offset-4">Builds</a> (such as <em>Invoice Audit Engine</em>, <em>AuditDesk</em>, <em>ThirdEye</em>, and <em>RoleForge</em>) are sovereign systems distributed via GitHub.
+            </p>
+            <p class="mt-3 text-xs leading-relaxed text-[color:var(--text-secondary)]">
+              Each repository carries its own independent open-source or source-available license (such as MIT or Elastic License 2.0). Organizations may clone, audit, and deploy these codebases on-premise in accordance with their respective repository license files.
+            </p>
+            <div class="mt-6">
+              <a href={`${base}software/`} class="text-xs font-bold text-[#181511] underline underline-offset-4 hover:text-[#8d6035] dark:text-white">
+                View Open-Source Builds &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Statutory Assurance & Professional Boundary -->
+  <section class="px-4 py-8 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="soft-shell p-8 md:p-12 border-l-4 border-[#a33a21]" data-reveal>
+        <span class="eyebrow-label text-[#a33a21]">03 // Practice Boundary</span>
+        <h2 class="mt-4 text-[clamp(1.8rem,3.8vw,2.8rem)] leading-[1.08] text-[#181511]">
           Statutory Assurance &amp; Professional Boundaries
         </h2>
         <p class="mt-4 max-w-3xl text-sm leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">
-          The methodologies, mathematical simulators, and interactive diagnostic models on this website are provided strictly for illustrative estimation, operational benchmarking, and executive research.
+          The models and calculators on this website provide analytical benchmarks and scenario simulations. They are not substitutes for formal, regulated assurance engagements.
         </p>
 
         <div class="mt-8 grid gap-6 md:grid-cols-3">
-          <div class="quote-panel p-6">
-            <span class="meta-label text-[#1d3557]">No Statutory Audit Opinion</span>
-            <p class="mt-3 text-xs leading-6 text-[#181511]">
-              Calculators and outputs on this domain do not constitute a formal statutory audit opinion under International Standards on Auditing (ISA), an assurance engagement under ISAE 3000 / ISAE 3402, or a formal SOC 1 / SOC 2 certification.
+          <div class="rounded-2xl border border-[color:var(--line-soft)] bg-white/60 p-5 dark:bg-white/5">
+            <span class="meta-label text-[#181511] dark:text-white/80">No Statutory Opinion</span>
+            <p class="mt-2 text-xs leading-6 text-[color:var(--text-secondary)]">
+              Outputs do not constitute a formal statutory audit opinion under International Standards on Auditing (ISA) or an assurance conclusion under ISAE 3000 / ISAE 3402.
             </p>
           </div>
-          <div class="quote-panel p-6">
-            <span class="meta-label text-[#a33a21]">No Legal or Tax Counsel</span>
-            <p class="mt-3 text-xs leading-6 text-[#181511]">
-              Nothing contained in these diagnostic routines constitutes formal legal counsel, statutory tax filings, or forensic accounting testimony. Regulated decisions must be validated by licensed enterprise counsel and registered statutory auditors.
+
+          <div class="rounded-2xl border border-[color:var(--line-soft)] bg-white/60 p-5 dark:bg-white/5">
+            <span class="meta-label text-[#181511] dark:text-white/80">No Legal or Tax Advice</span>
+            <p class="mt-2 text-xs leading-6 text-[color:var(--text-secondary)]">
+              Calculators do not provide formal legal counsel or statutory tax advice. Regulated filings must be validated with qualified enterprise legal counsel and statutory tax practitioners.
             </p>
           </div>
-          <div class="quote-panel p-6">
-            <span class="meta-label text-[#c7964c]">Retained Engagement Prerequisite</span>
-            <p class="mt-3 text-xs leading-6 text-[#181511]">
-              Binding assurance conclusions, bespoke continuous controls monitoring implementations, and formal Board Audit Committee representations require a direct, contracted advisory engagement governed by separate engagement terms.
+
+          <div class="rounded-2xl border border-[color:var(--line-soft)] bg-white/60 p-5 dark:bg-white/5">
+            <span class="meta-label text-[#181511] dark:text-white/80">Contracted Mandates</span>
+            <p class="mt-2 text-xs leading-6 text-[color:var(--text-secondary)]">
+              Formal audit findings, board representations, and continuous controls monitoring implementations require a direct, contracted engagement governed by specific engagement terms.
             </p>
           </div>
         </div>
 
-        <div class="mt-8 rounded-2xl bg-white/60 p-6 border border-black/5">
-          <p class="text-xs leading-6 text-[color:var(--text-secondary)]">
-            <strong>Reliance Notice:</strong> All quantitative outputs (such as monetary-unit sample sizes, fraud risk scores, control deficiency exposure calculations, and game-theoretic equilibrium points) depend entirely on the parameters, datasets, and hypotheses input by the user. Majid Mumtaz assumes no liability for operational, financial, or regulatory decisions made solely on the basis of unverified automated outputs.
-          </p>
+        <div class="mt-6 rounded-2xl bg-slate-50 p-4 text-xs leading-6 text-[color:var(--text-secondary)] dark:bg-white/5">
+          <strong>Reliance Note:</strong> Calculated projections (such as sample sizes, fraud risk indices, deficiency exposure estimates, and theoretical inventory variances) depend on the hypotheses and data input by the user. No liability is assumed for decisions taken solely on unverified automated outputs.
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 4: Zero-Telemetry & Client Confidentiality Guarantee -->
+  <!-- Section 4: Data Privacy & On-Device Execution -->
   <section class="px-4 py-8 md:px-8">
     <div class="mx-auto max-w-7xl">
-      <div class="soft-shell p-8 md:p-12 border-l-4 border-[#10b981]" data-reveal>
-        <span class="eyebrow-label text-[#10b981]">Section 04 // Data Privacy &amp; Confidentiality</span>
-        <h2 class="mt-4 text-[clamp(1.8rem,3.8vw,3rem)] leading-[1.08] text-[#181511]">
-          Zero-Telemetry &amp; Client Confidentiality Guarantee
+      <div class="soft-shell p-8 md:p-12 border-l-4 border-[#107c41]" data-reveal>
+        <span class="eyebrow-label text-[#107c41]">04 // Privacy Standard</span>
+        <h2 class="mt-4 text-[clamp(1.8rem,3.8vw,2.8rem)] leading-[1.08] text-[#181511]">
+          On-Device Execution &amp; Client Confidentiality
         </h2>
         <p class="mt-4 max-w-3xl text-sm leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">
-          Enterprise internal audit and financial datasets frequently contain highly confidential records: accounts payable ledgers, employee identities, vendor pricing schedules, and whistleblower disclosures. Our engineering architecture protects this information by design.
+          Audit and operational datasets contain sensitive information. The architecture of this site is intentionally built to keep all data within your browser perimeter.
         </p>
 
-        <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <div class="stat-plinth p-6">
-            <div class="text-lg font-black text-[#10b981]">100%</div>
-            <div class="mt-1 text-xs font-black uppercase tracking-wider text-[#181511]">On-Device Execution</div>
-            <p class="mt-2 text-xs leading-6 text-[color:var(--text-secondary)]">All mathematical models and document validators run completely within your local browser's memory sandbox.</p>
+        <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="stat-plinth p-5">
+            <div class="text-base font-black text-[#107c41]">100% On-Device</div>
+            <p class="mt-2 text-xs leading-relaxed text-[color:var(--text-secondary)]">
+              All calculations run in client-side memory within your browser sandbox.
+            </p>
           </div>
-          <div class="stat-plinth p-6">
-            <div class="text-lg font-black text-[#10b981]">0 bytes</div>
-            <div class="mt-1 text-xs font-black uppercase tracking-wider text-[#181511]">Data Uploaded</div>
-            <p class="mt-2 text-xs leading-6 text-[color:var(--text-secondary)]">No invoice lines, general ledger numbers, or risk registers are transmitted to external servers or cloud endpoints.</p>
-          </div>
-          <div class="stat-plinth p-6">
-            <div class="text-lg font-black text-[#10b981]">Air-Gapped</div>
-            <div class="mt-1 text-xs font-black uppercase tracking-wider text-[#181511]">Verification Capable</div>
-            <p class="mt-2 text-xs leading-6 text-[color:var(--text-secondary)]">You can disconnect internet connectivity after page load; tools remain fully operational offline.</p>
-          </div>
-          <div class="stat-plinth p-6">
-            <div class="text-lg font-black text-[#10b981]">Zero LLM Leakage</div>
-            <div class="mt-1 text-xs font-black uppercase tracking-wider text-[#181511]">No Cloud Training</div>
-            <p class="mt-2 text-xs leading-6 text-[color:var(--text-secondary)]">Client input payloads are never exposed to public LLM APIs or used to train third-party machine learning models.</p>
-          </div>
-        </div>
 
-        <div class="mt-8 quote-panel p-6">
-          <div class="flex items-start gap-4">
-            <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#10b981]/15 text-[#10b981]">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-            </div>
-            <div>
-              <div class="text-xs font-black uppercase tracking-wider text-[#181511]">Technical Verification Protocol</div>
-              <p class="mt-1 text-xs leading-6 text-[color:var(--text-secondary)]">
-                You can inspect the browser's developer tools (<kbd class="rounded bg-black/10 px-1.5 py-0.5 font-mono text-[11px]">F12 &rarr; Network</kbd>) during any validation or calculation pass. You will observe zero outgoing POST, PUT, or WebSocket data streams containing your audit payloads.
-              </p>
-            </div>
+          <div class="stat-plinth p-5">
+            <div class="text-base font-black text-[#107c41]">Zero Transmission</div>
+            <p class="mt-2 text-xs leading-relaxed text-[color:var(--text-secondary)]">
+              No invoice numbers, stock levels, or risk ratings are sent to external servers.
+            </p>
+          </div>
+
+          <div class="stat-plinth p-5">
+            <div class="text-base font-black text-[#107c41]">Offline Capable</div>
+            <p class="mt-2 text-xs leading-relaxed text-[color:var(--text-secondary)]">
+              Tools function without active internet connectivity once the page is loaded.
+            </p>
+          </div>
+
+          <div class="stat-plinth p-5">
+            <div class="text-base font-black text-[#107c41]">Verifiable</div>
+            <p class="mt-2 text-xs leading-relaxed text-[color:var(--text-secondary)]">
+              Network activity can be verified via browser developer tools (<kbd class="font-mono text-[11px]">F12 &rarr; Network</kbd>).
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Engagement CTA & Backlinks Section -->
-  <section class="px-4 py-12 md:px-8">
-    <div class="editorial-panel mx-auto max-w-7xl px-8 py-12 text-center text-white md:px-14 md:py-16" data-reveal>
-      <span class="hero-chip mb-6">Enterprise Engagements &amp; Inquiries</span>
-      <h2 class="headline-display text-[clamp(2rem,4vw,3.5rem)] font-black text-white">
-        Deploy Board-Grade Assurance.
-      </h2>
-      <p class="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/74 md:text-base md:leading-8">
-        For enterprise licensing of proprietary scoring methodologies, on-premise CCM system architecture, or retained Audit Committee advisory engagements.
-      </p>
-      <div class="mt-8 flex flex-wrap justify-center gap-4">
-        <a href={`${base}tools/`} class="btn-primary">In-Browser Tools Directory</a>
-        <a href={`${base}contact/`} class="btn-secondary-light">Initiate Advisory Discussion</a>
-        <a href={`${base}software/`} class="btn-secondary-light">Inspect Open-Source Builds</a>
+  <!-- Navigation Links -->
+  <section class="px-4 py-8 pb-16 md:px-8">
+    <div class="mx-auto max-w-7xl flex flex-wrap items-center justify-between gap-6 border-t border-[color:var(--line-soft)] pt-8">
+      <div class="flex flex-wrap gap-6 text-sm font-semibold">
+        <a href={`${base}tools/`} class="text-[#181511] underline underline-offset-4 hover:text-[#8d6035] dark:text-white">
+          Tools Directory
+        </a>
+        <a href={`${base}software/`} class="text-[#181511] underline underline-offset-4 hover:text-[#8d6035] dark:text-white">
+          Open-Source Builds
+        </a>
+        <a href={`${base}advisory/`} class="text-[#181511] underline underline-offset-4 hover:text-[#8d6035] dark:text-white">
+          Advisory Services
+        </a>
+        <a href={`${base}contact/`} class="text-[#181511] underline underline-offset-4 hover:text-[#8d6035] dark:text-white">
+          Contact
+        </a>
       </div>
-      <div class="mt-10 border-t border-white/10 pt-6 text-[11px] uppercase tracking-[0.24em] text-white/45">
-        &copy; {new Date().getFullYear()} Majid Mumtaz CIA, ACA, FCCA &bull; Dubai, United Arab Emirates
+      <div class="text-xs text-[color:var(--text-secondary)]">
+        &copy; {new Date().getFullYear()} Majid Mumtaz CIA, ACA, FCCA
       </div>
     </div>
   </section>
