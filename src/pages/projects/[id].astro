@@ -89,11 +89,9 @@ const relatedLines = [
         </div>
         <div class="quote-panel p-6 md:p-8" data-reveal data-reveal-delay="1">
           <span class="eyebrow-label text-[#f4c98b]/80">Outcome Signal</span>
-          {project.impact ? (
+          {hasStarr && project.impact ? (
             <p class="mt-4 text-base leading-7 text-white/82 md:mt-5 md:text-lg md:leading-8">{project.impact}</p>
-          ) : (
-            <p class="mt-5 text-sm leading-7 text-white/72">Structured around the business problem, the mandate, and the operational result rather than generic control language.</p>
-          )}
+          ) : null}
           {project.categories?.length > 0 && (
             <div class="mt-7 border-t border-white/10 pt-5">
               <span class="meta-label text-white/45">Practice Area</span>
@@ -135,7 +133,7 @@ const relatedLines = [
                 { label: 'The Intervention', content: project.starr.action },
                 { label: 'The Outcome', content: project.starr.result },
                 { label: 'Reflection', content: project.starr.reflection },
-              ].map((section) => (
+              ].filter((section) => section.content).map((section) => (
                 <div class="relative border-l border-[color:var(--line-soft)] pl-6 md:pl-9" data-reveal>
                   <div class="absolute left-[-7px] top-1 h-3.5 w-3.5 rounded-full border border-[#c7964c] bg-[var(--surface)] shadow-[0_0_0_5px_rgba(255,250,244,0.9)] md:left-[-8px] md:h-4 md:w-4 md:shadow-[0_0_0_6px_rgba(255,250,244,0.9)]"></div>
                   <span class="eyebrow-label text-[#a66c1c]">{section.label}</span>
@@ -146,14 +144,10 @@ const relatedLines = [
           </div>
         ) : (
           <div class="soft-shell px-6 py-8 md:px-10 md:py-12" data-reveal>
-            <span class="eyebrow-label">Engagement Summary</span>
-            <p class="body-luxe mt-5 max-w-3xl">{project.description}</p>
             {project.impact && (
-              <div class="quote-panel mt-8 p-5 md:p-6">
-                <span class="meta-label text-white/45">Key Outcome</span>
-                <p class="mt-3 text-base leading-7 text-white/82 md:mt-4 md:text-lg md:leading-8">{project.impact}</p>
-              </div>
+              <p class="text-[15px] leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">{project.impact}</p>
             )}
+            <p class="mt-5 text-[15px] leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">Situation, mandate, action, result, and reflection are not stored for this record.</p>
           </div>
         )}
 
@@ -233,12 +227,6 @@ const relatedLines = [
             </div>
           )}
           </div>
-        </div>
-
-        <div class="editorial-panel overflow-hidden rounded-[30px] px-6 py-7 md:px-7 md:py-8">
-          <span class="eyebrow-label text-[#f4c98b]/80">Discuss A Similar Engagement</span>
-          <p class="mt-4 text-sm leading-7 text-white/72">Facing a related governance, fraud, audit, or control challenge? The value is in tailoring the intervention to your operating context, not replicating a template.</p>
-          <a href={`${base}contact/`} class="btn-primary mt-7 inline-flex">Discuss a Mandate</a>
         </div>
 
         <div class="soft-shell px-5 py-4 md:px-6 md:py-5">

@@ -2,28 +2,21 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = ({ initialPath = '' }) => {
-  const [scrolled, setScrolled] = useState(false);
   const [currentPath, setCurrentPath] = useState(initialPath);
   const [mobileOpen, setMobileOpen] = useState(false);
   const baseUrl = import.meta.env.BASE_URL;
   const isCurrent = (href: string) => currentPath === href || currentPath === href.replace(/\/$/, '');
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
     const syncPath = () => {
       setCurrentPath(window.location.pathname);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('popstate', syncPath);
     document.addEventListener('astro:page-load', syncPath);
 
     syncPath();
-    handleScroll();
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('popstate', syncPath);
       document.removeEventListener('astro:page-load', syncPath);
     };
@@ -37,9 +30,6 @@ const Navbar = ({ initialPath = '' }) => {
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
-
-  const isHome = isCurrent(baseUrl);
-  const showTransparent = isHome && !scrolled && !mobileOpen;
 
   const navItems = [
     { label: 'Case Studies', href: `${baseUrl}projects/` },
@@ -57,12 +47,12 @@ const Navbar = ({ initialPath = '' }) => {
     >
       <nav className={`
         mx-4 mt-4 px-5 lg:px-8 py-4 flex justify-between items-center transition-all duration-300 rounded-full border backdrop-blur-xl
-        ${showTransparent ? 'bg-white/6 border-white/12 shadow-[0_18px_50px_rgba(16,24,39,0.12)]' : 'bg-[rgba(255,250,244,0.78)] border-[rgba(29,53,87,0.10)] shadow-[0_18px_50px_rgba(71,38,24,0.08)]'}
+        bg-[rgba(255,250,244,0.78)] border-[rgba(29,53,87,0.10)] shadow-[0_18px_50px_rgba(71,38,24,0.08)]
       `}>
         {/* Left: Brand */}
         <a
           href={baseUrl}
-          className={`text-xs font-black uppercase tracking-[0.32em] transition-colors duration-300 ${showTransparent ? 'text-white' : 'text-[#181511]'}`}
+          className="text-xs font-black uppercase tracking-[0.32em] text-[#181511]"
         >
           Majid Mumtaz
         </a>
@@ -77,16 +67,11 @@ const Navbar = ({ initialPath = '' }) => {
                 href={item.href}
                 aria-current={isActive ? 'page' : undefined}
                 className={`text-[10px] font-black uppercase tracking-[0.24em] transition-colors relative
-                  ${showTransparent
-                    ? (isActive ? 'text-white' : 'text-white/70 hover:text-white')
-                    : (isActive ? 'text-[#1d3557]' : 'text-slate-500 hover:text-[#181511]')
-                  }`}
+                  ${isActive ? 'text-[#1d3557]' : 'text-slate-500 hover:text-[#181511]'}`}
               >
                 {item.label}
                 {isActive && (
-                  <span
-                    className={`absolute -bottom-1 left-0 right-0 h-px ${showTransparent ? 'bg-white' : 'bg-[#a33a21]'}`}
-                  />
+                  <span className="absolute -bottom-1 left-0 right-0 h-px bg-[#a33a21]" />
                 )}
               </a>
             );
@@ -109,8 +94,7 @@ const Navbar = ({ initialPath = '' }) => {
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
-            className={`md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 transition-colors
-              ${showTransparent ? 'text-white' : 'text-slate-900'}`}
+            className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 text-slate-900"
           >
             <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
             <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`} />

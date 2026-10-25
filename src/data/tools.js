@@ -207,5 +207,17 @@ export const tools = [
     isLive: true,
     batch: 8,
     ml: false,
+  },
+  {
+    id: 'cafe-inventory-costing',
+    tier: 'catalog',
+    domain: 'Recipe BOM & stock depletion',
+    title: 'Cafe Inventory, Recipe Costing & POS Depletion Engine',
+    description: 'End-to-end cafe operations engine linking ingredient Bill of Materials (BOM), portion costing, live POS till deductions, and Theoretical vs. Actual (TvA) audit variance tracking.',
+    category: 'Internal Controls',
+    href: '/portfolio_my/tools/cafe-inventory-costing/',
+    isLive: true,
+    batch: 9,
+    ml: false,
   }
 ];
