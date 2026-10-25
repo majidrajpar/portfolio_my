@@ -661,6 +661,60 @@ export default function CcmTelemetryArchitect() {
     return RULES.find(r => r.id === selectedRuleId) || RULES[0];
   }, [selectedRuleId]);
 
+  // Dynamic slider configuration based on rule materiality scale
+  const sliderConfig = useMemo(() => {
+    switch (currentRule.id) {
+      case 'p2p-split-po':
+        return { min: 10000, max: 250000, step: 5000 };
+      case 'gl-after-hours-mje':
+        return { min: 5000, max: 200000, step: 5000 };
+      case 'o2c-credit-limit-override':
+        return { min: 25000, max: 500000, step: 25000 };
+      default:
+        return { min: 1000, max: 100000, step: 1000 };
+    }
+  }, [currentRule.id]);
+
+  // Dynamic parameterized query reflecting calibrated slider values
+  const activeParameterizedQuery = useMemo(() => {
+    let q = currentRule.queries[activeDialect];
+    if (!q) return '';
+
+    if (currentRule.id === 'p2p-split-po') {
+      const minRatio = ((100 - proximityTolerancePct) / 100).toFixed(2);
+      q = q.replace(/50000/g, thresholdAmount.toString());
+      q = q.replace(/0\.90/g, minRatio);
+      q = q.replace(/10%/g, `${proximityTolerancePct}%`);
+      q = q.replace(/rolling 72h/gi, `rolling ${lookbackWindowDays * 24}h`);
+      q = q.replace(/INTERVAL '3 days'/gi, `INTERVAL '${lookbackWindowDays} days'`);
+      q = q.replace(/INTERVAL '3 DAYS'/gi, `INTERVAL '${lookbackWindowDays} DAYS'`);
+      q = q.replace(/RANGE BETWEEN 3 PRECEDING/g, `RANGE BETWEEN ${lookbackWindowDays} PRECEDING`);
+      q = q.replace(/NUMTODSINTERVAL\(3, 'DAY'\)/g, `NUMTODSINTERVAL(${lookbackWindowDays}, 'DAY')`);
+    } else if (currentRule.id === 'gl-after-hours-mje') {
+      q = q.replace(/25000/g, thresholdAmount.toString());
+    } else if (currentRule.id === 'o2c-credit-limit-override') {
+      q = q.replace(/100000/g, thresholdAmount.toString());
+    }
+    return q;
+  }, [currentRule, activeDialect, thresholdAmount, lookbackWindowDays, proximityTolerancePct]);
+
+  // Dynamically filter mock exceptions based on calibrated thresholds
+  const activeExceptions = useMemo(() => {
+    return currentRule.mockExceptions.filter(exc => {
+      if (currentRule.id === 'p2p-split-po' && exc.amount > 0) {
+        const lowerBound = thresholdAmount * ((100 - proximityTolerancePct) / 100);
+        return exc.amount >= lowerBound && exc.amount <= thresholdAmount;
+      }
+      if (currentRule.id === 'gl-after-hours-mje' && exc.amount > 0) {
+        return exc.amount >= thresholdAmount;
+      }
+      if (currentRule.id === 'o2c-credit-limit-override' && exc.amount > 0) {
+        return exc.amount >= thresholdAmount;
+      }
+      return true;
+    });
+  }, [currentRule, thresholdAmount, proximityTolerancePct]);
+
   // When cycle changes, select first rule in that cycle
   const handleCycleChange = (cycle: BusinessCycle) => {
     setSelectedCycle(cycle);
@@ -684,7 +738,7 @@ export default function CcmTelemetryArchitect() {
 
   // Copy SQL to clipboard
   const handleCopySql = () => {
-    const code = currentRule.queries[activeDialect];
+    const code = activeParameterizedQuery;
     navigator.clipboard.writeText(code);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -896,9 +950,9 @@ export default function CcmTelemetryArchitect() {
                   </div>
                   <input
                     type="range"
-                    min={10000}
-                    max={250000}
-                    step={5000}
+                    min={sliderConfig.min}
+                    max={sliderConfig.max}
+                    step={sliderConfig.step}
                     value={thresholdAmount}
                     onChange={e => setThresholdAmount(parseInt(e.target.value))}
                     className="mt-2 w-full accent-[#c7964c]"
@@ -988,7 +1042,7 @@ export default function CcmTelemetryArchitect() {
               <div className="flex items-center justify-between pb-3">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-[#181511] dark:text-white flex items-center gap-2">
                   <AlertTriangle className="h-4 w-4 text-[#d9381e]" />
-                  <span>Simulated Population Exceptions ({currentRule.mockExceptions.length} Detected)</span>
+                  <span>Simulated Population Exceptions ({activeExceptions.length} Detected)</span>
                 </h4>
                 <span className="text-[11px] font-semibold text-[#107c41]">
                   100% Population Scan Active
@@ -996,32 +1050,38 @@ export default function CcmTelemetryArchitect() {
               </div>
 
               <div className="space-y-2">
-                {currentRule.mockExceptions.map(exc => (
-                  <div
-                    key={exc.id}
-                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl border border-[color:var(--line-soft)] bg-white p-3.5 shadow-sm text-xs dark:bg-white/5"
-                  >
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="font-mono font-bold text-[#d9381e]">{exc.id}</span>
-                        <span className="font-semibold text-[#181511] dark:text-white">{exc.entity}</span>
-                        <span className="text-[10px] text-[color:var(--text-secondary)]">({exc.timestamp})</span>
-                      </div>
-                      <p className="mt-1 text-[11px] text-[color:var(--text-secondary)]">
-                        {exc.detail}
-                      </p>
-                    </div>
-
-                    <div className="text-right shrink-0">
-                      <div className="font-mono font-black text-sm text-[#181511] dark:text-white">
-                        {exc.amount > 0 ? `AED ${exc.amount.toLocaleString()}` : 'Exact Match'}
-                      </div>
-                      <div className="text-[10px] font-bold text-[#d9381e]">
-                        Anomaly Score: {exc.riskScore}/100
-                      </div>
-                    </div>
+                {activeExceptions.length === 0 ? (
+                  <div className="rounded-2xl border border-dashed border-[color:var(--line-soft)] p-6 text-center text-xs text-[color:var(--text-secondary)]">
+                    No exceptions triggered at current calibrated thresholds.
                   </div>
-                ))}
+                ) : (
+                  activeExceptions.map(exc => (
+                    <div
+                      key={exc.id}
+                      className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl border border-[color:var(--line-soft)] bg-white p-3.5 shadow-sm text-xs dark:bg-white/5"
+                    >
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <span className="font-mono font-bold text-[#d9381e]">{exc.id}</span>
+                          <span className="font-semibold text-[#181511] dark:text-white">{exc.entity}</span>
+                          <span className="text-[10px] text-[color:var(--text-secondary)]">({exc.timestamp})</span>
+                        </div>
+                        <p className="mt-1 text-[11px] text-[color:var(--text-secondary)]">
+                          {exc.detail}
+                        </p>
+                      </div>
+
+                      <div className="text-right shrink-0">
+                        <div className="font-mono font-black text-sm text-[#181511] dark:text-white">
+                          {exc.amount > 0 ? `AED ${exc.amount.toLocaleString()}` : 'Exact Match'}
+                        </div>
+                        <div className="text-[10px] font-bold text-[#d9381e]">
+                          Anomaly Score: {exc.riskScore}/100
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
           </div>
@@ -1074,7 +1134,7 @@ export default function CcmTelemetryArchitect() {
               </button>
 
               <pre className="max-h-[380px] overflow-x-auto rounded-2xl bg-black/40 p-4 font-mono text-[11px] leading-relaxed text-[#f4c98b]/90">
-                <code>{currentRule.queries[activeDialect]}</code>
+                <code>{activeParameterizedQuery}</code>
               </pre>
             </div>
 
