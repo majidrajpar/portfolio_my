@@ -10,12 +10,12 @@ const short = cases.filter((item) => !item.situation);
 
 <BaseLayout
   title="Case studies | Majid Mumtaz"
-  description="Four written cases. Six shorter records follow. Each title links to its page."
+  description="Audited outcomes, capital defense records, and governance architecture across enterprise operations."
 >
   <section class="px-4 pt-24 md:px-8 md:pt-28">
     <div class="mx-auto max-w-7xl" data-reveal>
       <h1 class="text-[clamp(2.6rem,6vw,4.8rem)] font-black leading-[1.02] text-[#181511]">Case studies.</h1>
-      <p class="mt-5 max-w-3xl text-base leading-8 text-[color:var(--text-secondary)] md:text-[1.15rem] md:leading-9">Four written cases. Six shorter records follow. Each title links to its page.</p>
+      <p class="mt-5 max-w-3xl text-base leading-8 text-[color:var(--text-secondary)] md:text-[1.15rem] md:leading-9">Audited outcomes, capital defense records, and governance architecture across enterprise operations.</p>
     </div>
   </section>
 
@@ -26,7 +26,7 @@ const short = cases.filter((item) => !item.situation);
       </svg>
       <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
         <span class="meta-label text-[#181511]">Disclosure</span>
-        Employer names are on the career record. This page uses the industry field and the stored figures.
+        Employer names and commercial entities are generalized or anonymized to preserve confidentiality while reporting verified financial outcomes.
       </p>
     </div>
   </section>
@@ -43,8 +43,8 @@ const short = cases.filter((item) => !item.situation);
         ))}
       </div>
       <div class="soft-shell mt-8 px-6 py-8 md:px-8">
-        <h2 class="text-2xl leading-tight text-[#181511]">Shorter records</h2>
-        <p class="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">The number below is stored. Situation, mandate, action, result, and reflection are not.</p>
+        <h2 class="text-2xl leading-tight text-[#181511]">Executive Engagements</h2>
+        <p class="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">Summary outcomes from multi-jurisdiction risk, forensics, and corporate governance mandates.</p>
         <div class="mt-6 space-y-4">
           {short.map((study) => (
             <a href={`${base}projects/${study.slug}/`} class="block border-t border-[color:var(--line-soft)] pt-4">
