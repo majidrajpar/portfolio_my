@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CcmTelemetryArchitect from '../../components/CcmTelemetryArchitect';
+import NetworkCanvas from '../../components/NetworkCanvas';
+const base = import.meta.env.BASE_URL;
+
+const title = "100% Continuous Controls Monitoring (CCM) Telemetry Architect | Majid Mumtaz";
+const description = "Translate internal audit control objectives into continuous SQL exception queries across P2P, O2C, Financial Close, and Payroll. Calibrate alert sensitivity and export production logic for Snowflake, BigQuery, Postgres, and Oracle.";
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
+      <NetworkCanvas client:load nodeCount={35} />
+      <div class="relative z-10 max-w-4xl" data-reveal>
+        <a href={`${base}tools/`} class="mb-7 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white">
+          &larr; Back to Tools
+        </a>
+        <span class="hero-chip mb-6 md:mb-7">100% Continuous Controls Monitoring</span>
+        <h1 class="headline-display max-w-4xl text-[clamp(2.6rem,5.5vw,4.8rem)] font-black text-white">
+          Continuous Controls Monitoring (CCM)
+          <span class="block text-[#f4c98b]">& Telemetry Query Architect.</span>
+        </h1>
+        <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.08rem] md:leading-9">
+          Replace retrospective 20-invoice sampling with continuous 100% telemetry. Define business cycle control objectives, calibrate alert thresholds against transaction populations, and generate production-grade SQL for Snowflake, BigQuery, PostgreSQL/DuckDB, and Oracle.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy & Methodology Banner -->
+  <section class="px-4 py-5 md:px-8">
+    <div class="soft-shell mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
+      <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+      </svg>
+      <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
+        <span class="meta-label text-[#181511]">100% Client-Side Privacy</span>
+        All threshold models, exception simulations, and generated SQL queries execute entirely in your local browser sandbox. No enterprise schema or transactional data leaves your device.
+      </p>
+    </div>
+  </section>
+
+  <section class="px-4 md:px-8">
+    <p class="mx-auto max-w-7xl text-sm leading-7 text-[color:var(--text-secondary)]">
+      Engineered for internal audit leaders, data analytics engineers, and GRC directors building automated continuous control monitoring (CCM) feeds for ERP systems (SAP, Oracle Cloud, NetSuite, Microsoft Dynamics 365).
+    </p>
+  </section>
+
+  <!-- Main Interactive App Component -->
+  <section class="px-4 py-4 pb-20 md:px-8">
+    <div class="mx-auto max-w-7xl" data-reveal data-reveal-delay="1">
+      <div class="soft-shell p-6 md:p-8">
+        <CcmTelemetryArchitect client:load />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

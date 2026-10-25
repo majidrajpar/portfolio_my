@@ -219,5 +219,17 @@ export const tools = [
     isLive: true,
     batch: 9,
     ml: false,
+  },
+  {
+    id: 'ccm-telemetry-architect',
+    tier: 'catalog',
+    domain: '100% Continuous Controls Monitoring',
+    title: '100% Continuous Controls Monitoring (CCM) Telemetry Architect',
+    description: 'Translate internal audit control objectives into continuous SQL exception queries across P2P, O2C, Financial Close, and Payroll. Calibrate alert thresholds and export production logic for Snowflake, BigQuery, Postgres/DuckDB, and Oracle.',
+    category: 'Internal Controls',
+    href: '/portfolio_my/tools/ccm-telemetry-architect/',
+    isLive: true,
+    batch: 9,
+    ml: false,
   }
 ];
