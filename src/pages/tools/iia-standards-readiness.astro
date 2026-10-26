@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import IIAStandardsDiagnostic from '../../components/IIAStandardsDiagnostic';
 import NetworkCanvas from '../../components/NetworkCanvas';
+import CommercialBridgeCard from '../../components/CommercialBridgeCard.astro';
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -54,6 +55,16 @@ const base = import.meta.env.BASE_URL;
   <section class="px-4 py-4 pb-16 md:px-8">
     <div class="mx-auto max-w-7xl" data-reveal data-reveal-delay="1">
       <IIAStandardsDiagnostic client:load />
+
+      <CommercialBridgeCard
+        badge="Board Governance Architecture"
+        title="CAE Governance, GIAS 2024 & Audit Committee Operating System"
+        description="Complete conforming suite for the 2024 Global Internal Audit Standards (GIAS): 5-domain conformance matrix, live QAIP KPI tracker, Board reporting packages, and External QAR readiness gates."
+        primaryUrl="https://majidmumtaz.gumroad.com/l/cae-gias-2024-os"
+        primaryLabel="Access GIAS 2024 OS · $99 / $249"
+        secondaryUrl={`${base}resources/`}
+        secondaryLabel="View All Frameworks"
+      />
     </div>
   </section>
 </BaseLayout>

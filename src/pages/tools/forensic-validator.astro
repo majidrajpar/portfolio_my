@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ForensicValidatorComponent from '../../components/ForensicValidator.jsx';
 import NetworkCanvas from '../../components/NetworkCanvas';
+import CommercialBridgeCard from '../../components/CommercialBridgeCard.astro';
 const base = import.meta.env.BASE_URL;
 
 const title = "Forensic Pattern Validator | Majid Mumtaz";
@@ -51,6 +52,16 @@ const description = "High-performance forensic audit tool for detecting financia
       <div class="soft-shell p-6 md:p-10">
         <ForensicValidatorComponent client:load />
       </div>
+
+      <CommercialBridgeCard
+        badge="Forensic & Investigation Architecture"
+        title="Forensic Investigation, AP Triage & Fraud Risk Arsenal"
+        description="Production-tested 60-minute AP triage engine (Benford 1st & 2nd digit, employee-vendor relational IBAN matching), 12-page privileged investigation report, evidence logs, and forensic SQL extraction queries."
+        primaryUrl="https://majidmumtaz.gumroad.com/l/forensic-ap-triage-kit"
+        primaryLabel="Deploy Forensic Kit · $89 / $219"
+        secondaryUrl={`${base}resources/`}
+        secondaryLabel="View All Frameworks"
+      />
     </div>
   </section>
 </BaseLayout>
