@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import WhistleblowerTriage from '../../components/WhistleblowerTriage';
 import NetworkCanvas from '../../components/NetworkCanvas';
+import CommercialBridgeCard from '../../components/CommercialBridgeCard.astro';
 const base = import.meta.env.BASE_URL;
 
 const title = "Whistleblower Triage Engine | Majid Mumtaz";
@@ -54,6 +55,16 @@ const description = "Automated matrix scoring for anonymous corporate ethics rep
       <div class="soft-shell p-6 md:p-10">
         <WhistleblowerTriage client:load />
       </div>
+
+      <CommercialBridgeCard
+        badge="Forensic & Investigation Architecture"
+        title="Forensic Investigation, AP Triage & Fraud Risk Arsenal"
+        description="Production-tested 60-minute AP triage engine (Benford 1st & 2nd digit, employee-vendor relational IBAN matching), 12-page privileged investigation report, evidence logs, and forensic SQL extraction queries."
+        primaryUrl="https://majidmumtaz.gumroad.com/l/forensic-ap-triage-kit"
+        primaryLabel="Deploy Forensic Kit · $89 / $219"
+        secondaryUrl={`${base}resources/`}
+        secondaryLabel="View All Frameworks"
+      />
     </div>
   </section>
 </BaseLayout>

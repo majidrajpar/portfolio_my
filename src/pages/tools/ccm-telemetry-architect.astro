@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CcmTelemetryArchitect from '../../components/CcmTelemetryArchitect';
 import NetworkCanvas from '../../components/NetworkCanvas';
+import CommercialBridgeCard from '../../components/CommercialBridgeCard.astro';
 const base = import.meta.env.BASE_URL;
 
 const title = "100% Continuous Controls Monitoring (CCM) Telemetry Architect | Majid Mumtaz";
@@ -54,6 +55,16 @@ const description = "Translate internal audit control objectives into continuous
       <div class="soft-shell p-6 md:p-8">
         <CcmTelemetryArchitect client:load />
       </div>
+
+      <CommercialBridgeCard
+        badge="Enterprise Production Architecture"
+        title="Cloud Kitchen ERM & Continuous Controls Monitoring (CCM) Telemetry Suite"
+        description="Direct deployment package including 100% automated SQL telemetry engines for aggregator 3-way reconciliation (FI-002), recipe BOM yield variance detection (OP-003), walk-in IoT defrost drift, dynamic risk appetite models, and Audit Committee charters."
+        primaryUrl="https://majidmumtaz.gumroad.com/l/erm-ccm-suite"
+        primaryLabel="Access Production Suite · $169 / $399"
+        secondaryUrl={`${base}resources/`}
+        secondaryLabel="View All Frameworks"
+      />
     </div>
   </section>
 </BaseLayout>

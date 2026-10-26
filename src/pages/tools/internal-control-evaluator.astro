@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import InternalControlEvaluator from '../../components/InternalControlEvaluator.jsx';
 import NetworkCanvas from '../../components/NetworkCanvas';
+import CommercialBridgeCard from '../../components/CommercialBridgeCard.astro';
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -57,6 +58,16 @@ const base = import.meta.env.BASE_URL;
 
         <InternalControlEvaluator client:load />
       </div>
+
+      <CommercialBridgeCard
+        badge="Capital Markets Architecture"
+        title="GCC Pre-IPO Governance, ICFR & Regulatory Readiness Kit"
+        description="Production-ready Tadawul Main, Nomu, and ADX/DFM jurisdictional matrices, full scoping models, ICFR ToD/ToE testing workpapers, and deficiency severity classifiers for board and regulatory submission."
+        primaryUrl="https://majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit"
+        primaryLabel="Deploy Pre-IPO Suite · $99 / $299"
+        secondaryUrl={`${base}resources/`}
+        secondaryLabel="View All Frameworks"
+      />
     </div>
   </section>
 

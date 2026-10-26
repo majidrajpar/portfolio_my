@@ -10,12 +10,12 @@ export const software = [
     internalUrl: '/erm-ccm-suite/',
     internalLabel: 'Suite Inventory & Tiers',
     isPublic: true,
-    status: 'Commercial Suite · $149 / $349',
+    status: 'Commercial Suite · $169 / $399',
     keyFeatures: [
       '18 unlocked working files: Board ERM Policy, 12-Month Implementation Manual, 7 Excel registries, and 5 executive reporting packs',
       'Automated 3-way Order-to-Cash delivery aggregator remittance & refund deduction reconciliation schema (FI-002 / FI-KRI-06)',
       'Theoretical-vs-actual recipe BOM inventory yield tracking and rebalanced kitchen KPI scorecards (OP-003 / OPS-KRI-06)',
-      'Two-tier licensing via Gumroad: Standard Single-Entity ($149) and Enterprise Multi-Entity & Advisory ($349)'
+      'Two-tier licensing via Gumroad: Standard Single-Entity ($169) and Enterprise Multi-Entity & Advisory ($399)'
     ]
   },
   {
