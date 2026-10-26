@@ -2,7 +2,7 @@
 
 **White-Label Governance, Risk & Assurance Architecture**  
 **Author & Architect:** Majid Mumtaz, CIA, ACA (ICAEW), FCCA, GRCP, COSO ERM Certified  
-**Full Suite Licensing:** [majidrajpar.github.io/portfolio_my/erm-ccm-suite](https://majidrajpar.github.io/portfolio_my/erm-ccm-suite/) | [Gumroad Checkout ($149 Standard / $349 Enterprise)](https://majidmumtaz.gumroad.com/l/erm-ccm-suite)
+**Full Suite Licensing:** [majidrajpar.github.io/portfolio_my/erm-ccm-suite](https://majidrajpar.github.io/portfolio_my/erm-ccm-suite/) | [Gumroad Checkout ($169 Standard / $399 Advisory)](https://majidmumtaz.gumroad.com/l/erm-ccm-suite)
 
 ---
 
@@ -54,7 +54,7 @@ Every file in the full commercial download is cross-referenced through a unified
 | Asset File | Format | Purpose & Scope |
 | :--- | :--- | :--- |
 | `00_Product_Overview_and_Deployment_Guide.md` | Markdown (`.md`) | Architecture overview, taxonomy map, and 90-day deployment checklist. |
-| `COMMERCIAL_LICENSE.md` | Markdown (`.md`) | Commercial license terms covering Standard Single-Entity ($149) and Enterprise Multi-Entity / Advisory ($349) usage rights and statutory disclaimers. |
+| `COMMERCIAL_LICENSE.md` | Markdown (`.md`) | Commercial license terms covering Standard Single-Entity ($169) and Enterprise Multi-Entity / Advisory ($399) usage rights and statutory disclaimers. |
 
 ### Folder `01_Policy_and_Guides` — Foundational Governance & Operating Manual
 | Asset File | Format | Purpose & Scope |
@@ -114,6 +114,6 @@ This suite is white-labeled for immediate customization by a Chief Financial Off
 
 To download the complete 18-file bundle (including all unlocked `.xlsx` workbooks with live formulas and editable `.docx` Board/Committee packs):
 
-- **Standard Practitioner License ($149 USD):** Single legal operating entity deployment.
-- **Enterprise Multi-Entity & Advisory License ($349 USD):** Multi-entity holding groups, franchise networks, and external client consulting engagements.
+- **Standard Practitioner License ($169 USD):** Single legal operating entity deployment.
+- **Enterprise Multi-Entity & Advisory License ($399 USD):** Multi-entity holding groups, franchise networks, and external client consulting engagements.
 - **Acquire via Gumroad:** [majidmumtaz.gumroad.com/l/erm-ccm-suite](https://majidmumtaz.gumroad.com/l/erm-ccm-suite)

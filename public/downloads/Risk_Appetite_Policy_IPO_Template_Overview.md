@@ -3,7 +3,7 @@
 **Board-Grade Quantitative Risk Appetite, Tolerance Thresholds & Pre-Listing Governance**  
 **Prepared by:** Majid Mumtaz, CIA, ACA (ICAEW), FCCA, GRCP, COSO ERM Certified  
 **Commercial Bundle:** GCC Pre-IPO, SOX 404 (ICFR) & Regulatory Readiness Kit  
-**Acquire Unlocked Policy & Kit ($89 USD):** [majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit](https://majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit)
+**Acquire Unlocked Policy & Kit ($99 Standard / $299 Advisory):** [majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit](https://majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit)
 
 ---
 
@@ -32,7 +32,7 @@ This policy resolves that tension by replacing subjective debates with **pre-agr
 
 ## 3. Editable Word Template Structure (7 Quantitative Governance Sections)
 
-The unlocked `.docx` policy template included in the **GCC Pre-IPO, SOX 404 (ICFR) & Regulatory Readiness Kit ($89)** is structured for immediate Board and Audit Committee adoption:
+The unlocked `.docx` policy template included in the **GCC Pre-IPO, SOX 404 (ICFR) & Regulatory Readiness Kit ($99 / $299)** is structured for immediate Board and Audit Committee adoption:
 
 | Section | Title | Core Contents & Quantitative Metrics |
 | :--- | :--- | :--- |
@@ -46,7 +46,7 @@ The unlocked `.docx` policy template included in the **GCC Pre-IPO, SOX 404 (ICF
 
 ---
 
-## 4. What Is Included in the Full Commercial Kit ($89 USD)
+## 4. What Is Included in the Full Commercial Kit ($99 Standard / $299 Advisory)
 
 When you license the **GCC Pre-IPO, SOX 404 (ICFR) & Regulatory Readiness Kit** on Gumroad, you receive the unlocked `.docx` Risk Appetite Policy alongside the complete 5-asset pre-listing governance suite:
 
@@ -57,5 +57,5 @@ When you license the **GCC Pre-IPO, SOX 404 (ICFR) & Regulatory Readiness Kit** 
 5. **`ESG_Readiness_Assessment.pdf`** — Executive readiness diagnostic for mandatory GCC ESG disclosures and board oversight.
 
 ### Acquire the Full Unlocked Bundle
-- **Instant Download via Gumroad ($89 USD):** [https://majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit](https://majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit)
+- **Instant Download via Gumroad ($99 Standard / $299 Advisory):** [https://majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit](https://majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit)
 - **Browse All Governance & CCM Suites:** [https://majidrajpar.github.io/portfolio_my/resources/](https://majidrajpar.github.io/portfolio_my/resources/)

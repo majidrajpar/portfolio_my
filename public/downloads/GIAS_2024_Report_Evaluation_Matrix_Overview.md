@@ -3,7 +3,7 @@
 **Working QAIP Gate & Engagement Scoring Architecture**  
 **Prepared by:** Majid Mumtaz, CIA, ACA (ICAEW), FCCA, GRCP, COSO ERM Certified  
 **Commercial Bundle:** CAE Governance, GIAS 2024 & Audit Committee Operating System  
-**Acquire Unlocked Workbook & Kit ($79 USD):** [majidmumtaz.gumroad.com/l/cae-gias-2024-os](https://majidmumtaz.gumroad.com/l/cae-gias-2024-os)
+**Acquire Unlocked Workbook & Kit ($99 Standard / $249 Advisory):** [majidmumtaz.gumroad.com/l/cae-gias-2024-os](https://majidmumtaz.gumroad.com/l/cae-gias-2024-os)
 
 > *Note: Prepared independently by Majid Mumtaz, CIA, ACA, FCCA. This working matrix is not published or endorsed by The Institute of Internal Auditors (IIA) or ICAEW.*
 
@@ -34,7 +34,7 @@ This matrix forces every draft report through that three-way lens before a singl
 
 ## 3. Unlocked Excel Workbook Architecture (6 Interlocked Sheets)
 
-The commercial `.xlsx` file included in the **CAE Governance, GIAS 2024 & Audit Committee OS ($79)** contains six unlocked worksheets with transparent formulas and zero macro dependencies:
+The commercial `.xlsx` file included in the **CAE Governance, GIAS 2024 & Audit Committee OS ($99 / $249)** contains six unlocked worksheets with transparent formulas and zero macro dependencies:
 
 | Sheet Tab | Name | Operational Function & Formula Logic |
 | :--- | :--- | :--- |
@@ -56,7 +56,7 @@ Unlike simple weighted averages that allow a weak root-cause analysis to be mask
 
 ---
 
-## 5. What Is Included in the Full Commercial Kit ($79 USD)
+## 5. What Is Included in the Full Commercial Kit ($99 Standard / $249 Advisory)
 
 When you license the **CAE Governance, GIAS 2024 & Audit Committee Operating System** on Gumroad, you receive the unlocked `.xlsx` matrix alongside the complete 7-asset CAE governance kit:
 
@@ -69,5 +69,5 @@ When you license the **CAE Governance, GIAS 2024 & Audit Committee Operating Sys
 7. **`Comparison_of_Employee_Performance_Evaluation_Models.pdf`** — Internal audit team evaluation framework comparing forced ranking, absolute metrics, and continuous feedback.
 
 ### Acquire the Full Unlocked Bundle
-- **Instant Download via Gumroad ($79 USD):** [https://majidmumtaz.gumroad.com/l/cae-gias-2024-os](https://majidmumtaz.gumroad.com/l/cae-gias-2024-os)
+- **Instant Download via Gumroad ($99 Standard / $249 Advisory):** [https://majidmumtaz.gumroad.com/l/cae-gias-2024-os](https://majidmumtaz.gumroad.com/l/cae-gias-2024-os)
 - **Browse All Governance & CCM Suites:** [https://majidrajpar.github.io/portfolio_my/resources/](https://majidrajpar.github.io/portfolio_my/resources/)
