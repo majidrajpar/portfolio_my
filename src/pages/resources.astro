@@ -6,58 +6,263 @@ import RiskAppetiteInfographic from '../components/RiskAppetiteInfographic.astro
 const base = import.meta.env.BASE_URL;
 
 const categories = ['All', ...new Set((documents as any[]).map((d: any) => d.category))];
-const startHereIds = ['doc-021', 'doc-023', 'doc-025', 'doc-024', 'doc-008', 'doc-016'];
-const byId = new Map((documents as any[]).map((d: any) => [d.id, d]));
-const startHere = startHereIds.map((id) => byId.get(id)).filter(Boolean);
 
-function fileMeta(filename: string) {
-  const name = filename ? filename.toUpperCase() : '';
+const commercialBundles = [
+  {
+    id: 'suite-erm-ccm',
+    badge: 'Flagship 18-File Programme',
+    format: '7 Unlocked .XLSX · 7 .DOCX · 4 Guides',
+    title: 'Cloud Kitchen & Multi-Brand F&B ERM + CCM Suite',
+    price: '$149 / $349',
+    summary:
+      'Complete white-label Enterprise Risk Management and 100% population Continuous Controls Monitoring (CCM) architecture. Connects delivery aggregator remittance reconciliation (FI-002), recipe BOM yields (OP-003), and unannounced kitchen line walks directly to EBITDA defense.',
+    gumroadUrl: 'https://majidmumtaz.gumroad.com/l/erm-ccm-suite',
+    gumroadLabel: 'License Suite ($149 / $349)',
+    internalUrl: `${base}erm-ccm-suite/`,
+    internalLabel: 'Full 18-File Inventory',
+    overviewFile: 'Cloud_Kitchen_ERM_CCM_Suite_Overview.md',
+    featured: true,
+  },
+  {
+    id: 'bundle-cae-gias',
+    badge: 'CAE & Board Governance',
+    format: 'Unlocked 6-Tab .XLSX + 6 Reference PDFs',
+    title: 'CAE Governance, GIAS 2024 & Audit Committee OS',
+    price: '$79',
+    summary:
+      'Built around the unlocked 6-sheet GIAS 2024 Internal Audit Report Evaluation Matrix (.xlsx) with deterministic report issuance gates, paired with the 1-Page Audit Committee Executive Summary, Pack Quality Checklist, IA Setup Blueprint, and QAIP 2025 framework.',
+    gumroadUrl: 'https://majidmumtaz.gumroad.com/l/cae-gias-2024-os',
+    gumroadLabel: 'License CAE & GIAS Kit ($79)',
+    overviewFile: 'GIAS_2024_Report_Evaluation_Matrix_Overview.md',
+    featured: false,
+  },
+  {
+    id: 'bundle-ipo-icfr',
+    badge: 'Pre-Listing & SOX 404',
+    format: 'Unlocked Policy .DOCX + 4 Implementation Guides',
+    title: 'GCC Pre-IPO, SOX 404 (ICFR) & Regulatory Readiness Kit',
+    price: '$89',
+    summary:
+      'Combines the board-grade Quantitative Risk Appetite Policy Template (.docx) with the 35-page SOX 404 / ICFR Implementation Manual, 6-Phase IPO Readiness Checklist, KSA PDPL Multi-Channel Compliance Matrix, and GCC ESG Readiness Diagnostic.',
+    gumroadUrl: 'https://majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit',
+    gumroadLabel: 'License IPO & ICFR Kit ($89)',
+    overviewFile: 'Risk_Appetite_Policy_IPO_Template_Overview.md',
+    featured: false,
+  },
+  {
+    id: 'bundle-forensic-ap',
+    badge: 'Forensics & Disbursement Triage',
+    format: 'Unlocked 8-Section .DOCX + 4 Fieldwork Guides',
+    title: 'Forensic Investigation, AP Triage & Fraud Arsenal',
+    price: '$69',
+    summary:
+      'Includes the unlocked 8-section Forensic Investigation & Intelligence Report Template (.docx) with Benford’s Law tables, Fraud Diamond & Parallax operational diagnostics, and chain-of-custody logs, plus the 60-Minute AP Fraud Finder and 51-page Fraud Prevention Guide.',
+    gumroadUrl: 'https://majidmumtaz.gumroad.com/l/forensic-ap-triage-kit',
+    gumroadLabel: 'License Forensic & AP Kit ($69)',
+    overviewFile: 'Forensic_Investigation_Report_Template_Overview.md',
+    featured: false,
+  },
+  {
+    id: 'bundle-ops-vendor',
+    badge: 'Fulfillment, Payment & TPRM',
+    format: '3 Unlocked .DOCX Templates + 2 Control Matrices',
+    title: 'Multi-Channel Operations, FMCG Logistics RCM & Vendor Pack',
+    price: '$59',
+    summary:
+      'Three unlocked Word assessment templates—UAE Commissary & Kitchen Operations Evaluation (15 pages), PCI DSS v4.0 Multi-Channel Scoping (12 pages), and SOC 2 Readiness & Vendor Section IV Exception Review (14 pages)—plus the FMCG Logistics RCM.',
+    gumroadUrl: 'https://majidmumtaz.gumroad.com/l/ops-logistics-vendor-pack',
+    gumroadLabel: 'License Ops & Vendor Pack ($59)',
+    overviewFile: 'UAE_Operations_Evaluation_Template_Overview.md',
+    featured: false,
+  },
+];
+
+function fileMeta(doc: any) {
+  const name = doc.filename ? doc.filename.toUpperCase() : '';
+  if (doc.id === 'doc-039') return { unit: 'file', kind: '18-FILE SUITE + OVERVIEW' };
+  if (doc.id === 'doc-038') return { unit: 'sheet', kind: 'UNLOCKED EXCEL + OVERVIEW' };
+  if (name.endsWith('.MD')) return { unit: 'page', kind: 'UNLOCKED WORD + OVERVIEW' };
   if (name.endsWith('.DOCX')) return { unit: 'page', kind: 'WORD' };
   if (name.endsWith('.XLSX')) return { unit: 'sheet', kind: 'EXCEL' };
   if (name.endsWith('.ZIP') || name.endsWith('.EXE')) return { unit: 'bundle', kind: 'WINDOWS APP' };
-  return { unit: 'page', kind: 'PDF' };
+  return { unit: 'page', kind: 'FREE PDF' };
+}
+
+function isPdfAsset(doc: any) {
+  return Boolean(doc.filename && doc.filename.toLowerCase().endsWith('.pdf'));
 }
 ---
 
 <BaseLayout
-  title="Resources | Professional Internal Audit Downloads — Majid Mumtaz"
-  description="Professional internal audit frameworks, checklists, guides, and tools. Download risk control matrices, fraud prevention guides, SOX implementation guides, and more."
+  title="Resources | Executive Audit Frameworks & Commercial Execution Suites — Majid Mumtaz"
+  description="28 free diagnostic PDFs, research papers, and board checklists alongside 5 commercial white-label execution suites (unlocked Excel .xlsx workbooks and Word .docx templates)."
 >
+  <script src="https://gumroad.com/js/gumroad.js" is:inline></script>
+
+  <!-- Hero Section -->
   <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
     <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
       <NetworkCanvas client:load nodeCount={35} />
-      <div class="relative z-10 max-w-4xl" data-reveal>
-        <span class="hero-chip mb-8">Professional Downloads</span>
-        <h1 class="headline-display max-w-4xl text-[clamp(3rem,7vw,6rem)] font-black text-white">
-          Working files.
-        </h1>
-        <p class="mt-8 max-w-3xl text-base leading-8 text-white/74 md:text-[1.1rem] md:leading-9">
-          Checklists and templates.
-        </p>
+      <div class="relative z-10 grid gap-8 lg:grid-cols-[1.38fr_0.82fr] lg:items-end" data-reveal>
+        <div>
+          <span class="hero-chip mb-6">Executive Research &amp; White-Label Execution Suites</span>
+          <h1 class="headline-display max-w-4xl text-[clamp(2.8rem,6.4vw,5.4rem)] font-black text-white leading-[1.02]">
+            Frameworks &amp; working models.
+          </h1>
+          <p class="mt-6 max-w-3xl text-base leading-8 text-white/76 md:text-[1.08rem] md:leading-8">
+            Diagnostic checklists, sector risk reports, and SSRN research papers (<code class="font-mono text-xs text-[#f4c98b]">.pdf</code>) are open for immediate one-click download by Board Chairs, CFOs, and audit peers. Unlocked commercial execution suites—live Excel registries (<code class="font-mono text-xs text-[#f4c98b]">.xlsx</code>) and editable Word policies and dossiers (<code class="font-mono text-xs text-[#f4c98b]">.docx</code>)—are licensed for white-label deployment via Gumroad, with full architectural overviews (<code class="font-mono text-xs text-[#f4c98b]">.md</code>) provided free.
+          </p>
+        </div>
+
+        <div class="quote-panel p-6 md:p-7">
+          <div class="meta-label text-[#f4c98b]">Two-Tier Access Architecture</div>
+          <div class="mt-4 space-y-3 text-xs leading-6 text-white/74">
+            <div class="border-b border-white/10 pb-3">
+              <strong class="text-white block">01 // Open Executive Briefings (28 Free PDFs)</strong>
+              Zero email gates on diagnostic checklists, SOX/ICFR guides, fraud red-flag handbooks, and AI benchmark research.
+            </div>
+            <div>
+              <strong class="text-[#f4c98b] block">02 // Commercial Working Suites (5 Bundles)</strong>
+              Unlocked, formula-driven <code class="font-mono text-[11px]">.xlsx</code> models and board-ready <code class="font-mono text-[11px]">.docx</code> templates built to replace 20-invoice sampling with 100% telemetry.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="px-4 py-4 md:px-8">
+  <!-- Commercial Execution Suites & Working Bundles -->
+  <section class="px-4 py-8 md:px-8" id="commercial-suites">
     <div class="mx-auto max-w-7xl">
-      <h2 class="text-2xl text-[#181511]">Start here</h2>
-      <ul class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {startHere.map((doc: any) => (
-          <li>
-            <a href={`${base}downloads/${doc.filename}`} download class="text-sm font-semibold text-[#181511] underline underline-offset-4">
-              {doc.title}
-            </a>
-          </li>
+      <div class="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end" data-reveal>
+        <div>
+          <span class="eyebrow-label">01 // White-Label Commercial Toolkits</span>
+          <h2 class="mt-3 text-[clamp(1.9rem,4vw,3.3rem)] leading-[1.04] text-[#181511]">
+            Commercial execution suites &amp; unlocked working bundles.
+          </h2>
+        </div>
+        <p class="max-w-md text-xs leading-6 text-[color:var(--text-secondary)]">
+          Every bundle includes a free downloadable <code class="font-mono text-[11px]">_Overview.md</code> specification detailing exact worksheet tabs, document schemas, and Parallax View diagnostics before you license.
+        </p>
+      </div>
+
+      <!-- Flagship Suite Banner Card -->
+      {commercialBundles.filter((b) => b.featured).map((flagship) => (
+        <div
+          class="mb-6 rounded-[32px] border-2 border-[#c7964c] bg-[#181512] p-7 text-white shadow-xl md:p-9"
+          data-reveal
+        >
+          <div class="grid gap-6 lg:grid-cols-[1.5fr_0.8fr] lg:items-center">
+            <div>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="rounded-full bg-[#c7964c]/20 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-[#f4c98b]">
+                  {flagship.badge}
+                </span>
+                <span class="font-mono text-xs text-white/60">{flagship.format}</span>
+              </div>
+              <h3 class="mt-4 text-2xl font-black text-white md:text-3xl">
+                {flagship.title}
+              </h3>
+              <p class="mt-3 text-sm leading-7 text-white/76">
+                {flagship.summary}
+              </p>
+            </div>
+
+            <div class="flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-5 lg:items-end lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+              <div>
+                <div class="text-[10px] font-mono uppercase tracking-widest text-white/55">Commercial License</div>
+                <div class="mt-1 text-3xl font-black text-[#f4c98b]">{flagship.price} <span class="text-xs font-normal text-white/60">USD</span></div>
+              </div>
+              <div class="flex flex-wrap items-center gap-3">
+                <a
+                  href={flagship.gumroadUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-primary text-xs font-black uppercase tracking-wider"
+                >
+                  {flagship.gumroadLabel}
+                </a>
+                {flagship.internalUrl && (
+                  <a
+                    href={flagship.internalUrl}
+                    class="btn-secondary-light text-xs font-black uppercase tracking-wider"
+                  >
+                    {flagship.internalLabel}
+                  </a>
+                )}
+                <a
+                  href={`${base}downloads/${flagship.overviewFile}`}
+                  download
+                  class="text-xs font-bold text-[#f4c98b] underline underline-offset-4 hover:text-white"
+                >
+                  Free Overview (.md)
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      <!-- 4 Domain Execution Bundles Grid -->
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+        {commercialBundles.filter((b) => !b.featured).map((bundle, idx) => (
+          <div
+            class="glass-card flex flex-col justify-between rounded-[28px] p-7"
+            data-reveal
+            data-reveal-delay={String((idx % 2) + 1)}
+          >
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="rounded-full bg-[#a33a21]/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-[#a33a21]">
+                  {bundle.badge}
+                </span>
+                <span class="font-mono text-[11px] font-bold text-[#181511]">{bundle.price} USD</span>
+              </div>
+              <h3 class="mt-4 text-xl font-black leading-snug text-[#181511]">
+                {bundle.title}
+              </h3>
+              <div class="mt-1.5 font-mono text-[11px] text-slate-500">
+                {bundle.format}
+              </div>
+              <p class="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">
+                {bundle.summary}
+              </p>
+            </div>
+
+            <div class="mt-6 flex flex-wrap items-center gap-3 border-t border-[color:var(--line-soft)] pt-5">
+              <a
+                href={bundle.gumroadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary text-[11px] font-black uppercase tracking-wider"
+              >
+                {bundle.gumroadLabel}
+              </a>
+              <a
+                href={`${base}downloads/${bundle.overviewFile}`}
+                download
+                class="text-xs font-bold text-[#181511] underline underline-offset-4 hover:text-[#a33a21]"
+              >
+                Free Overview (.md)
+              </a>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   </section>
 
-  <section class="px-4 py-4 md:px-8">
+  <!-- Main Resource Library (All 35 Assets) -->
+  <section class="px-4 py-6 md:px-8">
     <div class="mx-auto max-w-7xl">
       <div class="mb-10" data-reveal>
-        <span class="eyebrow-label">Resource Library</span>
-        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Downloadable frameworks and working tools.</h2>
+        <span class="eyebrow-label">02 // Complete Resource Library (35 Assets)</span>
+        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.6rem)] leading-[1.02] text-[#181511]">
+          Free diagnostic PDFs &amp; individual template overviews.
+        </h2>
+        <p class="mt-3 max-w-3xl text-sm leading-7 text-[color:var(--text-secondary)]">
+          All 28 <code class="font-mono text-xs">.pdf</code> checklists, handbooks, and research papers download immediately in one click. Cards linked to a commercial execution bundle include a secondary option to license the full editable toolkit.
+        </p>
       </div>
 
       <div class="mb-8 flex flex-wrap gap-2" id="filter-bar">
@@ -72,68 +277,123 @@ function fileMeta(filename: string) {
       </div>
 
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3" id="docs-grid">
-        {(documents as any[]).map((doc: any, i: number) => (
-          <div
-            class="glass-card flex flex-col rounded-[30px] p-7"
-            data-category={doc.category}
-            data-reveal
-            data-reveal-delay={String((i % 3) + 1)}
-          >
-            <div class="flex items-center justify-between gap-4 mb-5">
-              <span class="rounded-full bg-[#a33a21]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.24em] text-[#a33a21]">
-                {doc.category}
-              </span>
-              <span class="meta-label text-slate-400">{doc.size}</span>
+        {(documents as any[]).map((doc: any, i: number) => {
+          const isPdf = isPdfAsset(doc);
+          const meta = fileMeta(doc);
+          return (
+            <div
+              class="glass-card flex flex-col rounded-[30px] p-7"
+              data-category={doc.category}
+              data-reveal
+              data-reveal-delay={String((i % 3) + 1)}
+            >
+              <div class="flex items-center justify-between gap-4 mb-5">
+                <span class="rounded-full bg-[#a33a21]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.24em] text-[#a33a21]">
+                  {doc.category}
+                </span>
+                <span class="meta-label text-slate-400">{doc.size}</span>
+              </div>
+
+              <h3 class="text-xl leading-tight text-[#181511] flex-1">
+                {doc.title}
+              </h3>
+
+              <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">
+                {doc.description}
+              </p>
+
+              <div class="mt-5 flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.22em] text-slate-400">
+                <span>{doc.pages} {doc.pages === 1 ? meta.unit : `${meta.unit}s`}</span>
+                <span>{meta.kind}</span>
+              </div>
+
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                {isPdf ? (
+                  <>
+                    <a
+                      href={`${base}downloads/${doc.filename}`}
+                      download
+                      class="btn-secondary self-start"
+                    >
+                      Download Free PDF
+                    </a>
+                    {doc.gumroadUrl && (
+                      <a
+                        href={doc.gumroadUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-primary self-start text-[11px] font-black uppercase tracking-wider inline-flex items-center gap-1.5"
+                      >
+                        {doc.gumroadLabel ?? 'Get Commercial Kit'}
+                      </a>
+                    )}
+                    {doc.internalUrl && (
+                      <a
+                        href={`${base}${doc.internalUrl}`}
+                        class="btn-primary self-start text-[11px] font-black uppercase tracking-wider inline-flex items-center gap-1.5"
+                      >
+                        {doc.internalLabel ?? 'View Suite'}
+                      </a>
+                    )}
+                  </>
+                ) : doc.gumroadUrl ? (
+                  <>
+                    <a
+                      href={doc.gumroadUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn-primary self-start text-[11px] font-black uppercase tracking-wider inline-flex items-center gap-1.5"
+                    >
+                      {doc.gumroadLabel ?? 'License Suite'}
+                    </a>
+                    {doc.internalUrl && (
+                      <a
+                        href={`${base}${doc.internalUrl}`}
+                        class="btn-secondary self-start"
+                      >
+                        {doc.internalLabel ?? 'Details'}
+                      </a>
+                    )}
+                    <a
+                      href={`${base}downloads/${doc.filename}`}
+                      download
+                      class="text-xs font-bold text-[#181511] underline underline-offset-4 hover:text-[#a33a21]"
+                    >
+                      Free Overview (.md)
+                    </a>
+                  </>
+                ) : doc.downloadUrl ? (
+                  <a
+                    href={doc.downloadUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-primary self-start text-[11px] font-black uppercase tracking-wider inline-flex items-center gap-1.5"
+                  >
+                    Download App (.exe)
+                  </a>
+                ) : (
+                  <a
+                    href={`${base}downloads/${doc.filename}`}
+                    download
+                    class="btn-secondary self-start"
+                  >
+                    Download
+                  </a>
+                )}
+                {doc.link && (
+                  <a
+                    href={doc.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-secondary self-start"
+                  >
+                    {doc.linkLabel ?? 'View Original'}
+                  </a>
+                )}
+              </div>
             </div>
-
-            <h3 class="text-xl leading-tight text-[#181511] flex-1">
-              {doc.title}
-            </h3>
-
-            <p class="mt-4 text-sm leading-8 text-[color:var(--text-secondary)]">
-              {doc.description}
-            </p>
-
-            <div class="mt-5 flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.22em] text-slate-400">
-              <span>{doc.pages} {doc.pages === 1 ? fileMeta(doc.filename).unit : `${fileMeta(doc.filename).unit}s`}</span>
-              <span>{fileMeta(doc.filename).kind}</span>
-            </div>
-
-            <div class="mt-6 flex flex-wrap items-center gap-3">
-              {doc.downloadUrl ? (
-                <a
-                  href={doc.downloadUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn-primary self-start text-[11px] font-black uppercase tracking-wider inline-flex items-center gap-1.5"
-                >
-                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
-                  </svg>
-                  Download App (.exe)
-                </a>
-              ) : (
-                <a
-                  href={`${base}downloads/${doc.filename}`}
-                  download
-                  class="btn-secondary self-start"
-                >
-                  Download
-                </a>
-              )}
-              {doc.link && (
-                <a
-                  href={doc.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn-secondary self-start"
-                >
-                  {doc.linkLabel ?? 'View Original'}
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   </section>
@@ -190,7 +450,7 @@ function fileMeta(filename: string) {
       <div>
         <div class="meta-label text-[#f4c98b]">Executive CV</div>
         <h2 class="mt-3 text-3xl text-white">Download the executive profile.</h2>
-        <p class="mt-3 text-sm leading-8 text-white/68">Comprehensive credentials, experience, and engagement history.</p>
+        <p class="mt-3 text-sm leading-8 text-white/68">Credentials, governance experience, and engagement history.</p>
       </div>
       <a href={`${base}cv/Majid_Mumtaz_Internal_Audit_GRC.pdf`} download class="btn-secondary-light">Download CV</a>
     </div>
