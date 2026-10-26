@@ -3,7 +3,7 @@
 **Board-Ready Forensic Reporting, Benford's Law & AP Fraud Triage Framework**  
 **Prepared by:** Majid Mumtaz, CIA, ACA (ICAEW), FCCA, GRCP, COSO ERM Certified  
 **Commercial Bundle:** Forensic Investigation, AP Triage & Fraud Arsenal  
-**Acquire Unlocked Template & Kit ($69 USD):** [majidmumtaz.gumroad.com/l/forensic-ap-triage-kit](https://majidmumtaz.gumroad.com/l/forensic-ap-triage-kit)
+**Acquire Unlocked Template & Kit ($89 Standard / $219 Advisory):** [majidmumtaz.gumroad.com/l/forensic-ap-triage-kit](https://majidmumtaz.gumroad.com/l/forensic-ap-triage-kit)
 
 ---
 
@@ -32,7 +32,7 @@ Section 5 of this template (*The Control Breakdown & Operational Parallax Diagno
 
 ## 3. Editable Word Template Structure (8 Comprehensive Sections)
 
-The unlocked `.docx` template included in the **Forensic Investigation, AP Triage & Fraud Arsenal ($69)** is formatted with executive tables, evidentiary callout blocks, and strict legal privilege headers:
+The unlocked `.docx` template included in the **Forensic Investigation, AP Triage & Fraud Arsenal ($89 / $219)** is formatted with executive tables, evidentiary callout blocks, and strict legal privilege headers:
 
 | Section | Title | Core Contents & Evidentiary Standards |
 | :--- | :--- | :--- |
@@ -47,7 +47,7 @@ The unlocked `.docx` template included in the **Forensic Investigation, AP Triag
 
 ---
 
-## 4. What Is Included in the Full Commercial Kit ($69 USD)
+## 4. What Is Included in the Full Commercial Kit ($89 Standard / $219 Advisory)
 
 When you license the **Forensic Investigation, AP Triage & Fraud Arsenal** on Gumroad, you receive the unlocked `.docx` report template plus the complete 5-asset forensic fieldwork suite:
 
@@ -58,5 +58,5 @@ When you license the **Forensic Investigation, AP Triage & Fraud Arsenal** on Gu
 5. **`Fraud_Prevention_Guide.pdf`** — 51-page comprehensive practitioner reference covering procurement fraud, ghost employees, revenue skimming, inventory manipulation, and bribery red flags.
 
 ### Acquire the Full Unlocked Bundle
-- **Instant Download via Gumroad ($69 USD):** [https://majidmumtaz.gumroad.com/l/forensic-ap-triage-kit](https://majidmumtaz.gumroad.com/l/forensic-ap-triage-kit)
+- **Instant Download via Gumroad ($89 Standard / $219 Advisory):** [https://majidmumtaz.gumroad.com/l/forensic-ap-triage-kit](https://majidmumtaz.gumroad.com/l/forensic-ap-triage-kit)
 - **Browse All Governance & CCM Suites:** [https://majidrajpar.github.io/portfolio_my/resources/](https://majidrajpar.github.io/portfolio_my/resources/)

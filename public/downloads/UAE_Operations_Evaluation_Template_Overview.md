@@ -3,7 +3,7 @@
 **Commissary, Kitchen Fulfillment Hub & High-Velocity Logistics Internal Control Assessment**  
 **Prepared by:** Majid Mumtaz, CIA, ACA (ICAEW), FCCA, GRCP, COSO ERM Certified  
 **Commercial Bundle:** Multi-Channel Operations, FMCG Logistics RCM & Vendor Pack  
-**Acquire Unlocked Template & Pack ($59 USD):** [majidmumtaz.gumroad.com/l/ops-logistics-vendor-pack](https://majidmumtaz.gumroad.com/l/ops-logistics-vendor-pack)
+**Acquire Unlocked Template & Pack ($79 Standard / $189 Advisory):** [majidmumtaz.gumroad.com/l/ops-logistics-vendor-pack](https://majidmumtaz.gumroad.com/l/ops-logistics-vendor-pack)
 
 ---
 
@@ -32,7 +32,7 @@ This evaluation template specifically tests **whether local KPI scorecards incen
 
 ## 3. Editable Word Template Structure (15 Pages / 8 Operational Control Domains)
 
-The unlocked `.docx` template included in the **Multi-Channel Operations, FMCG Logistics RCM & Vendor Pack ($59)** provides a complete fieldwork, scoring, and executive reporting structure:
+The unlocked `.docx` template included in the **Multi-Channel Operations, FMCG Logistics RCM & Vendor Pack ($79 / $189)** provides a complete fieldwork, scoring, and executive reporting structure:
 
 | Domain | Title | Fieldwork Tests & Physical / Telemetry Checks |
 | :--- | :--- | :--- |
@@ -47,7 +47,7 @@ The unlocked `.docx` template included in the **Multi-Channel Operations, FMCG L
 
 ---
 
-## 4. What Is Included in the Full Commercial Pack ($59 USD)
+## 4. What Is Included in the Full Commercial Pack ($79 Standard / $189 Advisory)
 
 When you license the **Multi-Channel Operations, FMCG Logistics RCM & Vendor Pack** on Gumroad, you receive all three unlocked `.docx` operational and technical review templates plus two foundational control frameworks:
 
@@ -58,5 +58,5 @@ When you license the **Multi-Channel Operations, FMCG Logistics RCM & Vendor Pac
 5. **`Cybersecurity_Controls_Framework_Analysis.pdf`** — 8-page practitioner guide to building foundational IT and operational security controls before complex tooling.
 
 ### Acquire the Full Unlocked Bundle
-- **Instant Download via Gumroad ($59 USD):** [https://majidmumtaz.gumroad.com/l/ops-logistics-vendor-pack](https://majidmumtaz.gumroad.com/l/ops-logistics-vendor-pack)
+- **Instant Download via Gumroad ($79 Standard / $189 Advisory):** [https://majidmumtaz.gumroad.com/l/ops-logistics-vendor-pack](https://majidmumtaz.gumroad.com/l/ops-logistics-vendor-pack)
 - **Browse All Governance & CCM Suites:** [https://majidrajpar.github.io/portfolio_my/resources/](https://majidrajpar.github.io/portfolio_my/resources/)
