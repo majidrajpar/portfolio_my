@@ -1,13 +1,29 @@
 [
   {
+    "id": "doc-039",
+    "filename": "Cloud_Kitchen_ERM_CCM_Suite_Overview.md",
+    "title": "Cloud Kitchen & Multi-Brand F&B ERM + CCM Programme Suite (18-File Bundle)",
+    "description": "Complete white-label Enterprise Risk Management & Continuous Controls Monitoring suite (7 unlocked Excel workbooks, 7 Word executive/board packs, 4 policies & guides). Includes 100% population Order-to-Cash delivery aggregator remittance reconciliation (FI-002), recipe BOM yield tracking (OP-003), and physical line-walk verification.",
+    "category": "Frameworks",
+    "size": "490 KB",
+    "pages": 18,
+    "date": "2026-10-26",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/erm-ccm-suite",
+    "gumroadLabel": "License Suite ($149 / $349)",
+    "internalUrl": "erm-ccm-suite/",
+    "internalLabel": "Suite Details"
+  },
+  {
     "id": "doc-038",
-    "filename": "Internal_Audit_Report_Evaluation_Matrix_GIAS_2024.xlsx",
+    "filename": "GIAS_2024_Report_Evaluation_Matrix_Overview.md",
     "title": "Internal Audit Report Evaluation Matrix (GIAS 2024)",
-    "description": "A working Excel matrix that scores one engagement report against the Global Internal Audit Standards, 2024 edition, effective 9 January 2025. Findings and the close are scored separately, and the issue decision follows the gate. Prepared by Majid Mumtaz, CIA, ACA, FCCA. It is not published or endorsed by the IIA or by ICAEW.",
+    "description": "A working 6-sheet Excel matrix that scores one engagement report against the Global Internal Audit Standards (GIAS 2024). Findings and the engagement close are scored separately, and the report issuance decision follows deterministic gate rules. Unlocked .xlsx delivered inside the CAE & GIAS 2024 Operating System bundle.",
     "category": "Audit Guides",
     "size": "46 KB",
     "pages": 6,
-    "date": "2026-10-10"
+    "date": "2026-10-10",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/cae-gias-2024-os",
+    "gumroadLabel": "License GIAS 2024 & CAE OS ($79)"
   },
   {
     "id": "doc-000",
@@ -17,17 +33,21 @@
     "category": "Governance",
     "size": "56 KB",
     "pages": 1,
-    "date": "2026-05-24"
+    "date": "2026-05-24",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/cae-gias-2024-os",
+    "gumroadLabel": "Get Full CAE & GIAS Kit ($79)"
   },
   {
     "id": "doc-001",
     "filename": "Consolidated_Risk_Control_Matrix_for_FMCG_Logistics_Process.pdf",
     "title": "Consolidated Risk Control Matrix for FMCG Logistics Process",
-    "description": "RID Process Area  Risk Description  Impact  Likelihood  Risk Rating  Existing Controls  Proposed Mitigation  Responsibility  Monitoring Frequency",
+    "description": "End-to-end Risk Control Matrix covering warehouse receiving, inventory storage, fleet dispatch, cycle counting, and shrinkage mitigation with impact/likelihood ratings and monitoring frequencies.",
     "category": "Frameworks",
     "size": "163 KB",
     "pages": 3,
-    "date": "2025-01-20"
+    "date": "2025-01-20",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/ops-logistics-vendor-pack",
+    "gumroadLabel": "Get Ops & RCM Pack ($59)"
   },
   {
     "id": "doc-002",
@@ -37,7 +57,9 @@
     "category": "Checklists",
     "size": "278 KB",
     "pages": 17,
-    "date": "2025-01-20"
+    "date": "2025-01-20",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit",
+    "gumroadLabel": "Get Full IPO & ICFR Kit ($89)"
   },
   {
     "id": "doc-003",
@@ -47,7 +69,9 @@
     "category": "Audit Guides",
     "size": "267 KB",
     "pages": 2,
-    "date": "2025-01-20"
+    "date": "2025-01-20",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/cae-gias-2024-os",
+    "gumroadLabel": "Get Full CAE & GIAS Kit ($79)"
   },
   {
     "id": "doc-004",
@@ -57,7 +81,9 @@
     "category": "Audit Guides",
     "size": "247 KB",
     "pages": 11,
-    "date": "2025-01-20"
+    "date": "2025-01-20",
+    "internalUrl": "erm-ccm-suite/",
+    "internalLabel": "ERM + CCM Suite ($149)"
   },
   {
     "id": "doc-005",
@@ -67,7 +93,9 @@
     "category": "Frameworks",
     "size": "156 KB",
     "pages": 8,
-    "date": "2025-01-20"
+    "date": "2025-01-20",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/ops-logistics-vendor-pack",
+    "gumroadLabel": "Get Ops & RCM Pack ($59)"
   },
   {
     "id": "doc-006",
@@ -77,7 +105,9 @@
     "category": "Frameworks",
     "size": "339 KB",
     "pages": 35,
-    "date": "2025-01-20"
+    "date": "2025-01-20",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit",
+    "gumroadLabel": "Get Full IPO & ICFR Kit ($89)"
   },
   {
     "id": "doc-007",
@@ -87,7 +117,9 @@
     "category": "Governance",
     "size": "212 KB",
     "pages": 1,
-    "date": "2025-01-20"
+    "date": "2025-01-20",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/cae-gias-2024-os",
+    "gumroadLabel": "Get Full CAE & GIAS Kit ($79)"
   },
   {
     "id": "doc-008",
@@ -97,7 +129,9 @@
     "category": "Fraud Resources",
     "size": "154 KB",
     "pages": 51,
-    "date": "2025-01-20"
+    "date": "2025-01-20",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/forensic-ap-triage-kit",
+    "gumroadLabel": "Get Forensic & AP Kit ($69)"
   },
   {
     "id": "doc-009",
@@ -107,7 +141,9 @@
     "category": "Audit Guides",
     "size": "262 KB",
     "pages": 13,
-    "date": "2025-01-20"
+    "date": "2025-01-20",
+    "internalUrl": "erm-ccm-suite/",
+    "internalLabel": "ERM + CCM Suite ($149)"
   },
   {
     "id": "doc-010",
@@ -117,7 +153,9 @@
     "category": "Governance",
     "size": "108 KB",
     "pages": 4,
-    "date": "2025-01-20"
+    "date": "2025-01-20",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit",
+    "gumroadLabel": "Get Full IPO & ICFR Kit ($89)"
   },
   {
     "id": "doc-011",
@@ -147,7 +185,9 @@
     "category": "Risk Intelligence",
     "size": "8 KB",
     "pages": 5,
-    "date": "2025-01-20"
+    "date": "2025-01-20",
+    "internalUrl": "erm-ccm-suite/",
+    "internalLabel": "ERM + CCM Suite ($149)"
   },
   {
     "id": "doc-014",
@@ -157,7 +197,9 @@
     "category": "Fraud Resources",
     "size": "9 KB",
     "pages": 7,
-    "date": "2025-01-20"
+    "date": "2025-01-20",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/forensic-ap-triage-kit",
+    "gumroadLabel": "Get Forensic & AP Kit ($69)"
   },
   {
     "id": "doc-015",
@@ -177,7 +219,9 @@
     "category": "Audit Guides",
     "size": "7 KB",
     "pages": 5,
-    "date": "2025-01-20"
+    "date": "2025-01-20",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/cae-gias-2024-os",
+    "gumroadLabel": "Get Full CAE & GIAS Kit ($79)"
   },
   {
     "id": "doc-017",
@@ -187,7 +231,9 @@
     "category": "Fraud Resources",
     "size": "414 KB",
     "pages": 6,
-    "date": "2025-01-20"
+    "date": "2025-01-20",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/forensic-ap-triage-kit",
+    "gumroadLabel": "Get Forensic & AP Kit ($69)"
   },
   {
     "id": "doc-018",
@@ -197,17 +243,21 @@
     "category": "Fraud Resources",
     "size": "459 KB",
     "pages": 11,
-    "date": "2025-01-20"
+    "date": "2025-01-20",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/forensic-ap-triage-kit",
+    "gumroadLabel": "Get Forensic & AP Kit ($69)"
   },
   {
     "id": "doc-019",
-    "filename": "Forensic_Investigation_Report_Template.docx",
+    "filename": "Forensic_Investigation_Report_Template_Overview.md",
     "title": "Forensic Investigation & Intelligence Report Template (Editable Word)",
-    "description": "A comprehensive, board-ready forensic reporting framework in editable Word format. Includes Executive Scorecard, Benford's Law analysis, Fraud Diamond psychological profiling, and forensic remediation strategy.",
+    "description": "A comprehensive, board-ready 8-section forensic reporting framework in editable Word format. Includes Executive Scorecard, Benford's Law analysis, Fraud Diamond & Parallax operational diagnostic, chain of custody, and CCM remediation strategy.",
     "category": "Fraud Resources",
     "size": "33 KB",
     "pages": 8,
-    "date": "2026-02-25"
+    "date": "2026-02-25",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/forensic-ap-triage-kit",
+    "gumroadLabel": "License Forensic & AP Kit ($69)"
   },
   {
     "id": "doc-020",
@@ -227,7 +277,9 @@
     "category": "Checklists",
     "size": "54 KB",
     "pages": 2,
-    "date": "2026-03-10"
+    "date": "2026-03-10",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit",
+    "gumroadLabel": "Get Full IPO & ICFR Kit ($89)"
   },
   {
     "id": "doc-022",
@@ -237,7 +289,9 @@
     "category": "Checklists",
     "size": "54 KB",
     "pages": 2,
-    "date": "2026-03-10"
+    "date": "2026-03-10",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/cae-gias-2024-os",
+    "gumroadLabel": "Get Full CAE & GIAS Kit ($79)"
   },
   {
     "id": "doc-023",
@@ -247,7 +301,9 @@
     "category": "Checklists",
     "size": "52 KB",
     "pages": 2,
-    "date": "2026-03-10"
+    "date": "2026-03-10",
+    "internalUrl": "erm-ccm-suite/",
+    "internalLabel": "ERM + CCM Suite ($149)"
   },
   {
     "id": "doc-024",
@@ -257,7 +313,9 @@
     "category": "Checklists",
     "size": "53 KB",
     "pages": 2,
-    "date": "2026-03-10"
+    "date": "2026-03-10",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/cae-gias-2024-os",
+    "gumroadLabel": "Get Full CAE & GIAS Kit ($79)"
   },
   {
     "id": "doc-025",
@@ -267,7 +325,9 @@
     "category": "Checklists",
     "size": "54 KB",
     "pages": 2,
-    "date": "2026-03-10"
+    "date": "2026-03-10",
+    "internalUrl": "erm-ccm-suite/",
+    "internalLabel": "ERM + CCM Suite ($149)"
   },
   {
     "id": "doc-026",
@@ -281,43 +341,51 @@
   },
   {
     "id": "doc-027",
-    "filename": "Risk_Appetite_Policy_Template.docx",
+    "filename": "Risk_Appetite_Policy_IPO_Template_Overview.md",
     "title": "Risk Appetite Policy Template (IPO Readiness Framework)",
-    "description": "A comprehensive, board-grade Risk Appetite Policy template designed for high-growth sectors and companies targeting IPO. Covers strategic, operational, food safety, brand, regulatory, financial, and technology risks with quantifiable thresholds and industry benchmarks.",
+    "description": "A comprehensive, board-grade 6-page Risk Appetite Policy template in editable Word format designed for high-growth sectors and companies targeting IPO. Covers strategic, operational, food safety, brand, regulatory, financial, and technology risks with quantifiable Green/Amber/Red thresholds.",
     "category": "Governance",
     "size": "32 KB",
     "pages": 6,
-    "date": "2026-04-07"
+    "date": "2026-04-07",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit",
+    "gumroadLabel": "License IPO & ICFR Kit ($89)"
   },
   {
     "id": "doc-028",
-    "filename": "PCI_DSS_Applicability_Review_Template.docx",
-    "title": "PCI DSS Applicability Review Template",
-    "description": "A strategic assessment framework for PCI DSS compliance in multi-channel food-tech environments. Outlines technical and operational controls, Cardholder Data Environment (CDE) scoping, encryption standards, and vulnerability management.",
+    "filename": "PCI_DSS_Applicability_Review_Overview.md",
+    "title": "PCI DSS Applicability Review Template (Editable Word)",
+    "description": "A 12-page strategic assessment framework in editable Word format for PCI DSS v4.0 compliance across multi-channel POS, app, web, and aggregator environments. Outlines Cardholder Data Environment (CDE) scoping, P2PE/tokenization, script integrity, and SAQ classification.",
     "category": "Compliance",
     "size": "36 KB",
     "pages": 12,
-    "date": "2026-04-07"
+    "date": "2026-04-07",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/ops-logistics-vendor-pack",
+    "gumroadLabel": "License Ops & Vendor Pack ($59)"
   },
   {
     "id": "doc-029",
-    "filename": "UAE_Operations_Evaluation_Template.docx",
-    "title": "UAE Operations Evaluation Template",
-    "description": "Comprehensive internal control assessment framework for scaling GCC logistics and kitchen fulfillment centers. Evaluates real-time inventory reconciliation, high-velocity fulfillment accuracy, and operational risk mitigation.",
+    "filename": "UAE_Operations_Evaluation_Template_Overview.md",
+    "title": "UAE Operations Evaluation Template (Editable Word)",
+    "description": "Comprehensive 15-page internal control assessment framework in editable Word format for scaling GCC logistics, commissaries, and kitchen fulfillment centers. Evaluates blind receiving, cold-chain municipality compliance, BOM yield reconciliation, and rider dispatch verification.",
     "category": "Frameworks",
     "size": "36 KB",
     "pages": 15,
-    "date": "2026-04-07"
+    "date": "2026-04-07",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/ops-logistics-vendor-pack",
+    "gumroadLabel": "License Ops & Vendor Pack ($59)"
   },
   {
     "id": "doc-035",
-    "filename": "SOC_2_Internal_Audit_Readiness_and_Review_Guide.docx",
+    "filename": "SOC_2_Readiness_and_Vendor_Review_Overview.md",
     "title": "SOC 2 Internal Audit Readiness & Vendor Review Guide (Word Template)",
-    "description": "An enterprise-grade, board-ready framework for internal audit and risk leaders. Covers Type I vs. Type II scoping, Section IV exception analysis, and an actionable 5-phase internal readiness and 10-step vendor intake checklist.",
+    "description": "An enterprise-grade 14-page framework in editable Word format for internal audit and risk leaders. Covers Type I vs. Type II scoping, a 5-phase internal readiness playbook, and a 10-step third-party vendor Section IV exception and CUEC mapping register.",
     "category": "Checklists",
     "size": "43 KB",
     "pages": 14,
-    "date": "2026-05-24"
+    "date": "2026-05-24",
+    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/ops-logistics-vendor-pack",
+    "gumroadLabel": "License Ops & Vendor Pack ($59)"
   },
   {
     "id": "doc-036",
@@ -339,6 +407,8 @@
     "category": "Risk Intelligence",
     "size": "6151 KB",
     "pages": 21,
-    "date": "2026-09-04"
+    "date": "2026-09-04",
+    "internalUrl": "erm-ccm-suite/",
+    "internalLabel": "ERM + CCM Suite ($149)"
   }
 ]
