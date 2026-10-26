@@ -1,5 +1,24 @@
 export const software = [
   {
+    id: 'cloud-kitchen-erm-ccm-suite',
+    name: 'Cloud Kitchen & F&B ERM + CCM Suite',
+    tagline: '18-file white-label governance, KRI telemetry & order-to-cash assurance architecture.',
+    description: 'A complete white-label Enterprise Risk Management (ERM) and Continuous Controls Monitoring (CCM) toolkit for multi-brand cloud kitchens, QSR networks, and food-tech operators. Replaces sample-based compliance checks with 100% population 3-way delivery aggregator remittance matching (FI-002), theoretical-vs-actual BOM recipe yield telemetry (OP-003), and unannounced physical line-walk verification.',
+    category: 'Fieldwork Workbench',
+    techStack: ['7 Excel (.xlsx) Engines', '7 Word (.docx) Packs', 'COSO ERM / ISO 31000', '3-Way O2C CCM', 'BOM Yield Telemetry'],
+    gumroadUrl: 'https://majidmumtaz.gumroad.com/l/erm-ccm-suite',
+    internalUrl: '/erm-ccm-suite/',
+    internalLabel: 'Suite Inventory & Tiers',
+    isPublic: true,
+    status: 'Commercial Suite · $149 / $349',
+    keyFeatures: [
+      '18 unlocked working files: Board ERM Policy, 12-Month Implementation Manual, 7 Excel registries, and 5 executive reporting packs',
+      'Automated 3-way Order-to-Cash delivery aggregator remittance & refund deduction reconciliation schema (FI-002 / FI-KRI-06)',
+      'Theoretical-vs-actual recipe BOM inventory yield tracking and rebalanced kitchen KPI scorecards (OP-003 / OPS-KRI-06)',
+      'Two-tier licensing via Gumroad: Standard Single-Entity ($149) and Enterprise Multi-Entity & Advisory ($349)'
+    ]
+  },
+  {
     id: 'invoice-audit-engine',
     name: 'Invoice Audit Engine',
     tagline: 'Air-gapped 100% continuous controls monitoring & invoice document audit telemetry.',

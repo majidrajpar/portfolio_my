@@ -98,7 +98,7 @@ const base = import.meta.env.BASE_URL;
           This site maintains a clean distinction between interactive web demonstration tools and standalone open-source engineering projects.
         </p>
 
-        <div class="mt-8 grid gap-6 lg:grid-cols-2">
+        <div class="mt-8 grid gap-6 lg:grid-cols-3">
           <div class="rounded-3xl border border-[color:var(--line-soft)] bg-white/70 p-6 shadow-sm dark:bg-white/5">
             <span class="meta-label text-[#8d6035]">Web Tools (/tools/*)</span>
             <h3 class="mt-2 text-xl font-bold text-[#181511] dark:text-white">In-Browser Advisory Instruments</h3>
@@ -127,6 +127,25 @@ const base = import.meta.env.BASE_URL;
             <div class="mt-6">
               <a href={`${base}software/`} class="text-xs font-bold text-[#181511] underline underline-offset-4 hover:text-[#8d6035] dark:text-white">
                 View Open-Source Builds &rarr;
+              </a>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-[color:var(--line-soft)] bg-white/70 p-6 shadow-sm dark:bg-white/5">
+            <span class="meta-label text-[#a66c1c]">Commercial Suites (/resources/#commercial-suites)</span>
+            <h3 class="mt-2 text-xl font-bold text-[#181511] dark:text-white">Licensed Governance &amp; CCM Toolkits</h3>
+            <p class="mt-3 text-xs leading-relaxed text-[color:var(--text-secondary)]">
+              Downloadable white-label governance programmes and working bundles (including the <em>Cloud Kitchen &amp; Multi-Brand F&amp;B ERM + CCM Suite</em>, <em>CAE &amp; GIAS 2024 OS</em>, <em>GCC Pre-IPO &amp; ICFR Kit</em>, <em>Forensic &amp; AP Triage Arsenal</em>, and <em>Multi-Channel Ops &amp; Vendor Pack</em>) are commercially licensed via Gumroad for internal deployment or client advisory engagements.
+            </p>
+            <p class="mt-3 text-xs leading-relaxed text-[color:var(--text-secondary)]">
+              Commercial licenses do not permit reselling, sublicensing, or redistributing the raw unlocked <code class="font-mono text-[11px]">.xlsx</code> and <code class="font-mono text-[11px]">.docx</code> templates as a competing digital product or bundling them into commercial SaaS platforms.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-4">
+              <a href={`${base}erm-ccm-suite/`} class="text-xs font-bold text-[#181511] underline underline-offset-4 hover:text-[#8d6035] dark:text-white">
+                View Flagship ERM + CCM Suite &rarr;
+              </a>
+              <a href={`${base}resources/#commercial-suites`} class="text-xs font-bold text-[#a33a21] underline underline-offset-4 hover:text-[#181511] dark:text-[#f4c98b]">
+                All 5 Commercial Suites &rarr;
               </a>
             </div>
           </div>

@@ -1,0 +1,285 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NetworkCanvas from '../components/NetworkCanvas';
+import {
+  ermSuiteStats,
+  ermSuitePillars,
+  ermSuiteInventory,
+  ermSuitePricingTiers,
+} from '../data/ermSuite.js';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title="Cloud Kitchen & Multi-Brand F&B ERM + CCM Programme Suite | Majid Mumtaz"
+  description="18-file white-label Enterprise Risk Management (ERM) and Continuous Controls Monitoring (CCM) governance suite for cloud kitchens, QSR networks, and multi-brand F&B operators."
+  ogImage="/portfolio_my/images/erm-ccm-suite/Gumroad_Cover_Banner_1280x720.png"
+>
+  <script src="https://gumroad.com/js/gumroad.js" is:inline></script>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-14">
+      <NetworkCanvas client:load nodeCount={35} />
+      <div class="relative z-10 grid gap-8 lg:grid-cols-[1.35fr_0.85fr] lg:items-end lg:gap-10">
+        <div data-reveal>
+          <a href={`${base}resources/`} class="mb-6 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white">
+            &larr; Back to Resource Library
+          </a>
+          <span class="hero-chip mb-6 block w-fit">Commercial Governance &amp; CCM Toolkit</span>
+          <h1 class="headline-display max-w-4xl text-[clamp(2.4rem,5vw,4.5rem)] font-black text-white leading-[1.03]">
+            Cloud Kitchen &amp; F&amp;B
+            <span class="block text-[#f4c98b]">ERM + CCM Suite.</span>
+          </h1>
+          <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/76 md:mt-7 md:text-[1.06rem] md:leading-8">
+            18 white-label working files—board policies, unlocked Excel KRI &amp; CCM registries, and Audit Committee packs—built to connect delivery aggregator remittance schemas, recipe BOM yields, and physical kitchen line walks directly to EBITDA defense.
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href="#licensing"
+              class="btn-primary text-xs font-black uppercase tracking-wider"
+            >
+              License Full Suite &mdash; $149 / $349
+            </a>
+            <a
+              href={`${base}downloads/${ermSuiteStats.freeOverviewFile}`}
+              download
+              class="btn-secondary-light text-xs font-black uppercase tracking-wider"
+            >
+              Download Free Overview (.md)
+            </a>
+          </div>
+        </div>
+
+        <div class="quote-panel p-6 md:p-8" data-reveal data-reveal-delay="1">
+          <span class="eyebrow-label text-[#f4c98b]/80">The Operational Premise</span>
+          <div class="mt-4 space-y-4 text-sm leading-7 text-white/74">
+            <p>
+              Sampling 20 invoices a quarter is blind to algorithmic leakage across hundreds of thousands of delivery aggregator orders.
+            </p>
+            <p>
+              This suite replaces retrospective sample checks with 100% population telemetry across order-to-cash remittances (<code class="font-mono text-xs text-[#f4c98b]">FI-002</code>) and theoretical-vs-actual BOM recipe yields (<code class="font-mono text-xs text-[#f4c98b]">OP-003</code>), while enforcing unannounced physical line walks where sensors cannot substitute for human presence.
+            </p>
+          </div>
+          <div class="mt-6 grid grid-cols-3 gap-3 border-t border-white/10 pt-5 text-center">
+            <div>
+              <div class="text-xl font-black text-white">{ermSuiteStats.files}</div>
+              <div class="text-[10px] font-mono uppercase tracking-wider text-white/55">Working Files</div>
+            </div>
+            <div>
+              <div class="text-xl font-black text-[#f4c98b]">{ermSuiteStats.workbooks}</div>
+              <div class="text-[10px] font-mono uppercase tracking-wider text-white/55">Excel Trackers</div>
+            </div>
+            <div>
+              <div class="text-xl font-black text-white">{ermSuiteStats.templates}</div>
+              <div class="text-[10px] font-mono uppercase tracking-wider text-white/55">Word Packs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three Architectural Pillars -->
+  <section class="px-4 py-8 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-8" data-reveal>
+        <span class="eyebrow-label">01 // Control Architecture</span>
+        <h2 class="mt-3 text-[clamp(1.9rem,4vw,3.2rem)] leading-[1.05] text-[#181511]">
+          Three structural fault lines governed out of the box.
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        {ermSuitePillars.map((pillar, i) => (
+          <div
+            class="glass-card flex flex-col justify-between rounded-[28px] p-7"
+            data-reveal
+            data-reveal-delay={String(i + 1)}
+          >
+            <div>
+              <span class={`inline-flex rounded-sm px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${pillar.color}`}>
+                {pillar.badge}
+              </span>
+              <h3 class="mt-4 text-xl font-black leading-snug text-[#181511]">
+                {pillar.title}
+              </h3>
+              <p class="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">
+                {pillar.description}
+              </p>
+            </div>
+
+            <div class="mt-6 border-t border-[color:var(--line-soft)] pt-4">
+              <div class="flex flex-wrap gap-1.5">
+                {pillar.metrics.map((m) => (
+                  <span class="rounded-md border border-slate-200 bg-white/80 px-2.5 py-1 text-[10px] font-mono text-slate-700">
+                    {m}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete 18-File Inventory -->
+  <section class="px-4 py-6 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="soft-shell p-7 md:p-10" data-reveal>
+        <div class="flex flex-col gap-4 border-b border-[color:var(--line-soft)] pb-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <span class="eyebrow-label">02 // Package Inventory</span>
+            <h2 class="mt-3 text-[clamp(1.8rem,3.6vw,2.8rem)] leading-[1.06] text-[#181511]">
+              18 interlocking files across policies, registries, and board packs.
+            </h2>
+          </div>
+          <a
+            href={`${base}downloads/${ermSuiteStats.freeOverviewFile}`}
+            download
+            class="text-xs font-bold text-[#a33a21] underline underline-offset-4 hover:text-[#181511]"
+          >
+            Download 90-Day Deployment Guide &amp; Taxonomy Map (.md) &rarr;
+          </a>
+        </div>
+
+        <div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+          {ermSuiteInventory.map((item) => (
+            <div class="rounded-2xl border border-[color:var(--line-soft)] bg-white/70 p-5 dark:bg-white/5">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="rounded bg-[#181511] px-2 py-0.5 font-mono text-[10px] font-bold text-[#f4c98b]">
+                  {item.code}
+                </span>
+                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+                  {item.format}
+                </span>
+              </div>
+              <h3 class="mt-2.5 font-mono text-xs font-bold text-[#181511] break-all">
+                {item.name}
+              </h3>
+              <div class="mt-1 text-[11px] font-semibold text-[#a33a21]">
+                {item.module}
+              </div>
+              <p class="mt-2 text-xs leading-6 text-[color:var(--text-secondary)]">
+                {item.summary}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gumroad Pricing & Licensing Tiers -->
+  <section id="licensing" class="px-4 py-8 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-8" data-reveal>
+        <span class="eyebrow-label">03 // Commercial Licensing</span>
+        <h2 class="mt-3 text-[clamp(1.9rem,4vw,3.2rem)] leading-[1.05] text-[#181511]">
+          Immediate download via Gumroad.
+        </h2>
+        <p class="mt-3 max-w-2xl text-sm leading-7 text-[color:var(--text-secondary)]">
+          All Excel workbooks (<code class="font-mono text-xs">.xlsx</code>) and Word templates (<code class="font-mono text-xs">.docx</code>) are delivered unlocked with live formulas and zero macro dependencies.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        {ermSuitePricingTiers.map((tier) => (
+          <div
+            class={`flex flex-col justify-between rounded-[32px] p-8 md:p-10 ${
+              tier.highlight
+                ? 'border-2 border-[#c7964c] bg-[#181512] text-white shadow-xl'
+                : 'glass-card text-[#181511]'
+            }`}
+            data-reveal
+          >
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <span
+                  class={`rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] ${
+                    tier.highlight
+                      ? 'bg-[#c7964c]/20 text-[#f4c98b]'
+                      : 'bg-[#a33a21]/10 text-[#a33a21]'
+                  }`}
+                >
+                  {tier.badge}
+                </span>
+                <span
+                  class={`font-mono text-xs ${
+                    tier.highlight ? 'text-white/60' : 'text-slate-400'
+                  }`}
+                >
+                  {tier.billing}
+                </span>
+              </div>
+
+              <h3
+                class={`mt-5 text-2xl font-black ${
+                  tier.highlight ? 'text-white' : 'text-[#181511]'
+                }`}
+              >
+                {tier.name}
+              </h3>
+
+              <div class="mt-4 flex items-baseline gap-2">
+                <span
+                  class={`text-4xl font-black tracking-tight ${
+                    tier.highlight ? 'text-[#f4c98b]' : 'text-[#181511]'
+                  }`}
+                >
+                  ${tier.price}
+                </span>
+                <span
+                  class={`text-xs font-semibold uppercase tracking-wider ${
+                    tier.highlight ? 'text-white/60' : 'text-slate-400'
+                  }`}
+                >
+                  USD · One-Time
+                </span>
+              </div>
+
+              <p
+                class={`mt-4 text-xs leading-6 ${
+                  tier.highlight ? 'text-white/75' : 'text-[color:var(--text-secondary)]'
+                }`}
+              >
+                {tier.target}
+              </p>
+
+              <ul class="mt-6 space-y-3 border-t border-current/10 pt-6">
+                {tier.features.map((feat) => (
+                  <li class="flex items-start gap-2.5 text-xs leading-6">
+                    <span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#c7964c]"></span>
+                    <span class={tier.highlight ? 'text-white/85' : 'text-[#181511]'}>
+                      {feat}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-4">
+              <a
+                href={tier.gumroadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class={`w-full justify-center text-center text-xs font-black uppercase tracking-wider ${
+                  tier.highlight ? 'btn-primary' : 'btn-secondary'
+                }`}
+              >
+                Acquire {tier.name} &mdash; ${tier.price}
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-6 rounded-2xl border border-[color:var(--line-soft)] bg-white/60 p-5 text-xs leading-6 text-[color:var(--text-secondary)]">
+        <strong>Licensing &amp; Practice Boundary:</strong> Purchased suites include <code class="font-mono text-[11px]">COMMERCIAL_LICENSE.md</code>. Neither license tier permits reselling or redistributing the raw templates as a competing digital product. See <a href={`${base}terms/`} class="font-semibold text-[#181511] underline underline-offset-4">Methodology, Licensing &amp; Advisory Terms</a> for full details.
+      </div>
+    </div>
+  </section>
+</BaseLayout>
