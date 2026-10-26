@@ -9,15 +9,27 @@ const categories = ['All', ...new Set((documents as any[]).map((d: any) => d.cat
 
 const commercialBundles = [
   {
+    id: 'vault-master',
+    badge: 'All-Access Master Vault · 5-in-1 Collection',
+    format: '61 Unlocked Files across 5 Specialized Domains',
+    title: 'All-Access Enterprise Audit & Risk Master Vault',
+    price: '$349 / $499',
+    summary:
+      'The complete executive collection combining all 5 specialized governance suites: Cloud Kitchen ERM + CCM, CAE GIAS 2024 OS, GCC Pre-IPO ICFR Kit, 60-Minute AP Forensic Triage, and FMCG Logistics Master RCM. Perpetual internal team deployment ($349) or global multi-client commercial advisory rights ($499) with 90-min executive consultation.',
+    gumroadUrl: 'https://majidmumtaz.gumroad.com/l/master-audit-risk-vault',
+    gumroadLabel: 'License Master Vault ($349 / $499)',
+    featured: true,
+  },
+  {
     id: 'suite-erm-ccm',
     badge: 'Flagship 18-File Programme',
     format: '7 Unlocked .XLSX · 7 .DOCX · 4 Guides',
     title: 'Cloud Kitchen & Multi-Brand F&B ERM + CCM Suite',
-    price: '$149 / $349',
+    price: '$169 / $399',
     summary:
       'Complete white-label Enterprise Risk Management and 100% population Continuous Controls Monitoring (CCM) architecture. Connects delivery aggregator remittance reconciliation (FI-002), recipe BOM yields (OP-003), and unannounced kitchen line walks directly to EBITDA defense.',
     gumroadUrl: 'https://majidmumtaz.gumroad.com/l/erm-ccm-suite',
-    gumroadLabel: 'License Suite ($149 / $349)',
+    gumroadLabel: 'License Suite ($169 / $399)',
     internalUrl: `${base}erm-ccm-suite/`,
     internalLabel: 'Full 18-File Inventory',
     overviewFile: 'Cloud_Kitchen_ERM_CCM_Suite_Overview.md',
@@ -28,11 +40,11 @@ const commercialBundles = [
     badge: 'CAE & Board Governance',
     format: 'Unlocked 6-Tab .XLSX + 6 Reference PDFs',
     title: 'CAE Governance, GIAS 2024 & Audit Committee OS',
-    price: '$79',
+    price: '$99 / $249',
     summary:
       'Built around the unlocked 6-sheet GIAS 2024 Internal Audit Report Evaluation Matrix (.xlsx) with deterministic report issuance gates, paired with the 1-Page Audit Committee Executive Summary, Pack Quality Checklist, IA Setup Blueprint, and QAIP 2025 framework.',
     gumroadUrl: 'https://majidmumtaz.gumroad.com/l/cae-gias-2024-os',
-    gumroadLabel: 'License CAE & GIAS Kit ($79)',
+    gumroadLabel: 'License CAE & GIAS Kit ($99 / $249)',
     overviewFile: 'GIAS_2024_Report_Evaluation_Matrix_Overview.md',
     featured: false,
   },
@@ -41,11 +53,11 @@ const commercialBundles = [
     badge: 'Pre-Listing & SOX 404',
     format: 'Unlocked Policy .DOCX + 4 Implementation Guides',
     title: 'GCC Pre-IPO, SOX 404 (ICFR) & Regulatory Readiness Kit',
-    price: '$89',
+    price: '$99 / $299',
     summary:
       'Combines the board-grade Quantitative Risk Appetite Policy Template (.docx) with the 35-page SOX 404 / ICFR Implementation Manual, 6-Phase IPO Readiness Checklist, KSA PDPL Multi-Channel Compliance Matrix, and GCC ESG Readiness Diagnostic.',
     gumroadUrl: 'https://majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit',
-    gumroadLabel: 'License IPO & ICFR Kit ($89)',
+    gumroadLabel: 'License IPO & ICFR Kit ($99 / $299)',
     overviewFile: 'Risk_Appetite_Policy_IPO_Template_Overview.md',
     featured: false,
   },
@@ -54,11 +66,11 @@ const commercialBundles = [
     badge: 'Forensics & Disbursement Triage',
     format: 'Unlocked 8-Section .DOCX + 4 Fieldwork Guides',
     title: 'Forensic Investigation, AP Triage & Fraud Arsenal',
-    price: '$69',
+    price: '$89 / $219',
     summary:
       'Includes the unlocked 8-section Forensic Investigation & Intelligence Report Template (.docx) with Benford’s Law tables, Fraud Diamond & Parallax operational diagnostics, and chain-of-custody logs, plus the 60-Minute AP Fraud Finder and 51-page Fraud Prevention Guide.',
     gumroadUrl: 'https://majidmumtaz.gumroad.com/l/forensic-ap-triage-kit',
-    gumroadLabel: 'License Forensic & AP Kit ($69)',
+    gumroadLabel: 'License Forensic & AP Kit ($89 / $219)',
     overviewFile: 'Forensic_Investigation_Report_Template_Overview.md',
     featured: false,
   },
@@ -67,11 +79,11 @@ const commercialBundles = [
     badge: 'Fulfillment, Payment & TPRM',
     format: '3 Unlocked .DOCX Templates + 2 Control Matrices',
     title: 'Multi-Channel Operations, FMCG Logistics RCM & Vendor Pack',
-    price: '$59',
+    price: '$79 / $189',
     summary:
       'Three unlocked Word assessment templates—UAE Commissary & Kitchen Operations Evaluation (15 pages), PCI DSS v4.0 Multi-Channel Scoping (12 pages), and SOC 2 Readiness & Vendor Section IV Exception Review (14 pages)—plus the FMCG Logistics RCM.',
     gumroadUrl: 'https://majidmumtaz.gumroad.com/l/ops-logistics-vendor-pack',
-    gumroadLabel: 'License Ops & Vendor Pack ($59)',
+    gumroadLabel: 'License Ops & Vendor Pack ($79 / $189)',
     overviewFile: 'UAE_Operations_Evaluation_Template_Overview.md',
     featured: false,
   },
@@ -110,7 +122,7 @@ function isPdfAsset(doc: any) {
             Frameworks &amp; working models.
           </h1>
           <p class="mt-6 max-w-3xl text-base leading-8 text-white/76 md:text-[1.08rem] md:leading-8">
-            Diagnostic checklists, sector risk reports, and SSRN research papers (<code class="font-mono text-xs text-[#f4c98b]">.pdf</code>) are open for immediate one-click download by Board Chairs, CFOs, and audit peers. Unlocked commercial execution suites—live Excel registries (<code class="font-mono text-xs text-[#f4c98b]">.xlsx</code>) and editable Word policies and dossiers (<code class="font-mono text-xs text-[#f4c98b]">.docx</code>)—are licensed for white-label deployment via Gumroad, with full architectural overviews (<code class="font-mono text-xs text-[#f4c98b]">.md</code>) provided free.
+            Diagnostic checklists, sector risk reports, and SSRN research papers (<code class="font-mono text-xs text-[#f4c98b]">.pdf</code>) are open for immediate one-click download by Board Chairs, CFOs, and audit peers. Unlocked commercial execution suites—live Excel registries (<code class="font-mono text-xs text-[#f4c98b]">.xlsx</code>) and editable Word policies and dossiers (<code class="font-mono text-xs text-[#f4c98b]">.docx</code>)—are licensed for internal corporate deployment (Standard License) or multi-client advisory use (Commercial Advisory License) via Gumroad, with full architectural overviews (<code class="font-mono text-xs text-[#f4c98b]">.md</code>) provided free.
           </p>
         </div>
 
