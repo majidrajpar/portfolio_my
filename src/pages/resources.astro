@@ -18,6 +18,7 @@ const commercialBundles = [
       'The complete executive collection combining all 5 specialized governance suites: Cloud Kitchen ERM + CCM, CAE GIAS 2024 OS, GCC Pre-IPO ICFR Kit, 60-Minute AP Forensic Triage, and FMCG Logistics Master RCM. Perpetual internal team deployment ($349) or global multi-client commercial advisory rights ($499) with 90-min executive consultation.',
     gumroadUrl: 'https://majidmumtaz.gumroad.com/l/master-audit-risk-vault',
     gumroadLabel: 'License Master Vault ($349 / $499)',
+    overviewFile: 'Master_Enterprise_Audit_Risk_Vault_Overview.md',
     featured: true,
   },
   {
@@ -202,13 +203,15 @@ function isPdfAsset(doc: any) {
                     {flagship.internalLabel}
                   </a>
                 )}
-                <a
-                  href={`${base}downloads/${flagship.overviewFile}`}
-                  download
-                  class="text-xs font-bold text-[#f4c98b] underline underline-offset-4 hover:text-white"
-                >
-                  Free Overview (.md)
-                </a>
+                {flagship.overviewFile && (
+                  <a
+                    href={`${base}downloads/${flagship.overviewFile}`}
+                    download
+                    class="text-xs font-bold text-[#f4c98b] underline underline-offset-4 hover:text-white"
+                  >
+                    Free Overview (.md)
+                  </a>
+                )}
               </div>
             </div>
           </div>
