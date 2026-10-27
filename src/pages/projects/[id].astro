@@ -6,9 +6,6 @@ import { getCaseStudies, categorySlug } from '../../lib/db.js';
 const base = import.meta.env.BASE_URL;
 
 const relatedLabels = {
-  'audit-4-transformation': {
-    build: 'CCM Field Toolkit (100% Population Anomaly Testing).',
-  },
   'whistleblowing-framework-qsr-leader': {
     build: 'ZK Whistleblower repository.',
   },
@@ -60,7 +57,7 @@ const relatedLines = [
     ? { href: `${base}tools/${project.relatedTool}/`, label: relatedLabels[project.id]?.tool }
     : null,
   project.relatedBuild && buildRecord
-    ? { href: (buildRecord.downloadUrl ? (buildRecord.downloadUrl.startsWith("http") ? buildRecord.downloadUrl : (base + buildRecord.downloadUrl.replace(/^\//, "").replace(/^portfolio_my\//, ""))) : buildRecord.githubUrl), label: relatedLabels[project.id]?.build, external: true }
+    ? { href: buildRecord.githubUrl, label: relatedLabels[project.id]?.build, external: true }
     : null,
   project.relatedCase
     ? { href: `${base}projects/${project.relatedCase}/`, label: relatedLabels[project.id]?.case }
