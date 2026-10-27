@@ -93,12 +93,14 @@ const commercialBundles = [
 function fileMeta(doc: any) {
   const name = doc.filename ? doc.filename.toUpperCase() : '';
   if (doc.id === 'doc-039') return { unit: 'file', kind: '18-FILE SUITE + OVERVIEW' };
-  if (doc.id === 'doc-040') return { unit: 'file', kind: 'EXCEL CCM PACK + DATA' };
+  if (doc.id === 'doc-040') return { unit: 'tab', kind: 'UNLOCKED EXCEL MODEL' };
+  if (doc.id === 'doc-041') return { unit: 'guide', kind: 'FIELD GUIDE + IT SPEC' };
   if (doc.id === 'doc-038') return { unit: 'sheet', kind: 'UNLOCKED EXCEL + OVERVIEW' };
-  if (name.endsWith('.MD')) return { unit: 'page', kind: 'UNLOCKED WORD + OVERVIEW' };
+  if (name.endsWith('.MD')) return { unit: 'page', kind: 'TECHNICAL GUIDE (.MD)' };
   if (name.endsWith('.DOCX')) return { unit: 'page', kind: 'WORD' };
   if (name.endsWith('.XLSX')) return { unit: 'sheet', kind: 'EXCEL' };
-  if (name.endsWith('.ZIP') || name.endsWith('.EXE')) return { unit: 'bundle', kind: 'WINDOWS APP' };
+  if (name.endsWith('.ZIP')) return { unit: 'bundle', kind: 'TOOLKIT ARCHIVE (.ZIP)' };
+  if (name.endsWith('.EXE')) return { unit: 'app', kind: 'WINDOWS APP' };
   return { unit: 'page', kind: 'FREE PDF' };
 }
 
@@ -310,11 +312,11 @@ function isPdfAsset(doc: any) {
                 <span class="meta-label text-slate-400">{doc.size}</span>
               </div>
 
-              <h3 class="text-xl leading-tight text-[#181511] flex-1">
+              <h3 class="text-xl font-bold leading-snug text-[#181511]">
                 {doc.title}
               </h3>
 
-              <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">
+              <p class="mt-3 text-sm leading-7 text-[color:var(--text-secondary)] flex-1">
                 {doc.description}
               </p>
 
@@ -393,7 +395,7 @@ function isPdfAsset(doc: any) {
                     download
                     class="btn-secondary self-start"
                   >
-                    Download
+                    {doc.downloadLabel ?? 'Download'}
                   </a>
                 )}
                 {doc.link && (
