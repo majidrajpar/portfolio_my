@@ -27,6 +27,7 @@ export const software = [
     techStack: ['Python', 'RapidOCR', 'OpenCV', 'ONNX Runtime', 'OpenPyXL', 'Standalone EXE'],
     githubUrl: 'https://github.com/majidrajpar/invoice-audit-engine',
     downloadUrl: 'https://github.com/majidrajpar/invoice-audit-engine/releases/tag/v1.0.0',
+    downloadLabel: 'Download Standalone EXE',
     isPublic: true,
     status: 'Production / Open Source',
     keyFeatures: [
@@ -51,6 +52,28 @@ export const software = [
       'AICPA-compliant monetary-unit and classical variables sampling calculation',
       'Deterministic working paper generation structured for IIA Standard 2300',
       'Zero-telemetry local execution ensuring full compliance with GDPR and banking secrecy'
+    ]
+  },
+  {
+    id: 'ccm-field-toolkit',
+    name: 'CCM Field Toolkit',
+    tagline: '100% Deterministic Population Anomaly Testing in Native Excel',
+    description: 'A sovereign, zero-macro continuous controls monitoring (CCM) telemetry pack engineered to replace 20-invoice sample testing with 100% population deterministic anomaly scans. Features five pre-built detection engines: Split Purchase Order DOA threshold circumvention, Inactive/Dormant vendor bank modification resuscitation, fuzzy duplicate invoice sanitization, off-hours/weekend manual journal adjustments, and round-sum consulting disbursement clustering. Includes an executive audit exceptions dashboard calculating exact financial exposure and full-population stress test data.',
+    category: 'Fieldwork Workbench',
+    techStack: ['Native Excel (.xlsx)', 'Zero VBA / Zero Macro', 'Deterministic Logic', 'Continuous Controls Monitoring', 'COSO / IIA Aligned'],
+    downloadUrl: '/portfolio_my/downloads/CCM_Field_Toolkit_Pack.zip',
+    downloadLabel: 'Direct Download (.ZIP)',
+    specsUrl: '/portfolio_my/downloads/CCM_Field_Toolkit_Overview.md',
+    specsLabel: 'View Specs',
+    gumroadUrl: 'https://majidmumtaz.gumroad.com/l/ccm-field-toolkit',
+    gumroadLabel: 'Get via Gumroad',
+    isPublic: true,
+    status: 'Fieldwork Pack · Production / Free Download',
+    keyFeatures: [
+      '100% population deterministic anomaly scanning replacing manual 25-sample substantive testing checklists',
+      'Five core audit engines: Split POs, Dormant Vendor Resuscitation, Near-Duplicate Invoices, Off-Hours GL Entries, and Round-Sum Fees',
+      'Dynamic Executive Exceptions Dashboard (Tab 99) calculating population flag rates and total dollar financial exposure',
+      'Includes 10,000+ row Audit Stress Test Data Pack and complete IT ERP data extraction specifications'
     ]
   },
   {
