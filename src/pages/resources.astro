@@ -93,6 +93,7 @@ const commercialBundles = [
 function fileMeta(doc: any) {
   const name = doc.filename ? doc.filename.toUpperCase() : '';
   if (doc.id === 'doc-039') return { unit: 'file', kind: '18-FILE SUITE + OVERVIEW' };
+  if (doc.id === 'doc-040') return { unit: 'file', kind: 'EXCEL CCM PACK + DATA' };
   if (doc.id === 'doc-038') return { unit: 'sheet', kind: 'UNLOCKED EXCEL + OVERVIEW' };
   if (name.endsWith('.MD')) return { unit: 'page', kind: 'UNLOCKED WORD + OVERVIEW' };
   if (name.endsWith('.DOCX')) return { unit: 'page', kind: 'WORD' };
