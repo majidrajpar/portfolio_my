@@ -1,25 +1,14 @@
 [
   {
     "id": "doc-040",
-    "filename": "CCM_Field_Toolkit_Pack.zip",
-    "title": "CCM Field Toolkit: 100% Population Anomaly Testing in Native Excel",
-    "description": "A sovereign, zero-macro continuous controls monitoring telemetry pack engineered to replace 20-invoice sample testing with 100% population deterministic anomaly scans. Five core engines: Split POs, Dormant Vendor Resuscitation, Near-Duplicate Invoices, Off-Hours GL Entries, and Round-Sum Fees, plus an Executive Dashboard and 10,000+ row Stress Test Data Pack.",
+    "filename": "Auditor_Anomaly_Testing_Template.xlsx",
+    "title": "Continuous Controls Monitoring (CCM) Excel Field Telemetry Model",
+    "description": "100% deterministic population anomaly testing model in native Excel. Self-contained 9-tab workbook featuring 5 automated testing engines (Split POs, Dormant Vendors, Near-Duplicates, Off-Hours GL, Round-Sum Fees), operating guide, field interview triage rubric, IT data specs, and Executive Exceptions Dashboard.",
     "category": "Frameworks",
-    "size": "130 KB",
-    "pages": 10,
+    "size": "56 KB",
+    "pages": 9,
     "date": "2026-10-27",
-    "gumroadUrl": "https://majidmumtaz.gumroad.com/l/ccm-field-toolkit",
-    "gumroadLabel": "Get on Gumroad"
-  },
-  {
-    "id": "doc-041",
-    "filename": "CCM_Field_Toolkit_Overview.md",
-    "title": "CCM Field Operating Guide & ERP Data Request Specification",
-    "description": "Technical field operating guide, triage rubric, and exact ERP extraction requirements for IT teams supporting automated 100% population anomaly scans in Excel.",
-    "category": "Audit Guides",
-    "size": "14 KB",
-    "pages": 5,
-    "date": "2026-10-27"
+    "downloadLabel": "Download Model (.XLSX)"
   },
   {
     "id": "doc-039",
