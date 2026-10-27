@@ -11,13 +11,6 @@ const categoryColors: Record<string, string> = {
   'Agentic Frameworks':  'bg-[#1f253a] text-[#c8d2f8]',
   'Audit Intelligence':  'bg-[#40250f] text-[#f3cf9b]',
 };
-
-const resolveAssetUrl = (url?: string) => {
-  if (!url) return '';
-  if (url.startsWith('http')) return url;
-  const clean = url.replace(/^\//, '').replace(/^portfolio_my\//, '');
-  return `${base}${clean}`;
-};
 ---
 
 <BaseLayout
@@ -134,44 +127,16 @@ const resolveAssetUrl = (url?: string) => {
               <div class="flex flex-wrap items-center gap-3">
                 {item.isPublic ? (
                   <>
-                    {item.downloadUrl && (
-                      <a
-                        href={resolveAssetUrl(item.downloadUrl)}
-                        target={item.downloadUrl.startsWith('http') ? '_blank' : undefined}
-                        download={!item.downloadUrl.startsWith('http')}
-                        rel={item.downloadUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        class="rounded-xl border border-[#059669]/40 bg-[#059669]/10 px-4 py-2 text-[10px] font-black uppercase tracking-wider text-[#059669] hover:bg-[#059669]/20 transition-colors inline-flex items-center gap-1.5"
-                      >
-                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                        {item.downloadLabel || 'Download'}
-                      </a>
-                    )}
-                    {item.specsUrl && (
-                      <a
-                        href={resolveAssetUrl(item.specsUrl)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="rounded-xl border border-slate-300 bg-white px-4 py-2 text-[10px] font-black uppercase tracking-wider text-slate-800 hover:border-[#181511] transition-colors inline-flex items-center gap-1.5"
-                      >
-                        <svg class="w-3.5 h-3.5 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                        </svg>
-                        {item.specsLabel || 'View Specs'}
-                      </a>
-                    )}
-                    {item.gumroadUrl && (
+                    {item.gumroadUrl ? (
                       <a
                         href={item.gumroadUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         class="btn-primary py-2.5 px-5 text-[10px] font-black uppercase tracking-wider inline-flex items-center gap-2"
                       >
-                        {item.gumroadLabel || 'License via Gumroad ($149 / $349)'}
+                        License via Gumroad ($149 / $349)
                       </a>
-                    )}
-                    {item.githubUrl && !item.gumroadUrl && (
+                    ) : item.githubUrl ? (
                       <a
                         href={item.githubUrl}
                         target="_blank"
@@ -183,10 +148,23 @@ const resolveAssetUrl = (url?: string) => {
                         </svg>
                         View on GitHub
                       </a>
+                    ) : null}
+                    {item.downloadUrl && (
+                      <a
+                        href={item.downloadUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="rounded-xl border border-[#059669]/40 bg-[#059669]/10 px-4 py-2 text-[10px] font-black uppercase tracking-wider text-[#059669] hover:bg-[#059669]/20 transition-colors inline-flex items-center gap-1.5"
+                      >
+                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                        Download Standalone EXE
+                      </a>
                     )}
                     {item.internalUrl && (
                       <a
-                        href={resolveAssetUrl(item.internalUrl)}
+                        href={`${base}${item.internalUrl.replace(/^\//, '')}`}
                         class="rounded-xl border border-slate-300 bg-white px-4 py-2 text-[10px] font-black uppercase tracking-wider text-slate-800 hover:border-[#181511] transition-colors inline-flex items-center gap-1.5"
                       >
                         {item.internalLabel ?? 'Role library'}

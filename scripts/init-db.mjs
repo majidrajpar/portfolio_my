@@ -167,7 +167,7 @@ const reset = db.transaction(() => {
       display_order: 2,
       tier: 'primary',
       related_tool: null,
-      related_build: 'ccm-field-toolkit',
+      related_build: null,
       related_case: null,
       snippet_ids: null,
     },
