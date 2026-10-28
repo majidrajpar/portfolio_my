@@ -46,6 +46,8 @@ const commercialBundles = [
       'Built around the unlocked 6-sheet GIAS 2024 Internal Audit Report Evaluation Matrix (.xlsx) with deterministic report issuance gates, paired with the 1-Page Audit Committee Executive Summary, Pack Quality Checklist, IA Setup Blueprint, and QAIP 2025 framework.',
     gumroadUrl: 'https://majidmumtaz.gumroad.com/l/cae-gias-2024-os',
     gumroadLabel: 'License CAE & GIAS Kit ($99 / $249)',
+    internalUrl: `${base}resources/gias-2024-report-matrix/`,
+    internalLabel: 'GIAS 2024 Matrix & Schema',
     overviewFile: 'GIAS_2024_Report_Evaluation_Matrix_Overview.md',
     featured: false,
   },
@@ -255,6 +257,14 @@ function isPdfAsset(doc: any) {
               >
                 {bundle.gumroadLabel}
               </a>
+              {bundle.internalUrl && (
+                <a
+                  href={bundle.internalUrl}
+                  class="btn-secondary text-[11px] font-black uppercase tracking-wider"
+                >
+                  {bundle.internalLabel}
+                </a>
+              )}
               <a
                 href={`${base}downloads/${bundle.overviewFile}`}
                 download
