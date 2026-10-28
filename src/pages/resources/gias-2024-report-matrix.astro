@@ -1,0 +1,489 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import NetworkCanvas from '../../components/NetworkCanvas';
+
+const base = import.meta.env.BASE_URL;
+
+const sheetTabs = [
+  {
+    tab: 'Tab 1',
+    name: '1. Instructions & Advisory',
+    role: 'QAIP Framework & Operating Rules',
+    description:
+      'Defines scoring methodology, GIAS 2024 standards era, Must vs. Should distinction, and the deterministic gate thresholds. Includes author advisory notes for automated continuous telemetry.',
+    highlights: ['GIAS 2024 Effective Scope', 'Must vs. Should Rules', 'Issue Gate Thresholds', 'Reviewer Principles'],
+    color: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400',
+  },
+  {
+    tab: 'Tab 2',
+    name: '2. Details',
+    role: 'Engagement Metadata & Evidence Boundary',
+    description:
+      'Captures report title, organization, lead reviewer, review date, engagement type (Assurance, Advisory, Overall Opinion), status (Draft vs. Issued), and available evidence scope.',
+    highlights: ['Document Type Router', 'Draft vs. Issued Logic', 'Standards Era Toggle', 'Evidence Availability Scope'],
+    color: 'border-blue-500/30 bg-blue-500/10 text-blue-400',
+  },
+  {
+    tab: 'Tab 3',
+    name: '3. Matrix',
+    role: 'Core Scored Evaluation Engine',
+    description:
+      'Evaluates 42 discrete report criteria against GIAS Domains III, IV, and V. Automated formulas look up cited standards and switch off dependent lines when parent prerequisites are not met.',
+    highlights: ['42 Scored GIAS Lines', 'Standard Citation Lookup', 'Automated Prerequisite Switches', 'Mandatory Comments on Low Scores'],
+    color: 'border-amber-500/30 bg-amber-500/10 text-amber-400',
+  },
+  {
+    tab: 'Tab 4',
+    name: '4. Findings',
+    role: 'Finding-Level Structural Rigor Check',
+    description:
+      'Tests up to 20 individual findings across Criteria, Condition (population vs. sample), Cause (structural 5-Whys / incentive check), Effect (quantified EBITDA/cash impact), and Action Plan accountability.',
+    highlights: ['Up to 20 Scored Findings', 'Population vs. Sample Check', 'Structural Cause Diagnostics', 'Executive Owner Verification'],
+    color: 'border-indigo-500/30 bg-indigo-500/10 text-indigo-400',
+  },
+  {
+    tab: 'Tab 5',
+    name: '5. Scorecard',
+    role: 'Live Deterministic Issuance Gate',
+    description:
+      'Calculates live Findings Index and Close Index percentages, then applies deterministic Hard-Stop Gate Rules to produce an uncompromised report release verdict.',
+    highlights: ['Findings vs. Close Indices', 'Hard-Stop Gate Evaluation', 'Automatic Status Verdict', 'First-12 Gap Exception Log'],
+    color: 'border-rose-500/30 bg-rose-500/10 text-rose-400',
+  },
+  {
+    tab: 'Tab 6',
+    name: '6. Standards',
+    role: 'GIAS 2024 Reference & Lookup Dictionary',
+    description:
+      'Full paraphrased requirement and consideration database mapping GIAS Standards 5.1, 5.2, 11.2, 11.3, 11.4, 11.5, 13.1, 13.3, 13.4, 14.1-14.5, 15.1, and 15.2 into formula-searchable labels.',
+    highlights: ['16 Standards Mapped', 'Requirement vs. Consideration', 'Matrix Cross-Reference Col', 'Zero Macro Dependency'],
+    color: 'border-teal-500/30 bg-teal-500/10 text-teal-400',
+  },
+];
+
+const gateRules = [
+  {
+    verdict: 'ACCEPT',
+    badge: 'Pass — Clear to Issue',
+    badgeColor: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300',
+    rule: 'Every scored Must criterion is rated 2 (Met) or 3 (Strong), with zero Should criteria rated 0 or 1. Engagement meets full GIAS 2024 reporting rigor.',
+  },
+  {
+    verdict: 'ACCEPT WITH GAPS',
+    badge: 'Accept & Record Gaps',
+    badgeColor: 'border-blue-500/30 bg-blue-500/10 text-blue-300',
+    rule: 'Every scored Must criterion is 2 or 3. Minor advisory considerations (Should) show gaps (< 3 items at 0). Report can issue; gaps are logged to the QAIP trend log.',
+  },
+  {
+    verdict: 'REVISE BEFORE ISSUE',
+    badge: 'Conditional Release',
+    badgeColor: 'border-amber-500/30 bg-amber-500/10 text-amber-300',
+    rule: 'No Must criterion is 0, but at least one Must is 1 (Partly Met), or three or more Should criteria are 0. Draft must return to audit manager for specific revisions.',
+  },
+  {
+    verdict: 'WITHHOLD',
+    badge: 'Hard-Stop — Hold in Fieldwork',
+    badgeColor: 'border-red-500/30 bg-red-500/10 text-red-300',
+    rule: 'Any mandatory Must criterion is 0 (Not Met), unpopulated, or invalid. Final report cannot be distributed to executive management or the Audit Committee.',
+  },
+];
+
+const jsonLdData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'SoftwareApplication',
+      'name': 'Internal Audit Report Evaluation Matrix (GIAS 2024 Conformance)',
+      'operatingSystem': 'Microsoft Excel, Office 365, LibreOffice, Google Sheets',
+      'applicationCategory': 'BusinessApplication',
+      'offers': {
+        '@type': 'Offer',
+        'price': '0.00',
+        'priceCurrency': 'USD',
+      },
+      'author': {
+        '@type': 'Person',
+        'name': 'Majid Mumtaz',
+        'jobTitle': 'Director of Internal Audit & Risk Advisory',
+        'url': 'https://majidrajpar.github.io/portfolio_my/',
+      },
+      'description':
+        'Deterministic QAIP engagement scoring matrix operationalizing the Global Internal Audit Standards (GIAS 2024). Separates finding-level quality from engagement issuance gates.',
+    },
+    {
+      '@type': 'DigitalDocument',
+      'name': 'Internal Audit Report Evaluation Matrix (GIAS 2024 Edition)',
+      'encodingFormat': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      'url': 'https://majidrajpar.github.io/portfolio_my/downloads/Internal_Audit_Report_Evaluation_Matrix_GIAS_2024.xlsx',
+      'author': {
+        '@type': 'Person',
+        'name': 'Majid Mumtaz',
+      },
+      'publisher': {
+        '@type': 'Organization',
+        'name': 'Veritux Advisory',
+      },
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Internal Audit Report Evaluation Matrix (GIAS 2024) | Majid Mumtaz"
+  description="Deterministic QAIP report scoring matrix and automated issuance gate operationalizing the Global Internal Audit Standards (GIAS 2024). Eliminates subjective exit-meeting rating negotiations."
+  ogImage="/portfolio_my/images/projects/internal-tracker/audit-committee-dashboard.png"
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLdData)} />
+
+  <!-- Hero Header -->
+  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
+    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-14">
+      <NetworkCanvas client:load nodeCount={30} />
+      <div class="relative z-10 grid gap-8 lg:grid-cols-[1.3fr_0.85fr] lg:items-end lg:gap-10">
+        <div data-reveal>
+          <a
+            href={`${base}resources/`}
+            class="mb-6 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white"
+          >
+            &larr; Back to Resource Library
+          </a>
+          <span class="hero-chip mb-6 block w-fit">IIA GIAS 2024 Conformance · Unlocked QAIP Tool</span>
+          <h1 class="headline-display max-w-4xl text-[clamp(2.2rem,4.8vw,4.2rem)] font-black text-white leading-[1.04]">
+            Internal Audit Report
+            <span class="block text-[#f4c98b]">Evaluation Matrix.</span>
+          </h1>
+          <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/76 md:mt-7 md:text-[1.05rem] md:leading-8">
+            A deterministic 6-sheet Excel matrix operationalizing the Global Internal Audit Standards (GIAS 2024, effective 9 January 2025). Separates finding-level technical rigor from final report release gates—eliminating subjective rating horse-trading in exit conferences.
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href={`${base}downloads/Internal_Audit_Report_Evaluation_Matrix_GIAS_2024.xlsx`}
+              download
+              class="btn-primary text-xs font-black uppercase tracking-wider"
+            >
+              Download Unlocked Matrix (.xlsx)
+            </a>
+            <a
+              href={`${base}downloads/GIAS_2024_Report_Evaluation_Matrix_Overview.md`}
+              download
+              class="btn-secondary-light text-xs font-black uppercase tracking-wider"
+            >
+              Executive Schema (.md)
+            </a>
+            <a
+              href="https://majidmumtaz.gumroad.com/l/cae-gias-2024-os"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-xs font-bold text-[#f4c98b] hover:text-[#f7d6a5] transition-colors underline underline-offset-4"
+            >
+              Full CAE Operating Bundle ($99 / $249) &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div class="quote-panel p-6 md:p-8" data-reveal data-reveal-delay="1">
+          <span class="eyebrow-label text-[#f4c98b]/80">The Operational Premise</span>
+          <div class="mt-4 space-y-4 text-sm leading-7 text-white/74">
+            <p>
+              When an audit report rating depends on reviewer adjectives, exit meetings degenerate into political diplomacy. Auditees lobby over rating words to protect annual bonuses.
+            </p>
+            <p>
+              This matrix replaces negotiation with mathematical gate logic: if a finding lacks a quantified population condition, structural root cause, or named executive owner, the report is withheld automatically.
+            </p>
+          </div>
+          <div class="mt-6 grid grid-cols-3 gap-3 border-t border-white/10 pt-5 text-center">
+            <div>
+              <div class="text-xl font-black text-white">6</div>
+              <div class="text-[10px] font-mono uppercase tracking-wider text-white/55">Worksheets</div>
+            </div>
+            <div>
+              <div class="text-xl font-black text-[#f4c98b]">42</div>
+              <div class="text-[10px] font-mono uppercase tracking-wider text-white/55">Scored Lines</div>
+            </div>
+            <div>
+              <div class="text-xl font-black text-white">0</div>
+              <div class="text-[10px] font-mono uppercase tracking-wider text-white/55">Macros / VBA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Narrative for CAEs & Audit Committees -->
+  <section class="px-4 py-12 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-12 lg:grid-cols-[1.4fr_0.85fr]">
+        <div class="space-y-8 text-[15px] leading-8 text-[color:var(--text-secondary)]" data-reveal>
+          <div>
+            <span class="eyebrow-label">01 // Transitioning to GIAS 2024</span>
+            <h2 class="mt-3 text-[clamp(1.8rem,3.2vw,2.6rem)] leading-[1.08] text-[#181511]">
+              Ending the political negotiation over audit report ratings.
+            </h2>
+          </div>
+
+          <p>
+            Under the <strong>Global Internal Audit Standards (GIAS 2024, effective 9 January 2025)</strong>, Quality Assurance and Improvement Program (QAIP) requirements can no longer be satisfied by ticking administrative completion boxes at the close of fieldwork. Yet across corporate internal audit teams, draft report review frequently degenerates into diplomatic editing: auditees contest rating adjectives (&ldquo;Needs Improvement&rdquo; versus &ldquo;Partly Satisfactory&rdquo;) to protect executive incentives, while engagement managers soften critical root-cause language to secure management sign-off.
+          </p>
+
+          <p>
+            This breakdown stems from a structural flaw in traditional audit methodology: <em>conflating finding-level technical rigor with the engagement close decision</em>. When an audit function lacks a transparent, deterministic scoring rubric, report issuance decisions inevitably default to organizational hierarchy and interpersonal pressure.
+          </p>
+
+          <div class="my-6 rounded-2xl border border-slate-200/80 bg-slate-50 p-6">
+            <h3 class="text-base font-bold text-[#181511]">The Parallax View: Reviewer vs. Auditee vs. Audit Committee</h3>
+            <div class="mt-4 grid gap-4 sm:grid-cols-3 text-xs leading-6">
+              <div class="rounded-xl border border-slate-200 bg-white p-4">
+                <span class="font-mono font-bold uppercase text-slate-500">Field Auditor</span>
+                <p class="mt-2 text-slate-700">Views the report as the culmination of weeks of manual sampling; every exception found feels essential to justify engagement hours.</p>
+              </div>
+              <div class="rounded-xl border border-slate-200 bg-white p-4">
+                <span class="font-mono font-bold uppercase text-slate-500">Operational Executive</span>
+                <p class="mt-2 text-slate-700">Views findings through trench reality. Criticisms ignoring shared-service bottlenecks or POS latency read as detached compliance theater.</p>
+              </div>
+              <div class="rounded-xl border border-slate-200 bg-white p-4">
+                <span class="font-mono font-bold uppercase text-slate-500">Audit Committee Chair</span>
+                <p class="mt-2 text-slate-700">Needs quantifiable exposure: What is the EBITDA or regulatory capital at risk? Why did controls fail? Who owns the fix, and by when?</p>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-bold text-[#181511]">Hard-Stop Gate Logic: Mathematics Over Adjectives</h3>
+          <p>
+            This 6-sheet evaluation matrix operationalizes GIAS Domains III, IV, and V by establishing a mathematical gate that decouples the <strong>Findings Index</strong> (evaluating criteria precision, 100% population condition testing, structural 5-Whys root-cause depth, and quantified EBITDA/regulatory impact) from the <strong>Close Index</strong> (evaluating scope disclosures, engagement conclusions, and remediation accountability).
+          </p>
+          <p>
+            Rather than relying on simple weighted averages that permit neat formatting to compensate for weak root-cause analysis, the matrix enforces hard-stop rules. Core requirements derived from GIAS mandatory Standards (11.2, 11.3, 13.1, 14.1&ndash;14.5, 15.1) are designated as <strong class="text-slate-900">Must</strong> criteria. A failure on any Must line blocks final report clearance regardless of how polished the executive summary appears.
+          </p>
+        </div>
+
+        <!-- Sidebar Summary & Bridge to CCM -->
+        <div class="space-y-6" data-reveal data-reveal-delay="1">
+          <div class="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
+            <span class="eyebrow-label">Operational Tool Specs</span>
+            <ul class="mt-5 space-y-3.5 text-xs text-slate-700">
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-500 font-bold">&check;</span>
+                <span><strong>File Type:</strong> Unlocked Microsoft Excel (.xlsx), zero macros.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-500 font-bold">&check;</span>
+                <span><strong>Standards Conformance:</strong> IIA GIAS 2024 (Mandatory 9 Jan 2025).</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-500 font-bold">&check;</span>
+                <span><strong>Evaluation Capacity:</strong> Up to 20 discrete engagement findings.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-500 font-bold">&check;</span>
+                <span><strong>Audit Roles Covered:</strong> Quality Reviewer, CAE, Audit Director, Lead Senior.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="text-emerald-500 font-bold">&check;</span>
+                <span><strong>License:</strong> Free for internal corporate QAIP and professional audit use.</span>
+              </li>
+            </ul>
+
+            <div class="mt-6 border-t border-slate-100 pt-5">
+              <a
+                href={`${base}downloads/Internal_Audit_Report_Evaluation_Matrix_GIAS_2024.xlsx`}
+                download
+                class="btn-primary w-full text-center text-xs font-black uppercase tracking-wider"
+              >
+                Download Free .XLSX Matrix
+              </a>
+            </div>
+          </div>
+
+          <!-- Bridge to CCM Telemetry Architect -->
+          <div class="rounded-3xl border border-[#1b3a4b]/20 bg-[#1b3a4b]/5 p-7">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-widest text-[#1b3a4b]">Continuous Controls Bridge</span>
+            <h4 class="mt-2 text-base font-bold text-[#1b3a4b]">Automating Audit Telemetry at Scale</h4>
+            <p class="mt-2 text-xs leading-6 text-slate-700">
+              Moving beyond periodic retrospective reviews requires 100% continuous controls monitoring (CCM). Connect your ERP transaction logs, POS remittances, and BOM recipe yields directly into real-time exception streams.
+            </p>
+            <a
+              href={`${base}tools/ccm-telemetry-architect/`}
+              class="mt-4 inline-flex items-center text-xs font-bold text-[#0f4c81] hover:underline"
+            >
+              Explore CCM Telemetry Architect &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6-Tab Workbook Architecture Breakdown -->
+  <section class="bg-slate-50 px-4 py-12 md:px-8 border-y border-slate-200">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-10 text-center max-w-3xl mx-auto" data-reveal>
+        <span class="eyebrow-label">02 // Workbook Architecture</span>
+        <h2 class="mt-3 text-[clamp(1.9rem,3.4vw,2.8rem)] leading-[1.08] text-[#181511]">
+          Six interlocked sheets engineered with transparent formulas.
+        </h2>
+        <p class="mt-3 text-sm text-[color:var(--text-secondary)]">
+          Zero closed macros. Every gate condition, lookup formula, and scoring aggregate is fully inspectable and configurable for your department's audit methodology.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {sheetTabs.map((s, idx) => (
+          <div class="glass-card flex flex-col justify-between rounded-2xl bg-white p-6 shadow-sm border border-slate-200" data-reveal data-reveal-delay={String((idx % 3) + 1)}>
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-xs font-bold text-slate-400">{s.tab}</span>
+                <span class={`rounded-sm px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider border ${s.color}`}>
+                  Live Sheet
+                </span>
+              </div>
+              <h3 class="mt-3 text-lg font-black text-[#181511]">{s.name}</h3>
+              <p class="mt-1 text-xs font-medium text-slate-500">{s.role}</p>
+              <p class="mt-3 text-xs leading-6 text-slate-600">{s.description}</p>
+            </div>
+
+            <div class="mt-5 border-t border-slate-100 pt-4">
+              <span class="text-[10px] font-mono uppercase tracking-wider text-slate-400 block mb-2">Key Logic Capabilities</span>
+              <div class="flex flex-wrap gap-1.5">
+                {s.highlights.map((h) => (
+                  <span class="rounded bg-slate-100 px-2 py-0.5 text-[10px] font-mono text-slate-700">
+                    {h}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Deterministic Gate Rules Table -->
+  <section class="px-4 py-12 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-8" data-reveal>
+        <span class="eyebrow-label">03 // The Gate Logic</span>
+        <h2 class="mt-3 text-[clamp(1.8rem,3.2vw,2.6rem)] leading-[1.08] text-[#181511]">
+          Deterministic issuance rules built into the matrix.
+        </h2>
+        <p class="mt-2 text-sm text-[color:var(--text-secondary)] max-w-3xl">
+          The workbook evaluates the report against four deterministic gate outcomes. The release verdict is driven by rule logic, removing reviewer ambiguity.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {gateRules.map((rule, idx) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col justify-between" data-reveal data-reveal-delay={String(idx + 1)}>
+            <div>
+              <span class={`inline-flex rounded-sm px-2.5 py-1 text-[10px] font-black uppercase tracking-wider border ${rule.badgeColor}`}>
+                {rule.badge}
+              </span>
+              <h3 class="mt-4 text-base font-black text-[#181511] font-mono">{rule.verdict}</h3>
+              <p class="mt-3 text-xs leading-6 text-slate-600">{rule.rule}</p>
+            </div>
+            <div class="mt-4 border-t border-slate-100 pt-3 text-[10px] font-mono text-slate-400">
+              Evaluated on Sheet 5: Scorecard
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Commercial Bundle Banner & Download Section -->
+  <section class="px-4 py-8 md:px-8" id="download-suite">
+    <div class="mx-auto max-w-7xl">
+      <div class="soft-shell p-8 md:p-12 bg-gradient-to-br from-[#1b3a4b]/95 to-[#0b1f2d] text-white rounded-3xl" data-reveal>
+        <div class="grid gap-8 lg:grid-cols-[1.4fr_0.85fr] lg:items-center">
+          <div>
+            <span class="inline-flex rounded-sm bg-[#f4c98b]/20 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#f4c98b] border border-[#f4c98b]/30">
+              Executive Governance Suite
+            </span>
+            <h2 class="mt-4 text-[clamp(1.8rem,3.2vw,2.8rem)] font-black text-white leading-tight">
+              CAE Governance, GIAS 2024 &amp; Audit Committee OS.
+            </h2>
+            <p class="mt-4 text-sm leading-7 text-white/78 max-w-2xl">
+              The unlocked Evaluation Matrix is also available as the centerpiece of the complete 7-asset commercial operating suite for Chief Audit Executives, Board Audit Committees, and advisory practitioners.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-2 text-xs text-white/70">
+              <span class="rounded bg-white/10 px-2.5 py-1">1-Page AC Executive Summary</span>
+              <span class="rounded bg-white/10 px-2.5 py-1">Board Pack Quality Checklist</span>
+              <span class="rounded bg-white/10 px-2.5 py-1">IA Setup Blueprint (7 Phases)</span>
+              <span class="rounded bg-white/10 px-2.5 py-1">QAIP v2025 Framework</span>
+              <span class="rounded bg-white/10 px-2.5 py-1">Governance Line Blueprint</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-4 bg-white/5 border border-white/15 p-6 rounded-2xl backdrop-blur-sm">
+            <div class="flex items-baseline justify-between border-b border-white/10 pb-4">
+              <div>
+                <div class="text-xs font-mono uppercase tracking-wider text-white/50">Commercial Bundle</div>
+                <div class="text-2xl font-black text-[#f4c98b]">$99 / $249</div>
+              </div>
+              <span class="text-[10px] font-mono text-white/50">Internal Team / Advisory License</span>
+            </div>
+            <a
+              href="https://majidmumtaz.gumroad.com/l/cae-gias-2024-os"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary w-full text-center text-xs font-black uppercase tracking-wider py-3"
+            >
+              Acquire CAE Operating Bundle &rarr;
+            </a>
+            <a
+              href={`${base}downloads/Internal_Audit_Report_Evaluation_Matrix_GIAS_2024.xlsx`}
+              download
+              class="btn-secondary-light w-full text-center text-xs font-black uppercase tracking-wider py-2.5"
+            >
+              Download Free .XLSX Only
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Author Attribution & Trench Context -->
+  <section class="px-4 py-12 md:px-8 border-t border-slate-200">
+    <div class="mx-auto max-w-7xl">
+      <div class="grid gap-8 lg:grid-cols-[1fr_2fr] items-start">
+        <div>
+          <span class="eyebrow-label">Author &amp; Advisory Practice</span>
+          <h3 class="mt-3 text-2xl font-black text-[#181511]">Majid Mumtaz</h3>
+          <p class="mt-1 text-xs font-mono text-slate-500">
+            CIA (IIA) · ACA (ICAEW) · FCCA · GRCP · COSO ERM Certified
+          </p>
+          <p class="mt-4 text-xs leading-6 text-slate-600">
+            Director of Internal Audit &amp; Risk Advisory at Veritux Advisory. Former Director of IA &amp; GRC at Kitopi, Group Director of IA &amp; Risk at Al-Faisaliah Group, and IA Lead at McDonald&rsquo;s Saudi Arabia. Big 4 alumnus (KPMG, EY).
+          </p>
+          <div class="mt-4 flex flex-wrap gap-3 text-xs">
+            <a
+              href="https://www.linkedin.com/newsletters/7339153291630510080/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-bold text-[#0f4c81] hover:underline"
+            >
+              The Audit Signal Newsletter &rarr;
+            </a>
+            <a
+              href="https://www.linkedin.com/in/majid-m-4b097118/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-bold text-slate-600 hover:text-slate-900"
+            >
+              LinkedIn Profile &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-xs leading-6 text-slate-600">
+          <h4 class="font-bold text-slate-900 text-sm">Standards Disclaimer &amp; Application Notice</h4>
+          <p class="mt-2">
+            This evaluation matrix and associated schemas paraphrase the Global Internal Audit Standards (GIAS 2024 edition, effective 9 January 2025) strictly for internal quality assurance, peer review, and engagement testing. It is prepared independently by Majid Mumtaz and is not published, sponsored, or endorsed by The Institute of Internal Auditors (IIA) or the Institute of Chartered Accountants in England and Wales (ICAEW). Where local regulatory mandates or specific audit charter provisions differ, professional standards and approved governance mandates prevail.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
