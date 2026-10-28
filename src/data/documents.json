@@ -1,5 +1,27 @@
 [
   {
+    "id": "doc-041",
+    "filename": "POS_Cashier_Till_Fraud_Detector.xlsx",
+    "title": "POS Cashier & Till Fraud Detection Model",
+    "description": "Continuous controls monitoring model in native Excel for retail, F&B, and multi-till operations. Analyzes raw POS Electronic Journal exports across four deterministic forensic engines: post-settlement cash voids, pre-tender item deletions, no-sale drawer kicks, and supervisor PIN concurrency anomalies. Produces a till risk matrix, ranked cashier scorecard, and prioritized CCTV review queue.",
+    "category": "Fraud Resources",
+    "size": "119 KB",
+    "pages": 8,
+    "date": "2026-10-28",
+    "downloadLabel": "Download Model (.XLSX)",
+    "tags": [
+      "POS Audit",
+      "Retail Fraud",
+      "Loss Prevention",
+      "Continuous Monitoring",
+      "Excel Model"
+    ],
+    "fileFormat": "XLSX",
+    "fileSize": "119 KB",
+    "downloadUrl": "/downloads/POS_Cashier_Till_Fraud_Detector.xlsx",
+    "isFree": true
+  },
+  {
     "id": "doc-040",
     "filename": "Auditor_Anomaly_Testing_Template.xlsx",
     "title": "Continuous Controls Monitoring (CCM) Excel Field Telemetry Model",
