@@ -34,6 +34,7 @@ const Navbar = ({ initialPath = '' }) => {
   const navItems = [
     { label: 'Case Studies', href: `${baseUrl}projects/` },
     { label: 'Tools', href: `${baseUrl}tools/` },
+    { label: 'Resources', href: `${baseUrl}resources/` },
     { label: 'About', href: `${baseUrl}about/` },
     { label: 'Advisory', href: `${baseUrl}advisory/` },
   ];

@@ -292,25 +292,125 @@ function isPdfAsset(doc: any) {
         </p>
       </div>
 
-      <div class="mb-8 flex flex-wrap gap-2" id="filter-bar">
-        {categories.map((cat, idx) => (
-          <button
-            data-filter={cat}
-            class={`filter-btn rounded-full px-4 py-2 text-[10px] font-black uppercase tracking-[0.24em] border transition-all duration-150 ${idx === 0 ? 'bg-[#1d3557] border-[#1d3557] text-white' : 'border-[rgba(29,53,87,0.10)] text-[color:var(--text-secondary)] bg-white/60 hover:border-[#1d3557]/40 hover:text-[#181511]'}`}
-          >
-            {cat}
-          </button>
-        ))}
+      <!-- Search and Filter Control Deck -->
+      <div class="soft-shell mb-10 p-5 md:p-7" data-reveal id="resources-control-deck">
+        <div class="flex flex-col gap-5">
+          <!-- Search input with clear button and ESC shortcut -->
+          <div class="relative flex items-center">
+            <div class="pointer-events-none absolute left-4 text-slate-400">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+            </div>
+            <input
+              id="doc-search-input"
+              type="search"
+              autocomplete="off"
+              placeholder="Search 35 frameworks, models & checklists (e.g. GIAS 2024, SOX 404, Till Fraud, BOM)..."
+              class="w-full rounded-2xl border border-[color:var(--line-soft)] bg-white/80 py-3.5 pl-11 pr-24 text-sm font-medium text-[#181511] placeholder:text-slate-400 focus:border-[#a33a21] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#a33a21] transition-all"
+              aria-label="Search resources"
+            />
+            <div class="absolute right-3 flex items-center gap-2">
+              <button
+                id="doc-search-clear"
+                type="button"
+                class="hidden rounded-lg p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors"
+                aria-label="Clear search"
+                title="Clear search"
+              >
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+              <kbd class="hidden sm:inline-block rounded border border-slate-200 bg-slate-50 px-1.5 py-0.5 text-[9px] font-mono text-slate-400">ESC</kbd>
+            </div>
+          </div>
+
+          <!-- Dual Filter Controls Row -->
+          <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between border-t border-[color:var(--line-soft)] pt-4">
+            <!-- Topic / Category Filter -->
+            <div class="flex flex-wrap items-center gap-1.5" id="filter-bar">
+              <span class="meta-label mr-1 text-slate-400">Topic:</span>
+              {categories.map((cat, idx) => (
+                <button
+                  type="button"
+                  data-filter={cat}
+                  class={`filter-btn rounded-full px-3.5 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] border transition-all ${
+                    idx === 0
+                      ? 'active-filter bg-[#1d3557] border-[#1d3557] text-white'
+                      : 'border-[rgba(29,53,87,0.10)] text-[color:var(--text-secondary)] bg-white/70 hover:border-[#1d3557]/40 hover:text-[#181511]'
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+
+            <!-- Deliverable Format Filter -->
+            <div class="flex flex-wrap items-center gap-1.5" id="format-bar">
+              <span class="meta-label mr-1 text-slate-400">Format:</span>
+              <button
+                type="button"
+                data-format="all"
+                class="format-btn active-format rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[#1d3557] bg-[#1d3557] text-white transition-all"
+              >
+                All Formats
+              </button>
+              <button
+                type="button"
+                data-format="pdf"
+                class="format-btn rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
+              >
+                Free PDF (28)
+              </button>
+              <button
+                type="button"
+                data-format="xlsx"
+                class="format-btn rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
+              >
+                Excel (.xlsx)
+              </button>
+              <button
+                type="button"
+                data-format="md"
+                class="format-btn rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
+              >
+                Guides (.md)
+              </button>
+            </div>
+          </div>
+
+          <!-- Live Results Counter & Reset -->
+          <div class="flex items-center justify-between text-xs text-[color:var(--text-secondary)] pt-1">
+            <div id="doc-results-count" class="font-medium">
+              Showing <span class="font-bold text-[#181511]" id="doc-count-number">{documents.length}</span> of {documents.length} assets
+            </div>
+            <button
+              id="doc-reset-all"
+              type="button"
+              class="hidden text-[11px] font-black uppercase tracking-wider text-[#a33a21] hover:underline cursor-pointer"
+            >
+              Reset Filters
+            </button>
+          </div>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3" id="docs-grid">
         {(documents as any[]).map((doc: any, i: number) => {
           const isPdf = isPdfAsset(doc);
           const meta = fileMeta(doc);
+          const ext = doc.filename ? doc.filename.split('.').pop().toLowerCase() : '';
+          const formatCode = isPdf ? 'pdf' : (ext === 'xlsx' ? 'xlsx' : (ext === 'md' ? 'md' : 'other'));
           return (
             <div
-              class="glass-card flex flex-col rounded-[30px] p-7"
+              class="doc-card glass-card flex flex-col rounded-[30px] p-7"
               data-category={doc.category}
+              data-format={formatCode}
+              data-title={doc.title.toLowerCase()}
+              data-description={doc.description.toLowerCase()}
+              data-filename={doc.filename ? doc.filename.toLowerCase() : ''}
+              data-tags={doc.tags ? doc.tags.join(' ').toLowerCase() : ''}
               data-reveal
               data-reveal-delay={String((i % 3) + 1)}
             >
@@ -422,42 +522,245 @@ function isPdfAsset(doc: any) {
           );
         })}
       </div>
+
+      <!-- Clean Dignified Empty State for Resources -->
+      <div id="docs-empty-state" class="hidden my-12 mx-auto max-w-lg rounded-[28px] border border-[color:var(--line-soft)] bg-white/75 p-8 text-center backdrop-blur-xl">
+        <p class="text-lg font-bold text-[#181511]">No matching resources found</p>
+        <p class="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">
+          No diagnostic assets match your search criteria. Try broadening your terms (e.g. "fraud", "controls", "governance", "sox", "remittance").
+        </p>
+        <button
+          type="button"
+          id="docs-empty-reset"
+          class="btn-secondary mt-6"
+        >
+          Reset All Filters
+        </button>
+      </div>
     </div>
   </section>
 
   <script is:inline>
-    (function () {
-      const bar = document.getElementById('filter-bar');
+    function initResourcesSearch() {
+      const searchInput = document.getElementById('doc-search-input');
+      const searchClear = document.getElementById('doc-search-clear');
+      const categoryBar = document.getElementById('filter-bar');
+      const formatBar = document.getElementById('format-bar');
+      const countEl = document.getElementById('doc-count-number');
+      const resultsText = document.getElementById('doc-results-count');
+      const resetBtn = document.getElementById('doc-reset-all');
+      const emptyResetBtn = document.getElementById('docs-empty-reset');
       const grid = document.getElementById('docs-grid');
-      if (!bar || !grid) return;
+      const emptyState = document.getElementById('docs-empty-state');
+      if (!searchInput || !grid) return;
 
-      const cards = Array.from(grid.querySelectorAll('[data-category]'));
+      const cards = Array.from(grid.querySelectorAll('.doc-card'));
+      const totalDocs = cards.length;
 
-      bar.addEventListener('click', function (e) {
-        const btn = e.target.closest('.filter-btn');
-        if (!btn) return;
+      let currentQuery = '';
+      let currentCategory = 'All';
+      let currentFormat = 'all';
 
-        const selected = btn.dataset.filter;
+      function syncUrl() {
+        const url = new URL(window.location.href);
+        if (currentQuery) {
+          url.searchParams.set('q', currentQuery);
+        } else {
+          url.searchParams.delete('q');
+        }
+        if (currentCategory && currentCategory !== 'All') {
+          url.searchParams.set('cat', currentCategory);
+        } else {
+          url.searchParams.delete('cat');
+        }
+        if (currentFormat && currentFormat !== 'all') {
+          url.searchParams.set('format', currentFormat);
+        } else {
+          url.searchParams.delete('format');
+        }
+        window.history.replaceState(null, '', url.toString());
+      }
 
-        bar.querySelectorAll('.filter-btn').forEach(function (b) {
-          if (b === btn) {
-            b.classList.add('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
-            b.classList.remove('text-[color:var(--text-secondary)]', 'bg-white/60');
+      function updateCategoryButtons() {
+        if (!categoryBar) return;
+        categoryBar.querySelectorAll('.filter-btn').forEach(function (btn) {
+          const cat = btn.getAttribute('data-filter');
+          if (cat === currentCategory) {
+            btn.classList.add('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
+            btn.classList.remove('text-[color:var(--text-secondary)]', 'bg-white/70');
           } else {
-            b.classList.remove('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
-            b.classList.add('text-[color:var(--text-secondary)]', 'bg-white/60');
+            btn.classList.remove('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
+            btn.classList.add('text-[color:var(--text-secondary)]', 'bg-white/70');
           }
         });
+      }
 
+      function updateFormatButtons() {
+        if (!formatBar) return;
+        formatBar.querySelectorAll('.format-btn').forEach(function (btn) {
+          const fmt = btn.getAttribute('data-format');
+          if (fmt === currentFormat) {
+            btn.classList.add('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
+            btn.classList.remove('text-[color:var(--text-secondary)]', 'bg-white/70');
+          } else {
+            btn.classList.remove('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
+            btn.classList.add('text-[color:var(--text-secondary)]', 'bg-white/70');
+          }
+        });
+      }
+
+      function runFilter() {
+        const q = currentQuery.trim().toLowerCase();
+        const isFiltering = q.length > 0 || currentCategory !== 'All' || currentFormat !== 'all';
+
+        // Toggle clear button
+        if (searchClear) {
+          if (q.length > 0) {
+            searchClear.classList.remove('hidden');
+          } else {
+            searchClear.classList.add('hidden');
+          }
+        }
+
+        // Toggle reset button
+        if (resetBtn) {
+          if (isFiltering) {
+            resetBtn.classList.remove('hidden');
+          } else {
+            resetBtn.classList.add('hidden');
+          }
+        }
+
+        let visibleCount = 0;
         cards.forEach(function (card) {
-          if (selected === 'All' || card.dataset.category === selected) {
+          const title = card.getAttribute('data-title') || '';
+          const desc = card.getAttribute('data-description') || '';
+          const filename = card.getAttribute('data-filename') || '';
+          const tags = card.getAttribute('data-tags') || '';
+          const category = card.getAttribute('data-category') || '';
+          const format = card.getAttribute('data-format') || '';
+
+          const matchesQuery = !q || title.includes(q) || desc.includes(q) || filename.includes(q) || tags.includes(q) || category.toLowerCase().includes(q);
+          const matchesCategory = currentCategory === 'All' || category === currentCategory;
+          const matchesFormat = currentFormat === 'all' || format === currentFormat;
+
+          if (matchesQuery && matchesCategory && matchesFormat) {
             card.style.display = '';
+            visibleCount++;
           } else {
             card.style.display = 'none';
           }
         });
+
+        if (visibleCount === 0) {
+          if (emptyState) emptyState.classList.remove('hidden');
+        } else {
+          if (emptyState) emptyState.classList.add('hidden');
+        }
+
+        if (countEl) countEl.textContent = String(visibleCount);
+        if (resultsText) {
+          if (!isFiltering) {
+            resultsText.innerHTML = 'Showing <span class="font-bold text-[#181511]">' + totalDocs + '</span> of ' + totalDocs + ' assets';
+          } else {
+            resultsText.innerHTML = 'Showing <span class="font-bold text-[#181511]">' + visibleCount + '</span> matching assets';
+          }
+        }
+
+        syncUrl();
+      }
+
+      function resetFilters() {
+        currentQuery = '';
+        currentCategory = 'All';
+        currentFormat = 'all';
+        if (searchInput) searchInput.value = '';
+        updateCategoryButtons();
+        updateFormatButtons();
+        runFilter();
+      }
+
+      // Event Listeners
+      searchInput.addEventListener('input', function (e) {
+        currentQuery = e.target.value;
+        runFilter();
       });
-    })();
+
+      searchInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          if (searchInput.value) {
+            searchInput.value = '';
+            currentQuery = '';
+            runFilter();
+          } else {
+            resetFilters();
+          }
+        }
+      });
+
+      if (searchClear) {
+        searchClear.addEventListener('click', function () {
+          searchInput.value = '';
+          searchInput.focus();
+          currentQuery = '';
+          runFilter();
+        });
+      }
+
+      if (categoryBar) {
+        categoryBar.addEventListener('click', function (e) {
+          const btn = e.target.closest('.filter-btn');
+          if (!btn) return;
+          currentCategory = btn.getAttribute('data-filter') || 'All';
+          updateCategoryButtons();
+          runFilter();
+        });
+      }
+
+      if (formatBar) {
+        formatBar.addEventListener('click', function (e) {
+          const btn = e.target.closest('.format-btn');
+          if (!btn) return;
+          currentFormat = btn.getAttribute('data-format') || 'all';
+          updateFormatButtons();
+          runFilter();
+        });
+      }
+
+      if (resetBtn) resetBtn.addEventListener('click', resetFilters);
+      if (emptyResetBtn) emptyResetBtn.addEventListener('click', resetFilters);
+
+      // Initialize from URL parameters
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const urlQ = params.get('q');
+        const urlCat = params.get('cat');
+        const urlFmt = params.get('format');
+
+        if (urlQ) {
+          currentQuery = urlQ;
+          searchInput.value = urlQ;
+        }
+        if (urlCat) {
+          currentCategory = urlCat;
+          updateCategoryButtons();
+        }
+        if (urlFmt) {
+          currentFormat = urlFmt;
+          updateFormatButtons();
+        }
+        if (urlQ || urlCat || urlFmt) {
+          runFilter();
+        }
+      } catch (err) {
+        console.warn('URL init failed', err);
+      }
+    }
+
+    document.addEventListener('astro:page-load', initResourcesSearch);
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      initResourcesSearch();
+    }
   </script>
 
   <section class="px-4 py-4 md:px-8">
