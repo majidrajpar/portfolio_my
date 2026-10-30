@@ -28,6 +28,7 @@ scripts/agents/.venv
 __pycache__/
 *.py[cod]
 ROLEFORGE_AI_CONTEXT.md
+TELEMETRY_TRACKING_PLAYBOOK.md
 
 # Astro framework state (auto-generated, not source)
 .astro/
