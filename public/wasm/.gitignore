@@ -1,1 +1,5 @@
-# allow all wasm package files
+# Track WASM binaries and JS glue code
+!audit_engine.js
+!audit_engine.d.ts
+!audit_engine_bg.wasm
+!audit_engine_bg.wasm.d.ts
