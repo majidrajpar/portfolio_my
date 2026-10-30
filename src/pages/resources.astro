@@ -148,142 +148,11 @@ function isPdfAsset(doc: any) {
     </div>
   </section>
 
-  <!-- Commercial Execution Suites & Working Bundles -->
-  <section class="px-4 py-8 md:px-8" id="commercial-suites">
-    <div class="mx-auto max-w-7xl">
-      <div class="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end" data-reveal>
-        <div>
-          <span class="eyebrow-label">01 // White-Label Commercial Toolkits</span>
-          <h2 class="mt-3 text-[clamp(1.9rem,4vw,3.3rem)] leading-[1.04] text-[#181511]">
-            Commercial execution suites &amp; unlocked working bundles.
-          </h2>
-        </div>
-        <p class="max-w-md text-xs leading-6 text-[color:var(--text-secondary)]">
-          Every bundle includes a free downloadable <code class="font-mono text-[11px]">_Overview.md</code> specification detailing exact worksheet tabs, document schemas, and Parallax View diagnostics before you license.
-        </p>
-      </div>
-
-      <!-- Flagship Suite Banner Card -->
-      {commercialBundles.filter((b) => b.featured).map((flagship) => (
-        <div
-          class="mb-6 rounded-[32px] border-2 border-[#c7964c] bg-[#181512] p-7 text-white shadow-xl md:p-9"
-          data-reveal
-        >
-          <div class="grid gap-6 lg:grid-cols-[1.5fr_0.8fr] lg:items-center">
-            <div>
-              <div class="flex flex-wrap items-center gap-3">
-                <span class="rounded-full bg-[#c7964c]/20 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-[#f4c98b]">
-                  {flagship.badge}
-                </span>
-                <span class="font-mono text-xs text-white/60">{flagship.format}</span>
-              </div>
-              <h3 class="mt-4 text-2xl font-black text-white md:text-3xl">
-                {flagship.title}
-              </h3>
-              <p class="mt-3 text-sm leading-7 text-white/76">
-                {flagship.summary}
-              </p>
-            </div>
-
-            <div class="flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-5 lg:items-end lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
-              <div>
-                <div class="text-[10px] font-mono uppercase tracking-widest text-white/55">Commercial License</div>
-                <div class="mt-1 text-3xl font-black text-[#f4c98b]">{flagship.price} <span class="text-xs font-normal text-white/60">USD</span></div>
-              </div>
-              <div class="flex flex-wrap items-center gap-3">
-                <a
-                  href={flagship.gumroadUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn-primary text-xs font-black uppercase tracking-wider"
-                >
-                  {flagship.gumroadLabel}
-                </a>
-                {flagship.internalUrl && (
-                  <a
-                    href={flagship.internalUrl}
-                    class="btn-secondary-light text-xs font-black uppercase tracking-wider"
-                  >
-                    {flagship.internalLabel}
-                  </a>
-                )}
-                {flagship.overviewFile && (
-                  <a
-                    href={`${base}downloads/${flagship.overviewFile}`}
-                    download
-                    class="text-xs font-bold text-[#f4c98b] underline underline-offset-4 hover:text-white"
-                  >
-                    Free Overview (.md)
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
-
-      <!-- 4 Domain Execution Bundles Grid -->
-      <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
-        {commercialBundles.filter((b) => !b.featured).map((bundle, idx) => (
-          <div
-            class="glass-card flex flex-col justify-between rounded-[28px] p-7"
-            data-reveal
-            data-reveal-delay={String((idx % 2) + 1)}
-          >
-            <div>
-              <div class="flex flex-wrap items-center justify-between gap-2">
-                <span class="rounded-full bg-[#a33a21]/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-[#a33a21]">
-                  {bundle.badge}
-                </span>
-                <span class="font-mono text-[11px] font-bold text-[#181511]">{bundle.price} USD</span>
-              </div>
-              <h3 class="mt-4 text-xl font-black leading-snug text-[#181511]">
-                {bundle.title}
-              </h3>
-              <div class="mt-1.5 font-mono text-[11px] text-slate-500">
-                {bundle.format}
-              </div>
-              <p class="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">
-                {bundle.summary}
-              </p>
-            </div>
-
-            <div class="mt-6 flex flex-wrap items-center gap-3 border-t border-[color:var(--line-soft)] pt-5">
-              <a
-                href={bundle.gumroadUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-primary text-[11px] font-black uppercase tracking-wider"
-              >
-                {bundle.gumroadLabel}
-              </a>
-              {bundle.internalUrl && (
-                <a
-                  href={bundle.internalUrl}
-                  class="btn-secondary text-[11px] font-black uppercase tracking-wider"
-                >
-                  {bundle.internalLabel}
-                </a>
-              )}
-              <a
-                href={`${base}downloads/${bundle.overviewFile}`}
-                download
-                class="text-xs font-bold text-[#181511] underline underline-offset-4 hover:text-[#a33a21]"
-              >
-                Free Overview (.md)
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- Main Resource Library (All 35 Assets) -->
-  <section class="px-4 py-6 md:px-8">
+  <section class="px-4 py-8 md:px-8" id="resource-library">
     <div class="mx-auto max-w-7xl">
       <div class="mb-10" data-reveal>
-        <span class="eyebrow-label">02 // Complete Resource Library ({documents.length} Assets)</span>
+        <span class="eyebrow-label">01 // Complete Resource Library ({documents.length} Assets)</span>
         <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.6rem)] leading-[1.02] text-[#181511]">
           Free diagnostic PDFs &amp; individual template overviews.
         </h2>
@@ -536,6 +405,137 @@ function isPdfAsset(doc: any) {
         >
           Reset All Filters
         </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Commercial Execution Suites & Working Bundles -->
+  <section class="px-4 py-12 md:px-8 border-t border-[color:var(--line-soft)]" id="commercial-suites">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end" data-reveal>
+        <div>
+          <span class="eyebrow-label">02 // White-Label Commercial Toolkits</span>
+          <h2 class="mt-3 text-[clamp(1.9rem,4vw,3.3rem)] leading-[1.04] text-[#181511]">
+            Commercial execution suites &amp; unlocked working bundles.
+          </h2>
+        </div>
+        <p class="max-w-md text-xs leading-6 text-[color:var(--text-secondary)]">
+          Every bundle includes a free downloadable <code class="font-mono text-[11px]">_Overview.md</code> specification detailing exact worksheet tabs, document schemas, and Parallax View diagnostics before you license.
+        </p>
+      </div>
+
+      <!-- Flagship Suite Banner Card -->
+      {commercialBundles.filter((b) => b.featured).map((flagship) => (
+        <div
+          class="mb-6 rounded-[32px] border-2 border-[#c7964c] bg-[#181512] p-7 text-white shadow-xl md:p-9"
+          data-reveal
+        >
+          <div class="grid gap-6 lg:grid-cols-[1.5fr_0.8fr] lg:items-center">
+            <div>
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="rounded-full bg-[#c7964c]/20 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-[#f4c98b]">
+                  {flagship.badge}
+                </span>
+                <span class="font-mono text-xs text-white/60">{flagship.format}</span>
+              </div>
+              <h3 class="mt-4 text-2xl font-black text-white md:text-3xl">
+                {flagship.title}
+              </h3>
+              <p class="mt-3 text-sm leading-7 text-white/76">
+                {flagship.summary}
+              </p>
+            </div>
+
+            <div class="flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-5 lg:items-end lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+              <div>
+                <div class="text-[10px] font-mono uppercase tracking-widest text-white/55">Commercial License</div>
+                <div class="mt-1 text-3xl font-black text-[#f4c98b]">{flagship.price} <span class="text-xs font-normal text-white/60">USD</span></div>
+              </div>
+              <div class="flex flex-wrap items-center gap-3">
+                <a
+                  href={flagship.gumroadUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-primary text-xs font-black uppercase tracking-wider"
+                >
+                  {flagship.gumroadLabel}
+                </a>
+                {flagship.internalUrl && (
+                  <a
+                    href={flagship.internalUrl}
+                    class="btn-secondary-light text-xs font-black uppercase tracking-wider"
+                  >
+                    {flagship.internalLabel}
+                  </a>
+                )}
+                {flagship.overviewFile && (
+                  <a
+                    href={`${base}downloads/${flagship.overviewFile}`}
+                    download
+                    class="text-xs font-bold text-[#f4c98b] underline underline-offset-4 hover:text-white"
+                  >
+                    Free Overview (.md)
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      <!-- 4 Domain Execution Bundles Grid -->
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+        {commercialBundles.filter((b) => !b.featured).map((bundle, idx) => (
+          <div
+            class="glass-card flex flex-col justify-between rounded-[28px] p-7"
+            data-reveal
+            data-reveal-delay={String((idx % 2) + 1)}
+          >
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="rounded-full bg-[#a33a21]/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-[#a33a21]">
+                  {bundle.badge}
+                </span>
+                <span class="font-mono text-[11px] font-bold text-[#181511]">{bundle.price} USD</span>
+              </div>
+              <h3 class="mt-4 text-xl font-black leading-snug text-[#181511]">
+                {bundle.title}
+              </h3>
+              <div class="mt-1.5 font-mono text-[11px] text-slate-500">
+                {bundle.format}
+              </div>
+              <p class="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">
+                {bundle.summary}
+              </p>
+            </div>
+
+            <div class="mt-6 flex flex-wrap items-center gap-3 border-t border-[color:var(--line-soft)] pt-5">
+              <a
+                href={bundle.gumroadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-primary text-[11px] font-black uppercase tracking-wider"
+              >
+                {bundle.gumroadLabel}
+              </a>
+              {bundle.internalUrl && (
+                <a
+                  href={bundle.internalUrl}
+                  class="btn-secondary text-[11px] font-black uppercase tracking-wider"
+                >
+                  {bundle.internalLabel}
+                </a>
+              )}
+              <a
+                href={`${base}downloads/${bundle.overviewFile}`}
+                download
+                class="text-xs font-bold text-[#181511] underline underline-offset-4 hover:text-[#a33a21]"
+              >
+                Free Overview (.md)
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
