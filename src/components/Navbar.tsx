@@ -77,15 +77,27 @@ const Navbar = ({ initialPath = '' }) => {
     };
   }, []);
 
+  const isHoveredRef = useRef(false);
+
   const handleShelfMouseEnter = () => {
+    isHoveredRef.current = true;
     if (shelfTimeoutRef.current) clearTimeout(shelfTimeoutRef.current);
     setShelfOpen(true);
   };
 
   const handleShelfMouseLeave = () => {
+    isHoveredRef.current = false;
     shelfTimeoutRef.current = setTimeout(() => {
       setShelfOpen(false);
-    }, 180);
+    }, 200);
+  };
+
+  const handleShelfButtonClick = () => {
+    if (!shelfOpen) {
+      setShelfOpen(true);
+    } else if (!isHoveredRef.current) {
+      setShelfOpen(false);
+    }
   };
 
   const navItems = [
@@ -148,7 +160,7 @@ const Navbar = ({ initialPath = '' }) => {
           >
             <button
               type="button"
-              onClick={() => setShelfOpen(!shelfOpen)}
+              onClick={handleShelfButtonClick}
               aria-haspopup="true"
               aria-expanded={shelfOpen}
               className={`text-[10px] font-black uppercase tracking-[0.24em] transition-colors inline-flex items-center gap-1 cursor-pointer relative

@@ -198,13 +198,13 @@ function isPdfAsset(doc: any) {
           <!-- Dual Filter Controls Row -->
           <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between border-t border-[color:var(--line-soft)] pt-4">
             <!-- Topic / Category Filter -->
-            <div class="flex flex-wrap items-center gap-1.5" id="filter-bar">
-              <span class="meta-label mr-1 text-slate-400">Topic:</span>
+            <div class="flex items-center gap-1.5 overflow-x-auto pb-1 max-w-full scrollbar-none" id="filter-bar">
+              <span class="meta-label mr-1 text-slate-400 shrink-0">Topic:</span>
               {categories.map((cat, idx) => (
                 <button
                   type="button"
                   data-filter={cat}
-                  class={`filter-btn rounded-full px-3.5 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] border transition-all ${
+                  class={`filter-btn shrink-0 rounded-full px-3.5 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] border transition-all ${
                     idx === 0
                       ? 'active-filter bg-[#1d3557] border-[#1d3557] text-white'
                       : 'border-[rgba(29,53,87,0.10)] text-[color:var(--text-secondary)] bg-white/70 hover:border-[#1d3557]/40 hover:text-[#181511]'
@@ -216,33 +216,33 @@ function isPdfAsset(doc: any) {
             </div>
 
             <!-- Deliverable Format Filter -->
-            <div class="flex flex-wrap items-center gap-1.5" id="format-bar">
-              <span class="meta-label mr-1 text-slate-400">Format:</span>
+            <div class="flex items-center gap-1.5 overflow-x-auto pb-1 max-w-full scrollbar-none" id="format-bar">
+              <span class="meta-label mr-1 text-slate-400 shrink-0">Format:</span>
               <button
                 type="button"
                 data-format="all"
-                class="format-btn active-format rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[#1d3557] bg-[#1d3557] text-white transition-all"
+                class="format-btn shrink-0 active-format rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[#1d3557] bg-[#1d3557] text-white transition-all"
               >
                 All Formats
               </button>
               <button
                 type="button"
                 data-format="pdf"
-                class="format-btn rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
+                class="format-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
               >
                 Free PDF (28)
               </button>
               <button
                 type="button"
                 data-format="xlsx"
-                class="format-btn rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
+                class="format-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
               >
                 Excel (.xlsx)
               </button>
               <button
                 type="button"
                 data-format="md"
-                class="format-btn rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
+                class="format-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
               >
                 Guides (.md)
               </button>
@@ -663,7 +663,8 @@ function isPdfAsset(doc: any) {
           if (!isFiltering) {
             resultsText.innerHTML = 'Showing <span class="font-bold text-[#181511]">' + totalDocs + '</span> of ' + totalDocs + ' assets';
           } else {
-            resultsText.innerHTML = 'Showing <span class="font-bold text-[#181511]">' + visibleCount + '</span> matching assets';
+            const unit = visibleCount === 1 ? 'asset' : 'assets';
+            resultsText.innerHTML = 'Showing <span class="font-bold text-[#181511]">' + visibleCount + '</span> matching ' + unit;
           }
         }
 

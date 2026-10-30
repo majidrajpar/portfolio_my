@@ -137,13 +137,13 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
         <!-- Filter Controls Row -->
         <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-t border-[color:var(--line-soft)] pt-4">
           <!-- Domain Categories -->
-          <div class="flex flex-wrap items-center gap-1.5" id="tool-category-chips">
-            <span class="meta-label mr-1 text-slate-400">Domain:</span>
+          <div class="flex items-center gap-1.5 overflow-x-auto pb-1 max-w-full scrollbar-none" id="tool-category-chips">
+            <span class="meta-label mr-1 text-slate-400 shrink-0">Domain:</span>
             {allCategories.map((cat, idx) => (
               <button
                 type="button"
                 data-category={cat}
-                class={`tool-cat-btn rounded-full px-3.5 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] border transition-all ${
+                class={`tool-cat-btn shrink-0 rounded-full px-3.5 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] border transition-all ${
                   idx === 0
                     ? 'active-cat bg-[#1d3557] border-[#1d3557] text-white'
                     : 'border-[rgba(29,53,87,0.10)] text-[color:var(--text-secondary)] bg-white/70 hover:border-[#1d3557]/40 hover:text-[#181511]'
@@ -155,26 +155,26 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
           </div>
 
           <!-- Capability/Tech Filter -->
-          <div class="flex flex-wrap items-center gap-1.5" id="tool-tech-chips">
-            <span class="meta-label mr-1 text-slate-400">Capability:</span>
+          <div class="flex items-center gap-1.5 overflow-x-auto pb-1 max-w-full scrollbar-none" id="tool-tech-chips">
+            <span class="meta-label mr-1 text-slate-400 shrink-0">Capability:</span>
             <button
               type="button"
               data-tech="all"
-              class="tool-tech-btn active-tech rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[#1d3557] bg-[#1d3557] text-white transition-all"
+              class="tool-tech-btn shrink-0 active-tech rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[#1d3557] bg-[#1d3557] text-white transition-all"
             >
               All
             </button>
             <button
               type="button"
               data-tech="ml"
-              class="tool-tech-btn rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
+              class="tool-tech-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
             >
               ML Scored
             </button>
             <button
               type="button"
               data-tech="rust"
-              class="tool-tech-btn rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
+              class="tool-tech-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
             >
               Rust / WASM
             </button>
@@ -505,7 +505,8 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
 
         if (countEl) countEl.textContent = String(visibleCount);
         if (resultsText) {
-          resultsText.innerHTML = 'Showing <span class="font-bold text-[#181511]">' + visibleCount + '</span> matching tools';
+          const unit = visibleCount === 1 ? 'tool' : 'tools';
+          resultsText.innerHTML = 'Showing <span class="font-bold text-[#181511]">' + visibleCount + '</span> matching ' + unit;
         }
 
         syncUrl();
