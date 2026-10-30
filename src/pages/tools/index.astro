@@ -60,26 +60,31 @@ const catalog = tools
 const shelf = tools
   .filter((tool) => tool.tier === 'shelf')
   .sort(byListedOrder(shelfOrder));
+
+const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)))];
 ---
 
 <BaseLayout
   title="Tools | Majid Mumtaz"
-  description="Four tools are listed first."
+  description="19 client-side interactive internal control evaluators, forensic anomaly detectors, and governance models."
 >
+  <!-- Hero Section -->
   <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
     <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
       <NetworkCanvas client:load nodeCount={35} />
       <div class="relative z-10 max-w-4xl" data-reveal>
+        <span class="hero-chip mb-6">Continuous Monitoring · Machine Learning · Forensic WASM</span>
         <h1 class="headline-display max-w-4xl text-[clamp(3rem,7vw,6rem)] font-black text-white">
           Tools
         </h1>
         <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.12rem] md:leading-9">
-          Four tools are listed first.
+          19 interactive internal control evaluators, forensic anomaly detectors, and governance models running 100% in-browser on client-side compute.
         </p>
       </div>
     </div>
   </section>
 
+  <!-- Privacy First Disclaimer -->
   <section class="px-4 py-5 md:px-8">
     <div class="soft-shell mx-auto max-w-7xl px-5 py-5 md:px-7" data-reveal>
       <div class="flex items-start gap-3">
@@ -94,102 +99,508 @@ const shelf = tools
     </div>
   </section>
 
-  <section class="px-4 py-4 pb-16 md:px-8">
-    <div class="mx-auto max-w-7xl">
-      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
-        {featured.map((tool, i) => (
-          <a
-            href={resolveHref(tool.href)}
-            target={tool.href.startsWith('http') ? '_blank' : undefined}
-            rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            class="glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8"
-            data-reveal
-            data-reveal-delay={String((i % 3) + 1)}
-          >
-            <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-              <span class={`inline-flex w-fit px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
-                {tool.domain}
-              </span>
-              <div class="flex flex-wrap gap-2">
-                {tool.href.startsWith('http') && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-700">GitHub</span>}
-                {tool.ml && <span class="rounded-full border border-[#c7964c]/30 bg-[#c7964c]/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#a66c1c]">ML</span>}
-                {tool.rust && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">WASM</span>}
-              </div>
-            </div>
-            <h2 class="text-[1.28rem] leading-tight text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[1.45rem]">
-              {tool.title}
-            </h2>
-            <p class="mt-4 flex-1 text-sm leading-7 text-[color:var(--text-secondary)] md:leading-8">
-              {tool.description}
-            </p>
-            <div class="mt-6 border-t border-[color:var(--line-soft)] pt-4 md:mt-7 md:pt-5">
-              <span class="meta-label">{tool.href.startsWith('http') ? 'Repository' : 'Execution'}</span>
-              <span class="mt-3 inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[11px] md:tracking-[0.24em]">
-                {tool.href.startsWith('http') ? 'View on GitHub' : 'Launch Tool'}
-                <svg class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={tool.href.startsWith('http') ? "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" : "M17 8l4 4m0 0l-4 4m4-4H3"}/>
-                </svg>
-              </span>
-            </div>
-          </a>
-        ))}
-      </div>
-
-      <div class="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
-        {catalog.map((tool, i) => (
-          <a
-            href={resolveHref(tool.href)}
-            target={tool.href.startsWith('http') ? '_blank' : undefined}
-            rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            class="glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8"
-            data-reveal
-            data-reveal-delay={String((i % 3) + 1)}
-          >
-            <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-              <span class={`inline-flex w-fit px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
-                {tool.domain}
-              </span>
-              <div class="flex flex-wrap gap-2">
-                {tool.href.startsWith('http') && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-700">GitHub</span>}
-                {tool.ml && <span class="rounded-full border border-[#c7964c]/30 bg-[#c7964c]/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#a66c1c]">ML</span>}
-                {tool.rust && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">WASM</span>}
-              </div>
-            </div>
-            <h2 class="text-[1.28rem] leading-tight text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[1.45rem]">
-              {tool.title}
-            </h2>
-            <p class="mt-4 flex-1 text-sm leading-7 text-[color:var(--text-secondary)] md:leading-8">
-              {tool.description}
-            </p>
-            <div class="mt-6 border-t border-[color:var(--line-soft)] pt-4 md:mt-7 md:pt-5">
-              <span class="meta-label">{tool.href.startsWith('http') ? 'Repository' : 'Execution'}</span>
-              <span class="mt-3 inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[11px] md:tracking-[0.24em]">
-                {tool.href.startsWith('http') ? 'View on GitHub' : 'Launch Tool'}
-                <svg class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={tool.href.startsWith('http') ? "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" : "M17 8l4 4m0 0l-4 4m4-4H3"}/>
-                </svg>
-              </span>
-            </div>
-          </a>
-        ))}
-      </div>
-
-      <div class="soft-shell mt-8 overflow-x-auto px-4 py-2 md:px-8">
-        {shelf.map((tool) => (
-          <div class="flex w-full min-w-0 items-baseline gap-3 whitespace-nowrap border-b border-[color:var(--line-soft)] py-4 last:border-b-0">
-            <span class="meta-label shrink-0 whitespace-nowrap text-[#8d6035]">{tool.domain}</span>
-            <span class="min-w-0 flex-1 truncate text-[#181511]">{tool.title}</span>
-            <a href={resolveHref(tool.href)} class="shrink-0 text-sm font-semibold text-[#181511] underline underline-offset-4">
-              Open
-            </a>
+  <!-- Search and Filter Control Deck -->
+  <section class="px-4 py-3 md:px-8" id="tools-search-section">
+    <div class="soft-shell mx-auto max-w-7xl p-5 md:p-7" data-reveal>
+      <div class="flex flex-col gap-5">
+        <!-- Search input with clear button and ESC shortcut -->
+        <div class="relative flex items-center">
+          <div class="pointer-events-none absolute left-4 text-slate-400">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
           </div>
-        ))}
-      </div>
+          <input
+            id="tool-search-input"
+            type="search"
+            autocomplete="off"
+            placeholder="Search tools by title, methodology (e.g. Benford, COSO, GIAS, BOM), or keyword..."
+            class="w-full rounded-2xl border border-[color:var(--line-soft)] bg-white/80 py-3.5 pl-11 pr-24 text-sm font-medium text-[#181511] placeholder:text-slate-400 focus:border-[#a33a21] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#a33a21] transition-all"
+            aria-label="Search tools"
+          />
+          <div class="absolute right-3 flex items-center gap-2">
+            <button
+              id="tool-search-clear"
+              type="button"
+              class="hidden rounded-lg p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors"
+              aria-label="Clear search"
+              title="Clear search"
+            >
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+            <kbd class="hidden sm:inline-block rounded border border-slate-200 bg-slate-50 px-1.5 py-0.5 text-[9px] font-mono text-slate-400">ESC</kbd>
+          </div>
+        </div>
 
-      <div class="mt-8 flex gap-6">
-        <a href={`${base}software/`} class="text-sm font-semibold text-[#181511] underline underline-offset-4">Builds</a>
-        <a href={`${base}contact/`} class="text-sm font-semibold text-[#181511] underline underline-offset-4">Contact</a>
+        <!-- Filter Controls Row -->
+        <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border-t border-[color:var(--line-soft)] pt-4">
+          <!-- Domain Categories -->
+          <div class="flex flex-wrap items-center gap-1.5" id="tool-category-chips">
+            <span class="meta-label mr-1 text-slate-400">Domain:</span>
+            {allCategories.map((cat, idx) => (
+              <button
+                type="button"
+                data-category={cat}
+                class={`tool-cat-btn rounded-full px-3.5 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] border transition-all ${
+                  idx === 0
+                    ? 'active-cat bg-[#1d3557] border-[#1d3557] text-white'
+                    : 'border-[rgba(29,53,87,0.10)] text-[color:var(--text-secondary)] bg-white/70 hover:border-[#1d3557]/40 hover:text-[#181511]'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          <!-- Capability/Tech Filter -->
+          <div class="flex flex-wrap items-center gap-1.5" id="tool-tech-chips">
+            <span class="meta-label mr-1 text-slate-400">Capability:</span>
+            <button
+              type="button"
+              data-tech="all"
+              class="tool-tech-btn active-tech rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[#1d3557] bg-[#1d3557] text-white transition-all"
+            >
+              All
+            </button>
+            <button
+              type="button"
+              data-tech="ml"
+              class="tool-tech-btn rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
+            >
+              ML Scored
+            </button>
+            <button
+              type="button"
+              data-tech="rust"
+              class="tool-tech-btn rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
+            >
+              Rust / WASM
+            </button>
+          </div>
+        </div>
+
+        <!-- Live Results Counter & Reset -->
+        <div class="flex items-center justify-between text-xs text-[color:var(--text-secondary)] pt-1">
+          <div id="tool-results-count" class="font-medium">
+            Showing <span class="font-bold text-[#181511]" id="count-number">{tools.length}</span> tools
+          </div>
+          <button
+            id="tool-reset-all"
+            type="button"
+            class="hidden text-[11px] font-black uppercase tracking-wider text-[#a33a21] hover:underline cursor-pointer"
+          >
+            Reset Filters
+          </button>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Main Tools Display -->
+  <section class="px-4 py-4 pb-16 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <!-- 1. Default Curated View (Featured -> Catalog -> Shelf) -->
+      <div id="curated-tools-view">
+        <!-- Featured Grid -->
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
+          {featured.map((tool, i) => (
+            <a
+              href={resolveHref(tool.href)}
+              target={tool.href.startsWith('http') ? '_blank' : undefined}
+              rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              class="glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8"
+              data-reveal
+              data-reveal-delay={String((i % 3) + 1)}
+            >
+              <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <span class={`inline-flex w-fit px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
+                  {tool.domain}
+                </span>
+                <div class="flex flex-wrap gap-2">
+                  {tool.href.startsWith('http') && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-700">GitHub</span>}
+                  {tool.ml && <span class="rounded-full border border-[#c7964c]/30 bg-[#c7964c]/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#a66c1c]">ML</span>}
+                  {tool.rust && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">WASM</span>}
+                </div>
+              </div>
+              <h2 class="text-[1.28rem] leading-tight text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[1.45rem]">
+                {tool.title}
+              </h2>
+              <p class="mt-4 flex-1 text-sm leading-7 text-[color:var(--text-secondary)] md:leading-8">
+                {tool.description}
+              </p>
+              <div class="mt-6 border-t border-[color:var(--line-soft)] pt-4 md:mt-7 md:pt-5">
+                <span class="meta-label">{tool.href.startsWith('http') ? 'Repository' : 'Execution'}</span>
+                <span class="mt-3 inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[11px] md:tracking-[0.24em]">
+                  {tool.href.startsWith('http') ? 'View on GitHub' : 'Launch Tool'}
+                  <svg class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={tool.href.startsWith('http') ? "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" : "M17 8l4 4m0 0l-4 4m4-4H3"}/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <!-- Catalog Grid -->
+        <div class="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
+          {catalog.map((tool, i) => (
+            <a
+              href={resolveHref(tool.href)}
+              target={tool.href.startsWith('http') ? '_blank' : undefined}
+              rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              class="glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8"
+              data-reveal
+              data-reveal-delay={String((i % 3) + 1)}
+            >
+              <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <span class={`inline-flex w-fit px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
+                  {tool.domain}
+                </span>
+                <div class="flex flex-wrap gap-2">
+                  {tool.href.startsWith('http') && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-700">GitHub</span>}
+                  {tool.ml && <span class="rounded-full border border-[#c7964c]/30 bg-[#c7964c]/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#a66c1c]">ML</span>}
+                  {tool.rust && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">WASM</span>}
+                </div>
+              </div>
+              <h2 class="text-[1.28rem] leading-tight text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[1.45rem]">
+                {tool.title}
+              </h2>
+              <p class="mt-4 flex-1 text-sm leading-7 text-[color:var(--text-secondary)] md:leading-8">
+                {tool.description}
+              </p>
+              <div class="mt-6 border-t border-[color:var(--line-soft)] pt-4 md:mt-7 md:pt-5">
+                <span class="meta-label">{tool.href.startsWith('http') ? 'Repository' : 'Execution'}</span>
+                <span class="mt-3 inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[11px] md:tracking-[0.24em]">
+                  {tool.href.startsWith('http') ? 'View on GitHub' : 'Launch Tool'}
+                  <svg class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={tool.href.startsWith('http') ? "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" : "M17 8l4 4m0 0l-4 4m4-4H3"}/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <!-- Shelf Table -->
+        <div class="soft-shell mt-8 overflow-x-auto px-4 py-2 md:px-8">
+          {shelf.map((tool) => (
+            <div class="flex w-full min-w-0 items-baseline gap-3 whitespace-nowrap border-b border-[color:var(--line-soft)] py-4 last:border-b-0">
+              <span class="meta-label shrink-0 whitespace-nowrap text-[#8d6035]">{tool.domain}</span>
+              <span class="min-w-0 flex-1 truncate text-[#181511] font-medium">{tool.title}</span>
+              <a href={resolveHref(tool.href)} class="shrink-0 text-sm font-semibold text-[#181511] underline underline-offset-4 hover:text-[#8d6035]">
+                Open
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- 2. Search & Filter Results Grid (All 19 tools elevated to full cards) -->
+      <div id="filtered-tools-grid" class="hidden grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
+        {tools.map((tool) => (
+          <a
+            href={resolveHref(tool.href)}
+            target={tool.href.startsWith('http') ? '_blank' : undefined}
+            rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            class="tool-card glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8"
+            data-id={tool.id}
+            data-category={tool.category}
+            data-title={tool.title.toLowerCase()}
+            data-description={tool.description.toLowerCase()}
+            data-domain={tool.domain.toLowerCase()}
+            data-ml={tool.ml ? 'true' : 'false'}
+            data-rust={tool.rust ? 'true' : 'false'}
+          >
+            <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+              <span class={`inline-flex w-fit px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
+                {tool.domain}
+              </span>
+              <div class="flex flex-wrap gap-2">
+                {tool.href.startsWith('http') && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-700">GitHub</span>}
+                {tool.ml && <span class="rounded-full border border-[#c7964c]/30 bg-[#c7964c]/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#a66c1c]">ML</span>}
+                {tool.rust && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">WASM</span>}
+              </div>
+            </div>
+            <h2 class="text-[1.28rem] leading-tight text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[1.45rem]">
+              {tool.title}
+            </h2>
+            <p class="mt-4 flex-1 text-sm leading-7 text-[color:var(--text-secondary)] md:leading-8">
+              {tool.description}
+            </p>
+            <div class="mt-6 border-t border-[color:var(--line-soft)] pt-4 md:mt-7 md:pt-5">
+              <span class="meta-label">{tool.href.startsWith('http') ? 'Repository' : 'Execution'}</span>
+              <span class="mt-3 inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[11px] md:tracking-[0.24em]">
+                {tool.href.startsWith('http') ? 'View on GitHub' : 'Launch Tool'}
+                <svg class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={tool.href.startsWith('http') ? "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" : "M17 8l4 4m0 0l-4 4m4-4H3"}/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- 3. Clean Dignified Empty State -->
+      <div id="tools-empty-state" class="hidden my-12 mx-auto max-w-lg rounded-[28px] border border-[color:var(--line-soft)] bg-white/75 p-8 text-center backdrop-blur-xl">
+        <p class="text-lg font-bold text-[#181511]">No matching tools found</p>
+        <p class="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">
+          No tools match your query. Try broadening your terms (e.g. "fraud", "controls", "governance", "sampling").
+        </p>
+        <button
+          type="button"
+          id="tools-empty-reset"
+          class="btn-secondary mt-6"
+        >
+          Reset All Filters
+        </button>
+      </div>
+
+      <!-- Quick Links Footer -->
+      <div class="mt-12 flex gap-6 border-t border-[color:var(--line-soft)] pt-6">
+        <a href={`${base}software/`} class="text-sm font-semibold text-[#181511] underline underline-offset-4 hover:text-[#8d6035]">Builds</a>
+        <a href={`${base}resources/`} class="text-sm font-semibold text-[#181511] underline underline-offset-4 hover:text-[#8d6035]">Frameworks &amp; Overviews</a>
+        <a href={`${base}contact/`} class="text-sm font-semibold text-[#181511] underline underline-offset-4 hover:text-[#8d6035]">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client-side Search and Filter Script -->
+  <script is:inline>
+    function initToolsSearch() {
+      const searchInput = document.getElementById('tool-search-input');
+      const searchClear = document.getElementById('tool-search-clear');
+      const categoryBar = document.getElementById('tool-category-chips');
+      const techBar = document.getElementById('tool-tech-chips');
+      const countEl = document.getElementById('count-number');
+      const resultsText = document.getElementById('tool-results-count');
+      const resetBtn = document.getElementById('tool-reset-all');
+      const emptyResetBtn = document.getElementById('tools-empty-reset');
+      const curatedView = document.getElementById('curated-tools-view');
+      const filteredGrid = document.getElementById('filtered-tools-grid');
+      const emptyState = document.getElementById('tools-empty-state');
+      if (!searchInput || !filteredGrid) return;
+
+      const cards = filteredGrid.querySelectorAll('.tool-card');
+      const totalTools = cards.length;
+
+      let currentQuery = '';
+      let currentCategory = 'All';
+      let currentTech = 'all';
+
+      function syncUrl() {
+        const url = new URL(window.location.href);
+        if (currentQuery) {
+          url.searchParams.set('q', currentQuery);
+        } else {
+          url.searchParams.delete('q');
+        }
+        if (currentCategory && currentCategory !== 'All') {
+          url.searchParams.set('cat', currentCategory);
+        } else {
+          url.searchParams.delete('cat');
+        }
+        if (currentTech && currentTech !== 'all') {
+          url.searchParams.set('tech', currentTech);
+        } else {
+          url.searchParams.delete('tech');
+        }
+        window.history.replaceState(null, '', url.toString());
+      }
+
+      function updateCategoryButtons() {
+        if (!categoryBar) return;
+        categoryBar.querySelectorAll('.tool-cat-btn').forEach(function (btn) {
+          const cat = btn.getAttribute('data-category');
+          if (cat === currentCategory) {
+            btn.classList.add('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
+            btn.classList.remove('text-[color:var(--text-secondary)]', 'bg-white/70');
+          } else {
+            btn.classList.remove('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
+            btn.classList.add('text-[color:var(--text-secondary)]', 'bg-white/70');
+          }
+        });
+      }
+
+      function updateTechButtons() {
+        if (!techBar) return;
+        techBar.querySelectorAll('.tool-tech-btn').forEach(function (btn) {
+          const tech = btn.getAttribute('data-tech');
+          if (tech === currentTech) {
+            btn.classList.add('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
+            btn.classList.remove('text-[color:var(--text-secondary)]', 'bg-white/70');
+          } else {
+            btn.classList.remove('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
+            btn.classList.add('text-[color:var(--text-secondary)]', 'bg-white/70');
+          }
+        });
+      }
+
+      function runFilter() {
+        const q = currentQuery.trim().toLowerCase();
+        const isFiltering = q.length > 0 || currentCategory !== 'All' || currentTech !== 'all';
+
+        // Toggle clear button
+        if (searchClear) {
+          if (q.length > 0) {
+            searchClear.classList.remove('hidden');
+          } else {
+            searchClear.classList.add('hidden');
+          }
+        }
+
+        // Toggle reset button
+        if (resetBtn) {
+          if (isFiltering) {
+            resetBtn.classList.remove('hidden');
+          } else {
+            resetBtn.classList.add('hidden');
+          }
+        }
+
+        if (!isFiltering) {
+          if (curatedView) curatedView.style.display = '';
+          if (filteredGrid) filteredGrid.style.display = 'none';
+          if (emptyState) emptyState.style.display = 'none';
+          if (countEl) countEl.textContent = String(totalTools);
+          if (resultsText) resultsText.innerHTML = 'Showing <span class="font-bold text-[#181511]">' + totalTools + '</span> tools';
+          syncUrl();
+          return;
+        }
+
+        // Active filter mode: switch to unified grid
+        if (curatedView) curatedView.style.display = 'none';
+
+        let visibleCount = 0;
+        cards.forEach(function (card) {
+          const title = card.getAttribute('data-title') || '';
+          const desc = card.getAttribute('data-description') || '';
+          const domain = card.getAttribute('data-domain') || '';
+          const category = card.getAttribute('data-category') || '';
+          const isMl = card.getAttribute('data-ml') === 'true';
+          const isRust = card.getAttribute('data-rust') === 'true';
+
+          const matchesQuery = !q || title.includes(q) || desc.includes(q) || domain.includes(q) || category.toLowerCase().includes(q);
+          const matchesCategory = currentCategory === 'All' || category === currentCategory;
+          const matchesTech = currentTech === 'all' ||
+            (currentTech === 'ml' && isMl) ||
+            (currentTech === 'rust' && isRust);
+
+          if (matchesQuery && matchesCategory && matchesTech) {
+            card.style.display = '';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (visibleCount === 0) {
+          if (filteredGrid) filteredGrid.style.display = 'none';
+          if (emptyState) emptyState.style.display = '';
+        } else {
+          if (filteredGrid) filteredGrid.style.display = 'grid';
+          if (emptyState) emptyState.style.display = 'none';
+        }
+
+        if (countEl) countEl.textContent = String(visibleCount);
+        if (resultsText) {
+          resultsText.innerHTML = 'Showing <span class="font-bold text-[#181511]">' + visibleCount + '</span> matching tools';
+        }
+
+        syncUrl();
+      }
+
+      function resetFilters() {
+        currentQuery = '';
+        currentCategory = 'All';
+        currentTech = 'all';
+        if (searchInput) searchInput.value = '';
+        updateCategoryButtons();
+        updateTechButtons();
+        runFilter();
+      }
+
+      // Event Listeners
+      searchInput.addEventListener('input', function (e) {
+        currentQuery = e.target.value;
+        runFilter();
+      });
+
+      searchInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          if (searchInput.value) {
+            searchInput.value = '';
+            currentQuery = '';
+            runFilter();
+          } else {
+            resetFilters();
+          }
+        }
+      });
+
+      if (searchClear) {
+        searchClear.addEventListener('click', function () {
+          searchInput.value = '';
+          searchInput.focus();
+          currentQuery = '';
+          runFilter();
+        });
+      }
+
+      if (categoryBar) {
+        categoryBar.addEventListener('click', function (e) {
+          const btn = e.target.closest('.tool-cat-btn');
+          if (!btn) return;
+          currentCategory = btn.getAttribute('data-category') || 'All';
+          updateCategoryButtons();
+          runFilter();
+        });
+      }
+
+      if (techBar) {
+        techBar.addEventListener('click', function (e) {
+          const btn = e.target.closest('.tool-tech-btn');
+          if (!btn) return;
+          currentTech = btn.getAttribute('data-tech') || 'all';
+          updateTechButtons();
+          runFilter();
+        });
+      }
+
+      if (resetBtn) resetBtn.addEventListener('click', resetFilters);
+      if (emptyResetBtn) emptyResetBtn.addEventListener('click', resetFilters);
+
+      // Initialize from URL parameters
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const urlQ = params.get('q');
+        const urlCat = params.get('cat');
+        const urlTech = params.get('tech');
+
+        if (urlQ) {
+          currentQuery = urlQ;
+          searchInput.value = urlQ;
+        }
+        if (urlCat) {
+          currentCategory = urlCat;
+          updateCategoryButtons();
+        }
+        if (urlTech) {
+          currentTech = urlTech;
+          updateTechButtons();
+        }
+        if (urlQ || urlCat || urlTech) {
+          runFilter();
+        }
+      } catch (err) {
+        console.warn('URL init failed', err);
+      }
+    }
+
+    document.addEventListener('astro:page-load', initToolsSearch);
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      initToolsSearch();
+    }
+  </script>
 </BaseLayout>
