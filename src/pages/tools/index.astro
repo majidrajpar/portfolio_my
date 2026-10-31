@@ -439,7 +439,8 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
 
       function runFilter() {
         const q = currentQuery.trim().toLowerCase();
-        const isFiltering = q.length > 0 || currentCategory !== 'All' || currentTech !== 'all';
+        const tokens = q ? q.split(/\s+/).filter(Boolean) : [];
+        const isFiltering = tokens.length > 0 || currentCategory !== 'All' || currentTech !== 'all';
 
         // Toggle clear button
         if (searchClear) {
@@ -461,8 +462,14 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
 
         if (!isFiltering) {
           if (curatedView) curatedView.style.display = '';
-          if (filteredGrid) filteredGrid.style.display = 'none';
-          if (emptyState) emptyState.style.display = 'none';
+          if (filteredGrid) {
+            filteredGrid.classList.add('hidden');
+            filteredGrid.style.display = 'none';
+          }
+          if (emptyState) {
+            emptyState.classList.add('hidden');
+            emptyState.style.display = 'none';
+          }
           if (countEl) countEl.textContent = String(totalTools);
           if (resultsText) resultsText.innerHTML = 'Showing <span class="font-bold text-[#181511]">' + totalTools + '</span> tools';
           syncUrl();
@@ -473,6 +480,8 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
         if (curatedView) curatedView.style.display = 'none';
 
         let visibleCount = 0;
+        let queryMatchesAcrossAll = 0;
+
         cards.forEach(function (card) {
           const title = card.getAttribute('data-title') || '';
           const desc = card.getAttribute('data-description') || '';
@@ -481,7 +490,15 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
           const isMl = card.getAttribute('data-ml') === 'true';
           const isRust = card.getAttribute('data-rust') === 'true';
 
-          const matchesQuery = !q || title.includes(q) || desc.includes(q) || domain.includes(q) || category.toLowerCase().includes(q);
+          const combined = (title + ' ' + desc + ' ' + domain + ' ' + category).toLowerCase();
+          const matchesQuery = tokens.length === 0 || tokens.every(function (t) {
+            return combined.includes(t);
+          });
+
+          if (matchesQuery) {
+            queryMatchesAcrossAll++;
+          }
+
           const matchesCategory = currentCategory === 'All' || category === currentCategory;
           const matchesTech = currentTech === 'all' ||
             (currentTech === 'ml' && isMl) ||
@@ -495,12 +512,31 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
           }
         });
 
+        // Smart cross-category auto-expansion
+        if (visibleCount === 0 && queryMatchesAcrossAll > 0 && currentCategory !== 'All') {
+          currentCategory = 'All';
+          updateCategoryButtons();
+          return runFilter();
+        }
+
         if (visibleCount === 0) {
-          if (filteredGrid) filteredGrid.style.display = 'none';
-          if (emptyState) emptyState.style.display = '';
+          if (filteredGrid) {
+            filteredGrid.classList.add('hidden');
+            filteredGrid.style.display = 'none';
+          }
+          if (emptyState) {
+            emptyState.classList.remove('hidden');
+            emptyState.style.display = 'block';
+          }
         } else {
-          if (filteredGrid) filteredGrid.style.display = 'grid';
-          if (emptyState) emptyState.style.display = 'none';
+          if (filteredGrid) {
+            filteredGrid.classList.remove('hidden');
+            filteredGrid.style.display = 'grid';
+          }
+          if (emptyState) {
+            emptyState.classList.add('hidden');
+            emptyState.style.display = 'none';
+          }
         }
 
         if (countEl) countEl.textContent = String(visibleCount);

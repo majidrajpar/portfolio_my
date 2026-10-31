@@ -611,7 +611,8 @@ function isPdfAsset(doc: any) {
 
       function runFilter() {
         const q = currentQuery.trim().toLowerCase();
-        const isFiltering = q.length > 0 || currentCategory !== 'All' || currentFormat !== 'all';
+        const tokens = q ? q.split(/\s+/).filter(Boolean) : [];
+        const isFiltering = tokens.length > 0 || currentCategory !== 'All' || currentFormat !== 'all';
 
         // Toggle clear button
         if (searchClear) {
@@ -632,6 +633,8 @@ function isPdfAsset(doc: any) {
         }
 
         let visibleCount = 0;
+        let queryMatchesAcrossAll = 0;
+
         cards.forEach(function (card) {
           const title = card.getAttribute('data-title') || '';
           const desc = card.getAttribute('data-description') || '';
@@ -640,7 +643,15 @@ function isPdfAsset(doc: any) {
           const category = card.getAttribute('data-category') || '';
           const format = card.getAttribute('data-format') || '';
 
-          const matchesQuery = !q || title.includes(q) || desc.includes(q) || filename.includes(q) || tags.includes(q) || category.toLowerCase().includes(q);
+          const combinedText = (title + ' ' + desc + ' ' + filename + ' ' + tags + ' ' + category + ' ' + format).toLowerCase();
+          const matchesQuery = tokens.length === 0 || tokens.every(function (token) {
+            return combinedText.includes(token);
+          });
+
+          if (matchesQuery) {
+            queryMatchesAcrossAll++;
+          }
+
           const matchesCategory = currentCategory === 'All' || category === currentCategory;
           const matchesFormat = currentFormat === 'all' || format === currentFormat;
 
@@ -651,6 +662,13 @@ function isPdfAsset(doc: any) {
             card.style.display = 'none';
           }
         });
+
+        // Smart cross-category auto-expansion: if user typed a search query that matches assets in other categories, auto-switch category to All
+        if (visibleCount === 0 && queryMatchesAcrossAll > 0 && currentCategory !== 'All') {
+          currentCategory = 'All';
+          updateCategoryButtons();
+          return runFilter();
+        }
 
         if (visibleCount === 0) {
           if (emptyState) emptyState.classList.remove('hidden');
