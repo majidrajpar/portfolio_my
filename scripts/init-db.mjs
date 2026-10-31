@@ -166,7 +166,7 @@ const reset = db.transaction(() => {
       slug: 'post-merger-integration-fnb-group',
       display_order: 2,
       tier: 'primary',
-      related_tool: 'continuous-controls-monitoring',
+      related_tool: 'cafe-inventory-costing',
       related_build: null,
       related_case: 'ma-capital-protection',
       snippet_ids: null,
