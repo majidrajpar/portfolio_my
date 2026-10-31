@@ -247,7 +247,7 @@ const reset = db.transaction(() => {
       display_order: 4,
       tier: 'capability',
       related_tool: 'audit-sample-size-calculator',
-      related_build: null,
+      related_build: 'pos-cashier-till-fraud-detector',
       related_case: null,
       snippet_ids: null,
     },
