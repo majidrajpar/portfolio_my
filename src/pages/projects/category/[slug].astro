@@ -74,10 +74,10 @@ const short = filtered.filter((project) => !project.starr?.situation);
     <div class="mx-auto max-w-7xl">
       <div class="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between" data-reveal>
         <div>
-          <span class="eyebrow-label">Mapped Engagements</span>
-          <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Records in {cat.name.toLowerCase()}.</h2>
+          <span class="eyebrow-label">Practice Area</span>
+          <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">{cat.name} Case Studies</h2>
         </div>
-        <p class="body-luxe max-w-2xl">A card has a stored situation. A line does not. The line prints the stored impact.</p>
+        <p class="body-luxe max-w-2xl">Detailed audit findings, controls testing, and governance outcomes across {cat.name.toLowerCase()}.</p>
       </div>
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
         {written.map((project: any, i: number) => (
@@ -140,12 +140,34 @@ const short = filtered.filter((project) => !project.starr?.situation);
         ))}
       </div>
       {short.length > 0 && (
-        <div class="soft-shell mt-8 px-6 py-8 md:px-8">
-          <div class="space-y-4">
+        <div class="mt-14">
+          <div class="my-10 border-t border-[color:var(--line-soft)]"></div>
+          <div class="pb-6 border-b border-[color:var(--line-soft)]">
+            <h2 class="text-2xl font-bold text-[#181511]">Other {cat.name} Engagements</h2>
+            <p class="mt-2 text-sm text-[color:var(--text-secondary)]">Selected audit findings and advisory reviews in this practice area.</p>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
             {short.map((project: any) => (
-              <a href={`${base}projects/${project.id}/`} class="block border-t border-[color:var(--line-soft)] pt-4">
-                <h3 class="text-lg leading-7 text-[#181511]">{project.title}</h3>
-                <p class="mt-2 text-sm leading-7 text-[color:var(--text-secondary)]">{project.impact}</p>
+              <a
+                href={`${base}projects/${project.id}/`}
+                class="glass-card group flex flex-col justify-between rounded-[20px] p-6 transition-all duration-200 hover:border-[#c7964c]/40"
+              >
+                <div>
+                  <span class="inline-block text-[11px] font-semibold text-[#8d6035] mb-2">
+                    {project.industry}
+                  </span>
+                  <h3 class="text-base font-bold text-[#181511] group-hover:text-[#8d6035] transition-colors">
+                    {project.title}
+                  </h3>
+                  <p class="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">
+                    {project.impact}
+                  </p>
+                </div>
+                <div class="mt-4 flex items-center gap-1 text-xs font-semibold text-[#181511] group-hover:text-[#8d6035]">
+                  <span>View project details</span>
+                  <span>→</span>
+                </div>
               </a>
             ))}
           </div>
