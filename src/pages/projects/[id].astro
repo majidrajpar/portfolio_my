@@ -25,6 +25,10 @@ const relatedLabels = {
   'ethics-compliance-programme-multi-country': {
     case: 'Whistleblowing framework (QSR leader).',
   },
+  'post-merger-integration-fnb-group': {
+    tool: 'Audit sample size calculator.',
+    case: 'M&A capital protection & due diligence.',
+  },
 };
 
 export function getStaticPaths() {
@@ -89,7 +93,7 @@ const relatedLines = [
           )}
         </div>
         <div class="quote-panel p-6 md:p-8" data-reveal data-reveal-delay="1">
-          <span class="eyebrow-label text-[#f4c98b]/80">Outcome Signal</span>
+          <span class="eyebrow-label text-[#f4c98b]/80">Key Results</span>
           {hasStarr && project.impact ? (
             <p class="mt-4 text-base leading-7 text-white/82 md:mt-5 md:text-lg md:leading-8">{project.impact}</p>
           ) : null}
@@ -124,16 +128,16 @@ const relatedLines = [
         {hasStarr ? (
           <div class="soft-shell px-6 py-8 md:px-10 md:py-12">
             <div class="mb-10" data-reveal>
-              <span class="eyebrow-label">Mandate Narrative</span>
-              <h2 class="mt-4 text-[clamp(2rem,4vw,3.3rem)] leading-[1.04] text-[#181511]">How the engagement unfolded.</h2>
+              <span class="eyebrow-label">Case Details</span>
+              <h2 class="mt-4 text-[clamp(2rem,4vw,3.3rem)] leading-[1.04] text-[#181511]">Audit Scope & Outcomes</h2>
             </div>
             <div class="space-y-10">
               {[
-                { label: 'The Situation', content: project.starr.situation },
-                { label: 'The Mandate', content: project.starr.task },
-                { label: 'The Intervention', content: project.starr.action },
-                { label: 'The Outcome', content: project.starr.result },
-                { label: 'Reflection', content: project.starr.reflection },
+                { label: 'Background', content: project.starr.situation },
+                { label: 'Audit Scope', content: project.starr.task },
+                { label: 'Testing & Fieldwork', content: project.starr.action },
+                { label: 'Findings & Impact', content: project.starr.result },
+                { label: 'Operational Insight', content: project.starr.reflection },
               ].filter((section) => section.content).map((section) => (
                 <div class="relative border-l border-[color:var(--line-soft)] pl-6 md:pl-9" data-reveal>
                   <div class="absolute left-[-7px] top-1 h-3.5 w-3.5 rounded-full border border-[#c7964c] bg-[var(--surface)] shadow-[0_0_0_5px_rgba(255,250,244,0.9)] md:left-[-8px] md:h-4 md:w-4 md:shadow-[0_0_0_6px_rgba(255,250,244,0.9)]"></div>
