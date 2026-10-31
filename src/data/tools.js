@@ -1,5 +1,18 @@
 export const tools = [
   {
+    id: 'packaging-plant-audit-model',
+    tier: 'catalog',
+    domain: 'Plant Continuous Assurance',
+    title: 'Industrial Packaging Plant Audit Master Model',
+    description: '100% deterministic continuous controls monitoring and operational telemetry model for industrial packaging and corrugated manufacturing. 35 test procedures across 7 domains with automated Critical Override.',
+    category: 'Internal Controls',
+    href: '/portfolio_my/resources/?q=plant',
+    isLive: true,
+    batch: 10,
+    ml: false,
+    rust: false,
+  },
+  {
     id: 'severity-classifier',
     tier: 'catalog',
     domain: 'Finding severity',
