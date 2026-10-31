@@ -283,17 +283,25 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
           ))}
         </div>
 
-        <!-- Shelf Table -->
-        <div class="soft-shell mt-8 overflow-x-auto px-4 py-2 md:px-8">
-          {shelf.map((tool) => (
-            <div class="flex w-full min-w-0 items-baseline gap-3 whitespace-nowrap border-b border-[color:var(--line-soft)] py-4 last:border-b-0">
-              <span class="meta-label shrink-0 whitespace-nowrap text-[#8d6035]">{tool.domain}</span>
-              <span class="min-w-0 flex-1 truncate text-[#181511] font-medium">{tool.title}</span>
-              <a href={resolveHref(tool.href)} class="shrink-0 text-sm font-semibold text-[#181511] underline underline-offset-4 hover:text-[#8d6035]">
-                Open
-              </a>
-            </div>
-          ))}
+        <!-- Additional Utilities & Quick Calculators -->
+        <div class="mt-14">
+          <div class="my-10 border-t border-[color:var(--line-soft)]"></div>
+          <div class="pb-6 border-b border-[color:var(--line-soft)]">
+            <h2 class="text-2xl font-bold text-[#181511]">Additional Utilities &amp; Quick Calculators</h2>
+            <p class="mt-2 text-sm text-[color:var(--text-secondary)]">Focused calculation and verification utilities for fieldwork execution.</p>
+          </div>
+
+          <div class="soft-shell mt-6 overflow-x-auto px-4 py-2 md:px-8">
+            {shelf.map((tool) => (
+              <div class="flex w-full min-w-0 items-baseline gap-3 whitespace-nowrap border-b border-[color:var(--line-soft)] py-4 last:border-b-0">
+                <span class="meta-label shrink-0 whitespace-nowrap text-[#8d6035]">{tool.domain}</span>
+                <span class="min-w-0 flex-1 truncate text-[#181511] font-medium">{tool.title}</span>
+                <a href={resolveHref(tool.href)} class="shrink-0 text-sm font-semibold text-[#181511] underline underline-offset-4 hover:text-[#8d6035]">
+                  Open
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
