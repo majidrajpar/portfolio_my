@@ -20,6 +20,46 @@ export const software = [
     ]
   },
   {
+    id: 'pos-cashier-till-fraud-detector',
+    name: 'POS Cashier & Till Fraud Detection Model',
+    tagline: 'Automated forensic telemetry analyzing electronic journal logs across 4 fraud engines.',
+    description: 'A production-grade, macro-free 8-sheet Excel model analyzing raw POS electronic journal exports. Detects post-settlement voids, pre-tender item cancellations, off-hours no-sale drawer kicks, and supervisor PIN concurrency anomalies. Features a ranked cashier risk scorecard and prioritized CCTV investigation queue.',
+    category: 'Fieldwork Workbench',
+    techStack: ['8 Excel (.xlsx) Sheets', '2,009 Active Formulas', 'Deterministic Forensic Engines', 'Z-Score Anomaly Benchmarking', 'CCTV Video Queue'],
+    gumroadUrl: 'https://majidmumtaz.gumroad.com/l/pos-cashier-till-fraud-detector',
+    downloadUrl: '/downloads/POS_Cashier_Till_Fraud_Detector.xlsx',
+    downloadLabel: 'Download Model (.xlsx)',
+    isPublic: true,
+    status: 'Institutional Model · $69 / $189',
+    keyFeatures: [
+      '4 automated forensic engines: Post-settlement void latency, pre-tender item cancellations, no-sale kicks, supervisor PIN concurrency',
+      '2,009 active formula cells running strictly on native Excel formulas with zero macro security dependencies',
+      'Automatic Z-Score outlier detection isolating cashiers exceeding +2.5 standard deviations above branch mean',
+      'Prioritized CCTV Review Queue with exact transaction IDs and surveillance camera timestamps',
+      'Ready-to-use schemas for Oracle Micros Simphony, NCR Aloha, Toast, Revel, and Square POS exports'
+    ]
+  },
+  {
+    id: 'ccm-anomaly-field-toolkit',
+    name: 'Continuous Controls Monitoring (CCM) Field Telemetry Toolkit',
+    tagline: 'Enterprise-grade continuous audit testing model across 5 ERP exception engines.',
+    description: 'Replaces retrospective 20-invoice samples with 100% population testing across Split POs, Dormant Vendor resuscitation, 7-layer duplicate invoice string normalization, Off-hours journal entries, and Round-sum advisory fees. Paired with a 715-row synthetic corporate stress pack and ERP data request specifications.',
+    category: 'Fieldwork Workbench',
+    techStack: ['9 Excel (.xlsx) Tabs', '715-Row Stress Pack', '5 ERP Exception Engines', 'Automated EBITDA Quantification', 'IT Data Request Spec'],
+    gumroadUrl: 'https://majidmumtaz.gumroad.com/l/ccm-anomaly-field-toolkit',
+    downloadUrl: '/downloads/Auditor_Anomaly_Testing_Template.xlsx',
+    downloadLabel: 'Download Toolkit (.xlsx)',
+    isPublic: true,
+    status: 'Field Toolkit · $39 / $99',
+    keyFeatures: [
+      '5 deterministic exception engines testing 100% of subledger records with automated EBITDA exposure quantification',
+      'Audit Stress Test Data Pack with 715 synthetic corporate transactions and 205 benchmarked exception ground truths',
+      '7-layer invoice normalization stripping punctuation, hyphens, and whitespace to catch split billing fraud',
+      'Ready-to-issue IT Data Request Specification for SAP ECC/S4HANA, Oracle Cloud ERP, and NetSuite',
+      'Fieldwork Cheat Sheet and Anomaly Triage Rubric defining immediate audit escalation protocols'
+    ]
+  },
+  {
     id: 'cloud-kitchen-erm-ccm-suite',
     name: 'Cloud Kitchen & F&B ERM + CCM Suite',
     tagline: '18-file white-label governance, KRI telemetry & order-to-cash assurance architecture.',
