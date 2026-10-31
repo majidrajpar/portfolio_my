@@ -6,7 +6,7 @@ export const software = [
     description: 'A production-grade, macro-free 10-tab institutional Excel model covering 35 granular audit procedures across 7 operational domains (Raw Paper Logistics, Corrugator Wet/Dry End, Converting & Printing, Scrap Baling & Mass Balance, Tooling & Asset Longevity, Warehouse & Dispatch, Boiler House & EHS Continuity). Connects trench-level sensor and PLC feeds directly to 5 Fiduciary Assurance Pillars with an automated Critical Override Governance Protocol.',
     category: 'Fieldwork Workbench',
     techStack: ['10 Excel (.xlsx) Tabs', '442 Active Formulas', 'Deterministic Telemetry', 'Mass Balance Auditing', 'Critical Override Protocol'],
-    gumroadUrl: 'https://majidmumtaz.gumroad.com/l/ops-logistics-vendor-pack',
+    gumroadUrl: 'https://majidmumtaz.gumroad.com/l/packaging-plant-audit-model',
     downloadUrl: '/downloads/Packaging_Plant_Audit_Master_Model.xlsx',
     downloadLabel: 'Download Model (.xlsx)',
     isPublic: true,
