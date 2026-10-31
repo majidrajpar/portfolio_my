@@ -2233,7 +2233,7 @@ export default function CafeInventoryApp() {
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
             <div className="rounded-3xl border border-[color:var(--line-soft)] bg-white/70 p-6 shadow-sm backdrop-blur-md dark:bg-white/5">
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#181511] dark:text-white">
-                Physical Reality vs. Automated Telemetry
+                Physical Stock vs. POS Ledger
               </h4>
               <p className="mt-3 text-xs leading-relaxed text-[color:var(--text-secondary)]">
                 A POS system registers a pure, mathematical world: whenever a Flat White is sold, exactly 18g of beans and 160ml of milk are deducted. In the trench, physical grinders heat up during morning rushes, coarsening grind size and increasing dose weight to 20.2g without the barista noticing. Steaming pitchers are routinely purged and leftover foam is dumped down the drain. Automated code cannot solve physical steam residue; only volumetric scale dosing and pitcher rinsers can bridge this gap.
