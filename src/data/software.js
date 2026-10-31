@@ -2,7 +2,7 @@ export const software = [
   {
     id: 'packaging-plant-audit-model',
     name: 'Industrial Packaging Plant Audit Master Model',
-    tagline: '100% continuous controls monitoring & trench telemetry model for corrugated manufacturing.',
+    tagline: '100% continuous controls monitoring & yield analytics model for corrugated manufacturing.',
     description: 'A production-grade, macro-free 10-tab institutional Excel model covering 35 granular audit procedures across 7 operational domains (Raw Paper Logistics, Corrugator Wet/Dry End, Converting & Printing, Scrap Baling & Mass Balance, Tooling & Asset Longevity, Warehouse & Dispatch, Boiler House & EHS Continuity). Connects trench-level sensor and PLC feeds directly to 5 Fiduciary Assurance Pillars with an automated Critical Override Governance Protocol.',
     category: 'Fieldwork Workbench',
     techStack: ['10 Excel (.xlsx) Tabs', '442 Active Formulas', 'Deterministic Telemetry', 'Mass Balance Auditing', 'Critical Override Protocol'],
@@ -22,7 +22,7 @@ export const software = [
   {
     id: 'pos-cashier-till-fraud-detector',
     name: 'POS Cashier & Till Fraud Detection Model',
-    tagline: 'Automated forensic telemetry analyzing electronic journal logs across 4 fraud engines.',
+    tagline: 'Automated forensic analytics testing electronic journal logs across 4 fraud engines.',
     description: 'A production-grade, macro-free 8-sheet Excel model analyzing raw POS electronic journal exports. Detects post-settlement voids, pre-tender item cancellations, off-hours no-sale drawer kicks, and supervisor PIN concurrency anomalies. Features a ranked cashier risk scorecard and prioritized CCTV investigation queue.',
     category: 'Fieldwork Workbench',
     techStack: ['8 Excel (.xlsx) Sheets', '2,009 Active Formulas', 'Deterministic Forensic Engines', 'Z-Score Anomaly Benchmarking', 'CCTV Video Queue'],
@@ -41,7 +41,7 @@ export const software = [
   },
   {
     id: 'ccm-anomaly-field-toolkit',
-    name: 'Continuous Controls Monitoring (CCM) Field Telemetry Toolkit',
+    name: 'Continuous Controls Monitoring (CCM) Field Audit Toolkit',
     tagline: 'Enterprise-grade continuous audit testing model across 5 ERP exception engines.',
     description: 'Replaces retrospective 20-invoice samples with 100% population testing across Split POs, Dormant Vendor resuscitation, 7-layer duplicate invoice string normalization, Off-hours journal entries, and Round-sum advisory fees. Paired with a 715-row synthetic corporate stress pack and ERP data request specifications.',
     category: 'Fieldwork Workbench',
@@ -62,7 +62,7 @@ export const software = [
   {
     id: 'cloud-kitchen-erm-ccm-suite',
     name: 'Cloud Kitchen & F&B ERM + CCM Suite',
-    tagline: '18-file white-label governance, KRI telemetry & order-to-cash assurance architecture.',
+    tagline: '18-file white-label governance, KRI tracking & order-to-cash assurance architecture.',
     description: 'A complete white-label Enterprise Risk Management (ERM) and Continuous Controls Monitoring (CCM) toolkit for multi-brand cloud kitchens, QSR networks, and food-tech operators. Replaces sample-based compliance checks with 100% population 3-way delivery aggregator remittance matching (FI-002), theoretical-vs-actual BOM recipe yield telemetry (OP-003), and unannounced physical line-walk verification.',
     category: 'Fieldwork Workbench',
     techStack: ['7 Excel (.xlsx) Engines', '7 Word (.docx) Packs', 'COSO ERM / ISO 31000', '3-Way O2C CCM', 'BOM Yield Telemetry'],
@@ -81,7 +81,7 @@ export const software = [
   {
     id: 'invoice-audit-engine',
     name: 'Invoice Audit Engine',
-    tagline: 'Air-gapped 100% continuous controls monitoring & invoice document audit telemetry.',
+    tagline: 'Air-gapped 100% continuous controls monitoring & invoice document audit analytics.',
     description: 'An open-source, on-premise document audit engine for accounts payable and procurement teams. Runs 100% locally with zero cloud API dependencies to protect confidential vendor pricing. Extracts printed invoices and thermal till receipts via local OCR, reconciles 3-way line item arithmetic, flags VAT billed without a valid Tax Registration Number (TRN), and generates an executive 5-tab Excel audit register.',
     category: 'Forensic Analytics',
     techStack: ['Python', 'RapidOCR', 'OpenCV', 'ONNX Runtime', 'OpenPyXL', 'Standalone EXE'],

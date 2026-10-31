@@ -100,7 +100,7 @@ export default function GameTheoryAuditSimulator() {
             Game Theory Audit & Deterrence Simulator
           </h2>
           <p className="text-sm text-white/60 mt-1">
-            Solve for Pure and Mixed Nash Equilibria in corporate control evasion vs assurance telemetry.
+            Solve for Pure and Mixed Nash Equilibria in corporate control evasion vs automated controls monitoring.
           </p>
         </div>
         <div className="flex items-center gap-3">

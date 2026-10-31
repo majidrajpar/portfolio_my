@@ -16,7 +16,7 @@ export const ermSuitePillars = [
     title: '100% Population CCM vs. Physical Line Reality',
     color: 'bg-[#181512] text-[#f4c98b]',
     description:
-      'Replaces retrospective 20-invoice sampling with automated telemetry across POS/KOS order streams, aggregator settlement APIs, ERP BOM ledgers, and walk-in cold-chain IoT sensors—while enforcing unannounced physical line walks where code cannot substitute for sensory verification (kitchen grease, visual habituation, peak-rush allergen segregation).',
+      'Replaces retrospective 20-invoice sampling with automated continuous monitoring across POS/KOS order streams, aggregator settlement APIs, ERP BOM ledgers, and walk-in cold-chain IoT sensors—while enforcing unannounced physical line walks where code cannot substitute for sensory verification (kitchen grease, visual habituation, peak-rush allergen segregation).',
     metrics: ['CTRL-011 · 3-Way Order-to-Cash CCM', 'CTRL-012 · Automated BOM Depletion', 'CTRL-013 · Unannounced Physical Line Walk'],
   },
   {
@@ -45,7 +45,7 @@ export const ermSuiteInventory = [
     name: '00_Product_Overview_and_Deployment_Guide.md',
     format: 'Markdown (.md)',
     module: 'Architecture & 90-Day Playbook',
-    summary: 'Executive context, Parallax View diagnostics, relational ID schema, and Day 1–90 white-label deployment checklist.',
+    summary: 'Executive context, root-cause operational diagnostics, relational ID schema, and Day 1–90 white-label deployment checklist.',
     freePreview: true,
   },
   {
@@ -85,7 +85,7 @@ export const ermSuiteInventory = [
     name: '02_KRI_Dashboard.xlsx',
     format: 'Excel (.xlsx · 2 Tabs)',
     module: '02 · Quantitative Registries',
-    summary: 'Monthly & weekly KRI telemetry tracker with Green/Amber/Red thresholds across Operations, Food Safety, Tech, Finance (FI-KRI-06), Compliance, and HR, plus automated Status Summary.',
+    summary: 'Monthly & weekly KRI tracker with Green/Amber/Red thresholds across Operations, Food Safety, Tech, Finance (FI-KRI-06), Compliance, and HR, plus automated Status Summary.',
     freePreview: false,
   },
   {
@@ -117,7 +117,7 @@ export const ermSuiteInventory = [
     name: '06_Implementation_Programme_Tracker.xlsx',
     format: 'Excel (.xlsx)',
     module: '02 · Quantitative Registries',
-    summary: '12-month Gantt milestone tracker across Phase 1 (Foundation), Phase 2 (Rollout & CCM Telemetry Pipelines), and Phase 3 (Embed & Optimise) with phase-gate sign-offs at M3, M9, and M12.',
+    summary: '12-month Gantt milestone tracker across Phase 1 (Foundation), Phase 2 (Rollout & Continuous Monitoring Exception Logic), and Phase 3 (Embed & Optimise) with phase-gate sign-offs at M3, M9, and M12.',
     freePreview: false,
   },
   {
@@ -149,7 +149,7 @@ export const ermSuiteInventory = [
     name: '10_Board_Risk_Report_Template.docx',
     format: 'Word (.docx)',
     module: '03 · Executive & Board Packs',
-    summary: 'Semi-annual Board of Directors report linking trench-level operational telemetry directly to consolidated EBITDA margin defense, strategic horizon scanning, and annual risk appetite calibration.',
+    summary: 'Semi-annual Board of Directors report linking frontline operational controls directly to consolidated EBITDA margin defense, strategic horizon scanning, and annual risk appetite calibration.',
     freePreview: false,
   },
   {
@@ -157,7 +157,7 @@ export const ermSuiteInventory = [
     name: '11_Risk_Culture_Survey.docx',
     format: 'Word (.docx)',
     module: '04 · Frontline Diagnostics',
-    summary: 'Anonymous multi-market survey with frontline Parallax View items (D5–D7) testing ticket-time pressure vs. portioning/food safety compliance, tick-box paperwork theater, and month-end write-offs.',
+    summary: 'Anonymous multi-market survey testing frontline pressure vs. portioning/food safety compliance, administrative paperwork burden, and month-end write-offs.',
     freePreview: false,
   },
   {
@@ -165,7 +165,7 @@ export const ermSuiteInventory = [
     name: '12_Escalation_Incident_Notification_Form.docx',
     format: 'Word (.docx)',
     module: '04 · Frontline Diagnostics',
-    summary: '24-hour rapid escalation intake form classifying incidents by severity, detection channel (Automated CCM Telemetry vs. Physical Line Walk), immediate containment, and systemic KPI root causes.',
+    summary: '24-hour rapid escalation intake form classifying incidents by severity, detection channel (Automated Exception Testing vs. Physical Line Walk), immediate containment, and systemic KPI root causes.',
     freePreview: false,
   },
 ];
