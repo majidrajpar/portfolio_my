@@ -16,6 +16,10 @@ const categoryColors: Record<string, string> = {
 
 const resolveHref = (href: string) => {
   if (href.startsWith('http')) return href;
+  if (href.includes('/resources/')) {
+    const qPart = href.includes('?') ? '?' + href.split('?')[1] : '';
+    return `${base}resources/${qPart}`;
+  }
   const slug = href.replace(/^\/portfolio_my\/tools\//, '').replace(/^\/tools\//, '').replace(/\/$/, '');
   return `${base}tools/${slug}/`;
 };
