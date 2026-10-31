@@ -1,5 +1,25 @@
 export const software = [
   {
+    id: 'packaging-plant-audit-model',
+    name: 'Industrial Packaging Plant Audit Master Model',
+    tagline: '100% continuous controls monitoring & trench telemetry model for corrugated manufacturing.',
+    description: 'A production-grade, macro-free 10-tab institutional Excel model covering 35 granular audit procedures across 7 operational domains (Raw Paper Logistics, Corrugator Wet/Dry End, Converting & Printing, Scrap Baling & Mass Balance, Tooling & Asset Longevity, Warehouse & Dispatch, Boiler House & EHS Continuity). Connects trench-level sensor and PLC feeds directly to 5 Fiduciary Assurance Pillars with an automated Critical Override Governance Protocol.',
+    category: 'Fieldwork Workbench',
+    techStack: ['10 Excel (.xlsx) Tabs', '442 Active Formulas', 'Deterministic Telemetry', 'Mass Balance Auditing', 'Critical Override Protocol'],
+    gumroadUrl: 'https://majidmumtaz.gumroad.com/l/packaging-plant-audit-model',
+    downloadUrl: '/downloads/Packaging_Plant_Audit_Master_Model.xlsx',
+    downloadLabel: 'Download Model (.xlsx)',
+    isPublic: true,
+    status: 'Institutional Model · $69 / $129 / $249',
+    keyFeatures: [
+      'Self-contained 10-tab workbook with 442 formula cells, dynamic cross-sheet aggregation, and zero macro dependencies',
+      '35 granular audit test procedures across 7 operational domains from inbound weighbridge RS-232 feeds to high-pressure steam boilers',
+      'Five Fiduciary Assurance Pillars: Margin Truthfulness, Asset Longevity, Mass Balance & Anti-Theft, Catastrophic Continuity, Customer Spec Integrity',
+      'Automated Critical Override Governance Protocol: mathematically collapses Overall Opinion upon any Ineffective Critical control failure',
+      'Tiered commercial licensing via Gumroad: Single Plant ($69), Enterprise Multi-Plant ($129), and Commercial Advisory Rights ($249)'
+    ]
+  },
+  {
     id: 'cloud-kitchen-erm-ccm-suite',
     name: 'Cloud Kitchen & F&B ERM + CCM Suite',
     tagline: '18-file white-label governance, KRI telemetry & order-to-cash assurance architecture.',
