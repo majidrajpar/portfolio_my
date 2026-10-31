@@ -32,7 +32,7 @@ const Navbar = ({ initialPath = '' }) => {
     },
     {
       label: 'Author Storefronts',
-      desc: 'Commercial models on Gumroad, Eloquens & Flevy',
+      desc: 'Commercial models on Gumroad, Eloquens, Flevy & eFinancialModels',
       href: 'https://majidmumtaz.gumroad.com',
       external: true,
     },
