@@ -14,6 +14,7 @@ const relatedLabels = {
   },
   'data-analytics-audit-training': {
     tool: 'Audit sample size calculator.',
+    build: 'POS Cashier & Till Fraud Detection Model.',
   },
   'tadawul-nomu-listing-readiness': {
     tool: 'Nomu governance readiness diagnostic.',
@@ -57,7 +58,7 @@ const relatedLines = [
     ? { href: `${base}tools/${project.relatedTool}/`, label: relatedLabels[project.id]?.tool }
     : null,
   project.relatedBuild && buildRecord
-    ? { href: buildRecord.githubUrl, label: relatedLabels[project.id]?.build, external: true }
+    ? { href: buildRecord.gumroadUrl || buildRecord.githubUrl || `${base}software/`, label: relatedLabels[project.id]?.build, external: true }
     : null,
   project.relatedCase
     ? { href: `${base}projects/${project.relatedCase}/`, label: relatedLabels[project.id]?.case }
