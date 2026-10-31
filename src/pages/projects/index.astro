@@ -42,14 +42,37 @@ const short = cases.filter((item) => !item.situation);
           </a>
         ))}
       </div>
-      <div class="soft-shell mt-8 px-6 py-8 md:px-8">
-        <h2 class="text-2xl leading-tight text-[#181511]">Executive Engagements</h2>
-        <p class="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">Summary outcomes from multi-jurisdiction risk, forensics, and corporate governance mandates.</p>
-        <div class="mt-6 space-y-4">
+      <!-- Divider -->
+      <div class="my-14 border-t border-[color:var(--line-soft)]"></div>
+
+      <!-- Additional Engagements -->
+      <div class="mt-6">
+        <div class="pb-6 border-b border-[color:var(--line-soft)]">
+          <h2 class="text-2xl font-bold text-[#181511]">Other Engagements & Advisory Reviews</h2>
+          <p class="mt-2 text-sm text-[color:var(--text-secondary)]">Selected audit findings and governance projects across risk, internal controls, and compliance.</p>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
           {short.map((study) => (
-            <a href={`${base}projects/${study.slug}/`} class="block border-t border-[color:var(--line-soft)] pt-4">
-              <h3 class="text-lg leading-7 text-[#181511]">{study.title}</h3>
-              <p class="mt-2 text-sm leading-7 text-[color:var(--text-secondary)]">{study.impact}</p>
+            <a
+              href={`${base}projects/${study.slug}/`}
+              class="glass-card group flex flex-col justify-between rounded-[20px] p-6 transition-all duration-200 hover:border-[#c7964c]/40"
+            >
+              <div>
+                <span class="inline-block text-[11px] font-semibold text-[#8d6035] mb-2">
+                  {study.industry}
+                </span>
+                <h3 class="text-base font-bold text-[#181511] group-hover:text-[#8d6035] transition-colors">
+                  {study.title}
+                </h3>
+                <p class="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">
+                  {study.impact}
+                </p>
+              </div>
+              <div class="mt-4 flex items-center gap-1 text-xs font-semibold text-[#181511] group-hover:text-[#8d6035]">
+                <span>View project details</span>
+                <span>→</span>
+              </div>
             </a>
           ))}
         </div>
