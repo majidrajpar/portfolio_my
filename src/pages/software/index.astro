@@ -134,7 +134,7 @@ const categoryColors: Record<string, string> = {
                         rel="noopener noreferrer"
                         class="btn-primary py-2.5 px-5 text-[10px] font-black uppercase tracking-wider inline-flex items-center gap-2"
                       >
-                        License via Gumroad ($149 / $349)
+                        License via Gumroad ({item.status ? (item.status.includes('·') ? item.status.split('·')[1].trim() : item.status) : ''})
                       </a>
                     ) : item.githubUrl ? (
                       <a

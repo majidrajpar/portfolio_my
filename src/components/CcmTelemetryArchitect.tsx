@@ -1,16 +1,11 @@
 import React, { useState, useMemo } from 'react';
 import {
   Database,
-  Filter,
   Code2,
   Copy,
   Check,
   Download,
   AlertTriangle,
-  RotateCcw,
-  Sparkles,
-  ChevronRight,
-  ShieldCheck,
   Clock,
   DollarSign
 } from 'lucide-react';
