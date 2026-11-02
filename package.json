@@ -9,7 +9,7 @@
     "dev": "astro dev",
     "build": "node scripts/init-db.mjs && astro build",
     "preview": "astro preview",
-    "lint": "eslint .",
+    "lint": "eslint . --cache",
     "db:init": "node scripts/init-db.mjs",
     "db:check": "node scripts/check-db.mjs"
   },

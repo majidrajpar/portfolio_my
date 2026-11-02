@@ -27,8 +27,11 @@ dist-ssr
 scripts/agents/.venv
 __pycache__/
 *.py[cod]
+.eslintcache
 ROLEFORGE_AI_CONTEXT.md
+roleforge/docs/AI_CONTEXT.md
 TELEMETRY_TRACKING_PLAYBOOK.md
+docs/TELEMETRY_TRACKING_PLAYBOOK.md
 
 # Astro framework state (auto-generated, not source)
 .astro/
