@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import {
   Coffee,
   Package,
@@ -475,6 +475,8 @@ const INITIAL_WASTE_LOG: WasteEntry[] = [
   },
 ];
 
+const generateCartItemId = () => `line-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`;
+
 export default function CafeInventoryApp() {
   const [activeTab, setActiveTab] = useState<'recipes' | 'inventory' | 'pos' | 'reconciliation' | 'waste'>('recipes');
   const [ingredients, setIngredients] = useState<Ingredient[]>(INITIAL_INGREDIENTS);
@@ -556,13 +558,13 @@ export default function CafeInventoryApp() {
   }, []);
 
   // Compute Base Recipe Cost (COGS)
-  const computeProductCogs = (product: Product): number => {
+  const computeProductCogs = useCallback((product: Product): number => {
     return product.recipe.reduce((total, item) => {
       const ing = ingredientMap.get(item.ingredientId);
       if (!ing) return total;
       return total + (item.quantity * ing.unitCost);
     }, 0);
-  };
+  }, [ingredientMap]);
 
   // Compute dynamic COGS including applied modifiers
   const computeItemWithModifiersCogs = (productId: string, modifierIds: string[]): number => {
@@ -616,12 +618,12 @@ export default function CafeInventoryApp() {
       totalWasteCost,
       totalTransactions: salesLog.length,
     };
-  }, [products, ingredients, salesLog, wasteLog, ingredientMap]);
+  }, [products, ingredients, salesLog, wasteLog, computeProductCogs]);
 
   // POS Till: Add item to active ticket
   const addItemToTicket = (product: Product) => {
     const newItem: CartItem = {
-      id: `line-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+      id: generateCartItemId(),
       productId: product.id,
       productName: product.name,
       basePrice: product.sellingPrice,
@@ -1005,7 +1007,6 @@ export default function CafeInventoryApp() {
   const selectedProduct = products.find(p => p.id === selectedProductId) || products[0];
   const selectedProductCogs = computeProductCogs(selectedProduct);
   const selectedFoodCostPct = selectedProduct.sellingPrice > 0 ? (selectedProductCogs / selectedProduct.sellingPrice) * 100 : 0;
-  const selectedMargin = selectedProduct.sellingPrice - selectedProductCogs;
 
   return (
     <div className="space-y-8">

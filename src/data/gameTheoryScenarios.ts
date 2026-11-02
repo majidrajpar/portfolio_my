@@ -81,7 +81,7 @@ export const auditGameScenarios: GameScenario[] = [
         ],
       };
     },
-    interpret: (results, _players, strategies, _params) => {
+    interpret: (results, _players, strategies) => {
       const pure = results.pure_equilibria;
       if (pure.length === 1 && pure[0].row_idx === 0 && pure[0].col_idx === 1) {
         return `Automated Continuous Monitoring achieves complete deterrence. Because detection is mathematically certain and the penalty outweighs the potential gain, the rational frontline strategy collapses to Strict Compliance.`;
@@ -142,7 +142,7 @@ export const auditGameScenarios: GameScenario[] = [
         ],
       };
     },
-    interpret: (results, _players, strategies, _params) => {
+    interpret: (results, _players, strategies) => {
       const pure = results.pure_equilibria;
       if (results.mixed_strategies.length > 0) {
         const ms = results.mixed_strategies[0];
@@ -199,7 +199,7 @@ export const auditGameScenarios: GameScenario[] = [
         ],
       };
     },
-    interpret: (results, _players, strategies, _params) => {
+    interpret: (results, _players, strategies) => {
       const pure = results.pure_equilibria;
       if (results.mixed_strategies.length > 0) {
         const ms = results.mixed_strategies[0];

@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import type { SubstackArticle } from '../types';
 
 const FEATURED_ARTICLES: SubstackArticle[] = [
@@ -27,15 +26,9 @@ const FEATURED_ARTICLES: SubstackArticle[] = [
 ];
 
 export default function SubstackFeed() {
-  const [articles, setArticles] = useState<SubstackArticle[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [articles] = useState<SubstackArticle[]>(FEATURED_ARTICLES);
 
-  useEffect(() => {
-    setArticles(FEATURED_ARTICLES);
-    setLoading(false);
-  }, []);
-
-  if (loading) {
+  if (articles.length === 0) {
     return (
       <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {[1, 2, 3].map((n) => (
