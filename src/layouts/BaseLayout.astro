@@ -265,12 +265,12 @@ const baseUrl = import.meta.env.BASE_URL;
     });
   </script>
 
-  <!-- VIP & Executive Visit Telemetry (Instant Discord Alert & Persistent Lead Tagging) -->
+  <!-- Lead & Regional Visit Telemetry (Discord Alert & Campaign Tagging) -->
   <script is:inline>
     (function() {
       if (typeof window === 'undefined') return;
 
-      // 1. Capture contact tag if present (?ref=np, ?ref=alghurair, ?c=...)
+      // 1. Capture contact tag if present (?ref=..., ?utm_source=..., ?c=..., ?v=...)
       try {
         var params = new URLSearchParams(window.location.search);
         var ref = params.get('ref') || params.get('utm_source') || params.get('c') || params.get('v');
@@ -282,23 +282,25 @@ const baseUrl = import.meta.env.BASE_URL;
       var leadRef = null;
       try {
         leadRef = localStorage.getItem('__audit_lead_ref');
+        if (leadRef && /nasser|alghurair|np/i.test(leadRef)) {
+          localStorage.removeItem('__audit_lead_ref');
+          leadRef = null;
+        }
       } catch (e) {}
 
-      // 2. Client ID match (Nasser Paracha's exact Microsoft Edge cookie ID from 30 Oct)
-      var isNasser = false;
-      if (document.cookie.indexOf('517757122') !== -1 || (leadRef && /nasser|alghurair|np/i.test(leadRef))) {
-        isNasser = true;
-      }
-
-      // 3. Timezone detection (Asia/Dubai for UAE / Dubai contacts)
+      // 2. Timezone detection (Asia/Dubai for UAE / Dubai contacts)
       var tz = '';
       try {
         tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
       } catch (e) {}
       var isDubai = (tz === 'Asia/Dubai');
 
-      // Only alert on VIPs, tagged outreach contacts, or Dubai/UAE visitors
-      if (!isNasser && !leadRef && !isDubai) return;
+      // Suppress local dev and developer testing from Karachi
+      var isLocalDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      if (isLocalDev || tz === 'Asia/Karachi') return;
+
+      // Only alert on tagged outreach contacts or Dubai/UAE visitors
+      if (!leadRef && !isDubai) return;
 
       var b64Webhook = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTU2NTY3NzIxMDk2NTM3NzAzNi94MTMwVHptUG1mcENDTnQ0ZHFiMm90Vlh6SXNTRDFFdlh3ZEUtS0dvcnhpQ0dCQm9aLVRrY0kzekxRZ1hYNlI3OElqdQ==';
       var notifyWebhook = function(text) {
@@ -311,14 +313,12 @@ const baseUrl = import.meta.env.BASE_URL;
         } catch (e) {}
       };
 
-      // 4. Rate-limit pageview alerts per tab session to prevent notification flood
+      // 3. Rate-limit pageview alerts per tab session to prevent notification flood
       var sessionKey = '__notified_' + window.location.pathname;
       if (!sessionStorage.getItem(sessionKey)) {
         sessionStorage.setItem(sessionKey, '1');
 
-        var identity = isNasser
-          ? '🚨 **VIP RETURN: Nasser Paracha (Al-Ghurair)**'
-          : (leadRef ? ('🎯 **Contact Visit (' + leadRef + ')**') : '📍 **Dubai / UAE Contact Visit**');
+        var identity = leadRef ? ('🎯 **Contact Visit (' + leadRef + ')**') : '📍 **Dubai / UAE Contact Visit**';
 
         var timeString = new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dubai', hour: '2-digit', minute: '2-digit' }) + ' GST';
         var deviceType = window.innerWidth < 768 ? 'Mobile' : 'Desktop';
@@ -335,14 +335,14 @@ const baseUrl = import.meta.env.BASE_URL;
 
         // Also push custom event to GA4
         if (typeof gtag === 'function') {
-          gtag('event', 'vip_executive_view', {
-            lead_tag: leadRef || (isNasser ? 'nasser_alghurair' : 'dubai_direct'),
+          gtag('event', 'lead_executive_view', {
+            lead_tag: leadRef || 'dubai_direct',
             page_path: window.location.pathname
           });
         }
       }
 
-      // 5. Global listener for file downloads (PDF, XLSX, DOCX)
+      // 4. Global listener for file downloads (PDF, XLSX, DOCX)
       if (!window.__downloadAlertBound) {
         window.__downloadAlertBound = true;
         document.addEventListener('click', function(e) {
@@ -351,7 +351,7 @@ const baseUrl = import.meta.env.BASE_URL;
           var href = link.getAttribute('href') || '';
           if (/\.(pdf|xlsx|docx|zip)$/i.test(href)) {
             var fileName = href.split('/').pop().split('?')[0];
-            var dlIdentity = isNasser ? 'Nasser Paracha' : (leadRef || 'Dubai Contact');
+            var dlIdentity = leadRef || 'Dubai Contact';
             var dlMessage = '📥 🔥 **FILE DOWNLOAD TRIGGERED!**\n' +
               '• **File:** `' + fileName + '`\n' +
               '• **User:** **' + dlIdentity + '**\n' +
@@ -359,7 +359,7 @@ const baseUrl = import.meta.env.BASE_URL;
               '• **Time:** ' + new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dubai', hour: '2-digit', minute: '2-digit' }) + ' GST';
             notifyWebhook(dlMessage);
             if (typeof gtag === 'function') {
-              gtag('event', 'vip_file_download', { file: fileName, lead: dlIdentity });
+              gtag('event', 'lead_file_download', { file: fileName, lead: dlIdentity });
             }
           }
         });
