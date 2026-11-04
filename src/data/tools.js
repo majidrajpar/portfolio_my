@@ -284,5 +284,18 @@ export const tools = [
     isLive: true,
     batch: 9,
     ml: false,
+  },
+  {
+    id: 'restaurant-risk-calculator',
+    tier: 'catalog',
+    domain: 'Multi-Unit F&B Risk & Liquidity',
+    title: 'GCC Restaurant Risk & Working Capital Exposure Calculator',
+    description: 'Quantitative tail-risk engine modeling correlated operational shocks across multi-unit GCC food service portfolios. Computes VaR-95/CVaR-95 EBITDA loss, aggregator deduction leakage, and 52-week liquidity PDC default runway with zero data egress.',
+    category: 'Enterprise Risk',
+    href: '/portfolio_my/tools/restaurant-risk-calculator/',
+    isLive: true,
+    batch: 10,
+    ml: false,
+    rust: false,
   }
 ];
