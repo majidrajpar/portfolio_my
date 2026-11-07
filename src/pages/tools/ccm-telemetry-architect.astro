@@ -5,11 +5,68 @@ import NetworkCanvas from '../../components/NetworkCanvas';
 import CommercialBridgeCard from '../../components/CommercialBridgeCard.astro';
 const base = import.meta.env.BASE_URL;
 
-const title = "100% Continuous Controls Monitoring (CCM) Telemetry Architect | Majid Mumtaz";
-const description = "Translate internal audit control objectives into continuous SQL exception queries across P2P, O2C, Financial Close, and Payroll. Calibrate alert sensitivity and export production logic for Snowflake, BigQuery, Postgres, and Oracle.";
+const title = "Continuous Controls Monitoring (CCM) SQL Query Architect | Majid Mumtaz";
+const description = "Design 100% population continuous controls monitoring (CCM) SQL feeds for ERPs (SAP, Oracle, NetSuite). Generate automated exception rules for P2P, O2C, GL close, and payroll.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Continuous Controls Monitoring (CCM) Telemetry Architect",
+      "operatingSystem": "Web Browser",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Architect automated continuous controls monitoring (CCM) exception queries across ERP ledgers with exportable SQL dialects for Snowflake, BigQuery, PostgreSQL, and Oracle."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Continuous Controls Monitoring (CCM) in internal audit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Continuous Controls Monitoring (CCM) is an automated operational technology that inspects 100% of transaction populations in real time or near-real time. Rather than relying on periodic sample testing, CCM uses scripted SQL and streaming queries to detect control failures, authorization breaches, and ledger anomalies the moment they occur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between Continuous Controls Monitoring (CCM) and Continuous Auditing (CA)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CCM is owned and operated by management and second-line defense functions to maintain operational control integrity daily. Continuous Auditing (CA) is performed independently by internal audit to gather continuous assurance over whether controls and management monitoring are operating effectively."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which ERP platforms are supported by these CCM SQL patterns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The generated telemetry scripts map directly to core schema tables across SAP ECC / S/4HANA (BSEG, BKPF, EKKO, RBKP), Oracle Cloud ERP, NetSuite, and Microsoft Dynamics 365, with output syntax optimized for Snowflake, Google BigQuery, PostgreSQL, and Oracle SQL."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does CCM prevent false-positive alert fatigue in compliance teams?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Effective CCM architectures use calibrated threshold gates, fuzzy matching tolerance limits (Levenshtein distances), and rolling statistical standard deviation filters rather than rigid binary alerts, isolating true anomalies from normal operational velocity."
+          }
+        }
+      ]
+    }
+  ]
+};
 ---
 
 <BaseLayout title={title} description={description}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+
   <!-- Hero -->
   <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
     <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
@@ -21,7 +78,7 @@ const description = "Translate internal audit control objectives into continuous
         <span class="hero-chip mb-6 md:mb-7">100% Continuous Controls Monitoring</span>
         <h1 class="headline-display max-w-4xl text-[clamp(2.6rem,5.5vw,4.8rem)] font-black text-white">
           Continuous Controls Monitoring (CCM)
-          <span class="block text-[#f4c98b]">& Automated Query Architect.</span>
+          <span class="block text-[#f4c98b]">&amp; Automated Query Architect.</span>
         </h1>
         <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.08rem] md:leading-9">
           Replace retrospective 20-invoice sampling with continuous 100% telemetry. Define business cycle control objectives, calibrate alert thresholds against transaction populations, and generate production-grade SQL for Snowflake, BigQuery, PostgreSQL/DuckDB, and Oracle.
@@ -50,15 +107,115 @@ const description = "Translate internal audit control objectives into continuous
   </section>
 
   <!-- Main Interactive App Component -->
-  <section class="px-4 py-4 pb-20 md:px-8">
+  <section class="px-4 py-4 md:px-8">
     <div class="mx-auto max-w-7xl" data-reveal data-reveal-delay="1">
       <div class="soft-shell p-6 md:p-8">
         <CcmTelemetryArchitect client:load />
       </div>
+    </div>
+  </section>
 
+  <!-- Technical Reference Guide -->
+  <section class="px-4 py-8 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="soft-shell p-6 md:p-10 space-y-10" data-reveal>
+        <div>
+          <span class="eyebrow-label text-[#a33a21]">Engineering Reference</span>
+          <h2 class="mt-2 text-2xl md:text-3xl font-black text-[#181511]">
+            Architecting 100% Continuous Controls Monitoring Across Enterprise ERPs
+          </h2>
+          <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)] max-w-4xl">
+            In modern multi-entity corporations, manual quarterly sampling creates an unacceptable governance delay. Control breakdowns in accounts payable, aggregator remittance settlements, or manual journal entries can compound for months before an annual audit cycle discovers them. <strong>Continuous Controls Monitoring (CCM)</strong> inverts this dynamic by deploying scheduled queries directly against data warehouses and ERP replicas.
+          </p>
+        </div>
+
+        <!-- Four Core Telemetry Domains -->
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="rounded-xl border border-[color:var(--line-soft)] bg-white p-6 shadow-sm">
+            <h3 class="text-sm font-black uppercase tracking-wider text-[#a33a21]">1. Procure-to-Pay (P2P) Telemetry</h3>
+            <p class="mt-3 text-xs leading-6 text-slate-600">
+              Detects structural disbursement fraud and leakage patterns:
+            </p>
+            <ul class="mt-3 list-disc space-y-1.5 pl-4 text-xs text-slate-600">
+              <li><strong>Split Purchase Orders:</strong> Multiple POs created for the same vendor within 48 hours just below delegation of authority (DoA) approval limits.</li>
+              <li><strong>Fuzzy Duplicate Invoices:</strong> Matching vendor tax IDs with identical gross amounts or translocated invoice numbers (e.g., INV-1049 vs INV1049).</li>
+              <li><strong>Vendor Bank Account Drift:</strong> Bank detail modifications occurring within 10 days of a wire disbursement without dual-signoff logging.</li>
+            </ul>
+          </div>
+
+          <div class="rounded-xl border border-[color:var(--line-soft)] bg-white p-6 shadow-sm">
+            <h3 class="text-sm font-black uppercase tracking-wider text-[#a33a21]">2. Order-to-Cash (O2C) &amp; Remittance</h3>
+            <p class="mt-3 text-xs leading-6 text-slate-600">
+              Validates revenue completeness across multi-channel point-of-sale streams:
+            </p>
+            <ul class="mt-3 list-disc space-y-1.5 pl-4 text-xs text-slate-600">
+              <li><strong>Aggregator Commission Creep:</strong> Automatic diff between negotiated contract commission rates and actual merchant remittance deductions.</li>
+              <li><strong>Uncollected Cancellations:</strong> Orders canceled at POS after kitchen food production without corresponding aggregator reimbursement.</li>
+              <li><strong>Disproportionate Discounts:</strong> Cashier till discounts exceeding 3 standard deviations above peer store medians.</li>
+            </ul>
+          </div>
+
+          <div class="rounded-xl border border-[color:var(--line-soft)] bg-white p-6 shadow-sm">
+            <h3 class="text-sm font-black uppercase tracking-wider text-[#a33a21]">3. Financial Close &amp; General Ledger</h3>
+            <p class="mt-3 text-xs leading-6 text-slate-600">
+              Automates SOX 404 / ICOFR key controls over manual journal entries:
+            </p>
+            <ul class="mt-3 list-disc space-y-1.5 pl-4 text-xs text-slate-600">
+              <li><strong>Off-Hours Entries:</strong> High-value journals posted during weekends, public holidays, or between 11:00 PM and 5:00 AM.</li>
+              <li><strong>Round-Sum Suspense Clearing:</strong> Entries ending in multiple zeros posted to miscellaneous or clearing accounts immediately prior to close.</li>
+              <li><strong>Self-Approval Anomalies:</strong> Transactions where the initiator user ID equals the approver user ID in the ERP audit trail.</li>
+            </ul>
+          </div>
+
+          <div class="rounded-xl border border-[color:var(--line-soft)] bg-white p-6 shadow-sm">
+            <h3 class="text-sm font-black uppercase tracking-wider text-[#a33a21]">4. Operational &amp; Inventory Yields</h3>
+            <p class="mt-3 text-xs leading-6 text-slate-600">
+              Bridges financial ledgers directly to frontline operational physics:
+            </p>
+            <ul class="mt-3 list-disc space-y-1.5 pl-4 text-xs text-slate-600">
+              <li><strong>Recipe BOM Yield Variance:</strong> Theoretical ingredient consumption versus physical inventory depletion across batch cycles.</li>
+              <li><strong>Defrost Cycle Drift:</strong> IoT telemetry tracking chiller temperatures exceeding critical hygiene thresholds (>4°C for >120 min).</li>
+              <li><strong>Negative Stock Transactions:</strong> ERP transactions forced through negative inventory overrides masking theft or delayed GRNs.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div>
+          <span class="eyebrow-label text-[#a33a21]">Technical Clarifications</span>
+          <h3 class="mt-2 text-xl font-black text-[#181511]">Frequently Asked Questions about CCM Implementation</h3>
+          <div class="mt-6 space-y-4">
+            <details class="group rounded-lg border border-[color:var(--line-soft)] bg-white p-5 open:shadow-sm">
+              <summary class="flex cursor-pointer list-none items-center justify-between font-bold text-sm text-slate-900">
+                <span>Can CCM be implemented without purchasing expensive specialized GRC software?</span>
+                <span class="transition group-open:rotate-180">▾</span>
+              </summary>
+              <p class="mt-3 text-xs leading-6 text-slate-600">
+                Yes. The most robust CCM architectures avoid proprietary software lock-in by executing standard SQL queries natively inside existing cloud data warehouses (Snowflake, BigQuery, Databricks) or reporting replicas, distributing alerts via automated webhook notifications or secure Slack/Teams/Email feeds.
+              </p>
+            </details>
+
+            <details class="group rounded-lg border border-[color:var(--line-soft)] bg-white p-5 open:shadow-sm">
+              <summary class="flex cursor-pointer list-none items-center justify-between font-bold text-sm text-slate-900">
+                <span>How do external auditors (Big 4) view Continuous Controls Monitoring?</span>
+                <span class="transition group-open:rotate-180">▾</span>
+              </summary>
+              <p class="mt-3 text-xs leading-6 text-slate-600">
+                External audit teams rely heavily on well-documented CCM feeds as management review controls (MRCs) or automated IT-dependent controls. Providing 100% population exception logs with formal sign-off trails often reduces external audit sample sizes and substantive testing fees significantly.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Commercial Bridge -->
+  <section class="px-4 py-4 pb-20 md:px-8">
+    <div class="mx-auto max-w-7xl" data-reveal data-reveal-delay="1">
       <CommercialBridgeCard
         badge="Enterprise Production Architecture"
-        title="Cloud Kitchen ERM & Continuous Controls Monitoring (CCM) Telemetry Suite"
+        title="Cloud Kitchen ERM &amp; Continuous Controls Monitoring (CCM) Telemetry Suite"
         description="Direct deployment package including 100% automated SQL telemetry engines for aggregator 3-way reconciliation (FI-002), recipe BOM yield variance detection (OP-003), walk-in IoT defrost drift, dynamic risk appetite models, and Audit Committee charters."
         primaryUrl="https://majidmumtaz.gumroad.com/l/erm-ccm-suite"
         primaryLabel="Access Production Suite · $169 / $399"

@@ -4,12 +4,56 @@ import NomuGovernanceReadiness from '../../components/NomuGovernanceReadiness';
 import NetworkCanvas from '../../components/NetworkCanvas';
 import CommercialBridgeCard from '../../components/CommercialBridgeCard.astro';
 const base = import.meta.env.BASE_URL;
+
+const title = "Tadawul Nomu Pre-IPO Governance Readiness Diagnostic | Majid Mumtaz";
+const description = "Saudi Capital Market Authority (CMA) and Tadawul Nomu governance readiness evaluation. Assess Board independence, Audit Committee mandate, ICOFR internal controls, and related-party disclosure workflows.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Tadawul Nomu Pre-IPO Governance Readiness Diagnostic",
+      "operatingSystem": "Web Browser",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Interactive diagnostic assessing private Saudi enterprises against CMA Corporate Governance Regulations and Tadawul Nomu parallel market listing rules."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the core governance requirements for listing on Tadawul Nomu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Key governance requirements under Saudi CMA regulations include establishing an independent Audit Committee (minimum 3 members, at least one financial expert), documented Board and committee charters, an independent Internal Audit function, formal conflict of interest and related-party disclosure policies, and sound internal control over financial reporting (ICOFR)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the new Saudi Companies Law affect Nomu IPO candidates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Royal Decree M/132 modernized corporate governance in Saudi Arabia, introducing flexible share structures, statutory indemnification rules for directors, streamlined related-party approval thresholds, and strict compliance duties that must be operational before prospectus submission."
+          }
+        }
+      ]
+    }
+  ]
+};
 ---
 
 <BaseLayout
-  title="Tadawul Nomu Pre-IPO Governance Readiness Diagnostic | Majid Mumtaz"
-  description="Saudi Capital Market Authority (CMA) and Tadawul Nomu governance readiness evaluation. Assess Board independence, Audit Committee mandate, ICOFR internal controls, and related-party disclosure workflows."
+  title={title}
+  description={description}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+
   <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
     <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
       <NetworkCanvas client:load nodeCount={35} />

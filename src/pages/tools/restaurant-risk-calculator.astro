@@ -5,10 +5,51 @@ import NetworkCanvas from '../../components/NetworkCanvas';
 const base = import.meta.env.BASE_URL;
 
 const title = "GCC Restaurant Risk & Working Capital Exposure Calculator | Majid Mumtaz";
-const description = "Quantitative tail-risk engine modeling correlated operational shocks, Gaussian copula VaR-95/CVaR-95 EBITDA loss, aggregator deduction leakage, and 52-week liquidity PDC default runway.";
+const description = "Quantitative risk simulation for GCC restaurants and cloud kitchens. Model correlated shocks: Balady/ADAFSA fines, aggregator deduction creep, and 52-week PDC cash runway.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "GCC Restaurant Risk & Working Capital Exposure Calculator",
+      "operatingSystem": "Web Browser",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Multivariate Gaussian copula and 52-week post-dated cheque (PDC) liquidity stress-testing engine tailored for UAE, Saudi, and GCC multi-unit food service operators."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What operational risks are unique to GCC food service operations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Key GCC restaurant operational risks include: (1) aggressive municipal regulatory sweeps (e.g., Balady in Saudi Arabia, ADAFSA/Dubai Municipality in UAE), (2) high aggregator market concentration and take-rate deduction creep, (3) extreme summer HVAC chiller failures spoiling inventory, and (4) commercial lease structures reliant on post-dated cheques (PDCs) creating liquidity cliff-edges."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does post-dated cheque (PDC) default risk affect GCC hospitality businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the UAE and Saudi Arabia, commercial leases and key supplier contracts frequently require quarterly post-dated cheques. If revenue dips due to seasonal summer lulls or regulatory halts, PDC presentations create immediate liquidity distress and legal exposure under GCC commercial debt statutes."
+          }
+        }
+      ]
+    }
+  ]
+};
 ---
 
 <BaseLayout title={title} description={description}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+
   <!-- Hero -->
   <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
     <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
@@ -19,7 +60,7 @@ const description = "Quantitative tail-risk engine modeling correlated operation
         </a>
         <span class="hero-chip mb-6 md:mb-7">Enterprise Risk & Operational Resilience</span>
         <h1 class="headline-display max-w-4xl text-[clamp(2.6rem,5.5vw,4.8rem)] font-black text-white">
-          GCC Restaurant Risk &
+          GCC Restaurant Risk &amp;
           <span class="block text-[#f4c98b]">Working Capital Calculator.</span>
         </h1>
         <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.08rem] md:leading-9">
@@ -42,18 +83,63 @@ const description = "Quantitative tail-risk engine modeling correlated operation
     </div>
   </section>
 
-  <section class="px-4 md:px-8">
-    <p class="mx-auto max-w-7xl text-sm leading-7 text-[color:var(--text-secondary)]">
-      Multi-unit food service risk quantification architecture modeling 5 correlated operational shocks (Balady / ADAFSA municipal sweeps, extreme summer chiller lockouts, port customs shelf-life rejections, aggregator deduction creep, and Qiwa supervisory localization) paired with a 52-week post-dated cheque liquidity stress test.
-    </p>
-  </section>
-
-  <!-- Interactive Quantitative Tool -->
-  <section class="px-4 py-6 pb-20 md:px-8">
+  <!-- Tool -->
+  <section class="px-4 py-4 md:px-8">
     <div class="mx-auto max-w-7xl" data-reveal data-reveal-delay="1">
       <div class="soft-shell p-6 md:p-10">
         <GCCRestaurantExposureCalculator client:load />
       </div>
+    </div>
+  </section>
+
+  <!-- Methodological Guide -->
+  <section class="px-4 py-8 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="soft-shell p-6 md:p-10 space-y-8" data-reveal>
+        <div>
+          <span class="eyebrow-label text-[#a33a21]">F&B Risk Architecture</span>
+          <h2 class="mt-2 text-2xl md:text-3xl font-black text-[#181511]">
+            Quantifying Correlated Tail-Risk in GCC Food Service &amp; Cloud Kitchens
+          </h2>
+          <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)] max-w-4xl">
+            Multi-unit restaurant operators across Dubai, Riyadh, and Jeddah frequently manage risk in silos: food safety is tracked by QA, delivery platform commissions by commercial finance, and lease commitments by treasury. In reality, operational shocks in the GCC are <strong>heavily correlated</strong>. A municipal inspection closure during peak summer trading triggers immediate revenue loss while fixed quarterly post-dated cheques continue to present at the bank.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="rounded-xl border border-[color:var(--line-soft)] bg-white p-5 shadow-sm">
+            <h3 class="text-xs font-black uppercase tracking-wider text-[#a33a21]">Balady &amp; ADAFSA Compliance</h3>
+            <p class="mt-2 text-xs leading-6 text-slate-600">
+              Regulatory compliance enforcement in KSA and UAE operates with deterministic grading. Unannounced sweeps can impose immediate store suspensions, halting trading during peak delivery hours.
+            </p>
+          </div>
+          <div class="rounded-xl border border-[color:var(--line-soft)] bg-white p-5 shadow-sm">
+            <h3 class="text-xs font-black uppercase tracking-wider text-[#a33a21]">Aggregator Take-Rate Creep</h3>
+            <p class="mt-2 text-xs leading-6 text-slate-600">
+              When 60-80% of volume flows through third-party platforms (Jahez, HungerStation, Talabat, Deliveroo, Noon), subtle fee increases and uncollected cancellation deductions erode unit-level EBITDA.
+            </p>
+          </div>
+          <div class="rounded-xl border border-[color:var(--line-soft)] bg-white p-5 shadow-sm">
+            <h3 class="text-xs font-black uppercase tracking-wider text-[#a33a21]">52-Week PDC Cash Runway</h3>
+            <p class="mt-2 text-xs leading-6 text-slate-600">
+              Post-dated cheques create lumpy, non-negotiable cash outflows. Modeling cumulative net cash balance across 52 weeks reveals exact solvency pinch-points well before liquidity breaks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-4 py-8 pb-20 md:px-8">
+    <div class="editorial-panel mx-auto max-w-7xl px-6 py-12 text-center" data-reveal>
+      <h2 class="text-3xl font-black text-white mb-4">Managing Multi-Unit GCC F&amp;B Exposure?</h2>
+      <p class="text-white/70 mb-8 max-w-2xl mx-auto text-sm leading-relaxed">
+        Deploy our complete 18-file ERM + Continuous Controls Monitoring (CCM) architecture tailored specifically for cloud kitchens, QSR chains, and regional food brands.
+      </p>
+      <a href={`${base}erm-ccm-suite/`} class="btn-primary">
+        Inspect the F&amp;B ERM + CCM Suite
+      </a>
     </div>
   </section>
 </BaseLayout>
