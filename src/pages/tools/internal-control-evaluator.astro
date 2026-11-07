@@ -4,12 +4,56 @@ import InternalControlEvaluator from '../../components/InternalControlEvaluator.
 import NetworkCanvas from '../../components/NetworkCanvas';
 import CommercialBridgeCard from '../../components/CommercialBridgeCard.astro';
 const base = import.meta.env.BASE_URL;
+
+const title = "COSO 2013 Internal Control Evaluator & ICOFR Assessment | Majid Mumtaz";
+const description = "Interactive internal controls evaluator based on COSO 2013 17 principles. Assess Control Environment, Risk Assessment, Control Activities, Information & Communication, and Monitoring.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "COSO 2013 Internal Control Evaluator",
+      "operatingSystem": "Web Browser",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Interactive internal control diagnostic assessing organizations against the 5 components and 17 principles of the COSO 2013 Internal Control - Integrated Framework."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the five components of the COSO 2013 Framework?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The five COSO components are: (1) Control Environment (tone at the top, ethical values, board oversight), (2) Risk Assessment (identifying and analyzing risks to objectives), (3) Control Activities (policies, procedures, and automated controls), (4) Information and Communication (relevant quality data flows), and (5) Monitoring Activities (ongoing evaluations and deficiency remediation)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What distinguishes a significant deficiency from a material weakness in internal control?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Under PCAOB and AICPA auditing standards, a significant deficiency is less severe than a material weakness yet important enough to merit attention by those charged with governance. A material weakness is a reasonable possibility that a material misstatement of the financial statements will not be prevented, or detected and corrected, on a timely basis."
+          }
+        }
+      ]
+    }
+  ]
+};
 ---
 
 <BaseLayout
-  title="Internal Control Evaluator | Majid Mumtaz"
-  description="Evaluate your organisation's control environment across all five COSO 2013 components. ML-powered tool that identifies deficiency types — from control gaps to material weaknesses — and generates a prioritised action plan."
+  title={title}
+  description={description}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+
 
   <!-- Hero -->
   <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">

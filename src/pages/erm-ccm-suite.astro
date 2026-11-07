@@ -9,6 +9,45 @@ import {
 } from '../data/ermSuite.js';
 
 const base = import.meta.env.BASE_URL;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Product",
+      "name": "Cloud Kitchen & Multi-Brand F&B ERM + CCM Suite",
+      "image": "https://majidrajpar.github.io/portfolio_my/images/erm-ccm-suite/Gumroad_Cover_Banner_1280x720.png",
+      "description": "18-file white-label Enterprise Risk Management (ERM) and Continuous Controls Monitoring (CCM) governance suite for cloud kitchens, QSR networks, and multi-brand F&B operators.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Veritux Advisory"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "169",
+        "highPrice": "399",
+        "priceCurrency": "USD",
+        "offerCount": "2",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Internal Operator License",
+            "price": "169",
+            "priceCurrency": "USD",
+            "url": "https://majidmumtaz.gumroad.com/l/erm-ccm-suite"
+          },
+          {
+            "@type": "Offer",
+            "name": "Commercial Advisory License",
+            "price": "399",
+            "priceCurrency": "USD",
+            "url": "https://majidmumtaz.gumroad.com/l/erm-ccm-suite"
+          }
+        ]
+      }
+    }
+  ]
+};
 ---
 
 <BaseLayout
@@ -16,6 +55,7 @@ const base = import.meta.env.BASE_URL;
   description="18-file white-label Enterprise Risk Management (ERM) and Continuous Controls Monitoring (CCM) governance suite for cloud kitchens, QSR networks, and multi-brand F&B operators."
   ogImage="/portfolio_my/images/erm-ccm-suite/Gumroad_Cover_Banner_1280x720.png"
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <script src="https://gumroad.com/js/gumroad.js" is:inline></script>
 
   <!-- Hero Section -->

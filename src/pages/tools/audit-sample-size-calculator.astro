@@ -4,11 +4,69 @@ import AuditSampleSizeCalculator from '../../components/AuditSampleSizeCalculato
 import NetworkCanvas from '../../components/NetworkCanvas';
 const base = import.meta.env.BASE_URL;
 
-const title = "Audit Sample Size & Precision Sizer | Majid Mumtaz";
-const description = "Statistically rigorous attribute sampling calculator with Finite Population Correction (FPC) for AICPA and IIA controls testing.";
+const title = "Audit Sample Size Calculator | AICPA Attribute Sampling & FPC | Majid Mumtaz";
+const description = "Statistically defensible audit sample size calculator for internal auditors, SOX 404, and external audit teams. Uses AICPA AU-C 530 attribute sampling with Finite Population Correction (FPC).";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Audit Sample Size & Precision Sizer",
+      "operatingSystem": "Web Browser",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Interactive AICPA AU-C 530 and IIA attribute sampling calculator with Finite Population Correction (FPC) for testing internal controls over financial reporting (ICOFR/SOX)."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is audit sample size calculated for internal controls testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Audit sample size for attribute testing is determined by four key parameters: (1) Confidence Level / Desired Assurance (typically 90% or 95%), (2) Tolerable Exception Rate (TER, usually 5% to 10%), (3) Expected Population Deviation Rate (EPDR / EER, typically 0% to 2%), and (4) Population Size (N). When populations are under 5,000 items, Finite Population Correction (FPC) is applied to adjust sample sizes downward without compromising statistical validity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Finite Population Correction (FPC) in auditing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Finite Population Correction (FPC) is a statistical adjustment applied when the sample size represents a significant proportion of the total population (typically >10%). FPC reduces the required sample size while preserving the desired confidence level and precision, preventing over-auditing in smaller populations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What sample size is typically required for SOX 404 control testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For manual recurring controls under PCAOB and AICPA guidance, standard sample sizes are commonly 25 to 40 items for daily controls, 2 to 5 for weekly controls, 2 for monthly controls, and 1 for quarterly or annual controls. However, high-risk controls or controls with anticipated exceptions require statistical attribute sampling to ensure defensible audit evidence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are audit teams shifting from sample testing to 100% Continuous Controls Monitoring (CCM)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Traditional 25-invoice sampling leaves a 99%+ blind spot in high-volume transaction environments such as point-of-sale, procurement, and aggregator settlements. 100% Continuous Controls Monitoring (CCM) automates data testing across the entire ledger population, eliminating sampling risk and detecting anomalies in real time rather than months after close."
+          }
+        }
+      ]
+    }
+  ]
+};
 ---
 
 <BaseLayout title={title} description={description}>
+  <!-- Schema.org Application & FAQ JSON-LD -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+
   <!-- Hero -->
   <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
     <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
@@ -17,13 +75,13 @@ const description = "Statistically rigorous attribute sampling calculator with F
         <a href={`${base}tools/`} class="mb-7 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white">
           &larr; Back to Tools
         </a>
-        <span class="hero-chip mb-6 md:mb-7">AICPA & IIA Sampling Standards</span>
+        <span class="hero-chip mb-6 md:mb-7">AICPA AU-C 530 & IIA Sampling Standards</span>
         <h1 class="headline-display max-w-4xl text-[clamp(2.8rem,6vw,5rem)] font-black text-white">
           Audit Sample Size &
           <span class="block text-[#f4c98b]">Precision Sizer.</span>
         </h1>
         <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.08rem] md:leading-9">
-          Calculate statistically defensible sample sizes for attribute testing with finite population corrections. Diagnose the mathematical blind spot between sample testing and 100% continuous controls monitoring.
+          Calculate statistically defensible sample sizes for attribute testing with finite population corrections (FPC). Compute required sample sizes across confidence levels, tolerable exception rates, and population sizes for SOX 404, internal audit, and external assurance engagements.
         </p>
       </div>
     </div>
@@ -42,18 +100,161 @@ const description = "Statistically rigorous attribute sampling calculator with F
     </div>
   </section>
 
-  <section class="px-4 md:px-8">
-    <p class="mx-auto max-w-7xl text-sm leading-7 text-[color:var(--text-secondary)]">
-      AICPA attribute sampling engine with Finite Population Correction (FPC). Compute statistically defensible sample sizes and diagnose sampling risk vs 100% continuous controls monitoring.
-    </p>
-  </section>
-
   <!-- Tool -->
-  <section class="px-4 py-4 pb-20 md:px-8">
+  <section class="px-4 py-4 md:px-8">
     <div class="mx-auto max-w-7xl" data-reveal data-reveal-delay="1">
       <div class="soft-shell p-6 md:p-10">
         <AuditSampleSizeCalculator client:load />
       </div>
     </div>
   </section>
+
+  <!-- Educational Reference Guide for Technical SEO -->
+  <section class="px-4 py-8 md:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="soft-shell p-6 md:p-10 space-y-10" data-reveal>
+        <div>
+          <span class="eyebrow-label text-[#a33a21]">Auditor's Technical Reference</span>
+          <h2 class="mt-2 text-2xl md:text-3xl font-black text-[#181511]">
+            Understanding Statistical Attribute Sampling in Internal Controls Testing
+          </h2>
+          <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)] max-w-4xl">
+            Under <strong>AICPA AU-C Section 530 (Audit Sampling)</strong> and <strong>IIA Global Internal Audit Standards (GIAS 2024 Domain V)</strong>, attribute sampling is the primary statistical methodology used to test operating effectiveness of controls. Unlike substantive dollar-unit sampling, attribute sampling answers a binary question: <em>Did the control operate in accordance with prescribed criteria, or did it fail?</em>
+          </p>
+        </div>
+
+        <!-- Formulas Grid -->
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="rounded-xl border border-[color:var(--line-soft)] bg-white p-6 shadow-sm">
+            <h3 class="text-sm font-black uppercase tracking-wider text-[#a33a21]">1. Base Sample Size Formula (Binomial Model)</h3>
+            <p class="mt-3 text-xs leading-6 text-slate-600">
+              When sampling from large populations where population size \(N\) exceeds 5,000 units, the initial sample size \(n_0\) is calculated using the Poisson/binomial approximation:
+            </p>
+            <div class="mt-4 rounded-lg bg-slate-900 p-4 font-mono text-xs text-amber-300">
+              n₀ = R(CL) / (TER - EPDR)
+            </div>
+            <p class="mt-3 text-xs text-slate-500">
+              Where <strong>R(CL)</strong> is the reliability factor for the chosen confidence level (e.g., 3.00 for 95% confidence with 0 zero expected errors), <strong>TER</strong> is the Tolerable Exception Rate, and <strong>EPDR</strong> is the Expected Population Deviation Rate.
+            </p>
+          </div>
+
+          <div class="rounded-xl border border-[color:var(--line-soft)] bg-white p-6 shadow-sm">
+            <h3 class="text-sm font-black uppercase tracking-wider text-[#a33a21]">2. Finite Population Correction (FPC)</h3>
+            <p class="mt-3 text-xs leading-6 text-slate-600">
+              When testing smaller transaction populations (e.g., monthly reconciliations, wire approvals, or vendor master changes) where \(n_0 / N > 0.05\), unadjusted sampling over-samples. The corrected sample size \(n\) is:
+            </p>
+            <div class="mt-4 rounded-lg bg-slate-900 p-4 font-mono text-xs text-amber-300">
+              n_adj = n₀ / [1 + (n₀ - 1) / N]
+            </div>
+            <p class="mt-3 text-xs text-slate-500">
+              This mathematical correction ensures defensible statistical power without burdening fieldwork teams with redundant testing.
+            </p>
+          </div>
+        </div>
+
+        <!-- Standard Benchmark Matrix -->
+        <div>
+          <h3 class="text-lg font-black text-[#181511]">Standard Attribute Sample Sizes (Zero Expected Deviations)</h3>
+          <p class="mt-2 text-xs text-slate-600">
+            Commonly accepted sample sizes across Big 4 accounting firms and CAE audit charters for populations \(N &gt; 2,000\):
+          </p>
+          <div class="mt-4 overflow-x-auto rounded-lg border border-[color:var(--line-soft)]">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="bg-[#181511] text-white">
+                  <th class="px-5 py-3.5 text-left font-black uppercase tracking-wider">Assessment of Control Risk</th>
+                  <th class="px-5 py-3.5 text-left font-black uppercase tracking-wider">Confidence Level</th>
+                  <th class="px-5 py-3.5 text-left font-black uppercase tracking-wider">Tolerable Exception Rate (TER)</th>
+                  <th class="px-5 py-3.5 text-left font-black uppercase tracking-wider">Recommended Sample Size (n)</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white">
+                <tr class="hover:bg-slate-50">
+                  <td class="px-5 py-3 font-semibold text-slate-900">Low Assessed Risk (Key Control)</td>
+                  <td class="px-5 py-3 text-slate-600">95% (High Assurance)</td>
+                  <td class="px-5 py-3 text-slate-600">5%</td>
+                  <td class="px-5 py-3 font-bold text-[#a33a21]">59 items</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="px-5 py-3 font-semibold text-slate-900">Moderate Assessed Risk</td>
+                  <td class="px-5 py-3 text-slate-600">90% (Moderate Assurance)</td>
+                  <td class="px-5 py-3 text-slate-600">7%</td>
+                  <td class="px-5 py-3 font-bold text-[#a33a21]">33 items</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="px-5 py-3 font-semibold text-slate-900">Standard Recurring Control</td>
+                  <td class="px-5 py-3 text-slate-600">90%</td>
+                  <td class="px-5 py-3 text-slate-600">10%</td>
+                  <td class="px-5 py-3 font-bold text-[#a33a21]">25 items</td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="px-5 py-3 font-semibold text-slate-900">Exploratory / Walkthrough</td>
+                  <td class="px-5 py-3 text-slate-600">N/A (Design Test)</td>
+                  <td class="px-5 py-3 text-slate-600">N/A</td>
+                  <td class="px-5 py-3 font-bold text-[#a33a21]">1 - 5 items</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- The Paradigm Shift: Sampling vs CCM -->
+        <div class="rounded-xl border-l-4 border-[#a33a21] bg-[#faf8f5] p-6">
+          <h3 class="text-base font-black text-[#181511]">The Audit Blind Spot: Why Sampling Fails in Digital Operations</h3>
+          <p class="mt-2 text-xs leading-6 text-slate-700">
+            A manual sample of 25 invoices in a retail or food-tech operation generating 2,000,000 orders annually covers exactly <strong>0.00125%</strong> of transactions. If an aggregator billing discrepancy or recipe yield leak affects 0.8% of tickets, a 25-item sample has over an <strong>80% probability of missing the leakage entirely</strong>. Modern audit methodology shifts electronic ledger testing to 100% Continuous Controls Monitoring (CCM), reserving attribute sampling strictly for manual operational walk-throughs and inventory physical counts.
+          </p>
+        </div>
+
+        <!-- FAQ Section -->
+        <div>
+          <span class="eyebrow-label text-[#a33a21]">Frequently Asked Questions</span>
+          <h3 class="mt-2 text-xl font-black text-[#181511]">Audit Sampling & Methodology FAQs</h3>
+          <div class="mt-6 space-y-4">
+            <details class="group rounded-lg border border-[color:var(--line-soft)] bg-white p-5 open:shadow-sm">
+              <summary class="flex cursor-pointer list-none items-center justify-between font-bold text-sm text-slate-900">
+                <span>What is the difference between attribute sampling and variable sampling?</span>
+                <span class="transition group-open:rotate-180">▾</span>
+              </summary>
+              <p class="mt-3 text-xs leading-6 text-slate-600">
+                Attribute sampling tests for the presence or absence of a characteristic (e.g., proper approval signature, three-way match performed). Variable sampling, conversely, estimates dollar values or monetary misstatements in financial balances (e.g., inventory valuation, accounts receivable confirmation).
+              </p>
+            </details>
+
+            <details class="group rounded-lg border border-[color:var(--line-soft)] bg-white p-5 open:shadow-sm">
+              <summary class="flex cursor-pointer list-none items-center justify-between font-bold text-sm text-slate-900">
+                <span>What happens if an auditor finds one exception in an attribute sample?</span>
+                <summary class="hidden"></summary>
+                <p class="mt-3 text-xs leading-6 text-slate-600">
+                  If zero exceptions were planned and one deviation is identified, the calculated Upper Exception Limit (UEL) will exceed the Tolerable Exception Rate (TER). Under AICPA and PCAOB guidelines, the auditor cannot conclude that the control operated effectively without either: (1) expanding the sample substantially, (2) testing compensating controls, or (3) classifying the finding as a control deficiency.
+                </p>
+            </details>
+
+            <details class="group rounded-lg border border-[color:var(--line-soft)] bg-white p-5 open:shadow-sm">
+              <summary class="flex cursor-pointer list-none items-center justify-between font-bold text-sm text-slate-900">
+                <span>Can this calculator be cited in audit workpapers?</span>
+                <summary class="hidden"></summary>
+                <p class="mt-3 text-xs leading-6 text-slate-600">
+                  Yes. The calculator strictly applies AICPA AU-C 530 and IIA statistical attribute sampling formulas with Finite Population Correction (FPC). You can document the confidence level, tolerable rate, expected rate, population size, and resulting sample size directly in your working papers.
+                </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="px-4 py-8 pb-20 md:px-8">
+    <div class="editorial-panel mx-auto max-w-7xl px-6 py-12 text-center" data-reveal>
+      <h2 class="text-3xl font-black text-white mb-4">Moving Beyond Sample-Based Audit Risk?</h2>
+      <p class="text-white/70 mb-8 max-w-2xl mx-auto text-sm leading-relaxed">
+        Discover how we deploy 100% automated population monitoring to replace manual 25-sample testing across multi-jurisdiction ledgers.
+      </p>
+      <a href={`${base}contact/`} class="btn-primary">
+        Schedule a Technical Advisory Consultation
+      </a>
+    </div>
+  </section>
 </BaseLayout>
+

@@ -3,12 +3,56 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import RiskMatrix from '../../components/RiskMatrix.jsx';
 import NetworkCanvas from '../../components/NetworkCanvas';
 const base = import.meta.env.BASE_URL;
+
+const title = "5x5 Risk Assessment Matrix Builder & Heatmap Tool | Majid Mumtaz";
+const description = "Interactive 5x5 Likelihood x Impact risk matrix builder. Plot enterprise risks, evaluate inherent vs residual exposure, and generate audit-grade risk heatmaps.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "5x5 Risk Assessment Matrix Builder",
+      "operatingSystem": "Web Browser",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Interactive 5x5 Likelihood and Impact enterprise risk matrix builder calibrated for ERM committees and board audit governance."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is risk scored on a 5x5 risk matrix?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Risk score is calculated as Likelihood (rated 1 to 5) multiplied by Impact (rated 1 to 5), yielding a score between 1 and 25. Scores are categorized into Low (1-5), Moderate (6-11), High (12-19), and Critical (20-25) risk zones."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between Inherent Risk and Residual Risk?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Inherent risk is the level of risk existing in the absence of any management action or internal controls. Residual risk is the remaining risk after internal controls, risk mitigations, and supervisory monitoring have been implemented."
+          }
+        }
+      ]
+    }
+  ]
+};
 ---
 
 <BaseLayout
-  title="Risk Assessment Matrix Builder | Majid Mumtaz"
-  description="Build and visualise a risk matrix by plotting organisational risks on a colour-coded likelihood × impact grid. Free, browser-based — no data stored."
+  title={title}
+  description={description}
 >
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+
   <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
     <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
       <NetworkCanvas client:load nodeCount={35} />
