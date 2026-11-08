@@ -20,7 +20,6 @@ const Navbar = ({ initialPath = '' }) => {
   const isCurrent = (href: string) => currentPath === href || currentPath === href.replace(/\/$/, '');
 
   const shelfItems: ShelfItem[] = [
-    { label: 'Trench Series', desc: 'Editorial satire & telemetry blueprints', href: `${baseUrl}trench-series/` },
     { label: 'Builds', desc: 'Custom software & prototypes', href: `${baseUrl}software/` },
     { label: 'ERM & CCM Suite', desc: '18-file continuous monitoring programme', href: `${baseUrl}erm-ccm-suite/` },
     { label: 'RoleForge', desc: 'Agentic audit triage benchmark trace', href: `${baseUrl}roleforge/` },
@@ -110,7 +109,7 @@ const Navbar = ({ initialPath = '' }) => {
   const navItems = [
     { label: 'Case Studies', href: `${baseUrl}projects/` },
     { label: 'Tools', href: `${baseUrl}tools/` },
-    { label: 'Trench Series', href: `${baseUrl}trench-series/` },
+    { label: 'Ed/Trench Series', href: `${baseUrl}trench-series/` },
     { label: 'Resources', href: `${baseUrl}resources/` },
   ];
 

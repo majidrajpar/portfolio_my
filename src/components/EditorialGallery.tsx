@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -25,10 +25,27 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
   const [activeFilter, setActiveFilter] = useState<string>('All');
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [zoomLevel, setZoomLevel] = useState<number>(1);
+  const [panOffset, setPanOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const [isMounted, setIsMounted] = useState<boolean>(false);
+  const isDraggingRef = useRef(false);
+  const dragStartRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
 
   useEffect(() => {
     setIsMounted(true);
+    const syncFromHash = () => {
+      if (typeof window !== 'undefined' && window.location.hash) {
+        const initialId = window.location.hash.replace(/^#/, '');
+        const matched = infographics.find((item) => item.id === initialId);
+        if (matched) {
+          setSelectedId(matched.id);
+          document.body.style.overflow = 'hidden';
+        }
+      }
+    };
+
+    syncFromHash();
+    window.addEventListener('hashchange', syncFromHash);
+    return () => window.removeEventListener('hashchange', syncFromHash);
   }, []);
 
   const categories = [
@@ -55,34 +72,66 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
   const openLightbox = (id: string) => {
     setSelectedId(id);
     setZoomLevel(1);
+    setPanOffset({ x: 0, y: 0 });
     document.body.style.overflow = 'hidden';
+    if (typeof window !== 'undefined') {
+      history.replaceState(null, '', `#${id}`);
+    }
   };
 
   const closeLightbox = useCallback(() => {
     setSelectedId(null);
     setZoomLevel(1);
+    setPanOffset({ x: 0, y: 0 });
     document.body.style.overflow = '';
+    if (typeof window !== 'undefined') {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
   }, []);
 
   const showNext = useCallback(() => {
-    if (selectedIndex < filteredItems.length - 1) {
-      setSelectedId(filteredItems[selectedIndex + 1].id);
+    const nextItem =
+      selectedIndex < filteredItems.length - 1 ? filteredItems[selectedIndex + 1] : filteredItems[0];
+    if (nextItem) {
+      setSelectedId(nextItem.id);
       setZoomLevel(1);
-    } else {
-      setSelectedId(filteredItems[0].id);
-      setZoomLevel(1);
+      setPanOffset({ x: 0, y: 0 });
+      if (typeof window !== 'undefined') {
+        history.replaceState(null, '', `#${nextItem.id}`);
+      }
     }
   }, [selectedIndex, filteredItems]);
 
   const showPrev = useCallback(() => {
-    if (selectedIndex > 0) {
-      setSelectedId(filteredItems[selectedIndex - 1].id);
+    const prevItem =
+      selectedIndex > 0 ? filteredItems[selectedIndex - 1] : filteredItems[filteredItems.length - 1];
+    if (prevItem) {
+      setSelectedId(prevItem.id);
       setZoomLevel(1);
-    } else {
-      setSelectedId(filteredItems[filteredItems.length - 1].id);
-      setZoomLevel(1);
+      setPanOffset({ x: 0, y: 0 });
+      if (typeof window !== 'undefined') {
+        history.replaceState(null, '', `#${prevItem.id}`);
+      }
     }
   }, [selectedIndex, filteredItems]);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (zoomLevel <= 1) return;
+    isDraggingRef.current = true;
+    dragStartRef.current = { x: e.clientX - panOffset.x, y: e.clientY - panOffset.y };
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDraggingRef.current || zoomLevel <= 1) return;
+    setPanOffset({
+      x: e.clientX - dragStartRef.current.x,
+      y: e.clientY - dragStartRef.current.y,
+    });
+  };
+
+  const handleMouseUp = () => {
+    isDraggingRef.current = false;
+  };
 
   // Keyboard navigation
   useEffect(() => {
@@ -215,7 +264,10 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
                     <ZoomIn size={16} />
                   </button>
                   <button
-                    onClick={() => setZoomLevel(1)}
+                    onClick={() => {
+                      setZoomLevel(1);
+                      setPanOffset({ x: 0, y: 0 });
+                    }}
                     title="Reset Zoom"
                     className="p-1.5 hover:bg-white/10 rounded"
                   >
@@ -244,17 +296,28 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
               </div>
 
               {/* Main Image Stage (Left / Center) */}
-              <div className="relative flex-1 h-[55%] lg:h-full bg-[#090b0e] flex items-center justify-center overflow-auto p-4 select-none">
+              <div
+                className="relative flex-1 h-[55%] lg:h-full bg-[#090b0e] flex items-center justify-center overflow-hidden p-4 select-none"
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={handleMouseUp}
+              >
                 <div
-                  className="transition-transform duration-200 ease-out flex items-center justify-center max-h-full max-w-full"
+                  className="transition-transform duration-100 ease-out flex items-center justify-center max-h-full max-w-full"
                   style={{
-                    transform: `scale(${zoomLevel})`,
+                    transform: `translate(${panOffset.x}px, ${panOffset.y}px) scale(${zoomLevel})`,
                     cursor: zoomLevel > 1 ? 'grab' : 'zoom-in',
                   }}
+                  onMouseDown={handleMouseDown}
                   onClick={() => {
-                    if (zoomLevel === 1) setZoomLevel(1.5);
-                    else if (zoomLevel === 1.5) setZoomLevel(2);
-                    else setZoomLevel(1);
+                    if (zoomLevel === 1) {
+                      setZoomLevel(1.5);
+                    } else if (zoomLevel === 1.5) {
+                      setZoomLevel(2);
+                    } else {
+                      setZoomLevel(1);
+                      setPanOffset({ x: 0, y: 0 });
+                    }
                   }}
                 >
                   <img
