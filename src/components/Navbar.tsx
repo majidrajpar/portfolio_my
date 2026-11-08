@@ -20,6 +20,7 @@ const Navbar = ({ initialPath = '' }) => {
   const isCurrent = (href: string) => currentPath === href || currentPath === href.replace(/\/$/, '');
 
   const shelfItems: ShelfItem[] = [
+    { label: 'Trench Series', desc: 'Editorial satire & telemetry blueprints', href: `${baseUrl}trench-series/` },
     { label: 'Builds', desc: 'Custom software & prototypes', href: `${baseUrl}software/` },
     { label: 'ERM & CCM Suite', desc: '18-file continuous monitoring programme', href: `${baseUrl}erm-ccm-suite/` },
     { label: 'RoleForge', desc: 'Agentic audit triage benchmark trace', href: `${baseUrl}roleforge/` },
@@ -109,6 +110,7 @@ const Navbar = ({ initialPath = '' }) => {
   const navItems = [
     { label: 'Case Studies', href: `${baseUrl}projects/` },
     { label: 'Tools', href: `${baseUrl}tools/` },
+    { label: 'Trench Series', href: `${baseUrl}trench-series/` },
     { label: 'Resources', href: `${baseUrl}resources/` },
   ];
 
@@ -138,7 +140,7 @@ const Navbar = ({ initialPath = '' }) => {
         </a>
 
         {/* Center: Nav items (desktop) */}
-        <div className="hidden md:flex items-center gap-5 lg:gap-7">
+        <div className="hidden md:flex items-center gap-3.5 lg:gap-5 xl:gap-6">
           {navItems.map((item) => {
             const isActive = isCurrent(item.href);
             return (
@@ -146,7 +148,7 @@ const Navbar = ({ initialPath = '' }) => {
                 key={item.label}
                 href={item.href}
                 aria-current={isActive ? 'page' : undefined}
-                className={`text-[10px] font-black uppercase tracking-[0.24em] transition-colors relative
+                className={`text-[10px] font-black uppercase tracking-[0.16em] lg:tracking-[0.22em] transition-colors relative
                   ${isActive ? 'text-[#1d3557]' : 'text-slate-500 hover:text-[#181511]'}`}
               >
                 {item.label}
@@ -169,7 +171,7 @@ const Navbar = ({ initialPath = '' }) => {
               onClick={handleShelfButtonClick}
               aria-haspopup="true"
               aria-expanded={shelfOpen}
-              className={`text-[10px] font-black uppercase tracking-[0.24em] transition-colors inline-flex items-center gap-1 cursor-pointer relative
+              className={`text-[10px] font-black uppercase tracking-[0.16em] lg:tracking-[0.22em] transition-colors inline-flex items-center gap-1 cursor-pointer relative
                 ${isShelfActive || shelfOpen ? 'text-[#1d3557]' : 'text-slate-500 hover:text-[#181511]'}`}
             >
               Shelf
@@ -251,7 +253,7 @@ const Navbar = ({ initialPath = '' }) => {
                 key={item.label}
                 href={item.href}
                 aria-current={isActive ? 'page' : undefined}
-                className={`text-[10px] font-black uppercase tracking-[0.24em] transition-colors relative
+                className={`text-[10px] font-black uppercase tracking-[0.16em] lg:tracking-[0.22em] transition-colors relative
                   ${isActive ? 'text-[#1d3557]' : 'text-slate-500 hover:text-[#181511]'}`}
               >
                 {item.label}
