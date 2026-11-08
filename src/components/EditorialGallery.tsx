@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Maximize2,
@@ -24,6 +25,11 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
   const [activeFilter, setActiveFilter] = useState<string>('All');
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [zoomLevel, setZoomLevel] = useState<number>(1);
+  const [isMounted, setIsMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const categories = [
     'All',
@@ -156,7 +162,13 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
                 <p className="mt-2 text-xs leading-relaxed text-[color:var(--text-secondary)] line-clamp-3">
                   {item.paradox}
                 </p>
-                <div className="mt-auto pt-3 border-t border-[color:var(--line-soft)] flex items-center justify-between text-[11px] text-[#181511] font-semibold">
+                <div
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    openLightbox(item.id);
+                  }}
+                  className="mt-auto pt-3 border-t border-[color:var(--line-soft)] flex items-center justify-between text-[11px] text-[#181511] font-semibold hover:text-[#a66c1c] transition-colors"
+                >
                   <span className="underline decoration-[#c7964c] underline-offset-4">View analysis</span>
                   <span className="text-xs text-[#a66c1c]">→</span>
                 </div>
@@ -166,16 +178,19 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
         })}
       </div>
 
-      {/* Full-Screen Lightbox Modal */}
-      <AnimatePresence>
-        {currentItem && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/92 backdrop-blur-md p-2 sm:p-4 md:p-6"
-            onClick={closeLightbox}
-          >
+      {/* Full-Screen Lightbox Modal (Portal to body to escape parent stacking context & backdrop-filter) */}
+      {isMounted &&
+        createPortal(
+          <AnimatePresence>
+            {currentItem && (
+              <motion.div
+                key={currentItem.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/92 backdrop-blur-md p-2 sm:p-4 md:p-6"
+                onClick={closeLightbox}
+              >
             <div
               className="relative w-full max-w-7xl h-[92vh] max-h-[950px] bg-[#0f1218] border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row"
               onClick={(e) => e.stopPropagation()}
@@ -326,7 +341,9 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>,
+      document.body
+    )}
     </div>
   );
 }
