@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import documents from '../data/documents.json';
 import NetworkCanvas from '../components/NetworkCanvas';
 import RiskAppetiteInfographic from '../components/RiskAppetiteInfographic.astro';
+import EditorialGallery from '../components/EditorialGallery';
 const base = import.meta.env.BASE_URL;
 
 const categories = ['All', ...new Set((documents as any[]).map((d: any) => d.category))];
@@ -801,6 +802,22 @@ function isPdfAsset(doc: any) {
   <section class="px-4 py-4 md:px-8">
     <div class="soft-shell mx-auto max-w-7xl overflow-hidden px-7 py-8 md:px-10 md:py-10">
       <RiskAppetiteInfographic />
+    </div>
+  </section>
+
+  <section class="px-4 py-8 md:px-8" id="trench-series">
+    <div class="soft-shell mx-auto max-w-7xl px-7 py-10 md:px-10 md:py-12">
+      <div class="mb-10" data-reveal>
+        <span class="eyebrow-label">Visual Fieldwork &amp; Editorial Satire</span>
+        <h2 class="mt-3 text-[clamp(2.2rem,4.5vw,3.6rem)] leading-[1.04] text-[#181511]">
+          The Trench Series: Operational Telemetry &amp; Satire
+        </h2>
+        <p class="mt-4 max-w-3xl text-sm leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">
+          Full-population telemetry blueprints, unit economics models, and trench satire from <span class="font-semibold text-[#181511]">The Audit Signal</span>. Click any blueprint to expand into full-screen high-resolution inspection.
+        </p>
+      </div>
+
+      <EditorialGallery client:load base={base} />
     </div>
   </section>
 
