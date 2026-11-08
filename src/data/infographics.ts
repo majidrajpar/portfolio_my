@@ -130,25 +130,6 @@ export const infographics: InfographicItem[] = [
     }
   },
   {
-    id: 'kitopi-structural-pivot',
-    title: 'The Kitopi Structural Pivot: KaaS to Brick-and-Mortar',
-    subtitle: 'Capital Reallocation from Cloud Kitchens to Acquired Brick-and-Mortar Portfolios',
-    tag: 'Strategy & Valuations · Cloud Kitchens',
-    filename: 'kitopi_structural_pivot_infographic.png',
-    aspectRatio: 'landscape',
-    paradox: 'The managed cloud kitchen model struggled under delivery aggregator commissions and commissary prep friction, forcing the group to purchase established brick-and-mortar restaurant brands to secure top-line cash flow.',
-    notes: [
-      'The original kitchen-as-a-service model suffered severe margin compression from delivery take-rates, brand partner royalties, direct food costs, and kitchen prep labor across dozens of virtual concepts.',
-      'Capital was redeployed into acquiring mature casual dining groups to capture physical dining room revenue and reduce dependence on delivery app algorithms.',
-      'Valuation expectations set during venture growth rounds collided with casual dining multiples, requiring debt financing structures to sustain balance sheet liquidity.'
-    ],
-    keyTakeaway: 'Software abstractions cannot eliminate the physical cost structure of kitchen line labor, packaging, and third-party delivery commissions.',
-    relatedCaseStudy: {
-      slug: 'post-merger-integration-fnb-group',
-      label: 'Post-Merger Integration: Multi-Brand F&B Group'
-    }
-  },
-  {
     id: 'qa-vs-qc-closed-loop',
     title: 'Quality Assurance vs. Quality Control',
     subtitle: 'Process Control Verification vs. Dock Inspection Gates',
