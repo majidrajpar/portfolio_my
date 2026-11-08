@@ -112,7 +112,7 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
         </div>
         <div className="text-xs text-[color:var(--text-secondary)] flex items-center gap-1.5 font-medium">
           <Layers size={14} className="text-[#c7964c]" />
-          <span>Showing {filteredItems.length} curated assets</span>
+          <span>{filteredItems.length} analyses</span>
         </div>
       </div>
 
@@ -136,7 +136,7 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-between p-3.5">
                   <span className="text-[11px] font-bold tracking-wider text-white uppercase flex items-center gap-1.5">
-                    <Maximize2 size={13} className="text-[#f4c98b]" /> Expand Fullscreen
+                    <Maximize2 size={13} className="text-[#f4c98b]" /> Expand
                   </span>
                   <span className="text-[10px] text-white/80 font-mono">Click to zoom</span>
                 </div>

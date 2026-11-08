@@ -18,17 +18,17 @@ export const infographics: InfographicItem[] = [
   {
     id: 'samples-tested-myth',
     title: '25 Samples Tested. Control Effective.',
-    subtitle: 'The 25-Sample Walkthrough Myth vs. Ledger Reality',
+    subtitle: 'Standard Sample Testing vs. High-Volume Ledger Realities',
     tag: 'Editorial Satire · The Trench Series',
     filename: 'audit_override_01_25_samples_tested.jpg',
     aspectRatio: 'portrait',
-    paradox: 'Testing twenty-five invoices out of 3.8 million posted transactions is compliance theater. Monitoring 100% of the ledger stream is audit.',
+    paradox: 'Selecting twenty-five invoices out of 3.8 million posted transactions verifies documentation for those specific lines, but leaves the remaining 99.9994% of transaction volume completely unmonitored.',
     notes: [
-      'A Big 4 firm issued its inspection defense pointing to standardized 25-sample populations for automated three-way matching controls.',
-      'Twenty-five invoices tested out of 3.8 million posted transactions: the audit team verified 0.0006% of the population, stamped the control "operating effectively," and billed six figures.',
-      'Meanwhile, procurement split 14,000 purchase orders below the $50,000 approval threshold over a single weekend to beat month-end cutoff. The control didn\'t fail. It was never pointed at the pipeline.'
+      'Standard internal and external audit walkthroughs rely on 25-sample populations to evaluate automated three-way matching controls, regardless of total annual ledger volume.',
+      'In a 3.8-million-transaction environment, testing 25 lines inspects 0.0006% of activity while certifying that the control operates effectively across the entire fiscal year.',
+      'Procurement teams bypass invoice approval matrices by splitting purchase orders below threshold limits over month-end cutoff weekends, passing sample tests because the rule itself remains properly configured.'
     ],
-    keyTakeaway: 'Sample-based compliance verifies the existence of a rule; 100% population telemetry verifies the behavior of the ledger.',
+    keyTakeaway: 'Auditing system configuration confirms how software was designed to run; screening the full transaction stream confirms how purchasing teams actually behave under deadline pressure.',
     relatedCaseStudy: {
       slug: 'audit-4-transformation',
       label: 'Audit 4.0: Shifting to 100% Population Testing'
@@ -37,17 +37,17 @@ export const infographics: InfographicItem[] = [
   {
     id: 'make-it-amber',
     title: 'Make It Amber. We Can Reassess Next Year.',
-    subtitle: 'Negotiating the Color Palette on Enterprise Risk Heat Maps',
+    subtitle: 'Risk Heat Map Scoring and Capital Allocation Avoidance',
     tag: 'Corporate Governance · Risk Satire',
     filename: 'audit_override_02_make_it_amber.jpg',
     aspectRatio: 'portrait',
-    paradox: 'Enterprise risk management rarely eliminates risk. It negotiates the color palette.',
+    paradox: 'When enterprise risk scoring carries direct commercial consequences, committee discussions shift from evaluating control gaps to negotiating cell colors.',
     notes: [
-      'A Fortune 500 risk committee spent four hours debating whether third-party cloud concentration was a "4x4" or a "3x4" on the enterprise heat map.',
-      'Red requires a remediation budget and an executive owner with a hard deadline. Green invites awkward questions about why the risk advisory function has headcount.',
-      'Amber is where enterprise risks go to retire. It signals vigilance without triggering capital expenditure, fits neatly into the board pack, commits nobody to an operational deliverable, and buys management another four quarters of "ongoing monitoring."'
+      'Risk committees spend meeting cycles debating whether operational exposures qualify as high or medium on a five-by-five heat matrix.',
+      'A red rating triggers mandatory capital requests, executive ownership, and formal audit committee remediation deadlines.',
+      'Amber functions as a parking ground: it records awareness without requiring immediate capital expenditure, preserves current budgets, and defers operational fixes into subsequent fiscal years.'
     ],
-    keyTakeaway: 'When heat map colors carry commercial consequences, governance becomes aesthetic negotiation rather than capital protection.',
+    keyTakeaway: 'Scoring an unresolved vulnerability as moderate provides corporate comfort without fixing the underlying exposure.',
     relatedCaseStudy: {
       slug: 'enterprise-risk-management-8-countries',
       label: 'Enterprise Risk Management (8 Countries)'
@@ -56,17 +56,17 @@ export const infographics: InfographicItem[] = [
   {
     id: 'retail-shrink-waterfall',
     title: 'The Retail Shrink Waterfall',
-    subtitle: 'Book Inventory Minus the Count & Where Retailers Assign the Loss',
+    subtitle: 'Book-to-Physical Inventory Variance and Receiving Dock Leakage',
     tag: 'Operational Forensics · Retail & F&B',
     filename: 'retail_shrink_waterfall_infographic.png',
     aspectRatio: 'portrait',
-    paradox: 'Guards, pedestal alarms, and sales-floor cameras are bought for the 36% theft bar. The other 34% is process failure, unreason-coded variance, and book plugs.',
+    paradox: 'Loss prevention investments routinely target customer theft on the sales floor, while receiving dock discrepancies, uncredited vendor short-shipments, and unrecorded transfers generate permanent book loss.',
     notes: [
-      'In fiscal 2022, the NRF National Retail Security Survey placed average shrink at 1.6% of sales, totaling $112.1 billion across U.S. retail. The reported split: external theft 36%, employee theft 29%, process failures 27%, unknown plug 6%, other 1%.',
-      'Loss-prevention budgets default to the floor, yet an exit camera cannot detect a short-shipped case, an un-updated price file, an un-relieved inter-store transfer, or unrecorded spoilage.',
-      'On an illustrated 30% gross margin store, $1.60 of retail shrink erodes 5.3% of total gross profit ($1.60 / $30.00). Until book-to-physical variances are reason-coded at receiving, the count remains a journal plug.'
+      'National retail data attributes inventory shrink across shoplifting (36%), internal staff theft (29%), process breakdowns (27%), and unclassified adjustments (8%).',
+      'Security hardware and sales-floor cameras cannot catch short-shipped pallets, master-case scanning errors, outdated price files, or unreturned vendor damages.',
+      'In a 30% gross margin business, a 1.6% overall shrink rate absorbs over 5% of total gross profit, remaining an unallocated journal plug until receiving dock variances are systematically reason-coded.'
     ],
-    keyTakeaway: 'Shrink is not an unavoidable retail tax; it is an unmapped variance between POS depletions, receiving docks, and vendor credits.',
+    keyTakeaway: 'Shrink is rarely just store theft; it is an unmapped variance between purchase orders, physical receiving counts, and credit notes.',
     relatedCaseStudy: {
       slug: 'post-merger-integration-fnb-group',
       label: 'Post-Merger Integration: Multi-Brand F&B Group'
@@ -75,17 +75,17 @@ export const infographics: InfographicItem[] = [
   {
     id: 'restaurant-revenue-model',
     title: 'Restaurant Revenue & 4-Wall Unit Economics',
-    subtitle: 'From Gross POS Sales to True 4-Wall Store EBITDA',
+    subtitle: 'POS Top-Line Deductions, Aggregator Take-Rates, and Store-Level Cash Flow',
     tag: 'Unit Economics · FoodTech & Hospitality',
     filename: 'restaurant_revenue_model_infographic.png',
     aspectRatio: 'portrait',
-    paradox: 'Gross POS revenue is a vanity metric that masks store-level cash destruction when aggregator commissions, co-op ad-tax, and prime costs erode contribution margin.',
+    paradox: 'High gross volume on third-party delivery aggregators masks cash depletion when platform commissions, mandatory promotional discounts, and packaging costs eliminate store contribution margins.',
     notes: [
-      'Multi-channel sales funnel through Dine-In, Drive-Thru, 3P Delivery Apps (25% to 30% platform take-rate), Direct Web, and Franchise Royalties.',
-      'Gross receipts face immediate cascade deductions: voids, comps, store promo discounts, aggregator co-op ad fees, and delivery chargebacks to reach Net Sales.',
-      'Four-wall prime costs consume 52% to 56% (Food/Beverage COGS at 28-32% plus store hourly labor at 20-24%), eco-packaging takes 3-5%, and occupancy absorbs 8-10%, leaving store EBITDA at 18-22% before corporate G&A.'
+      'Multi-channel sales funnel through dine-in, drive-thru, delivery aggregator platforms, direct digital ordering, and franchise accounts.',
+      'Gross receipts are quickly eroded by POS voids, comp meals, co-op ad fees, customer refund deductions, and 25% to 30% delivery platform commissions before reaching net revenue.',
+      'Direct store prime costs consume 52% to 56% of sales (raw ingredients at 28% to 32% and hourly kitchen labor at 20% to 24%), leaving insufficient margin for occupancy, packaging, and utilities.'
     ],
-    keyTakeaway: 'Optimizing top-line delivery volume without monitoring channel-specific contribution margins turns physical kitchens into subsidized fulfillment nodes for aggregators.',
+    keyTakeaway: 'Chasing delivery volume without evaluating net contribution margins turns store kitchens into subsidized prep centers for delivery marketplaces.',
     relatedCaseStudy: {
       slug: 'post-merger-integration-fnb-group',
       label: 'Post-Merger Integration: Multi-Brand F&B Group'
@@ -94,17 +94,17 @@ export const infographics: InfographicItem[] = [
   {
     id: 'twcf-cash-flow-model',
     title: 'Enterprise 13-Week Rolling Cash Flow (TWCF)',
-    subtitle: 'Operating Behind the Accrual Veil & Managing the 5-Tier Disbursement Ladder',
+    subtitle: 'Weekly Cash Liquidity Management, Settlement Latency, and Disbursement Triage',
     tag: 'Treasury & Liquidity · Capital Defense',
     filename: 'cash_flow_forecast_infographic.png',
     aspectRatio: 'landscape',
-    paradox: 'Corporate insolvencies rarely originate from negative EBITDA on the P&L; they occur when an accrual-profitable business encounters a 72-hour liquidity blind spot.',
+    paradox: 'Businesses showing steady accounting profits can face insolvency when settlement delays on receivables collide with mandatory supplier and payroll cutoff dates.',
     notes: [
-      'Opening liquidity baseline strictly deducts restricted escrow, debt covenant minimums, and letter-of-credit collateral from total book cash to isolate true unrestricted operating funds.',
-      'Cash inflows reflect stark float velocity asymmetry: card acquirers settle in T+2/3, whereas delivery aggregators and B2B receivables lag 30 to 45 days.',
-      'Disbursement triage enforces a non-negotiable hierarchy: Tier 1 statutory payroll/WPS (legal shutdown risk) and Tier 2 COD suppliers (stock stops sales) take absolute precedence over trade payables stretch, capex freezes, and debt service.'
+      'Available cash baselines must exclude restricted bank balances, debt reserve accounts, and letter-of-credit deposits to identify true unrestricted operating capital.',
+      'Collections face settlement mismatch: credit card acquirers clear in two to three business days, while delivery aggregators and wholesale accounts regularly hold funds for 30 to 45 days.',
+      'Weekly disbursement triage requires strict prioritization: wage protection systems and statutory payroll take immediate priority, followed by cash-on-delivery suppliers whose stockouts stop operations.'
     ],
-    keyTakeaway: 'The Thirteen-Week Cash Forecast strips away accounting accruals, mapping exact bank settlement timing directly against critical operating covenants.',
+    keyTakeaway: 'Thirteen-week rolling forecasts remove accrual accounting assumptions, tracking hard bank settlement dates against critical liquidity covenants.',
     relatedCaseStudy: {
       slug: 'ma-capital-protection',
       label: 'M&A Capital Protection & Due Diligence'
@@ -113,17 +113,17 @@ export const infographics: InfographicItem[] = [
   {
     id: 'enterprise-ai-telemetry',
     title: 'Real-World Enterprise AI: Data Telemetry Pipeline',
-    subtitle: 'From Unstructured Document Chaos to Deterministic ERP Writes',
+    subtitle: 'Multimodal Ingestion, Continuous Anomaly Screening, and Controlled ERP Posting',
     tag: 'Audit Telemetry · Continuous Monitoring',
     filename: 'ai_value_in_business_process_infographic.png',
     aspectRatio: 'landscape',
-    paradox: 'Conversational LLMs are novelties in accounting; operational value occurs when vision models and rules engines normalize unstructured documents into schema-strict ledgers with 100% anomaly screening.',
+    paradox: 'Large language models produce errors when applied to financial accounting; production value comes from extraction models that convert unstructured records into verified schema fields for rules-based screening.',
     notes: [
-      'Stage 1 & 2: Ingests unstructured supplier invoices, customs declarations, PDFs, and emails via multimodal OCR and transformer extraction into standardized JSON schemas.',
-      'Stage 3: Eliminates 25-sample audit walkthroughs in favor of real-time 100% population screening, flagging split PO threshold evasions, duplicate hashes, and supplier bank account mutations.',
-      'Stage 4 & 5: Human-in-the-loop triage routes 95% routine high-confidence transactions straight to execution, while quarantining ambiguous anomalies into an investigator queue before deterministic ERP commits.'
+      'Multimodal ingestion pipelines extract line-item data from scanned invoices, shipping manifests, and customs entries, normalizing values into structured schema records.',
+      'Continuous screening screens the entire population for split purchase orders, bank account mutations, sequential invoice numbers, and duplicate payment hashes.',
+      'Automated routing commits routine high-confidence transactions directly to the ERP, while uncertain lines and anomalies are isolated for investigator sign-off.'
     ],
-    keyTakeaway: 'AI models should never write unreviewed transactions to core ledgers. Their purpose is unstructured extraction and exception quarantine, preserving human review for true anomalies.',
+    keyTakeaway: 'AI models should extract and structure transaction data rather than write unchecked records to the general ledger.',
     relatedCaseStudy: {
       slug: 'audit-4-transformation',
       label: 'Audit 4.0: Shifting to 100% Population Testing'
@@ -132,17 +132,17 @@ export const infographics: InfographicItem[] = [
   {
     id: 'kitopi-structural-pivot',
     title: 'The Kitopi Structural Pivot: KaaS to Brick-and-Mortar',
-    subtitle: 'When Software Multiples Collide with Central Kitchen Physics',
+    subtitle: 'Capital Reallocation from Cloud Kitchens to Acquired Brick-and-Mortar Portfolios',
     tag: 'Strategy & Valuations · Cloud Kitchens',
     filename: 'kitopi_structural_pivot_infographic.png',
     aspectRatio: 'landscape',
-    paradox: 'Kitchen-as-a-Service promised asset-light technology margins, but operational friction and aggregator take-rates forced a strategic pivot to capital-intensive brick-and-mortar restaurant ownership.',
+    paradox: 'The managed cloud kitchen model struggled under delivery aggregator commissions and commissary prep friction, forcing the group to purchase established brick-and-mortar restaurant brands to secure top-line cash flow.',
     notes: [
-      'Stream 1 & 2: The original KaaS model faced severe margin erosion from aggregator take-rates (24%), royalties (9%), food cost (30%), and labor (20%), alongside physical friction batching 50+ brand menus through central commissaries.',
-      'Stream 3: Management pivoted by committing over $300M to acquire legacy restaurant groups (AWJ Group: Operation Falafel, Catch 22, Zaroob), transitioning from asset-light software to asset-heavy store operations.',
-      'Stream 4: The valuation parallax: high growth capital raised at 10x-15x tech platform ARR collided with traditional food and beverage multiples (1.5x-2x revenue), requiring debt financing to avoid down-round equity re-pricing.'
+      'The original kitchen-as-a-service model suffered severe margin compression from delivery take-rates, brand partner royalties, direct food costs, and kitchen prep labor across dozens of virtual concepts.',
+      'Capital was redeployed into acquiring mature casual dining groups to capture physical dining room revenue and reduce dependence on delivery app algorithms.',
+      'Valuation expectations set during venture growth rounds collided with casual dining multiples, requiring debt financing structures to sustain balance sheet liquidity.'
     ],
-    keyTakeaway: 'Software abstractions cannot overcome the physical constraints of recipe preparation, rider dwell times, and third-party delivery marketplace commissions.',
+    keyTakeaway: 'Software abstractions cannot eliminate the physical cost structure of kitchen line labor, packaging, and third-party delivery commissions.',
     relatedCaseStudy: {
       slug: 'post-merger-integration-fnb-group',
       label: 'Post-Merger Integration: Multi-Brand F&B Group'
@@ -151,17 +151,17 @@ export const infographics: InfographicItem[] = [
   {
     id: 'qa-vs-qc-closed-loop',
     title: 'Quality Assurance vs. Quality Control',
-    subtitle: 'The Upstream Process Shield vs. The Downstream Inspection Gate',
+    subtitle: 'Process Control Verification vs. Dock Inspection Gates',
     tag: 'Manufacturing & Commissary · Continuous Controls',
     filename: 'quality_assurance_vs_quality_control_infographic.png',
     aspectRatio: 'portrait',
-    paradox: 'Quality Assurance degenerates into unread binders; Quality Control catches defects only after 100% of material and labor have already been destroyed.',
+    paradox: 'Sampling finished goods at the receiving dock catches defective batches only after raw materials and labor are already spent, while standard procedures are routinely bypassed to meet daily production quotas.',
     notes: [
-      'QA focuses on upstream standard operating procedures, supplier qualifications, and HACCP workflows, but is routinely bypassed under peak line throughput pressure.',
-      'QC measures finished product tolerances at the dock, but every rejected lot triggers scrapped margin and delivery delays, creating commercial pressure to grant deviation waivers.',
-      'The modern resolution is closed-loop telemetry: in-line optical, thermal, and weight sensors continuously feeding process variables back to automated machine recalibration before scrap occurs.'
+      'Quality assurance relies on standard operating procedures, supplier audits, and sanitation schedules that break down during peak production runs.',
+      'End-of-line inspection detects out-of-spec batches too late to recover prep costs, creating internal commercial pressure to approve waiver exceptions.',
+      'Closed-loop monitoring utilizes inline weight, temperature, and visual inspection sensors to flag equipment drift before out-of-tolerance units are completed.'
     ],
-    keyTakeaway: 'Retrospective batch sampling provides statistical comfort while localized machine drift ruins unsampled units; closed-loop monitoring prevents defect creation.',
+    keyTakeaway: 'Periodic batch sampling provides historical documentation; inline telemetry catches machine drift before batches are ruined.',
     relatedCaseStudy: {
       slug: 'post-merger-integration-fnb-group',
       label: 'Post-Merger Integration: Multi-Brand F&B Group'
@@ -170,17 +170,17 @@ export const infographics: InfographicItem[] = [
   {
     id: 'hamburgini-forensic-autopsy',
     title: 'Anatomy of a QSR Collapse: The Hamburgini Forensic Autopsy',
-    subtitle: 'Outsourced Supplier Contamination & The Consumer Trust Trap',
+    subtitle: 'Supply Chain Contamination, Regulatory Action, and Working Capital Asphyxiation',
     tag: 'Forensics & Food Safety · Brand Capital',
     filename: 'hamburgini_ksa_failure_infographic.png',
     aspectRatio: 'portrait',
-    paradox: 'Legal and regulatory exoneration does not preserve enterprise value. In consumer retail, reputational equity can vaporize in 48 hours while fixed debt liabilities remain legally binding.',
+    paradox: 'Official laboratory testing proved the contamination occurred at an external supplier, but customer traffic collapsed immediately while lease post-dated checks and payroll obligations remained legally enforceable.',
     notes: [
-      'Rapid scale across 65+ branches in Riyadh relied on heavy fixed costs (landlord PDCs, WPS payroll for 1,000+ crew, central commissary) with sauce production outsourced to BON TUM to conserve capex.',
-      'A biological contamination event (Clostridium botulinum) triggered an immediate regulatory shutdown and viral social media collapse, erasing 85%+ of footfall within two days.',
-      'Even though forensic health inspections formally proved the pathogen originated entirely at the external supplier, consumer trust never recovered, leading to liquidity asphyxiation and commercial court bankruptcy.'
+      'Rapid regional expansion across 65 branches was supported by heavy fixed lease commitments and large centralized payroll, while key proprietary recipe components were outsourced to third-party manufacturers.',
+      'A contamination event led to immediate government closures and social media backlash, eliminating store sales within 48 hours.',
+      'Fixed overhead and banking obligations quickly consumed working capital reserves, pushing the operating company into formal liquidation proceedings despite lack of direct fault at the store level.'
     ],
-    keyTakeaway: 'Outsourcing mission-critical recipe components transfers production risk but leaves 100% of brand equity and fixed balance-sheet liabilities unhedged.',
+    keyTakeaway: 'Outsourcing core recipe manufacturing transfers prep responsibilities while leaving the operating brand fully exposed to catastrophic supply chain failure.',
     relatedCaseStudy: {
       slug: 'post-merger-integration-fnb-group',
       label: 'Post-Merger Integration: Multi-Brand F&B Group'
