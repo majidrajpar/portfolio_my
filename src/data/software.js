@@ -87,6 +87,7 @@ export const software = [
     techStack: ['Python', 'RapidOCR', 'OpenCV', 'ONNX Runtime', 'OpenPyXL', 'Standalone EXE'],
     githubUrl: 'https://github.com/majidrajpar/invoice-audit-engine',
     downloadUrl: 'https://github.com/majidrajpar/invoice-audit-engine/releases/tag/v1.0.0',
+    downloadLabel: 'Download Windows App (.exe)',
     isPublic: true,
     status: 'Production / Open Source',
     keyFeatures: [
