@@ -28,11 +28,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Security & Continuous Controls Gate
+        run: npm run audit:gate
+
       - name: Initialize SQLite Database
         run: npm run db:init
 
       - name: Build React site
         run: npm run build
+
+      - name: Post-Build Artifact Security Verification
+        run: npm run audit:gate
 
       - uses: actions/upload-pages-artifact@v3
         with:
