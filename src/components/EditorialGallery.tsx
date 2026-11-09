@@ -50,18 +50,26 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
 
   const categories = [
     'All',
-    'Editorial Satire',
-    'Operational Blueprints',
-    'F&B & Retail Unit Economics',
-    'Forensic Autopsies',
+    'Audit & Governance Satire',
+    'Continuous Controls & Audit',
+    'Commercial & Retail Risk',
+    'Forensic Autopsies & Investigations',
   ];
 
   const matchesFilter = (item: InfographicItem, filter: string): boolean => {
     if (filter === 'All') return true;
-    if (filter === 'Editorial Satire') return item.tag.includes('Satire') || item.tag.includes('Trench');
-    if (filter === 'Operational Blueprints') return item.tag.includes('Telemetry') || item.tag.includes('Treasury') || item.tag.includes('Continuous');
-    if (filter === 'F&B & Retail Unit Economics') return item.tag.includes('Retail') || item.tag.includes('FoodTech') || item.tag.includes('Cloud Kitchens');
-    if (filter === 'Forensic Autopsies') return item.tag.includes('Forensics') || item.tag.includes('Autopsy') || item.tag.includes('Disbursement');
+    if (filter === 'Audit & Governance Satire' || filter === 'Editorial Satire') {
+      return item.tag.includes('Satire') || item.tag.includes('Trench') || item.tag.includes('Governance');
+    }
+    if (filter === 'Continuous Controls & Audit' || filter === 'Operational Blueprints') {
+      return item.tag.includes('Continuous') || item.tag.includes('Treasury') || item.tag.includes('Monitoring') || item.tag.includes('Controls') || item.tag.includes('Automation');
+    }
+    if (filter === 'Commercial & Retail Risk' || filter === 'F&B & Retail Unit Economics') {
+      return item.tag.includes('Retail') || item.tag.includes('Commercial') || item.tag.includes('FoodTech') || item.tag.includes('Economics');
+    }
+    if (filter === 'Forensic Autopsies & Investigations' || filter === 'Forensic Autopsies') {
+      return item.tag.includes('Forensic') || item.tag.includes('Autopsy') || item.tag.includes('Disbursement');
+    }
     return true;
   };
 
@@ -167,7 +175,7 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
         </div>
         <div className="text-xs text-[color:var(--text-secondary)] flex items-center gap-1.5 font-medium">
           <Layers size={14} className="text-[#c7964c]" />
-          <span>{filteredItems.length} analyses</span>
+          <span>{filteredItems.length} audit analyses</span>
         </div>
       </div>
 
@@ -218,7 +226,7 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
                   }}
                   className="mt-auto pt-3 border-t border-[color:var(--line-soft)] flex items-center justify-between text-[11px] text-[#181511] font-semibold hover:text-[#a66c1c] transition-colors"
                 >
-                  <span className="underline decoration-[#c7964c] underline-offset-4">View analysis</span>
+                  <span className="underline decoration-[#c7964c] underline-offset-4">View audit analysis</span>
                   <span className="text-xs text-[#a66c1c]">→</span>
                 </div>
               </div>
@@ -361,7 +369,7 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
                 {/* Core Paradox Highlight */}
                 <div className="my-4 p-4 rounded-xl bg-white/[0.04] border-l-2 border-[#f4c98b]">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-white/40 block mb-1">
-                    Operational premise
+                    Risk &amp; Governance Premise
                   </span>
                   <p className="text-sm italic text-white/90 leading-relaxed font-serif">
                     {currentItem.paradox}
@@ -371,7 +379,7 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
                 {/* Bulleted Trench Notes */}
                 <div className="space-y-3 my-4 text-xs leading-relaxed text-white/75">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-white/40 block">
-                    Field observations
+                    Fieldwork Observations
                   </span>
                   {currentItem.notes.map((note, idx) => (
                     <div key={idx} className="flex items-start gap-2.5">
@@ -385,7 +393,7 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
                 <div className="mt-auto pt-6 border-t border-white/10 space-y-4">
                   <div className="text-xs text-white/80">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#f4c98b] block mb-1">
-                      Control implication
+                      Internal Control Implication
                     </span>
                     <p className="leading-relaxed">{currentItem.keyTakeaway}</p>
                   </div>
