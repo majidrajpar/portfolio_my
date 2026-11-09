@@ -7,8 +7,8 @@ export const software = [
     category: 'Fieldwork Workbench',
     techStack: ['10 Excel (.xlsx) Tabs', '442 Active Formulas', 'Deterministic Telemetry', 'Mass Balance Auditing', 'Critical Override Protocol'],
     gumroadUrl: 'https://majidmumtaz.gumroad.com/l/packaging-plant-audit-model',
-    downloadUrl: '/downloads/Packaging_Plant_Audit_Master_Model.xlsx',
-    downloadLabel: 'Download Model (.xlsx)',
+    downloadUrl: '/downloads/Packaging_Plant_Audit_Master_Model_Overview.md',
+    downloadLabel: 'Download Overview (.md)',
     isPublic: true,
     status: 'Institutional Model · $69 / $129 / $249',
     keyFeatures: [
@@ -27,8 +27,8 @@ export const software = [
     category: 'Fieldwork Workbench',
     techStack: ['8 Excel (.xlsx) Sheets', '2,009 Active Formulas', 'Deterministic Forensic Engines', 'Z-Score Anomaly Benchmarking', 'CCTV Video Queue'],
     gumroadUrl: 'https://majidmumtaz.gumroad.com/l/pos-cashier-till-fraud-detector',
-    downloadUrl: '/downloads/POS_Cashier_Till_Fraud_Detector.xlsx',
-    downloadLabel: 'Download Model (.xlsx)',
+    downloadUrl: '/downloads/POS_Cashier_Till_Fraud_Detector_Overview.md',
+    downloadLabel: 'Download Overview (.md)',
     isPublic: true,
     status: 'Institutional Model · $69 / $189',
     keyFeatures: [
@@ -47,8 +47,8 @@ export const software = [
     category: 'Fieldwork Workbench',
     techStack: ['9 Excel (.xlsx) Tabs', '715-Row Stress Pack', '5 ERP Exception Engines', 'Automated EBITDA Quantification', 'IT Data Request Spec'],
     gumroadUrl: 'https://majidmumtaz.gumroad.com/l/ccm-anomaly-field-toolkit',
-    downloadUrl: '/downloads/Auditor_Anomaly_Testing_Template.xlsx',
-    downloadLabel: 'Download Toolkit (.xlsx)',
+    downloadUrl: '/downloads/Auditor_Anomaly_Testing_Template_Overview.md',
+    downloadLabel: 'Download Overview (.md)',
     isPublic: true,
     status: 'Field Toolkit · $39 / $99',
     keyFeatures: [
