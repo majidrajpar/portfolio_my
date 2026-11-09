@@ -98,7 +98,7 @@ const jsonLdData = {
       'applicationCategory': 'BusinessApplication',
       'offers': {
         '@type': 'Offer',
-        'price': '0.00',
+        'price': '99.00',
         'priceCurrency': 'USD',
       },
       'author': {
@@ -112,9 +112,9 @@ const jsonLdData = {
     },
     {
       '@type': 'DigitalDocument',
-      'name': 'Internal Audit Report Evaluation Matrix (GIAS 2024 Edition)',
-      'encodingFormat': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-      'url': 'https://majidrajpar.github.io/portfolio_my/downloads/Internal_Audit_Report_Evaluation_Matrix_GIAS_2024.xlsx',
+      'name': 'Internal Audit Report Evaluation Matrix Overview',
+      'encodingFormat': 'text/markdown',
+      'url': 'https://majidrajpar.github.io/portfolio_my/downloads/GIAS_2024_Report_Evaluation_Matrix_Overview.md',
       'author': {
         '@type': 'Person',
         'name': 'Majid Mumtaz',
@@ -176,7 +176,7 @@ const jsonLdData = {
           >
             &larr; Back to Resource Library
           </a>
-          <span class="hero-chip mb-6 block w-fit">IIA GIAS 2024 Conformance · Unlocked QAIP Tool</span>
+          <span class="hero-chip mb-6 block w-fit">IIA GIAS 2024 Conformance · Commercial QAIP Tool</span>
           <h1 class="headline-display max-w-4xl text-[clamp(2.2rem,4.8vw,4.2rem)] font-black text-white leading-[1.04]">
             Internal Audit Report
             <span class="block text-[#f4c98b]">Evaluation Matrix.</span>
@@ -187,11 +187,12 @@ const jsonLdData = {
 
           <div class="mt-8 flex flex-wrap items-center gap-4">
             <a
-              href={`${base}downloads/Internal_Audit_Report_Evaluation_Matrix_GIAS_2024.xlsx`}
-              download
+              href="https://majidmumtaz.gumroad.com/l/gias-2024-report-evaluation-matrix"
+              target="_blank"
+              rel="noopener noreferrer"
               class="btn-primary text-xs font-black uppercase tracking-wider"
             >
-              Download Unlocked Matrix (.xlsx)
+              Acquire Production Matrix ($99 / $249) &rarr;
             </a>
             <a
               href={`${base}downloads/GIAS_2024_Report_Evaluation_Matrix_Overview.md`}
@@ -206,7 +207,7 @@ const jsonLdData = {
               rel="noopener noreferrer"
               class="inline-flex items-center text-xs font-bold text-[#f4c98b] hover:text-[#f7d6a5] transition-colors underline underline-offset-4"
             >
-              Full CAE Operating Bundle ($99 / $249) &rarr;
+              Full CAE Operating Bundle &rarr;
             </a>
           </div>
         </div>
@@ -310,17 +311,25 @@ const jsonLdData = {
               </li>
               <li class="flex items-start gap-2.5">
                 <span class="text-emerald-500 font-bold">&check;</span>
-                <span><strong>License:</strong> Free for internal corporate QAIP and professional audit use.</span>
+                <span><strong>License:</strong> Commercial single-team ($99) or advisory enterprise ($249) license.</span>
               </li>
             </ul>
 
-            <div class="mt-6 border-t border-slate-100 pt-5">
+            <div class="mt-6 border-t border-slate-100 pt-5 space-y-3">
               <a
-                href={`${base}downloads/Internal_Audit_Report_Evaluation_Matrix_GIAS_2024.xlsx`}
-                download
+                href="https://majidmumtaz.gumroad.com/l/gias-2024-report-evaluation-matrix"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="btn-primary w-full text-center text-xs font-black uppercase tracking-wider"
               >
-                Download Free .XLSX Matrix
+                Acquire Production Matrix ($99 / $249) &rarr;
+              </a>
+              <a
+                href={`${base}downloads/GIAS_2024_Report_Evaluation_Matrix_Overview.md`}
+                download
+                class="btn-secondary-light w-full text-center text-xs font-black uppercase tracking-wider"
+              >
+                Download Executive Schema (.md)
               </a>
             </div>
           </div>
@@ -461,11 +470,11 @@ const jsonLdData = {
               Acquire CAE Operating Bundle &rarr;
             </a>
             <a
-              href={`${base}downloads/Internal_Audit_Report_Evaluation_Matrix_GIAS_2024.xlsx`}
+              href={`${base}downloads/GIAS_2024_Report_Evaluation_Matrix_Overview.md`}
               download
               class="btn-secondary-light w-full text-center text-xs font-black uppercase tracking-wider py-2.5"
             >
-              Download Free .XLSX Only
+              Download Executive Schema (.md)
             </a>
           </div>
         </div>
