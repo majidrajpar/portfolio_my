@@ -68,3 +68,6 @@ src/rust/gl-outlier-engine/
 
 # Playwright MCP artifacts
 .playwright-mcp/
+
+# Credentials
+ga4_service_account.json
