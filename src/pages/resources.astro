@@ -108,8 +108,11 @@ const commercialBundles = [
 function fileMeta(doc: any) {
   const name = doc.filename ? doc.filename.toUpperCase() : '';
   if (doc.id === 'doc-039') return { unit: 'file', kind: '18-FILE SUITE + OVERVIEW' };
-  if (doc.id === 'doc-040' || doc.id === 'doc-041') return { unit: 'tab', kind: 'UNLOCKED EXCEL MODEL' };
-  if (doc.id === 'doc-038') return { unit: 'sheet', kind: 'UNLOCKED EXCEL + OVERVIEW' };
+  if (doc.id === 'doc-047') return { unit: 'asset', kind: '16-ASSET SUITE + OVERVIEW' };
+  if (doc.id === 'doc-046' || doc.id === 'doc-045' || doc.id === 'doc-044') return { unit: 'sheet', kind: 'COMMERCIAL SUITE MODEL' };
+  if (doc.id === 'doc-040' || doc.id === 'doc-041') return { unit: 'tab', kind: 'COMMERCIAL MODEL (OVERVIEW)' };
+  if (doc.id === 'doc-043') return { unit: 'tab', kind: 'COMMERCIAL MODEL (OVERVIEW)' };
+  if (doc.id === 'doc-038' || doc.id === 'doc-042') return { unit: 'sheet', kind: 'UNLOCKED EXCEL + OVERVIEW' };
   if (name.endsWith('.MD')) return { unit: 'page', kind: 'TECHNICAL GUIDE (.MD)' };
   if (name.endsWith('.DOCX')) return { unit: 'page', kind: 'WORD' };
   if (name.endsWith('.XLSX')) return { unit: 'sheet', kind: 'EXCEL' };
@@ -348,16 +351,18 @@ function isPdfAsset(doc: any) {
                       </a>
                     )}
                   </>
-                ) : doc.gumroadUrl ? (
+                ) : doc.filename && doc.filename.toLowerCase().endsWith('.md') ? (
                   <>
-                    <a
-                      href={doc.gumroadUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="btn-primary self-start text-[11px] font-black uppercase tracking-wider inline-flex items-center gap-1.5"
-                    >
-                      {doc.gumroadLabel ?? 'License Suite'}
-                    </a>
+                    {doc.gumroadUrl && (
+                      <a
+                        href={doc.gumroadUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-primary self-start text-[11px] font-black uppercase tracking-wider inline-flex items-center gap-1.5"
+                      >
+                        {doc.gumroadLabel ?? 'License Suite'}
+                      </a>
+                    )}
                     {doc.internalUrl && (
                       <a
                         href={`${base}${doc.internalUrl}`}
@@ -384,13 +389,25 @@ function isPdfAsset(doc: any) {
                     Download App (.exe)
                   </a>
                 ) : (
-                  <a
-                    href={`${base}downloads/${doc.filename}`}
-                    download
-                    class="btn-secondary self-start"
-                  >
-                    {doc.downloadLabel ?? 'Download'}
-                  </a>
+                  <>
+                    <a
+                      href={`${base}downloads/${doc.filename}`}
+                      download
+                      class="btn-secondary self-start"
+                    >
+                      {doc.downloadLabel ?? 'Download'}
+                    </a>
+                    {doc.gumroadUrl && (
+                      <a
+                        href={doc.gumroadUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-primary self-start text-[11px] font-black uppercase tracking-wider inline-flex items-center gap-1.5"
+                      >
+                        {doc.gumroadLabel ?? 'Commercial License'}
+                      </a>
+                    )}
+                  </>
                 )}
                 {doc.link && (
                   <a
