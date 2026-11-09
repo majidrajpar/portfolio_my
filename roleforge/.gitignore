@@ -79,9 +79,6 @@ public/roleforge-data/
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# uv
-uv.lock
-
 # Premium store content (not in public repo)
 # The store/ READMEs are public. Actual premium role bundles
 # are packaged and distributed via Gumroad.
@@ -90,3 +87,6 @@ uv.lock
 # Draft response files
 response_to_jamie*.md
 axelrod_simulation.py
+
+# Internal agent context prompts
+docs/AI_CONTEXT.md
