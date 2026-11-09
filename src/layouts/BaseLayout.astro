@@ -325,48 +325,15 @@ const baseUrl = import.meta.env.BASE_URL;
       } catch (e) {}
       var isDubai = (tz === 'Asia/Dubai');
 
-      // Suppress local dev and developer testing from Karachi
-      var isLocalDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      if (isLocalDev || tz === 'Asia/Karachi') return;
-
-      // Only alert on tagged outreach contacts or Dubai/UAE visitors
-      if (!leadRef && !isDubai) return;
-
-      var b64Webhook = 'aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTU2NTY3NzIxMDk2NTM3NzAzNi94MTMwVHptUG1mcENDTnQ0ZHFiMm90Vlh6SXNTRDFFdlh3ZEUtS0dvcnhpQ0dCQm9aLVRrY0kzekxRZ1hYNlI3OElqdQ==';
-      var notifyWebhook = function(text) {
-        try {
-          fetch(atob(b64Webhook), {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ content: text })
-          }).catch(function() {});
-        } catch (e) {}
-      };
-
-      // 3. Rate-limit pageview alerts per tab session to prevent notification flood
+      // 3. Rate-limit pageview tracking per tab session
       var sessionKey = '__notified_' + window.location.pathname;
       if (!sessionStorage.getItem(sessionKey)) {
         sessionStorage.setItem(sessionKey, '1');
 
-        var identity = leadRef ? ('🎯 **Contact Visit (' + leadRef + ')**') : '📍 **Dubai / UAE Contact Visit**';
-
-        var timeString = new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dubai', hour: '2-digit', minute: '2-digit' }) + ' GST';
-        var deviceType = window.innerWidth < 768 ? 'Mobile' : 'Desktop';
-        var referrer = document.referrer ? ('`' + document.referrer + '`') : 'Direct (Email / Bookmark)';
-
-        var message = identity + '\n' +
-          '• **Page:** `' + window.location.pathname + '`\n' +
-          '• **Time:** ' + timeString + '\n' +
-          '• **Source:** ' + referrer + '\n' +
-          '• **Client:** ' + deviceType + '\n' +
-          '• **Timezone:** ' + (tz || 'Unknown');
-
-        notifyWebhook(message);
-
-        // Also push custom event to GA4
+        // Push custom event to GA4
         if (typeof gtag === 'function') {
           gtag('event', 'lead_executive_view', {
-            lead_tag: leadRef || 'dubai_direct',
+            lead_tag: leadRef || (isDubai ? 'dubai_direct' : 'direct'),
             page_path: window.location.pathname
           });
         }
@@ -381,13 +348,7 @@ const baseUrl = import.meta.env.BASE_URL;
           var href = link.getAttribute('href') || '';
           if (/\.(pdf|xlsx|docx|zip)$/i.test(href)) {
             var fileName = href.split('/').pop().split('?')[0];
-            var dlIdentity = leadRef || 'Dubai Contact';
-            var dlMessage = '📥 🔥 **FILE DOWNLOAD TRIGGERED!**\n' +
-              '• **File:** `' + fileName + '`\n' +
-              '• **User:** **' + dlIdentity + '**\n' +
-              '• **From Page:** `' + window.location.pathname + '`\n' +
-              '• **Time:** ' + new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Dubai', hour: '2-digit', minute: '2-digit' }) + ' GST';
-            notifyWebhook(dlMessage);
+            var dlIdentity = leadRef || (isDubai ? 'Dubai Contact' : 'Direct Visitor');
             if (typeof gtag === 'function') {
               gtag('event', 'lead_file_download', { file: fileName, lead: dlIdentity });
             }

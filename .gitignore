@@ -71,3 +71,6 @@ src/rust/gl-outlier-engine/
 
 # Credentials
 ga4_service_account.json
+
+# Internal and proprietary documents archive
+documents_archive/
