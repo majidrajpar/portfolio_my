@@ -51,6 +51,19 @@ export const tools = [
     ml: false,
     rust: false,
   },
+  {
+    id: 'payroll-forensic-variance-engine',
+    tier: 'catalog',
+    domain: 'Forensic Payroll Reconciliation',
+    title: 'Payroll Forensic Variance & Integrity Engine',
+    description: '100% comparative population reconciliation across consecutive payroll registers. Detects ghost employees, duplicate IBAN collusion networks, post-termination leakage, and unapproved salary spikes.',
+    category: 'Fraud & Forensics',
+    href: 'https://github.com/majidrajpar/payroll-forensic-variance-engine',
+    isLive: true,
+    batch: 10,
+    ml: false,
+    rust: false,
+  },
 
   {
     id: 'severity-classifier',

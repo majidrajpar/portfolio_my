@@ -98,6 +98,24 @@ export const software = [
     ]
   },
   {
+    id: 'payroll-forensic-variance-engine',
+    name: 'Payroll Forensic Variance & Integrity Engine',
+    tagline: '100% continuous controls monitoring & collusion detection across comparative payroll registers.',
+    description: 'Replaces retrospective sample-based payroll audits with 100% comparative population reconciliation across consecutive periods. Resolves heterogeneous, uncleaned payroll registers from SAP, Oracle HCM, Workday, and legacy ERPs using deterministic fuzzy schema mapping. Deterministically flags ghost employees, post-termination salary leakage, duplicate IBAN clustering indicative of payroll clerk collusion, unapproved off-cycle salary spikes, and statutory tax discrepancies. Outputs execution telemetry alongside an automated, macro-free multi-tab Excel audit workpaper ready for Audit Committee presentation.',
+    category: 'Forensic Analytics',
+    techStack: ['Python', 'Pandas', 'OpenPyXL', 'Rich', 'Fuzzy Normalization', 'Deterministic Heuristics'],
+    githubUrl: 'https://github.com/majidrajpar/payroll-forensic-variance-engine',
+    isPublic: true,
+    status: 'Production / Open Source',
+    keyFeatures: [
+      'Performs 100% comparative population reconciliation between consecutive payroll months to isolate ghost employees, unrecorded terminations, and unapproved joiners.',
+      'Resolves dirty, non-standard column headers across SAP, Oracle HCM, Workday, and legacy exports using deterministic fuzzy schema normalization.',
+      'Uncovers payroll clerk and supervisor collusion networks by clustering duplicate bank IBANs, national identification numbers, and shared payout accounts.',
+      'Isolates post-termination cash leakage by cross-referencing separation effective dates against subsequent active disbursement registers.',
+      'Generates an institutional-grade, macro-free Excel audit workpaper with frozen panes, color-coded risk tiers, and structured variance schedules.'
+    ]
+  },
+  {
     id: 'auditdesk',
     name: 'AuditDesk',
     tagline: 'Privacy-first, zero-dependency fieldwork & forensic workbench for internal auditors.',

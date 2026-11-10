@@ -20,6 +20,9 @@ const resolveHref = (href: string) => {
     const qPart = href.includes('?') ? '?' + href.split('?')[1] : '';
     return `${base}resources/${qPart}`;
   }
+  if (href.includes('/software/')) {
+    return `${base}software/`;
+  }
   const slug = href.replace(/^\/portfolio_my\/tools\//, '').replace(/^\/tools\//, '').replace(/\/$/, '');
   return `${base}tools/${slug}/`;
 };
