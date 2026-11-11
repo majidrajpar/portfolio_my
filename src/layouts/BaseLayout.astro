@@ -30,8 +30,15 @@ const baseUrl = import.meta.env.BASE_URL;
   <meta name="description" content={description} />
   {robots && <meta name="robots" content={robots} />}
 
-  <!-- Canonical -->
-  <link rel="canonical" href={canonicalUrl} />
+  <!-- Canonical & Instant Migration Forwarder to The Audit Signal -->
+  <link rel="canonical" href={new URL(Astro.url.pathname.replace(/^\/portfolio_my/, '') || '/', 'https://theauditsignal.com').toString()} />
+  <script is:inline>
+    (function() {
+      const cleanPath = window.location.pathname.replace(/^\/portfolio_my/, '') || '/';
+      const targetUrl = 'https://www.theauditsignal.com' + cleanPath + window.location.search + window.location.hash;
+      window.location.replace(targetUrl);
+    })();
+  </script>
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
