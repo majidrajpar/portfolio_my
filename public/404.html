@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting to The Audit Signal...</title>
+  <link rel="canonical" href="https://theauditsignal.com/" />
+  <script>
+    (function() {
+      var path = window.location.pathname.replace(/^\/portfolio_my\/?/, '/');
+      if (!path.startsWith('/')) path = '/' + path;
+      var targetUrl = 'https://theauditsignal.com' + path + window.location.search + window.location.hash;
+      window.location.replace(targetUrl);
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting to <a href="https://theauditsignal.com/">The Audit Signal</a>...</p>
+</body>
+</html>

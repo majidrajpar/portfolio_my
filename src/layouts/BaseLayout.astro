@@ -31,11 +31,12 @@ const baseUrl = import.meta.env.BASE_URL;
   {robots && <meta name="robots" content={robots} />}
 
   <!-- Canonical & Instant Migration Forwarder to The Audit Signal -->
-  <link rel="canonical" href={new URL(Astro.url.pathname.replace(/^\/portfolio_my/, '') || '/', 'https://theauditsignal.com').toString()} />
+  <link rel="canonical" href={new URL(Astro.url.pathname.replace(/^\/portfolio_my\/?/, '/') || '/', 'https://theauditsignal.com').toString()} />
   <script is:inline>
     (function() {
-      const cleanPath = window.location.pathname.replace(/^\/portfolio_my/, '') || '/';
-      const targetUrl = 'https://www.theauditsignal.com' + cleanPath + window.location.search + window.location.hash;
+      var path = window.location.pathname.replace(/^\/portfolio_my\/?/, '/');
+      if (!path.startsWith('/')) path = '/' + path;
+      var targetUrl = 'https://theauditsignal.com' + path + window.location.search + window.location.hash;
       window.location.replace(targetUrl);
     })();
   </script>
