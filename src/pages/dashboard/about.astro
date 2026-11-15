@@ -1,0 +1,95 @@
+---
+import LibraryLayout from '../../layouts/LibraryLayout.astro';
+import Database from 'better-sqlite3';
+import path from 'node:path';
+
+let milestones: Array<{
+  year_range?: string;
+  role: string;
+  company: string;
+  location?: string;
+  summary?: string;
+}> = [];
+
+try {
+  const dbPath = path.resolve(process.cwd(), 'portfolio.db');
+  const db = new Database(dbPath, { readonly: true });
+  milestones = db.prepare('SELECT * FROM career_milestones ORDER BY id ASC').all() as typeof milestones;
+  db.close();
+} catch {
+  milestones = [];
+}
+---
+
+<LibraryLayout title="About & Experience | Majid Mumtaz">
+  <div class="mx-auto max-w-3xl space-y-10">
+    <section class="space-y-3">
+      <h1 class="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+        Majid Mumtaz
+      </h1>
+      <p class="text-sm font-medium text-slate-600">
+        CIA · ACA (ICAEW) · FCCA · GRCP · GRCA · COSO ERM
+      </p>
+      <p class="text-sm leading-relaxed text-slate-700">
+        Director of Internal Audit &amp; Risk Advisory based in Dubai, UAE. Former Director of IA &amp; GRC at Kitopi, Group Director of IA &amp; Risk at Al-Faisaliah Group, IA Lead at McDonald’s Saudi Arabia, and Big 4 alumnus (KPMG, EY).
+      </p>
+      <p class="text-sm leading-relaxed text-slate-600">
+        This showcase brings together case studies, institutional audit models, browser-based telemetry tools, RoleForge, and governance frameworks—built to replace 20-invoice sample testing with 100% population controls monitoring.
+      </p>
+    </section>
+
+    {milestones.length > 0 && (
+      <section class="space-y-4">
+        <h2 class="text-lg font-semibold tracking-tight text-slate-900">
+          Experience
+        </h2>
+        <div class="divide-y divide-slate-200 rounded-lg border border-slate-200 bg-white">
+          {milestones.map((m) => (
+            <div class="p-5 space-y-1">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                <h3 class="text-sm font-semibold text-slate-900">{m.role}</h3>
+                {m.year_range && (
+                  <span class="text-xs font-medium text-slate-500">{m.year_range}</span>
+                )}
+              </div>
+              <p class="text-xs font-medium text-slate-600">
+                {m.company}{m.location ? ` · ${m.location}` : ''}
+              </p>
+              {m.summary && (
+                <p class="pt-1 text-xs leading-relaxed text-slate-600">{m.summary}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <section class="rounded-lg border border-slate-200 bg-white p-6 space-y-3">
+      <h2 class="text-base font-semibold text-slate-900">
+        CV &amp; Commercial Practice
+      </h2>
+      <p class="text-sm text-slate-600">
+        Download the full CV or visit the commercial advisory practice at <span class="font-medium text-slate-800">theauditsignal.com</span>.
+      </p>
+      <div class="pt-1 flex flex-wrap gap-3">
+        <a
+          href="/portfolio_my/cv/Majid_Mumtaz_Director_Internal_Audit_GRC_UAE.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 transition-colors"
+        >
+          <span>Download CV (PDF)</span>
+        </a>
+        <a
+          href="https://theauditsignal.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800 transition-colors"
+        >
+          <span>Visit theauditsignal.com</span>
+          <span>↗</span>
+        </a>
+      </div>
+    </section>
+  </div>
+</LibraryLayout>

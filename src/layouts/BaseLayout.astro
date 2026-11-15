@@ -30,16 +30,7 @@ const baseUrl = import.meta.env.BASE_URL;
   <meta name="description" content={description} />
   {robots && <meta name="robots" content={robots} />}
 
-  <!-- Canonical & Instant Migration Forwarder to The Audit Signal -->
-  <link rel="canonical" href={new URL(Astro.url.pathname.replace(/^\/portfolio_my\/?/, '/') || '/', 'https://theauditsignal.com').toString()} />
-  <script is:inline>
-    (function() {
-      var path = window.location.pathname.replace(/^\/portfolio_my\/?/, '/');
-      if (!path.startsWith('/')) path = '/' + path;
-      var targetUrl = 'https://theauditsignal.com' + path + window.location.search + window.location.hash;
-      window.location.replace(targetUrl);
-    })();
-  </script>
+  <link rel="canonical" href={canonicalUrl.toString()} />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -139,10 +130,10 @@ const baseUrl = import.meta.env.BASE_URL;
     gtag('config', 'G-9GCK25N9C5');
   </script>
 </head>
-<body class="min-h-screen">
+<body class="min-h-screen !bg-[#f8fafc] !bg-none !text-slate-900 antialiased selection:bg-slate-900 selection:text-white">
 
   <!-- Skip to main content (keyboard/screen-reader users) -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-white focus:text-[#181511] focus:font-black focus:text-xs focus:uppercase focus:tracking-widest focus:border focus:border-[#181511] focus:outline-none">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-white focus:text-slate-900 focus:font-semibold focus:text-xs focus:border focus:border-slate-900 focus:outline-none">
     Skip to main content
   </a>
 

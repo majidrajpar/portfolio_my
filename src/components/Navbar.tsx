@@ -113,10 +113,7 @@ const Navbar = ({ initialPath = '' }) => {
     { label: 'Resources', href: `${baseUrl}resources/` },
   ];
 
-  const afterShelfItems = [
-    { label: 'About', href: `${baseUrl}about/` },
-    { label: 'Advisory', href: `${baseUrl}advisory/` },
-  ];
+  const afterShelfItems: { label: string; href: string }[] = [];
 
   const contactHref = `${baseUrl}contact/`;
 
