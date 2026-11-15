@@ -126,38 +126,36 @@
   }
 
   .editorial-panel {
-    background:
-      radial-gradient(circle at 15% 20%, rgba(201, 150, 76, 0.12), transparent 18%),
-      linear-gradient(135deg, rgba(20, 28, 39, 0.98), rgba(43, 30, 24, 0.98));
-    box-shadow: var(--shadow-strong);
-    @apply rounded-[32px];
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    @apply rounded-xl;
   }
 
   .frame-panel {
-    border: 1px solid rgba(201, 150, 76, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.14);
     background: rgba(255, 255, 255, 0.04);
-    @apply rounded-[28px] backdrop-blur-xl;
+    @apply rounded-lg;
   }
 
   .luxury-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(201, 150, 76, 0.6), transparent);
+    background: #e2e8f0;
   }
 
   .quote-panel {
-    background: linear-gradient(135deg, rgba(255,255,255,0.58), rgba(255,255,255,0.36));
-    border: 1px solid rgba(29, 53, 87, 0.08);
-    @apply rounded-[28px] backdrop-blur-xl;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    @apply rounded-lg;
   }
 
   .stat-plinth {
-    background: rgba(255, 255, 255, 0.42);
-    border: 1px solid rgba(29, 53, 87, 0.08);
-    @apply rounded-[26px] px-5 py-5 backdrop-blur-xl sm:px-6 sm:py-6;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    @apply rounded-lg px-5 py-5 sm:px-6 sm:py-6;
   }
 
   .footer-shell {
-    background: linear-gradient(135deg, rgba(17, 24, 39, 0.98), rgba(34, 27, 23, 0.98));
+    background: #0f172a;
   }
 }
 
