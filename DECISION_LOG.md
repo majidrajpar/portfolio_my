@@ -17,3 +17,7 @@ All structural, design, content, and security decisions for `portfolio_my` are r
 ## 2026-11-15 21:40 +05:00 — Decommission `/dashboard/` & Merge About into Homepage (commits `6baa41e`, `7fb0807`)
 - **Decision:** Removed `theauditsignal.com` redirect from `BaseLayout.astro`, removed `Advisory` and `About` from `Navbar.tsx`, merged About/Experience (`career_milestones`) and Recommendations (`testimonials.js`) into `index.astro`, and deleted `/dashboard/`.
 - **Context:** `portfolio_my` operates as an independent personal portfolio; commercial advisory lives exclusively on `theauditsignal.com`.
+
+## 2026-11-15 23:52 +05:00 — Security Audit Remediations (`BaseLayout.astro`, `GrammarBackground.tsx`, `NetworkCanvas.tsx`)
+- **Decision:** Removed `new Function(...)` dynamic-import wrappers in `GrammarBackground.tsx` and `NetworkCanvas.tsx` in favor of `import(/* @vite-ignore */ ...)`, dropped `'unsafe-eval'` from `BaseLayout.astro` CSP `script-src`, added `https://cdn.jsdelivr.net` for `@observablehq/plot`, and removed the ineffective `X-Content-Type-Options` meta tag.
+- **Context:** Remediated findings from the application security audit without breaking runtime WASM or Plot loading.
