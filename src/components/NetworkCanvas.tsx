@@ -53,10 +53,8 @@ export default function NetworkCanvas({ nodeCount = 42, className = '' }: { node
 
     async function init() {
       try {
-        // Dynamic import of WASM module
-        // Use new Function to escape rolldown static import analysis . WASM is served from /public
-        const dynamicImport = new Function('p', 'return import(p)');
-        const wasm = await dynamicImport(`${base}/wasm/audit_engine.js`);
+        const wasmUrl = `${base}/wasm/audit_engine.js`;
+        const wasm = await import(/* @vite-ignore */ wasmUrl);
         await wasm.default();
         if (cancelled) return;
         wasmRef.current = wasm;

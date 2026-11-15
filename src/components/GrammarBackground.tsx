@@ -181,10 +181,8 @@ export default function GrammarBackground({ variant = 'stats', className = '' }:
     let chart: any = null;
     let cancelled = false;
 
-    // Use new Function to escape rolldown static analysis (same pattern as WASM).
-    // Plot is loaded from CDN as ESM so rolldown never sees the bare specifier.
-    const dynamicImport = new Function('m', 'return import(m)');
-    dynamicImport('https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/+esm').then((Plot: any) => {
+    const plotUrl = 'https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.17/+esm';
+    import(/* @vite-ignore */ plotUrl).then((Plot: any) => {
       if (cancelled) return;
 
       const render = () => {
