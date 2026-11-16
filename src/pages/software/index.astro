@@ -127,16 +127,7 @@ const categoryColors: Record<string, string> = {
               <div class="flex flex-wrap items-center gap-3">
                 {item.isPublic ? (
                   <>
-                    {item.gumroadUrl ? (
-                      <a
-                        href={item.gumroadUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn-primary py-2.5 px-5 text-[10px] font-black uppercase tracking-wider inline-flex items-center gap-2"
-                      >
-                        License via Gumroad ({item.status ? (item.status.includes('·') ? item.status.split('·')[1].trim() : item.status) : ''})
-                      </a>
-                    ) : item.githubUrl ? (
+                    {item.githubUrl ? (
                       <a
                         href={item.githubUrl}
                         target="_blank"
