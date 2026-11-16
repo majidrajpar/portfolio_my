@@ -210,6 +210,10 @@ function scanDirectoryForPatterns(dirPath, isDist = false) {
               recordError('PATH_LEAK', `${pattern.name} detected in: ${path.relative(rootDir, fullPath)}`);
             }
           }
+
+          if (!fullPath.endsWith('audit-security-gate.mjs') && /(?:sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{30,}|AIza[0-9A-Za-z\-_]{35})/.test(content)) {
+            recordError('SECRET_DISCLOSURE', `Generic API token pattern detected in: ${path.relative(rootDir, fullPath)}`);
+          }
         } catch {
           // Binary or unreadable text ignored
         }
@@ -219,6 +223,7 @@ function scanDirectoryForPatterns(dirPath, isDist = false) {
 }
 
 scanDirectoryForPatterns(path.join(rootDir, 'src'), false);
+scanDirectoryForPatterns(path.join(rootDir, 'scripts'), false);
 scanDirectoryForPatterns(path.join(rootDir, 'dist'), true);
 
 // -----------------------------------------------------------------------------
