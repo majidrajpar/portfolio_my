@@ -33,3 +33,7 @@ All structural, design, content, and security decisions for `portfolio_my` are r
 ## 2026-11-16 15:40 +05:00 — Phase 1 Positioning Cleanup (`Navbar.tsx`, `CommercialBridgeCard.astro`)
 - **Decision:** Removed `Author Storefronts` (Gumroad/Eloquens/Flevy/eFinancialModels) from `Navbar.tsx` and replaced `CommercialBridgeCard.astro` with a minimalist white/slate architecture note linking to `theauditsignal.com`.
 - **Context:** Aligns navigation and tool footers with the non-commercial Executive CAE / Director of Internal Audit portfolio positioning.
+
+## 2026-11-16 15:42 +05:00 — Minimalist Contact Page & Positioning Cleanup (`src/pages/contact.astro`)
+- **Decision:** Replaced the dark `editorial-panel`/`NetworkCanvas` hero and fractional/consulting copy in `src/pages/contact.astro` with a minimalist white/slate header and direct link to `theauditsignal.com` for commercial inquiries.
+- **Context:** Closes the remaining positioning and visual split on the Contact page.
