@@ -37,3 +37,7 @@ All structural, design, content, and security decisions for `portfolio_my` are r
 ## 2026-11-16 15:42 +05:00 — Minimalist Contact Page & Positioning Cleanup (`src/pages/contact.astro`)
 - **Decision:** Replaced the dark `editorial-panel`/`NetworkCanvas` hero and fractional/consulting copy in `src/pages/contact.astro` with a minimalist white/slate header and direct link to `theauditsignal.com` for commercial inquiries.
 - **Context:** Closes the remaining positioning and visual split on the Contact page.
+
+## 2026-11-16 15:44 +05:00 — Add Systems & ML Engineering Section (`src/pages/index.astro`)
+- **Decision:** Added a 4-card **Systems & ML Engineering** section to `src/pages/index.astro` highlighting the Rust/WASM audit engine, trained in-browser ML classifiers, `RoleForge`, and GitHub audit/SoD engines.
+- **Context:** Surfaces concrete ML, Rust/WASM, and AI governance engineering without hype.
