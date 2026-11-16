@@ -21,3 +21,7 @@ All structural, design, content, and security decisions for `portfolio_my` are r
 ## 2026-11-15 23:52 +05:00 — Security Audit Remediations (`BaseLayout.astro`, `GrammarBackground.tsx`, `NetworkCanvas.tsx`)
 - **Decision:** Removed `new Function(...)` dynamic-import wrappers in `GrammarBackground.tsx` and `NetworkCanvas.tsx` in favor of `import(/* @vite-ignore */ ...)`, dropped `'unsafe-eval'` from `BaseLayout.astro` CSP `script-src`, added `https://cdn.jsdelivr.net` for `@observablehq/plot`, and removed the ineffective `X-Content-Type-Options` meta tag.
 - **Context:** Remediated findings from the application security audit without breaking runtime WASM or Plot loading.
+
+## 2026-11-16 11:02 +05:00 — Risk Assessment Mitigations (`advisory.astro`, `audit-security-gate.mjs`, `DIRECTION.md`)
+- **Decision:** Removed `src/pages/advisory.astro`, updated `DIRECTION.md` to the final non-commercial portfolio objective, and extended `scripts/audit-security-gate.mjs` to scan `scripts/` and flag generic API token patterns (`sk-`, `ghp_`, `AIza`).
+- **Context:** Eliminates positioning drift with `theauditsignal.com` and closes the `scripts/` scanning gap in the build-time security gate.
