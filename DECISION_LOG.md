@@ -29,3 +29,7 @@ All structural, design, content, and security decisions for `portfolio_my` are r
 ## 2026-11-16 11:05 +05:00 — Remove Gumroad Licensing CTA (`src/pages/software/index.astro`)
 - **Decision:** Removed the `License via Gumroad` CTA from `src/pages/software/index.astro`.
 - **Context:** Completes item 1 of the risk assessment so `portfolio_my` has no commercial product-sales links.
+
+## 2026-11-16 15:40 +05:00 — Phase 1 Positioning Cleanup (`Navbar.tsx`, `CommercialBridgeCard.astro`)
+- **Decision:** Removed `Author Storefronts` (Gumroad/Eloquens/Flevy/eFinancialModels) from `Navbar.tsx` and replaced `CommercialBridgeCard.astro` with a minimalist white/slate architecture note linking to `theauditsignal.com`.
+- **Context:** Aligns navigation and tool footers with the non-commercial Executive CAE / Director of Internal Audit portfolio positioning.
