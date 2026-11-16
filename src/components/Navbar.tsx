@@ -30,12 +30,6 @@ const Navbar = ({ initialPath = '' }) => {
       href: 'https://www.linkedin.com/newsletters/the-audit-signal-7339153291630510080/',
       external: true,
     },
-    {
-      label: 'Author Storefronts',
-      desc: 'Commercial models on Gumroad, Eloquens, Flevy & eFinancialModels',
-      href: 'https://majidmumtaz.gumroad.com',
-      external: true,
-    },
   ];
 
   const isShelfActive = shelfItems.some((item) => !item.external && isCurrent(item.href));
