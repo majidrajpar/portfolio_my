@@ -25,3 +25,7 @@ All structural, design, content, and security decisions for `portfolio_my` are r
 ## 2026-11-16 11:02 +05:00 — Risk Assessment Mitigations (`advisory.astro`, `audit-security-gate.mjs`, `DIRECTION.md`)
 - **Decision:** Removed `src/pages/advisory.astro`, updated `DIRECTION.md` to the final non-commercial portfolio objective, and extended `scripts/audit-security-gate.mjs` to scan `scripts/` and flag generic API token patterns (`sk-`, `ghp_`, `AIza`).
 - **Context:** Eliminates positioning drift with `theauditsignal.com` and closes the `scripts/` scanning gap in the build-time security gate.
+
+## 2026-11-16 11:05 +05:00 — Remove Gumroad Licensing CTA (`src/pages/software/index.astro`)
+- **Decision:** Removed the `License via Gumroad` CTA from `src/pages/software/index.astro`.
+- **Context:** Completes item 1 of the risk assessment so `portfolio_my` has no commercial product-sales links.
