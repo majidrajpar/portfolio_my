@@ -127,9 +127,22 @@
   }
 
   .editorial-panel {
-    background: #0f172a;
-    border: 1px solid #1e293b;
-    @apply rounded-xl;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
+    @apply rounded-lg;
+  }
+
+  .editorial-panel h1,
+  .editorial-panel h2,
+  .editorial-panel h3,
+  .editorial-panel .text-white {
+    color: #0f172a !important;
+  }
+
+  .editorial-panel p,
+  .editorial-panel [class*="text-white/"] {
+    color: #475569 !important;
   }
 
   .frame-panel {
