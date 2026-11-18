@@ -167,7 +167,7 @@ const jsonLd = {
   </section>
 
   <section class="px-4 py-5 md:px-8">
-    <div class="soft-shell mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
+    <div class="rounded-lg border border-slate-200 bg-white mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
       <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
       </svg>
@@ -182,7 +182,7 @@ const jsonLd = {
     <div class="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[minmax(0,1.35fr)_380px] lg:gap-8">
       <div class="space-y-8">
         {hasStarr ? (
-          <div class="soft-shell px-6 py-8 md:px-10 md:py-12">
+          <div class="rounded-lg border border-slate-200 bg-white px-6 py-8 md:px-10 md:py-12">
             <div class="mb-10" data-reveal>
               <span class="eyebrow-label">Case Details</span>
               <h2 class="mt-4 text-[clamp(2rem,4vw,3.3rem)] leading-[1.04] text-[#181511]">Audit Scope & Outcomes</h2>
@@ -204,7 +204,7 @@ const jsonLd = {
             </div>
           </div>
         ) : (
-          <div class="soft-shell px-6 py-8 md:px-10 md:py-12" data-reveal>
+          <div class="rounded-lg border border-slate-200 bg-white px-6 py-8 md:px-10 md:py-12" data-reveal>
             {project.impact && (
               <p class="text-[15px] leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">{project.impact}</p>
             )}
@@ -213,7 +213,7 @@ const jsonLd = {
         )}
 
         {project.id === 'audit-4-transformation' && (
-          <div class="soft-shell p-6 md:p-8" data-reveal>
+          <div class="rounded-lg border border-slate-200 bg-white p-6 md:p-8" data-reveal>
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <span class="eyebrow-label">Executive Dashboard Mockup</span>
               <a href={`${base}downloads/Continuous_Audit_Monitoring_Dashboard.pdf`} download class="btn-primary py-2 px-4 text-[10px] inline-flex gap-2 items-center w-fit">
@@ -227,14 +227,14 @@ const jsonLd = {
         )}
 
         {project.id === 'data-analytics-audit-training' && (
-          <div class="soft-shell px-6 py-8 md:px-10 md:py-12" data-reveal>
+          <div class="rounded-lg border border-slate-200 bg-white px-6 py-8 md:px-10 md:py-12" data-reveal>
             <span class="eyebrow-label">Record type</span>
             <p class="mt-4 text-[15px] leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">Capability. The stored figure is the 60% fieldwork-cycle cut.</p>
           </div>
         )}
 
         {relatedLines.length > 0 && (
-          <div class="soft-shell px-6 py-8 md:px-10 md:py-12" data-reveal>
+          <div class="rounded-lg border border-slate-200 bg-white px-6 py-8 md:px-10 md:py-12" data-reveal>
             <div class="space-y-4">
               {relatedLines.map((line) => (
                 <p class="text-[15px] leading-7 md:text-base md:leading-8">
@@ -253,7 +253,7 @@ const jsonLd = {
         )}
       </div>
       <aside class="space-y-5 md:space-y-6" data-reveal data-reveal-delay="1">
-        <div class="glass-card rounded-[30px] p-6 md:p-7">
+        <div class="rounded-lg border border-slate-200 bg-white rounded-[30px] p-6 md:p-7">
           <span class="eyebrow-label">At A Glance</span>
           <div class="mt-6 grid gap-4">
           {project.techStack && project.techStack.length > 0 && (
@@ -290,7 +290,7 @@ const jsonLd = {
           </div>
         </div>
 
-        <div class="soft-shell px-5 py-4 md:px-6 md:py-5">
+        <div class="rounded-lg border border-slate-200 bg-white px-5 py-4 md:px-6 md:py-5">
           <a href={`${base}projects/`} class="inline-flex text-[11px] font-black uppercase tracking-[0.24em] text-[#181511] transition-colors hover:text-[#8d6035]">
             ← Back to All Case Studies
           </a>

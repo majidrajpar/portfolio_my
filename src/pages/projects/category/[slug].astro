@@ -59,7 +59,7 @@ const short = filtered.filter((project) => !project.starr?.situation);
   </section>
 
   <section class="px-4 py-5 md:px-8">
-    <div class="soft-shell mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
+    <div class="rounded-lg border border-slate-200 bg-white mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
       <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
       </svg>
@@ -82,7 +82,7 @@ const short = filtered.filter((project) => !project.starr?.situation);
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
         {written.map((project: any, i: number) => (
           <article
-            class="glass-card flex h-full flex-col rounded-[30px] p-6 text-left md:p-8"
+            class="rounded-lg border border-slate-200 bg-white flex h-full flex-col rounded-[30px] p-6 text-left md:p-8"
             data-reveal
             data-reveal-delay={String((i % 3) + 1)}
           >
@@ -151,7 +151,7 @@ const short = filtered.filter((project) => !project.starr?.situation);
             {short.map((project: any) => (
               <a
                 href={`${base}projects/${project.id}/`}
-                class="glass-card group flex flex-col justify-between rounded-[20px] p-6 transition-all duration-200 hover:border-[#c7964c]/40"
+                class="rounded-lg border border-slate-200 bg-white group flex flex-col justify-between rounded-[20px] p-6 transition-all duration-200 hover:border-[#c7964c]/40"
               >
                 <div>
                   <span class="inline-block text-[11px] font-semibold text-[#8d6035] mb-2">
