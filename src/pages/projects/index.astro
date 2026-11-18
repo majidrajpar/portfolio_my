@@ -35,7 +35,7 @@ const short = cases.filter((item) => !item.situation);
     <div class="mx-auto max-w-7xl">
       <div class="space-y-5">
         {written.map((study) => (
-          <a href={`${base}projects/${study.slug}/`} class="glass-card block rounded-[30px] p-7 md:p-8">
+          <a href={`${base}projects/${study.slug}/`} class="rounded-lg border border-slate-200 bg-white block rounded-lg p-7 md:p-8">
             <span class="inline-flex rounded-full bg-[#181512] px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#f4c98b]">{study.industry}</span>
             <h2 class="mt-4 text-[clamp(1.6rem,3vw,2.4rem)] leading-tight text-[#181511]">{study.title}</h2>
             <p class="mt-4 text-sm leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">{study.impact}</p>
@@ -56,7 +56,7 @@ const short = cases.filter((item) => !item.situation);
           {short.map((study) => (
             <a
               href={`${base}projects/${study.slug}/`}
-              class="glass-card group flex flex-col justify-between rounded-[20px] p-6 transition-all duration-200 hover:border-[#c7964c]/40"
+              class="rounded-lg border border-slate-200 bg-white group flex flex-col justify-between rounded-lg p-6 transition-all duration-200 hover:border-[#c7964c]/40"
             >
               <div>
                 <span class="inline-block text-[11px] font-semibold text-[#8d6035] mb-2">

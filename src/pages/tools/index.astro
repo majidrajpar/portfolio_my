@@ -218,7 +218,7 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
               href={resolveHref(tool.href)}
               target={tool.href.startsWith('http') ? '_blank' : undefined}
               rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              class="glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8"
+              class="rounded-lg border border-slate-200 bg-white group flex h-full flex-col rounded-lg p-6 transition-all duration-300 md:p-8"
               data-reveal
               data-reveal-delay={String((i % 3) + 1)}
             >
@@ -258,7 +258,7 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
               href={resolveHref(tool.href)}
               target={tool.href.startsWith('http') ? '_blank' : undefined}
               rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              class="glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8"
+              class="rounded-lg border border-slate-200 bg-white group flex h-full flex-col rounded-lg p-6 transition-all duration-300 md:p-8"
               data-reveal
               data-reveal-delay={String((i % 3) + 1)}
             >
@@ -320,7 +320,7 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
             href={resolveHref(tool.href)}
             target={tool.href.startsWith('http') ? '_blank' : undefined}
             rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            class="tool-card glass-card group flex h-full flex-col rounded-[30px] p-6 transition-all duration-300 md:p-8"
+            class="tool-card rounded-lg border border-slate-200 bg-white group flex h-full flex-col rounded-lg p-6 transition-all duration-300 md:p-8"
             data-id={tool.id}
             data-category={tool.category}
             data-title={tool.title.toLowerCase()}
@@ -359,7 +359,7 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
       </div>
 
       <!-- 3. Clean Dignified Empty State -->
-      <div id="tools-empty-state" class="hidden my-12 mx-auto max-w-lg rounded-[28px] border border-[color:var(--line-soft)] bg-white/75 p-8 text-center backdrop-blur-xl">
+      <div id="tools-empty-state" class="hidden my-12 mx-auto max-w-lg rounded-lg border border-[color:var(--line-soft)] bg-white/75 p-8 text-center backdrop-blur-xl">
         <p class="text-lg font-bold text-[#181511]">No matching tools found</p>
         <p class="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">
           No tools match your query. Try broadening your terms (e.g. "fraud", "controls", "governance", "sampling").
