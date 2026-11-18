@@ -69,7 +69,7 @@ const categoryColors: Record<string, string> = {
         {software.map((item, i) => (
           <div
             key={item.id}
-            class={`glass-card flex h-full flex-col rounded-[32px] p-7 md:p-9 transition-all duration-300 ${!item.isPublic ? 'border-dashed bg-slate-50/60' : ''}`}
+            class={`rounded-lg border border-slate-200 bg-white flex h-full flex-col rounded-lg p-7 md:p-9 transition-all duration-300 ${!item.isPublic ? 'border-dashed bg-slate-50/60' : ''}`}
             data-reveal
             data-reveal-delay={String((i % 2) + 1)}
           >

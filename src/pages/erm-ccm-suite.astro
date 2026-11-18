@@ -135,7 +135,7 @@ const jsonLd = {
       <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
         {ermSuitePillars.map((pillar, i) => (
           <div
-            class="glass-card flex flex-col justify-between rounded-[28px] p-7"
+            class="rounded-lg border border-slate-200 bg-white flex flex-col justify-between rounded-lg p-7"
             data-reveal
             data-reveal-delay={String(i + 1)}
           >
@@ -229,10 +229,10 @@ const jsonLd = {
       <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {ermSuitePricingTiers.map((tier) => (
           <div
-            class={`flex flex-col justify-between rounded-[32px] p-8 md:p-10 ${
+            class={`flex flex-col justify-between rounded-lg p-8 md:p-10 ${
               tier.highlight
                 ? 'border-2 border-[#c7964c] bg-[#181512] text-white shadow-xl'
-                : 'glass-card text-[#181511]'
+                : 'rounded-lg border border-slate-200 bg-white text-[#181511]'
             }`}
             data-reveal
           >
