@@ -88,15 +88,12 @@ const featuredTools = tools
         <p class="mt-6 max-w-2xl text-base leading-relaxed text-slate-600">
           AED 7.7M from the full population: AED 3.2M recovered and AED 4.5M protected.
         </p>
-        <div class="mt-8 flex flex-wrap items-center gap-3">
+        <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
           <a href={`${base}projects/`} class="rounded-md bg-slate-900 px-4 py-2.5 text-xs font-medium text-white hover:bg-slate-800 transition-colors">
-            View Case Studies
+            Case studies
           </a>
-          <a href={`${base}tools/`} class="rounded-md border border-slate-300 bg-white px-4 py-2.5 text-xs font-medium text-slate-800 hover:bg-slate-50 transition-colors">
-            Explore Tools
-          </a>
-          <a href={`${base}cv/Majid_Mumtaz_Internal_Audit_GRC.pdf`} download class="rounded-md border border-slate-300 bg-white px-4 py-2.5 text-xs font-medium text-slate-800 hover:bg-slate-50 transition-colors">
-            Download CV (PDF)
+          <a href={`${base}cv/Majid_Mumtaz_Internal_Audit_GRC.pdf`} download class="text-sm font-semibold text-slate-900 underline underline-offset-4">
+            CV (PDF)
           </a>
         </div>
       </div>
@@ -132,31 +129,11 @@ const featuredTools = tools
     </div>
   </section>
 
-  <section class="border-b border-slate-200 bg-white px-4 py-14 md:px-8">
-    <div class="mx-auto max-w-6xl">
-      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Tools</h2>
-      <div class="mt-6 border-t border-slate-200">
-        {featuredTools.map((tool) => (
-          <div class="flex flex-col gap-2 border-b border-slate-200 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-            <span class="shrink-0 text-xs font-medium uppercase tracking-widest text-slate-500">{tool.domain}</span>
-            <span class="min-w-0 flex-1 text-slate-900">{tool.title}</span>
-            <a href={`${base}tools/${tool.id}/`} data-event="home_tool_click" data-slug={tool.id} class="shrink-0 text-sm font-semibold text-slate-900 underline underline-offset-4">
-              Open
-            </a>
-          </div>
-        ))}
-      </div>
-      <a href={`${base}tools/`} class="mt-6 inline-flex text-sm font-semibold text-slate-900 underline underline-offset-4">
-        All tools
-      </a>
-    </div>
-  </section>
-
   <section class="border-b border-slate-200 bg-white px-4 py-14 md:px-8" id="experience">
-    <div class="mx-auto max-w-6xl space-y-14">
+    <div class="mx-auto max-w-6xl">
       <div class="grid gap-10 lg:grid-cols-[1.4fr_0.8fr]">
         <div>
-          <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Experience</h2>
+          <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Career</h2>
           <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-600">
             Director of Internal Audit at Kitopi, and Group Director of Internal Audit &amp; Risk at Al-Faisaliah Group. Before that, internal audit lead at McDonald's KSA, and earlier at KPMG and EY.
           </p>
@@ -180,13 +157,52 @@ const featuredTools = tools
           </ul>
         </div>
       </div>
-
-      <div>
-        <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Career</h2>
-        <div class="mt-6">
-          <CareerList careerData={careerData} />
-        </div>
+      <div class="mt-10">
+        <CareerList careerData={careerData} />
       </div>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-white px-4 py-14 md:px-8" id="recommendations">
+    <div class="mx-auto max-w-6xl space-y-6">
+      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">
+        Recommendations
+      </h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        {featuredQuotes.map((t) => (
+          <div class="flex h-full flex-col justify-between rounded-lg border border-slate-200 bg-white p-6">
+            <p class="text-sm leading-relaxed text-slate-700">"{t.quote}"</p>
+            <div class="mt-4 border-t border-slate-200 pt-3">
+              <p class="text-sm font-semibold text-slate-900">{t.name}</p>
+              <p class="text-xs text-slate-600">{t.role}</p>
+              <p class="mt-0.5 text-[11px] text-slate-500">{t.context}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <a href={`${base}about/#endorsements`} class="inline-flex text-sm font-semibold text-slate-900 underline underline-offset-4">
+        All recommendations
+      </a>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-white px-4 py-14 md:px-8">
+    <div class="mx-auto max-w-6xl">
+      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Tools</h2>
+      <div class="mt-6 border-t border-slate-200">
+        {featuredTools.map((tool) => (
+          <div class="flex flex-col gap-2 border-b border-slate-200 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+            <span class="shrink-0 text-xs font-medium uppercase tracking-widest text-slate-500">{tool.domain}</span>
+            <span class="min-w-0 flex-1 text-slate-900">{tool.title}</span>
+            <a href={`${base}tools/${tool.id}/`} data-event="home_tool_click" data-slug={tool.id} class="shrink-0 text-sm font-semibold text-slate-900 underline underline-offset-4">
+              Open
+            </a>
+          </div>
+        ))}
+      </div>
+      <a href={`${base}tools/`} class="mt-6 inline-flex text-sm font-semibold text-slate-900 underline underline-offset-4">
+        All tools
+      </a>
     </div>
   </section>
 
@@ -210,29 +226,6 @@ const featuredTools = tools
           </a>
         ))}
       </div>
-    </div>
-  </section>
-
-  <section class="px-4 py-14 md:px-8" id="recommendations">
-    <div class="mx-auto max-w-6xl space-y-6">
-      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">
-        Recommendations
-      </h2>
-      <div class="grid gap-6 md:grid-cols-3">
-        {featuredQuotes.map((t) => (
-          <div class="flex h-full flex-col justify-between rounded-lg border border-slate-200 bg-white p-6">
-            <p class="text-sm leading-relaxed text-slate-700">"{t.quote}"</p>
-            <div class="mt-4 border-t border-slate-200 pt-3">
-              <p class="text-sm font-semibold text-slate-900">{t.name}</p>
-              <p class="text-xs text-slate-600">{t.role}</p>
-              <p class="mt-0.5 text-[11px] text-slate-500">{t.context}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-      <a href={`${base}about/#endorsements`} class="inline-flex text-sm font-semibold text-slate-900 underline underline-offset-4">
-        All recommendations
-      </a>
     </div>
   </section>
 
