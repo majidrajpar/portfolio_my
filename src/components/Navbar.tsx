@@ -119,12 +119,12 @@ const Navbar = ({ initialPath = '' }) => {
     >
       <nav className={`
         mx-4 mt-4 px-5 lg:px-8 py-3.5 flex justify-between items-center transition-all duration-300 rounded-full border backdrop-blur-xl
-        bg-[rgba(255,250,244,0.85)] border-[rgba(29,53,87,0.10)] shadow-[0_18px_50px_rgba(71,38,24,0.08)]
+        bg-white/95 border-slate-200 shadow-sm
       `}>
         {/* Left: Brand */}
         <a
           href={baseUrl}
-          className="text-xs font-black uppercase tracking-[0.32em] text-[#181511]"
+          className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-900"
         >
           Majid Mumtaz
         </a>
@@ -138,12 +138,12 @@ const Navbar = ({ initialPath = '' }) => {
                 key={item.label}
                 href={item.href}
                 aria-current={isActive ? 'page' : undefined}
-                className={`text-[10px] font-black uppercase tracking-[0.16em] lg:tracking-[0.22em] transition-colors relative
-                  ${isActive ? 'text-[#1d3557]' : 'text-slate-500 hover:text-[#181511]'}`}
+                className={`text-[11px] font-semibold uppercase tracking-[0.16em] lg:tracking-[0.2em] transition-colors relative
+                  ${isActive ? 'text-slate-900' : 'text-slate-600 hover:text-slate-900'}`}
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-px bg-[#a33a21]" />
+                  <span className="absolute -bottom-1 left-0 right-0 h-px bg-slate-900" />
                 )}
               </a>
             );
@@ -161,12 +161,12 @@ const Navbar = ({ initialPath = '' }) => {
               onClick={handleShelfButtonClick}
               aria-haspopup="true"
               aria-expanded={shelfOpen}
-              className={`text-[10px] font-black uppercase tracking-[0.16em] lg:tracking-[0.22em] transition-colors inline-flex items-center gap-1 cursor-pointer relative
-                ${isShelfActive || shelfOpen ? 'text-[#1d3557]' : 'text-slate-500 hover:text-[#181511]'}`}
+              className={`text-[11px] font-semibold uppercase tracking-[0.16em] lg:tracking-[0.2em] transition-colors inline-flex items-center gap-1 cursor-pointer relative
+                ${isShelfActive || shelfOpen ? 'text-slate-900' : 'text-slate-600 hover:text-slate-900'}`}
             >
               Library
               <svg
-                className={`h-3 w-3 transition-transform duration-200 ${shelfOpen ? 'rotate-180 text-[#a33a21]' : 'text-slate-400'}`}
+                className={`h-3 w-3 transition-transform duration-200 ${shelfOpen ? 'rotate-180 text-slate-900' : 'text-slate-400'}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -174,7 +174,7 @@ const Navbar = ({ initialPath = '' }) => {
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
               </svg>
               {isShelfActive && (
-                <span className="absolute -bottom-1 left-0 right-0 h-px bg-[#a33a21]" />
+                <span className="absolute -bottom-1 left-0 right-0 h-px bg-slate-900" />
               )}
             </button>
 
@@ -186,7 +186,7 @@ const Navbar = ({ initialPath = '' }) => {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 6, scale: 0.98 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 rounded-[24px] bg-[rgba(255,250,244,0.98)] border border-[rgba(29,53,87,0.12)] shadow-[0_22px_60px_rgba(71,38,24,0.14)] p-2 backdrop-blur-2xl z-50 overflow-hidden"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 rounded-lg bg-white border border-slate-200 shadow-lg p-2 z-50 overflow-hidden"
                 >
                   <div className="px-3 pt-2 pb-1 border-b border-[color:var(--line-soft)] mb-1">
                     <span className="text-[9px] font-black uppercase tracking-[0.24em] text-slate-400">
