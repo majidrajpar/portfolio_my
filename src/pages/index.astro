@@ -12,33 +12,29 @@ const outcomes = [
   {
     slug: 'audit-4-transformation',
     value: 'AED 7.7M',
-    title: 'Audit 4.0: Shifting to 100% Population Testing',
-    line: '100+ locations across 8 countries.',
-    note: 'Same food-tech population as the post-merger card.',
+    title: 'Recovered and protected',
+    line: 'Full population. 100+ locations across 8 countries.',
     href: `${base}projects/audit-4-transformation/`,
   },
   {
     slug: 'ma-capital-protection',
     value: 'SAR 15M',
-    title: 'M&A Capital Protection & High-Stakes Due Diligence',
-    line: '$127M capital defended.',
-    note: '',
+    title: 'Undisclosed exposure found before close',
+    line: '$127M of committed capital defended.',
     href: `${base}projects/ma-capital-protection/`,
   },
   {
     slug: 'ipo-governance-readiness',
-    value: '175+ controls',
-    title: 'IPO Readiness & Governance Architecture',
-    line: 'Zero material weaknesses on initial ICFR audit.',
-    note: '',
+    value: 'Zero',
+    title: 'Material weaknesses on the first ICFR opinion',
+    line: '175+ controls in place for the listing.',
     href: `${base}projects/ipo-governance-readiness/`,
   },
   {
     slug: 'post-merger-integration-fnb-group',
-    value: '100+ Outlets',
-    title: 'Post-Merger Integration & Controls Audit',
-    line: '$300M+ acquisition & financial controls integration.',
-    note: 'Same food-tech population as Audit 4.0.',
+    value: 'Baseline',
+    title: 'Unit economics verified for the acquired outlets',
+    line: 'Estimated synergies replaced with checked store figures.',
     href: `${base}projects/post-merger-integration-fnb-group/`,
   },
 ];
@@ -81,13 +77,16 @@ const featuredTools = tools
     <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.5fr_0.75fr] lg:items-center">
       <div>
         <p class="text-xs font-medium uppercase tracking-widest text-slate-500">
-          Director of Internal Audit &amp; Risk · Dubai &amp; GCC · CIA · ACA · FCCA · COSO ERM
+          Dubai &amp; GCC
         </p>
         <h1 class="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl leading-[1.06]">
-          Capital defense, internal controls &amp; continuous monitoring.
+          Majid Mumtaz
         </h1>
+        <p class="mt-3 text-lg text-slate-800">
+          Director of Internal Audit &amp; Risk
+        </p>
         <p class="mt-6 max-w-2xl text-base leading-relaxed text-slate-600">
-          Replacing a 20-invoice sample with monitoring of the full transaction population.
+          AED 7.7M from the full population: AED 3.2M recovered and AED 4.5M protected.
         </p>
         <div class="mt-8 flex flex-wrap items-center gap-3">
           <a href={`${base}projects/`} class="rounded-md bg-slate-900 px-4 py-2.5 text-xs font-medium text-white hover:bg-slate-800 transition-colors">
@@ -113,94 +112,80 @@ const featuredTools = tools
     </div>
   </section>
 
-  <section class="px-4 py-8 md:px-8">
-    <div class="mx-auto max-w-7xl">
+  <section class="border-b border-slate-200 bg-white px-4 py-14 md:px-8">
+    <div class="mx-auto max-w-6xl">
       <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {outcomes.map((outcome) => (
-          <a href={outcome.href} data-event="home_case_click" data-slug={outcome.slug} class="glass-card flex h-full flex-col rounded-[30px] p-6 md:p-7">
-            <div class="text-3xl font-black tracking-tight text-[#181511]">{outcome.value}</div>
-            <span class="mt-4 text-base leading-snug text-[#181511]">{outcome.title}</span>
-            <p class="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">{outcome.line}</p>
-            {outcome.note && <p class="mt-3 text-xs leading-5 text-slate-500">{outcome.note}</p>}
+          <a href={outcome.href} data-event="home_case_click" data-slug={outcome.slug} class="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-6 hover:border-slate-400 transition-colors">
+            <div class="text-3xl font-semibold tracking-tight text-slate-900">{outcome.value}</div>
+            <span class="mt-4 text-base leading-snug text-slate-900">{outcome.title}</span>
+            <p class="mt-3 text-sm leading-6 text-slate-600">{outcome.line}</p>
           </a>
         ))}
       </div>
       <p class="mt-5 max-w-3xl text-sm leading-6 text-slate-500">
-        Audit 4.0 and the post-merger card describe one food-tech population. Do not add the amounts.
+        The food-tech cards are one population. The dirham figure is one result.
       </p>
-      <a href={`${base}projects/`} class="mt-4 inline-flex text-sm font-semibold text-[#181511] underline underline-offset-4">
+      <a href={`${base}projects/`} class="mt-4 inline-flex text-sm font-semibold text-slate-900 underline underline-offset-4">
         Case studies
       </a>
     </div>
   </section>
 
-  <section class="px-4 pb-8 md:px-8">
-    <div class="soft-shell mx-auto max-w-7xl px-6 py-2 md:px-8">
-      {featuredTools.map((tool) => (
-        <div class="flex flex-col gap-2 border-b border-[color:var(--line-soft)] py-4 last:border-b-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-          <span class="meta-label shrink-0 text-[#8d6035]">{tool.domain}</span>
-          <span class="min-w-0 flex-1 text-[#181511]">{tool.title}</span>
-          <a href={`${base}tools/${tool.id}/`} data-event="home_tool_click" data-slug={tool.id} class="shrink-0 text-sm font-semibold text-[#181511] underline underline-offset-4">
-            Open
-          </a>
-        </div>
-      ))}
-    </div>
-    <div class="mx-auto max-w-7xl">
-      <a href={`${base}tools/`} class="mt-8 inline-flex text-sm font-semibold text-[#181511] underline underline-offset-4">
-        Tools
+  <section class="border-b border-slate-200 bg-white px-4 py-14 md:px-8">
+    <div class="mx-auto max-w-6xl">
+      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Tools</h2>
+      <div class="mt-6 border-t border-slate-200">
+        {featuredTools.map((tool) => (
+          <div class="flex flex-col gap-2 border-b border-slate-200 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+            <span class="shrink-0 text-xs font-medium uppercase tracking-widest text-slate-500">{tool.domain}</span>
+            <span class="min-w-0 flex-1 text-slate-900">{tool.title}</span>
+            <a href={`${base}tools/${tool.id}/`} data-event="home_tool_click" data-slug={tool.id} class="shrink-0 text-sm font-semibold text-slate-900 underline underline-offset-4">
+              Open
+            </a>
+          </div>
+        ))}
+      </div>
+      <a href={`${base}tools/`} class="mt-6 inline-flex text-sm font-semibold text-slate-900 underline underline-offset-4">
+        All tools
       </a>
     </div>
   </section>
 
-  <section class="px-4 pb-8 md:px-8" id="experience">
-    <div class="mx-auto max-w-7xl space-y-6">
-      <div class="soft-shell px-7 py-8 md:px-10 md:py-9">
-        <span class="eyebrow-label">About &amp; Experience</span>
-        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.04] text-[#181511]">
-          Built to turn assurance into an executive instrument.
-        </h2>
-        <div class="luxury-divider mt-6 max-w-md"></div>
-
-        <div class="mt-7 grid gap-8 lg:grid-cols-[1.4fr_0.8fr]">
-          <div class="space-y-5 text-[color:var(--text-secondary)]">
-            <p class="body-luxe">
-              Architecting audit functions that protect capital. With 20+ years of experience across Big 4 (EY, KPMG) and GCC industry leadership (Kitopi, Al-Faisaliah Group, McDonald's KSA), I design and lead internal audit departments from inception—establishing governance structures, automated control frameworks, and technical oversight for VC-backed boards, family office conglomerates, and regional capital projects.
-            </p>
-            <div class="flex flex-wrap items-center gap-6 pt-2">
-              <a
-                href="https://theauditsignal.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-sm font-semibold text-[#181511] underline underline-offset-4"
-              >
-                The Audit Signal
-              </a>
-            </div>
-          </div>
-
-          <div class="stat-plinth p-6">
-            <div class="meta-label text-[#a33a21]">Credentials</div>
-            <div class="mt-4 space-y-2 text-sm font-semibold text-[#181511]">
-              <div>CIA (IIA)</div>
-              <div>ACA (ICAEW UK)</div>
-              <div>FCCA (ACCA UK)</div>
-              <div>GRCP &amp; GRCA (OCEG)</div>
-              <div>COSO ERM Certified</div>
-            </div>
-          </div>
+  <section class="border-b border-slate-200 bg-white px-4 py-14 md:px-8" id="experience">
+    <div class="mx-auto max-w-6xl space-y-14">
+      <div class="grid gap-10 lg:grid-cols-[1.4fr_0.8fr]">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Experience</h2>
+          <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-600">
+            Director of Internal Audit at Kitopi, and Group Director of Internal Audit &amp; Risk at Al-Faisaliah Group. Before that, internal audit lead at McDonald's KSA, and earlier at KPMG and EY.
+          </p>
+          <a
+            href="https://theauditsignal.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-6 inline-flex text-sm font-semibold text-slate-900 underline underline-offset-4"
+          >
+            The Audit Signal
+          </a>
+        </div>
+        <div>
+          <h2 class="text-xs font-medium uppercase tracking-widest text-slate-500">Credentials</h2>
+          <ul class="mt-4 space-y-2 text-sm font-medium text-slate-900">
+            <li>CIA (IIA)</li>
+            <li>ACA (ICAEW UK)</li>
+            <li>FCCA (ACCA UK)</li>
+            <li>GRCP &amp; GRCA (OCEG)</li>
+            <li>COSO ERM Certified</li>
+          </ul>
         </div>
       </div>
 
-      <div class="soft-shell px-7 py-8 md:px-10 md:py-9">
-        <div class="mb-8">
-          <span class="eyebrow-label">Professional Trajectory</span>
-          <h3 class="mt-3 text-[clamp(1.75rem,3.6vw,2.75rem)] leading-[1.06] text-[#181511]">Career trajectory.</h3>
-          <p class="mt-3 max-w-2xl text-sm leading-7 text-[color:var(--text-secondary)]">
-            From Big 4 roots to group-level profit protection, transformation, and board advisory.
-          </p>
+      <div>
+        <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Career</h2>
+        <div class="mt-6">
+          <CareerList careerData={careerData} />
         </div>
-        <CareerList careerData={careerData} />
       </div>
     </div>
   </section>
@@ -208,12 +193,9 @@ const featuredTools = tools
   <section class="px-4 py-14 md:px-8 border-b border-slate-200 bg-white" id="infographics">
     <div class="mx-auto max-w-6xl space-y-6">
       <div class="flex items-end justify-between gap-4">
-        <div>
-          <span class="eyebrow-label">Visual Briefs</span>
-          <h2 class="mt-2 text-2xl font-semibold tracking-tight text-slate-900">
-            Selected Infographics
-          </h2>
-        </div>
+        <h2 class="text-2xl font-semibold tracking-tight text-slate-900">
+          Selected infographics
+        </h2>
         <a href={`${base}trench-series/`} class="text-xs font-medium text-slate-700 underline underline-offset-4 hover:text-slate-900">
           View all →
         </a>
@@ -232,26 +214,23 @@ const featuredTools = tools
   </section>
 
   <section class="px-4 py-14 md:px-8" id="recommendations">
-    <div class="mx-auto max-w-7xl space-y-6">
-      <div>
-        <span class="eyebrow-label">Recommendations</span>
-        <h2 class="mt-3 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-          From Leaders &amp; Stakeholders
-        </h2>
-      </div>
+    <div class="mx-auto max-w-6xl space-y-6">
+      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">
+        Recommendations
+      </h2>
       <div class="grid gap-6 md:grid-cols-3">
         {featuredQuotes.map((t) => (
-          <div class="glass-card rounded-lg p-6 flex flex-col justify-between space-y-4">
+          <div class="flex h-full flex-col justify-between rounded-lg border border-slate-200 bg-white p-6">
             <p class="text-sm leading-relaxed text-slate-700">"{t.quote}"</p>
-            <div class="border-t border-slate-200 pt-3">
+            <div class="mt-4 border-t border-slate-200 pt-3">
               <p class="text-sm font-semibold text-slate-900">{t.name}</p>
               <p class="text-xs text-slate-600">{t.role}</p>
-              <p class="text-[11px] text-slate-500 mt-0.5">{t.context}</p>
+              <p class="mt-0.5 text-[11px] text-slate-500">{t.context}</p>
             </div>
           </div>
         ))}
       </div>
-      <a href={`${base}about/#endorsements`} class="inline-flex text-sm font-semibold text-[#181511] underline underline-offset-4">
+      <a href={`${base}about/#endorsements`} class="inline-flex text-sm font-semibold text-slate-900 underline underline-offset-4">
         All recommendations
       </a>
     </div>
