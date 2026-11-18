@@ -165,7 +165,6 @@ const baseUrl = import.meta.env.BASE_URL;
               { label: 'Case Studies', href: `${baseUrl}projects/` },
               { label: 'Tools', href: `${baseUrl}tools/` },
               { label: 'Field notes', href: `${baseUrl}trench-series/` },
-              { label: 'About', href: `${baseUrl}about/` },
               { label: 'Contact', href: `${baseUrl}contact/` },
             ].map(link => (
               <li><a href={link.href} class="text-white/72 hover:text-white text-sm font-semibold transition-colors">{link.label}</a></li>
@@ -180,7 +179,7 @@ const baseUrl = import.meta.env.BASE_URL;
               { label: 'Resource library', href: `${baseUrl}resources/` },
               { label: 'ERM & CCM Suite', href: `${baseUrl}erm-ccm-suite/` },
               { label: 'RoleForge', href: `${baseUrl}roleforge/` },
-              { label: 'Books', href: `${baseUrl}about/#books` },
+              { label: 'Books', href: 'https://www.amazon.com/s?k=Majid+Mumtaz' },
             ].map(link => (
               <li><a href={link.href} class="text-white/72 hover:text-white text-sm font-semibold transition-colors">{link.label}</a></li>
             ))}
