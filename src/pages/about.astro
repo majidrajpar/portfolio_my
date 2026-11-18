@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CareerList from '../components/CareerList.astro';
-import NetworkCanvas from '../components/NetworkCanvas';
 import { getCareerMilestones } from '../lib/db.js';
 import { testimonials } from '../data/testimonials.js';
 
@@ -18,8 +17,6 @@ const books = [
   { title: 'ITGC Program Guide', desc: 'A strategic approach to IT General Controls — security, compliance, and enterprise value protection.', url: 'https://www.amazon.com/dp/B0FCG96QS8', cover: `${base}images/books/itgc-program-guide.jpg` },
   { title: 'Internal Audit Guide for Dine-In Locations in the Middle East', desc: 'Comprehensive audit guide for restaurant operations in the GCC region.', url: 'https://www.amazon.com/dp/B0DY2NRPQ9', cover: `${base}images/books/internal-audit-dinein.jpg` },
 ];
-
-const featuredBooks = books;
 
 const alumniOf = [
   { '@type': 'Organization', name: 'Kitopi' },
@@ -52,187 +49,154 @@ const employers = [
     alumniOf,
   })} />
 
-  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
-    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-8 md:px-10 md:py-9">
-      <NetworkCanvas client:load nodeCount={35} />
-      <div class="relative z-10 grid gap-8 lg:grid-cols-[1fr_0.52fr] lg:items-end" data-reveal>
-        <div>
-          <h1 class="headline-display max-w-4xl text-[clamp(3rem,7vw,6.4rem)] font-black text-white">
-            Career record.
-          </h1>
-          <p class="mt-8 max-w-3xl text-base leading-8 text-white/74 md:text-[1.15rem] md:leading-9">
-            Employment history is on this page. Outcomes are on the case studies page.
-          </p>
-          <div class="mt-10 flex flex-wrap items-center gap-6">
-            <a href={`${base}projects/`} class="text-sm font-semibold text-[#f4c98b] underline underline-offset-4">Case studies</a>
-            <a href={`${base}cv/Majid_Mumtaz_Internal_Audit_GRC.pdf`} download class="text-sm font-semibold text-white/80 underline underline-offset-4">Download CV</a>
-          </div>
+  <section class="border-b border-slate-200 bg-white px-4 pt-28 pb-14 md:px-8">
+    <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.5fr_0.75fr] lg:items-center">
+      <div>
+        <p class="text-xs font-medium uppercase tracking-widest text-slate-500">
+          About
+        </p>
+        <h1 class="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl leading-[1.06]">
+          Career record.
+        </h1>
+        <p class="mt-6 max-w-2xl text-base leading-relaxed text-slate-600">
+          Employment history, board endorsements, credentials, and published books. Engagement outcomes sit on the case studies page.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <a href={`${base}projects/`} class="rounded-md bg-slate-900 px-4 py-2.5 text-xs font-medium text-white hover:bg-slate-800 transition-colors">
+            Case studies
+          </a>
+          <a href={`${base}cv/Majid_Mumtaz_Internal_Audit_GRC.pdf`} download class="text-sm font-semibold text-slate-900 underline underline-offset-4">
+            CV (PDF)
+          </a>
         </div>
-        <div class="hidden lg:block">
-          <div class="overflow-hidden rounded-[28px] border border-white/12">
+      </div>
+
+      <div class="overflow-hidden rounded-lg border border-slate-200 bg-[#3c4450]">
+        <img
+          src={`${base}images/majid-profile.jpg`}
+          alt="Majid Mumtaz"
+          class="aspect-[4/5] w-full object-cover object-top"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-white px-4 py-8 md:px-8">
+    <div class="mx-auto flex max-w-6xl flex-col justify-between gap-6 lg:flex-row lg:items-center">
+      <p class="shrink-0 text-xs font-medium uppercase tracking-widest text-slate-500">
+        Employers &amp; firms
+      </p>
+      <div class="flex flex-wrap items-center justify-between gap-7 sm:justify-start sm:gap-10">
+        {employers.map((employer) => (
+          <div class="flex items-center gap-2.5" title={employer.name}>
             <img
-              src={`${base}images/majid-profile.jpg`}
-              alt="Majid Mumtaz"
-              class="h-[360px] w-full object-cover object-top"
-              loading="eager"
+              src={employer.src}
+              alt={employer.alt}
+              class={`${employer.height} w-auto object-contain`}
+              loading="lazy"
             />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="px-4 py-5 md:px-8">
-    <div class="mx-auto max-w-7xl">
-      <div class="soft-shell flex flex-col justify-between gap-6 px-6 py-5 md:px-8 md:py-6 lg:flex-row lg:items-center" data-reveal>
-        <div class="shrink-0 text-[10px] font-black uppercase tracking-[0.28em] text-[#a33a21]">
-          Employers and firms.
-        </div>
-        <div class="flex flex-wrap items-center justify-between gap-7 sm:justify-start sm:gap-10">
-          {employers.map((employer) => (
-            <div class="flex items-center gap-2.5" title={employer.name}>
-              <img
-                src={employer.src}
-                alt={employer.alt}
-                class={`${employer.height} w-auto object-contain transition-transform duration-300 hover:scale-105`}
-                loading="lazy"
-              />
-              {employer.label && (
-                <span class="hidden text-xs font-black tracking-wider text-[#181511] sm:inline">{employer.label}</span>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="px-4 py-4 md:px-8">
-    <div class="mx-auto max-w-7xl">
-      <div class="soft-shell px-7 py-8 md:px-10 md:py-9" data-reveal>
-          <span class="eyebrow-label">Biography</span>
-          <h2 class="mt-4 text-[clamp(2.1rem,4.8vw,4rem)] leading-[1.02] text-[#181511]">Built to turn assurance into an executive instrument.</h2>
-          <div class="luxury-divider mt-7 max-w-md"></div>
-          <div class="mt-8 space-y-6 text-[color:var(--text-secondary)]">
-            <p class="body-luxe">
-              Architecting audit functions that protect capital. With 20+ years of experience, I design and lead internal audit departments from inception, establishing governance structures, automated control frameworks, and technical oversight—spanning institutional VC-backed unicorn boards, Saudi family office conglomerates, and regional capital projects—to deliver credible board assurance.
-            </p>
-            <p class="body-luxe">
-              Core capabilities cluster into three domains: <strong class="text-[#181511]">IA function building</strong>, <strong class="text-[#181511]">forensic analytics and fraud detection</strong>, and <strong class="text-[#181511]">board assurance and IPO readiness</strong>.
-            </p>
-            <p class="body-luxe">
-              Big-4 trained (EY, KPMG). Translating complex audit findings into decisive board action, eliminating compliance paperwork. Operating as a Registered Independent Consultant for Catalant and Veritux Consulting Network (Dubai), advising CFOs and Boards on governance architecture, fraud forensics, and control environments across KSA and the UAE. Delivering independent advisory and fractional Chief Audit Executive services globally.
-            </p>
-          </div>
-
-          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <div class="stat-plinth p-6">
-              <div class="meta-label text-[#a33a21]">Credentials</div>
-              <div class="mt-4 space-y-2 text-sm font-semibold text-[#181511]">
-                <div>CIA (IIA)</div>
-                <div>ACA (ICAEW UK)</div>
-                <div>FCCA (ACCA UK)</div>
-                <div>GRCP &amp; GRCA (OCEG)</div>
-                <div>COSO ERM Certified</div>
-              </div>
-            </div>
-            <div class="stat-plinth p-6">
-              <div class="meta-label text-[#a33a21]">Background</div>
-              <div class="mt-4 space-y-2 text-sm font-semibold text-[#181511]">
-                <div>Ernst & Young</div>
-                <div>BMA Asset Management</div>
-                <div>KPMG</div>
-                <div>McDonald's KSA</div>
-                <div>Al Faisaliah Group</div>
-                <div>Kitopi</div>
-                <div>Veritux</div>
-              </div>
-            </div>
-            <div class="stat-plinth p-6">
-              <div class="meta-label text-[#a33a21]">Sectors</div>
-              <div class="mt-4 space-y-2 text-sm font-semibold text-[#181511]">
-                <div>Conglomerates &amp; Family Offices</div>
-                <div>VC-Backed Tech &amp; FoodTech</div>
-                <div>F&amp;B, QSR &amp; Cloud Kitchens</div>
-                <div>FMCG &amp; Pharmaceuticals</div>
-                <div>Manufacturing &amp; Industrial</div>
-                <div>Real Estate &amp; Capital Projects</div>
-                <div>Retail &amp; Supermarkets</div>
-                <div>Financial Services &amp; Asset Mgmt</div>
-              </div>
-            </div>
-            <div class="stat-plinth p-6">
-              <div class="meta-label text-[#a33a21]">Leadership</div>
-              <div class="mt-4 space-y-2 text-sm font-semibold text-[#181511]">
-                <div>VC &amp; Conglomerate Boards</div>
-                <div>Three Lines of Defence</div>
-                <div>Risk Appetite Frameworks</div>
-                <div>Multi-Jurisdiction Programmes</div>
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="px-4 py-4 md:px-8">
-    <div class="soft-shell mx-auto max-w-7xl px-7 py-8 md:px-10 md:py-9">
-      <div class="mb-10" data-reveal>
-        <span class="eyebrow-label">Professional Trajectory</span>
-        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Career trajectory.</h2>
-        <p class="mt-5 max-w-2xl text-base leading-8 text-[color:var(--text-secondary)]">From Big 4 roots to group-level profit protection, transformation, and board advisory.</p>
-      </div>
-      <CareerList careerData={careerData} />
-    </div>
-  </section>
-
-  <section class="px-4 py-4 md:px-8" id="endorsements">
-    <div class="mx-auto max-w-7xl">
-      <div class="mb-10" data-reveal>
-        <span class="eyebrow-label">Executive Endorsements</span>
-        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Board and executive feedback.</h2>
-        <p class="mt-5 max-w-2xl text-base leading-8 text-[color:var(--text-secondary)]">Direct perspective from the C-suite, Audit Committees, and Senior Partners on the impact of my advisory work.</p>
-      </div>
-      <div class="grid gap-5 md:grid-cols-2">
-        {testimonials.map((t, i) => (
-          <div class="soft-shell p-8" data-reveal data-reveal-delay={String(i + 1)}>
-            <div class="flex items-center gap-4 mb-6">
-              <div class="h-12 w-12 rounded-full bg-[#1b1a17] text-white flex items-center justify-center font-bold text-xl">
-                {t.name.charAt(0)}
-              </div>
-              <div>
-                <div class="font-black text-[#181511]">{t.name}</div>
-                <div class="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-500 mt-1">{t.role}</div>
-              </div>
-            </div>
-            <p class="text-sm leading-8 text-[color:var(--text-secondary)] italic">"{t.quote}"</p>
+            {employer.label && (
+              <span class="hidden text-xs font-semibold tracking-wider text-slate-900 sm:inline">{employer.label}</span>
+            )}
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="px-4 py-4 md:px-8" id="books">
-    <div class="mx-auto max-w-7xl">
-      <div class="mb-10" data-reveal>
-        <h2 class="text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Books.</h2>
+  <section class="border-b border-slate-200 bg-white px-4 py-14 md:px-8">
+    <div class="mx-auto max-w-6xl">
+      <div class="grid gap-10 lg:grid-cols-[1.4fr_0.8fr]">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Practice</h2>
+          <div class="mt-4 space-y-4 text-base leading-relaxed text-slate-600">
+            <p>
+              21+ years across Big 4 (EY, KPMG) and GCC industry leadership (Kitopi, Al-Faisaliah Group, McDonald's KSA), building internal audit functions, automated control frameworks, and board-level assurance.
+            </p>
+            <p>
+              Core work covers three areas: IA function building, forensic analytics and fraud detection, and board assurance and IPO readiness.
+            </p>
+            <p>
+              Currently operating as Fractional CAE and Director of Internal Audit through Veritux Consulting Network (Dubai), advising CFOs and Audit Committees across KSA and the UAE.
+            </p>
+          </div>
+        </div>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
+          <div>
+            <h3 class="text-xs font-medium uppercase tracking-widest text-slate-500">Credentials</h3>
+            <ul class="mt-3 space-y-1.5 text-sm font-medium text-slate-900">
+              <li>CIA (IIA)</li>
+              <li>ACA (ICAEW UK)</li>
+              <li>FCCA (ACCA UK)</li>
+              <li>GRCP &amp; GRCA (OCEG)</li>
+              <li>COSO ERM Certified</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xs font-medium uppercase tracking-widest text-slate-500">Sectors</h3>
+            <ul class="mt-3 space-y-1.5 text-sm text-slate-700">
+              <li>Conglomerates &amp; Family Offices</li>
+              <li>Cloud Kitchens, QSR &amp; F&amp;B</li>
+              <li>Real Estate &amp; Capital Projects</li>
+              <li>FMCG, Pharma &amp; Retail</li>
+              <li>Financial Services &amp; Asset Mgmt</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-white px-4 py-14 md:px-8">
+    <div class="mx-auto max-w-6xl">
+      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Career trajectory</h2>
+      <div class="mt-6">
+        <CareerList careerData={careerData} />
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-white px-4 py-14 md:px-8" id="endorsements">
+    <div class="mx-auto max-w-6xl space-y-6">
+      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">
+        Recommendations
+      </h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        {testimonials.map((t) => (
+          <div class="flex h-full flex-col justify-between rounded-lg border border-slate-200 bg-white p-6">
+            <p class="text-sm leading-relaxed text-slate-700">"{t.quote}"</p>
+            <div class="mt-4 border-t border-slate-200 pt-3">
+              <p class="text-sm font-semibold text-slate-900">{t.name}</p>
+              <p class="text-xs text-slate-600">{t.role}</p>
+              <p class="mt-0.5 text-[11px] text-slate-500">{t.context}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-slate-200 bg-white px-4 py-14 md:px-8" id="books">
+    <div class="mx-auto max-w-6xl space-y-6">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Books</h2>
+        <a href="https://www.amazon.com/s?k=Majid+Mumtaz" target="_blank" rel="noopener noreferrer" class="text-xs font-medium text-slate-700 underline underline-offset-4 hover:text-slate-900">
+          All on Amazon →
+        </a>
       </div>
       <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {featuredBooks.map((book, i) => (
-          <a href={book.url} target="_blank" rel="noopener noreferrer" class="glass-card flex gap-5 rounded-[30px] p-6" data-reveal data-reveal-delay={String((i % 3) + 1)}>
-            <div class="w-24 flex-shrink-0 overflow-hidden rounded-[18px] bg-slate-100 aspect-[2/3]">
+        {books.map((book) => (
+          <a href={book.url} target="_blank" rel="noopener noreferrer" class="flex gap-4 rounded-lg border border-slate-200 bg-white p-5 hover:border-slate-400 transition-colors">
+            <div class="w-20 flex-shrink-0 overflow-hidden rounded border border-slate-200 bg-slate-100 aspect-[2/3]">
               <img src={book.cover} alt={book.title} class="h-full w-full object-cover" loading="lazy" />
             </div>
             <div class="flex min-w-0 flex-1 flex-col">
-              <div class="meta-label text-[#a33a21]">Amazon</div>
-              <h3 class="mt-3 text-lg leading-tight text-[#181511]">{book.title}</h3>
-              <p class="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">{book.desc}</p>
+              <h3 class="text-sm font-semibold leading-snug text-slate-900">{book.title}</h3>
+              <p class="mt-2 text-xs leading-relaxed text-slate-600">{book.desc}</p>
             </div>
           </a>
         ))}
-      </div>
-      <div class="mt-8 flex justify-center">
-        <a href="https://www.amazon.com/s?k=Majid+Mumtaz" target="_blank" rel="noopener noreferrer" class="btn-secondary">View More Writing</a>
       </div>
     </div>
   </section>
