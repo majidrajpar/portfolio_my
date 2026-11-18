@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import CareerTimeline from '../components/CareerTimeline.jsx';
+import CareerList from '../components/CareerList.astro';
 import NetworkCanvas from '../components/NetworkCanvas';
 import { getCareerMilestones } from '../lib/db.js';
 import { testimonials } from '../data/testimonials.js';
@@ -182,17 +182,11 @@ const employers = [
         <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">Career trajectory.</h2>
         <p class="mt-5 max-w-2xl text-base leading-8 text-[color:var(--text-secondary)]">From Big 4 roots to group-level profit protection, transformation, and board advisory.</p>
       </div>
-      <div class="relative group" data-reveal data-reveal-delay="1">
-        <div class="overflow-x-auto pb-6 -mx-7 px-7 md:-mx-10 md:px-10">
-          <div class="min-w-[800px] lg:min-w-0 editorial-panel border border-white/10 shadow-2xl">
-            <CareerTimeline client:visible careerData={careerData} />
-          </div>
-        </div>
-      </div>
+      <CareerList careerData={careerData} />
     </div>
   </section>
 
-  <section class="px-4 py-4 md:px-8">
+  <section class="px-4 py-4 md:px-8" id="endorsements">
     <div class="mx-auto max-w-7xl">
       <div class="mb-10" data-reveal>
         <span class="eyebrow-label">Executive Endorsements</span>
@@ -200,7 +194,7 @@ const employers = [
         <p class="mt-5 max-w-2xl text-base leading-8 text-[color:var(--text-secondary)]">Direct perspective from the C-suite, Audit Committees, and Senior Partners on the impact of my advisory work.</p>
       </div>
       <div class="grid gap-5 md:grid-cols-2">
-        {testimonials.slice(0, 2).map((t, i) => (
+        {testimonials.map((t, i) => (
           <div class="soft-shell p-8" data-reveal data-reveal-delay={String(i + 1)}>
             <div class="flex items-center gap-4 mb-6">
               <div class="h-12 w-12 rounded-full bg-[#1b1a17] text-white flex items-center justify-center font-bold text-xl">

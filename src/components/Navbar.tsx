@@ -103,7 +103,7 @@ const Navbar = ({ initialPath = '' }) => {
   const navItems = [
     { label: 'Case Studies', href: `${baseUrl}projects/` },
     { label: 'Tools', href: `${baseUrl}tools/` },
-    { label: 'Ed/Trench Series', href: `${baseUrl}trench-series/` },
+    { label: 'Field notes', href: `${baseUrl}trench-series/` },
     { label: 'Resources', href: `${baseUrl}resources/` },
   ];
 
@@ -164,7 +164,7 @@ const Navbar = ({ initialPath = '' }) => {
               className={`text-[10px] font-black uppercase tracking-[0.16em] lg:tracking-[0.22em] transition-colors inline-flex items-center gap-1 cursor-pointer relative
                 ${isShelfActive || shelfOpen ? 'text-[#1d3557]' : 'text-slate-500 hover:text-[#181511]'}`}
             >
-              Shelf
+              Library
               <svg
                 className={`h-3 w-3 transition-transform duration-200 ${shelfOpen ? 'rotate-180 text-[#a33a21]' : 'text-slate-400'}`}
                 fill="none"
@@ -190,7 +190,7 @@ const Navbar = ({ initialPath = '' }) => {
                 >
                   <div className="px-3 pt-2 pb-1 border-b border-[color:var(--line-soft)] mb-1">
                     <span className="text-[9px] font-black uppercase tracking-[0.24em] text-slate-400">
-                      Shelf &amp; Special Projects
+                      Library
                     </span>
                   </div>
                   <div className="flex flex-col gap-0.5">
@@ -315,7 +315,7 @@ const Navbar = ({ initialPath = '' }) => {
                   onClick={() => setMobileShelfOpen(!mobileShelfOpen)}
                   className="w-full flex items-center justify-between text-[10px] font-black uppercase tracking-[0.24em] text-slate-500 hover:text-slate-900"
                 >
-                  <span className={isShelfActive ? 'text-[#1d3557]' : ''}>Shelf</span>
+                  <span className={isShelfActive ? 'text-[#1d3557]' : ''}>Library</span>
                   <svg
                     className={`h-3 w-3 transition-transform duration-200 ${mobileShelfOpen ? 'rotate-180 text-[#a33a21]' : 'text-slate-400'}`}
                     fill="none"

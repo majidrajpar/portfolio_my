@@ -1,0 +1,21 @@
+---
+const { careerData = [] } = Astro.props;
+
+const rows = [...careerData].sort((a, b) => Number(b.x) - Number(a.x));
+
+function label(value) {
+  return String(value ?? '').replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
+}
+---
+
+<ol class="divide-y divide-slate-200 border-t border-slate-200">
+  {rows.map((row) => (
+    <li class="grid gap-1 py-4 sm:grid-cols-[8.5rem_1fr] sm:items-baseline sm:gap-8">
+      <p class="text-sm font-medium tabular-nums text-slate-500">{row.dates}</p>
+      <div>
+        <p class="text-base font-semibold text-slate-900">{label(row.role)}</p>
+        <p class="text-sm text-slate-600">{label(row.company)}</p>
+      </div>
+    </li>
+  ))}
+</ol>
