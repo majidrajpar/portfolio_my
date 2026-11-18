@@ -94,7 +94,7 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
 
   <!-- Privacy First Disclaimer -->
   <section class="px-4 py-5 md:px-8">
-    <div class="soft-shell mx-auto max-w-7xl px-5 py-5 md:px-7" data-reveal>
+    <div class="rounded-lg border border-slate-200 bg-white mx-auto max-w-7xl px-5 py-5 md:px-7" data-reveal>
       <div class="flex items-start gap-3">
         <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
@@ -109,7 +109,7 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
 
   <!-- Search and Filter Control Deck -->
   <section class="px-4 py-3 md:px-8" id="tools-search-section">
-    <div class="soft-shell mx-auto max-w-7xl p-5 md:p-7" data-reveal>
+    <div class="rounded-lg border border-slate-200 bg-white mx-auto max-w-7xl p-5 md:p-7" data-reveal>
       <div class="flex flex-col gap-5">
         <!-- Search input with clear button and ESC shortcut -->
         <div class="relative flex items-center">
@@ -299,7 +299,7 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
             <p class="mt-2 text-sm text-[color:var(--text-secondary)]">Focused calculation and verification utilities for fieldwork execution.</p>
           </div>
 
-          <div class="soft-shell mt-6 overflow-x-auto px-4 py-2 md:px-8">
+          <div class="rounded-lg border border-slate-200 bg-white mt-6 overflow-x-auto px-4 py-2 md:px-8">
             {shelf.map((tool) => (
               <div class="flex w-full min-w-0 items-baseline gap-3 whitespace-nowrap border-b border-[color:var(--line-soft)] py-4 last:border-b-0">
                 <span class="meta-label shrink-0 whitespace-nowrap text-[#8d6035]">{tool.domain}</span>
