@@ -180,45 +180,24 @@ const featuredTools = tools
     </div>
   </section>
 
-  <section class="border-b border-slate-200 bg-white px-4 py-14 md:px-8">
-    <div class="mx-auto max-w-6xl">
-      <h2 class="text-2xl font-semibold tracking-tight text-slate-900">Tools</h2>
-      <div class="mt-6 border-t border-slate-200">
-        {featuredTools.map((tool) => (
-          <div class="flex flex-col gap-2 border-b border-slate-200 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-            <span class="shrink-0 text-xs font-medium uppercase tracking-widest text-slate-500">{tool.domain}</span>
-            <span class="min-w-0 flex-1 text-slate-900">{tool.title}</span>
-            <a href={`${base}tools/${tool.id}/`} data-event="home_tool_click" data-slug={tool.id} class="shrink-0 text-sm font-semibold text-slate-900 underline underline-offset-4">
-              Open
-            </a>
-          </div>
-        ))}
+  <section class="border-b border-slate-200 bg-white px-4 py-12 md:px-8">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-baseline justify-between gap-6">
+      <div>
+        <h2 class="text-lg font-semibold tracking-tight text-slate-900">Library &amp; Tools</h2>
+        <p class="mt-1 text-sm text-slate-600">
+          Browser-based audit calculators, continuous monitoring models, and field notes.
+        </p>
       </div>
-      <a href={`${base}tools/`} class="mt-6 inline-flex text-sm font-semibold text-slate-900 underline underline-offset-4">
-        All tools
-      </a>
-    </div>
-  </section>
-
-  <section class="px-4 py-14 md:px-8 border-b border-slate-200 bg-white" id="infographics">
-    <div class="mx-auto max-w-6xl space-y-6">
-      <div class="flex items-end justify-between gap-4">
-        <h2 class="text-2xl font-semibold tracking-tight text-slate-900">
-          Selected infographics
-        </h2>
-        <a href={`${base}trench-series/`} class="text-xs font-medium text-slate-700 underline underline-offset-4 hover:text-slate-900">
-          View all →
+      <div class="flex flex-wrap items-center gap-6">
+        <a href={`${base}tools/`} class="text-sm font-semibold text-slate-900 underline underline-offset-4">
+          Tools
         </a>
-      </div>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {briefs.map((brief) => (
-          <a href={brief.href} class="group block border border-slate-200 rounded-md overflow-hidden bg-white hover:border-slate-400 transition-colors">
-            <img src={brief.src} alt={brief.title} class="h-52 w-full bg-white object-contain" loading="lazy" />
-            <div class="p-3 bg-white border-t border-slate-200">
-              <p class="text-xs font-semibold text-slate-900 group-hover:text-slate-600">{brief.title}</p>
-            </div>
-          </a>
-        ))}
+        <a href={`${base}trench-series/`} class="text-sm font-semibold text-slate-900 underline underline-offset-4">
+          Field notes
+        </a>
+        <a href={`${base}resources/`} class="text-sm font-semibold text-slate-900 underline underline-offset-4">
+          Library
+        </a>
       </div>
     </div>
   </section>

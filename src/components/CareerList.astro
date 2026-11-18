@@ -6,16 +6,34 @@ const rows = [...careerData].sort((a, b) => Number(b.x) - Number(a.x));
 function label(value) {
   return String(value ?? '').replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
 }
+
+const scaleByCompany = {
+  VERITUX: 'Independent audit & risk advisory, UAE & GCC',
+  KITOPI: 'Multi-country cloud kitchen & F&B group, 100+ locations across 8 countries',
+  'AFG Restaurants Sector': 'Board audit committee oversight, hospitality & F&B',
+  'AL-FAISALIAH GROUP': 'Diversified Saudi conglomerate (healthcare, F&B, electronics, dairy)',
+  "McDONALD'S KSA": 'National QSR franchise operations, Saudi Arabia',
+  'KPMG (QATAR)': 'Big 4 internal audit & risk advisory',
+  'BMA ASSET MANAGEMENT': 'Capital markets & asset management',
+  EY: 'Big 4 external & internal audit',
+};
 ---
 
 <ol class="divide-y divide-slate-200 border-t border-slate-200">
-  {rows.map((row) => (
-    <li class="grid gap-1 py-4 sm:grid-cols-[8.5rem_1fr] sm:items-baseline sm:gap-8">
-      <p class="text-sm font-medium tabular-nums text-slate-500">{row.dates}</p>
-      <div>
-        <p class="text-base font-semibold text-slate-900">{label(row.role)}</p>
-        <p class="text-sm text-slate-600">{label(row.company)}</p>
-      </div>
-    </li>
-  ))}
+  {rows.map((row) => {
+    const company = label(row.company);
+    const scale = scaleByCompany[company];
+    return (
+      <li class="grid gap-1 py-4 sm:grid-cols-[8.5rem_1fr] sm:items-baseline sm:gap-8">
+        <p class="text-sm font-medium tabular-nums text-slate-500">{row.dates}</p>
+        <div>
+          <p class="text-base font-semibold text-slate-900">{label(row.role)}</p>
+          <p class="text-sm text-slate-700">
+            {company}
+            {scale && <span class="text-slate-500"> · {scale}</span>}
+          </p>
+        </div>
+      </li>
+    );
+  })}
 </ol>
