@@ -121,7 +121,7 @@ const featuredTools = tools
         ))}
       </div>
       <p class="mt-5 max-w-3xl text-sm leading-6 text-slate-500">
-        The food-tech cards are one population. The dirham figure is one result.
+        The AED 7.7M card and the Baseline card are one food-tech population. Count that dirham result once. The Baseline page itemises acquired-outlet leakage and is not a second total.
       </p>
     </div>
   </section>
@@ -182,8 +182,17 @@ const featuredTools = tools
       <div>
         <h2 class="text-lg font-semibold tracking-tight text-slate-900">Library &amp; Tools</h2>
         <p class="mt-1 text-sm text-slate-600">
-          Browser-based audit calculators, continuous monitoring models, and field notes.
+          Four diagnostics run in the browser. The full catalog is linked beside them.
         </p>
+        <ul class="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+          {featuredTools.map((tool) => (
+            <li>
+              <a href={`${base}tools/${tool.id}/`} class="text-sm font-semibold text-slate-900 underline underline-offset-4">
+                {tool.title}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
       <div class="flex flex-wrap items-center gap-6">
         <a href={`${base}tools/`} class="text-sm font-semibold text-slate-900 underline underline-offset-4">

@@ -26,7 +26,7 @@ const relatedLabels = {
     case: 'Whistleblowing framework (QSR leader).',
   },
   'post-merger-integration-fnb-group': {
-    tool: 'Audit sample size calculator.',
+    tool: 'Cafe inventory, recipe costing, and POS depletion.',
     case: 'M&A capital protection & due diligence.',
   },
 };
@@ -150,7 +150,7 @@ const jsonLd = {
         </div>
         <div class="quote-panel p-6 md:p-8" data-reveal data-reveal-delay="1">
           <span class="eyebrow-label text-[#f4c98b]/80">Key Results</span>
-          {hasStarr && project.impact ? (
+          {project.impact ? (
             <p class="mt-4 text-base leading-7 text-white/82 md:mt-5 md:text-lg md:leading-8">{project.impact}</p>
           ) : null}
           {project.categories?.length > 0 && (
@@ -174,6 +174,12 @@ const jsonLd = {
       <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
         <span class="meta-label text-[#181511]">Disclosure</span>
         Employer names are on the career record. This page uses the industry field and the stored figures.
+        {project.id === 'audit-4-transformation' && (
+          <> The AED 7.7M is the dirham result for this food-tech population. The post-acquisition page records acquired-outlet leakage separately. The two figures are not added.</>
+        )}
+        {project.id === 'post-merger-integration-fnb-group' && (
+          <> The AED 22M is acquired-outlet leakage on this page. It is not added to the AED 7.7M result on <a href={`${base}projects/audit-4-transformation/`} class="font-medium text-[#181511] underline underline-offset-4">Audit 4.0</a>.</>
+        )}
       </p>
     </div>
   </section>
@@ -208,7 +214,9 @@ const jsonLd = {
             {project.impact && (
               <p class="text-[15px] leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">{project.impact}</p>
             )}
-            <p class="mt-5 text-[15px] leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">Situation, mandate, action, result, and reflection are not stored for this record.</p>
+            {project.description && (
+              <p class="mt-5 text-[15px] leading-7 text-[color:var(--text-secondary)] md:text-base md:leading-8">{project.description}</p>
+            )}
           </div>
         )}
 
