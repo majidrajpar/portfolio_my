@@ -1,18 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { tools } from '../../data/tools.js';
-import NetworkCanvas from '../../components/NetworkCanvas';
 const base = import.meta.env.BASE_URL;
-
-const categoryColors: Record<string, string> = {
-  'Audit Intelligence': 'bg-[#181512] text-[#f4c98b]',
-  'Fraud & Forensics':  'bg-[#3a1913] text-[#f1b5a2]',
-  'Governance':         'bg-[#1f253a] text-[#c8d2f8]',
-  'Internal Controls':  'bg-[#17302e] text-[#b7e2db]',
-  'Enterprise Risk':    'bg-[#40250f] text-[#f3cf9b]',
-  'Compliance':         'bg-[#2f223f] text-[#d7c3f4]',
-  'Reporting':          'bg-[#293038] text-[#d4dee8]',
-};
 
 const resolveHref = (href: string) => {
   if (href.startsWith('http')) return href;
@@ -57,19 +46,19 @@ const byListedOrder = (ids: string[]) => (a: { id: string }, b: { id: string }) 
   return rank(a.id) - rank(b.id);
 };
 
-const featured = tools
+const isBrowserTool = (tool: { href: string }) => tool.href.includes('/tools/');
+const browserTools = tools.filter(isBrowserTool);
+
+const featured = browserTools
   .filter((tool) => tool.tier === 'featured')
   .sort((a, b) => a.featuredOrder - b.featuredOrder);
 
-const catalog = tools
-  .filter((tool) => tool.tier === 'catalog')
-  .sort(byListedOrder(catalogOrder));
+const rowOrder = [...catalogOrder, ...shelfOrder];
+const rows = browserTools
+  .filter((tool) => tool.tier !== 'featured')
+  .sort(byListedOrder(rowOrder));
 
-const shelf = tools
-  .filter((tool) => tool.tier === 'shelf')
-  .sort(byListedOrder(shelfOrder));
-
-const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)))];
+const allCategories = ['All', ...Array.from(new Set(browserTools.map((t) => t.category)))];
 ---
 
 <BaseLayout
@@ -77,18 +66,15 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
   description="20 free browser-based internal audit tools, sample size calculators, COSO control evaluators, fraud risk predictors, and Tadawul Nomu governance diagnostics."
 >
   <!-- Hero Section -->
-  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
-    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
-      <NetworkCanvas client:load nodeCount={35} />
-      <div class="relative z-10 max-w-4xl" data-reveal>
-        <span class="hero-chip mb-6">Continuous Monitoring · Machine Learning · Forensic WASM</span>
-        <h1 class="headline-display max-w-4xl text-[clamp(3rem,7vw,6rem)] font-black text-white">
-          Tools
-        </h1>
-        <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.12rem] md:leading-9">
-          20 tools run in the browser. Five further entries are field models and a payroll engine. Inputs stay on this device.
-        </p>
-      </div>
+  <section class="border-b border-slate-200 bg-white px-4 pt-28 pb-10 md:px-8">
+    <div class="mx-auto max-w-6xl">
+      <p class="text-xs font-medium uppercase tracking-widest text-slate-500">Tools</p>
+      <h1 class="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl leading-[1.06]">
+        Browser tools.
+      </h1>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-slate-600">
+        Four diagnostics run in the browser. The other browser tools are listed under them. Inputs stay on this device.
+      </p>
     </div>
   </section>
 
@@ -192,7 +178,7 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
         <!-- Live Results Counter & Reset -->
         <div class="flex items-center justify-between text-xs text-[color:var(--text-secondary)] pt-1">
           <div id="tool-results-count" class="font-medium">
-            Showing <span class="font-bold text-[#181511]" id="count-number">{tools.length}</span> tools
+            Showing <span class="font-bold text-[#181511]" id="count-number">{browserTools.length}</span> tools
           </div>
           <button
             id="tool-reset-all"
@@ -211,116 +197,41 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
     <div class="mx-auto max-w-7xl">
       <!-- 1. Default Curated View (Featured -> Catalog -> Shelf) -->
       <div id="curated-tools-view">
-        <!-- Featured Grid -->
-        <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
-          {featured.map((tool, i) => (
+        <h2 class="mb-5 text-lg font-semibold tracking-tight text-slate-900">Diagnostics</h2>
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+          {featured.map((tool) => (
             <a
               href={resolveHref(tool.href)}
-              target={tool.href.startsWith('http') ? '_blank' : undefined}
-              rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              class="rounded-lg border border-slate-200 bg-white group flex h-full flex-col rounded-lg p-6 transition-all duration-300 md:p-8"
-              data-reveal
-              data-reveal-delay={String((i % 3) + 1)}
+              class="rounded-lg border border-slate-200 bg-white p-6 hover:border-slate-400"
             >
-              <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                <span class={`inline-flex w-fit px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
-                  {tool.domain}
-                </span>
-                <div class="flex flex-wrap gap-2">
-                  {tool.href.startsWith('http') && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-700">GitHub</span>}
-                  {tool.ml && <span class="rounded-full border border-[#c7964c]/30 bg-[#c7964c]/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#a66c1c]">ML</span>}
-                  {tool.rust && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">WASM</span>}
-                </div>
-              </div>
-              <h2 class="text-[1.28rem] leading-tight text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[1.45rem]">
-                {tool.title}
-              </h2>
-              <p class="mt-4 flex-1 text-sm leading-7 text-[color:var(--text-secondary)] md:leading-8">
-                {tool.description}
-              </p>
-              <div class="mt-6 border-t border-[color:var(--line-soft)] pt-4 md:mt-7 md:pt-5">
-                <span class="meta-label">{tool.href.startsWith('http') ? 'Repository' : 'Execution'}</span>
-                <span class="mt-3 inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[11px] md:tracking-[0.24em]">
-                  {tool.href.startsWith('http') ? 'View on GitHub' : 'Launch Tool'}
-                  <svg class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={tool.href.startsWith('http') ? "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" : "M17 8l4 4m0 0l-4 4m4-4H3"}/>
-                  </svg>
-                </span>
-              </div>
+              <p class="text-xs font-medium uppercase tracking-widest text-slate-500">{tool.domain}</p>
+              <h2 class="mt-2 text-xl font-semibold tracking-tight text-slate-900">{tool.title}</h2>
+              <p class="mt-3 text-sm leading-6 text-slate-600">{tool.description}</p>
             </a>
           ))}
         </div>
 
-        <!-- Catalog Grid -->
-        <div class="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
-          {catalog.map((tool, i) => (
+        <h2 class="mb-5 mt-12 text-lg font-semibold tracking-tight text-slate-900">Further tools</h2>
+        <div class="rounded-lg border border-slate-200 bg-white">
+          {rows.map((tool) => (
             <a
               href={resolveHref(tool.href)}
-              target={tool.href.startsWith('http') ? '_blank' : undefined}
-              rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              class="rounded-lg border border-slate-200 bg-white group flex h-full flex-col rounded-lg p-6 transition-all duration-300 md:p-8"
-              data-reveal
-              data-reveal-delay={String((i % 3) + 1)}
+              class="flex flex-col gap-1 border-b border-slate-200 px-4 py-4 last:border-b-0 hover:bg-slate-50 sm:flex-row sm:items-baseline sm:gap-6"
             >
-              <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                <span class={`inline-flex w-fit px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
-                  {tool.domain}
-                </span>
-                <div class="flex flex-wrap gap-2">
-                  {tool.href.startsWith('http') && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-700">GitHub</span>}
-                  {tool.ml && <span class="rounded-full border border-[#c7964c]/30 bg-[#c7964c]/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#a66c1c]">ML</span>}
-                  {tool.rust && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">WASM</span>}
-                </div>
-              </div>
-              <h2 class="text-[1.28rem] leading-tight text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[1.45rem]">
-                {tool.title}
-              </h2>
-              <p class="mt-4 flex-1 text-sm leading-7 text-[color:var(--text-secondary)] md:leading-8">
-                {tool.description}
-              </p>
-              <div class="mt-6 border-t border-[color:var(--line-soft)] pt-4 md:mt-7 md:pt-5">
-                <span class="meta-label">{tool.href.startsWith('http') ? 'Repository' : 'Execution'}</span>
-                <span class="mt-3 inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[11px] md:tracking-[0.24em]">
-                  {tool.href.startsWith('http') ? 'View on GitHub' : 'Launch Tool'}
-                  <svg class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={tool.href.startsWith('http') ? "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" : "M17 8l4 4m0 0l-4 4m4-4H3"}/>
-                  </svg>
-                </span>
-              </div>
+              <span class="w-full shrink-0 text-xs font-medium uppercase tracking-widest text-slate-500 sm:w-56">{tool.domain}</span>
+              <span class="min-w-0 flex-1 text-sm font-semibold text-slate-900">{tool.title}</span>
+              <span class="shrink-0 text-sm font-semibold text-slate-900 underline underline-offset-4">Open</span>
             </a>
           ))}
-        </div>
-
-        <!-- Additional Utilities & Quick Calculators -->
-        <div class="mt-14">
-          <div class="my-10 border-t border-[color:var(--line-soft)]"></div>
-          <div class="pb-6 border-b border-[color:var(--line-soft)]">
-            <h2 class="text-2xl font-bold text-[#181511]">Additional Utilities &amp; Quick Calculators</h2>
-            <p class="mt-2 text-sm text-[color:var(--text-secondary)]">Focused calculation and verification utilities for fieldwork execution.</p>
-          </div>
-
-          <div class="rounded-lg border border-slate-200 bg-white mt-6 overflow-x-auto px-4 py-2 md:px-8">
-            {shelf.map((tool) => (
-              <div class="flex w-full min-w-0 items-baseline gap-3 whitespace-nowrap border-b border-[color:var(--line-soft)] py-4 last:border-b-0">
-                <span class="meta-label shrink-0 whitespace-nowrap text-[#8d6035]">{tool.domain}</span>
-                <span class="min-w-0 flex-1 truncate text-[#181511] font-medium">{tool.title}</span>
-                <a href={resolveHref(tool.href)} class="shrink-0 text-sm font-semibold text-[#181511] underline underline-offset-4 hover:text-[#8d6035]">
-                  Open
-                </a>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
       <!-- 2. Search & Filter Results Grid (All 19 tools elevated to full cards) -->
-      <div id="filtered-tools-grid" class="hidden grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 xl:grid-cols-3">
-        {tools.map((tool) => (
+      <div id="filtered-tools-grid" class="hidden rounded-lg border border-slate-200 bg-white">
+        {browserTools.map((tool) => (
           <a
             href={resolveHref(tool.href)}
-            target={tool.href.startsWith('http') ? '_blank' : undefined}
-            rel={tool.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            class="tool-card rounded-lg border border-slate-200 bg-white group flex h-full flex-col rounded-lg p-6 transition-all duration-300 md:p-8"
+            class="tool-card flex flex-col gap-1 border-b border-slate-200 px-4 py-4 last:border-b-0 hover:bg-slate-50 sm:flex-row sm:items-baseline sm:gap-6"
             data-id={tool.id}
             data-category={tool.category}
             data-title={tool.title.toLowerCase()}
@@ -329,31 +240,9 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
             data-ml={tool.ml ? 'true' : 'false'}
             data-rust={tool.rust ? 'true' : 'false'}
           >
-            <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-              <span class={`inline-flex w-fit px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] ${categoryColors[tool.category] ?? 'bg-slate-700 text-white'}`}>
-                {tool.domain}
-              </span>
-              <div class="flex flex-wrap gap-2">
-                {tool.href.startsWith('http') && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-700">GitHub</span>}
-                {tool.ml && <span class="rounded-full border border-[#c7964c]/30 bg-[#c7964c]/10 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#a66c1c]">ML</span>}
-                {tool.rust && <span class="rounded-full border border-slate-300 bg-white/75 px-2.5 py-1 text-[9px] font-black uppercase tracking-[0.2em] text-slate-500">WASM</span>}
-              </div>
-            </div>
-            <h2 class="text-[1.28rem] leading-tight text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[1.45rem]">
-              {tool.title}
-            </h2>
-            <p class="mt-4 flex-1 text-sm leading-7 text-[color:var(--text-secondary)] md:leading-8">
-              {tool.description}
-            </p>
-            <div class="mt-6 border-t border-[color:var(--line-soft)] pt-4 md:mt-7 md:pt-5">
-              <span class="meta-label">{tool.href.startsWith('http') ? 'Repository' : 'Execution'}</span>
-              <span class="mt-3 inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-[#181511] transition-colors group-hover:text-[#8d6035] md:text-[11px] md:tracking-[0.24em]">
-                {tool.href.startsWith('http') ? 'View on GitHub' : 'Launch Tool'}
-                <svg class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={tool.href.startsWith('http') ? "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" : "M17 8l4 4m0 0l-4 4m4-4H3"}/>
-                </svg>
-              </span>
-            </div>
+            <span class="w-full shrink-0 text-xs font-medium uppercase tracking-widest text-slate-500 sm:w-56">{tool.domain}</span>
+            <span class="min-w-0 flex-1 text-sm font-semibold text-slate-900">{tool.title}</span>
+            <span class="shrink-0 text-sm font-semibold text-slate-900 underline underline-offset-4">Open</span>
           </a>
         ))}
       </div>
@@ -547,7 +436,7 @@ const allCategories = ['All', ...Array.from(new Set(tools.map((t) => t.category)
         } else {
           if (filteredGrid) {
             filteredGrid.classList.remove('hidden');
-            filteredGrid.style.display = 'grid';
+            filteredGrid.style.display = 'block';
           }
           if (emptyState) {
             emptyState.classList.add('hidden');

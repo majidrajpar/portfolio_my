@@ -93,7 +93,7 @@
   }
 
   .eyebrow-label {
-    color: var(--accent);
+    color: #64748b;
     @apply text-[9px] font-black uppercase tracking-[0.28em] sm:text-[10px] sm:tracking-[0.38em];
   }
 
@@ -114,9 +114,9 @@
 
   .hero-chip {
     @apply inline-flex max-w-full items-center rounded-full px-4 py-2 text-[9px] font-black uppercase tracking-[0.2em] sm:text-[10px] sm:tracking-[0.35em];
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: rgba(255, 250, 245, 0.92);
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #475569;
   }
 
   .impact-chip {
@@ -169,7 +169,8 @@
   }
 
   .footer-shell {
-    background: #0f172a;
+    background: #ffffff;
+    color: #0f172a;
   }
 }
 
