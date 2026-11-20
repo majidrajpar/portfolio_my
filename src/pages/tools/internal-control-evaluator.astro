@@ -1,8 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import InternalControlEvaluator from '../../components/InternalControlEvaluator.jsx';
-import NetworkCanvas from '../../components/NetworkCanvas';
-import CommercialBridgeCard from '../../components/CommercialBridgeCard.astro';
 const base = import.meta.env.BASE_URL;
 
 const title = "COSO 2013 Internal Control Evaluator & ICOFR Assessment | Majid Mumtaz";
@@ -10,205 +8,33 @@ const description = "Interactive internal controls evaluator based on COSO 2013 
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "COSO 2013 Internal Control Evaluator",
-      "operatingSystem": "Web Browser",
-      "applicationCategory": "BusinessApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "description": "Interactive internal control diagnostic assessing organizations against the 5 components and 17 principles of the COSO 2013 Internal Control - Integrated Framework."
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What are the five components of the COSO 2013 Framework?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The five COSO components are: (1) Control Environment (tone at the top, ethical values, board oversight), (2) Risk Assessment (identifying and analyzing risks to objectives), (3) Control Activities (policies, procedures, and automated controls), (4) Information and Communication (relevant quality data flows), and (5) Monitoring Activities (ongoing evaluations and deficiency remediation)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What distinguishes a significant deficiency from a material weakness in internal control?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Under PCAOB and AICPA auditing standards, a significant deficiency is less severe than a material weakness yet important enough to merit attention by those charged with governance. A material weakness is a reasonable possibility that a material misstatement of the financial statements will not be prevented, or detected and corrected, on a timely basis."
-          }
-        }
-      ]
-    }
-  ]
+  "@type": "SoftwareApplication",
+  "name": "COSO 2013 Internal Control Evaluator",
+  "operatingSystem": "Web Browser",
+  "applicationCategory": "BusinessApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Interactive internal control diagnostic assessing organizations against the 5 components and 17 principles of the COSO 2013 Internal Control - Integrated Framework."
 };
 ---
 
-<BaseLayout
-  title={title}
-  description={description}
->
+<BaseLayout title={title} description={description}>
   <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
 
-
-  <!-- Hero -->
-  <section class="relative overflow-hidden px-4 pt-24 md:px-8 md:pt-28">
-    <div class="editorial-panel relative mx-auto max-w-7xl overflow-hidden px-6 py-10 md:px-10 md:py-12">
-      <NetworkCanvas client:load nodeCount={35} />
-      <div class="relative z-10 max-w-4xl" data-reveal>
-        <a href={`${base}tools/`} class="mb-7 inline-flex text-[11px] font-black uppercase tracking-[0.28em] text-white/58 transition-colors hover:text-white">
-          &larr; Back to Tools
-        </a>
-        <span class="hero-chip mb-6 md:mb-7">COSO 2013 Internal Controls</span>
-        <h1 class="headline-display max-w-4xl text-[clamp(2.8rem,6vw,5rem)] font-black text-white">
-          Internal Control
-          <span class="block text-[#f4c98b]">Evaluator.</span>
-        </h1>
-        <p class="mt-6 max-w-3xl text-[15px] leading-7 text-white/74 md:mt-8 md:text-[1.08rem] md:leading-9">
-          Rate your organisation across all five COSO 2013 components and 17 principles. The ML model classifies your control environment — from sound to material weakness — and generates a prioritised remediation plan. All in-browser.
-        </p>
-      </div>
+  <section class="border-b border-slate-200 bg-white px-4 pt-28 pb-10 md:px-8">
+    <div class="mx-auto max-w-6xl">
+      <a href={`${base}tools/`} class="text-sm font-semibold text-slate-900 underline underline-offset-4">All tools</a>
+      <h1 class="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">Internal Control Evaluator</h1>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-slate-600">Rate each COSO principle on a 1–5 scale.</p>
     </div>
   </section>
 
-  <!-- Privacy Banner -->
-  <section class="px-4 py-5 md:px-8">
-    <div class="rounded-lg border border-slate-200 bg-white mx-auto flex max-w-7xl items-start gap-3 px-5 py-5 md:px-7" data-reveal>
-      <svg class="mt-0.5 h-4 w-4 flex-shrink-0 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-      </svg>
-      <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
-        <span class="meta-label text-[#181511]">Client-Side Integrity</span>
-        Ratings and outputs remain 100% on-device. Control evaluations and deficiency scores are computed locally in JavaScript memory with zero network egress.
-      </p>
+  <section class="bg-white px-4 py-10 md:px-8">
+    <div class="mx-auto max-w-6xl rounded-lg border border-slate-200 p-6 md:p-10">
+      <InternalControlEvaluator client:load />
     </div>
   </section>
-
-  <!-- Tool -->
-  <section class="px-4 py-4 md:px-8">
-    <div class="mx-auto max-w-7xl" data-reveal data-reveal-delay="1">
-      <div class="rounded-lg border border-slate-200 bg-white p-6 md:p-10">
-        <div class="mb-10" data-reveal>
-          <span class="eyebrow-label text-[#a33a21]">Step-by-Step Diagnostic</span>
-          <h2 class="mt-2 text-2xl md:text-3xl font-black text-[#181511]">Rate each COSO principle.</h2>
-          <p class="mt-2 text-sm leading-relaxed text-slate-600 max-w-xl">
-            Expand each component, score its principles on a 1–5 scale, and the model will classify your control environment and generate a prioritized action plan.
-          </p>
-        </div>
-
-        <InternalControlEvaluator client:load />
-      </div>
-
-      <CommercialBridgeCard
-        badge="Capital Markets Architecture"
-        title="GCC Pre-IPO Governance, ICFR & Regulatory Readiness Kit"
-        description="Production-ready Tadawul Main, Nomu, and ADX/DFM jurisdictional matrices, full scoping models, ICFR ToD/ToE testing workpapers, and deficiency severity classifiers for board and regulatory submission."
-        primaryUrl="https://majidmumtaz.gumroad.com/l/gcc-ipo-icfr-kit"
-        primaryLabel="Deploy Pre-IPO Suite · $99 / $299"
-        secondaryUrl={`${base}resources/`}
-        secondaryLabel="View All Frameworks"
-      />
-    </div>
-  </section>
-
-  <!-- Methodology -->
-  <section class="px-4 py-8 md:px-8">
-    <div class="mx-auto max-w-7xl">
-      <div class="rounded-lg border border-slate-200 bg-white p-6 md:p-10" data-reveal>
-        <div class="max-w-3xl">
-          <span class="eyebrow-label text-[#c7964c]">Methodology & Framework</span>
-          <h2 class="mt-2 text-2xl md:text-3xl font-black text-[#181511] mb-4">How assessments are determined.</h2>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            The evaluator uses a supervised model calibrated against expert-labelled control environment profiles, aligned with the COSO 2013 Internal Control — Integrated Framework. The model analyses all five component scores and interaction effects to produce deficiency classifications consistent with PCAOB AS 2201, SOX 404, and IIA standards.
-          </p>
-          <p class="text-slate-500 text-xs leading-relaxed mb-10">
-            Ratings reflect the assessor's professional judgement at a point in time. Final classification for financial reporting requires entity-specific quantitative materiality evaluations and review by the external audit partner.
-          </p>
-
-          <!-- COSO 2013 Overview -->
-          <h3 class="text-base font-black text-[#181511] uppercase tracking-wider mb-4">The Five COSO Components</h3>
-
-          <!-- Five components grid -->
-          <div class="grid grid-cols-1 md:grid-cols-5 gap-3 mb-10">
-            {[
-              { num: '01', label: 'Control Environment', count: '4 principles', desc: 'Tone, board oversight, integrity, and organizational structure.' },
-              { num: '02', label: 'Risk Assessment', count: '3 principles', desc: 'Risk identification, tolerance calibration, and exposure analysis.' },
-              { num: '03', label: 'Control Activities', count: '4 principles', desc: 'Policies and procedural barriers mitigating failure.' },
-              { num: '04', label: 'Info & Comms', count: '3 principles', desc: 'Timely, audited information flows supporting decision-making.' },
-              { num: '05', label: 'Monitoring', count: '3 principles', desc: 'Continuous surveillance and control evaluation mechanisms.' },
-            ].map(({ num, label, count, desc }) => (
-              <div class="bg-[#faf8f5] border border-[color:var(--line-soft)] border-t-2 border-t-[#a33a21] p-4 rounded-lg">
-                <div class="text-[10px] font-black text-[#a33a21] mb-1 tracking-widest">{num}</div>
-                <div class="text-xs font-black text-slate-900 mb-1">{label}</div>
-                <div class="text-[10px] font-bold text-[#c7964c] uppercase tracking-widest mb-1.5">{count}</div>
-                <div class="text-[10px] text-slate-500 leading-snug">{desc}</div>
-              </div>
-            ))}
-          </div>
-
-          <!-- Deficiency classification -->
-          <h3 class="text-xs font-black text-[#181511] uppercase tracking-widest mb-4">PCAOB AS 2201 Deficiency Classification</h3>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-            {[
-              { label: 'No Deficiency', color: 'text-emerald-700', top: 'border-t-emerald-600', desc: 'Controls are operating effectively. Continue periodic cycle testing.' },
-              { label: 'Control Deficiency', color: 'text-amber-700', top: 'border-t-amber-500', desc: 'Operational gap exists. Management remediation timeline required.' },
-              { label: 'Significant Deficiency', color: 'text-orange-700', top: 'border-t-orange-600', desc: 'Merits attention by Audit Committee. Direct escalation required.' },
-              { label: 'Material Weakness', color: 'text-rose-700', top: 'border-t-rose-700', desc: 'Reasonable possibility of material misstatement. Board action required.' },
-            ].map(({ label, color, top, desc }) => (
-              <div class={`bg-[#faf8f5] border border-[color:var(--line-soft)] border-t-2 ${top} p-4 rounded-lg`}>
-                <div class={`font-black text-xs uppercase tracking-widest mb-1.5 ${color}`}>{label}</div>
-                <div class="text-slate-600 text-xs leading-snug">{desc}</div>
-              </div>
-            ))}
-          </div>
-
-          <!-- Rating Scale -->
-          <div class="border border-[color:var(--line-soft)] rounded-lg overflow-hidden mb-8">
-            <table class="w-full text-xs">
-              <thead>
-                <tr class="bg-[#181511] text-white">
-                  <th class="text-left px-5 py-3.5 font-black uppercase tracking-widest text-[10px]">Score</th>
-                  <th class="text-left px-5 py-3.5 font-black uppercase tracking-widest text-[10px]">Label</th>
-                  <th class="text-left px-5 py-3.5 font-black uppercase tracking-widest text-[10px]">Interpretation</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-200 bg-white">
-                {[
-                  { score: '1', label: 'Not Present', color: 'text-red-600', interp: 'The principle is absent. No documented policies or execution evidence exist.' },
-                  { score: '2', label: 'Partially Present', color: 'text-orange-500', interp: 'Limited emergence. Significant operational gaps remain unaddressed.' },
-                  { score: '3', label: 'Generally Present', color: 'text-amber-600', interp: 'Broadly in place but with notable inconsistency in enforcement.' },
-                  { score: '4', label: 'Substantially Present', color: 'text-emerald-600', interp: 'Well-established and operating effectively with minor exceptions.' },
-                  { score: '5', label: 'Fully Effective', color: 'text-emerald-700', interp: 'Fully implemented, consistently enforced, with continuous monitoring.' },
-                ].map(({ score, label, color, interp }) => (
-                  <tr class="hover:bg-slate-50 transition-colors">
-                    <td class={`px-5 py-3 font-black text-base ${color}`}>{score}</td>
-                    <td class={`px-5 py-3 font-black text-xs ${color}`}>{label}</td>
-                    <td class="px-5 py-3 text-slate-500 text-[11px] leading-relaxed">{interp}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Next Steps CTA -->
-  <section class="px-4 py-8 pb-20 md:px-8">
-    <div class="editorial-panel mx-auto max-w-7xl px-6 py-12 text-center" data-reveal>
-      <h2 class="text-3xl font-black text-white mb-4">Facing Control Deficiencies or Audit Gaps?</h2>
-      <p class="text-white/70 mb-8 max-w-2xl mx-auto text-sm leading-relaxed">
-        Remediating deficiencies before year-end saves audit fees, accelerates closing timelines, and protects board credibility.
-      </p>
-      <a href={`${base}contact/`} class="btn-primary">
-        Discuss a Remediation Mandate
-      </a>
-    </div>
-  </section>
-
 </BaseLayout>
