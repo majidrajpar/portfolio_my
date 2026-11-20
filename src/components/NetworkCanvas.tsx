@@ -43,30 +43,15 @@ interface NetworkState {
 export default function NetworkCanvas({ nodeCount = 42, className = '' }: { nodeCount?: number; className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const stateRef = useRef<NetworkState | null>(null);
-  const wasmRef = useRef<any>(null);
   const rafRef = useRef<number | null>(null);
   const frameRef = useRef<number>(0);
-  const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '');
 
   useEffect(() => {
     let cancelled = false;
 
-    async function init() {
-      try {
-        const wasmUrl = `${base}/wasm/audit_engine.js`;
-        const wasm = await import(/* @vite-ignore */ wasmUrl);
-        await wasm.default();
-        if (cancelled) return;
-        wasmRef.current = wasm;
-
-        const raw = wasm.generate_network(nodeCount, 7);
-        stateRef.current = raw;
-        startLoop();
-      } catch {
-        // WASM unavailable : fall back to pure-JS static render
-        stateRef.current = generateFallback(nodeCount);
-        startLoop();
-      }
+    function init() {
+      stateRef.current = generateFallback(nodeCount);
+      startLoop();
     }
 
     function generateFallback(n: number): NetworkState {
@@ -155,15 +140,7 @@ export default function NetworkCanvas({ nodeCount = 42, className = '' }: { node
 
         // Tick physics every 2 frames (~30fps physics, 60fps draw)
         if (frameRef.current % 2 === 0 && stateRef.current) {
-          if (wasmRef.current && typeof wasmRef.current.tick_network === 'function') {
-            try {
-              stateRef.current = wasmRef.current.tick_network(stateRef.current as NetworkState);
-            } catch {
-              stateRef.current = tickFallback(stateRef.current as NetworkState);
-            }
-          } else {
-            stateRef.current = tickFallback(stateRef.current as NetworkState);
-          }
+          stateRef.current = tickFallback(stateRef.current as NetworkState);
         }
 
         draw();
@@ -195,7 +172,7 @@ export default function NetworkCanvas({ nodeCount = 42, className = '' }: { node
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       window.removeEventListener('resize', resize);
     };
-  }, [base, nodeCount]);
+  }, [nodeCount]);
 
   return (
     <canvas
