@@ -133,6 +133,23 @@ export const software = [
     ]
   },
   {
+    id: 'boardlite',
+    name: 'BoardLite',
+    tagline: 'Local browser-based dashboard for CSV and Excel files with zero server or BI license overhead.',
+    description: 'A lightweight, MIT-licensed local analytics workbench for teams that do not need enterprise BI licensing or hosted infrastructure. Open or drop multiple CSV and Excel workbooks directly in the browser, define one-hop table relationships, and build KPI cards, tables, and bar or line charts while keeping all source files strictly on the machine.',
+    category: 'Fieldwork Workbench',
+    techStack: ['TypeScript', 'Vite', 'CSV / XLSX', 'Browser Local', 'Zero-Server'],
+    githubUrl: 'https://github.com/majidrajpar/boardlite',
+    isPublic: true,
+    status: 'Production / Open Source',
+    keyFeatures: [
+      'Multi-file CSV and Excel ingestion up to 50,000 data rows and 100 columns with strict deterministic type parsing',
+      'One-hop table relationships and saved column measures (count, sum, avg, min, max) across tiles',
+      'Combined page-level and tile-level filtering with one-click Excel export (one sheet per tile)',
+      'Read-only URL-hash link sharing and JSON layout restore that transfer report definitions without uploading row data'
+    ]
+  },
+  {
     id: 'thirdeye-vendor-risk',
     name: 'ThirdEye: Vendor Risk Scanner',
     tagline: 'AI-assisted vendor intelligence and accounts payable anomaly detection.',

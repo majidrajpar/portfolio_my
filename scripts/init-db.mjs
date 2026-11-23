@@ -327,7 +327,7 @@ const reset = db.transaction(() => {
       display_order: 10,
       tier: 'secondary',
       related_tool: null,
-      related_build: null,
+      related_build: 'boardlite',
       related_case: null,
       snippet_ids: null,
     },
