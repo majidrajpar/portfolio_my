@@ -351,6 +351,26 @@ const reset = db.transaction(() => {
       related_case: 'ipo-governance-readiness',
       snippet_ids: null,
     },
+    {
+      title: 'Kitchen Equipment Supplier & Maintenance Fraud Investigation',
+      subtitle: 'Forensic review of circa $7M in two-year equipment supply and maintenance spend across completed kitchen projects.',
+      industry: 'FoodTech / Cloud Kitchens',
+      situation: 'A small supplier held both kitchen equipment supply and ongoing maintenance across a cloud kitchen network, with roughly $7M in spend over two years. A review of the contract found an exclusivity clause granted to the vendor. Subsequent checks showed the company was the supplier\'s only client, which triggered a broader investigation.',
+      task: 'Review completed kitchen projects to test procurement compliance, invoice-to-PO dates, and internal approval controls.',
+      action: 'Matched completed project deliveries against invoices and purchase orders. The testing found multiple equipment supplies delivered without purchase orders, as well as purchase orders issued 6 to 8 months after the invoice dates, with invoices submitted late. The projects and equipment team cleared those retroactive purchase orders internally.',
+      result: 'The vendor relationship was severed and the Project Director was terminated.',
+      reflection: 'Standard accounts payable matching checks whether an approved PO exists before releasing payment. When the projects team can clear retroactive POs months after invoicing, routine invoice testing misses the bypass. Catching it required reading the contract terms and testing completed-project timelines.',
+      impact: 'Circa $7M in two-year spend with a single-client exclusive supplier investigated. Vendor severed and Project Director terminated.',
+      tech_stack: '["Forensic Investigation","Procurement Controls","Contract Review","Retroactive PO Analysis"]',
+      categories: '["Fraud Forensics"]',
+      slug: 'kitchen-equipment-supplier-fraud',
+      display_order: 12,
+      tier: 'primary',
+      related_tool: null,
+      related_build: 'thirdeye-vendor-risk',
+      related_case: null,
+      snippet_ids: null,
+    },
     // __CASE_ROWS_END__
   ];
 
