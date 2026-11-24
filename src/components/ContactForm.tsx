@@ -17,6 +17,10 @@ const ContactForm = () => {
       if (res.ok) {
         setStatus('success');
         formRef.current?.reset();
+        const win = window as Window & { gtag?: (command: string, name: string, params?: Record<string, string>) => void };
+        if (typeof win.gtag === 'function') {
+          win.gtag('event', 'contact_form_submit', { form: 'contact' });
+        }
       } else {
         setStatus('error');
       }
