@@ -51,30 +51,11 @@ const featuredTools = tools
   description="CIA, ACA, FCCA certified Director of Internal Audit & Risk in Dubai. Board assurance, continuous controls monitoring (CCM), ICFR, and IPO readiness across UAE and GCC."
 >
   <section class="relative overflow-hidden border-b border-slate-200 bg-white px-4 pt-28 pb-14 md:px-8">
-    <svg class="pointer-events-none absolute left-0 top-16 hidden h-28 w-[34rem] md:block" viewBox="0 0 540 110" aria-hidden="true">
-      <defs>
-        <filter id="brush" x="-8%" y="-40%" width="116%" height="180%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="4" result="noise" />
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="7" />
-        </filter>
-      </defs>
-      <g filter="url(#brush)" fill="none" stroke-linecap="round">
-        <path d="M-10 58 C 90 18, 180 92, 340 46 S 470 22, 540 40" stroke="#9a3412" stroke-width="14" opacity="0.32" />
-        <path d="M0 70 C 110 40, 200 96, 360 62" stroke="#1c1917" stroke-width="2.5" opacity="0.4" />
-      </g>
-    </svg>
-    <svg class="pointer-events-none absolute bottom-3 left-6 hidden h-28 w-28 lg:block" viewBox="0 0 120 120" aria-hidden="true">
-      <g fill="none" stroke="#1c1917" stroke-width="1" opacity="0.35">
-        <circle cx="60" cy="60" r="46" />
-        <path d="M60 8 V112 M8 60 H112" />
-      </g>
-    </svg>
-    <svg class="pointer-events-none absolute right-6 top-20 hidden h-24 w-24 lg:block" viewBox="0 0 96 96" aria-hidden="true">
-      <g fill="none" stroke="#1c1917" stroke-width="1" opacity="0.4">
-        <path d="M8 8 H88 V88" />
-        <path d="M88 8 A 80 80 0 0 1 8 88" />
-      </g>
-    </svg>
+    <div
+      class="pointer-events-none absolute inset-0 opacity-[0.35]"
+      style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 28px 28px; mask-image: radial-gradient(ellipse 75% 70% at 50% 35%, #000 35%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 35%, #000 35%, transparent 100%);"
+      aria-hidden="true"
+    ></div>
     <div class="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.5fr_0.75fr] lg:items-center">
       <div>
         <p class="text-xs font-medium uppercase tracking-widest text-slate-500">
@@ -125,15 +106,8 @@ const featuredTools = tools
     </div>
   </section>
 
-  <section class="relative overflow-hidden border-b border-slate-200 bg-white px-4 py-14 md:px-8">
-    <svg class="pointer-events-none absolute right-0 top-0 h-40 w-56" viewBox="0 0 220 150" aria-hidden="true">
-      <g fill="none" stroke="#1c1917" stroke-width="1" opacity="0.35">
-        <path d="M20 130 L200 20" />
-        <circle cx="200" cy="20" r="16" />
-        <path d="M200 4 V36 M184 20 H216" />
-      </g>
-    </svg>
-    <div class="relative mx-auto max-w-6xl">
+  <section class="border-b border-slate-200 bg-slate-50/50 px-4 py-14 md:px-8">
+    <div class="mx-auto max-w-6xl">
       <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {outcomes.map((outcome) => (
           <a href={outcome.href} data-event="home_case_click" data-slug={outcome.slug} class="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-6 hover:border-slate-400 transition-colors">
