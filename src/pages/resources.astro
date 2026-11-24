@@ -293,8 +293,7 @@ function isPdfAsset(doc: any) {
                 {isPdf ? (
                   <>
                     <a
-                      href={`${base}downloads/${doc.filename}`}
-                      download
+                      href={`${base}contact/`}
                       class="btn-secondary self-start"
                     >
                       Download Free PDF
@@ -339,8 +338,7 @@ function isPdfAsset(doc: any) {
                       </a>
                     )}
                     <a
-                      href={`${base}downloads/${doc.filename}`}
-                      download
+                      href={`${base}contact/`}
                       class="text-xs font-bold text-[#181511] underline underline-offset-4 hover:text-[#a33a21]"
                     >
                       Free Overview (.md)
@@ -358,8 +356,7 @@ function isPdfAsset(doc: any) {
                 ) : (
                   <>
                     <a
-                      href={`${base}downloads/${doc.filename}`}
-                      download
+                      href={`${base}contact/`}
                       class="btn-secondary self-start"
                     >
                       {doc.downloadLabel ?? 'Download'}
@@ -470,8 +467,7 @@ function isPdfAsset(doc: any) {
                 )}
                 {flagship.overviewFile && (
                   <a
-                    href={`${base}downloads/${flagship.overviewFile}`}
-                    download
+                    href={`${base}contact/`}
                     class="text-xs font-bold text-[#f4c98b] underline underline-offset-4 hover:text-white"
                   >
                     Free Overview (.md)
@@ -527,8 +523,7 @@ function isPdfAsset(doc: any) {
                 </a>
               )}
               <a
-                href={`${base}downloads/${bundle.overviewFile}`}
-                download
+                href={`${base}contact/`}
                 class="text-xs font-bold text-[#181511] underline underline-offset-4 hover:text-[#a33a21]"
               >
                 Free Overview (.md)

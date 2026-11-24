@@ -306,7 +306,7 @@ const reset = db.transaction(() => {
       slug: 'enterprise-risk-management-8-countries',
       display_order: 9,
       tier: 'secondary',
-      related_tool: 'risk-matrix',
+      related_tool: 'internal-control-evaluator',
       related_build: null,
       related_case: null,
       snippet_ids: null,
