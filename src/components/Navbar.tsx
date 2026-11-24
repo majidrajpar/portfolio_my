@@ -23,7 +23,6 @@ const Navbar = ({ initialPath = '' }) => {
     { label: 'Field notes', desc: 'Fieldwork notes and commentary', href: `${baseUrl}trench-series/` },
     { label: 'Resources', desc: 'Models, manuals, and licenses', href: `${baseUrl}resources/` },
     { label: 'Builds', desc: 'Custom software & prototypes', href: `${baseUrl}software/` },
-    { label: 'ERM & CCM Suite', desc: '18-file continuous monitoring programme', href: `${baseUrl}erm-ccm-suite/` },
     { label: 'RoleForge', desc: 'Agentic audit triage benchmark trace', href: `${baseUrl}roleforge/` },
     { label: 'Books', desc: 'Governance publications & monographs', href: 'https://www.amazon.com/s?k=Majid+Mumtaz' },
     {

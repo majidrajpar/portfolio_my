@@ -143,7 +143,7 @@ const categoryColors: Record<string, string> = {
                     {item.downloadUrl && (() => {
                       const isExe = item.id === 'invoice-audit-engine' || item.downloadUrl.toLowerCase().endsWith('.exe');
                       const isLocal = item.downloadUrl.startsWith('/');
-                      const href = isLocal ? `${base}${item.downloadUrl.replace(/^\//, '')}` : item.downloadUrl;
+                      const href = isLocal ? (item.downloadUrl.startsWith('/downloads/') ? `${base}contact/` : `${base}${item.downloadUrl.replace(/^\//, '')}`) : item.downloadUrl;
                       const label = item.downloadLabel || (isExe ? 'Download Windows App (.exe)' : 'Download Model (.xlsx)');
                       return (
                         <a

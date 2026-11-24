@@ -67,7 +67,7 @@ export const software = [
     category: 'Fieldwork Workbench',
     techStack: ['7 Excel (.xlsx) Engines', '7 Word (.docx) Packs', 'COSO ERM / ISO 31000', '3-Way O2C CCM', 'BOM Yield Telemetry'],
     gumroadUrl: 'https://majidmumtaz.gumroad.com/l/erm-ccm-suite',
-    internalUrl: '/erm-ccm-suite/',
+    internalUrl: '/contact/',
     internalLabel: 'Suite Inventory & Tiers',
     isPublic: true,
     status: 'Commercial Suite · $169 / $399',

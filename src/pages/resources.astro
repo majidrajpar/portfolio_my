@@ -44,7 +44,7 @@ const commercialBundles = [
       'Complete white-label Enterprise Risk Management and 100% population Continuous Controls Monitoring (CCM) architecture. Connects delivery aggregator remittance reconciliation (FI-002), recipe BOM yields (OP-003), and unannounced kitchen line walks directly to EBITDA defense.',
     gumroadUrl: 'https://majidmumtaz.gumroad.com/l/erm-ccm-suite',
     gumroadLabel: 'License Suite ($169 / $399)',
-    internalUrl: `${base}erm-ccm-suite/`,
+    internalUrl: `${base}software/`,
     internalLabel: 'Full 18-File Inventory',
     overviewFile: 'Cloud_Kitchen_ERM_CCM_Suite_Overview.md',
     featured: true,
@@ -59,7 +59,7 @@ const commercialBundles = [
       'Built around the unlocked 6-sheet GIAS 2024 Internal Audit Report Evaluation Matrix (.xlsx) with deterministic report issuance gates, paired with the 1-Page Audit Committee Executive Summary, Pack Quality Checklist, IA Setup Blueprint, and QAIP 2025 framework.',
     gumroadUrl: 'https://majidmumtaz.gumroad.com/l/cae-gias-2024-os',
     gumroadLabel: 'License CAE & GIAS Kit ($99 / $249)',
-    internalUrl: `${base}resources/gias-2024-report-matrix/`,
+    internalUrl: `${base}tools/iia-standards-readiness/`,
     internalLabel: 'GIAS 2024 Matrix & Schema',
     overviewFile: 'GIAS_2024_Report_Evaluation_Matrix_Overview.md',
     featured: false,
@@ -296,7 +296,7 @@ function isPdfAsset(doc: any) {
                       href={`${base}contact/`}
                       class="btn-secondary self-start"
                     >
-                      Download Free PDF
+                      Request Access
                     </a>
                     {doc.gumroadUrl && (
                       <a
@@ -341,7 +341,7 @@ function isPdfAsset(doc: any) {
                       href={`${base}contact/`}
                       class="text-xs font-bold text-[#181511] underline underline-offset-4 hover:text-[#a33a21]"
                     >
-                      Free Overview (.md)
+                      Request Access
                     </a>
                   </>
                 ) : doc.downloadUrl && doc.downloadUrl.endsWith('.exe') ? (
@@ -359,7 +359,7 @@ function isPdfAsset(doc: any) {
                       href={`${base}contact/`}
                       class="btn-secondary self-start"
                     >
-                      {doc.downloadLabel ?? 'Download'}
+                      Request Access
                     </a>
                     {doc.gumroadUrl && (
                       <a
@@ -470,7 +470,7 @@ function isPdfAsset(doc: any) {
                     href={`${base}contact/`}
                     class="text-xs font-bold text-[#f4c98b] underline underline-offset-4 hover:text-white"
                   >
-                    Free Overview (.md)
+                    Request Access
                   </a>
                 )}
               </div>
@@ -526,7 +526,7 @@ function isPdfAsset(doc: any) {
                 href={`${base}contact/`}
                 class="text-xs font-bold text-[#181511] underline underline-offset-4 hover:text-[#a33a21]"
               >
-                Free Overview (.md)
+                Request Access
               </a>
             </div>
           </div>
