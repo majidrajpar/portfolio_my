@@ -302,10 +302,53 @@ const schemaImage = new URL(`${baseUrl}images/projects/finance-dashboard/executi
         }
       });
 
+      function copyText(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          return navigator.clipboard.writeText(text).catch(function() {
+            return fallbackCopy(text);
+          });
+        }
+        return Promise.resolve(fallbackCopy(text));
+      }
+
+      function fallbackCopy(text) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (err) {}
+        document.body.removeChild(ta);
+      }
+
       document.addEventListener('click', function(e) {
         var target = e.target;
         var el = target instanceof Element ? target : target && target.parentElement;
-        var link = el && el.closest('a');
+        if (!el) return;
+
+        var copyBtn = el.closest('button[data-copy-email]');
+        if (copyBtn) {
+          var email = copyBtn.getAttribute('data-copy-email') || '';
+          var loc = copyBtn.getAttribute('data-copy-location') || 'unknown';
+          if (email) {
+            copyText(email).then(function() {
+              var orig = copyBtn.getAttribute('data-orig-label') || copyBtn.textContent || 'Copy';
+              copyBtn.setAttribute('data-orig-label', orig);
+              copyBtn.textContent = 'Copied';
+              setTimeout(function() {
+                copyBtn.textContent = orig;
+              }, 1800);
+            });
+          }
+          if (typeof gtag === 'function') {
+            gtag('event', 'email_copy', { location: loc });
+          }
+          return;
+        }
+
+        var link = el.closest('a');
         if (!link) return;
         var href = link.getAttribute('href') || '';
         if (/\.(pdf|xlsx|docx|zip)$/i.test(href)) {
