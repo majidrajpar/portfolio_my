@@ -45,11 +45,27 @@ const featuredTools = tools
   .filter((tool) => tool.tier === 'featured')
   .sort((a, b) => a.featuredOrder - b.featuredOrder);
 
-const toolOutcomes: Record<string, string> = {
-  'ccm-telemetry-architect': 'Generate production SQL exception queries for Snowflake, BigQuery, Postgres, and Oracle.',
-  'document-comparator': 'Compare PDF, Word, and Excel revisions to flag control weakening and threshold shifts.',
-  'forensic-validator': 'Run Benford’s Law distribution checks on ledgers and invoices in-browser via Rust/WASM.',
-  'restaurant-risk-calculator': 'Model multi-unit GCC F&B VaR-95 EBITDA loss, aggregator leakage, and liquidity runway.',
+const toolMeta: Record<string, { code: string; spec: string; outcome: string }> = {
+  'ccm-telemetry-architect': {
+    code: 'MOD-01',
+    spec: 'SQL · Snowflake / BigQuery / Postgres / Oracle',
+    outcome: 'Generate production SQL exception queries across P2P, O2C, Payroll, and Financial Close.',
+  },
+  'document-comparator': {
+    code: 'MOD-02',
+    spec: 'Client-side · PDF / DOCX / XLSX',
+    outcome: 'Compare policy and contract revisions to flag control weakening and threshold shifts.',
+  },
+  'forensic-validator': {
+    code: 'MOD-03',
+    spec: 'Rust / WASM · Zero upload',
+    outcome: 'Run Benford’s Law distribution checks on ledgers and invoices directly in the browser.',
+  },
+  'restaurant-risk-calculator': {
+    code: 'MOD-04',
+    spec: 'VaR-95 / CVaR-95 · GCC F&B',
+    outcome: 'Model multi-unit EBITDA tail risk, aggregator deduction leakage, and 52-week liquidity runway.',
+  },
 };
 ---
 
@@ -65,9 +81,10 @@ const toolOutcomes: Record<string, string> = {
     ></div>
     <div class="relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.5fr_0.75fr] lg:items-center">
       <div>
-        <p class="text-xs font-medium uppercase tracking-widest text-slate-500">
-          Dubai &amp; GCC · CIA, ACA, FCCA
-        </p>
+        <div class="inline-flex items-center gap-2 rounded-md border border-slate-200 bg-slate-50 px-2.5 py-1 text-[11px] font-mono text-slate-700">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-600" aria-hidden="true"></span>
+          <span>UAE &amp; GCC · CIA, ACA, FCCA · Open to CAE / Group Director Roles</span>
+        </div>
         <h1 class="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl leading-[1.06]">
           Majid Mumtaz
         </h1>
@@ -118,12 +135,12 @@ const toolOutcomes: Record<string, string> = {
 
   <section class="border-b border-slate-200 bg-slate-50/50 px-4 py-14 md:px-8">
     <div class="mx-auto max-w-6xl">
-      <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {outcomes.map((outcome) => (
           <a href={outcome.href} data-event="home_case_click" data-slug={outcome.slug} class="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-6 hover:border-slate-400 transition-colors">
-            <div class="text-3xl font-semibold tracking-tight text-slate-900">{outcome.value}</div>
-            <span class="mt-4 text-base leading-snug text-slate-900">{outcome.title}</span>
-            <p class="mt-3 text-sm leading-6 text-slate-600">{outcome.line}</p>
+            <div class="font-mono text-3xl font-semibold tracking-tight tabular-nums text-slate-900">{outcome.value}</div>
+            <span class="mt-3 text-sm font-semibold leading-snug text-slate-900">{outcome.title}</span>
+            <p class="mt-2 text-xs leading-5 text-slate-600">{outcome.line}</p>
           </a>
         ))}
       </div>
@@ -219,22 +236,36 @@ const toolOutcomes: Record<string, string> = {
         </div>
       </div>
 
-      <div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-        {featuredTools.map((tool) => (
-          <a
-            href={`${base}tools/${tool.id}/`}
-            data-event="home_tool_click"
-            data-slug={tool.id}
-            class="flex h-full flex-col justify-between rounded-lg border border-slate-200 bg-white p-5 hover:border-slate-400 transition-colors"
-          >
-            <div>
-              <p class="text-[11px] font-medium uppercase tracking-widest text-slate-500">{tool.domain}</p>
-              <h3 class="mt-2 text-base font-semibold leading-snug text-slate-900">{tool.title}</h3>
-              <p class="mt-2 text-sm leading-6 text-slate-600">{toolOutcomes[tool.id] ?? tool.description}</p>
-            </div>
-            <span class="mt-4 text-xs font-semibold text-slate-900 underline underline-offset-4">Launch tool →</span>
-          </a>
-        ))}
+      <div class="mt-8 grid gap-5 md:grid-cols-2">
+        {featuredTools.map((tool) => {
+          const meta = toolMeta[tool.id];
+          return (
+            <a
+              href={`${base}tools/${tool.id}/`}
+              data-event="home_tool_click"
+              data-slug={tool.id}
+              class="flex h-full flex-col justify-between rounded-lg border border-slate-200 bg-white p-6 hover:border-slate-400 transition-colors"
+            >
+              <div>
+                <div class="flex items-center justify-between gap-3">
+                  <span class="font-mono text-[11px] font-medium uppercase tracking-wider text-slate-500">
+                    {meta ? `${meta.code} · ${tool.domain}` : tool.domain}
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 font-mono text-[11px] font-medium text-emerald-700">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-600" aria-hidden="true"></span>
+                    Live
+                  </span>
+                </div>
+                <h3 class="mt-3 text-base font-semibold leading-snug text-slate-900">{tool.title}</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">{meta ? meta.outcome : tool.description}</p>
+              </div>
+              <div class="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
+                <span class="font-mono text-[11px] text-slate-500">{meta ? meta.spec : 'Browser engine'}</span>
+                <span class="text-xs font-semibold text-slate-900 underline underline-offset-4">Launch →</span>
+              </div>
+            </a>
+          );
+        })}
       </div>
     </div>
   </section>
