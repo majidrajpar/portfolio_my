@@ -235,8 +235,21 @@ const schemaImage = new URL(`${baseUrl}images/projects/finance-dashboard/executi
             slug = toolMatch[1];
           }
         }
-        if (!name || typeof gtag !== 'function') return;
-        gtag('event', name, { slug: slug });
+        if (!name || typeof gtag !== 'function' || navigator.webdriver) return;
+        if (window.__recallViewTimer) clearTimeout(window.__recallViewTimer);
+        var targetPath = window.location.pathname;
+        window.__recallViewTimer = setTimeout(function() {
+          if (document.visibilityState === 'hidden' || window.location.pathname !== targetPath) return;
+          if (typeof gtag === 'function') {
+            gtag('event', name, { slug: slug });
+          }
+        }, 12000);
+      });
+      document.addEventListener('astro:before-preparation', function() {
+        if (window.__recallViewTimer) {
+          clearTimeout(window.__recallViewTimer);
+          window.__recallViewTimer = null;
+        }
       });
     }
     if (!window.__revealObserverBound) {
@@ -288,17 +301,32 @@ const schemaImage = new URL(`${baseUrl}images/projects/finance-dashboard/executi
         return { leadRef: leadRef, isDubai: tz === 'Asia/Dubai' };
       }
 
+      var leadViewTimer = null;
       document.addEventListener('astro:page-load', function() {
+        if (leadViewTimer) {
+          clearTimeout(leadViewTimer);
+          leadViewTimer = null;
+        }
+        if (navigator.webdriver) return;
+        var targetPath = window.location.pathname;
+        var sessionKey = '__notified_' + targetPath;
+        if (sessionStorage.getItem(sessionKey)) return;
         var ctx = getLeadContext();
-        var sessionKey = '__notified_' + window.location.pathname;
-        if (!sessionStorage.getItem(sessionKey)) {
+        leadViewTimer = setTimeout(function() {
+          if (document.visibilityState === 'hidden' || window.location.pathname !== targetPath) return;
           sessionStorage.setItem(sessionKey, '1');
           if (typeof gtag === 'function') {
             gtag('event', 'lead_executive_view', {
               lead_tag: ctx.leadRef || (ctx.isDubai ? 'dubai_direct' : 'direct'),
-              page_path: window.location.pathname
+              page_path: targetPath
             });
           }
+        }, 12000);
+      });
+      document.addEventListener('astro:before-preparation', function() {
+        if (leadViewTimer) {
+          clearTimeout(leadViewTimer);
+          leadViewTimer = null;
         }
       });
 
