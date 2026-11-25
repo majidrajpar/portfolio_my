@@ -46,7 +46,7 @@ export default function AuditROIEstimator() {
         <div className="soft-shell p-6 md:p-8 flex flex-col justify-between">
           <div>
             <span className="eyebrow-label">Operational Parameters</span>
-            <h3 className="mt-4 text-2xl text-[#181511]">Map your risk exposure.</h3>
+            <h3 className="mt-4 text-2xl text-[#0f172a]">Map your risk exposure.</h3>
             <p className="mt-3 text-xs leading-6 text-[color:var(--text-secondary)]">
               Input the annual scale of your business. The calculator applies global forensic baselines modified by transaction velocity to estimate revenue protection margins.
             </p>
@@ -54,7 +54,7 @@ export default function AuditROIEstimator() {
 
             {/* Industry Selector */}
             <div className="mb-6">
-              <label className="meta-label text-[#a33a21] block mb-3">Industry & Operating Domain</label>
+              <label className="meta-label text-[#0f172a] block mb-3">Industry & Operating Domain</label>
               <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                 {INDUSTRIES.map((ind) => (
                   <button
@@ -62,7 +62,7 @@ export default function AuditROIEstimator() {
                     onClick={() => setSelectedIndustry(ind.id)}
                     className={`text-left rounded-xl p-3 border text-[11px] leading-5 transition-all duration-150 ${
                       selectedIndustry === ind.id
-                        ? 'border-[#a33a21] bg-[#a33a21]/5 text-[#181511] font-bold'
+                        ? 'border-[#0f172a] bg-[#0f172a]/5 text-[#0f172a] font-bold'
                         : 'border-slate-200 bg-white/40 text-slate-600 hover:border-slate-300'
                     }`}
                   >
@@ -78,8 +78,8 @@ export default function AuditROIEstimator() {
             {/* Revenue Slider */}
             <div className="mb-6">
               <div className="flex justify-between items-center mb-2">
-                <label className="meta-label text-[#a33a21]">Annual Revenue Scale</label>
-                <span className="text-sm font-black text-[#181511]">{revenue} Million USD/AED</span>
+                <label className="meta-label text-[#0f172a]">Annual Revenue Scale</label>
+                <span className="text-sm font-black text-[#0f172a]">{revenue} Million USD/AED</span>
               </div>
               <input
                 type="range"
@@ -88,7 +88,7 @@ export default function AuditROIEstimator() {
                 step="10"
                 value={revenue}
                 onChange={(e) => setRevenue(Number(e.target.value))}
-                className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#a33a21]"
+                className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#0f172a]"
               />
               <div className="flex justify-between text-[9px] font-bold text-slate-400 mt-1">
                 <span>10M</span>
@@ -100,8 +100,8 @@ export default function AuditROIEstimator() {
             {/* Transaction Slider */}
             <div className="mb-6">
               <div className="flex justify-between items-center mb-2">
-                <label className="meta-label text-[#a33a21]">Annual Transaction Volume</label>
-                <span className="text-sm font-black text-[#181511]">{transactions}K Invoices / Billing cycles</span>
+                <label className="meta-label text-[#0f172a]">Annual Transaction Volume</label>
+                <span className="text-sm font-black text-[#0f172a]">{transactions}K Invoices / Billing cycles</span>
               </div>
               <input
                 type="range"
@@ -110,7 +110,7 @@ export default function AuditROIEstimator() {
                 step="10"
                 value={transactions}
                 onChange={(e) => setTransactions(Number(e.target.value))}
-                className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#a33a21]"
+                className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#0f172a]"
               />
               <div className="flex justify-between text-[9px] font-bold text-slate-400 mt-1">
                 <span>10K</span>
@@ -121,7 +121,7 @@ export default function AuditROIEstimator() {
           </div>
 
           <div className="quote-panel p-5 mt-6 border border-slate-200 bg-white/30">
-            <div className="text-[10px] font-bold text-[#1d3557] uppercase tracking-widest">Statistical Sample Limit</div>
+            <div className="text-[10px] font-bold text-[#0f172a] uppercase tracking-widest">Statistical Sample Limit</div>
             <p className="text-[11px] leading-5 text-slate-600 mt-2">
               Legacy audit testing relies on manual sampling (checking 100 to 500 invoices). For high-volume companies, this is the equivalent of checking less than <strong>0.5%</strong> of transactions, leaving <strong>99.5%</strong> of potential fraud unexamined.
             </p>
@@ -190,38 +190,38 @@ export default function AuditROIEstimator() {
 
       {/* METRIC COMPARISON TABLE */}
       <div className="soft-shell mt-6 p-6 md:p-8">
-        <span className="meta-label text-[#a33a21]">Assurance Model Comparison</span>
-        <h4 className="text-xl text-[#181511] mt-3">Statistical Sampling vs. 100% Population Scan</h4>
+        <span className="meta-label text-[#0f172a]">Assurance Model Comparison</span>
+        <h4 className="text-xl text-[#0f172a] mt-3">Statistical Sampling vs. 100% Population Scan</h4>
         
         <div className="overflow-x-auto mt-6">
           <table className="w-full text-left text-xs border-collapse">
             <thead>
               <tr className="border-b border-slate-200">
-                <th className="pb-3 meta-label text-[#181511]">Assurance Metric</th>
+                <th className="pb-3 meta-label text-[#0f172a]">Assurance Metric</th>
                 <th className="pb-3 meta-label text-slate-400">Legacy Sampling (5% Check)</th>
-                <th className="pb-3 meta-label text-[#a33a21]">Continuous 100% Population Scan</th>
+                <th className="pb-3 meta-label text-[#0f172a]">Continuous 100% Population Scan</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 font-medium">
               <tr>
-                <td className="py-4 text-[#181511] font-semibold">Testing Method</td>
+                <td className="py-4 text-[#0f172a] font-semibold">Testing Method</td>
                 <td className="py-4 text-slate-500">Checking a tiny slice of data (100–500 manual lines)</td>
-                <td className="py-4 text-[#a33a21] font-bold">Continuous script-based check of the entire journal volume</td>
+                <td className="py-4 text-[#0f172a] font-bold">Continuous script-based check of the entire journal volume</td>
               </tr>
               <tr>
-                <td className="py-4 text-[#181511] font-semibold">Audit Visibility</td>
+                <td className="py-4 text-[#0f172a] font-semibold">Audit Visibility</td>
                 <td className="py-4 text-slate-500">0.5% — 5% (Blind to the remaining 95%+)</td>
-                <td className="py-4 text-[#a33a21] font-bold">100.00% absolute exposure scan</td>
+                <td className="py-4 text-[#0f172a] font-bold">100.00% absolute exposure scan</td>
               </tr>
               <tr>
-                <td className="py-4 text-[#181511] font-semibold">Detected Exposure</td>
+                <td className="py-4 text-[#0f172a] font-semibold">Detected Exposure</td>
                 <td className="py-4 text-slate-500">{formatCurrency(legacySamplingDetection)} *(detected by chance)*</td>
-                <td className="py-4 text-[#a33a21] font-bold">{formatCurrency(populationTestingDetection)} *(systematically flagged)*</td>
+                <td className="py-4 text-[#0f172a] font-bold">{formatCurrency(populationTestingDetection)} *(systematically flagged)*</td>
               </tr>
               <tr>
-                <td className="py-4 text-[#181511] font-semibold">Board Level Value</td>
+                <td className="py-4 text-[#0f172a] font-semibold">Board Level Value</td>
                 <td className="py-4 text-slate-500">Subjective comfort / checklist compliance reporting</td>
-                <td className="py-4 text-[#a33a21] font-bold">Quantifiable cash recovery and profit-protection outcomes</td>
+                <td className="py-4 text-[#0f172a] font-bold">Quantifiable cash recovery and profit-protection outcomes</td>
               </tr>
             </tbody>
           </table>

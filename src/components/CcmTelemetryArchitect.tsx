@@ -786,7 +786,7 @@ export default function CcmTelemetryArchitect() {
             <span>Audit Population</span>
             <Database className="h-4 w-4 text-[#c7964c]" />
           </div>
-          <div className="mt-2 text-2xl font-black text-[#181511] dark:text-white">
+          <div className="mt-2 text-2xl font-black text-[#0f172a] dark:text-white">
             100%
           </div>
           <div className="mt-1 text-[11px] font-medium text-[#107c41]">
@@ -812,7 +812,7 @@ export default function CcmTelemetryArchitect() {
             <span>Supported Engines</span>
             <Code2 className="h-4 w-4 text-[#8d6035]" />
           </div>
-          <div className="mt-2 text-2xl font-black text-[#181511] dark:text-white">
+          <div className="mt-2 text-2xl font-black text-[#0f172a] dark:text-white">
             4 Dialects
           </div>
           <div className="mt-1 text-[11px] font-medium text-[color:var(--text-secondary)]">
@@ -848,8 +848,8 @@ export default function CcmTelemetryArchitect() {
               onClick={() => handleCycleChange(tab.id as BusinessCycle)}
               className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-bold uppercase tracking-wider transition-all ${
                 selectedCycle === tab.id
-                  ? 'bg-[#181511] text-white shadow-md dark:bg-white dark:text-[#181511]'
-                  : 'bg-white/70 text-[color:var(--text-secondary)] hover:bg-white hover:text-[#181511] dark:bg-white/5 dark:hover:bg-white/10'
+                  ? 'bg-[#0f172a] text-white shadow-md dark:bg-white dark:text-[#0f172a]'
+                  : 'bg-white/70 text-[color:var(--text-secondary)] hover:bg-white hover:text-[#0f172a] dark:bg-white/5 dark:hover:bg-white/10'
               }`}
             >
               <span>{tab.label}</span>
@@ -862,7 +862,7 @@ export default function CcmTelemetryArchitect() {
 
         <button
           onClick={handleExportSpec}
-          className="flex items-center gap-2 rounded-xl border border-[color:var(--line-soft)] bg-white/80 px-3.5 py-2 text-xs font-semibold text-[#181511] shadow-sm transition hover:bg-white dark:bg-white/10 dark:text-white"
+          className="flex items-center gap-2 rounded-xl border border-[color:var(--line-soft)] bg-white/80 px-3.5 py-2 text-xs font-semibold text-[#0f172a] shadow-sm transition hover:bg-white dark:bg-white/10 dark:text-white"
         >
           <Download className="h-3.5 w-3.5 text-[#c7964c]" />
           <span>Export Control Spec (CSV)</span>
@@ -873,7 +873,7 @@ export default function CcmTelemetryArchitect() {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
         {/* Left Column: Rule Selection */}
         <div className="space-y-4 lg:col-span-4">
-          <h3 className="text-sm font-bold uppercase tracking-wider text-[#181511] dark:text-white">
+          <h3 className="text-sm font-bold uppercase tracking-wider text-[#0f172a] dark:text-white">
             Configured Exception Rules
           </h3>
 
@@ -892,7 +892,7 @@ export default function CcmTelemetryArchitect() {
                   }`}
                 >
                   <div className="flex items-start justify-between gap-2">
-                    <h4 className="font-bold text-xs leading-snug text-[#181511] dark:text-white">
+                    <h4 className="font-bold text-xs leading-snug text-[#0f172a] dark:text-white">
                       {rule.name}
                     </h4>
                     <span className={`shrink-0 rounded-full px-2 py-0.5 text-[9px] font-black uppercase tracking-wider ${
@@ -922,7 +922,7 @@ export default function CcmTelemetryArchitect() {
           {/* Rule Metadata & Calibration Box */}
           <div className="rounded-3xl border border-[color:var(--line-soft)] bg-white/70 p-5 shadow-sm dark:bg-white/5">
             <div className="flex items-center justify-between border-b border-[color:var(--line-soft)] pb-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#181511] dark:text-white">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#0f172a] dark:text-white">
                 Threshold Calibration
               </span>
               <button
@@ -939,7 +939,7 @@ export default function CcmTelemetryArchitect() {
                 <div>
                   <div className="flex justify-between font-semibold">
                     <span className="text-[color:var(--text-secondary)]">{currentRule.thresholdLabel}:</span>
-                    <span className="font-mono text-[#181511] dark:text-white">
+                    <span className="font-mono text-[#0f172a] dark:text-white">
                       {thresholdAmount.toLocaleString()} {currentRule.thresholdUnit}
                     </span>
                   </div>
@@ -959,7 +959,7 @@ export default function CcmTelemetryArchitect() {
                 <div>
                   <div className="flex justify-between font-semibold">
                     <span className="text-[color:var(--text-secondary)]">Rolling Lookback Window:</span>
-                    <span className="font-mono text-[#181511] dark:text-white">
+                    <span className="font-mono text-[#0f172a] dark:text-white">
                       {lookbackWindowDays} Days
                     </span>
                   </div>
@@ -979,7 +979,7 @@ export default function CcmTelemetryArchitect() {
                 <div>
                   <div className="flex justify-between font-semibold">
                     <span className="text-[color:var(--text-secondary)]">Proximity Delta Below Cap:</span>
-                    <span className="font-mono text-[#181511] dark:text-white">
+                    <span className="font-mono text-[#0f172a] dark:text-white">
                       Within {proximityTolerancePct}%
                     </span>
                   </div>
@@ -1009,10 +1009,10 @@ export default function CcmTelemetryArchitect() {
           <div className="rounded-3xl border border-[color:var(--line-soft)] bg-white/70 p-6 shadow-sm backdrop-blur-md dark:bg-white/5">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <div>
-                <span className="rounded-full bg-[#181511] px-3 py-1 text-[10px] font-black uppercase tracking-wider text-[#f4c98b] dark:bg-white/10 dark:text-[#f4c98b]">
+                <span className="rounded-full bg-[#0f172a] px-3 py-1 text-[10px] font-black uppercase tracking-wider text-[#f4c98b] dark:bg-white/10 dark:text-[#f4c98b]">
                   {currentRule.cycleName}
                 </span>
-                <h3 className="mt-2 text-xl font-black text-[#181511] dark:text-white">
+                <h3 className="mt-2 text-xl font-black text-[#0f172a] dark:text-white">
                   {currentRule.name}
                 </h3>
               </div>
@@ -1035,7 +1035,7 @@ export default function CcmTelemetryArchitect() {
             {/* Simulated Exception Hits */}
             <div className="mt-6 border-t border-[color:var(--line-soft)] pt-5">
               <div className="flex items-center justify-between pb-3">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#181511] dark:text-white flex items-center gap-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#0f172a] dark:text-white flex items-center gap-2">
                   <AlertTriangle className="h-4 w-4 text-[#d9381e]" />
                   <span>Simulated Population Exceptions ({activeExceptions.length} Detected)</span>
                 </h4>
@@ -1058,7 +1058,7 @@ export default function CcmTelemetryArchitect() {
                       <div>
                         <div className="flex items-center gap-2">
                           <span className="font-mono font-bold text-[#d9381e]">{exc.id}</span>
-                          <span className="font-semibold text-[#181511] dark:text-white">{exc.entity}</span>
+                          <span className="font-semibold text-[#0f172a] dark:text-white">{exc.entity}</span>
                           <span className="text-[10px] text-[color:var(--text-secondary)]">({exc.timestamp})</span>
                         </div>
                         <p className="mt-1 text-[11px] text-[color:var(--text-secondary)]">
@@ -1067,7 +1067,7 @@ export default function CcmTelemetryArchitect() {
                       </div>
 
                       <div className="text-right shrink-0">
-                        <div className="font-mono font-black text-sm text-[#181511] dark:text-white">
+                        <div className="font-mono font-black text-sm text-[#0f172a] dark:text-white">
                           {exc.amount > 0 ? `AED ${exc.amount.toLocaleString()}` : 'Exact Match'}
                         </div>
                         <div className="text-[10px] font-bold text-[#d9381e]">

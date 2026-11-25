@@ -133,7 +133,7 @@ export default function IIAStandardsDiagnostic() {
       desc = "The baseline structure is solid, but critical gaps exist in technology integration, reporting independence, or formal quality checks. Targeted remediation is required before 2025.";
     } else {
       classification = "Legacy Compliance (High Governance Risk)";
-      colorClass = "text-[#a33a21] bg-[#a33a21]/10 border-[#a33a21]/30";
+      colorClass = "text-[#0f172a] bg-[#0f172a]/10 border-[#0f172a]/30";
       desc = "Significant gaps in Board-level independence, legacy manual sampling, or lack of EQA compliance. Your audit function risks acting as a legacy cost center rather than a board-facing assurance asset.";
     }
 
@@ -162,7 +162,7 @@ export default function IIAStandardsDiagnostic() {
       {step === 0 && (
         <div className="soft-shell p-8 text-center max-w-2xl mx-auto">
           <span className="eyebrow-label">Governance Assessment</span>
-          <h3 className="mt-4 text-2xl text-[#181511]">Evaluate against the 2024 Global IIA Standards.</h3>
+          <h3 className="mt-4 text-2xl text-[#0f172a]">Evaluate against the 2024 Global IIA Standards.</h3>
           <p className="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">
             The new IIA Global Internal Audit Standards go live in <strong>January 2025</strong>. This interactive diagnostic measures your audit department's readiness across five core domains, delivering an immediate board-grade maturity rating and gap analysis.
           </p>
@@ -189,7 +189,7 @@ export default function IIAStandardsDiagnostic() {
                   onClick={() => setActiveDomainIndex(index)}
                   className={`w-full text-left rounded-xl px-4 py-3 text-[10px] font-black uppercase tracking-wider border transition-all ${
                     active
-                      ? 'border-[#a33a21] bg-[#a33a21]/5 text-[#181511]'
+                      ? 'border-[#0f172a] bg-[#0f172a]/5 text-[#0f172a]'
                       : complete
                       ? 'border-[#10b981]/20 bg-[#10b981]/5 text-[#10b981]'
                       : 'border-slate-100 text-slate-400 hover:text-slate-600 bg-white/40'
@@ -208,7 +208,7 @@ export default function IIAStandardsDiagnostic() {
           <div className="soft-shell p-6 md:p-8 flex flex-col justify-between min-h-[360px]">
             <div>
               <div className="flex justify-between items-center mb-4">
-                <span className="eyebrow-label text-[#a33a21]">{currentDomain.name}</span>
+                <span className="eyebrow-label text-[#0f172a]">{currentDomain.name}</span>
                 <span className="text-[10px] font-bold text-slate-400">Step {activeDomainIndex + 1} of 5</span>
               </div>
               <div className="luxury-divider mb-6"></div>
@@ -216,7 +216,7 @@ export default function IIAStandardsDiagnostic() {
               <div className="space-y-6">
                 {currentDomain.questions.map((q) => (
                   <div key={q.id} className="bg-white/60 border border-slate-100 rounded-2xl p-5">
-                    <p className="text-sm font-semibold text-[#181511] leading-relaxed mb-4">{q.text}</p>
+                    <p className="text-sm font-semibold text-[#0f172a] leading-relaxed mb-4">{q.text}</p>
                     <div className="flex flex-col gap-2 sm:flex-row">
                       {[
                         { label: "Yes, fully implemented", val: 10 },
@@ -309,24 +309,24 @@ export default function IIAStandardsDiagnostic() {
 
             {/* Domain Breakdown Table */}
             <div className="soft-shell p-6 md:p-8">
-              <span className="meta-label text-[#a33a21]">Domain-by-Domain Metrics</span>
+              <span className="meta-label text-[#0f172a]">Domain-by-Domain Metrics</span>
               <div className="mt-6 space-y-4">
                 {DOMAINS.map(d => {
                   const scoreObj = res.domainScores[d.id];
                   return (
                     <div key={d.id} className="bg-white/60 border border-slate-100 rounded-2xl p-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                       <div className="max-w-md">
-                        <strong className="text-sm text-[#181511] font-bold block">{scoreObj.name}</strong>
+                        <strong className="text-sm text-[#0f172a] font-bold block">{scoreObj.name}</strong>
                         <span className="text-[9px] font-bold text-slate-400 block mt-1">Score: {scoreObj.score} / {scoreObj.max}</span>
                       </div>
                       <div className="flex items-center gap-4 shrink-0">
                         <div className="w-32 bg-slate-200 h-2 rounded-full overflow-hidden">
                           <div 
-                            className={`h-full rounded-full ${scoreObj.percentage >= 85 ? 'bg-[#10b981]' : scoreObj.percentage >= 50 ? 'bg-[#c7964c]' : 'bg-[#a33a21]'}`}
+                            className={`h-full rounded-full ${scoreObj.percentage >= 85 ? 'bg-[#10b981]' : scoreObj.percentage >= 50 ? 'bg-[#c7964c]' : 'bg-[#0f172a]'}`}
                             style={{ width: `${scoreObj.percentage}%` }}
                           ></div>
                         </div>
-                        <span className="text-xs font-black text-[#181511] w-12 text-right">{scoreObj.percentage}%</span>
+                        <span className="text-xs font-black text-[#0f172a] w-12 text-right">{scoreObj.percentage}%</span>
                       </div>
                     </div>
                   );
@@ -336,18 +336,18 @@ export default function IIAStandardsDiagnostic() {
 
             {/* Gap Analysis / Actions */}
             <div className="soft-shell p-6 md:p-8">
-              <span className="meta-label text-[#a33a21]">Identified Gaps & Remediation Roadmap</span>
-              <h4 className="text-xl text-[#181511] mt-3">Targeted action items for board alignment.</h4>
+              <span className="meta-label text-[#0f172a]">Identified Gaps & Remediation Roadmap</span>
+              <h4 className="text-xl text-[#0f172a] mt-3">Targeted action items for board alignment.</h4>
               
               {res.gaps.length > 0 ? (
                 <div className="mt-6 space-y-4">
                   {res.gaps.map((gap, idx) => (
                     <div key={gap.id} className="relative border-l border-[color:var(--line-soft)] pl-6 md:pl-8">
-                      <div className="absolute left-[-5px] top-1.5 h-2.5 w-2.5 rounded-full bg-[#a33a21] shadow-[0_0_0_4px_rgba(255,250,244,0.9)]"></div>
-                      <div className="text-[9px] font-black uppercase tracking-widest text-[#a33a21]">Gap {idx + 1}: {gap.domainName}</div>
+                      <div className="absolute left-[-5px] top-1.5 h-2.5 w-2.5 rounded-full bg-[#0f172a] shadow-[0_0_0_4px_rgba(255,250,244,0.9)]"></div>
+                      <div className="text-[9px] font-black uppercase tracking-widest text-[#0f172a]">Gap {idx + 1}: {gap.domainName}</div>
                       <p className="text-xs font-semibold text-slate-700 leading-relaxed mt-2 italic">"{gap.text}"</p>
                       <div className="bg-white/80 border border-slate-100 rounded-xl px-4 py-3 text-[11px] leading-5 text-slate-600 mt-3">
-                        <strong className="text-[#1d3557] font-bold">Remediation Action:</strong> {gap.recommendation}
+                        <strong className="text-[#0f172a] font-bold">Remediation Action:</strong> {gap.recommendation}
                       </div>
                     </div>
                   ))}
@@ -363,8 +363,8 @@ export default function IIAStandardsDiagnostic() {
             {/* Contact CTA */}
             <div className="soft-shell p-6 md:p-8 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between border border-[#c7964c]/20 bg-gradient-to-r from-white/50 to-transparent">
               <div>
-                <div className="meta-label text-[#a33a21]">Need an EQA or Charter Alignment?</div>
-                <h4 className="text-lg text-[#181511] font-bold mt-2">Bring your audit function up to 2025 standard.</h4>
+                <div className="meta-label text-[#0f172a]">Need an EQA or Charter Alignment?</div>
+                <h4 className="text-lg text-[#0f172a] font-bold mt-2">Bring your audit function up to 2025 standard.</h4>
                 <p className="text-xs text-slate-600 leading-5 mt-2">I advise boards, family offices, and CAEs on EQA audits, team restructuring, and 100% population continuous monitoring setups.</p>
               </div>
               <a href="/portfolio_my/contact/" className="btn-primary shrink-0 self-start sm:self-auto">

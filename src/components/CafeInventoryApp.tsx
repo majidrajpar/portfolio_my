@@ -1054,7 +1054,7 @@ export default function CafeInventoryApp() {
                   setShortageErrors(null);
                   setActiveTab('inventory');
                 }}
-                className="rounded-xl bg-[#181511] px-4 py-2 text-xs font-bold text-white transition hover:bg-[#8d6035] dark:bg-white dark:text-[#181511]"
+                className="rounded-xl bg-[#0f172a] px-4 py-2 text-xs font-bold text-white transition hover:bg-[#8d6035] dark:bg-white dark:text-[#0f172a]"
               >
                 Go to Stock & Restock
               </button>
@@ -1067,14 +1067,14 @@ export default function CafeInventoryApp() {
       {isConfirmingReset && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
           <div className="w-full max-w-sm rounded-3xl border border-[color:var(--line-soft)] bg-white p-6 shadow-2xl dark:bg-[#1a1714]">
-            <h3 className="text-base font-black text-[#181511] dark:text-white">Reset Operational Baseline?</h3>
+            <h3 className="text-base font-black text-[#0f172a] dark:text-white">Reset Operational Baseline?</h3>
             <p className="mt-2 text-xs leading-relaxed text-[color:var(--text-secondary)]">
               This restores all recipes, ingredient inventory balances, waste logs, and sales journals back to the verified baseline dataset.
             </p>
             <div className="mt-6 flex justify-end gap-3">
               <button
                 onClick={() => setIsConfirmingReset(false)}
-                className="rounded-xl px-4 py-2 text-xs font-semibold text-[color:var(--text-secondary)] hover:text-[#181511]"
+                className="rounded-xl px-4 py-2 text-xs font-semibold text-[color:var(--text-secondary)] hover:text-[#0f172a]"
               >
                 Cancel
               </button>
@@ -1096,7 +1096,7 @@ export default function CafeInventoryApp() {
             <span>Avg Food Cost</span>
             <Flame className="h-4 w-4 text-[#c7964c]" />
           </div>
-          <div className="mt-2 text-2xl font-black text-[#181511] dark:text-white">
+          <div className="mt-2 text-2xl font-black text-[#0f172a] dark:text-white">
             {summaryMetrics.avgFoodCostPct.toFixed(1)}%
           </div>
           <div className="mt-1 text-[11px] font-medium text-[#107c41]">
@@ -1122,7 +1122,7 @@ export default function CafeInventoryApp() {
             <span>Stock Value</span>
             <Package className="h-4 w-4 text-[#8d6035]" />
           </div>
-          <div className="mt-2 text-2xl font-black text-[#181511] dark:text-white">
+          <div className="mt-2 text-2xl font-black text-[#0f172a] dark:text-white">
             {CURRENCY} {summaryMetrics.totalInventoryValuation.toLocaleString(undefined, { maximumFractionDigits: 0 })}
           </div>
           <div className="mt-1 text-[11px] font-medium text-[color:var(--text-secondary)]">
@@ -1135,7 +1135,7 @@ export default function CafeInventoryApp() {
             <span>POS Sales Rung</span>
             <DollarSign className="h-4 w-4 text-[#c7964c]" />
           </div>
-          <div className="mt-2 text-2xl font-black text-[#181511] dark:text-white">
+          <div className="mt-2 text-2xl font-black text-[#0f172a] dark:text-white">
             {CURRENCY} {summaryMetrics.totalPosRevenue.toFixed(0)}
           </div>
           <div className="mt-1 text-[11px] font-medium text-[#c7964c]">
@@ -1177,8 +1177,8 @@ export default function CafeInventoryApp() {
             onClick={() => setActiveTab('recipes')}
             className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-bold uppercase tracking-wider transition-all ${
               activeTab === 'recipes'
-                ? 'bg-[#181511] text-white shadow-md dark:bg-white dark:text-[#181511]'
-                : 'bg-white/70 text-[color:var(--text-secondary)] hover:bg-white hover:text-[#181511] dark:bg-white/5 dark:hover:bg-white/10'
+                ? 'bg-[#0f172a] text-white shadow-md dark:bg-white dark:text-[#0f172a]'
+                : 'bg-white/70 text-[color:var(--text-secondary)] hover:bg-white hover:text-[#0f172a] dark:bg-white/5 dark:hover:bg-white/10'
             }`}
           >
             <Coffee className="h-4 w-4" />
@@ -1192,8 +1192,8 @@ export default function CafeInventoryApp() {
             onClick={() => setActiveTab('inventory')}
             className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-bold uppercase tracking-wider transition-all ${
               activeTab === 'inventory'
-                ? 'bg-[#181511] text-white shadow-md dark:bg-white dark:text-[#181511]'
-                : 'bg-white/70 text-[color:var(--text-secondary)] hover:bg-white hover:text-[#181511] dark:bg-white/5 dark:hover:bg-white/10'
+                ? 'bg-[#0f172a] text-white shadow-md dark:bg-white dark:text-[#0f172a]'
+                : 'bg-white/70 text-[color:var(--text-secondary)] hover:bg-white hover:text-[#0f172a] dark:bg-white/5 dark:hover:bg-white/10'
             }`}
           >
             <Package className="h-4 w-4" />
@@ -1207,8 +1207,8 @@ export default function CafeInventoryApp() {
             onClick={() => setActiveTab('pos')}
             className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-bold uppercase tracking-wider transition-all ${
               activeTab === 'pos'
-                ? 'bg-[#181511] text-white shadow-md dark:bg-white dark:text-[#181511]'
-                : 'bg-white/70 text-[color:var(--text-secondary)] hover:bg-white hover:text-[#181511] dark:bg-white/5 dark:hover:bg-white/10'
+                ? 'bg-[#0f172a] text-white shadow-md dark:bg-white dark:text-[#0f172a]'
+                : 'bg-white/70 text-[color:var(--text-secondary)] hover:bg-white hover:text-[#0f172a] dark:bg-white/5 dark:hover:bg-white/10'
             }`}
           >
             <ShoppingCart className="h-4 w-4" />
@@ -1224,8 +1224,8 @@ export default function CafeInventoryApp() {
             onClick={() => setActiveTab('waste')}
             className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-bold uppercase tracking-wider transition-all ${
               activeTab === 'waste'
-                ? 'bg-[#181511] text-white shadow-md dark:bg-white dark:text-[#181511]'
-                : 'bg-white/70 text-[color:var(--text-secondary)] hover:bg-white hover:text-[#181511] dark:bg-white/5 dark:hover:bg-white/10'
+                ? 'bg-[#0f172a] text-white shadow-md dark:bg-white dark:text-[#0f172a]'
+                : 'bg-white/70 text-[color:var(--text-secondary)] hover:bg-white hover:text-[#0f172a] dark:bg-white/5 dark:hover:bg-white/10'
             }`}
           >
             <Scale className="h-4 w-4" />
@@ -1236,8 +1236,8 @@ export default function CafeInventoryApp() {
             onClick={() => setActiveTab('reconciliation')}
             className={`flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-bold uppercase tracking-wider transition-all ${
               activeTab === 'reconciliation'
-                ? 'bg-[#181511] text-white shadow-md dark:bg-white dark:text-[#181511]'
-                : 'bg-white/70 text-[color:var(--text-secondary)] hover:bg-white hover:text-[#181511] dark:bg-white/5 dark:hover:bg-white/10'
+                ? 'bg-[#0f172a] text-white shadow-md dark:bg-white dark:text-[#0f172a]'
+                : 'bg-white/70 text-[color:var(--text-secondary)] hover:bg-white hover:text-[#0f172a] dark:bg-white/5 dark:hover:bg-white/10'
             }`}
           >
             <ClipboardList className="h-4 w-4" />
@@ -1249,7 +1249,7 @@ export default function CafeInventoryApp() {
         <div className="flex items-center gap-2">
           <button
             onClick={exportAuditSchedule}
-            className="flex items-center gap-2 rounded-xl border border-[color:var(--line-soft)] bg-white/80 px-3.5 py-2 text-xs font-semibold text-[#181511] shadow-sm transition hover:bg-white dark:bg-white/10 dark:text-white"
+            className="flex items-center gap-2 rounded-xl border border-[color:var(--line-soft)] bg-white/80 px-3.5 py-2 text-xs font-semibold text-[#0f172a] shadow-sm transition hover:bg-white dark:bg-white/10 dark:text-white"
             title="Download full CSV schedule"
           >
             <Download className="h-3.5 w-3.5 text-[#c7964c]" />
@@ -1273,7 +1273,7 @@ export default function CafeInventoryApp() {
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
           <div className="space-y-3 lg:col-span-5">
             <div className="flex items-center justify-between">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-[#181511] dark:text-white">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-[#0f172a] dark:text-white">
                 Menu Items ({products.length})
               </h3>
               <span className="text-xs text-[color:var(--text-secondary)]">Select to inspect BOM</span>
@@ -1299,7 +1299,7 @@ export default function CafeInventoryApp() {
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <div className="flex items-center gap-2">
-                          <h4 className="font-bold text-[#181511] dark:text-white">{p.name}</h4>
+                          <h4 className="font-bold text-[#0f172a] dark:text-white">{p.name}</h4>
                           <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-600 dark:bg-white/10 dark:text-white/80">
                             {p.category}
                           </span>
@@ -1307,7 +1307,7 @@ export default function CafeInventoryApp() {
                         <p className="mt-1 text-xs text-[color:var(--text-secondary)]">{p.description}</p>
                       </div>
                       <div className="text-right">
-                        <div className="text-base font-black text-[#181511] dark:text-white">
+                        <div className="text-base font-black text-[#0f172a] dark:text-white">
                           {CURRENCY} {p.sellingPrice.toFixed(2)}
                         </div>
                         <div className="text-[11px] font-semibold text-[color:var(--text-secondary)]">
@@ -1345,7 +1345,7 @@ export default function CafeInventoryApp() {
                   <span className="rounded-full bg-[#c7964c]/20 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#a66c1c] dark:text-[#f4c98b]">
                     Recipe Bill of Materials (BOM)
                   </span>
-                  <h3 className="mt-2 text-2xl font-black text-[#181511] dark:text-white">
+                  <h3 className="mt-2 text-2xl font-black text-[#0f172a] dark:text-white">
                     {selectedProduct.name}
                   </h3>
                   <p className="mt-1 text-xs text-[color:var(--text-secondary)]">
@@ -1358,7 +1358,7 @@ export default function CafeInventoryApp() {
                     <div className="text-[10px] font-semibold uppercase tracking-wider text-[color:var(--text-secondary)]">
                       Menu Price
                     </div>
-                    <div className="text-xl font-black text-[#181511] dark:text-white">
+                    <div className="text-xl font-black text-[#0f172a] dark:text-white">
                       {CURRENCY} {selectedProduct.sellingPrice.toFixed(2)}
                     </div>
                   </div>
@@ -1411,7 +1411,7 @@ export default function CafeInventoryApp() {
 
                         return (
                           <tr key={idx} className="hover:bg-slate-50/50 dark:hover:bg-white/5">
-                            <td className="px-4 py-3 font-semibold text-[#181511] dark:text-white">
+                            <td className="px-4 py-3 font-semibold text-[#0f172a] dark:text-white">
                               {ing.name}
                               <span className="block text-[10px] font-normal text-[color:var(--text-secondary)]">
                                 {ing.category}
@@ -1423,7 +1423,7 @@ export default function CafeInventoryApp() {
                             <td className="px-3 py-3 font-mono text-[color:var(--text-secondary)]">
                               {CURRENCY} {ing.unitCost.toFixed(4)}/{ing.unit}
                             </td>
-                            <td className="px-3 py-3 text-right font-mono font-bold text-[#181511] dark:text-white">
+                            <td className="px-3 py-3 text-right font-mono font-bold text-[#0f172a] dark:text-white">
                               {CURRENCY} {lineCost.toFixed(3)}
                             </td>
                             <td className="px-3 py-3 text-right font-mono font-bold text-[#c7964c]">
@@ -1438,7 +1438,7 @@ export default function CafeInventoryApp() {
                         <td colSpan={3} className="px-4 py-3 text-right uppercase tracking-wider text-[color:var(--text-secondary)]">
                           Total Unit Recipe Cost
                         </td>
-                        <td className="px-3 py-3 text-right font-mono text-sm text-[#181511] dark:text-white">
+                        <td className="px-3 py-3 text-right font-mono text-sm text-[#0f172a] dark:text-white">
                           {CURRENCY} {selectedProductCogs.toFixed(2)}
                         </td>
                         <td className="px-3 py-3 text-right font-mono text-sm text-[#c7964c]">
@@ -1461,7 +1461,7 @@ export default function CafeInventoryApp() {
                       const mod = modifierMap.get(mId);
                       if (!mod) return null;
                       return (
-                        <span key={mId} className="inline-flex items-center gap-1.5 rounded-xl border border-[color:var(--line-soft)] bg-white px-3 py-1.5 text-xs font-semibold text-[#181511] shadow-sm dark:bg-white/10 dark:text-white">
+                        <span key={mId} className="inline-flex items-center gap-1.5 rounded-xl border border-[color:var(--line-soft)] bg-white px-3 py-1.5 text-xs font-semibold text-[#0f172a] shadow-sm dark:bg-white/10 dark:text-white">
                           <span>{mod.name}</span>
                           <span className="font-bold text-[#107c41]">+{CURRENCY} {mod.priceDelta.toFixed(0)}</span>
                         </span>
@@ -1478,7 +1478,7 @@ export default function CafeInventoryApp() {
                   <span>Operational Reality vs. Financial Reporting</span>
                 </div>
                 <p className="mt-2 text-[color:var(--text-secondary)]">
-                  Notice that packaging (cups, lids, straws) contributes <span className="font-bold text-[#181511] dark:text-white">AED {(selectedProduct.recipe.filter(r => ingredientMap.get(r.ingredientId)?.category === 'Packaging').reduce((sum, r) => sum + (r.quantity * (ingredientMap.get(r.ingredientId)?.unitCost || 0)), 0)).toFixed(2)}</span> to this beverage. In specialty coffee, packaging often exceeds the raw cost of the espresso beans. When baristas re-cup a spilled drink without ringing a waste ticket, it doubles packaging leakage silently.
+                  Notice that packaging (cups, lids, straws) contributes <span className="font-bold text-[#0f172a] dark:text-white">AED {(selectedProduct.recipe.filter(r => ingredientMap.get(r.ingredientId)?.category === 'Packaging').reduce((sum, r) => sum + (r.quantity * (ingredientMap.get(r.ingredientId)?.unitCost || 0)), 0)).toFixed(2)}</span> to this beverage. In specialty coffee, packaging often exceeds the raw cost of the espresso beans. When baristas re-cup a spilled drink without ringing a waste ticket, it doubles packaging leakage silently.
                 </p>
               </div>
             </div>
@@ -1493,7 +1493,7 @@ export default function CafeInventoryApp() {
         <div className="space-y-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h3 className="text-base font-bold uppercase tracking-wider text-[#181511] dark:text-white">
+              <h3 className="text-base font-bold uppercase tracking-wider text-[#0f172a] dark:text-white">
                 Raw Materials & Master Inventory ({ingredients.length} SKUs)
               </h3>
               <p className="mt-1 text-xs text-[color:var(--text-secondary)]">
@@ -1537,7 +1537,7 @@ export default function CafeInventoryApp() {
 
                   return (
                     <tr key={ing.id} className="hover:bg-slate-50/50 dark:hover:bg-white/5">
-                      <td className="px-4 py-3 font-bold text-[#181511] dark:text-white">
+                      <td className="px-4 py-3 font-bold text-[#0f172a] dark:text-white">
                         {ing.name}
                       </td>
                       <td className="px-3 py-3">
@@ -1548,7 +1548,7 @@ export default function CafeInventoryApp() {
                       <td className="px-3 py-3 font-mono text-[color:var(--text-secondary)]">
                         {CURRENCY} {ing.packCost.toFixed(2)} / {ing.packSize.toLocaleString()}{ing.unit}
                       </td>
-                      <td className="px-3 py-3 font-mono font-bold text-[#181511] dark:text-white">
+                      <td className="px-3 py-3 font-mono font-bold text-[#0f172a] dark:text-white">
                         {CURRENCY} {ing.unitCost.toFixed(4)}/{ing.unit}
                       </td>
                       <td className="px-3 py-3 font-mono font-black text-sm">
@@ -1581,7 +1581,7 @@ export default function CafeInventoryApp() {
                             setRestockIngredientId(ing.id);
                             setRestockQuantity(5);
                           }}
-                          className="rounded-xl border border-[color:var(--line-soft)] bg-white px-3 py-1 text-[11px] font-bold text-[#181511] shadow-sm transition hover:bg-slate-100 dark:bg-white/10 dark:text-white"
+                          className="rounded-xl border border-[color:var(--line-soft)] bg-white px-3 py-1 text-[11px] font-bold text-[#0f172a] shadow-sm transition hover:bg-slate-100 dark:bg-white/10 dark:text-white"
                         >
                           + Restock
                         </button>
@@ -1597,7 +1597,7 @@ export default function CafeInventoryApp() {
           {restockIngredientId && (
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
               <div className="w-full max-w-md rounded-3xl border border-[color:var(--line-soft)] bg-white p-6 shadow-2xl dark:bg-[#1a1714]">
-                <h3 className="text-base font-black text-[#181511] dark:text-white">
+                <h3 className="text-base font-black text-[#0f172a] dark:text-white">
                   Receive Supplier Delivery
                 </h3>
                 <p className="mt-1 text-xs text-[color:var(--text-secondary)]">
@@ -1635,7 +1635,7 @@ export default function CafeInventoryApp() {
                   <div className="rounded-2xl bg-slate-50 p-3.5 text-xs dark:bg-white/5">
                     <div className="flex justify-between">
                       <span className="text-[color:var(--text-secondary)]">Total Units Added:</span>
-                      <span className="font-bold text-[#181511] dark:text-white">
+                      <span className="font-bold text-[#0f172a] dark:text-white">
                         {(restockQuantity * (ingredientMap.get(restockIngredientId)?.packSize || 0)).toLocaleString()} {ingredientMap.get(restockIngredientId)?.unit}
                       </span>
                     </div>
@@ -1651,13 +1651,13 @@ export default function CafeInventoryApp() {
                 <div className="mt-6 flex items-center justify-end gap-3">
                   <button
                     onClick={() => setRestockIngredientId(null)}
-                    className="rounded-xl px-4 py-2 text-xs font-semibold text-[color:var(--text-secondary)] hover:text-[#181511]"
+                    className="rounded-xl px-4 py-2 text-xs font-semibold text-[color:var(--text-secondary)] hover:text-[#0f172a]"
                   >
                     Cancel
                   </button>
                   <button
                     onClick={handleRestock}
-                    className="rounded-xl bg-[#181511] px-5 py-2 text-xs font-bold text-white transition hover:bg-[#8d6035] dark:bg-white dark:text-[#181511]"
+                    className="rounded-xl bg-[#0f172a] px-5 py-2 text-xs font-bold text-white transition hover:bg-[#8d6035] dark:bg-white dark:text-[#0f172a]"
                   >
                     Confirm Delivery
                   </button>
@@ -1677,7 +1677,7 @@ export default function CafeInventoryApp() {
           <div className="space-y-4 lg:col-span-7 xl:col-span-8">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <h3 className="text-sm font-bold uppercase tracking-wider text-[#181511] dark:text-white">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-[#0f172a] dark:text-white">
                   Barista Touch Terminal
                 </h3>
                 <p className="mt-1 text-xs text-[color:var(--text-secondary)]">
@@ -1709,13 +1709,13 @@ export default function CafeInventoryApp() {
                       <span className="text-[10px] font-semibold text-[color:var(--text-secondary)]">
                         {p.category}
                       </span>
-                      <h4 className="mt-1 font-bold text-[#181511] dark:text-white">
+                      <h4 className="mt-1 font-bold text-[#0f172a] dark:text-white">
                         {p.name}
                       </h4>
                     </div>
 
                     <div className="mt-4 flex items-baseline justify-between border-t border-[color:var(--line-soft)] pt-2.5">
-                      <span className="text-sm font-black text-[#181511] dark:text-white">
+                      <span className="text-sm font-black text-[#0f172a] dark:text-white">
                         {CURRENCY} {p.sellingPrice.toFixed(0)}
                       </span>
                       <span className="text-[10px] font-bold text-[#107c41]">
@@ -1748,7 +1748,7 @@ export default function CafeInventoryApp() {
                     <div key={sale.id} className="flex items-center justify-between py-2.5 text-xs">
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="font-mono font-bold text-[#181511] dark:text-white">{sale.id}</span>
+                          <span className="font-mono font-bold text-[#0f172a] dark:text-white">{sale.id}</span>
                           <span className="text-[10px] text-[color:var(--text-secondary)]">{sale.timestamp}</span>
                         </div>
                         <div className="mt-0.5 text-[11px] text-[color:var(--text-secondary)]">
@@ -1762,7 +1762,7 @@ export default function CafeInventoryApp() {
                         </div>
                       </div>
                       <div className="text-right">
-                        <div className="font-mono font-bold text-[#181511] dark:text-white">
+                        <div className="font-mono font-bold text-[#0f172a] dark:text-white">
                           +{CURRENCY} {sale.totalRevenue.toFixed(2)}
                         </div>
                         <div className="text-[10px] font-bold text-[#107c41]">
@@ -1781,7 +1781,7 @@ export default function CafeInventoryApp() {
             <div className="sticky top-28 rounded-3xl border border-[color:var(--line-soft)] bg-white p-6 shadow-xl dark:bg-[#181512]">
               <div className="flex items-center justify-between border-b border-[color:var(--line-soft)] pb-4">
                 <div>
-                  <h3 className="text-base font-black text-[#181511] dark:text-white">Active Ticket</h3>
+                  <h3 className="text-base font-black text-[#0f172a] dark:text-white">Active Ticket</h3>
                   <span className="text-xs text-[color:var(--text-secondary)]">Till #01 • Counter POS</span>
                 </div>
                 {activeTicket.length > 0 && (
@@ -1811,7 +1811,7 @@ export default function CafeInventoryApp() {
                       <div key={lineItem.id} className="py-3">
                         <div className="flex items-start justify-between">
                           <div>
-                            <h5 className="font-bold text-[#181511] dark:text-white text-xs">
+                            <h5 className="font-bold text-[#0f172a] dark:text-white text-xs">
                               {lineItem.productName}
                             </h5>
                             <span className="font-mono text-[11px] text-[color:var(--text-secondary)]">
@@ -1819,7 +1819,7 @@ export default function CafeInventoryApp() {
                             </span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <span className="font-mono text-xs font-black text-[#181511] dark:text-white">
+                            <span className="font-mono text-xs font-black text-[#0f172a] dark:text-white">
                               {CURRENCY} {lineItem.totalItemPrice.toFixed(2)}
                             </span>
                             <button
@@ -1875,7 +1875,7 @@ export default function CafeInventoryApp() {
                       <>
                         <div className="flex justify-between text-[color:var(--text-secondary)]">
                           <span>Subtotal ({activeTicket.length} items)</span>
-                          <span className="font-mono font-bold text-[#181511] dark:text-white">
+                          <span className="font-mono font-bold text-[#0f172a] dark:text-white">
                             {CURRENCY} {totalRev.toFixed(2)}
                           </span>
                         </div>
@@ -1889,14 +1889,14 @@ export default function CafeInventoryApp() {
                             +{CURRENCY} {margin.toFixed(2)} ({100 - Math.round(foodCostPct)}%)
                           </span>
                         </div>
-                        <div className="flex justify-between border-t border-[color:var(--line-soft)] pt-2 text-sm font-black text-[#181511] dark:text-white">
+                        <div className="flex justify-between border-t border-[color:var(--line-soft)] pt-2 text-sm font-black text-[#0f172a] dark:text-white">
                           <span>Total to Charge</span>
                           <span className="font-mono">{CURRENCY} {totalRev.toFixed(2)}</span>
                         </div>
 
                         <button
                           onClick={processSale}
-                          className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl bg-[#181511] py-3.5 text-xs font-black uppercase tracking-wider text-white shadow-xl transition-all hover:bg-[#8d6035] active:scale-[0.99] dark:bg-white dark:text-[#181511]"
+                          className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl bg-[#0f172a] py-3.5 text-xs font-black uppercase tracking-wider text-white shadow-xl transition-all hover:bg-[#8d6035] active:scale-[0.99] dark:bg-white dark:text-[#0f172a]"
                         >
                           <CheckCircle2 className="h-4 w-4" />
                           <span>Charge & Deplete Stock</span>
@@ -1918,7 +1918,7 @@ export default function CafeInventoryApp() {
         <div className="space-y-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h3 className="text-base font-bold uppercase tracking-wider text-[#181511] dark:text-white">
+              <h3 className="text-base font-bold uppercase tracking-wider text-[#0f172a] dark:text-white">
                 Operational Waste & Technical Purge Log
               </h3>
               <p className="mt-1 text-xs text-[color:var(--text-secondary)]">
@@ -1931,7 +1931,7 @@ export default function CafeInventoryApp() {
                 setWasteErrorMessage(null);
                 setIsLoggingWaste(true);
               }}
-              className="flex items-center gap-2 rounded-xl bg-[#181511] px-4 py-2 text-xs font-bold text-white shadow-md transition hover:bg-[#8d6035] dark:bg-white dark:text-[#181511]"
+              className="flex items-center gap-2 rounded-xl bg-[#0f172a] px-4 py-2 text-xs font-bold text-white shadow-md transition hover:bg-[#8d6035] dark:bg-white dark:text-[#0f172a]"
             >
               <Plus className="h-4 w-4" />
               <span>Log Dial-in / Operating Waste</span>
@@ -1953,19 +1953,19 @@ export default function CafeInventoryApp() {
               <tbody className="divide-y divide-[color:var(--line-soft)]">
                 {wasteLog.map(entry => (
                   <tr key={entry.id} className="hover:bg-slate-50/50 dark:hover:bg-white/5">
-                    <td className="px-4 py-3 font-mono font-bold text-[#181511] dark:text-white">
+                    <td className="px-4 py-3 font-mono font-bold text-[#0f172a] dark:text-white">
                       {entry.id}
                       <span className="block text-[10px] font-normal text-[color:var(--text-secondary)]">
                         {entry.timestamp}
                       </span>
                     </td>
-                    <td className="px-3 py-3 font-semibold text-[#181511] dark:text-white">
+                    <td className="px-3 py-3 font-semibold text-[#0f172a] dark:text-white">
                       {entry.ingredientName}
                     </td>
                     <td className="px-3 py-3 font-mono font-bold text-[#d9381e]">
                       {entry.quantity.toLocaleString()} {entry.unit}
                     </td>
-                    <td className="px-3 py-3 font-mono font-bold text-[#181511] dark:text-white">
+                    <td className="px-3 py-3 font-mono font-bold text-[#0f172a] dark:text-white">
                       {CURRENCY} {entry.cost.toFixed(2)}
                     </td>
                     <td className="px-3 py-3">
@@ -1996,7 +1996,7 @@ export default function CafeInventoryApp() {
           {isLoggingWaste && (
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
               <div className="w-full max-w-md rounded-3xl border border-[color:var(--line-soft)] bg-white p-6 shadow-2xl dark:bg-[#1a1714]">
-                <h3 className="text-base font-black text-[#181511] dark:text-white">
+                <h3 className="text-base font-black text-[#0f172a] dark:text-white">
                   Record Operational Waste / Technical Purge
                 </h3>
                 <p className="mt-1 text-xs text-[color:var(--text-secondary)]">
@@ -2072,7 +2072,7 @@ export default function CafeInventoryApp() {
                   </button>
                   <button
                     onClick={handleLogWaste}
-                    className="rounded-xl bg-[#181511] px-5 py-2 text-xs font-bold text-white transition hover:bg-[#8d6035] dark:bg-white dark:text-[#181511]"
+                    className="rounded-xl bg-[#0f172a] px-5 py-2 text-xs font-bold text-white transition hover:bg-[#8d6035] dark:bg-white dark:text-[#0f172a]"
                   >
                     Confirm & Deduct Stock
                   </button>
@@ -2090,7 +2090,7 @@ export default function CafeInventoryApp() {
         <div className="space-y-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h3 className="text-base font-bold uppercase tracking-wider text-[#181511] dark:text-white">
+              <h3 className="text-base font-bold uppercase tracking-wider text-[#0f172a] dark:text-white">
                 Theoretical vs. Actual (TvA) Stock Reconciliation
               </h3>
               <p className="mt-1 text-xs text-[color:var(--text-secondary)]">
@@ -2151,7 +2151,7 @@ export default function CafeInventoryApp() {
 
                   return (
                     <tr key={ing.id} className="hover:bg-slate-50/50 dark:hover:bg-white/5">
-                      <td className="px-4 py-3 font-bold text-[#181511] dark:text-white">
+                      <td className="px-4 py-3 font-bold text-[#0f172a] dark:text-white">
                         {ing.name}
                         <span className="block text-[10px] font-normal text-[color:var(--text-secondary)]">
                           {ing.category}
@@ -2166,7 +2166,7 @@ export default function CafeInventoryApp() {
                       <td className="px-3 py-3 font-mono text-[#d9381e]">
                         {ing.wasteDepleted.toLocaleString()} {ing.unit}
                       </td>
-                      <td className="px-3 py-3 font-mono font-bold text-[#181511] dark:text-white">
+                      <td className="px-3 py-3 font-mono font-bold text-[#0f172a] dark:text-white">
                         {ing.onHandStock.toLocaleString()} {ing.unit}
                       </td>
                       <td className="px-3 py-3">
@@ -2233,7 +2233,7 @@ export default function CafeInventoryApp() {
           {/* Operational Reality Analysis Panels */}
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
             <div className="rounded-3xl border border-[color:var(--line-soft)] bg-white/70 p-6 shadow-sm backdrop-blur-md dark:bg-white/5">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#181511] dark:text-white">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#0f172a] dark:text-white">
                 Physical Stock vs. POS Ledger
               </h4>
               <p className="mt-3 text-xs leading-relaxed text-[color:var(--text-secondary)]">
@@ -2242,7 +2242,7 @@ export default function CafeInventoryApp() {
             </div>
 
             <div className="rounded-3xl border border-[color:var(--line-soft)] bg-white/70 p-6 shadow-sm backdrop-blur-md dark:bg-white/5">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#181511] dark:text-white">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#0f172a] dark:text-white">
                 Frontline Incentives vs. Executive Oversight
               </h4>
               <p className="mt-3 text-xs leading-relaxed text-[color:var(--text-secondary)]">

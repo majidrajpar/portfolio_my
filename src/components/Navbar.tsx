@@ -204,13 +204,13 @@ const Navbar = ({ initialPath = '' }) => {
                           onClick={() => setShelfOpen(false)}
                           className={`group flex items-start justify-between rounded-xl px-3 py-2.5 transition-colors ${
                             isActive
-                              ? 'bg-[#1d3557]/8 text-[#1d3557]'
-                              : 'hover:bg-black/[0.04] text-[#181511]'
+                              ? 'bg-[#0f172a]/8 text-[#0f172a]'
+                              : 'hover:bg-black/[0.04] text-[#0f172a]'
                           }`}
                         >
                           <div>
                             <div className="flex items-center gap-1.5">
-                              <span className="text-xs font-bold text-[#181511] group-hover:text-[#a33a21] transition-colors">
+                              <span className="text-xs font-bold text-[#0f172a] group-hover:text-[#0f172a] transition-colors">
                                 {item.label}
                               </span>
                               {item.external && (
@@ -224,7 +224,7 @@ const Navbar = ({ initialPath = '' }) => {
                             </p>
                           </div>
                           {isActive && (
-                            <span className="h-1.5 w-1.5 rounded-full bg-[#a33a21] mt-1.5" />
+                            <span className="h-1.5 w-1.5 rounded-full bg-[#0f172a] mt-1.5" />
                           )}
                         </a>
                       );
@@ -243,11 +243,11 @@ const Navbar = ({ initialPath = '' }) => {
                 href={item.href}
                 aria-current={isActive ? 'page' : undefined}
                 className={`text-[10px] font-black uppercase tracking-[0.16em] lg:tracking-[0.22em] transition-colors relative
-                  ${isActive ? 'text-[#1d3557]' : 'text-slate-500 hover:text-[#181511]'}`}
+                  ${isActive ? 'text-[#0f172a]' : 'text-slate-500 hover:text-[#0f172a]'}`}
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-px bg-[#a33a21]" />
+                  <span className="absolute -bottom-1 left-0 right-0 h-px bg-[#0f172a]" />
                 )}
               </a>
             );
@@ -259,7 +259,7 @@ const Navbar = ({ initialPath = '' }) => {
           <a
             href={contactHref}
             aria-current={isCurrent(contactHref) ? 'page' : undefined}
-            className="hidden md:inline-flex text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 rounded-full bg-[#a33a21] text-white hover:bg-[#7c2712] transition-colors"
+            className="hidden md:inline-flex text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2 rounded-full bg-[#0f172a] text-white hover:bg-[#7c2712] transition-colors"
           >
             Contact
           </a>
@@ -300,7 +300,7 @@ const Navbar = ({ initialPath = '' }) => {
                     aria-current={isActive ? 'page' : undefined}
                     onClick={() => setMobileOpen(false)}
                     className={`block py-3 border-b border-slate-100 text-[10px] font-black uppercase tracking-[0.24em] transition-colors
-                      ${isActive ? 'text-[#1d3557]' : 'text-slate-500 hover:text-slate-900'}`}
+                      ${isActive ? 'text-[#0f172a]' : 'text-slate-500 hover:text-slate-900'}`}
                   >
                     {item.label}
                   </a>
@@ -314,9 +314,9 @@ const Navbar = ({ initialPath = '' }) => {
                   onClick={() => setMobileShelfOpen(!mobileShelfOpen)}
                   className="w-full flex items-center justify-between text-[10px] font-black uppercase tracking-[0.24em] text-slate-500 hover:text-slate-900"
                 >
-                  <span className={isShelfActive ? 'text-[#1d3557]' : ''}>Library</span>
+                  <span className={isShelfActive ? 'text-[#0f172a]' : ''}>Library</span>
                   <svg
-                    className={`h-3 w-3 transition-transform duration-200 ${mobileShelfOpen ? 'rotate-180 text-[#a33a21]' : 'text-slate-400'}`}
+                    className={`h-3 w-3 transition-transform duration-200 ${mobileShelfOpen ? 'rotate-180 text-[#0f172a]' : 'text-slate-400'}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -336,7 +336,7 @@ const Navbar = ({ initialPath = '' }) => {
                         onClick={() => setMobileOpen(false)}
                         className="block py-1"
                       >
-                        <div className="text-xs font-bold text-[#181511] flex items-center gap-1.5">
+                        <div className="text-xs font-bold text-[#0f172a] flex items-center gap-1.5">
                           {item.label}
                           {item.external && (
                             <svg className="h-3 w-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -360,7 +360,7 @@ const Navbar = ({ initialPath = '' }) => {
                     aria-current={isActive ? 'page' : undefined}
                     onClick={() => setMobileOpen(false)}
                     className={`block py-3 border-b border-slate-100 text-[10px] font-black uppercase tracking-[0.24em] transition-colors
-                      ${isActive ? 'text-[#1d3557]' : 'text-slate-500 hover:text-slate-900'}`}
+                      ${isActive ? 'text-[#0f172a]' : 'text-slate-500 hover:text-slate-900'}`}
                   >
                     {item.label}
                   </a>
@@ -371,7 +371,7 @@ const Navbar = ({ initialPath = '' }) => {
                 href={contactHref}
                 aria-current={isCurrent(contactHref) ? 'page' : undefined}
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 block text-center text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2.5 rounded-full bg-[#a33a21] text-white"
+                className="mt-4 block text-center text-[10px] font-black uppercase tracking-[0.24em] px-4 py-2.5 rounded-full bg-[#0f172a] text-white"
               >
                 Contact
               </a>

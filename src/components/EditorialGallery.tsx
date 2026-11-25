@@ -165,8 +165,8 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
               onClick={() => setActiveFilter(cat)}
               className={`px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all ${
                 activeFilter === cat
-                  ? 'bg-[#181511] text-white shadow-sm'
-                  : 'bg-white/80 text-[color:var(--text-secondary)] hover:bg-[#181511]/5 border border-[color:var(--line-soft)]'
+                  ? 'bg-[#0f172a] text-white shadow-sm'
+                  : 'bg-white/80 text-[color:var(--text-secondary)] hover:bg-[#0f172a]/5 border border-[color:var(--line-soft)]'
               }`}
             >
               {cat}
@@ -203,7 +203,7 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
                   </span>
                   <span className="text-[10px] text-white/80 font-mono">Click to zoom</span>
                 </div>
-                <div className="absolute top-2.5 right-2.5 bg-black/50 backdrop-blur-sm text-white/90 p-1.5 rounded-lg opacity-80 group-hover:opacity-100 group-hover:bg-[#181511]">
+                <div className="absolute top-2.5 right-2.5 bg-black/50 backdrop-blur-sm text-white/90 p-1.5 rounded-lg opacity-80 group-hover:opacity-100 group-hover:bg-[#0f172a]">
                   <Maximize2 size={13} />
                 </div>
               </div>
@@ -213,7 +213,7 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#a66c1c] mb-1.5 block">
                   {item.tag}
                 </span>
-                <h3 className="text-base font-bold text-[#181511] leading-snug group-hover:text-[#8d6035] transition-colors">
+                <h3 className="text-base font-bold text-[#0f172a] leading-snug group-hover:text-[#8d6035] transition-colors">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-xs leading-relaxed text-[color:var(--text-secondary)] line-clamp-3">
@@ -224,7 +224,7 @@ export default function EditorialGallery({ base = '/portfolio_my/' }: EditorialG
                     e.stopPropagation();
                     openLightbox(item.id);
                   }}
-                  className="mt-auto pt-3 border-t border-[color:var(--line-soft)] flex items-center justify-between text-[11px] text-[#181511] font-semibold hover:text-[#a66c1c] transition-colors"
+                  className="mt-auto pt-3 border-t border-[color:var(--line-soft)] flex items-center justify-between text-[11px] text-[#0f172a] font-semibold hover:text-[#a66c1c] transition-colors"
                 >
                   <span className="underline decoration-[#c7964c] underline-offset-4">View audit analysis</span>
                   <span className="text-xs text-[#a66c1c]">→</span>

@@ -248,8 +248,8 @@ export default function NomuGovernanceReadiness() {
       executiveSummary = 'Baseline corporate and board mechanisms exist, but material non-compliance in Audit Committee independence, internal control formalization (ICOFR), or related-party transaction pre-approvals will trigger severe requisitions from the CMA and Financial Advisors during prospectus due diligence.';
     } else {
       classification = 'Major Regulatory Friction (Pre-IPO Blocker)';
-      colorClass = 'text-[#a33a21] bg-[#a33a21]/10 border-[#a33a21]/30';
-      badgeBorder = 'border-[#a33a21]';
+      colorClass = 'text-[#0f172a] bg-[#0f172a]/10 border-[#0f172a]/30';
+      badgeBorder = 'border-[#0f172a]';
       executiveSummary = 'Critical structural gaps exist across core board independence, internal audit mandate, and conflict of interest protocols. Under current conditions, CMA registration and Nomu listing approval would face severe delays or rejection. Immediate pre-IPO remediation is essential before appointing lead advisors.';
     }
 
@@ -368,7 +368,7 @@ export default function NomuGovernanceReadiness() {
             <span className="text-[#c7964c]">·</span>
             <span>2026 Active Regulatory Edition</span>
           </div>
-          <h2 className="text-3xl font-black text-[#181511] tracking-tight md:text-4xl">
+          <h2 className="text-3xl font-black text-[#0f172a] tracking-tight md:text-4xl">
             Tadawul Nomu Pre-IPO Readiness Diagnostic
           </h2>
           <p className="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">
@@ -382,7 +382,7 @@ export default function NomuGovernanceReadiness() {
               placeholder="e.g. Al-Fursan Health Group / Tech Logistics Co."
               value={companyName}
               onChange={e => setCompanyName(e.target.value)}
-              className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-[#181511] placeholder-slate-400 focus:border-[#a33a21] focus:outline-none transition-colors"
+              className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-[#0f172a] placeholder-slate-400 focus:border-[#0f172a] focus:outline-none transition-colors"
             />
           </div>
 
@@ -390,11 +390,11 @@ export default function NomuGovernanceReadiness() {
             <div className="mb-6 grid grid-cols-2 sm:grid-cols-3 gap-3 text-left">
               <div className="rounded-xl border border-slate-100 bg-white/70 p-3">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Pillars</span>
-                <p className="text-sm font-black text-[#181511]">5 Core Domains</p>
+                <p className="text-sm font-black text-[#0f172a]">5 Core Domains</p>
               </div>
               <div className="rounded-xl border border-slate-100 bg-white/70 p-3">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Standard</span>
-                <p className="text-sm font-black text-[#181511]">CMA 2026 Edition</p>
+                <p className="text-sm font-black text-[#0f172a]">CMA 2026 Edition</p>
               </div>
               <div className="col-span-2 sm:col-span-1 rounded-xl border border-slate-100 bg-white/70 p-3">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Status</span>
@@ -431,7 +431,7 @@ export default function NomuGovernanceReadiness() {
                   onClick={() => setActivePillarIndex(idx)}
                   className={`w-full text-left rounded-xl px-4 py-3 text-[11px] font-black uppercase tracking-wider border transition-all ${
                     active
-                      ? 'border-[#a33a21] bg-[#a33a21]/5 text-[#181511]'
+                      ? 'border-[#0f172a] bg-[#0f172a]/5 text-[#0f172a]'
                       : complete
                       ? 'border-[#059669]/25 bg-[#059669]/5 text-[#059669]'
                       : 'border-slate-100 text-slate-400 hover:text-slate-600 bg-white/40'
@@ -466,7 +466,7 @@ export default function NomuGovernanceReadiness() {
           <div className="soft-shell p-6 md:p-8 flex flex-col justify-between min-h-[440px]">
             <div>
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
-                <span className="eyebrow-label text-[#a33a21]">{currentPillar.name}</span>
+                <span className="eyebrow-label text-[#0f172a]">{currentPillar.name}</span>
                 <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">
                   Pillar {activePillarIndex + 1} of 5
                 </span>
@@ -485,7 +485,7 @@ export default function NomuGovernanceReadiness() {
                       </span>
                     </div>
 
-                    <p className="text-[14px] md:text-[15px] font-bold text-[#181511] leading-relaxed mb-4">
+                    <p className="text-[14px] md:text-[15px] font-bold text-[#0f172a] leading-relaxed mb-4">
                       {q.text}
                     </p>
 
@@ -506,7 +506,7 @@ export default function NomuGovernanceReadiness() {
                                 : 'border-slate-200 hover:border-slate-300 text-slate-700 bg-white'
                             }`}
                           >
-                            <span className={`block text-[11px] font-black uppercase tracking-wider ${selected ? 'text-[#f4c98b]' : 'text-[#181511]'}`}>
+                            <span className={`block text-[11px] font-black uppercase tracking-wider ${selected ? 'text-[#f4c98b]' : 'text-[#0f172a]'}`}>
                               {opt.label}
                             </span>
                             <span className={`block text-[9px] mt-0.5 ${selected ? 'text-white/70' : 'text-slate-400'}`}>
@@ -560,8 +560,8 @@ export default function NomuGovernanceReadiness() {
           <div className="soft-shell p-8 md:p-10">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
               <div className="flex-1">
-                <span className="eyebrow-label text-[#a33a21]">CMA Nomu Readiness Rating</span>
-                <h3 className="mt-2 text-2xl md:text-3xl font-black text-[#181511] tracking-tight">
+                <span className="eyebrow-label text-[#0f172a]">CMA Nomu Readiness Rating</span>
+                <h3 className="mt-2 text-2xl md:text-3xl font-black text-[#0f172a] tracking-tight">
                   {companyName.trim() ? companyName.trim() : 'Pre-IPO Candidate Enterprise'}
                 </h3>
                 <div className="mt-3 flex flex-wrap items-center gap-2">
@@ -583,7 +583,7 @@ export default function NomuGovernanceReadiness() {
               {/* Gauge Plinth */}
               <div className="stat-plinth flex flex-col items-center justify-center p-6 sm:min-w-[180px] text-center border-[#c7964c]/20">
                 <span className="meta-label text-slate-400">Readiness Score</span>
-                <span className="mt-2 text-5xl font-black text-[#181511] font-mono">
+                <span className="mt-2 text-5xl font-black text-[#0f172a] font-mono">
                   {results.overallPercentage}%
                 </span>
                 <span className="mt-1 text-[11px] font-bold text-slate-500 uppercase tracking-widest">
@@ -597,8 +597,8 @@ export default function NomuGovernanceReadiness() {
               <span className="meta-label block text-slate-400 mb-4">Readiness by Governance Pillar</span>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
                 {Object.values(results.pillarScores).map(p => {
-                  const scoreColor = p.percentage >= 80 ? 'text-[#059669]' : p.percentage >= 50 ? 'text-[#c7964c]' : 'text-[#a33a21]';
-                  const barColor = p.percentage >= 80 ? 'bg-[#059669]' : p.percentage >= 50 ? 'bg-[#c7964c]' : 'bg-[#a33a21]';
+                  const scoreColor = p.percentage >= 80 ? 'text-[#059669]' : p.percentage >= 50 ? 'text-[#c7964c]' : 'text-[#0f172a]';
+                  const barColor = p.percentage >= 80 ? 'bg-[#059669]' : p.percentage >= 50 ? 'bg-[#c7964c]' : 'bg-[#0f172a]';
                   return (
                     <div key={p.name} className="rounded-xl border border-slate-100 bg-white/70 p-4 flex flex-col justify-between">
                       <div>
@@ -628,16 +628,16 @@ export default function NomuGovernanceReadiness() {
               <div className="flex flex-wrap items-center gap-3">
                 <button
                   onClick={exportCSV}
-                  className="rounded-xl border border-slate-300 bg-white px-4 py-2 text-[11px] font-black uppercase tracking-wider text-slate-800 hover:border-[#181511] transition-colors inline-flex items-center gap-2"
+                  className="rounded-xl border border-slate-300 bg-white px-4 py-2 text-[11px] font-black uppercase tracking-wider text-slate-800 hover:border-[#0f172a] transition-colors inline-flex items-center gap-2"
                 >
-                  <svg className="w-3.5 h-3.5 text-[#a33a21]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-3.5 h-3.5 text-[#0f172a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                   Export Diagnostic Brief (CSV)
                 </button>
                 <button
                   onClick={copyMarkdownSummary}
-                  className="rounded-xl border border-slate-300 bg-white px-4 py-2 text-[11px] font-black uppercase tracking-wider text-slate-800 hover:border-[#181511] transition-colors inline-flex items-center gap-2"
+                  className="rounded-xl border border-slate-300 bg-white px-4 py-2 text-[11px] font-black uppercase tracking-wider text-slate-800 hover:border-[#0f172a] transition-colors inline-flex items-center gap-2"
                 >
                   <svg className="w-3.5 h-3.5 text-[#c7964c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
@@ -664,7 +664,7 @@ export default function NomuGovernanceReadiness() {
                     setActivePillarIndex(0);
                     setStep(0);
                   }}
-                  className="text-[11px] font-black uppercase tracking-wider text-slate-500 hover:text-[#a33a21] transition-colors"
+                  className="text-[11px] font-black uppercase tracking-wider text-slate-500 hover:text-[#0f172a] transition-colors"
                 >
                   New Assessment
                 </button>
@@ -676,8 +676,8 @@ export default function NomuGovernanceReadiness() {
           <div className="soft-shell p-8 md:p-10">
             <div className="mb-6 flex items-center justify-between">
               <div>
-                <span className="eyebrow-label text-[#a33a21]">Remediation Action Plan</span>
-                <h4 className="mt-1 text-2xl font-black text-[#181511] tracking-tight">
+                <span className="eyebrow-label text-[#0f172a]">Remediation Action Plan</span>
+                <h4 className="mt-1 text-2xl font-black text-[#0f172a] tracking-tight">
                   Required Pre-IPO Governance Upgrades
                 </h4>
               </div>
@@ -700,7 +700,7 @@ export default function NomuGovernanceReadiness() {
                 {results.gaps.map((g) => {
                   const priorityBg =
                     g.remediation.priority === 'Urgent'
-                      ? 'bg-[#a33a21]/10 text-[#a33a21] border-[#a33a21]/30'
+                      ? 'bg-[#0f172a]/10 text-[#0f172a] border-[#0f172a]/30'
                       : g.remediation.priority === 'High'
                       ? 'bg-[#c7964c]/10 text-[#a66c1c] border-[#c7964c]/30'
                       : 'bg-slate-100 text-slate-700 border-slate-200';
@@ -727,12 +727,12 @@ export default function NomuGovernanceReadiness() {
                         </span>
                       </div>
 
-                      <p className="text-sm font-bold text-[#181511] mb-2">
+                      <p className="text-sm font-bold text-[#0f172a] mb-2">
                         {g.text}
                       </p>
 
                       <div className="rounded-xl border border-slate-100 bg-slate-50/70 p-3.5 mt-3">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-[#a33a21] block mb-1">
+                        <span className="text-[10px] font-black uppercase tracking-widest text-[#0f172a] block mb-1">
                           Mandatory Remediation Action:
                         </span>
                         <p className="text-xs leading-relaxed text-slate-700 font-medium">

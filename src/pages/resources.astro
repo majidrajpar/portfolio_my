@@ -192,8 +192,8 @@ function isPdfAsset(doc: any) {
                   data-filter={cat}
                   class={`filter-btn shrink-0 rounded-full px-3.5 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] border transition-all ${
                     idx === 0
-                      ? 'active-filter bg-[#1d3557] border-[#1d3557] text-white'
-                      : 'border-[rgba(29,53,87,0.10)] text-[color:var(--text-secondary)] bg-white/70 hover:border-[#1d3557]/40 hover:text-slate-900'
+                      ? 'active-filter bg-[#0f172a] border-[#0f172a] text-white'
+                      : 'border-[rgba(29,53,87,0.10)] text-[color:var(--text-secondary)] bg-white/70 hover:border-[#0f172a]/40 hover:text-slate-900'
                   }`}
                 >
                   {cat}
@@ -207,28 +207,28 @@ function isPdfAsset(doc: any) {
               <button
                 type="button"
                 data-format="all"
-                class="format-btn shrink-0 active-format rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[#1d3557] bg-[#1d3557] text-white transition-all"
+                class="format-btn shrink-0 active-format rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[#0f172a] bg-[#0f172a] text-white transition-all"
               >
                 All Formats
               </button>
               <button
                 type="button"
                 data-format="pdf"
-                class="format-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-slate-900 transition-all"
+                class="format-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#0f172a]/40 hover:text-slate-900 transition-all"
               >
                 Free PDF (28)
               </button>
               <button
                 type="button"
                 data-format="xlsx"
-                class="format-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-slate-900 transition-all"
+                class="format-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#0f172a]/40 hover:text-slate-900 transition-all"
               >
                 Excel (.xlsx)
               </button>
               <button
                 type="button"
                 data-format="md"
-                class="format-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-slate-900 transition-all"
+                class="format-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#0f172a]/40 hover:text-slate-900 transition-all"
               >
                 Guides (.md)
               </button>
@@ -489,7 +489,7 @@ function isPdfAsset(doc: any) {
           >
             <div>
               <div class="flex flex-wrap items-center justify-between gap-2">
-                <span class="rounded-full bg-[#a33a21]/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600">
+                <span class="rounded-full bg-[#0f172a]/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600">
                   {bundle.badge}
                 </span>
                 <span class="font-mono text-[11px] font-bold text-slate-900">{bundle.price} USD</span>
@@ -581,10 +581,10 @@ function isPdfAsset(doc: any) {
         categoryBar.querySelectorAll('.filter-btn').forEach(function (btn) {
           const cat = btn.getAttribute('data-filter');
           if (cat === currentCategory) {
-            btn.classList.add('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
+            btn.classList.add('bg-[#0f172a]', 'border-[#0f172a]', 'text-white');
             btn.classList.remove('text-[color:var(--text-secondary)]', 'bg-white/70');
           } else {
-            btn.classList.remove('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
+            btn.classList.remove('bg-[#0f172a]', 'border-[#0f172a]', 'text-white');
             btn.classList.add('text-[color:var(--text-secondary)]', 'bg-white/70');
           }
         });
@@ -595,10 +595,10 @@ function isPdfAsset(doc: any) {
         formatBar.querySelectorAll('.format-btn').forEach(function (btn) {
           const fmt = btn.getAttribute('data-format');
           if (fmt === currentFormat) {
-            btn.classList.add('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
+            btn.classList.add('bg-[#0f172a]', 'border-[#0f172a]', 'text-white');
             btn.classList.remove('text-[color:var(--text-secondary)]', 'bg-white/70');
           } else {
-            btn.classList.remove('bg-[#1d3557]', 'border-[#1d3557]', 'text-white');
+            btn.classList.remove('bg-[#0f172a]', 'border-[#0f172a]', 'text-white');
             btn.classList.add('text-[color:var(--text-secondary)]', 'bg-white/70');
           }
         });
