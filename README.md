@@ -1,34 +1,31 @@
-# 💼 Executive Portfolio — Majid Mumtaz
+# Majid Mumtaz — Internal Audit & Forensic Analytics Portfolio
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Live Site](https://img.shields.io/badge/Live-majidrajpar.github.io%2Fportfolio__my-0f172a?style=flat-square)](https://majidrajpar.github.io/portfolio_my)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 
-> **Director of Internal Audit & Risk Advisory**
-> 
-> *A high-performance, data-driven, and editorial-grade showcase of modern corporate governance, internal audit automation, fraud detection, and executive leadership.*
+Live site: [majidrajpar.github.io/portfolio_my](https://majidrajpar.github.io/portfolio_my)
 
----
+## Overview
 
-## 🌟 Overview
+Source code for the portfolio and browser-based audit diagnostics of Majid Mumtaz (CIA, ACA, FCCA, GRCP), Director of Internal Audit & Risk Advisory. Rather than a static CV, the site hosts interactive client-side tools for audit automation, document comparison, and transaction risk scoring.
 
-This repository houses the source code for the professional portfolio of **Majid Mumtaz**, Director of Internal Audit. Unlike static, text-heavy resumes, this platform is a state-of-the-art interactive tool designed to demonstrate real-world technical competency in audit automation, risk analytics, and forensic data analysis.
-
-It is engineered with **Astro 5**, **React 19**, and **Tailwind CSS 4**, delivering near-instant page transitions, selective component hydration, dynamic interactive tools, and rich financial dashboards.
+Built with Astro 5, React 19, and Tailwind CSS 4.
 
 ---
 
-## 🏗️ Architecture & Core Tech Stack
+## Architecture & Core Tech Stack
 
-The architecture utilizes a hybrid approach: **Static Site Generation (SSG)** for fast delivery and maximum SEO performance, combined with **Selective Client-Side Hydration** for high-fidelity React 19 widgets.
+Static Site Generation (SSG) via Astro 5 paired with selective client-side hydration for React 19 diagnostic widgets.
 
 ```mermaid
 graph TD
-    A[SQLite / Static JSON Data] -->|Seed & Content Pipeline| B[Astro 5 SSG Engine]
-    C[React 19 Components] -->|Selective Hydration| B
-    B -->|Build / Vite / Tailwind 4| D[Optimized Static Site - dist/]
-    D -->|GitHub Actions| E[GitHub Pages]
+    A["SQLite / Static JSON Data"] -->|Seed & Content Pipeline| B["Astro 5 SSG Engine"]
+    C["React 19 Components"] -->|Selective Hydration| B
+    B -->|Build / Vite / Tailwind 4| D["Static Site (dist/)"]
+    D -->|GitHub Actions| E["GitHub Pages"]
 ```
 
-### 🛠️ Key Technologies
+### Key Technologies
 * **Framework:** [Astro 5](https://astro.build/) for modular layouts and blazing-fast static build delivery.
 * **Interactive UI:** [React 19](https://react.dev/) powering dynamic data calculators, estimators, and visualizers.
 * **Styling & Layout:** [Tailwind CSS 4](https://tailwindcss.com/) with a custom luxury-editorial design system (`editorial-panel`, `glass-card`, `frame-panel`).
