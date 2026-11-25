@@ -51,7 +51,7 @@ const short = filtered.filter((project) => !project.starr?.situation);
           </p>
         </div>
         <div class="quote-panel p-6 md:p-8" data-reveal data-reveal-delay="1">
-          <span class="eyebrow-label text-[#f4c98b]/80">Coverage</span>
+          <span class="eyebrow-label text-slate-200/80">Coverage</span>
           <p class="mt-4 text-base leading-7 text-white/82 md:mt-5 md:text-lg md:leading-8">{filtered.length} record{filtered.length === 1 ? '' : 's'} in this area.</p>
         </div>
       </div>
@@ -64,7 +64,7 @@ const short = filtered.filter((project) => !project.starr?.situation);
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
       </svg>
       <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
-        <span class="meta-label text-[#181511]">Disclosure</span>
+        <span class="meta-label text-slate-900">Disclosure</span>
         Employer names are on the career record. This page uses the industry field and the stored figures.
       </p>
     </div>
@@ -75,7 +75,7 @@ const short = filtered.filter((project) => !project.starr?.situation);
       <div class="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between" data-reveal>
         <div>
           <span class="eyebrow-label">Practice Area</span>
-          <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-[#181511]">{cat.name} Case Studies</h2>
+          <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.8rem)] leading-[1.02] text-slate-900">{cat.name} Case Studies</h2>
         </div>
         <p class="body-luxe max-w-2xl">Detailed audit findings, controls testing, and governance outcomes across {cat.name.toLowerCase()}.</p>
       </div>
@@ -87,7 +87,7 @@ const short = filtered.filter((project) => !project.starr?.situation);
             data-reveal-delay={String((i % 3) + 1)}
           >
             <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <span class="inline-flex w-fit rounded-full bg-[#181512] px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-[#f4c98b]">
+              <span class="inline-flex w-fit rounded-full bg-[#181512] px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-slate-200">
                 {project.industry}
               </span>
               {project.duration && (
@@ -100,7 +100,7 @@ const short = filtered.filter((project) => !project.starr?.situation);
               )}
             </div>
 
-            <h3 class="text-[1.28rem] leading-tight text-[#181511] md:text-[1.45rem]">
+            <h3 class="text-[1.28rem] leading-tight text-slate-900 md:text-[1.45rem]">
               {project.title}
             </h3>
 
@@ -128,7 +128,7 @@ const short = filtered.filter((project) => !project.starr?.situation);
             <div class="mt-7 border-t border-[color:var(--line-soft)] pt-5">
               <a
                 href={`${base}projects/${project.id}/`}
-                class="inline-flex items-center text-[11px] font-black uppercase tracking-[0.24em] text-[#181511] transition-colors hover:text-[#8d6035]"
+                class="inline-flex items-center text-[11px] font-black uppercase tracking-[0.24em] text-slate-900 transition-colors hover:text-slate-900"
               >
                 View Case Study
                 <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -143,7 +143,7 @@ const short = filtered.filter((project) => !project.starr?.situation);
         <div class="mt-14">
           <div class="my-10 border-t border-[color:var(--line-soft)]"></div>
           <div class="pb-6 border-b border-[color:var(--line-soft)]">
-            <h2 class="text-2xl font-bold text-[#181511]">Other {cat.name} Engagements</h2>
+            <h2 class="text-2xl font-bold text-slate-900">Other {cat.name} Engagements</h2>
             <p class="mt-2 text-sm text-[color:var(--text-secondary)]">Selected audit findings and advisory reviews in this practice area.</p>
           </div>
 
@@ -157,14 +157,14 @@ const short = filtered.filter((project) => !project.starr?.situation);
                   <span class="inline-block text-[11px] font-semibold text-[#8d6035] mb-2">
                     {project.industry}
                   </span>
-                  <h3 class="text-base font-bold text-[#181511] group-hover:text-[#8d6035] transition-colors">
+                  <h3 class="text-base font-bold text-slate-900 group-hover:text-slate-900 transition-colors">
                     {project.title}
                   </h3>
                   <p class="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">
                     {project.impact}
                   </p>
                 </div>
-                <div class="mt-4 flex items-center gap-1 text-xs font-semibold text-[#181511] group-hover:text-[#8d6035]">
+                <div class="mt-4 flex items-center gap-1 text-xs font-semibold text-slate-900 group-hover:text-slate-900">
                   <span>View project details</span>
                   <span>→</span>
                 </div>

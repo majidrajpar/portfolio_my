@@ -29,33 +29,33 @@ const ContactForm = () => {
     }
   };
 
-  const inputClass = "w-full rounded-2xl border border-white/12 bg-white/8 px-5 py-3 text-white placeholder:text-white/35 focus:outline-none focus:border-[#c7964c] transition-colors text-sm backdrop-blur";
+  const inputClass = "w-full rounded-md border border-slate-300 bg-white px-4 py-2.5 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-slate-900 transition-colors text-sm";
 
   return (
-    <div className="frame-panel p-8 md:p-10">
+    <div className="frame-panel p-6 md:p-8">
       {status === 'success' ? (
         <div role="status" aria-live="polite" className="text-center py-12">
-          <div className="text-5xl mb-6 text-[#f4c98b]" aria-hidden="true">✓</div>
-          <h3 className="text-white font-black text-2xl mb-3">Message Sent</h3>
-          <p className="text-white/68">Thank you — I'll be in touch.</p>
-          <button onClick={() => setStatus('idle')} className="mt-8 btn-secondary text-xs">Send Another Message</button>
+          <div className="text-4xl mb-4 text-slate-900" aria-hidden="true">✓</div>
+          <h3 className="text-slate-900 font-semibold text-xl mb-2">Message Sent</h3>
+          <p className="text-slate-600 text-sm">Thank you — I'll be in touch.</p>
+          <button onClick={() => setStatus('idle')} className="mt-6 btn-secondary text-xs">Send Another Message</button>
         </div>
       ) : (
         <form ref={formRef} onSubmit={handleSubmit} className="space-y-5" aria-busy={status === 'submitting'}>
           <div>
-            <label htmlFor="contact-name" className="text-[10px] font-black uppercase tracking-[0.24em] text-white/48 mb-2 block">Name</label>
+            <label htmlFor="contact-name" className="text-xs font-medium uppercase tracking-widest text-slate-500 mb-2 block">Name</label>
             <input id="contact-name" name="name" type="text" autoComplete="name" required placeholder="Your full name" className={inputClass} />
           </div>
           <div>
-            <label htmlFor="contact-email" className="text-[10px] font-black uppercase tracking-[0.24em] text-white/48 mb-2 block">Email</label>
+            <label htmlFor="contact-email" className="text-xs font-medium uppercase tracking-widest text-slate-500 mb-2 block">Email</label>
             <input id="contact-email" name="email" type="email" autoComplete="email" required placeholder="your@email.com" className={inputClass} />
           </div>
           <div>
-            <label htmlFor="contact-message" className="text-[10px] font-black uppercase tracking-[0.24em] text-white/48 mb-2 block">Message</label>
+            <label htmlFor="contact-message" className="text-xs font-medium uppercase tracking-widest text-slate-500 mb-2 block">Message</label>
             <textarea id="contact-message" name="message" required rows={4} placeholder="Describe the challenge you're facing" className={`${inputClass} resize-none`} />
           </div>
           {status === 'error' && (
-            <p role="alert" className="text-red-300 text-sm">Something went wrong. Please try emailing directly.</p>
+            <p role="alert" className="text-red-600 text-sm">Something went wrong. Please try emailing directly.</p>
           )}
           <button
             type="submit"

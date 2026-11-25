@@ -86,7 +86,7 @@ const allCategories = ['All', ...Array.from(new Set(browserTools.map((t) => t.ca
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
         </svg>
         <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
-          <span class="meta-label text-[#181511]">Privacy First</span>
+          <span class="meta-label text-slate-900">Privacy First</span>
           Inputs, scores, files, and outputs remain on-device. The tooling is designed to be credible in live client or boardroom contexts where discretion matters.
         </p>
       </div>
@@ -109,7 +109,7 @@ const allCategories = ['All', ...Array.from(new Set(browserTools.map((t) => t.ca
             type="search"
             autocomplete="off"
             placeholder="Search tools by title, methodology (e.g. Benford, COSO, GIAS, BOM), or keyword..."
-            class="w-full rounded-2xl border border-[color:var(--line-soft)] bg-white/80 py-3.5 pl-11 pr-24 text-sm font-medium text-[#181511] placeholder:text-slate-400 focus:border-[#a33a21] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#a33a21] transition-all"
+            class="w-full rounded-2xl border border-[color:var(--line-soft)] bg-white/80 py-3.5 pl-11 pr-24 text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:border-[#a33a21] focus:bg-white focus:outline-none focus:ring-1 focus:ring-[#a33a21] transition-all"
             aria-label="Search tools"
           />
           <div class="absolute right-3 flex items-center gap-2">
@@ -140,7 +140,7 @@ const allCategories = ['All', ...Array.from(new Set(browserTools.map((t) => t.ca
                 class={`tool-cat-btn shrink-0 rounded-full px-3.5 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] border transition-all ${
                   idx === 0
                     ? 'active-cat bg-[#1d3557] border-[#1d3557] text-white'
-                    : 'border-[rgba(29,53,87,0.10)] text-[color:var(--text-secondary)] bg-white/70 hover:border-[#1d3557]/40 hover:text-[#181511]'
+                    : 'border-[rgba(29,53,87,0.10)] text-[color:var(--text-secondary)] bg-white/70 hover:border-[#1d3557]/40 hover:text-slate-900'
                 }`}
               >
                 {cat}
@@ -161,14 +161,14 @@ const allCategories = ['All', ...Array.from(new Set(browserTools.map((t) => t.ca
             <button
               type="button"
               data-tech="ml"
-              class="tool-tech-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
+              class="tool-tech-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-slate-900 transition-all"
             >
               ML Scored
             </button>
             <button
               type="button"
               data-tech="rust"
-              class="tool-tech-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
+              class="tool-tech-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-slate-900 transition-all"
             >
               Rust / WASM
             </button>
@@ -178,12 +178,12 @@ const allCategories = ['All', ...Array.from(new Set(browserTools.map((t) => t.ca
         <!-- Live Results Counter & Reset -->
         <div class="flex items-center justify-between text-xs text-[color:var(--text-secondary)] pt-1">
           <div id="tool-results-count" class="font-medium">
-            Showing <span class="font-bold text-[#181511]" id="count-number">{browserTools.length}</span> tools
+            Showing <span class="font-bold text-slate-900" id="count-number">{browserTools.length}</span> tools
           </div>
           <button
             id="tool-reset-all"
             type="button"
-            class="hidden text-[11px] font-black uppercase tracking-wider text-[#a33a21] hover:underline cursor-pointer"
+            class="hidden text-[11px] font-black uppercase tracking-wider text-slate-600 hover:underline cursor-pointer"
           >
             Reset Filters
           </button>
@@ -249,7 +249,7 @@ const allCategories = ['All', ...Array.from(new Set(browserTools.map((t) => t.ca
 
       <!-- 3. Clean Dignified Empty State -->
       <div id="tools-empty-state" class="hidden my-12 mx-auto max-w-lg rounded-lg border border-[color:var(--line-soft)] bg-white/75 p-8 text-center backdrop-blur-xl">
-        <p class="text-lg font-bold text-[#181511]">No matching tools found</p>
+        <p class="text-lg font-bold text-slate-900">No matching tools found</p>
         <p class="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">
           No tools match your query. Try broadening your terms (e.g. "fraud", "controls", "governance", "sampling").
         </p>
@@ -264,9 +264,9 @@ const allCategories = ['All', ...Array.from(new Set(browserTools.map((t) => t.ca
 
       <!-- Quick Links Footer -->
       <div class="mt-12 flex gap-6 border-t border-[color:var(--line-soft)] pt-6">
-        <a href={`${base}software/`} class="text-sm font-semibold text-[#181511] underline underline-offset-4 hover:text-[#8d6035]">Builds</a>
-        <a href={`${base}resources/`} class="text-sm font-semibold text-[#181511] underline underline-offset-4 hover:text-[#8d6035]">Frameworks &amp; Overviews</a>
-        <a href={`${base}contact/`} class="text-sm font-semibold text-[#181511] underline underline-offset-4 hover:text-[#8d6035]">Contact</a>
+        <a href={`${base}software/`} class="text-sm font-semibold text-slate-900 underline underline-offset-4 hover:text-slate-900">Builds</a>
+        <a href={`${base}resources/`} class="text-sm font-semibold text-slate-900 underline underline-offset-4 hover:text-slate-900">Frameworks &amp; Overviews</a>
+        <a href={`${base}contact/`} class="text-sm font-semibold text-slate-900 underline underline-offset-4 hover:text-slate-900">Contact</a>
       </div>
     </div>
   </section>
@@ -376,7 +376,7 @@ const allCategories = ['All', ...Array.from(new Set(browserTools.map((t) => t.ca
             emptyState.style.display = 'none';
           }
           if (countEl) countEl.textContent = String(totalTools);
-          if (resultsText) resultsText.innerHTML = 'Showing <span class="font-bold text-[#181511]">' + totalTools + '</span> tools';
+          if (resultsText) resultsText.innerHTML = 'Showing <span class="font-bold text-slate-900">' + totalTools + '</span> tools';
           syncUrl();
           return;
         }
@@ -447,7 +447,7 @@ const allCategories = ['All', ...Array.from(new Set(browserTools.map((t) => t.ca
         if (countEl) countEl.textContent = String(visibleCount);
         if (resultsText) {
           const unit = visibleCount === 1 ? 'tool' : 'tools';
-          resultsText.innerHTML = 'Showing <span class="font-bold text-[#181511]">' + visibleCount + '</span> matching ' + unit;
+          resultsText.innerHTML = 'Showing <span class="font-bold text-slate-900">' + visibleCount + '</span> matching ' + unit;
         }
 
         syncUrl();

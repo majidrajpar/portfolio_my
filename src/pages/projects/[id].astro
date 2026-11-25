@@ -174,13 +174,13 @@ const jsonLd = {
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
       </svg>
       <p class="text-sm leading-7 text-[color:var(--text-secondary)]">
-        <span class="meta-label text-[#181511]">Disclosure</span>
+        <span class="meta-label text-slate-900">Disclosure</span>
         Employer names are on the career record. This page uses the industry field and the stored figures.
         {project.id === 'audit-4-transformation' && (
           <> The AED 7.7M is the dirham result for this food-tech population. The post-acquisition page records acquired-outlet leakage separately. The two figures are not added.</>
         )}
         {project.id === 'post-merger-integration-fnb-group' && (
-          <> The AED 22M is acquired-outlet leakage on this page. It is not added to the AED 7.7M result on <a href={`${base}projects/audit-4-transformation/`} class="font-medium text-[#181511] underline underline-offset-4">Audit 4.0</a>.</>
+          <> The AED 22M is acquired-outlet leakage on this page. It is not added to the AED 7.7M result on <a href={`${base}projects/audit-4-transformation/`} class="font-medium text-slate-900 underline underline-offset-4">Audit 4.0</a>.</>
         )}
       </p>
     </div>
@@ -250,7 +250,7 @@ const jsonLd = {
                 <p class="text-[15px] leading-7 md:text-base md:leading-8">
                   <a
                     href={line.href}
-                    class="font-semibold text-[#181511] underline decoration-[#c7964c] underline-offset-4 transition-colors hover:text-[#8d6035]"
+                    class="font-semibold text-slate-900 underline decoration-[#c7964c] underline-offset-4 transition-colors hover:text-slate-900"
                     target={line.external ? '_blank' : undefined}
                     rel={line.external ? 'noopener noreferrer' : undefined}
                   >
@@ -281,7 +281,7 @@ const jsonLd = {
           {project.categories?.[0] && (
             <div>
               <span class="meta-label">Practice Area</span>
-              <a href={`${base}projects/category/${catSlug}/`} class="mt-3 inline-flex rounded-full bg-[#181512] px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-[#f4c98b] transition-colors hover:bg-[#2b241d]">
+              <a href={`${base}projects/category/${catSlug}/`} class="mt-3 inline-flex rounded-full bg-[#181512] px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-slate-200 transition-colors hover:bg-[#2b241d]">
                 {project.categories[0]}
               </a>
             </div>
@@ -301,7 +301,7 @@ const jsonLd = {
         </div>
 
         <div class="rounded-lg border border-slate-200 bg-white px-5 py-4 md:px-6 md:py-5">
-          <a href={`${base}projects/`} class="inline-flex text-[11px] font-black uppercase tracking-[0.24em] text-[#181511] transition-colors hover:text-[#8d6035]">
+          <a href={`${base}projects/`} class="inline-flex text-[11px] font-black uppercase tracking-[0.24em] text-slate-900 transition-colors hover:text-slate-900">
             ← Back to All Case Studies
           </a>
         </div>

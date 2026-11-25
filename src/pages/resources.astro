@@ -170,7 +170,7 @@ function isPdfAsset(doc: any) {
     <div class="mx-auto max-w-7xl">
       <div class="mb-10" data-reveal>
         <span class="eyebrow-label">01 // Complete Resource Library ({documents.length} Assets)</span>
-        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.6rem)] leading-[1.02] text-[#181511]">
+        <h2 class="mt-4 text-[clamp(2rem,4.5vw,3.6rem)] leading-[1.02] text-slate-900">
           Free diagnostic PDFs &amp; individual template overviews.
         </h2>
         <p class="mt-3 max-w-3xl text-sm leading-7 text-[color:var(--text-secondary)]">
@@ -193,7 +193,7 @@ function isPdfAsset(doc: any) {
                   class={`filter-btn shrink-0 rounded-full px-3.5 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] border transition-all ${
                     idx === 0
                       ? 'active-filter bg-[#1d3557] border-[#1d3557] text-white'
-                      : 'border-[rgba(29,53,87,0.10)] text-[color:var(--text-secondary)] bg-white/70 hover:border-[#1d3557]/40 hover:text-[#181511]'
+                      : 'border-[rgba(29,53,87,0.10)] text-[color:var(--text-secondary)] bg-white/70 hover:border-[#1d3557]/40 hover:text-slate-900'
                   }`}
                 >
                   {cat}
@@ -214,21 +214,21 @@ function isPdfAsset(doc: any) {
               <button
                 type="button"
                 data-format="pdf"
-                class="format-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
+                class="format-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-slate-900 transition-all"
               >
                 Free PDF (28)
               </button>
               <button
                 type="button"
                 data-format="xlsx"
-                class="format-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
+                class="format-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-slate-900 transition-all"
               >
                 Excel (.xlsx)
               </button>
               <button
                 type="button"
                 data-format="md"
-                class="format-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-[#181511] transition-all"
+                class="format-btn shrink-0 rounded-full px-3 py-1 text-[9px] font-black uppercase tracking-[0.2em] border border-[rgba(29,53,87,0.10)] bg-white/70 text-[color:var(--text-secondary)] hover:border-[#1d3557]/40 hover:text-slate-900 transition-all"
               >
                 Guides (.md)
               </button>
@@ -238,12 +238,12 @@ function isPdfAsset(doc: any) {
           <!-- Live Results Counter & Reset -->
           <div class="flex items-center justify-between text-xs text-[color:var(--text-secondary)] pt-1">
             <div id="doc-results-count" class="font-medium">
-              Showing <span class="font-bold text-[#181511]" id="doc-count-number">{documents.length}</span> of {documents.length} assets
+              Showing <span class="font-bold text-slate-900" id="doc-count-number">{documents.length}</span> of {documents.length} assets
             </div>
             <button
               id="doc-reset-all"
               type="button"
-              class="hidden text-[11px] font-black uppercase tracking-wider text-[#a33a21] hover:underline cursor-pointer"
+              class="hidden text-[11px] font-black uppercase tracking-wider text-slate-600 hover:underline cursor-pointer"
             >
               Reset Filters
             </button>
@@ -270,13 +270,13 @@ function isPdfAsset(doc: any) {
               data-reveal-delay={String((i % 3) + 1)}
             >
               <div class="flex items-center justify-between gap-4 mb-5">
-                <span class="rounded-full bg-[#a33a21]/8 px-3 py-1 text-[10px] font-black uppercase tracking-[0.24em] text-[#a33a21]">
+                <span class="rounded-full bg-slate-100 px-3 py-1 text-[10px] font-black uppercase tracking-[0.24em] text-slate-600">
                   {doc.category}
                 </span>
                 <span class="meta-label text-slate-400">{doc.size}</span>
               </div>
 
-              <h3 class="text-xl font-bold leading-snug text-[#181511]">
+              <h3 class="text-xl font-bold leading-snug text-slate-900">
                 {doc.title}
               </h3>
 
@@ -339,7 +339,7 @@ function isPdfAsset(doc: any) {
                     )}
                     <a
                       href={`${base}contact/`}
-                      class="text-xs font-bold text-[#181511] underline underline-offset-4 hover:text-[#a33a21]"
+                      class="text-xs font-bold text-slate-900 underline underline-offset-4 hover:text-slate-600"
                     >
                       Request Access
                     </a>
@@ -391,7 +391,7 @@ function isPdfAsset(doc: any) {
 
       <!-- Clean Dignified Empty State for Resources -->
       <div id="docs-empty-state" class="hidden my-12 mx-auto max-w-lg rounded-lg border border-[color:var(--line-soft)] bg-white/75 p-8 text-center backdrop-blur-xl">
-        <p class="text-lg font-bold text-[#181511]">No matching resources found</p>
+        <p class="text-lg font-bold text-slate-900">No matching resources found</p>
         <p class="mt-2 text-sm leading-6 text-[color:var(--text-secondary)]">
           No diagnostic assets match your search criteria. Try broadening your terms (e.g. "fraud", "controls", "governance", "sox", "remittance").
         </p>
@@ -412,7 +412,7 @@ function isPdfAsset(doc: any) {
       <div class="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end" data-reveal>
         <div>
           <span class="eyebrow-label">02 // White-Label Commercial Toolkits</span>
-          <h2 class="mt-3 text-[clamp(1.9rem,4vw,3.3rem)] leading-[1.04] text-[#181511]">
+          <h2 class="mt-3 text-[clamp(1.9rem,4vw,3.3rem)] leading-[1.04] text-slate-900">
             Commercial execution suites &amp; unlocked working bundles.
           </h2>
         </div>
@@ -430,7 +430,7 @@ function isPdfAsset(doc: any) {
           <div class="grid gap-6 lg:grid-cols-[1.5fr_0.8fr] lg:items-center">
             <div>
               <div class="flex flex-wrap items-center gap-3">
-                <span class="rounded-full bg-[#c7964c]/20 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-[#f4c98b]">
+                <span class="rounded-full bg-[#c7964c]/20 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-slate-200">
                   {flagship.badge}
                 </span>
                 <span class="font-mono text-xs text-white/60">{flagship.format}</span>
@@ -446,7 +446,7 @@ function isPdfAsset(doc: any) {
             <div class="flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-5 lg:items-end lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
               <div>
                 <div class="text-[10px] font-mono uppercase tracking-widest text-white/55">Commercial License</div>
-                <div class="mt-1 text-3xl font-black text-[#f4c98b]">{flagship.price} <span class="text-xs font-normal text-white/60">USD</span></div>
+                <div class="mt-1 text-3xl font-black text-slate-200">{flagship.price} <span class="text-xs font-normal text-white/60">USD</span></div>
               </div>
               <div class="flex flex-wrap items-center gap-3">
                 <a
@@ -468,7 +468,7 @@ function isPdfAsset(doc: any) {
                 {flagship.overviewFile && (
                   <a
                     href={`${base}contact/`}
-                    class="text-xs font-bold text-[#f4c98b] underline underline-offset-4 hover:text-white"
+                    class="text-xs font-bold text-slate-200 underline underline-offset-4 hover:text-white"
                   >
                     Request Access
                   </a>
@@ -489,12 +489,12 @@ function isPdfAsset(doc: any) {
           >
             <div>
               <div class="flex flex-wrap items-center justify-between gap-2">
-                <span class="rounded-full bg-[#a33a21]/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-[#a33a21]">
+                <span class="rounded-full bg-[#a33a21]/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.22em] text-slate-600">
                   {bundle.badge}
                 </span>
-                <span class="font-mono text-[11px] font-bold text-[#181511]">{bundle.price} USD</span>
+                <span class="font-mono text-[11px] font-bold text-slate-900">{bundle.price} USD</span>
               </div>
-              <h3 class="mt-4 text-xl font-black leading-snug text-[#181511]">
+              <h3 class="mt-4 text-xl font-black leading-snug text-slate-900">
                 {bundle.title}
               </h3>
               <div class="mt-1.5 font-mono text-[11px] text-slate-500">
@@ -524,7 +524,7 @@ function isPdfAsset(doc: any) {
               )}
               <a
                 href={`${base}contact/`}
-                class="text-xs font-bold text-[#181511] underline underline-offset-4 hover:text-[#a33a21]"
+                class="text-xs font-bold text-slate-900 underline underline-offset-4 hover:text-slate-600"
               >
                 Request Access
               </a>
@@ -674,10 +674,10 @@ function isPdfAsset(doc: any) {
         if (countEl) countEl.textContent = String(visibleCount);
         if (resultsText) {
           if (!isFiltering) {
-            resultsText.innerHTML = 'Showing <span class="font-bold text-[#181511]">' + totalDocs + '</span> of ' + totalDocs + ' assets';
+            resultsText.innerHTML = 'Showing <span class="font-bold text-slate-900">' + totalDocs + '</span> of ' + totalDocs + ' assets';
           } else {
             const unit = visibleCount === 1 ? 'asset' : 'assets';
-            resultsText.innerHTML = 'Showing <span class="font-bold text-[#181511]">' + visibleCount + '</span> matching ' + unit;
+            resultsText.innerHTML = 'Showing <span class="font-bold text-slate-900">' + visibleCount + '</span> matching ' + unit;
           }
         }
 
@@ -786,7 +786,7 @@ function isPdfAsset(doc: any) {
   <section class="px-4 py-8 md:px-8" id="trench-series">
     <div class="editorial-panel mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-7 py-10 md:flex-row md:items-center md:px-10" data-reveal>
       <div class="max-w-2xl">
-        <div class="meta-label text-[#f4c98b]">Visual Fieldwork &amp; Governance Commentary</div>
+        <div class="meta-label text-slate-200">Visual Fieldwork &amp; Governance Commentary</div>
         <h2 class="mt-3 text-2xl md:text-3xl text-white font-bold leading-tight">
           The Trench Series: Editorial Satire &amp; Internal Controls Reality
         </h2>
@@ -802,14 +802,14 @@ function isPdfAsset(doc: any) {
 
   <section class="px-4 py-4 md:px-8">
     <div class="mx-auto max-w-7xl">
-      <a href={`${base}software/`} class="text-sm font-semibold text-[#181511] underline underline-offset-4">Builds</a>
+      <a href={`${base}software/`} class="text-sm font-semibold text-slate-900 underline underline-offset-4">Builds</a>
     </div>
   </section>
 
   <section class="px-4 py-4 pb-10 md:px-8">
     <div class="editorial-panel mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-7 py-10 md:flex-row md:items-center md:px-10" data-reveal>
       <div>
-        <div class="meta-label text-[#f4c98b]">Executive CV</div>
+        <div class="meta-label text-slate-200">Executive CV</div>
         <h2 class="mt-3 text-3xl text-white">Download the executive profile.</h2>
         <p class="mt-3 text-sm leading-8 text-white/68">Credentials, governance experience, and engagement history.</p>
       </div>
